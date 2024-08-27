@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr-FR" prefix="og: http://ogp.me/ns#" >
+    <head>
+
+        {% include "includes/meta.j2" %}
+    
+    </head>
+
+    <body class="bg-slate-800">
+
+        {% include "includes/navigation.j2" %}
+
+        <main class="lg:max-w-4xl mt-10 mx-5 xl:mx-auto mt-10 text-gray-300">
+            {{ content }}
+        </main>
+            
+        {% include "includes/footer.j2" %}
+        {% include "includes/style.j2" %}
+        
+    </body>
+
+</html>
