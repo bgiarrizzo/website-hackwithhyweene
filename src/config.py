@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     LAYOUT_PATH: str = "src/templates/layouts"
     INCLUDE_PATH: str = "src/templates/layouts/includes"
 
-    NAME: str = "Hack With Hyweene"
+    NAME: str = "Hack with Hyweene"
     
     DESCRIPTION: str = "Freelance Developer, DevOps, Ethical Hacker"
     KEYWORDS: list = [
