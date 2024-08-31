@@ -1,21 +1,21 @@
 <?xml version="1.0" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>192.168.1.176:8000</title>
+  <title>hack-with-hyweene.com</title>
   <subtitle>Freelance Developer, DevOps, Ethical Hacker</subtitle>
   <updated/>
-  <link href="http://192.168.1.176:8000/blog/" rel="alternate" type="text/html"/>
-  <id>http://192.168.1.176:8000/blog/</id>
-  <link href="http://192.168.1.176:8000/blog/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://www.hack-with-hyweene.com/blog/" rel="alternate" type="text/html"/>
+  <id>https://www.hack-with-hyweene.com/blog/</id>
+  <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="self" type="application/atom+xml"/>
   <entry xml:lang="en">
     <title type="html">Hello World!</title>
     <author>
       <name/>
-      <uri>http://192.168.1.176:8000</uri>
+      <uri>https://www.hack-with-hyweene.com</uri>
     </author>
-    <id>http://192.168.1.176:8000/blog/hello-world/</id>
+    <id>https://www.hack-with-hyweene.com/blog/hello-world/</id>
     <published>2020-08-27 09:30:00+00:00</published>
     <updated>2020-08-27 09:30:00+00:00</updated>
-    <link rel="alternate" type="text/html">http://192.168.1.176:8000/blog/hello-world/</link>
+    <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/hello-world/</link>
     <summary>Hello World!</summary>
     <content type="html">
       <p class="text-base my-3 leading-relaxed">Hello World</p>
@@ -25,12 +25,12 @@
     <title type="html">Comment installer psycopg2-binary sur Apple M1</title>
     <author>
       <name/>
-      <uri>http://192.168.1.176:8000</uri>
+      <uri>https://www.hack-with-hyweene.com</uri>
     </author>
-    <id>http://192.168.1.176:8000/blog/comment-installer-psycopg2-binary-sur-apple-m1/</id>
+    <id>https://www.hack-with-hyweene.com/blog/comment-installer-psycopg2-binary-sur-apple-m1/</id>
     <published>2021-10-17 09:30:00+00:00</published>
     <updated>2021-10-17 09:30:00+00:00</updated>
-    <link rel="alternate" type="text/html">http://192.168.1.176:8000/blog/comment-installer-psycopg2-binary-sur-apple-m1/</link>
+    <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/comment-installer-psycopg2-binary-sur-apple-m1/</link>
     <summary>J'ai rencontré quelques difficultés en travaillant avec du code Python accédant à des bases de données PostgreSQL. Voici comment j'ai résolu le problème.</summary>
     <content type="html">
       <p class="text-base my-3 leading-relaxed">Le mois dernier, je me suis offert un Apple M1, un très bon ordinateur, puissant et avec une autonomie impressionnante.</p>
@@ -74,12 +74,12 @@ or with the pg_config option in 'setup.cfg'.</pre>
     <title type="html">Comment j'ai enrichi des métriques Prometheus</title>
     <author>
       <name/>
-      <uri>http://192.168.1.176:8000</uri>
+      <uri>https://www.hack-with-hyweene.com</uri>
     </author>
-    <id>http://192.168.1.176:8000/blog/comment-j-ai-enrichi-des-metriques-prometheus/</id>
+    <id>https://www.hack-with-hyweene.com/blog/comment-j-ai-enrichi-des-metriques-prometheus/</id>
     <published>2022-05-05 09:30:00+00:00</published>
     <updated>2022-05-05 09:30:00+00:00</updated>
-    <link rel="alternate" type="text/html">http://192.168.1.176:8000/blog/comment-j-ai-enrichi-des-metriques-prometheus/</link>
+    <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/comment-j-ai-enrichi-des-metriques-prometheus/</link>
     <summary>Les métriques de l'exportateur VMWare n'avaient pas toutes les informations que nous voulions. Voici comment je les ai enrichies.</summary>
     <content type="html">
       <h2 class="text-3xl font-bold my-5 leading-snug">Contexte</h2>
