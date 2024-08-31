@@ -13,25 +13,25 @@ def write_page(filename, content):
 
 
 def render_template(template_name, data):
-    env = Environment(loader=FileSystemLoader(settings.LAYOUT_PATH))
+    env = Environment(loader=FileSystemLoader(settings.TEMPLATE_PATH))
     template = env.get_template(template_name)
     return template.render(data)
 
 
-def generate_data_for_template(datalist):
-    data_for_template = {}
-    site_infos = {
+def prepare_template_data(datalist):
+    data = {
         "site": {
             "url": settings.BASE_URL,
             "short_url": settings.SHORT_URL,
             "description": settings.DESCRIPTION,
             "language": settings.LANGUAGE,
             "name": settings.NAME,
+            "author": settings.AUTHOR,
             "keywords": settings.KEYWORDS,
         }
     }
-    data_for_template = data_for_template | site_infos
-    if len(datalist) > 0:
-        for data in datalist:
-            data_for_template = data_for_template | data
-    return data_for_template
+
+    for item in datalist:
+        data = data | item
+
+    return data

@@ -1,65 +1,45 @@
-from slugify import slugify
-
-from config import settings
-from generators.common import generate_dataset_of_item_files, get_all_files_from_path
-from utils.format import beautify_html, beautify_xml
-from utils.template import generate_data_for_template, render_template, write_page
-
-
-def extract_date_and_slugify_title_of_blog_post(post_list):
-    for post in post_list:
-        if post.get("publish_date"):
-            post["short_date"] = post.get("publish_date").strftime("%d-%b-%Y")
-            post["year"] = post.get("publish_date").year
-        if post.get("title"):
-            post["slug"] = slugify(post.get("title"))
-    return post_list
+from utils.date import add_multiple_date_formats
+from utils.file import get_all_files_from_path, write_file
+from utils.markdown import parse_markdown_files_and_convert_to_html
+from utils.slug import add_slug
 
 
 def generate_rss_feed(posts: list):
-    posts_data = {"posts": posts}
-    rendered_rss_feed = render_template(
-        "blog_feed_rss.j2", generate_data_for_template([posts_data])
-    )
-    write_page("blog/feed.xml", beautify_xml(rendered_rss_feed))
+    data = {"posts": posts}
+    template_name = "blog_feed_rss.j2"
+    filename = "blog/feed.xml"
+
+    write_file(data=data, template_name=template_name, filename=filename)
 
 
-def generate_blog_post(post_data):
-    post = {"post": post_data}
+def generate_blog_post(post):
+    data = {"post": post}
+    template_name = "blog_post.j2"
+    filename = f"blog/{post['slug']}/index.html"
 
-    blog_post_template = render_template(
-        "blog_post.j2", generate_data_for_template([post])
-    )
-
-    content = {"content": blog_post_template}
-
-    rendered_page = render_template(
-        "main.j2", generate_data_for_template([post, content])
-    )
-    write_page(f"blog/{post_data['slug']}/index.html", beautify_html(rendered_page))
+    write_file(data=data, template_name=template_name, filename=filename)
 
 
-def generate_blog_page_list(posts_data):
-    posts = {"all_posts": posts_data}
+def generate_blog_page_list(posts: list):
+    data = {"all_posts": posts}
+    template_name = "blog_post_list.j2"
+    filename = "blog/index.html"
 
-    blog_post_list_template = render_template(
-        "blog_post_list.j2", generate_data_for_template([posts])
-    )
-
-    content = {"content": blog_post_list_template}
-
-    rendered_page = render_template(
-        "main.j2", generate_data_for_template([posts, content])
-    )
-    write_page("blog/index.html", beautify_html(rendered_page))
+    write_file(data=data, template_name=template_name, filename=filename)
 
 
-def generate_blog():
-    posts = extract_date_and_slugify_title_of_blog_post(
-        generate_dataset_of_item_files(
-            get_all_files_from_path(f"{settings.CONTENT_PATH}/blog")
-        )
-    )
+def prepare_blog_post_data(blog_path):
+    blog_post_files = get_all_files_from_path(blog_path)
+    blog_posts = parse_markdown_files_and_convert_to_html(blog_post_files)
+
+    posts = add_multiple_date_formats(blog_posts)
+    posts = add_slug(posts)
+
+    return posts
+
+
+def generate_blog(blog_path):
+    posts = prepare_blog_post_data(blog_path)
 
     print("#", "-" * 80)
     print("Generating blog ...")
@@ -72,7 +52,7 @@ def generate_blog():
 
     print("Generating blog posts ...")
     for post in posts:
-        print(f"Generating blog post: {post['title']}")
+        print(f"Generating blog post: {post.get('slug')}")
         generate_blog_post(post)
 
     return posts

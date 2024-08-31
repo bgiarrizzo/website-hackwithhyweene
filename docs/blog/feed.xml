@@ -1,54 +1,263 @@
 <?xml version="1.0" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>hack-with-hyweene.com</title>
+  <title>192.168.1.176:8000</title>
   <subtitle>Freelance Developer, DevOps, Ethical Hacker</subtitle>
-  <updated>27-Aug-2024</updated>
-  <link href="https://www.hack-with-hyweene.com/blog/" rel="alternate" type="text/html"/>
-  <id>https://www.hack-with-hyweene.com/blog/</id>
-  <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="self" type="application/atom+xml"/>
+  <updated/>
+  <link href="http://192.168.1.176:8000/blog/" rel="alternate" type="text/html"/>
+  <id>http://192.168.1.176:8000/blog/</id>
+  <link href="http://192.168.1.176:8000/blog/feed.xml" rel="self" type="application/atom+xml"/>
   <entry xml:lang="en">
     <title type="html">Hello World!</title>
     <author>
       <name/>
-      <uri>https://www.hack-with-hyweene.com</uri>
+      <uri>http://192.168.1.176:8000</uri>
     </author>
-    <id>https://www.hack-with-hyweene.com/blog/hello-world/</id>
-    <published>2024-08-27</published>
-    <updated>2024-08-27</updated>
-    <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/hello-world/</link>
+    <id>http://192.168.1.176:8000/blog/hello-world/</id>
+    <published>2020-08-27 09:30:00+00:00</published>
+    <updated>2020-08-27 09:30:00+00:00</updated>
+    <link rel="alternate" type="text/html">http://192.168.1.176:8000/blog/hello-world/</link>
     <summary>Hello World!</summary>
     <content type="html">
-      <p>Hello World</p>
+      <p class="text-base my-3 leading-relaxed">Hello World</p>
     </content>
   </entry>
   <entry xml:lang="en">
-    <title type="html">Hello World!</title>
+    <title type="html">Comment installer psycopg2-binary sur Apple M1</title>
     <author>
       <name/>
-      <uri>https://www.hack-with-hyweene.com</uri>
+      <uri>http://192.168.1.176:8000</uri>
     </author>
-    <id>https://www.hack-with-hyweene.com/blog/hello-world/</id>
-    <published>2024-08-27</published>
-    <updated>2024-08-27</updated>
-    <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/hello-world/</link>
-    <summary>Hello World!</summary>
+    <id>http://192.168.1.176:8000/blog/comment-installer-psycopg2-binary-sur-apple-m1/</id>
+    <published>2021-10-17 09:30:00+00:00</published>
+    <updated>2021-10-17 09:30:00+00:00</updated>
+    <link rel="alternate" type="text/html">http://192.168.1.176:8000/blog/comment-installer-psycopg2-binary-sur-apple-m1/</link>
+    <summary>J'ai rencontré quelques difficultés en travaillant avec du code Python accédant à des bases de données PostgreSQL. Voici comment j'ai résolu le problème.</summary>
     <content type="html">
-      <p>Hello World</p>
+      <p class="text-base my-3 leading-relaxed">Le mois dernier, je me suis offert un Apple M1, un très bon ordinateur, puissant et avec une autonomie impressionnante.</p>
+      <p class="text-base my-3 leading-relaxed">Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqué.</p>
+      <p class="text-base my-3 leading-relaxed">J'essaie de travailler avec les dernières versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
+      <p class="text-base my-3 leading-relaxed">Je l'ai installé avec brew, assez facilement :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>brew install python@3.10</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">J'ai eu des problèmes avec psycopg2-binary lors de l'installation des dépendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais était celui-ci :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>Error: pg_config executable not found.
+
+pg_config is required to build psycopg2 from source.  Please add the directory
+containing pg_config to the $PATH or specify the full executable path with the
+option:
+
+    python setup.py build_ext --pg-config /path/to/pg_config build ...
+
+or with the pg_config option in 'setup.cfg'.</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">Il semble qu'il manque un fichier de configuration. J'ai essayé de résoudre ce problème en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>brew install postgresql@12</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">À ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette façon (en utilisant ZSH, il me dit évidemment de l'écrire dans .zshrc) :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>echo 'export PATH=&quot;/opt/homebrew/opt/postgresql@12/bin:$PATH&quot;' &gt; ~/.zshrc</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">Maintenant, tout est prêt, et je peux l'installer comme je le souhaite :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>pip(3) install psycopg2-binary</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">Ou dans le répertoire de mon projet :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>pipenv install psycopg2-binary</pre>
+      </p>
     </content>
   </entry>
   <entry xml:lang="en">
-    <title type="html">Hello World!</title>
+    <title type="html">Comment j'ai enrichi des métriques Prometheus</title>
     <author>
       <name/>
-      <uri>https://www.hack-with-hyweene.com</uri>
+      <uri>http://192.168.1.176:8000</uri>
     </author>
-    <id>https://www.hack-with-hyweene.com/blog/hello-world/</id>
-    <published>2024-08-27</published>
-    <updated>2024-08-27</updated>
-    <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/hello-world/</link>
-    <summary>Hello World!</summary>
+    <id>http://192.168.1.176:8000/blog/comment-j-ai-enrichi-des-metriques-prometheus/</id>
+    <published>2022-05-05 09:30:00+00:00</published>
+    <updated>2022-05-05 09:30:00+00:00</updated>
+    <link rel="alternate" type="text/html">http://192.168.1.176:8000/blog/comment-j-ai-enrichi-des-metriques-prometheus/</link>
+    <summary>Les métriques de l'exportateur VMWare n'avaient pas toutes les informations que nous voulions. Voici comment je les ai enrichies.</summary>
     <content type="html">
-      <p>Hello World</p>
+      <h2 class="text-3xl font-bold my-5 leading-snug">Contexte</h2>
+      <p class="text-base my-3 leading-relaxed">Dans ma mission actuelle, afin de mettre en place une fédération de métriques, nous devons collecter des métriques VMware.</p>
+      <p class="text-base my-3 leading-relaxed">Nous avons donc utilisé le
+
+        <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda/vmware_exporter">
+     vmware_exporter</a>de
+
+        <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda">
+     Daniel Pryor</a>, et pour ne pas le modifier, j'ai écrit une petite interface avec fastapi.</p>
+      <p class="text-base my-3 leading-relaxed">Les métriques sont récupérées par fastapi, analysées, enrichies, resérialisées, et récoltées par prometheus.</p>
+      <p class="text-base my-3 leading-relaxed">Les noms des métriques doivent être mappés, car ils sont unifiés avec les métriques d'openstack et d'IBM cloud.</p>
+      <p class="text-base my-3 leading-relaxed">La table de mappage est celle ci-dessous :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>MAPPING_METRICS_NAME = {
+    &quot;vmware_vm_power_state&quot; : &quot;power_state&quot;
+    &quot;vmware_vm_cpu_usage_average&quot;': &quot;cpu_usage_percentage
+    &quot;vmware_vm_mem_consumed_average&quot;: &quot;memory_used&quot;
+    &quot;vmware_vm_memory_max&quot;: &quot;memory_total&quot;
+    &quot;vmware_vm_mem_usage_average&quot;: &quot;memory_usage_percentage&quot;,
+    &quot;vmware_vm_num_cpu&quot;: &quot;vcpus&quot;
+}</pre>
+      </p>
+      <h2 class="text-3xl font-bold my-5 leading-snug">Étape 1 : Analyse des métriques de vmware_exporter</h2>
+      <p class="text-base my-3 leading-relaxed">L'exportateur est appelé depuis une fonction nommée request_exporter().</p>
+      <p class="text-base my-3 leading-relaxed">La sortie de l'exportateur est un grand fichier str qui doit être analysé pour être traité.</p>
+      <p class="text-base my-3 leading-relaxed">J'ai utilisé prometheus_client.parser pour cela.</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>from prometheus_client.parser import text_string_to_metric_families
+
+data_from_exporter = request_exporter(target)
+metric_families = text_string_to_metric_families(data_from_exporter)</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">La variable metric_families est un objet à plusieurs niveaux contenant des métriques regroupées par nom de métrique.</p>
+      <p class="text-base my-3 leading-relaxed">Elle peut être représentée comme un dict, où la clé est le metric_name et la valeur est une liste contenant toutes les métriques sous forme de tuples.</p>
+      <p class="text-base my-3 leading-relaxed">Exemple :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>{
+    &quot;vmware_vm_power_state&quot;: [
+        (&quot;vmware_vm_power_state&quot;, {&quot;vm_name&quot;: &quot;vm1&quot;, &quot;label2&quot;: &quot;value2&quot;}, 1),
+        (&quot;vmware_vm_power_state&quot;, {&quot;vm_name&quot;: &quot;vm2&quot;, &quot;label2&quot;: &quot;value2&quot;}, 0),
+    ]
+}</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">J'ai donc fait un petit algorithme pour aplatir l'objet en une liste de dicts :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>processed_exporter_data = []
+
+for family in data_from exporter:
+    if family.name not in MAPPING_METRICS_NAME:
+        continue
+    for sample in family.samples:
+        row dict = {}
+        row dict[&quot;__name__&quot;] = sample
+        for key, value in sample.items():
+            row dict[key] = value
+        row_dict[&quot;value&quot;] = sample
+        processed exporter_data.append(row_dict)</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">J'aurai alors une liste de dicts, à partir de laquelle un dataframe peut être créé.</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>[
+    {&quot;__name__&quot;: &quot;vmware_vm_power_state&quot;, &quot;vm_name&quot;: &quot;vm1&quot;, &quot;value&quot;: 1},
+    {&quot;__name__&quot;: &quot;vmware_vm_power_state&quot;, &quot;vm_name&quot;: &quot;vm2&quot;, &quot;value&quot;: 0},
+]</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">Maintenant, jouons avec les dataframes...</p>
+      <h2 class="text-3xl font-bold my-5 leading-snug">Étape 2 : Jouer avec les dataframes</h2>
+      <p class="text-base my-3 leading-relaxed">Tout d'abord, je crée le dataframe :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>import pandas
+
+metrics_df = pandas.DataFrame(processed_exporter_data)</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">Ensuite, je supprime les étiquettes inutiles :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>metrics_df.drop(
+    colums=[
+        &quot;host_name&quot;,
+        &quot;ds_name&quot;,
+        &quot;dc_name&quot;,
+        &quot;cluster_name&quot;,
+    ],
+    axis=1,
+    inplace=True,
+)</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">De cette façon, j'utilise le dataframe pour supprimer les 4 colonnes.
+
+        <code>
+     inplace=True</code>est utilisé pour écraser le dataframe existant et ne pas en créer un nouveau.</p>
+      <p class="text-base my-3 leading-relaxed">Ensuite, je dois fusionner les données de métriques avec les données de deux autres sources de données internes (une pour le référentiel des hôtes/vm, une pour les lignes métier).</p>
+      <p class="text-base my-3 leading-relaxed">Celles-ci sont également représentées sous forme de dataframes.</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>businesslines_referential_df = referential_df.merge(
+    businesslines_df, how=&quot;left&quot;, left_on=&quot;ecosystem&quot;, right_index=True
+)</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">Cette fusion enrichira le dataframe référentiel avec les données des lignes métier, de droite à gauche, selon le nom de l'écosystème et utilisera l'index du dataframe de droite comme clé de jointure.</p>
+      <p class="text-base my-3 leading-relaxed">Maintenant, il est temps de fusionner ce dataframe avec le dataframe des métriques.</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>metrics_df = metrics_df.merge(
+    businesslines_referential_df, how=&quot;inner&quot;, left_on=&quot;vm_name&quot;, right_index=True
+)</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">Cette fusion est faite avec la méthode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.</p>
+      <p class="text-base my-3 leading-relaxed">Maintenant, je remplace le nom de métrique original par le mappage dont nous avons parlé plus tôt :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>metrics_df.replace({&quot;__name_&quot;: MAPPING_METRICS_NAME}, inplace=True)</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">Maintenant &quot;vmware_vm_power_state&quot; est mappé à &quot;power_state&quot;.</p>
+      <p class="text-base my-3 leading-relaxed">Le résultat est similaire à ceci :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <table border="1px" width="100%">
+          <tr>
+            <th>__name__</th>
+            <th>vm_name</th>
+            <th>ecosystem</th>
+            <th>business_line</th>
+            <th>value</th>
+          </tr>
+          <tr>
+            <td>power_state</td>
+            <td>vm1</td>
+            <td>TESTECO</td>
+            <td>BL1</td>
+            <td>1</td>
+          </tr>
+        </table>
+      </p>
+      <p class="text-base my-3 leading-relaxed">Maintenant, pour être récoltées par prometheus, ces données doivent être resérialisées.</p>
+      <h2 class="text-3xl font-bold my-5 leading-snug">Étape 3 : Comment ai-je resérialisé les données ?</h2>
+      <p class="text-base my-3 leading-relaxed">Les chaînes de métriques Prometheus sont assez simples :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>metric_name{label1=&quot;value1&quot;, label2=&quot;value2&quot;} 0</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">En utilisant une compréhension de liste, j'itère sur le dataframe pour imprimer une chaîne contenant au début le metric_name et à la fin la metric_value.</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>return &quot;\n&quot;.join(
+    [
+        f&quot;{row['__name__']}{generate_dict_label(row)} {row['value']}&quot;
+        for index, row in metrics df.iterrows()
+    ]
+)</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">La partie délicate est de générer les étiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.</p>
+      <p class="text-base my-3 leading-relaxed">Un dict en python ressemble à
+
+        <code>
+     {&quot;key&quot;: &quot;value&quot;}</code>, nous devons générer une chaîne qui ressemble à
+
+        <code>
+     {label=&quot;value&quot;}</code>
+      </p>
+      <p class="text-base my-3 leading-relaxed">J'ai donc écrit une petite fonction qui génère cette chaîne.</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>def generate_dict_label(row):
+
+    labels = set(row.index) - {&quot;__name__&quot;, &quot;value&quot;}
+
+    return (
+        &quot;{&quot;
+        + &quot;,&quot;.join(
+            [
+                f'{key}=&quot;{value}&quot;'
+                for key, value in row.items()
+                if key in labels
+            ]
+        )
+        + &quot;}&quot;
+    )</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">Finalement, les données sérialisées ressemblent à :</p>
+      <p class="text-base my-3 leading-relaxed">
+        <pre>power_state{vm_name=&quot;vm1&quot;, ecosystem=&quot;TESTECO&quot;, business_line=&quot;BL1&quot;} 1</pre>
+      </p>
+      <p class="text-base my-3 leading-relaxed">Maintenant, les métriques sont récoltées par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et resérialisera les données provenant d'un exportateur prometheus vmware.</p>
     </content>
   </entry>
 </feed>

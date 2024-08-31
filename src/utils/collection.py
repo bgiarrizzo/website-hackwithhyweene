@@ -4,7 +4,7 @@ import shutil
 from config import settings
 
 
-def file_collection(file_type, source, destination):
+def collect_files(file_type, source, destination):
     """Collects files from source and copies them to destination.
 
     Args:
@@ -44,7 +44,7 @@ def collect_static_files():
         A list of paths to the copied static files.
     """
 
-    return file_collection(
+    return collect_files(
         file_type="static",
         source=f"{settings.STATIC_PATH}",
         destination=f"{settings.BUILD_PATH}/{settings.STATIC_PATH}",
@@ -58,7 +58,7 @@ def collect_media_files():
         A list of paths to the copied media files.
     """
 
-    return file_collection(
+    return collect_files(
         file_type="media",
         source=f"{settings.MEDIA_PATH}",
         destination=f"{settings.BUILD_PATH}/{settings.MEDIA_PATH}",

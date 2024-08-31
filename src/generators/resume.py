@@ -1,50 +1,70 @@
 from config import settings
-from generators.common import generate_dataset_of_item_files, get_all_files_from_path
+from utils.markdown import parse_markdown_files_and_convert_to_html
 from utils.format import beautify_html
-from utils.template import generate_data_for_template, render_template, write_page
+from utils.file import get_all_files_from_path, write_file
 
 
-def generate_resume_head(dataset: list, resume: dict):
+def write_resume(resume):
+    data = {"resume": resume}
+    template_name = "resume.j2"
+    filename = "cv/index.html"
+
+    write_file(data, template_name, filename)
+
+def generate_resume_head(dataset: list, data: dict):
     for head in dataset:
         if head.get("tags"):
             for tag in head.get("tags"):
-                if tag not in resume.get("resume").get("tags"):
-                    resume.get("resume").get("tags").append(tag)
+                if tag not in data.get("resume").get("tags"):
+                    data.get("resume").get("tags").append(tag)
 
-    resume["resume"]["head"] = dataset[0].get("body")
+    data["head"] = dataset[0].get("body")
 
-    return resume
+    return data
 
 
 def generate_resume_experience(
     dataset: list,
-    resume: dict,
+    data: dict,
 ):
     for experience in dataset:
         if experience.get("tags"):
             for tag in experience.get("tags"):
-                if tag not in resume.get("resume"):
-                    resume.get("resume").get("tags").append(tag)
+                if tag not in data.get("resume"):
+                    data.get("resume").get("tags").append(tag)
 
-    resume["resume"]["experiences"] = dataset
+    data["experiences"] = dataset
 
-    return resume
+    return data
 
 
-def generate_resume_education(dataset: list, resume: dict):
+def generate_resume_education(dataset: list, data: dict):
     for education in dataset:
         if education.get("tags"):
             for tag in education.get("tags"):
-                if tag not in resume.get("resume").get("tags"):
-                    resume.get("resume").get("tags").append(tag)
+                if tag not in data.get("resume").get("tags"):
+                    data.get("resume").get("tags").append(tag)
 
-    resume["resume"]["educations"] = dataset
+    data["educations"] = dataset
 
-    return resume
+    return data
 
 
-def generate_resume():
+def prepare_resume_data(resume_path):
+    head_files = get_all_files_from_path(f"{resume_path}/head")
+    experiences_files = get_all_files_from_path(f"{resume_path}/experiences")
+    educations_files = get_all_files_from_path(f"{resume_path}/educations")
+
+    head = parse_markdown_files_and_convert_to_html(head_files)
+    experiences = parse_markdown_files_and_convert_to_html(experiences_files)
+    educations = parse_markdown_files_and_convert_to_html(educations_files)
+
+    return head, experiences, educations
+
+def generate_resume(resume_path):
     print("Generating resume ...")
+
+    head, experiences, educations = prepare_resume_data(resume_path)
 
     resume = {
         "resume": {
@@ -52,36 +72,17 @@ def generate_resume():
         }
     }
 
-    head_dataset = generate_dataset_of_item_files(
-        get_all_files_from_path(f"{settings.CONTENT_PATH}/resume/head")
-    )
-    experiences_dataset = generate_dataset_of_item_files(
-        get_all_files_from_path(f"{settings.CONTENT_PATH}/resume/experiences")
-    )
-    educations_dataset = generate_dataset_of_item_files(
-        get_all_files_from_path(f"{settings.CONTENT_PATH}/resume/educations")
-    )
-
     print("Generating header ...")
-    resume = resume | generate_resume_head(dataset=head_dataset, resume=resume)
+    resume = resume | generate_resume_head(dataset=head, data=resume)
 
     print("Generating education part ...")
     resume = resume | generate_resume_education(
-        dataset=educations_dataset, resume=resume
+        dataset=educations, data=resume
     )
 
     print("Generating experience part ...")
     resume = resume | generate_resume_experience(
-        dataset=experiences_dataset, resume=resume
+        dataset=experiences, data=resume
     )
 
-    print("Generating resume page ...")
-    resume_template = render_template("resume.j2", generate_data_for_template([resume]))
-
-    content = {"content": resume_template}
-
-    rendered_resume = render_template(
-        "main.j2",
-        generate_data_for_template([resume, content]),
-    )
-    write_page("/resume/index.html", beautify_html(rendered_resume))
+    write_resume(resume)

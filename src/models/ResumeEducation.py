@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class ResumeEducation(BaseModel):
     id: str
     title: str

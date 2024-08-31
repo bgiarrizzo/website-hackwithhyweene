@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class BlogLink(BaseModel):
     title: str
     url: str

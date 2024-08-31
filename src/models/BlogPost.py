@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class BlogPost(BaseModel):
     title: str
     summary: str

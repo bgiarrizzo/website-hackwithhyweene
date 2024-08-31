@@ -1,31 +1,32 @@
 from config import settings
-from generators.common import generate_dataset_of_item_files, get_all_files_from_path
-from utils.format import beautify_html
-from utils.template import generate_data_for_template, render_template, write_page
+from utils.date import add_multiple_date_formats
+from utils.file import get_all_files_from_path, write_file
+from utils.markdown import parse_markdown_files_and_convert_to_html
+from utils.slug import add_slug
 
 
-def generate_page(page, blog_posts=None, links=None):
-    data = {"page": page, "posts": blog_posts, "links": links}
+def generate_page(page):
+    template_name = "page.j2"
+    data = {"page": page}
+    filename = f"{page['permalink']}/index.html"
 
-    page_template = render_template("page.j2", generate_data_for_template([data]))
-
-    content = {"content": page_template}
-
-    rendered_page = render_template(
-        "main.j2", generate_data_for_template([data, content])
-    )
-    write_page(f"{page['permalink']}/index.html", beautify_html(rendered_page))
+    write_file(data, template_name, filename)
 
 
-def generate_pages(posts, links=None):
-    pages_files = get_all_files_from_path(f"{settings.CONTENT_PATH}/pages")
-    pages = generate_dataset_of_item_files(pages_files)
+def generate_pages(pages_path):
+    page_file_list = get_all_files_from_path(pages_path)
+    pages = parse_markdown_files_and_convert_to_html(page_file_list)
+
+    pages = add_multiple_date_formats(pages)
+    pages = add_slug(pages)
 
     print("#", "-" * 80)
     print("Generating pages ...")
+
     for page in pages:
         if len(page.get("permalink")) == 0:
-            print("Generating page with empty permalink: Home ? ...")
+            print(f"Generating page with empty permalink: {page.get('title')} ...")
         else:
-            print(f"Generating page: {page['permalink']} ...")
-        generate_page(page=page, blog_posts=posts, links=links)
+            print(f"Generating page: {page['slug']} ...")
+
+        generate_page(page=page)

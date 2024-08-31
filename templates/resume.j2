@@ -1,0 +1,73 @@
+<header class="mb-5">
+    <img class="w-full object-cover object-center rounded-lg shadow-lg mb-5" src="/media/images/pages/resume/cover.png" alt="">
+    <h1 class="text-4xl font-semibold mb-5">Resume</h1>
+</header>
+
+<article>
+    
+    {{ resume.head }}
+
+    {% if resume.experiences %}
+        <hr class="my-5" />
+
+        <h2 class="text-2xl font-semibold my-3">Work Experience</h2>
+
+        {% for experience in resume.experiences|reverse %}
+            <section class="mb-4">
+
+                <header class="my-4">
+                    <h3 class="text-xl font-semibold border-b border-gray-400 my-3">{{ experience.company }}</h3>
+                    <p class="font-bold">{{ experience.title }} - ({{ experience.contract_type }}) : {{ experience.start_date }} - {{ experience.end_date }}</p>
+                </header>
+
+                <main>
+                    {{ experience.body }}
+
+                    {% if experience.tags %}
+                        <div class="mt-2 flex flex-wrap"">
+                            {% for tag in experience.tags %}
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">
+                                    {{ tag }}
+                                </span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </main>
+
+            </section>
+        {% endfor %}
+    {% endif %}
+
+    {% if resume.educations %}
+        <hr class="my-5" />
+
+        <h2 class="text-2xl font-semibold my-3">Education</h2>
+
+        {% for education in resume.educations|reverse %}
+            <section class="mb-4">
+
+                <header>
+                    <h3 class="text-xl font-semibold border-b border-gray-400 my-3">{{ education.title }}</h3>
+                    <p class="font-bold">{{ education.school }} - {{ education.formation_type }}</p>
+                    <p>{{ education.start_date }} - {{ education.end_date }} ( {{ education.status }} )</p>
+                </header>
+
+                <main>
+                    {{ education.body }}
+
+                    {% if education.tags %}
+                        <div class="mt-2 flex flex-wrap"">
+                            {% for tag in education.tags %}
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">
+                                    {{ tag }}
+                                </span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </main>
+
+            </section>
+        {% endfor %}
+    {% endif %}
+
+</article>

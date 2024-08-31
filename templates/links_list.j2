@@ -1,0 +1,29 @@
+<h1 class="text-4xl font-semibold">Liens</h1>
+
+{% for year, links in all_links | reverse | groupby("publish_date_year") | reverse %}
+
+    <h2 class="text-2xl font-semibold my-4">{{ year }}</h2>
+
+    {% for month, links_by_month in links | groupby("publish_date_month") | reverse %}
+
+    <h3 class="text-xl font-semibold my-4">{{ month }}</h3>
+    
+        {% for link in links_by_month %}
+            <section class="p-5 rounded-lg bg-gray-900 my-8">
+                <h4 class="text-lg font-semibold mb-4">
+                    <a href="{{ link.url }}" class="text-sky-400/75 underline hover:text-sky-400 transition-colors duration-300">
+                        {{ link.id }} - {{ link.title }}
+                    </a>
+                </h4>
+                <div class="my-3">
+                    <span class="text-gray-400">
+                        Publié le {{ link.publish_date_medium }}
+                    </span>
+                </div>
+                <p>{{ link.body }}</p>
+            </section>
+        {% endfor %}
+
+    {% endfor %}
+
+{% endfor %}
