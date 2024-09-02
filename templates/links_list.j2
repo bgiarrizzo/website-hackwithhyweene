@@ -2,11 +2,11 @@
 
 {% for year, links in all_links | reverse | groupby("publish_date_year") | reverse %}
 
-    <h2 class="text-2xl font-semibold my-4">{{ year }}</h2>
+    <h2 class="text-2xl font-semibold my-4 border-b border-gray-400">{{ year }}</h2>
 
     {% for month, links_by_month in links | groupby("publish_date_month") | reverse %}
 
-    <h3 class="text-xl font-semibold my-4">{{ month }}</h3>
+    <h3 class="text-xl font-semibold my-4 border-b border-gray-400">{{ month }}</h3>
     
         {% for link in links_by_month %}
             <section class="p-5 rounded-lg bg-gray-900 my-8">
