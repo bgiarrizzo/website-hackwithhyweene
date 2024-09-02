@@ -76,13 +76,17 @@
             </menu>
         </nav>
         
-        <aside class="flex h-full w-1/2 flex-1 justify-end lg:hidden">
-
-            <div class="lg:hidden flex h-full mx-auto">
+        <aside class="flex h-full w-full lg:hidden">
+            <div class="lg:hidden flex h-full items-center">
                 <img src="{{ site.url }}/static/img/cl-logo.svg" alt="favicon" class="h-full">
             </div>
-
-            <h2 class="sr-only" id="mobile-navigation">Mobile navigation</h2>
+            <div class="lg:hidden flex-1 h-full flex-nowrap items-center p-5 text-center">
+                <a href="{{ site.url }}" class="text-3xl text-gray-300" translate="no">
+                    <span class="font-bold">Hack</span>
+                    <span class="px-1">with</span>
+                    <span class="font-bold">Hyweene</span>
+                </a>
+            </div>
             <div class="flex items-center">
                 <label class="relative z-[9999] cursor-pointer px-3 pr-0 py-6" for="ss-mobile-menu">
                     <input class="peer hidden" type="checkbox" id="ss-mobile-menu">
