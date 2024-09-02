@@ -3,7 +3,7 @@
 {% if posts %}
   <h2 class="text-2xl font-semibold mt-8 border-b border-gray-400">Articles du blog</h2>
   
-  {% for post in posts | reverse %}
+  {% for post in posts[:5] | reverse %}
     <article class="p-5 rounded-lg bg-gray-900 my-8">
 
       <h2 class="text-2xl font-semibold">
@@ -35,7 +35,7 @@
 {% if links %}
   <h2 class="text-2xl font-semibold mt-8 border-b border-gray-400">Liens</h2>
 
-  {% for link in links %}
+  {% for link in links[:5] | reverse %}
     <article class="p-5 rounded-lg bg-gray-900 my-8">
 
       <h2 class="text-2xl font-semibold">
@@ -50,8 +50,18 @@
         </span>
       </div>
 
+      <div class="my-3 flex flex-wrap">
+        {% for tag in link.tags %}
+            <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">
+                {{ tag }}
+            </span>
+        {% endfor %}
+      </div>
+
+      <hr />
+
       <p>
-        {{ link.description }}
+        {{ link.body }}
       </p>
 
     </article>
