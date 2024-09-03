@@ -3,7 +3,7 @@
 {% for post in all_posts | reverse %}
     <section class="p-5 rounded-lg bg-gray-900 my-8">
         <h2 class="text-2xl font-semibold">
-            <a href="{{ site.url }}/blog/{{ post.slug }}/" class="hover:text-sky-400 transition-colors duration-300">
+            <a href="{{ site.url }}/blog/{{ post.slug }}/" class="hover:text-blue-400 transition-colors duration-300">
                 {{ post.title }}
             </a>
         </h2>
@@ -22,10 +22,12 @@
 
         <hr />
 
-        <p>
-            <a href="{{ site.url }}/blog/{{ post.slug }}/">
-                {{ post.summary }}
+        <div class="mt-3">
+            <a href="{{ site.url }}/blog/{{ post.slug }}/"> 
+                <p>
+                    {{ post.summary }}
+                </p>
             </a>
-        </p>
+        </div>
     </section>
 {% endfor %}

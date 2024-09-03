@@ -133,12 +133,12 @@
      <div class="my-3 flex flex-wrap"><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">prometheus</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">python</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">pandas</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">dataframe</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">vmware exporter</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">fastapi</span></div>
     </img>
    </header> <article><h2 class="text-3xl font-bold my-5 leading-snug">Contexte</h2>
-    <p class="text-base my-3 leading-relaxed">Dans ma mission actuelle, afin de mettre en place une fédération de métriques, nous devons collecter des métriques VMware.</p>
-    <p class="text-base my-3 leading-relaxed">Nous avons donc utilisé le <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda/vmware_exporter">vmware_exporter</a> de <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda">Daniel Pryor</a>, et pour ne pas le modifier, j'ai écrit une petite interface avec fastapi.</p>
-    <p class="text-base my-3 leading-relaxed">Les métriques sont récupérées par fastapi, analysées, enrichies, resérialisées, et récoltées par prometheus.</p>
-    <p class="text-base my-3 leading-relaxed">Les noms des métriques doivent être mappés, car ils sont unifiés avec les métriques d'openstack et d'IBM cloud.</p>
-    <p class="text-base my-3 leading-relaxed">La table de mappage est celle ci-dessous :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Dans ma mission actuelle, afin de mettre en place une fédération de métriques, nous devons collecter des métriques VMware.</p>
+    <p class="text-base leading-relaxed">Nous avons donc utilisé le <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda/vmware_exporter">vmware_exporter</a> de <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda">Daniel Pryor</a>, et pour ne pas le modifier, j'ai écrit une petite interface avec fastapi.</p>
+    <p class="text-base leading-relaxed">Les métriques sont récupérées par fastapi, analysées, enrichies, resérialisées, et récoltées par prometheus.</p>
+    <p class="text-base leading-relaxed">Les noms des métriques doivent être mappés, car ils sont unifiés avec les métriques d'openstack et d'IBM cloud.</p>
+    <p class="text-base leading-relaxed">La table de mappage est celle ci-dessous :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 MAPPING_METRICS_NAME = {
     "vmware_vm_power_state" : "power_state"
@@ -150,10 +150,10 @@ MAPPING_METRICS_NAME = {
 }</pre>
     </p>
     <h2 class="text-3xl font-bold my-5 leading-snug">Étape 1 : Analyse des métriques de vmware_exporter</h2>
-    <p class="text-base my-3 leading-relaxed">L'exportateur est appelé depuis une fonction nommée request_exporter().</p>
-    <p class="text-base my-3 leading-relaxed">La sortie de l'exportateur est un grand fichier str qui doit être analysé pour être traité.</p>
-    <p class="text-base my-3 leading-relaxed">J'ai utilisé prometheus_client.parser pour cela.</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">L'exportateur est appelé depuis une fonction nommée request_exporter().</p>
+    <p class="text-base leading-relaxed">La sortie de l'exportateur est un grand fichier str qui doit être analysé pour être traité.</p>
+    <p class="text-base leading-relaxed">J'ai utilisé prometheus_client.parser pour cela.</p>
+    <p class="text-base leading-relaxed">
      <pre>
 from prometheus_client.parser import text_string_to_metric_families
 
@@ -161,10 +161,10 @@ data_from_exporter = request_exporter(target)
 metric_families = text_string_to_metric_families(data_from_exporter)
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">La variable metric_families est un objet à plusieurs niveaux contenant des métriques regroupées par nom de métrique.</p>
-    <p class="text-base my-3 leading-relaxed">Elle peut être représentée comme un dict, où la clé est le metric_name et la valeur est une liste contenant toutes les métriques sous forme de tuples.</p>
-    <p class="text-base my-3 leading-relaxed">Exemple :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">La variable metric_families est un objet à plusieurs niveaux contenant des métriques regroupées par nom de métrique.</p>
+    <p class="text-base leading-relaxed">Elle peut être représentée comme un dict, où la clé est le metric_name et la valeur est une liste contenant toutes les métriques sous forme de tuples.</p>
+    <p class="text-base leading-relaxed">Exemple :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 {
     "vmware_vm_power_state": [
@@ -174,8 +174,8 @@ metric_families = text_string_to_metric_families(data_from_exporter)
 }
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">J'ai donc fait un petit algorithme pour aplatir l'objet en une liste de dicts :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">J'ai donc fait un petit algorithme pour aplatir l'objet en une liste de dicts :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 processed_exporter_data = []
 
@@ -191,8 +191,8 @@ for family in data_from exporter:
         processed exporter_data.append(row_dict)
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">J'aurai alors une liste de dicts, à partir de laquelle un dataframe peut être créé.</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">J'aurai alors une liste de dicts, à partir de laquelle un dataframe peut être créé.</p>
+    <p class="text-base leading-relaxed">
      <pre>
 [
     {"__name__": "vmware_vm_power_state", "vm_name": "vm1", "value": 1},
@@ -200,18 +200,18 @@ for family in data_from exporter:
 ]
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">Maintenant, jouons avec les dataframes...</p>
+    <p class="text-base leading-relaxed">Maintenant, jouons avec les dataframes...</p>
     <h2 class="text-3xl font-bold my-5 leading-snug">Étape 2 : Jouer avec les dataframes</h2>
-    <p class="text-base my-3 leading-relaxed">Tout d'abord, je crée le dataframe :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Tout d'abord, je crée le dataframe :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 import pandas
 
 metrics_df = pandas.DataFrame(processed_exporter_data)
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">Ensuite, je supprime les étiquettes inutiles :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Ensuite, je supprime les étiquettes inutiles :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 metrics_df.drop(
     colums=[
@@ -225,37 +225,37 @@ metrics_df.drop(
 )
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">De cette façon, j'utilise le dataframe pour supprimer les 4 colonnes.
+    <p class="text-base leading-relaxed">De cette façon, j'utilise le dataframe pour supprimer les 4 colonnes.
      <code>
       inplace=True</code>est utilisé pour écraser le dataframe existant et ne pas en créer un nouveau.</p>
-    <p class="text-base my-3 leading-relaxed">Ensuite, je dois fusionner les données de métriques avec les données de deux autres sources de données internes (une pour le référentiel des hôtes/vm, une pour les lignes métier).</p>
-    <p class="text-base my-3 leading-relaxed">Celles-ci sont également représentées sous forme de dataframes.</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Ensuite, je dois fusionner les données de métriques avec les données de deux autres sources de données internes (une pour le référentiel des hôtes/vm, une pour les lignes métier).</p>
+    <p class="text-base leading-relaxed">Celles-ci sont également représentées sous forme de dataframes.</p>
+    <p class="text-base leading-relaxed">
      <pre>
 businesslines_referential_df = referential_df.merge(
     businesslines_df, how="left", left_on="ecosystem", right_index=True
 )
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">Cette fusion enrichira le dataframe référentiel avec les données des lignes métier, de droite à gauche, selon le nom de l'écosystème et utilisera l'index du dataframe de droite comme clé de jointure.</p>
-    <p class="text-base my-3 leading-relaxed">Maintenant, il est temps de fusionner ce dataframe avec le dataframe des métriques.</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Cette fusion enrichira le dataframe référentiel avec les données des lignes métier, de droite à gauche, selon le nom de l'écosystème et utilisera l'index du dataframe de droite comme clé de jointure.</p>
+    <p class="text-base leading-relaxed">Maintenant, il est temps de fusionner ce dataframe avec le dataframe des métriques.</p>
+    <p class="text-base leading-relaxed">
      <pre>
 metrics_df = metrics_df.merge(
     businesslines_referential_df, how="inner", left_on="vm_name", right_index=True
 )
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">Cette fusion est faite avec la méthode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.</p>
-    <p class="text-base my-3 leading-relaxed">Maintenant, je remplace le nom de métrique original par le mappage dont nous avons parlé plus tôt :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Cette fusion est faite avec la méthode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.</p>
+    <p class="text-base leading-relaxed">Maintenant, je remplace le nom de métrique original par le mappage dont nous avons parlé plus tôt :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">Maintenant "vmware_vm_power_state" est mappé à "power_state".</p>
-    <p class="text-base my-3 leading-relaxed">Le résultat est similaire à ceci :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Maintenant "vmware_vm_power_state" est mappé à "power_state".</p>
+    <p class="text-base leading-relaxed">Le résultat est similaire à ceci :</p>
+    <p class="text-base leading-relaxed">
      <table border="1px" width="100%">
       <tr>
        <th>__name__</th>
@@ -273,16 +273,16 @@ metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)
       </tr>
      </table>
     </p>
-    <p class="text-base my-3 leading-relaxed">Maintenant, pour être récoltées par prometheus, ces données doivent être resérialisées.</p>
+    <p class="text-base leading-relaxed">Maintenant, pour être récoltées par prometheus, ces données doivent être resérialisées.</p>
     <h2 class="text-3xl font-bold my-5 leading-snug">Étape 3 : Comment ai-je resérialisé les données ?</h2>
-    <p class="text-base my-3 leading-relaxed">Les chaînes de métriques Prometheus sont assez simples :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Les chaînes de métriques Prometheus sont assez simples :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 metric_name{label1="value1", label2="value2"} 0
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">En utilisant une compréhension de liste, j'itère sur le dataframe pour imprimer une chaîne contenant au début le metric_name et à la fin la metric_value.</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">En utilisant une compréhension de liste, j'itère sur le dataframe pour imprimer une chaîne contenant au début le metric_name et à la fin la metric_value.</p>
+    <p class="text-base leading-relaxed">
      <pre>
 return "\n".join(
     [
@@ -292,15 +292,15 @@ return "\n".join(
 )
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">La partie délicate est de générer les étiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.</p>
-    <p class="text-base my-3 leading-relaxed">Un dict en python ressemble à
+    <p class="text-base leading-relaxed">La partie délicate est de générer les étiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.</p>
+    <p class="text-base leading-relaxed">Un dict en python ressemble à
      <code>
       {"key": "value"}</code>, nous devons générer une chaîne qui ressemble à
      <code>
       {label="value"}</code>
     </p>
-    <p class="text-base my-3 leading-relaxed">J'ai donc écrit une petite fonction qui génère cette chaîne.</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">J'ai donc écrit une petite fonction qui génère cette chaîne.</p>
+    <p class="text-base leading-relaxed">
      <pre>
 def generate_dict_label(row):
 
@@ -319,13 +319,13 @@ def generate_dict_label(row):
     )
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">Finalement, les données sérialisées ressemblent à :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Finalement, les données sérialisées ressemblent à :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">Maintenant, les métriques sont récoltées par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et resérialisera les données provenant d'un exportateur prometheus vmware.</p>
+    <p class="text-base leading-relaxed">Maintenant, les métriques sont récoltées par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et resérialisera les données provenant d'un exportateur prometheus vmware.</p>
    </article>
   </main>
   <footer class="px-5 mt-10 xl:px-0 bg-slate-900 text-gray-200 border-t border-gray-500">

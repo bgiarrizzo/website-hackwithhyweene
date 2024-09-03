@@ -132,17 +132,17 @@
      <p class="my-3 text-gray-400">Publié le 17 Oct 2021</p>
      <div class="my-3 flex flex-wrap"><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">apple</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">m1</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">postgres</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">python3.10</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">psycopg2</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">psycopg2-binary</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">installation</span></div>
     </img>
-   </header> <article><p class="text-base my-3 leading-relaxed">Le mois dernier, je me suis offert un Apple M1, un très bon ordinateur, puissant et avec une autonomie impressionnante.</p>
-    <p class="text-base my-3 leading-relaxed">Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqué.</p>
-    <p class="text-base my-3 leading-relaxed">J'essaie de travailler avec les dernières versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
-    <p class="text-base my-3 leading-relaxed">Je l'ai installé avec brew, assez facilement :</p>
-    <p class="text-base my-3 leading-relaxed">
+   </header> <article><p class="text-base leading-relaxed">Le mois dernier, je me suis offert un Apple M1, un très bon ordinateur, puissant et avec une autonomie impressionnante.</p>
+    <p class="text-base leading-relaxed">Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqué.</p>
+    <p class="text-base leading-relaxed">J'essaie de travailler avec les dernières versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
+    <p class="text-base leading-relaxed">Je l'ai installé avec brew, assez facilement :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 brew install python@3.10
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">J'ai eu des problèmes avec psycopg2-binary lors de l'installation des dépendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais était celui-ci :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">J'ai eu des problèmes avec psycopg2-binary lors de l'installation des dépendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais était celui-ci :</p>
+    <p class="text-base leading-relaxed">
      <pre>Error: pg_config executable not found.
 
 pg_config is required to build psycopg2 from source.  Please add the directory
@@ -153,26 +153,26 @@ option:
 
 or with the pg_config option in 'setup.cfg'.</pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">Il semble qu'il manque un fichier de configuration. J'ai essayé de résoudre ce problème en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Il semble qu'il manque un fichier de configuration. J'ai essayé de résoudre ce problème en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 brew install postgresql@12
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">À ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette façon (en utilisant ZSH, il me dit évidemment de l'écrire dans .zshrc) :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">À ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette façon (en utilisant ZSH, il me dit évidemment de l'écrire dans .zshrc) :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' &gt; ~/.zshrc
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">Maintenant, tout est prêt, et je peux l'installer comme je le souhaite :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Maintenant, tout est prêt, et je peux l'installer comme je le souhaite :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 pip(3) install psycopg2-binary
 </pre>
     </p>
-    <p class="text-base my-3 leading-relaxed">Ou dans le répertoire de mon projet :</p>
-    <p class="text-base my-3 leading-relaxed">
+    <p class="text-base leading-relaxed">Ou dans le répertoire de mon projet :</p>
+    <p class="text-base leading-relaxed">
      <pre>
 pipenv install psycopg2-binary
 </pre>

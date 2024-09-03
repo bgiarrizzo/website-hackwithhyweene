@@ -22,7 +22,7 @@ class AddClassTreeprocessor(Treeprocessor):
 
         # Paragraphs
         for elem in root.iter("p"):
-            elem.set("class", "text-base my-3 leading-relaxed")
+            elem.set("class", "text-base leading-relaxed")
 
         # Links
         for elem in root.iter("a"):

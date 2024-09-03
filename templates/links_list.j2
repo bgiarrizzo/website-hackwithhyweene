@@ -11,7 +11,7 @@
         {% for link in links_by_month %}
             <section class="p-5 rounded-lg bg-gray-900 my-8">
                 <h4 class="text-lg font-semibold">
-                    <a href="{{ link.url }}">
+                    <a href="{{ link.url }}" class="hover:text-sky-400 transition-colors duration-300">
                         {{ link.id }} - {{ link.title }}
                     </a>
                 </h4>
@@ -30,7 +30,9 @@
 
                 <hr />
 
-                <p>{{ link.body }}</p>
+                <div class="mt-3">
+                    {{ link.body }}
+                </div>
             </section>
         {% endfor %}
 
