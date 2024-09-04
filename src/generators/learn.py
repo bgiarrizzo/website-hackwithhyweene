@@ -12,7 +12,10 @@ def create_path(*args):
 
 def generate_module_page(page):
     template_name = "learn/page.j2"
-    data = {"learn": page}
+    data = {
+        "learn": page,
+        "page_title": f"{page.get('title')} - {page.get('module')} - Apprendre",
+    }
     filename = f"apprendre/{page.get('path')}/index.html"
 
     write_file(data, template_name, filename)
@@ -27,6 +30,7 @@ def generate_module_table_of_contents(module_data):
     template_name = "learn/module_toc.j2"
 
     data = {
+        "page_title": f"Table des matières - {module_data.get('name')} - Apprendre",
         "module": {
             "name": module_data.get("name"),
         },
@@ -50,6 +54,9 @@ def prepare_learn_data(module_path):
     )
 
     for page in module_pages:
+        if page.get("disabled"):
+            continue
+        
         category_id = page.get("category_id")
         category_name = page.get("category")
         category_slug = page.get("category-slug")
@@ -91,6 +98,7 @@ def prepare_learn_data(module_path):
                 "slug": page.get("slug"),
                 "path": create_path(category_slug, module_slug, page.get("slug")),
                 "summary": page.get("summary"),
+                "module": module_name,
             }
         )
 
@@ -111,7 +119,10 @@ def prepare_learn_data(module_path):
 
 def generate_table_of_contents(table_of_contents):
     template_name = "learn/global_toc.j2"
-    data = {"table_of_contents": table_of_contents.get("categories")}
+    data = {
+        "page_title": "Table des matières - Apprendre",
+        "table_of_contents": table_of_contents.get("categories"),
+    }
     filename = "apprendre/index.html"
 
     write_file(data, template_name, filename)

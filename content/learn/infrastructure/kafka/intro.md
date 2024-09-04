@@ -7,6 +7,8 @@ module_description: "Kafka est une plateforme de streaming distribuée qui peut 
 module_logo: logo.jpg
 category: Infrastructure
 category_id: 5
+
+disabled: true
 ---
 
 Test

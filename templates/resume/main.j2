@@ -13,27 +13,27 @@
         <h2 class="text-2xl font-semibold my-3">Work Experience</h2>
 
         {% for experience in resume.experiences|reverse %}
-            <section class="mb-4">
-
-                <header class="my-4">
-                    <h3 class="text-xl font-semibold border-b border-gray-400 my-3">{{ experience.company }}</h3>
-                    <p class="font-bold">{{ experience.title }} - ({{ experience.contract_type }}) : {{ experience.start_date }} - {{ experience.end_date }}</p>
+            <section class="p-5 rounded-lg bg-gray-900 my-8">
+                <header class="border-b border-gray-400 mb-4">
+                    <h3 class="text-xl font-semibold mb-3">{{ experience.company }}</h3>
+                    <p class="font-bold mb-4">{{ experience.title }} - ({{ experience.contract_type }}) : {{ experience.start_date }} - {{ experience.end_date }}</p>
                 </header>
 
                 <main>
                     {{ experience.body }}
+                </main>
 
-                    {% if experience.tags %}
-                        <div class="mt-2 flex flex-wrap"">
+                {% if experience.tags %}
+                    <footer class="border-t border-gray-400">
+                        <div class="mt-4 flex flex-wrap"">
                             {% for tag in experience.tags %}
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">
                                     {{ tag }}
                                 </span>
                             {% endfor %}
                         </div>
-                    {% endif %}
-                </main>
-
+                    </footer>
+                {% endif %}
             </section>
         {% endfor %}
     {% endif %}
@@ -44,18 +44,19 @@
         <h2 class="text-2xl font-semibold my-3">Education</h2>
 
         {% for education in resume.educations|reverse %}
-            <section class="mb-4">
-
-                <header>
-                    <h3 class="text-xl font-semibold border-b border-gray-400 my-3">{{ education.title }}</h3>
+            <section class="p-5 rounded-lg bg-gray-900 my-8">
+                <header class="mb-4">
+                    <h3 class="text-xl font-semibold mb-3 border-b border-gray-400">{{ education.title }}</h3>
                     <p class="font-bold">{{ education.school }} - {{ education.formation_type }}</p>
                     <p>{{ education.start_date }} - {{ education.end_date }} ( {{ education.status }} )</p>
                 </header>
 
                 <main>
                     {{ education.body }}
+                </main>
 
-                    {% if education.tags %}
+                {% if education.tags %}
+                    <footer class="border-t border-gray-400">
                         <div class="mt-2 flex flex-wrap"">
                             {% for tag in education.tags %}
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">
@@ -63,9 +64,8 @@
                                 </span>
                             {% endfor %}
                         </div>
-                    {% endif %}
-                </main>
-
+                    </footer>
+                {% endif %}
             </section>
         {% endfor %}
     {% endif %}

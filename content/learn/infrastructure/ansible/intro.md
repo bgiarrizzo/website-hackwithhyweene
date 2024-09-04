@@ -7,6 +7,8 @@ module_description: "Ansible est un outil open-source de gestion de configuratio
 module_logo: logo.png
 category: Infrastructure
 category_id: 5
+
+disabled: true
 ---
 
 Test

@@ -1,0 +1,16 @@
+
+<header>
+  {% if page.cover %}
+    <img src="/media/images/pages/{{ page.cover }}" class="w-full object-cover object-center rounded-lg shadow-lg mb-5">
+  {% endif %}
+
+  {% if page.title %}
+    <h1 class="text-4xl font-semibold mb-4">
+      {{ page.title }}
+    </h1>
+  {% endif %}
+</header>
+
+<section>
+  {{ page.body }}
+</section>

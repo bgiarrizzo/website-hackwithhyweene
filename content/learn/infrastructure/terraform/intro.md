@@ -7,6 +7,8 @@ module_description: "Terraform est un outil open-source d'infrastructure en tant
 module_logo: logo.png
 category: Infrastructure
 category_id: 5
+
+disabled: true
 ---
 
 Test

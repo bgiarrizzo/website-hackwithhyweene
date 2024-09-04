@@ -9,15 +9,18 @@ from utils.slug import add_slug
 
 def generate_rss_feed(links: list):
     data = {"links": links}
-    template_name = "links_feed_rss.j2"
+    template_name = "links/feed_rss.j2"
     filename = "liens/feed.xml"
 
     write_file(data, template_name, filename)
 
 
 def generate_link_page_list(links):
-    data = {"all_links": links}
-    template_name = "links_list.j2"
+    data = {
+        "page_title": "Liens",
+        "all_links": links
+    }
+    template_name = "links/list.j2"
     filename = "liens/index.html"
 
     write_file(data, template_name, filename)

@@ -6,8 +6,11 @@ from utils.slug import add_slug
 
 
 def generate_page(page):
-    template_name = "page.j2"
-    data = {"page": page}
+    template_name = "page/main.j2"
+    data = {
+        "page_title": page.get("title"),
+        "page": page
+    }
     filename = f"{page['permalink']}/index.html"
 
     write_file(data, template_name, filename)

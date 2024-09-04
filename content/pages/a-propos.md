@@ -2,6 +2,7 @@
 title: À propos
 meta_title: À propos
 permalink: a-propos
+cover: about/cover.jpg
 ---
 
 Bienvenue sur mon site ! Je suis Bruno Giarrizzo, un développeur passionné et un expert en DevOps basé à Lille, dans le Nord de la France. Avec plus de 10 ans d'expérience dans le domaine de l'informatique, j'ai acquis une solide expertise en tant que SysOps et DevOps, ainsi qu'en développement Python et Golang.

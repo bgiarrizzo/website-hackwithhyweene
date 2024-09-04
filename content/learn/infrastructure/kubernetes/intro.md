@@ -7,6 +7,8 @@ module_description: "Kubernetes est une plateforme open-source qui automatise le
 module_logo: logo.png
 category: Infrastructure
 category_id: 5
+
+disabled: true
 ---
 
 Test

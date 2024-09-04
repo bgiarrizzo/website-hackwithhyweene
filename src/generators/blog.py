@@ -6,23 +6,29 @@ from utils.slug import add_slug
 
 def generate_rss_feed(posts: list):
     data = {"posts": posts}
-    template_name = "blog_feed_rss.j2"
+    template_name = "blog/feed_rss.j2"
     filename = "blog/feed.xml"
 
     write_file(data=data, template_name=template_name, filename=filename)
 
 
 def generate_blog_post(post):
-    data = {"post": post}
-    template_name = "blog_post.j2"
+    data = {
+        "page_title": f"{post.get("title")} - Blog",
+        "post": post
+    }
+    template_name = "blog/single.j2"
     filename = f"blog/{post['slug']}/index.html"
 
     write_file(data=data, template_name=template_name, filename=filename)
 
 
 def generate_blog_page_list(posts: list):
-    data = {"all_posts": posts}
-    template_name = "blog_post_list.j2"
+    data = {
+        "page_title": "Blog",
+        "all_posts": posts
+    }
+    template_name = "blog/list.j2"
     filename = "blog/index.html"
 
     write_file(data=data, template_name=template_name, filename=filename)

@@ -5,8 +5,11 @@ from utils.markdown import parse_markdown_files_and_convert_to_html
 
 
 def write_resume(resume):
-    data = {"resume": resume}
-    template_name = "resume.j2"
+    data = {
+        "page_title": "Bruno Giarrizzo - CV",
+        "resume": resume
+    }
+    template_name = "resume/main.j2"
     filename = "cv/index.html"
 
     write_file(data, template_name, filename)
