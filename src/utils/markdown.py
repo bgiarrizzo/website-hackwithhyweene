@@ -28,7 +28,7 @@ class AddClassTreeprocessor(Treeprocessor):
         for elem in root.iter("a"):
             elem.set(
                 "class",
-                "text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300"
+                "text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300",
             )
 
         # Lists
@@ -39,7 +39,10 @@ class AddClassTreeprocessor(Treeprocessor):
 
         # Blockquotes
         for elem in root.iter("blockquote"):
-            elem.set("class", "border-l-4 border-gray-300 pl-4 py-2 italic my-4 text-gray-600")
+            elem.set(
+                "class",
+                "border-l-4 border-gray-300 pl-4 py-2 italic my-4 text-gray-600",
+            )
 
         # Code blocks
         for elem in root.iter("pre"):
@@ -62,7 +65,10 @@ class AddClassTreeprocessor(Treeprocessor):
         for elem in root.iter("thead"):
             elem.set("class", "bg-gray-100")
         for elem in root.iter("th"):
-            elem.set("class", "border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700")
+            elem.set(
+                "class",
+                "border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700",
+            )
         for elem in root.iter("td"):
             elem.set("class", "border border-gray-300 px-4 py-2 text-gray-600")
 

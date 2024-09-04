@@ -1,6 +1,7 @@
-from utils.file import write_file
 from generators.blog import prepare_blog_post_data
 from generators.links import prepare_link_data
+from utils.file import write_file
+
 
 def write_homepage(posts, links):
     data = {"posts": posts, "links": links}
@@ -16,6 +17,7 @@ def get_blog_posts_links_data(blog_path, links_path):
 
     return posts, links
 
+
 def generate_homepage(blog_path, links_path):
     posts, links = get_blog_posts_links_data(blog_path, links_path)
 
@@ -23,6 +25,5 @@ def generate_homepage(blog_path, links_path):
     print("Generating homepage ...")
 
     write_homepage(posts, links)
-
 
     # write_homepage()

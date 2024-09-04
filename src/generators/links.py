@@ -2,9 +2,9 @@ from slugify import slugify
 
 from utils.date import add_multiple_date_formats
 from utils.file import get_all_files_from_path, write_file
+from utils.id import add_id
 from utils.markdown import parse_markdown_files_and_convert_to_html
 from utils.slug import add_slug
-from utils.id import add_id
 
 
 def generate_rss_feed(links: list):
@@ -13,7 +13,7 @@ def generate_rss_feed(links: list):
     filename = "liens/feed.xml"
 
     write_file(data, template_name, filename)
-    
+
 
 def generate_link_page_list(links):
     data = {"all_links": links}

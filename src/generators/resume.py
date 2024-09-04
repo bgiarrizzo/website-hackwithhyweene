@@ -1,7 +1,7 @@
 from config import settings
-from utils.markdown import parse_markdown_files_and_convert_to_html
-from utils.format import beautify_html
 from utils.file import get_all_files_from_path, write_file
+from utils.format import beautify_html
+from utils.markdown import parse_markdown_files_and_convert_to_html
 
 
 def write_resume(resume):
@@ -10,6 +10,7 @@ def write_resume(resume):
     filename = "cv/index.html"
 
     write_file(data, template_name, filename)
+
 
 def generate_resume_head(dataset: list, data: dict):
     for head in dataset:
@@ -61,6 +62,7 @@ def prepare_resume_data(resume_path):
 
     return head, experiences, educations
 
+
 def generate_resume(resume_path):
     print("Generating resume ...")
 
@@ -73,16 +75,12 @@ def generate_resume(resume_path):
     }
 
     print("Generating header ...")
-    resume = resume | generate_resume_head(dataset=head, data=resume)
+    resume |= generate_resume_head(dataset=head, data=resume)
 
     print("Generating education part ...")
-    resume = resume | generate_resume_education(
-        dataset=educations, data=resume
-    )
+    resume |= generate_resume_education(dataset=educations, data=resume)
 
     print("Generating experience part ...")
-    resume = resume | generate_resume_experience(
-        dataset=experiences, data=resume
-    )
+    resume |= generate_resume_experience(dataset=experiences, data=resume)
 
     write_resume(resume)
