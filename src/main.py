@@ -4,10 +4,10 @@ from config import settings
 from generators.blog import generate_blog
 from generators.cname import add_cname_to_build
 from generators.homepage import generate_homepage
+from generators.learn import generate_learning
 from generators.links import generate_links
 from generators.pages import generate_pages
 from generators.resume import generate_resume
-from generators.learning import generate_learning
 from utils.collection import collect_media_files, collect_static_files
 
 if __name__ == "__main__":

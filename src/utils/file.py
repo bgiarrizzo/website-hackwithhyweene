@@ -8,7 +8,8 @@ def get_all_files_from_path(target_path) -> list:
     file_list = []
     for root, dirs, files in walk(target_path):
         for file in sorted(files):
-            file_list.append(path.join(root, file))
+            if file.endswith(".md"):
+                file_list.append(path.join(root, file))
     return file_list
 
 
