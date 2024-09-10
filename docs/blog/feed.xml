@@ -119,13 +119,13 @@
        <p class="text-base my-3 leading-relaxed">Je l'ai installé avec brew, assez facilement :</p>
        <p class="text-base my-3 leading-relaxed">
         <pre>
-<code class="language-bash rounded-lg">brew install python@3.10</code>
+<code class="language-bash">brew install python@3.10</code>
 </pre>
        </p>
        <p class="text-base my-3 leading-relaxed">J'ai eu des problèmes avec psycopg2-binary lors de l'installation des dépendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais était celui-ci :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-bash rounded-lg">Error: pg_config executable not found.
+        <pre class="rounded-xl">
+<code class="language-bash">Error: pg_config executable not found.
 
 pg_config is required to build psycopg2 from source.  Please add the directory
 containing pg_config to the $PATH or specify the full executable path with the
@@ -138,26 +138,26 @@ or with the pg_config option in 'setup.cfg'.</code>
        </p>
        <p class="text-base my-3 leading-relaxed">Il semble qu'il manque un fichier de configuration. J'ai essayé de résoudre ce problème en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-bash rounded-lg">brew install postgresql@12</code>
+        <pre class="rounded-xl">
+<code class="language-bash">brew install postgresql@12</code>
 </pre>
        </p>
        <p class="text-base my-3 leading-relaxed">À ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette façon (en utilisant ZSH, il me dit évidemment de l'écrire dans .zshrc) :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-bash rounded-lg">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' &gt; ~/.zshrc</code>
+        <pre class="rounded-xl">
+<code class="language-bash">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' &gt; ~/.zshrc</code>
 </pre>
        </p>
        <p class="text-base my-3 leading-relaxed">Maintenant, tout est prêt, et je peux l'installer comme je le souhaite :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-bash rounded-lg">pip(3) install psycopg2-binary</code>
+        <pre class="rounded-xl">
+<code class="language-bash">pip(3) install psycopg2-binary</code>
 </pre>
        </p>
        <p class="text-base my-3 leading-relaxed">Ou dans le répertoire de mon projet :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-bash rounded-lg">pipenv install psycopg2-binary</code>
+        <pre class="rounded-xl">
+<code class="language-bash">pipenv install psycopg2-binary</code>
 </pre>
        </p>
       </content>
@@ -180,8 +180,8 @@ or with the pg_config option in 'setup.cfg'.</code>
        <p class="text-base my-3 leading-relaxed">Les noms des métriques doivent être mappés, car ils sont unifiés avec les métriques d'openstack et d'IBM cloud.</p>
        <p class="text-base my-3 leading-relaxed">La table de mappage est celle ci-dessous :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">MAPPING_METRICS_NAME = {
+        <pre class="rounded-xl">
+<code class="language-python">MAPPING_METRICS_NAME = {
     "vmware_vm_power_state" : "power_state"
     "vmware_vm_cpu_usage_average"': "cpu_usage_percentage"
     "vmware_vm_mem_consumed_average": "memory_used"
@@ -196,8 +196,8 @@ or with the pg_config option in 'setup.cfg'.</code>
        <p class="text-base my-3 leading-relaxed">La sortie de l'exporter est un grand fichier str qui doit être analysé pour être traité.</p>
        <p class="text-base my-3 leading-relaxed">J'ai utilisé prometheus_client.parser pour cela.</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">from prometheus_client.parser import text_string_to_metric_families
+        <pre class="rounded-xl">
+<code class="language-python">from prometheus_client.parser import text_string_to_metric_families
 
 data_from_exporter = request_exporter(target)
 metric_families = text_string_to_metric_families(data_from_exporter)</code>
@@ -207,8 +207,8 @@ metric_families = text_string_to_metric_families(data_from_exporter)</code>
        <p class="text-base my-3 leading-relaxed">Elle peut être représentée comme un dict, où la clé est le metric_name et la valeur est une liste contenant toutes les métriques sous forme de tuples.</p>
        <p class="text-base my-3 leading-relaxed">Exemple :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">{
+        <pre class="rounded-xl">
+<code class="language-python">{
     "vmware_vm_power_state": [
         ("vmware_vm_power_state", {"vm_name": "vm1", "label2": "value2"}, 1),
         ("vmware_vm_power_state", {"vm_name": "vm2", "label2": "value2"}, 0),
@@ -218,8 +218,8 @@ metric_families = text_string_to_metric_families(data_from_exporter)</code>
        </p>
        <p class="text-base my-3 leading-relaxed">J'ai donc fait un petit algorithme pour aplatir l'objet en une liste de dicts :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">processed_exporter_data = []
+        <pre class="rounded-xl">
+<code class="language-python">processed_exporter_data = []
 
 for family in data_from exporter:
     if family.name not in MAPPING_METRICS_NAME:
@@ -235,8 +235,8 @@ for family in data_from exporter:
        </p>
        <p class="text-base my-3 leading-relaxed">J'aurai alors une liste de dicts, à partir de laquelle un dataframe peut être créé.</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">[
+        <pre class="rounded-xl">
+<code class="language-python">[
     {"__name__": "vmware_vm_power_state", "vm_name": "vm1", "value": 1},
     {"__name__": "vmware_vm_power_state", "vm_name": "vm2", "value": 0},
 ]</code>
@@ -246,8 +246,8 @@ for family in data_from exporter:
        <h2 class="text-3xl font-bold my-5 leading-snug">Étape 2 : Jouer avec les dataframes</h2>
        <p class="text-base my-3 leading-relaxed">Tout d'abord, je crée le dataframe :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">import pandas
+        <pre class="rounded-xl">
+<code class="language-python">import pandas
 
 metrics_df = pandas.DataFrame(processed_exporter_data)</code>
 </pre>
@@ -255,7 +255,7 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
        <p class="text-base my-3 leading-relaxed">Ensuite, je supprime les étiquettes inutiles :</p>
        <p class="text-base my-3 leading-relaxed">
         <pre>
-<code class="language-python rounded-lg">metrics_df.drop(
+<code class="language-python">metrics_df.drop(
     colums=[
         "host_name",
         "ds_name",
@@ -268,13 +268,13 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
 </pre>
        </p>
        <p class="text-base my-3 leading-relaxed">De cette façon, j'utilise le dataframe pour supprimer les 4 colonnes.
-        <code class="language-python rounded-lg">
+        <code class="language-python">
          inplace=True</code>est utilisé pour écraser le dataframe existant et ne pas en créer un nouveau.</p>
        <p class="text-base my-3 leading-relaxed">Ensuite, je dois fusionner les données de métriques avec les données de deux autres sources de données internes (une pour le référentiel des hôtes/vm, une pour les lignes métier).</p>
        <p class="text-base my-3 leading-relaxed">Celles-ci sont également représentées sous forme de dataframes.</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">businesslines_referential_df = referential_df.merge(
+        <pre class="rounded-xl">
+<code class="language-python">businesslines_referential_df = referential_df.merge(
     businesslines_df, how="left", left_on="ecosystem", right_index=True
 )</code>
 </pre>
@@ -282,8 +282,8 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
        <p class="text-base my-3 leading-relaxed">Cette fusion enrichira le dataframe référentiel avec les données des lignes métier, de droite à gauche, selon le nom de l'écosystème et utilisera l'index du dataframe de droite comme clé de jointure.</p>
        <p class="text-base my-3 leading-relaxed">Maintenant, il est temps de fusionner ce dataframe avec le dataframe des métriques.</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">metrics_df = metrics_df.merge(
+        <pre class="rounded-xl">
+<code class="language-python">metrics_df = metrics_df.merge(
     businesslines_referential_df, how="inner", left_on="vm_name", right_index=True
 )</code>
 </pre>
@@ -291,8 +291,8 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
        <p class="text-base my-3 leading-relaxed">Cette fusion est faite avec la méthode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.</p>
        <p class="text-base my-3 leading-relaxed">Maintenant, je remplace le nom de métrique original par le mappage dont nous avons parlé plus tôt :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)
+        <pre class="rounded-xl">
+<code class="language-python">metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)
 </code>
 </pre>
        </p>
@@ -320,14 +320,14 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
        <h2 class="text-3xl font-bold my-5 leading-snug">Étape 3 : Comment ai-je resérialisé les données ?</h2>
        <p class="text-base my-3 leading-relaxed">Les chaînes de métriques Prometheus sont assez simples :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">metric_name{label1="value1", label2="value2"} 0</code>
+        <pre class="rounded-xl">
+<code class="language-python">metric_name{label1="value1", label2="value2"} 0</code>
 </pre>
        </p>
        <p class="text-base my-3 leading-relaxed">En utilisant une compréhension de liste, j'itère sur le dataframe pour imprimer une chaîne contenant au début le metric_name et à la fin la metric_value.</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">return "\n".join(
+        <pre class="rounded-xl">
+<code class="language-python">return "\n".join(
     [
         f"{row['__name__']}{generate_dict_label(row)} {row['value']}"
         for index, row in metrics df.iterrows()
@@ -337,15 +337,15 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
        </p>
        <p class="text-base my-3 leading-relaxed">La partie délicate est de générer les étiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.</p>
        <p class="text-base my-3 leading-relaxed">Un dict en python ressemble à
-        <code class="language-python rounded-lg">
+        <code class="language-python">
          {"key": "value"}</code>, nous devons générer une chaîne qui ressemble à
-        <code class="language-python rounded-lg">
+        <code class="language-python">
          {label="value"}</code>
        </p>
        <p class="text-base my-3 leading-relaxed">J'ai donc écrit une petite fonction qui génère cette chaîne.</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">def generate_dict_label(row):
+        <pre class="rounded-xl">
+<code class="language-python">def generate_dict_label(row):
 
     labels = set(row.index) - {"__name__", "value"}
 
@@ -364,8 +364,8 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
        </p>
        <p class="text-base my-3 leading-relaxed">Finalement, les données sérialisées ressemblent à :</p>
        <p class="text-base my-3 leading-relaxed">
-        <pre>
-<code class="language-python rounded-lg">power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1</code>
+        <pre class="rounded-xl">
+<code class="language-python">power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1</code>
 </pre>
        </p>
        <p class="text-base my-3 leading-relaxed">Maintenant, les métriques sont récoltées par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et resérialisera les données provenant d'un exporter prometheus vmware.</p>
@@ -378,7 +378,7 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
    <div class="mx-auto lg:max-w-4xl">
     <div class="pt-5 pb-5 grid grid-cols-1 md:grid-cols-4 md:gap-4">
      <div class="mx-auto md:mx-0 md:col-span-1">
-      <img alt="logo" class="aspect-square object-fill rounded-lg" loading="lazy" src="/static/img/hyweene.jpg">
+      <img alt="logo" class="aspect-square object-fill rounded-xl" loading="lazy" src="/static/img/hyweene.jpg">
       </img>
      </div>
      <div class="pt-5 md:pl-5 md:pt-0 my-auto md:col-span-3 text-md text-gray-200">

@@ -1,0 +1,254 @@
+# Python
+
+## 1. Introduction à Python
+
+### 1.1 Histoire et philosophie de Python
+
+- Origines et évolution de Python
+- La philosophie "Zen of Python"
+- Comparaison avec d'autres langages de programmation
+
+### 1.2 Premiers pas avec Python
+
+- Utilisation de l'interpréteur Python interactif
+- Écriture et exécution de scripts Python simples
+- Comprendre l'indentation et la structure de base d'un programme Python
+
+## 2. Fondamentaux de Python
+
+### 2.1 Types de données de base
+
+- Nombres (int, float, complex)
+- Chaînes de caractères (str)
+- Booléens (bool)
+- None
+
+### 2.2 Variables et opérateurs
+
+- Déclaration et affectation de variables
+- Opérateurs arithmétiques, de comparaison et logiques
+- Priorité des opérateurs
+
+### 2.3 Structures de contrôle
+
+- Conditions (if, elif, else)
+- Boucles (for, while)
+- Contrôle de boucle (break, continue, pass)
+
+### 2.4 Structures de données
+
+- Listes
+- Tuples
+- Ensembles (sets)
+- Dictionnaires
+
+### 2.5 Fonctions
+
+- Définition et appel de fonctions
+- Arguments et paramètres
+- Valeurs de retour
+- Fonctions lambda
+
+### 2.6 Modules et packages
+
+- Importation de modules
+- Création de modules personnalisés
+- Utilisation de packages
+
+## 3. Programmation orientée objet (POO) en Python
+
+### 3.1 Concepts de base de la POO
+
+- Classes et objets
+- Attributs et méthodes
+- Constructeurs et destructeurs
+
+### 3.2 Héritage et polymorphisme
+
+- Héritage simple et multiple
+- Surcharge de méthodes
+- Méthodes et classes abstraites
+
+### 3.3 Encapsulation
+
+- Modificateurs d'accès (public, protected, private)
+- Propriétés et décorateurs
+
+### 3.4 Concepts avancés de POO
+
+- Métaclasses
+- Descripteurs
+- Méthodes magiques (dunder methods)
+
+## 4. Gestion des exceptions et débogage
+
+### 4.1 Gestion des exceptions
+
+- Try, except, else, finally
+- Levée d'exceptions personnalisées
+- Gestion des exceptions en contexte
+
+### 4.2 Techniques de débogage
+
+- Utilisation du débogueur intégré (pdb)
+- Logging
+- Assertions
+
+## 5. Entrées/Sorties et manipulation de fichiers
+
+### 5.1 Entrées/Sorties standard
+
+- Lecture depuis la console (input)
+- Affichage dans la console (print)
+- Formatage de chaînes
+
+### 5.2 Manipulation de fichiers
+
+- Ouverture, lecture et écriture de fichiers
+- Gestion des chemins avec le module os.path
+- Travail avec les fichiers CSV, JSON, et XML
+
+## 6. Programmation fonctionnelle en Python
+
+### 6.1 Concepts de base
+
+- Fonctions de première classe
+- Fonctions pures
+- Récursivité
+
+### 6.2 Outils de programmation fonctionnelle
+
+- map, filter, reduce
+- Compréhensions de liste, de dictionnaire et d'ensemble
+- Générateurs et itérateurs
+
+## 7. Modules Python standard importants
+
+### 7.1 Manipulation de chaînes et expressions régulières
+
+- string
+- re
+
+### 7.2 Mathématiques et nombres aléatoires
+
+- math
+- random
+
+### 7.3 Date et temps
+
+- datetime
+- time
+
+### 7.4 Système d'exploitation et système de fichiers
+
+- os
+- sys
+- shutil
+
+### 7.5 Multithreading et multiprocessing
+
+- threading
+- multiprocessing
+
+## 8. Développement web avec Python
+
+### 8.1 Frameworks web
+
+- Django
+- Flask
+- FastAPI
+
+### 8.2 Scraping web
+
+- Requests
+- BeautifulSoup
+- Scrapy
+
+### 8.3 APIs RESTful
+
+- Création d'APIs avec Flask/Django
+- Consommation d'APIs avec Requests
+
+## 9. Bases de données avec Python
+
+### 9.1 Bases de données relationnelles
+
+- SQLite avec le module sqlite3
+- PostgreSQL avec psycopg2
+- ORM avec SQLAlchemy
+
+### 9.2 Bases de données NoSQL
+
+- MongoDB avec PyMongo
+
+## 10. Data Science et Machine Learning avec Python
+
+### 10.1 Manipulation de données
+
+- NumPy
+- Pandas
+
+### 10.2 Visualisation de données
+
+- Matplotlib
+- Seaborn
+
+### 10.3 Machine Learning
+
+- Scikit-learn
+- TensorFlow / Keras
+
+## 11. Tests et qualité du code
+
+### 11.1 Tests unitaires
+
+- unittest
+- pytest
+
+### 11.2 Tests d'intégration et fonctionnels
+
+- Selenium pour les tests web
+
+### 11.3 Qualité du code
+
+- PEP 8 et style de code
+- Linting avec pylint ou flake8
+- Type hinting et mypy
+
+## 12. Déploiement et DevOps
+
+### 12.1 Gestion des dépendances
+
+- pip et requirements.txt
+- Environnements virtuels (venv, virtualenv)
+
+### 12.2 Conteneurisation
+
+- Docker pour Python
+
+### 12.3 CI/CD
+
+- GitHub Actions
+- Jenkins
+
+## 13. Sujets avancés
+
+### 13.1 Optimisation des performances
+
+- Profilage du code
+- Cython pour le code C en Python
+
+### 13.2 Concurrence et asynchronisme
+
+- asyncio
+- Coroutines
+
+### 13.3 Networking
+
+- Sockets
+- Twisted
+
+### 13.4 GUI Programming
+
+- Tkinter
+- PyQt

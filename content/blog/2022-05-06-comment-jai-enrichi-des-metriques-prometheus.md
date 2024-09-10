@@ -20,8 +20,8 @@ Les noms des métriques doivent être mappés, car ils sont unifiés avec les m�
 
 La table de mappage est celle ci-dessous :
 
-<pre>
-<code class="language-python rounded-lg">MAPPING_METRICS_NAME = {
+<pre class="rounded-xl">
+<code class="language-python">MAPPING_METRICS_NAME = {
     "vmware_vm_power_state" : "power_state"
     "vmware_vm_cpu_usage_average"': "cpu_usage_percentage"
     "vmware_vm_mem_consumed_average": "memory_used"
@@ -39,8 +39,8 @@ La sortie de l'exporter est un grand fichier str qui doit être analysé pour ê
 
 J'ai utilisé prometheus_client.parser pour cela.
 
-<pre>
-<code class="language-python rounded-lg">from prometheus_client.parser import text_string_to_metric_families
+<pre class="rounded-xl">
+<code class="language-python">from prometheus_client.parser import text_string_to_metric_families
 
 data_from_exporter = request_exporter(target)
 metric_families = text_string_to_metric_families(data_from_exporter)</code>
@@ -51,8 +51,8 @@ La variable metric_families est un objet à plusieurs niveaux contenant des mét
 Elle peut être représentée comme un dict, où la clé est le metric_name et la valeur est une liste contenant toutes les métriques sous forme de tuples.
 
 Exemple :
-<pre>
-<code class="language-python rounded-lg">{
+<pre class="rounded-xl">
+<code class="language-python">{
     "vmware_vm_power_state": [
         ("vmware_vm_power_state", {"vm_name": "vm1", "label2": "value2"}, 1),
         ("vmware_vm_power_state", {"vm_name": "vm2", "label2": "value2"}, 0),
@@ -62,8 +62,8 @@ Exemple :
 
 J'ai donc fait un petit algorithme pour aplatir l'objet en une liste de dicts :
 
-<pre>
-<code class="language-python rounded-lg">processed_exporter_data = []
+<pre class="rounded-xl">
+<code class="language-python">processed_exporter_data = []
 
 for family in data_from exporter:
     if family.name not in MAPPING_METRICS_NAME:
@@ -79,8 +79,8 @@ for family in data_from exporter:
 
 J'aurai alors une liste de dicts, à partir de laquelle un dataframe peut être créé.
 
-<pre>
-<code class="language-python rounded-lg">[
+<pre class="rounded-xl">
+<code class="language-python">[
     {"__name__": "vmware_vm_power_state", "vm_name": "vm1", "value": 1},
     {"__name__": "vmware_vm_power_state", "vm_name": "vm2", "value": 0},
 ]</code>
@@ -92,8 +92,8 @@ Maintenant, jouons avec les dataframes...
 
 Tout d'abord, je crée le dataframe :
 
-<pre>
-<code class="language-python rounded-lg">import pandas
+<pre class="rounded-xl">
+<code class="language-python">import pandas
 
 metrics_df = pandas.DataFrame(processed_exporter_data)</code>
 </pre>
@@ -101,7 +101,7 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
 Ensuite, je supprime les étiquettes inutiles :
 
 <pre>
-<code class="language-python rounded-lg">metrics_df.drop(
+<code class="language-python">metrics_df.drop(
     colums=[
         "host_name",
         "ds_name",
@@ -113,14 +113,14 @@ Ensuite, je supprime les étiquettes inutiles :
 )</code>
 </pre>
 
-De cette façon, j'utilise le dataframe pour supprimer les 4 colonnes. <code class="language-python rounded-lg">inplace=True</code> est utilisé pour écraser le dataframe existant et ne pas en créer un nouveau.
+De cette façon, j'utilise le dataframe pour supprimer les 4 colonnes. <code class="language-python">inplace=True</code> est utilisé pour écraser le dataframe existant et ne pas en créer un nouveau.
 
 Ensuite, je dois fusionner les données de métriques avec les données de deux autres sources de données internes (une pour le référentiel des hôtes/vm, une pour les lignes métier).
 
 Celles-ci sont également représentées sous forme de dataframes.
 
-<pre>
-<code class="language-python rounded-lg">businesslines_referential_df = referential_df.merge(
+<pre class="rounded-xl">
+<code class="language-python">businesslines_referential_df = referential_df.merge(
     businesslines_df, how="left", left_on="ecosystem", right_index=True
 )</code>
 </pre>
@@ -129,8 +129,8 @@ Cette fusion enrichira le dataframe référentiel avec les données des lignes m
 
 Maintenant, il est temps de fusionner ce dataframe avec le dataframe des métriques.
 
-<pre>
-<code class="language-python rounded-lg">metrics_df = metrics_df.merge(
+<pre class="rounded-xl">
+<code class="language-python">metrics_df = metrics_df.merge(
     businesslines_referential_df, how="inner", left_on="vm_name", right_index=True
 )</code>
 </pre>
@@ -139,8 +139,8 @@ Cette fusion est faite avec la méthode inner, ainsi nous ne gardons que les col
 
 Maintenant, je remplace le nom de métrique original par le mappage dont nous avons parlé plus tôt :
 
-<pre>
-<code class="language-python rounded-lg">metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)
+<pre class="rounded-xl">
+<code class="language-python">metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)
 </code>
 </pre>
 
@@ -171,14 +171,14 @@ Maintenant, pour être récoltées par prometheus, ces données doivent être re
 
 Les chaînes de métriques Prometheus sont assez simples :
 
-<pre>
-<code class="language-python rounded-lg">metric_name{label1="value1", label2="value2"} 0</code>
+<pre class="rounded-xl">
+<code class="language-python">metric_name{label1="value1", label2="value2"} 0</code>
 </pre>
 
 En utilisant une compréhension de liste, j'itère sur le dataframe pour imprimer une chaîne contenant au début le metric_name et à la fin la metric_value.
 
-<pre>
-<code class="language-python rounded-lg">return "\n".join(
+<pre class="rounded-xl">
+<code class="language-python">return "\n".join(
     [
         f"{row['__name__']}{generate_dict_label(row)} {row['value']}"
         for index, row in metrics df.iterrows()
@@ -188,12 +188,12 @@ En utilisant une compréhension de liste, j'itère sur le dataframe pour imprime
 
 La partie délicate est de générer les étiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.
 
-Un dict en python ressemble à <code class="language-python rounded-lg">{"key": "value"}</code>, nous devons générer une chaîne qui ressemble à <code class="language-python rounded-lg">{label="value"}</code>
+Un dict en python ressemble à <code class="language-python">{"key": "value"}</code>, nous devons générer une chaîne qui ressemble à <code class="language-python">{label="value"}</code>
 
 J'ai donc écrit une petite fonction qui génère cette chaîne.
 
-<pre>
-<code class="language-python rounded-lg">def generate_dict_label(row):
+<pre class="rounded-xl">
+<code class="language-python">def generate_dict_label(row):
 
     labels = set(row.index) - {"__name__", "value"}
 
@@ -212,8 +212,8 @@ J'ai donc écrit une petite fonction qui génère cette chaîne.
 
 Finalement, les données sérialisées ressemblent à :
 
-<pre>
-<code class="language-python rounded-lg">power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1</code>
+<pre class="rounded-xl">
+<code class="language-python">power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1</code>
 </pre>
 
 Maintenant, les métriques sont récoltées par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et resérialisera les données provenant d'un exporter prometheus vmware.

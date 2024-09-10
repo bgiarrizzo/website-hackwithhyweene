@@ -1,7 +1,7 @@
 <h1 class="text-4xl font-semibold">Blog</h1>
 
 {% for post in all_posts | reverse %}
-    <section class="p-5 rounded-lg bg-gray-900 my-8">
+    <section class="p-5 rounded-xl bg-gray-900 my-8">
         <h2 class="text-2xl font-semibold">
             <a href="/blog/{{ post.slug }}/" class="hover:text-blue-400 transition-colors duration-300">
                 {{ post.title }}

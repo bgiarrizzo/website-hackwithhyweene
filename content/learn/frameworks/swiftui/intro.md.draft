@@ -1,0 +1,18 @@
+---
+category_id: 4
+category: Frameworks
+
+module_id: 1
+module: SwiftUI
+module_logo: logo.png
+module_description: SwiftUI est un framework pour la création d'interfaces utilisateur déclaratives et modernes pour les applications iOS, macOS, watchOS et tvOS.
+
+id: 1
+title: Intro
+summary: "Résumé"
+
+publish_date: 2024-09-09T09:30:00Z
+update_date: 2024-09-09T09:30:00Z
+---
+
+Test

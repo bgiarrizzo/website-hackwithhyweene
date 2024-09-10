@@ -7,10 +7,10 @@
 
     {% for module in category.modules | sort(attribute="id") %}
 
-        <div class="bg-gray-900 rounded-lg my-6 flex flex-row">
+        <div class="bg-gray-900 rounded-xl my-6 flex flex-row">
             {% if module.logo %}
-                <div class="hidden md:flex md:flex-none rounded-l-lg">
-                    <img src="/media/images/apprendre/{{ module.path }}/{{ module.logo }}" alt="{{ module.name }}" class="h-32 rounded-l-lg aspect-square object-fill">
+                <div class="hidden md:flex md:flex-none rounded-l-xl">
+                    <img src="/media/images/apprendre/{{ module.path }}/{{ module.logo }}" alt="{{ module.name }}" class="h-32 rounded-l-xl aspect-square object-fill">
                 </div>
             {% endif %}
 

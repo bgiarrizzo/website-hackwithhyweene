@@ -1,0 +1,4 @@
+module_id: 5
+module: Ansible
+module_logo: logo.png
+module_description: "Ansible est un outil open-source de gestion de configuration et d'automatisation qui permet aux administrateurs système de gérer et de déployer des applications et des services sur des serveurs distants."

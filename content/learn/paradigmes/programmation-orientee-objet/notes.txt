@@ -1,0 +1,155 @@
+# Programmation Orientée Objet
+
+## 1 Introduction à la Programmation Orientée Objet
+
+- Définition et histoire de la POO
+- Paradigmes de programmation : comparaison avec la programmation procédurale et fonctionnelle
+- Avantages et inconvénients de la POO
+- Concepts fondamentaux : objets, classes, attributs, méthodes
+
+## 2 Les quatre piliers de la POO
+
+### 2.1 Encapsulation
+
+- Définition et importance
+- Modificateurs d'accès (public, private, protected)
+- Getters et setters
+
+### 2.2 Abstraction
+
+- Concept et mise en œuvre
+- Classes abstraites
+- Interfaces
+
+### 2.3 Héritage
+
+- Types d'héritage : simple, multiple, hiérarchique
+- Superclasses et sous-classes
+- Méthodes et classes finales
+- Problème du diamant et solutions
+
+### 2.4 Polymorphisme
+
+- Polymorphisme ad-hoc (surcharge)
+- Polymorphisme d'inclusion (redéfinition)
+- Polymorphisme paramétrique (génériques)
+- Liaison dynamique vs liaison statique
+
+## 3 Concepts avancés de la POO
+
+- Composition vs héritage
+- Agrégation et association
+- Classes internes et classes anonymes
+- Méthodes et classes statiques
+- Constructeurs et destructeurs
+- Surcharge d'opérateurs
+
+## 4 Conception orientée objet
+
+- Analyse et modélisation objet
+- UML (Unified Modeling Language)
+  - Diagrammes de classes
+  - Diagrammes d'objets
+  - Diagrammes de séquence
+- Principes SOLID
+  - Single Responsibility Principle
+  - Open/Closed Principle
+  - Liskov Substitution Principle
+  - Interface Segregation Principle
+  - Dependency Inversion Principle
+- Autres principes de conception
+  - DRY (Don't Repeat Yourself)
+  - KISS (Keep It Simple, Stupid)
+  - YAGNI (You Ain't Gonna Need It)
+
+## 5 Patrons de conception (Design Patterns)
+
+### 5.1 Patrons de création
+
+- Singleton
+- Factory Method
+- Abstract Factory
+- Builder
+- Prototype
+
+### 5.2 Patrons structurels
+
+- Adapter
+- Bridge
+- Composite
+- Decorator
+- Facade
+- Flyweight
+- Proxy
+
+### 5.3 Patrons comportementaux
+
+- Observer
+- Strategy
+- Command
+- State
+- Chain of Responsibility
+- Interpreter
+- Iterator
+- Mediator
+- Memento
+- Template Method
+- Visitor
+
+## 6 Gestion de la mémoire en POO
+
+- Allocation et désallocation d'objets
+- Garbage collection vs gestion manuelle de la mémoire
+- Références et pointeurs
+- Fuites de mémoire et comment les éviter
+
+## 7 Programmation concurrente orientée objet
+
+- Threads et objets
+- Synchronisation et verrouillage
+- Modèles de concurrence orientés objet
+
+## 8 Tests et débogage en POO
+
+- Tests unitaires pour les classes
+- Mocking et stubbing
+- Techniques de débogage spécifiques à la POO
+- Revue de code orientée objet
+
+## 9 Architectures orientées objet
+
+- MVC (Model-View-Controller)
+- MVP (Model-View-Presenter)
+- MVVM (Model-View-ViewModel)
+- Clean Architecture
+- Microservices Architecture
+
+## 10 Anti-patterns et mauvaises pratiques
+
+- Identification des anti-patterns courants
+- Comment éviter les mauvaises utilisations des design patterns
+- Refactoring des anti-patterns vers des solutions plus appropriées
+
+## 11 Patterns dans les frameworks et bibliothèques populaires
+
+- Analyse des patterns utilisés dans UIKit, SwiftUI, Combine, etc.
+- Patterns dans les bibliothèques de networking (Alamofire, Moya)
+- Patterns dans les frameworks de persistance (Core Data, Realm)
+
+## 12 Implémentation pratique et études de cas
+
+- Développement d'une application complète utilisant plusieurs design patterns
+- Analyse de code open source pour identifier l'utilisation des patterns
+- Exercices de refactoring pour appliquer les design patterns
+
+## 13 Tests et design patterns
+
+- Test-Driven Development (TDD) avec les design patterns
+- Mocking et stubbing dans le contexte des design patterns
+- Patterns spécifiques aux tests (ex: Test Fixture)
+
+## 14 Évolution et tendances futures des design patterns
+
+- Patterns émergents dans le développement moderne
+- Impact des paradigmes fonctionnels sur les design patterns traditionnels
+- Adaptation des patterns classiques aux nouvelles technologies (ex: patterns pour la programmation réactive)

@@ -53,18 +53,18 @@ def prepare_learn_data(module_path):
         lambda: {"path": "", "slug": "", "modules": defaultdict(lambda: {"pages": []})}
     )
 
-    for page in module_pages:
-        if page.get("disabled"):
+    for module_page in module_pages:
+        if module_page.get("disabled"):
             continue
         
-        category_id = page.get("category_id")
-        category_name = page.get("category")
-        category_slug = page.get("category-slug")
+        category_id = module_page.get("category_id")
+        category_name = module_page.get("category")
+        category_slug = module_page.get("category-slug")
 
-        module_id = page.get("module_id")
-        module_name = page.get("module")
-        module_slug = page.get("module-slug")
-        module_description = page.get("module_description")
+        module_id = module_page.get("module_id")
+        module_name = module_page.get("module")
+        module_slug = module_page.get("module-slug")
+        module_description = module_page.get("module_description")
 
         # Mise à jour de la catégorie
         if not categories[category_name]["path"]:
@@ -84,23 +84,16 @@ def prepare_learn_data(module_path):
                     "id": module_id,
                     "name": module_name,
                     "description": module_description,
-                    "logo": page.get("module_logo"),
+                    "logo": module_page.get("module_logo"),
                     "path": create_path(category_slug, module_slug),
                     "slug": module_slug,
                 }
             )
 
-        # Ajout de la page au module
-        module["pages"].append(
-            {
-                "id": page.get("id"),
-                "title": page.get("title"),
-                "slug": page.get("slug"),
-                "path": create_path(category_slug, module_slug, page.get("slug")),
-                "summary": page.get("summary"),
-                "module": module_name,
-            }
-        )
+        page = {k: v for k, v in module_page.items()}
+        page["path"] = create_path(category_slug, module_slug, module_page.get("slug"))
+
+        module["pages"].append(page)
 
     # Conversion en liste de dictionnaires
     result = []

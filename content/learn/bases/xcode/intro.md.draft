@@ -1,14 +1,18 @@
 ---
-id: 1
-title: Intro
-module: XCode
+category_id: 1
+category: Bases
+
 module_id: 2
+module: XCode
 module_logo: logo.png
 module_description: XCode est un environnement de développement intégré (IDE) pour macOS. Il contient un ensemble d'outils pour développer des applications pour macOS, iOS, iPadOS, watchOS et tvOS.
-category: Bases
-category_id: 1
 
-disabled: true
+id: 1
+title: Intro
+summary: Résumé
+
+publish_date: 2024-09-09T09:30:00Z
+update_date: 2024-09-09T09:30:00Z
 ---
 
 Test

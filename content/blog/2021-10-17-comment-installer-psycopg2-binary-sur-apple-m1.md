@@ -17,13 +17,13 @@ J'essaie de travailler avec les dernières versions des logiciels que j'utilise,
 Je l'ai installé avec brew, assez facilement :
 
 <pre>
-<code class="language-bash rounded-lg">brew install python@3.10</code>
+<code class="language-bash">brew install python@3.10</code>
 </pre>
 
 J'ai eu des problèmes avec psycopg2-binary lors de l'installation des dépendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais était celui-ci :
 
-<pre>
-<code class="language-bash rounded-lg">Error: pg_config executable not found.
+<pre class="rounded-xl">
+<code class="language-bash">Error: pg_config executable not found.
 
 pg_config is required to build psycopg2 from source.  Please add the directory
 containing pg_config to the $PATH or specify the full executable path with the
@@ -36,24 +36,24 @@ or with the pg_config option in 'setup.cfg'.</code>
 
 Il semble qu'il manque un fichier de configuration. J'ai essayé de résoudre ce problème en installant le serveur PostgreSQL pour obtenir ce fichier manquant :
 
-<pre>
-<code class="language-bash rounded-lg">brew install postgresql@12</code>
+<pre class="rounded-xl">
+<code class="language-bash">brew install postgresql@12</code>
 </pre>
 
 À ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette façon (en utilisant ZSH, il me dit évidemment de l'écrire dans .zshrc) :
 
-<pre>
-<code class="language-bash rounded-lg">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' > ~/.zshrc</code>
+<pre class="rounded-xl">
+<code class="language-bash">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' > ~/.zshrc</code>
 </pre>
 
 Maintenant, tout est prêt, et je peux l'installer comme je le souhaite :
 
-<pre>
-<code class="language-bash rounded-lg">pip(3) install psycopg2-binary</code>
+<pre class="rounded-xl">
+<code class="language-bash">pip(3) install psycopg2-binary</code>
 </pre>
 
 Ou dans le répertoire de mon projet :
 
-<pre>
-<code class="language-bash rounded-lg">pipenv install psycopg2-binary</code>
+<pre class="rounded-xl">
+<code class="language-bash">pipenv install psycopg2-binary</code>
 </pre>

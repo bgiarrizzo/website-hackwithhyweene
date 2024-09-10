@@ -1,11 +1,19 @@
 <h1 class="text-4xl font-semibold">{{ module.name }}</h1>
 
 {% for page in pages %}
-    <div class="bg-gray-900 rounded-lg my-6 flex flex-row">
+    <div class="bg-gray-900 rounded-xl my-6 flex flex-row">
         <div class="p-4">
             <a href="/apprendre/{{ page.path }}/" class="text-blue-500 hover:underline">
                 <h3 class="text-xl font-semibold">{{ page.title }}</h3>
             </a>
+            <p class="text-gray-400 my-3">
+                Publié le {{ page.publish_date_medium }}
+                {% if page.update_date %}
+                    <span>
+                        (mis à jour le {{ page.update_date_medium }})
+                    </span>
+                {% endif %}
+            </p>
             <p>{{ page.summary }}</p>
         </div>
     </div>

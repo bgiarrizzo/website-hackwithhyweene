@@ -1,0 +1,18 @@
+---
+category_id: 5
+category: Infrastructure
+
+module_id: 4
+module: Terraform
+module_logo: logo.png
+module_description: "Terraform est un outil open-source d'infrastructure en tant que code (IaC) qui permet aux développeurs et aux administrateurs système de créer, gérer et mettre à jour l'infrastructure de manière efficace et reproductible."
+
+id: 1
+title: Intro
+summary: Résumé
+
+publish_date: 2024-09-09T09:30:00Z
+update_date: 2024-09-09T09:30:00Z
+---
+
+Test

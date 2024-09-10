@@ -74,7 +74,7 @@ class AddClassTreeprocessor(Treeprocessor):
 
         # Images
         for elem in root.iter("img"):
-            elem.set("class", "max-w-full h-auto my-4 rounded-lg shadow-md")
+            elem.set("class", "max-w-full h-auto my-4 rounded-xl shadow-md")
 
         # Strong and Emphasis
         for elem in root.iter("strong"):

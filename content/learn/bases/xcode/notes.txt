@@ -1,0 +1,171 @@
+## 1. XCode
+
+### 1.1 Introduction à Xcode
+
+- Histoire et évolution de Xcode
+- Rôle de Xcode dans le développement Apple
+- Installation et configuration initiale
+- Gestion des versions et mises à jour
+
+### 1.2 Découverte de l'interface
+
+#### 1.2.1 Vue d'ensemble de l'interface
+
+- Barre d'outils principale
+- Navigateur (Navigator)
+- Éditeur (Editor)
+- Inspecteur (Utilities)
+- Debug area
+
+#### 1.2.2 Personnalisation de l'interface
+
+- Customisation de la barre d'outils
+- Gestion des onglets et des fenêtres
+- Thèmes et apparence
+- Création et gestion des espaces de travail (Workspaces)
+
+#### 1.2.3 Raccourcis clavier essentiels
+
+- Navigation dans le projet
+- Édition de code
+- Compilation et exécution
+- Débogage
+- Création de raccourcis personnalisés
+
+### 1.3 Gestion de projet avancée
+
+#### 1.3.1 Types de projets
+
+- Single View App
+- Game
+- Framework & Library
+- Command Line Tool
+- Création de templates personnalisés
+
+#### 1.3.2 Structure des projets Xcode
+
+- Fichiers source (.swift, .h, .m)
+- Ressources (Storyboards, XIBs, Assets)
+- Fichiers de configuration (Info.plist, entitlements)
+- Fichiers de build (xcconfig)
+
+#### 1.3.3 Gestion des targets
+
+- Création et configuration de targets multiples
+- Paramètres de build pour chaque target
+- Gestion des dépendances entre targets
+
+#### 1.3.4 Workspaces
+
+- Création et organisation des workspaces
+- Gestion de projets multiples dans un workspace
+- Partage de code et ressources entre projets
+
+#### 1.3.5 Gestion de version
+
+- Intégration avec Git et autres VCS
+- Utilisation de Xcode Server pour l'intégration continue
+
+### 1.4 Débogage et optimisation
+
+#### 1.4.1 Techniques de débogage avancées
+
+- Points d'arrêt (Breakpoints) : conditionnels, symboliques, d'exception
+- Utilisation du LLDB dans la console
+- Visualisation des variables et de la pile d'appels
+- Débogage de code asynchrone et multithreading
+
+#### 1.4.2 Console et journalisation
+
+- Configuration et filtrage des logs
+- Utilisation de os_log et Console.app
+- Création de custom logging systems
+
+#### 1.4.3 Outils de profilage
+
+- Time Profiler pour l'analyse des performances
+- Allocations pour la gestion de la mémoire
+- Leaks pour la détection des fuites mémoire
+- Network pour l'analyse du trafic réseau
+- Energy Log pour l'optimisation de la consommation d'énergie
+
+#### 1.4.4 Instruments avancés
+
+- Core Animation pour l'optimisation des performances graphiques
+- File Activity pour l'analyse des opérations de fichiers
+- System Trace pour l'analyse système globale
+
+#### 1.4.5 Optimisation du code
+
+- Utilisation du compilateur et des optimisations
+- Analyse statique du code
+- Utilisation des outils de refactoring
+
+### 1.5 Gestion des ressources
+
+#### 1.5.1 Asset Catalogs
+
+- Organisation des images et icônes
+- Gestion des variations de résolution et de taille d'écran
+- Création et utilisation de Color Sets
+- Gestion des Data Sets
+
+#### 1.5.2 Localisation
+
+- Configuration des langues dans Xcode
+- Utilisation de .strings et .stringsdict files
+- Localisation des Storyboards et XIBs
+- Outils de localisation tiers et intégration
+
+#### 1.5.3 Gestion des ressources audio et vidéo
+
+- Importation et organisation des fichiers multimédia
+- Optimisation des ressources pour différents appareils
+- Streaming vs. bundling des ressources
+
+#### 1.5.4 Gestion des polices
+
+- Ajout et utilisation de polices personnalisées
+- Optimisation des polices pour différentes tailles d'écran
+
+### 1.6 Interface Builder et Storyboards
+
+- Création et gestion des Storyboards
+- Utilisation des Auto Layout et Size Classes
+- Création de vues personnalisées
+- Segues et navigation entre les vues
+
+### 1.7 Compilation et build system
+
+- Comprendre le processus de build
+- Configuration des schémas de build
+- Personnalisation des scripts de build
+- Utilisation de xcconfig files pour la gestion des configurations
+
+### 1.8 Testing dans Xcode
+
+- Création et exécution de tests unitaires
+- Tests d'interface utilisateur
+- Tests de performance
+- Couverture de code et rapports
+
+### 1.9 Distribution et déploiement
+
+- Préparation des apps pour l'App Store
+- Gestion des certificats et des profils de provisioning
+- Archivage et upload des builds
+- TestFlight et beta testing
+
+### 1.10 Intégration avec d'autres outils Apple
+
+- Xcode Cloud pour CI/CD
+- Intégration avec Swift Packages
+- Utilisation de Simulator
+- Débogage sur appareils physiques
+
+### 1.11 Fonctionnalités avancées
+
+- Refactoring du code
+- Documentation du code avec DocC
+- Utilisation des playgrounds pour le prototypage rapide
+- Personnalisation des snippets de code

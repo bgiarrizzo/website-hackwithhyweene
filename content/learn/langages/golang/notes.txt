@@ -1,0 +1,207 @@
+# Golang (Go)
+
+## 1. Introduction à Go
+
+### 1.1 Histoire et philosophie de Go
+
+- Origines et créateurs de Go
+- Objectifs et principes de conception
+- Comparaison avec d'autres langages
+
+### 1.2 Installation et configuration
+
+- Installation de Go sur différents systèmes d'exploitation
+- Configuration de l'environnement de développement (GOPATH, GOROOT)
+- Choix et installation d'un éditeur ou IDE (VSCode, GoLand, etc.)
+
+### 1.3 Premiers pas avec Go
+
+- Structure d'un programme Go
+- Compilation et exécution d'un programme Go
+- Utilisation de la commande `go`
+
+## 2. Fondamentaux de Go
+
+### 2.1 Types de données de base
+
+- Nombres (int, float64, etc.)
+- Chaînes de caractères (string)
+- Booléens (bool)
+- Constantes
+
+### 2.2 Variables et déclarations
+
+- Déclaration de variables
+- Inférence de type
+- Portée des variables
+
+### 2.3 Structures de contrôle
+
+- Conditions (if, else, switch)
+- Boucles (for, range)
+- Defer, panic, et recover
+
+### 2.4 Fonctions
+
+- Déclaration et appel de fonctions
+- Paramètres et valeurs de retour
+- Fonctions variadic
+- Fonctions anonymes et closures
+
+### 2.5 Structures de données
+
+- Arrays et Slices
+- Maps
+- Structs
+
+### 2.6 Pointeurs
+
+- Concept de pointeurs en Go
+- Utilisation des pointeurs
+
+## 3. Concepts avancés de Go
+
+### 3.1 Méthodes et interfaces
+
+- Définition et utilisation des méthodes
+- Interfaces en Go
+- Type assertions et type switches
+
+### 3.2 Gestion des erreurs
+
+- Concept d'erreur en Go
+- Création et gestion des erreurs
+- Bonnes pratiques de gestion des erreurs
+
+### 3.3 Concurrence
+
+- Goroutines
+- Channels
+- Select statement
+- Synchronisation avec sync package
+
+### 3.4 Packages et modules
+
+- Création et utilisation de packages
+- Gestion des dépendances avec Go Modules
+- Versioning des modules
+
+## 4. Programmation orientée objet en Go
+
+### 4.1 Structs et méthodes
+
+- Composition vs héritage
+- Encapsulation en Go
+
+### 4.2 Interfaces et polymorphisme
+
+- Interfaces implicites
+- Utilisation des interfaces pour un code flexible
+
+## 5. Tests et benchmarking
+
+### 5.1 Tests unitaires
+
+- Écriture de tests avec le package testing
+- Table-driven tests
+- Mocking en Go
+
+### 5.2 Benchmarking
+
+- Écriture de benchmarks
+- Profilage de code Go
+
+## 6. Gestion des entrées/sorties
+
+### 6.1 Manipulation de fichiers
+
+- Lecture et écriture de fichiers
+- Utilisation du package os
+
+### 6.2 Entrées/Sorties standard
+
+- Lecture depuis la console
+- Écriture dans la console
+
+## 7. Networking en Go
+
+### 7.1 Programmation réseau de base
+
+- TCP et UDP avec le package net
+- HTTP client et server avec net/http
+
+### 7.2 Développement web
+
+- Création d'API RESTful
+- Frameworks web (Gin, Echo, etc.)
+
+## 8. Bases de données avec Go
+
+### 8.1 SQL avec Go
+
+- Utilisation du package database/sql
+- Connexion à différentes bases de données (MySQL, PostgreSQL)
+
+### 8.2 ORM en Go
+
+- Utilisation de GORM
+
+## 9. Outils et écosystème Go
+
+### 9.1 Outils de développement
+
+- go fmt pour le formatage de code
+- go vet pour l'analyse statique
+- golint pour le linting
+
+### 9.2 Gestion des dépendances
+
+- go get et go mod
+
+### 9.3 Cross-compilation
+
+- Compilation pour différentes architectures et OS
+
+## 10. Patterns et best practices en Go
+
+### 10.1 Idiomes Go
+
+- Gestion des erreurs
+- Utilisation des interfaces
+
+### 10.2 Patterns de concurrence
+
+- Worker pools
+- Pipeline pattern
+
+## 11. Performance et optimisation
+
+### 11.1 Profilage
+
+- CPU et mémoire profiling
+- Utilisation de pprof
+
+### 11.2 Optimisation
+
+- Techniques d'optimisation spécifiques à Go
+- Gestion de la mémoire et garbage collection
+
+## 12. Sécurité en Go
+
+### 12.1 Gestion des secrets
+
+- Meilleures pratiques pour la gestion des secrets
+
+### 12.2 Cryptographie
+
+- Utilisation du package crypto
+
+## 13. Déploiement et DevOps
+
+### 13.1 Conteneurisation
+
+- Docker avec Go
+
+### 13.2 CI/CD pour Go
+
+- Configuration de pipelines CI/CD pour projets Go

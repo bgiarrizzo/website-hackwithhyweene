@@ -1,14 +1,18 @@
 ---
-id: 1
-title: Intro
-module: Vapor
+category_id: 4
+category: Frameworks
+
 module_id: 2
+module: Vapor
 module_logo: logo.jpg
 module_description: Vapor est un framework web Swift qui fournit des outils et des bibliothèques pour la création d'applications web modernes et performantes.
-category: Frameworks
-category_id: 4
 
-disabled: true
+id: 1
+title: Intro
+summary: "Résumé"
+
+publish_date: 2024-09-09T09:30:00Z
+update_date: 2024-09-09T09:30:00Z
 ---
 
 Test

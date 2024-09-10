@@ -1,25 +1,21 @@
 def add_multiple_date_formats(data):
+    publish_update_keys = ["publish_date", "update_date"]
 
     for item in data:
-        if item.get("publish_date"):
-            item["publish_date_condensed"] = item.get("publish_date").strftime("%Y%m%d")
-            item["publish_date_short"] = item.get("publish_date").strftime("%d-%b-%Y")
-            item["publish_date_medium"] = item.get("publish_date").strftime("%d %b %Y")
-            item["publish_date_long"] = item.get("publish_date").strftime(
-                "%A, %d %B %Y"
-            )
-            item["publish_date_full"] = item.get("publish_date").strftime(
-                "%A, %d %B %Y %I:%M %p"
-            )
+        for key in publish_update_keys:
+            if item.get(key):
+                item[f"{key}_condensed"] = item.get(key).strftime("%Y%m%d")
+                item[f"{key}_short"] = item.get(key).strftime("%d-%b-%Y")
+                item[f"{key}_medium"] = item.get(key).strftime("%d %b %Y")
+                item[f"{key}_long"] = item.get(key).strftime("%A, %d %B %Y")
+                item[f"{key}_full"] = item.get(key).strftime("%A, %d %B %Y %I:%M %p")
 
-            item["publish_date_year"] = item.get("publish_date").year
-            item["publish_date_month"] = item.get("publish_date").strftime("%B")
-            item["publish_date_month_short"] = item.get("publish_date").strftime("%m")
-            item["publish_date_day"] = item.get("publish_date").day
+                item[f"{key}_year"] = item.get(key).year
+                item[f"{key}_month"] = item.get(key).strftime("%B")
+                item[f"{key}_month_short"] = item.get(key).strftime("%m")
+                item[f"{key}_day"] = item.get(key).day
 
-            item["publish_date_iso"] = item.get("publish_date").isoformat()
-            item["publish_date_rfc"] = item.get("publish_date").strftime(
-                "%a, %d %b %Y %H:%M:%S %z"
-            )
+                item[f"{key}_iso"] = item.get(key).isoformat()
+                item[f"{key}_rfc"] = item.get(key).strftime("%a, %d %b %Y %H:%M:%S %z")
 
     return data

@@ -1,0 +1,4 @@
+module_id: 3
+module: Kafka
+module_logo: logo.jpg
+module_description: "Kafka est une plateforme de streaming distribuée qui peut être utilisée pour construire des pipelines de données en temps réel et des applications de streaming."

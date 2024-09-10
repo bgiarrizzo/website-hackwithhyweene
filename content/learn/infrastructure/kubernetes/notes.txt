@@ -1,0 +1,124 @@
+# Kubernetes
+
+## 1. Introduction à Kubernetes
+
+- Histoire et contexte de Kubernetes
+- Architecture de base de Kubernetes
+- Comparaison avec d'autres systèmes d'orchestration de conteneurs
+- Cas d'utilisation et avantages de Kubernetes
+
+## 2. Concepts fondamentaux
+
+### 2.1 Conteneurs et Docker
+
+- Principes des conteneurs
+- Docker : images, conteneurs, Dockerfile
+- Registres de conteneurs
+
+### 2.2 Objets Kubernetes de base
+
+- Pods
+- ReplicaSets
+- Deployments
+- Services
+- Namespaces
+
+### 2.3 Configuration
+
+- ConfigMaps
+- Secrets
+- Resource Quotas
+- Limits et Requests
+
+## 3. Installation et configuration de Kubernetes
+
+- Minikube pour le développement local
+- kubeadm pour la configuration de clusters
+- Managed Kubernetes services (GKE, AKS, EKS)
+- kubectl : outil en ligne de commande
+
+## 4. Networking
+
+- Services et types de services (ClusterIP, NodePort, LoadBalancer)
+- Ingress et Ingress Controllers
+- Network Policies
+- DNS dans Kubernetes
+
+## 5. Stockage
+
+- Volumes
+- PersistentVolumes et PersistentVolumeClaims
+- StorageClasses
+- StatefulSets pour les applications avec état
+
+## 6. Sécurité
+
+- RBAC (Role-Based Access Control)
+- Service Accounts
+- Network Policies pour la sécurité réseau
+- Pod Security Policies
+- Secrets management
+
+## 7. Gestion des applications
+
+### 7.1 Déploiement et mise à jour
+
+- Rolling updates et rollbacks
+- Canary deployments
+- Blue/Green deployments
+
+### 7.2 Scaling
+
+- Horizontal Pod Autoscaler
+- Vertical Pod Autoscaler
+- Cluster Autoscaler
+
+### 7.3 Jobs et CronJobs
+
+- Batch processing avec Jobs
+- Tâches planifiées avec CronJobs
+
+## 8. Monitoring et logging
+
+- Prometheus pour le monitoring
+- Grafana pour la visualisation
+- ELK stack (Elasticsearch, Logstash, Kibana) pour le logging
+- Kubernetes Dashboard
+
+## 9. Helm
+
+- Introduction à Helm
+- Création et utilisation de Charts Helm
+- Gestion des releases avec Helm
+
+## 10. CI/CD avec Kubernetes
+
+- Intégration de Kubernetes dans les pipelines CI/CD
+- GitOps et ArgoCD
+- Jenkins X
+
+## 11. Concepts avancés
+
+- Custom Resource Definitions (CRDs)
+- Operators
+- Federation
+- Service Mesh (Istio)
+
+## 12. Gestion et maintenance des clusters
+
+- Mise à jour des clusters Kubernetes
+- Sauvegarde et restauration
+- Gestion des ressources et optimisation des coûts
+- Troubleshooting et debugging
+
+## 13. Kubernetes dans le cloud
+
+- Comparaison des offres managées (GKE, AKS, EKS)
+- Intégration avec les services cloud natifs
+- Multi-cloud et hybrid cloud avec Kubernetes
+
+## 14. Projets pratiques et études de cas
+
+- Déploiement d'une application microservices complète
+- Mise en place d'un pipeline CI/CD avec Kubernetes
+- Gestion d'un cluster de production
