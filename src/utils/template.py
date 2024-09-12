@@ -2,7 +2,6 @@ from datetime import datetime, timedelta
 from os import makedirs, path
 
 from jinja2 import Environment, FileSystemLoader
-from jinja2_time import TimeExtension
 
 from config import settings
 
