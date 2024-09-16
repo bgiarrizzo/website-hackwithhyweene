@@ -476,6 +476,9 @@ myTestApp   myTestTopic     2          6               6               0        
        <p class="text-base my-3 leading-relaxed">Les messages du topic Kafka
         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
          ${topicName}</code>ont été supprimés avec succès.</p>
+       <h2 class="text-3xl font-bold my-5 leading-snug">Méthode Gros Bourrin</h2>
+       <p class="text-base my-3 leading-relaxed">On peut également supprimer la totalité des events d'un topic en changeant la rétention du topic à 1ms, puis en la remettant à la valeur initiale.</p>
+       <p class="text-base my-3 leading-relaxed">Cette méthode a l'avantage de fonctionner également pour les topics compactés ! :D</p>
       </content>
      </entry>
     </link>

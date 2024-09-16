@@ -3,7 +3,7 @@ title: "Supprimer tous les events d'un topic Kafka"
 summary: "Un pense bête pour se rappeller comment supprimer tous les events d'un topic Kafka"
 publish_date: 2024-09-16T11:30:00Z
 update_date: 2024-09-16T11:30:00Z
-category: "Pense-bête"
+category: "Pense bête"
 tags: [kafka, topic, event, delete, supprimer, message]
 ---
 
@@ -85,3 +85,9 @@ Puis lancer la commande `kafka-delete-records` avec le fichier de configuration 
 </pre>
 
 Les messages du topic Kafka `${topicName}` ont été supprimés avec succès.
+
+## Méthode Gros Bourrin
+
+On peut également supprimer la totalité des events d'un topic en changeant la rétention du topic à 1ms, puis en la remettant à la valeur initiale.
+
+Cette méthode a l'avantage de fonctionner également pour les topics compactés ! :D
