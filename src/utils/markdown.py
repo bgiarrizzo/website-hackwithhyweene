@@ -48,12 +48,7 @@ class AddClassTreeprocessor(Treeprocessor):
         for elem in root.iter("pre"):
             elem.set("class", "bg-gray-100 rounded-md p-4 my-4 overflow-x-auto")
         for elem in root.iter("code"):
-            elem.set("class", "font-mono text-sm")
-
-        # Inline code
-        for elem in root.iter("code"):
-            if elem.getparent().tag != "pre":
-                elem.set("class", "bg-gray-100 rounded px-1 py-0.5 font-mono text-sm")
+            elem.set("class", "bg-gray-600 font-mono text-sm mr-2 p-1 rounded")
 
         # Horizontal rules
         for elem in root.iter("hr"):
