@@ -14,9 +14,10 @@
 
         {% for experience in resume.experiences|reverse %}
             <section class="p-5 rounded-xl bg-gray-900 my-8">
-                <header class="border-b border-gray-400 mb-4">
+                <header class="mb-4 pb-4 border-b border-gray-400">
                     <h3 class="text-xl font-semibold mb-3">{{ experience.company }}</h3>
-                    <p class="font-bold mb-4">{{ experience.title }} - ({{ experience.contract_type }}) : {{ experience.start_date }} - {{ experience.end_date }}</p>
+                    <p class="font-bold">{{ experience.title }} - ({{ experience.contract_type }})</p>
+                    <p>{{ experience.start_date }} - {{ experience.end_date }}</p>
                 </header>
 
                 <main>
@@ -45,8 +46,8 @@
 
         {% for education in resume.educations|reverse %}
             <section class="p-5 rounded-xl bg-gray-900 my-8">
-                <header class="mb-4">
-                    <h3 class="text-xl font-semibold mb-3 border-b border-gray-400">{{ education.title }}</h3>
+                <header class="mb-4 pb-4 border-b border-gray-400">
+                    <h3 class="text-xl font-semibold mb-3">{{ education.title }}</h3>
                     <p class="font-bold">{{ education.school }} - {{ education.formation_type }}</p>
                     <p>{{ education.start_date }} - {{ education.end_date }} ( {{ education.status }} )</p>
                 </header>

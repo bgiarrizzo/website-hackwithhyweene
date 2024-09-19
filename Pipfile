@@ -9,7 +9,7 @@ python_version = "3.12"
 [scripts]
 black = "black src/"
 black_dry = "black src/ --check"
-build = "time python src/main.py"
+build = "python src/main.py"
 dev = "python -m http.server 8000 --directory docs/"
 isort = "isort src/"
 isort_dry = "isort src/ --check-only"
