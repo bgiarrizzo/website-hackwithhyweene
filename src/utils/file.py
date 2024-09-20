@@ -13,6 +13,11 @@ def get_all_files_from_path(target_path) -> list:
     return file_list
 
 
+def render_and_beautify_html(rendered_page, beautify=True):
+    if beautify:
+        return beautify_html(rendered_page)
+    return rendered_page
+
 def write_file(data, template_name, filename):
     page_template = render_template(template_name, prepare_template_data([data]))
 
@@ -28,6 +33,6 @@ def write_file(data, template_name, filename):
         content = beautify_xml(rendered_page)
     else:
         rendered_page = render_template("main.j2", template_data)
-        content = beautify_html(rendered_page)
+        content = render_and_beautify_html(rendered_page)
 
     write_page(filename=filename, content=content)

@@ -3,7 +3,7 @@ from prettierfier import prettify_html, prettify_xml
 
 
 def beautify_html(content):
-    soup = BeautifulSoup(content, "html.parser").prettify()
+    soup = BeautifulSoup(content, "html.parser").prettify(formatter="minimal")
     return prettify_html(html_string=soup)
 
 

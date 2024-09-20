@@ -14,6 +14,7 @@ dev = "python -m http.server 8000 --directory docs/"
 isort = "isort src/"
 isort_dry = "isort src/ --check-only"
 flake8 = "flake8 src/"
+html5validator = "html5validator --root docs/"
 
 [packages]
 jinja2 = "*"
@@ -33,3 +34,4 @@ isort = "*"
 flake8 = "*"
 flake8-bandit = "*"
 djlint = "*"
+html5validator = "*"
