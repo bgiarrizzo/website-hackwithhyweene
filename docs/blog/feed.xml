@@ -2,33 +2,33 @@
 <html lang="fr-FR" prefix="og: http://ogp.me/ns#">
  <head>
   <!-- Favicon -->
-  <link href="https://www.hack-with-hyweene.com/static/img/cl-logo.svg" rel="icon"/>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=5.0" name="viewport"/>
-  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-  <meta content="telephone=no" name="format-detection"/>
-  <meta content="Bruno 'Hyweene' Giarrizzo" name="author"/>
-  <meta content="Hack with Hyweene" name="webmaster"/>
-  <meta content="fr" name="language"/>
-  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
-  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="googlebot"/>
-  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="bingbot"/>
-  <meta content="1 days" name="revisit-after"/>
-  <meta content="never" name="expires"/>
-  <meta content="General" name="rating"/>
-  <meta content="yes" name="apple-mobile-web-app-capable"/>
-  <meta content="https://www.hack-with-hyweene.com" name="identifier-URL"/>
-  <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - Blog RSS" type="application/rss+xml"/>
+  <link href="https://www.hack-with-hyweene.com/static/img/cl-logo.svg" rel="icon">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=5.0" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="Bruno 'Hyweene' Giarrizzo" name="author">
+  <meta content="Hack with Hyweene" name="webmaster">
+  <meta content="fr" name="language">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="googlebot">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="bingbot">
+  <meta content="1 days" name="revisit-after">
+  <meta content="never" name="expires">
+  <meta content="General" name="rating">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="https://www.hack-with-hyweene.com" name="identifier-URL">
+  <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - Blog RSS" type="application/rss+xml">
   <title>Hack with Hyweene</title>
-  <meta content="Hack with Hyweene" name="title"/>
-  <meta content="Bruno, Giarrizzo, Hyweene, Bruno Giarrizzo, Developpeur, DevOps, Git, Apple, Golang, Go, Python, Swift, SwiftUI, Docker, Kubernetes, POO, OOP, Programmation Orientée Objet, Programmation Fonctionnelle" name="keywords"/>
-  <meta content="Freelance Developer, DevOps, Ethical Hacker" name="description"/>
-  <link href="https://www.hack-with-hyweene.com/" rel="canonical"/>
+  <meta content="Hack with Hyweene" name="title">
+  <meta content="Bruno, Giarrizzo, Hyweene, Bruno Giarrizzo, Developpeur, DevOps, Git, Apple, Golang, Go, Python, Swift, SwiftUI, Docker, Kubernetes, POO, OOP, Programmation Orient&eacute;e Objet, Programmation Fonctionnelle" name="keywords">
+  <meta content="Freelance Developer, DevOps, Ethical Hacker" name="description">
+  <link href="https://www.hack-with-hyweene.com/" rel="canonical">
   <script src="https://cdn.tailwindcss.com">
   </script>
-  <link href="/static/css/prism.css" rel="stylesheet"/>
+  <link href="/static/css/prism.css" rel="stylesheet">
   <!-- Google tag (gtag.js) -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-S4T0SNK38Q">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T0SNK38Q">
   </script>
   <script src="/static/js/analytics.js">
   </script>
@@ -38,7 +38,7 @@
    <div class="bg-slate-900 bg-opacity-90 backdrop-blur absolute inset-0">
    </div>
    <div class="relative mx-auto flex h-full flex-row items-center justify-between lg:max-w-4xl px-5 lg:px-0 py-2">
-    <div class="hidden lg:flex h-full mx-auto"><a class="h-14 my-auto" href="/"><img alt="favicon" class="h-14 my-auto mr-4" src="/static/img/cl-logo.svg"/></a></div>
+    <div class="hidden lg:flex h-full mx-auto"><a class="h-14 my-auto" href="/"><img alt="favicon" class="h-14 my-auto mr-4" src="/static/img/cl-logo.svg"></a></div>
     <div class="hidden lg:flex h-full flex-nowrap items-center"><a class="text-3xl text-gray-300 mr-4" href="/" translate="no"> <span class="font-bold">Hack</span><span class="px-1">with</span><span class="font-bold">Hyweene</span></a></div>
     <nav aria-label="Navigation" class="hidden lg:flex justify-end flex-grow tracking-wide mx-4">
      <h2 class="sr-only" id="navigation">Navigation</h2>
@@ -47,13 +47,13 @@
       <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/liens/">Liens</a></li>
       <li class="group relative"><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/apprendre/">Apprendre</a></li>
       <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/cv/">CV</a></li>
-      <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/a-propos/">À Propos</a></li>
+      <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/a-propos/">&Agrave; Propos</a></li>
      </menu>
-    </nav> <aside class="flex h-full w-full lg:hidden"><div class="sm:flex hidden h-full items-center"><a class="h-full" href="https://www.hack-with-hyweene.com"><img alt="favicon" class="h-full" src="/static/img/cl-logo.svg"/></a></div>
+    </nav> <aside class="flex h-full w-full lg:hidden"><div class="sm:flex hidden h-full items-center"><a class="h-full" href="https://www.hack-with-hyweene.com"><img alt="favicon" class="h-full" src="/static/img/cl-logo.svg"></a></div>
      <div class="lg:hidden flex-1 h-full flex-nowrap items-center p-5 pl-0 sm:pl-5 lg:text-center"><a class="text-3xl text-gray-300" href="/" translate="no"> <span class="font-bold">Hack</span><span class="px-1">with</span><span class="font-bold">Hyweene</span></a></div>
      <div class="flex items-center">
       <label class="relative z-[9999] cursor-pointer px-3 pr-0 py-6" for="ss-mobile-menu">
-       <input class="peer hidden" id="ss-mobile-menu" type="checkbox"/>
+       <input class="peer hidden" id="ss-mobile-menu" type="checkbox">
        <svg class="feather feather-menu" fill="none" height="24" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
         <line x1="3" x2="21" y1="12" y2="12">
         </line>
@@ -62,8 +62,7 @@
         <line x1="3" x2="21" y1="18" y2="18">
         </line>
        </svg>
-       <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">
-       </div>
+       <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
        <div class="fixed top-0 right-0 z-[9999] h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0 peer-checked:shadow-heading">
         <div class="float-right min-h-full w-[85%] bg-slate-900 px-6 pt-12 shadow-2xl">
          <menu class="mt-8 mb-8 flex flex-col space-y-4 text-heading">
@@ -96,7 +95,7 @@
        <id>https://www.hack-with-hyweene.com/blog/hello-world/</id>
        <published>2020-08-27 09:30:00+00:00</published>
        <updated>2020-08-27 09:30:00+00:00</updated>
-       <link rel="alternate" type="text/html"/>https://www.hack-with-hyweene.com/blog/hello-world/
+       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/hello-world/
        <summary>
         Hello World!</summary>
        <content type="html">
@@ -110,20 +109,20 @@
        <id>https://www.hack-with-hyweene.com/blog/comment-installer-psycopg2-binary-sur-apple-m1/</id>
        <published>2021-10-17 09:30:00+00:00</published>
        <updated>2021-10-17 09:30:00+00:00</updated>
-       <link rel="alternate" type="text/html"/>https://www.hack-with-hyweene.com/blog/comment-installer-psycopg2-binary-sur-apple-m1/
+       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/comment-installer-psycopg2-binary-sur-apple-m1/
        <summary>
-        J'ai rencontré quelques difficultés en travaillant avec du code Python accédant à des bases de données PostgreSQL. Voici comment j'ai résolu le problème.</summary>
+        J'ai rencontr&eacute; quelques difficult&eacute;s en travaillant avec du code Python acc&eacute;dant &agrave; des bases de donn&eacute;es PostgreSQL. Voici comment j'ai r&eacute;solu le probl&egrave;me.</summary>
        <content type="html">
-        <p class="text-base my-3 leading-relaxed">Le mois dernier, je me suis offert un Apple M1, un très bon ordinateur, puissant et avec une autonomie impressionnante.</p>
-        <p class="text-base my-3 leading-relaxed">Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqué.</p>
-        <p class="text-base my-3 leading-relaxed">J'essaie de travailler avec les dernières versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
-        <p class="text-base my-3 leading-relaxed">Je l'ai installé avec brew, assez facilement :</p>
+        <p class="text-base my-3 leading-relaxed">Le mois dernier, je me suis offert un Apple M1, un tr&egrave;s bon ordinateur, puissant et avec une autonomie impressionnante.</p>
+        <p class="text-base my-3 leading-relaxed">Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqu&eacute;.</p>
+        <p class="text-base my-3 leading-relaxed">J'essaie de travailler avec les derni&egrave;res versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
+        <p class="text-base my-3 leading-relaxed">Je l'ai install&eacute; avec brew, assez facilement :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre>
 <code class="language-bash">brew install python@3.10</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">J'ai eu des problèmes avec psycopg2-binary lors de l'installation des dépendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais était celui-ci :</p>
+        <p class="text-base my-3 leading-relaxed">J'ai eu des probl&egrave;mes avec psycopg2-binary lors de l'installation des d&eacute;pendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais &eacute;tait celui-ci :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-bash">Error: pg_config executable not found.
@@ -137,25 +136,25 @@ option:
 or with the pg_config option in 'setup.cfg'.</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Il semble qu'il manque un fichier de configuration. J'ai essayé de résoudre ce problème en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
+        <p class="text-base my-3 leading-relaxed">Il semble qu'il manque un fichier de configuration. J'ai essay&eacute; de r&eacute;soudre ce probl&egrave;me en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-bash">brew install postgresql@12</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">À ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette façon (en utilisant ZSH, il me dit évidemment de l'écrire dans .zshrc) :</p>
+        <p class="text-base my-3 leading-relaxed">&Agrave; ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette fa&ccedil;on (en utilisant ZSH, il me dit &eacute;videmment de l'&eacute;crire dans .zshrc) :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-bash">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' &gt; ~/.zshrc</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Maintenant, tout est prêt, et je peux l'installer comme je le souhaite :</p>
+        <p class="text-base my-3 leading-relaxed">Maintenant, tout est pr&ecirc;t, et je peux l'installer comme je le souhaite :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-bash">pip(3) install psycopg2-binary</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Ou dans le répertoire de mon projet :</p>
+        <p class="text-base my-3 leading-relaxed">Ou dans le r&eacute;pertoire de mon projet :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-bash">pipenv install psycopg2-binary</code>
@@ -164,21 +163,21 @@ or with the pg_config option in 'setup.cfg'.</code>
        </content>
       </entry>
       <entry xml:lang="en">
-       <title type="html">Comment j'ai enrichi des métriques Prometheus</title> <author><name></name>
+       <title type="html">Comment j'ai enrichi des m&eacute;triques Prometheus</title> <author><name></name>
         <uri>https://www.hack-with-hyweene.com</uri>
        </author>
        <id>https://www.hack-with-hyweene.com/blog/comment-j-ai-enrichi-des-metriques-prometheus/</id>
        <published>2022-05-05 09:30:00+00:00</published>
        <updated>2022-05-05 09:30:00+00:00</updated>
-       <link rel="alternate" type="text/html"/>https://www.hack-with-hyweene.com/blog/comment-j-ai-enrichi-des-metriques-prometheus/
+       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/comment-j-ai-enrichi-des-metriques-prometheus/
        <summary>
-        Les métriques de l'exporter VMWare n'avaient pas toutes les informations que nous voulions. Voici comment je les ai enrichies.</summary>
+        Les m&eacute;triques de l'exporter VMWare n'avaient pas toutes les informations que nous voulions. Voici comment je les ai enrichies.</summary>
        <content type="html">
         <h2 class="text-3xl font-bold my-5 leading-snug">Contexte</h2>
-        <p class="text-base my-3 leading-relaxed">Dans ma mission actuelle, afin de mettre en place une fédération de métriques, nous devons collecter des métriques VMware.</p>
-        <p class="text-base my-3 leading-relaxed">Nous avons donc utilisé le <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda/vmware_exporter">vmware_exporter</a> de <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda">Daniel Pryor</a>, et pour ne pas le modifier, j'ai écrit une petite interface avec fastapi.</p>
-        <p class="text-base my-3 leading-relaxed">Les métriques sont récupérées par fastapi, analysées, enrichies, resérialisées, et récoltées par prometheus.</p>
-        <p class="text-base my-3 leading-relaxed">Les noms des métriques doivent être mappés, car ils sont unifiés avec les métriques d'openstack et d'IBM cloud.</p>
+        <p class="text-base my-3 leading-relaxed">Dans ma mission actuelle, afin de mettre en place une f&eacute;d&eacute;ration de m&eacute;triques, nous devons collecter des m&eacute;triques VMware.</p>
+        <p class="text-base my-3 leading-relaxed">Nous avons donc utilis&eacute; le <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda/vmware_exporter">vmware_exporter</a> de <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda">Daniel Pryor</a>, et pour ne pas le modifier, j'ai &eacute;crit une petite interface avec fastapi.</p>
+        <p class="text-base my-3 leading-relaxed">Les m&eacute;triques sont r&eacute;cup&eacute;r&eacute;es par fastapi, analys&eacute;es, enrichies, res&eacute;rialis&eacute;es, et r&eacute;colt&eacute;es par prometheus.</p>
+        <p class="text-base my-3 leading-relaxed">Les noms des m&eacute;triques doivent &ecirc;tre mapp&eacute;s, car ils sont unifi&eacute;s avec les m&eacute;triques d'openstack et d'IBM cloud.</p>
         <p class="text-base my-3 leading-relaxed">La table de mappage est celle ci-dessous :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
@@ -192,10 +191,10 @@ or with the pg_config option in 'setup.cfg'.</code>
 }</code>
 </pre>
         </p>
-        <h2 class="text-3xl font-bold my-5 leading-snug">Étape 1 : Analyse des métriques de vmware_exporter</h2>
-        <p class="text-base my-3 leading-relaxed">L'exporter est appelé depuis une fonction nommée request_exporter().</p>
-        <p class="text-base my-3 leading-relaxed">La sortie de l'exporter est un grand fichier str qui doit être analysé pour être traité.</p>
-        <p class="text-base my-3 leading-relaxed">J'ai utilisé prometheus_client.parser pour cela.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">&Eacute;tape 1 : Analyse des m&eacute;triques de vmware_exporter</h2>
+        <p class="text-base my-3 leading-relaxed">L'exporter est appel&eacute; depuis une fonction nomm&eacute;e request_exporter().</p>
+        <p class="text-base my-3 leading-relaxed">La sortie de l'exporter est un grand fichier str qui doit &ecirc;tre analys&eacute; pour &ecirc;tre trait&eacute;.</p>
+        <p class="text-base my-3 leading-relaxed">J'ai utilis&eacute; prometheus_client.parser pour cela.</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-python">from prometheus_client.parser import text_string_to_metric_families
@@ -204,8 +203,8 @@ data_from_exporter = request_exporter(target)
 metric_families = text_string_to_metric_families(data_from_exporter)</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">La variable metric_families est un objet à plusieurs niveaux contenant des métriques regroupées par nom de métrique.</p>
-        <p class="text-base my-3 leading-relaxed">Elle peut être représentée comme un dict, où la clé est le metric_name et la valeur est une liste contenant toutes les métriques sous forme de tuples.</p>
+        <p class="text-base my-3 leading-relaxed">La variable metric_families est un objet &agrave; plusieurs niveaux contenant des m&eacute;triques regroup&eacute;es par nom de m&eacute;trique.</p>
+        <p class="text-base my-3 leading-relaxed">Elle peut &ecirc;tre repr&eacute;sent&eacute;e comme un dict, o&ugrave; la cl&eacute; est le metric_name et la valeur est une liste contenant toutes les m&eacute;triques sous forme de tuples.</p>
         <p class="text-base my-3 leading-relaxed">Exemple :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
@@ -234,7 +233,7 @@ for family in data_from exporter:
         processed exporter_data.append(row_dict)</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">J'aurai alors une liste de dicts, à partir de laquelle un dataframe peut être créé.</p>
+        <p class="text-base my-3 leading-relaxed">J'aurai alors une liste de dicts, &agrave; partir de laquelle un dataframe peut &ecirc;tre cr&eacute;&eacute;.</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-python">[
@@ -244,8 +243,8 @@ for family in data_from exporter:
 </pre>
         </p>
         <p class="text-base my-3 leading-relaxed">Maintenant, jouons avec les dataframes...</p>
-        <h2 class="text-3xl font-bold my-5 leading-snug">Étape 2 : Jouer avec les dataframes</h2>
-        <p class="text-base my-3 leading-relaxed">Tout d'abord, je crée le dataframe :</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">&Eacute;tape 2 : Jouer avec les dataframes</h2>
+        <p class="text-base my-3 leading-relaxed">Tout d'abord, je cr&eacute;e le dataframe :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-python">import pandas
@@ -253,7 +252,7 @@ for family in data_from exporter:
 metrics_df = pandas.DataFrame(processed_exporter_data)</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Ensuite, je supprime les étiquettes inutiles :</p>
+        <p class="text-base my-3 leading-relaxed">Ensuite, je supprime les &eacute;tiquettes inutiles :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre>
 <code class="language-python">metrics_df.drop(
@@ -268,11 +267,11 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
 )</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">De cette façon, j'utilise le dataframe pour supprimer les 4 colonnes.
+        <p class="text-base my-3 leading-relaxed">De cette fa&ccedil;on, j'utilise le dataframe pour supprimer les 4 colonnes.
          <code class="language-python">
-          inplace=True</code>est utilisé pour écraser le dataframe existant et ne pas en créer un nouveau.</p>
-        <p class="text-base my-3 leading-relaxed">Ensuite, je dois fusionner les données de métriques avec les données de deux autres sources de données internes (une pour le référentiel des hôtes/vm, une pour les lignes métier).</p>
-        <p class="text-base my-3 leading-relaxed">Celles-ci sont également représentées sous forme de dataframes.</p>
+          inplace=True</code>est utilis&eacute; pour &eacute;craser le dataframe existant et ne pas en cr&eacute;er un nouveau.</p>
+        <p class="text-base my-3 leading-relaxed">Ensuite, je dois fusionner les donn&eacute;es de m&eacute;triques avec les donn&eacute;es de deux autres sources de donn&eacute;es internes (une pour le r&eacute;f&eacute;rentiel des h&ocirc;tes/vm, une pour les lignes m&eacute;tier).</p>
+        <p class="text-base my-3 leading-relaxed">Celles-ci sont &eacute;galement repr&eacute;sent&eacute;es sous forme de dataframes.</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-python">businesslines_referential_df = referential_df.merge(
@@ -280,8 +279,8 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
 )</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Cette fusion enrichira le dataframe référentiel avec les données des lignes métier, de droite à gauche, selon le nom de l'écosystème et utilisera l'index du dataframe de droite comme clé de jointure.</p>
-        <p class="text-base my-3 leading-relaxed">Maintenant, il est temps de fusionner ce dataframe avec le dataframe des métriques.</p>
+        <p class="text-base my-3 leading-relaxed">Cette fusion enrichira le dataframe r&eacute;f&eacute;rentiel avec les donn&eacute;es des lignes m&eacute;tier, de droite &agrave; gauche, selon le nom de l'&eacute;cosyst&egrave;me et utilisera l'index du dataframe de droite comme cl&eacute; de jointure.</p>
+        <p class="text-base my-3 leading-relaxed">Maintenant, il est temps de fusionner ce dataframe avec le dataframe des m&eacute;triques.</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-python">metrics_df = metrics_df.merge(
@@ -289,16 +288,16 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
 )</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Cette fusion est faite avec la méthode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.</p>
-        <p class="text-base my-3 leading-relaxed">Maintenant, je remplace le nom de métrique original par le mappage dont nous avons parlé plus tôt :</p>
+        <p class="text-base my-3 leading-relaxed">Cette fusion est faite avec la m&eacute;thode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.</p>
+        <p class="text-base my-3 leading-relaxed">Maintenant, je remplace le nom de m&eacute;trique original par le mappage dont nous avons parl&eacute; plus t&ocirc;t :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-python">metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)
 </code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Maintenant "vmware_vm_power_state" est mappé à "power_state".</p>
-        <p class="text-base my-3 leading-relaxed">Le résultat est similaire à ceci :</p>
+        <p class="text-base my-3 leading-relaxed">Maintenant "vmware_vm_power_state" est mapp&eacute; &agrave; "power_state".</p>
+        <p class="text-base my-3 leading-relaxed">Le r&eacute;sultat est similaire &agrave; ceci :</p>
         <p class="text-base my-3 leading-relaxed">
          <table border="1px solid #fff" width="100%">
           <tr>
@@ -317,15 +316,15 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
           </tr>
          </table>
         </p>
-        <p class="text-base my-3 leading-relaxed">Maintenant, pour être récoltées par prometheus, ces données doivent être resérialisées.</p>
-        <h2 class="text-3xl font-bold my-5 leading-snug">Étape 3 : Comment ai-je resérialisé les données ?</h2>
-        <p class="text-base my-3 leading-relaxed">Les chaînes de métriques Prometheus sont assez simples :</p>
+        <p class="text-base my-3 leading-relaxed">Maintenant, pour &ecirc;tre r&eacute;colt&eacute;es par prometheus, ces donn&eacute;es doivent &ecirc;tre res&eacute;rialis&eacute;es.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">&Eacute;tape 3 : Comment ai-je res&eacute;rialis&eacute; les donn&eacute;es ?</h2>
+        <p class="text-base my-3 leading-relaxed">Les cha&icirc;nes de m&eacute;triques Prometheus sont assez simples :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-python">metric_name{label1="value1", label2="value2"} 0</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">En utilisant une compréhension de liste, j'itère sur le dataframe pour imprimer une chaîne contenant au début le metric_name et à la fin la metric_value.</p>
+        <p class="text-base my-3 leading-relaxed">En utilisant une compr&eacute;hension de liste, j'it&egrave;re sur le dataframe pour imprimer une cha&icirc;ne contenant au d&eacute;but le metric_name et &agrave; la fin la metric_value.</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-python">return "\n".join(
@@ -336,14 +335,14 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
 )</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">La partie délicate est de générer les étiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.</p>
-        <p class="text-base my-3 leading-relaxed">Un dict en python ressemble à
+        <p class="text-base my-3 leading-relaxed">La partie d&eacute;licate est de g&eacute;n&eacute;rer les &eacute;tiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.</p>
+        <p class="text-base my-3 leading-relaxed">Un dict en python ressemble &agrave;
          <code class="language-python">
-          {"key": "value"}</code>, nous devons générer une chaîne qui ressemble à
+          {"key": "value"}</code>, nous devons g&eacute;n&eacute;rer une cha&icirc;ne qui ressemble &agrave;
          <code class="language-python">
           {label="value"}</code>
         </p>
-        <p class="text-base my-3 leading-relaxed">J'ai donc écrit une petite fonction qui génère cette chaîne.</p>
+        <p class="text-base my-3 leading-relaxed">J'ai donc &eacute;crit une petite fonction qui g&eacute;n&egrave;re cette cha&icirc;ne.</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-python">def generate_dict_label(row):
@@ -363,13 +362,13 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
     )</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Finalement, les données sérialisées ressemblent à :</p>
+        <p class="text-base my-3 leading-relaxed">Finalement, les donn&eacute;es s&eacute;rialis&eacute;es ressemblent &agrave; :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-python">power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Maintenant, les métriques sont récoltées par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et resérialisera les données provenant d'un exporter prometheus vmware.</p>
+        <p class="text-base my-3 leading-relaxed">Maintenant, les m&eacute;triques sont r&eacute;colt&eacute;es par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et res&eacute;rialisera les donn&eacute;es provenant d'un exporter prometheus vmware.</p>
        </content>
       </entry>
       <entry xml:lang="en">
@@ -379,13 +378,13 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
        <id>https://www.hack-with-hyweene.com/blog/supprimer-tous-les-events-d-un-topic-kafka/</id>
        <published>2024-09-16 11:30:00+00:00</published>
        <updated>2024-09-16 11:30:00+00:00</updated>
-       <link rel="alternate" type="text/html"/>https://www.hack-with-hyweene.com/blog/supprimer-tous-les-events-d-un-topic-kafka/
+       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/supprimer-tous-les-events-d-un-topic-kafka/
        <summary>
-        Un pense bête pour se rappeller comment supprimer tous les events d'un topic Kafka</summary>
+        Un pense b&ecirc;te pour se rappeller comment supprimer tous les events d'un topic Kafka</summary>
        <content type="html">
-        <p class="text-base my-3 leading-relaxed">Dans ma mission actuelle, je travaille avec Kafka. Je suis également en charge, avec d'autres personnes, du support utilisateur. Aujourd'hui, un utilisateur rencontrait un problème avec la suppression de ses messages dans un topic Kafka dédié à des tests automatisés.</p>
-        <p class="text-base my-3 leading-relaxed">A la fin de ses tests, il doit purger les messages créé pendant la session, mais rencontrait une erreur de timeout à l'execution de la requete.</p>
-        <p class="text-base my-3 leading-relaxed">Dans le cadre de ce pense bête, la cleanup.policy du topic est configurée à delete, ce qui signifie que les messages sont supprimés lorsqu'ils atteignent la rétention définie, la méthode est différente pour les topics configurés avec la rétention compact.</p>
+        <p class="text-base my-3 leading-relaxed">Dans ma mission actuelle, je travaille avec Kafka. Je suis &eacute;galement en charge, avec d'autres personnes, du support utilisateur. Aujourd'hui, un utilisateur rencontrait un probl&egrave;me avec la suppression de ses messages dans un topic Kafka d&eacute;di&eacute; &agrave; des tests automatis&eacute;s.</p>
+        <p class="text-base my-3 leading-relaxed">A la fin de ses tests, il doit purger les messages cr&eacute;&eacute; pendant la session, mais rencontrait une erreur de timeout &agrave; l'execution de la requete.</p>
+        <p class="text-base my-3 leading-relaxed">Dans le cadre de ce pense b&ecirc;te, la cleanup.policy du topic est configur&eacute;e &agrave; delete, ce qui signifie que les messages sont supprim&eacute;s lorsqu'ils atteignent la r&eacute;tention d&eacute;finie, la m&eacute;thode est diff&eacute;rente pour les topics configur&eacute;s avec la r&eacute;tention compact.</p>
         <p class="text-base my-3 leading-relaxed">Pour supprimer tous les messages d'un topic Kafka, il faut utiliser la commande
          <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
           kafka-delete-records</code>fournie par Kafka.</p>
@@ -396,7 +395,7 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
         </p>
         <p class="text-base my-3 leading-relaxed">Le fichier
          <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
-          offsets.json</code>doit contenir les offsets des messages à supprimer. Par exemple, pour un topic à trois partitions, le fichier doit contenir trois objets, un par partition.</p>
+          offsets.json</code>doit contenir les offsets des messages &agrave; supprimer. Par exemple, pour un topic &agrave; trois partitions, le fichier doit contenir trois objets, un par partition.</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-json">{
@@ -421,8 +420,8 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
 }</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Dans cet exemple, tous les messages situés avant les offsets spécifié pour chaque partition seront supprimés.</p>
-        <p class="text-base my-3 leading-relaxed">Pour obtenir les offsets des messages à supprimer, il faut utiliser la commande
+        <p class="text-base my-3 leading-relaxed">Dans cet exemple, tous les messages situ&eacute;s avant les offsets sp&eacute;cifi&eacute; pour chaque partition seront supprim&eacute;s.</p>
+        <p class="text-base my-3 leading-relaxed">Pour obtenir les offsets des messages &agrave; supprimer, il faut utiliser la commande
          <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
           kafka-consumer-groups</code>.</p>
         <p class="text-base my-3 leading-relaxed">
@@ -430,12 +429,12 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
 <code class="language-bash">kafka-consumer-groups --bootstrap-server ${bootstrapServerAndPort} --group ${consumerGroupName} --describe</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Cette commande affiche les offsets des messages consommés par le groupe de consommateurs
+        <p class="text-base my-3 leading-relaxed">Cette commande affiche les offsets des messages consomm&eacute;s par le groupe de consommateurs
          <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
-          ${consumerGroupName}</code>. Il suffit de récupérer ces offsets pour les mettre dans le fichier
+          ${consumerGroupName}</code>. Il suffit de r&eacute;cup&eacute;rer ces offsets pour les mettre dans le fichier
          <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
           offsets.json</code>.</p>
-        <p class="text-base my-3 leading-relaxed">Le résultat est le suivant :</p>
+        <p class="text-base my-3 leading-relaxed">Le r&eacute;sultat est le suivant :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-bash">
@@ -447,7 +446,7 @@ myTestApp   myTestTopic     2          6               6               0        
         </p>
         <p class="text-base my-3 leading-relaxed">Une fois le fichier
          <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
-          offsets.json</code>prêt, il suffit de lancer la commande
+          offsets.json</code>pr&ecirc;t, il suffit de lancer la commande
          <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
           kafka-delete-records</code>pour supprimer les messages du topic
          <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
@@ -457,10 +456,10 @@ myTestApp   myTestTopic     2          6               6               0        
 <code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code>
 </pre>
         </p>
-        <p class="text-base my-3 leading-relaxed">Dans notre cas, l'utilisateur rencontrait un problème de timeout, ce qui peut arriver si le nombre de messages à supprimer est très grand. Il faut alors augmenter le timeout de la commande
+        <p class="text-base my-3 leading-relaxed">Dans notre cas, l'utilisateur rencontrait un probl&egrave;me de timeout, ce qui peut arriver si le nombre de messages &agrave; supprimer est tr&egrave;s grand. Il faut alors augmenter le timeout de la commande
          <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
           kafka-delete-records</code>.</p>
-        <p class="text-base my-3 leading-relaxed">Pour se faire, nous devons créer un fichier command-config avec le timeout souhaité :</p>
+        <p class="text-base my-3 leading-relaxed">Pour se faire, nous devons cr&eacute;er un fichier command-config avec le timeout souhait&eacute; :</p>
         <p class="text-base my-3 leading-relaxed">
          <pre class="rounded-xl">
 <code class="language-bash">request.timeout.ms=120000</code>
@@ -476,10 +475,10 @@ myTestApp   myTestTopic     2          6               6               0        
         </p>
         <p class="text-base my-3 leading-relaxed">Les messages du topic Kafka
          <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
-          ${topicName}</code>ont été supprimés avec succès.</p>
-        <h2 class="text-3xl font-bold my-5 leading-snug">Méthode Gros Bourrin</h2>
-        <p class="text-base my-3 leading-relaxed">On peut également supprimer la totalité des events d'un topic en changeant la rétention du topic à 1ms, puis en la remettant à la valeur initiale.</p>
-        <p class="text-base my-3 leading-relaxed">Cette méthode a l'avantage de fonctionner également pour les topics compactés ! :D</p>
+          ${topicName}</code>ont &eacute;t&eacute; supprim&eacute;s avec succ&egrave;s.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">M&eacute;thode Gros Bourrin</h2>
+        <p class="text-base my-3 leading-relaxed">On peut &eacute;galement supprimer la totalit&eacute; des events d'un topic en changeant la r&eacute;tention du topic &agrave; 1ms, puis en la remettant &agrave; la valeur initiale.</p>
+        <p class="text-base my-3 leading-relaxed">Cette m&eacute;thode a l'avantage de fonctionner &eacute;galement pour les topics compact&eacute;s ! :D</p>
        </content>
       </entry>
      </link>
@@ -497,8 +496,8 @@ myTestApp   myTestTopic     2          6               6               0        
       <div>
        <h2 class="text-2xl font-semibold text-white">Hyweene</h2>
        <p class="pt-2">Je m'appelle Hyweene (aussi connu comme Bruno Giarrizzo), 35 ans.</p>
-       <p class="pt-2">Je suis un ancien administrateur système et réseau, j'ai pris la décision de me reconvertir dans le développement web et mobile.</p>
-       <p class="pt-2">Ce site est la compilation de ce que j'apprends pour combler mes propres lacunes et, peut être, aider d'autres à apprendre.</p>
+       <p class="pt-2">Je suis un ancien administrateur syst&egrave;me et r&eacute;seau, j'ai pris la d&eacute;cision de me reconvertir dans le d&eacute;veloppement web et mobile.</p>
+       <p class="pt-2">Ce site est la compilation de ce que j'apprends pour combler mes propres lacunes et, peut &ecirc;tre, aider d'autres &agrave; apprendre.</p>
        <p class="pt-2">Vous voulez en savoir plus sur le pourquoi de ce site ? <a class="text-sky-400/75 font-semibold underline hover:text-sky-400 transition-colors duration-300" href="/a-propos/">Cliquez ici</a>.</p>
       </div>
      </div>
@@ -506,15 +505,15 @@ myTestApp   myTestTopic     2          6               6               0        
    </div>
    <div class="pt-5 pb-5 border-t border-gray-500 mx-auto lg:max-w-4xl">
     <p>Swift, SwiftUI, le logo Swift, Swift Playgrounds, Xcode, Instruments, Cocoa Touch, Touch ID, AirDrop,
-            iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac et macOS sont des marques déposées d'Apple
-            Inc., enregistrées aux États-Unis et dans d'autres pays.</p>
+            iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac et macOS sont des marques d&eacute;pos&eacute;es d'Apple
+            Inc., enregistr&eacute;es aux &Eacute;tats-Unis et dans d'autres pays.</p>
    </div>
    <div class="flex flex-col-reverse mx-auto justify-between pt-5 pb-5 lg:flex-row bg-top border-t border-gray-500 lg:max-w-4xl">
     <ul>
      <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/a-propos/">A Propos</a></li>
-     <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/mentions-legales/">Mentions Légales</a></li>
+     <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/mentions-legales/">Mentions L&eacute;gales</a></li>
     </ul>
-    <ul class="flex flex-col mb-3 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row"><span class="text-md text-gray-200 font-semibold tracking-tight">© 2024</span><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold tracking-tight" href="/">Hack-With-Hyweene.com</a></ul>
+    <ul class="flex flex-col mb-3 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row"><span class="text-md text-gray-200 font-semibold tracking-tight">&copy; 2024</span><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold tracking-tight" href="/">Hack-With-Hyweene.com</a></ul>
    </div>
   </footer>
  </body>
