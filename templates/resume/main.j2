@@ -20,13 +20,13 @@
                     <p>{{ experience.start_date }} - {{ experience.end_date }}</p>
                 </header>
 
-                <main>
+                <div>
                     {{ experience.body }}
-                </main>
+                </div>
 
                 {% if experience.tags %}
                     <footer class="border-t border-gray-400">
-                        <div class="mt-4 flex flex-wrap"">
+                        <div class="mt-4 flex flex-wrap">
                             {% for tag in experience.tags %}
                                 <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">
                                     {{ tag }}
@@ -52,9 +52,9 @@
                     <p>{{ education.start_date }} - {{ education.end_date }} ( {{ education.status }} )</p>
                 </header>
 
-                <main>
+                <div>
                     {{ education.body }}
-                </main>
+                </div>
 
                 {% if education.tags %}
                     <footer class="border-t border-gray-400">

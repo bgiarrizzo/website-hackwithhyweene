@@ -21,7 +21,6 @@
   <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - Blog RSS" type="application/rss+xml">
   <title>Table des mati&egrave;res - Git - Apprendre - Hack with Hyweene</title>
   <meta content="Table des mati&egrave;res - Git - Apprendre - Hack with Hyweene" name="title">
-  <meta content="Freelance Developer, DevOps, Ethical Hacker" name="description">
   <link href="https://www.hack-with-hyweene.com/" rel="canonical">
   <script src="https://cdn.tailwindcss.com">
   </script>
@@ -51,8 +50,8 @@
     </nav> <aside class="flex h-full w-full lg:hidden"><div class="sm:flex hidden h-full items-center"><a class="h-full" href="https://www.hack-with-hyweene.com"><img alt="favicon" class="h-full" src="/static/img/cl-logo.svg"></a></div>
      <div class="lg:hidden flex-1 h-full flex-nowrap items-center p-5 pl-0 sm:pl-5 lg:text-center"><a class="text-3xl text-gray-300" href="/" translate="no"> <span class="font-bold">Hack</span><span class="px-1">with</span><span class="font-bold">Hyweene</span></a></div>
      <div class="flex items-center">
+      <input class="peer hidden" id="ss-mobile-menu" type="checkbox">
       <label class="relative z-[9999] cursor-pointer px-3 pr-0 py-6" for="ss-mobile-menu">
-       <input class="peer hidden" id="ss-mobile-menu" type="checkbox">
        <svg class="feather feather-menu" fill="none" height="24" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
         <line x1="3" x2="21" y1="12" y2="12">
         </line>
@@ -61,19 +60,19 @@
         <line x1="3" x2="21" y1="18" y2="18">
         </line>
        </svg>
-       <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
-       <div class="fixed top-0 right-0 z-[9999] h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0 peer-checked:shadow-heading">
-        <div class="float-right min-h-full w-[85%] bg-slate-900 px-6 pt-12 shadow-2xl">
-         <menu class="mt-8 mb-8 flex flex-col space-y-4 text-heading">
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/blog/">Blog</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/liens/">Liens</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/apprendre/">Apprendre</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/cv/">CV</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/a-propos/">A Propos</a></li>
-         </menu>
-        </div>
-       </div>
       </label>
+      <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
+      <div class="fixed top-0 right-0 z-[9999] h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0 peer-checked:shadow-heading">
+       <div class="float-right min-h-full w-[85%] bg-slate-900 px-6 pt-12 shadow-2xl">
+        <menu class="mt-8 mb-8 flex flex-col space-y-4 text-heading">
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/blog/">Blog</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/liens/">Liens</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/apprendre/">Apprendre</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/cv/">CV</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/a-propos/">A Propos</a></li>
+        </menu>
+       </div>
+      </div>
      </div>
     </aside>
    </div>
@@ -91,7 +90,6 @@
     <div class="pt-5 pb-5 grid grid-cols-1 md:grid-cols-4 md:gap-4">
      <div class="mx-auto md:mx-0 md:col-span-1">
       <img alt="logo" class="aspect-square object-fill rounded-xl" loading="lazy" src="/static/img/hyweene.jpg">
-      </img>
      </div>
      <div class="pt-5 md:pl-5 md:pt-0 my-auto md:col-span-3 text-md text-gray-200">
       <div>
@@ -114,7 +112,10 @@
      <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/a-propos/">A Propos</a></li>
      <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/mentions-legales/">Mentions L&eacute;gales</a></li>
     </ul>
-    <ul class="flex flex-col mb-3 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row"><span class="text-md text-gray-200 font-semibold tracking-tight">&copy; 2024</span><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold tracking-tight" href="/">Hack-With-Hyweene.com</a></ul>
+    <ul class="flex flex-col mb-3 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
+     <li><span class="text-md text-gray-200 font-semibold tracking-tight">&copy; 2024</span></li>
+     <li><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold tracking-tight" href="/">Hack-With-Hyweene.com</a></li>
+    </ul>
    </div>
   </footer>
  </body>

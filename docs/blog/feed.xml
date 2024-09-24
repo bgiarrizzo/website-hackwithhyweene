@@ -22,7 +22,6 @@
   <title>Hack with Hyweene</title>
   <meta content="Hack with Hyweene" name="title">
   <meta content="Bruno, Giarrizzo, Hyweene, Bruno Giarrizzo, Developpeur, DevOps, Git, Apple, Golang, Go, Python, Swift, SwiftUI, Docker, Kubernetes, POO, OOP, Programmation Orient&eacute;e Objet, Programmation Fonctionnelle" name="keywords">
-  <meta content="Freelance Developer, DevOps, Ethical Hacker" name="description">
   <link href="https://www.hack-with-hyweene.com/" rel="canonical">
   <script src="https://cdn.tailwindcss.com">
   </script>
@@ -52,8 +51,8 @@
     </nav> <aside class="flex h-full w-full lg:hidden"><div class="sm:flex hidden h-full items-center"><a class="h-full" href="https://www.hack-with-hyweene.com"><img alt="favicon" class="h-full" src="/static/img/cl-logo.svg"></a></div>
      <div class="lg:hidden flex-1 h-full flex-nowrap items-center p-5 pl-0 sm:pl-5 lg:text-center"><a class="text-3xl text-gray-300" href="/" translate="no"> <span class="font-bold">Hack</span><span class="px-1">with</span><span class="font-bold">Hyweene</span></a></div>
      <div class="flex items-center">
+      <input class="peer hidden" id="ss-mobile-menu" type="checkbox">
       <label class="relative z-[9999] cursor-pointer px-3 pr-0 py-6" for="ss-mobile-menu">
-       <input class="peer hidden" id="ss-mobile-menu" type="checkbox">
        <svg class="feather feather-menu" fill="none" height="24" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
         <line x1="3" x2="21" y1="12" y2="12">
         </line>
@@ -62,19 +61,19 @@
         <line x1="3" x2="21" y1="18" y2="18">
         </line>
        </svg>
-       <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
-       <div class="fixed top-0 right-0 z-[9999] h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0 peer-checked:shadow-heading">
-        <div class="float-right min-h-full w-[85%] bg-slate-900 px-6 pt-12 shadow-2xl">
-         <menu class="mt-8 mb-8 flex flex-col space-y-4 text-heading">
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/blog/">Blog</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/liens/">Liens</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/apprendre/">Apprendre</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/cv/">CV</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/a-propos/">A Propos</a></li>
-         </menu>
-        </div>
-       </div>
       </label>
+      <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
+      <div class="fixed top-0 right-0 z-[9999] h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0 peer-checked:shadow-heading">
+       <div class="float-right min-h-full w-[85%] bg-slate-900 px-6 pt-12 shadow-2xl">
+        <menu class="mt-8 mb-8 flex flex-col space-y-4 text-heading">
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/blog/">Blog</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/liens/">Liens</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/apprendre/">Apprendre</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/cv/">CV</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/a-propos/">A Propos</a></li>
+        </menu>
+       </div>
+      </div>
      </div>
     </aside>
    </div>
@@ -117,15 +116,9 @@
         <p class="text-base my-3 leading-relaxed">Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqu&eacute;.</p>
         <p class="text-base my-3 leading-relaxed">J'essaie de travailler avec les derni&egrave;res versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
         <p class="text-base my-3 leading-relaxed">Je l'ai install&eacute; avec brew, assez facilement :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre>
-<code class="language-bash">brew install python@3.10</code>
-</pre>
-        </p>
+        <pre class="rounded-xl"><code class="language-bash">brew install python@3.10</code></pre>
         <p class="text-base my-3 leading-relaxed">J'ai eu des probl&egrave;mes avec psycopg2-binary lors de l'installation des d&eacute;pendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais &eacute;tait celui-ci :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-bash">Error: pg_config executable not found.
+        <pre class="rounded-xl"><code class="language-bash">Error: pg_config executable not found.
 
 pg_config is required to build psycopg2 from source.  Please add the directory
 containing pg_config to the $PATH or specify the full executable path with the
@@ -133,33 +126,15 @@ option:
 
     python setup.py build_ext --pg-config /path/to/pg_config build ...
 
-or with the pg_config option in 'setup.cfg'.</code>
-</pre>
-        </p>
+or with the pg_config option in 'setup.cfg'.</code></pre>
         <p class="text-base my-3 leading-relaxed">Il semble qu'il manque un fichier de configuration. J'ai essay&eacute; de r&eacute;soudre ce probl&egrave;me en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-bash">brew install postgresql@12</code>
-</pre>
-        </p>
+        <pre class="rounded-xl"><code class="language-bash">brew install postgresql@12</code></pre>
         <p class="text-base my-3 leading-relaxed">&Agrave; ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette fa&ccedil;on (en utilisant ZSH, il me dit &eacute;videmment de l'&eacute;crire dans .zshrc) :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-bash">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' &gt; ~/.zshrc</code>
-</pre>
-        </p>
+        <pre class="rounded-xl"><code class="language-bash">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' &gt; ~/.zshrc</code></pre>
         <p class="text-base my-3 leading-relaxed">Maintenant, tout est pr&ecirc;t, et je peux l'installer comme je le souhaite :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-bash">pip(3) install psycopg2-binary</code>
-</pre>
-        </p>
+        <pre class="rounded-xl"><code class="language-bash">pip(3) install psycopg2-binary</code></pre>
         <p class="text-base my-3 leading-relaxed">Ou dans le r&eacute;pertoire de mon projet :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-bash">pipenv install psycopg2-binary</code>
-</pre>
-        </p>
+        <pre class="rounded-xl"><code class="language-bash">pipenv install psycopg2-binary</code></pre>
        </content>
       </entry>
       <entry xml:lang="en">
@@ -179,47 +154,33 @@ or with the pg_config option in 'setup.cfg'.</code>
         <p class="text-base my-3 leading-relaxed">Les m&eacute;triques sont r&eacute;cup&eacute;r&eacute;es par fastapi, analys&eacute;es, enrichies, res&eacute;rialis&eacute;es, et r&eacute;colt&eacute;es par prometheus.</p>
         <p class="text-base my-3 leading-relaxed">Les noms des m&eacute;triques doivent &ecirc;tre mapp&eacute;s, car ils sont unifi&eacute;s avec les m&eacute;triques d'openstack et d'IBM cloud.</p>
         <p class="text-base my-3 leading-relaxed">La table de mappage est celle ci-dessous :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">MAPPING_METRICS_NAME = {
+        <pre class="rounded-xl"><code class="language-python">MAPPING_METRICS_NAME = {
     "vmware_vm_power_state" : "power_state"
     "vmware_vm_cpu_usage_average"': "cpu_usage_percentage"
     "vmware_vm_mem_consumed_average": "memory_used"
     "vmware_vm_memory_max": "memory_total"
     "vmware_vm_mem_usage_average": "memory_usage_percentage",
     "vmware_vm_num_cpu": "vcpus"
-}</code>
-</pre>
-        </p>
+}</code></pre>
         <h2 class="text-3xl font-bold my-5 leading-snug">&Eacute;tape 1 : Analyse des m&eacute;triques de vmware_exporter</h2>
         <p class="text-base my-3 leading-relaxed">L'exporter est appel&eacute; depuis une fonction nomm&eacute;e request_exporter().</p>
         <p class="text-base my-3 leading-relaxed">La sortie de l'exporter est un grand fichier str qui doit &ecirc;tre analys&eacute; pour &ecirc;tre trait&eacute;.</p>
         <p class="text-base my-3 leading-relaxed">J'ai utilis&eacute; prometheus_client.parser pour cela.</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">from prometheus_client.parser import text_string_to_metric_families
+        <pre class="rounded-xl"><code class="language-python">from prometheus_client.parser import text_string_to_metric_families
 
 data_from_exporter = request_exporter(target)
-metric_families = text_string_to_metric_families(data_from_exporter)</code>
-</pre>
-        </p>
+metric_families = text_string_to_metric_families(data_from_exporter)</code></pre>
         <p class="text-base my-3 leading-relaxed">La variable metric_families est un objet &agrave; plusieurs niveaux contenant des m&eacute;triques regroup&eacute;es par nom de m&eacute;trique.</p>
         <p class="text-base my-3 leading-relaxed">Elle peut &ecirc;tre repr&eacute;sent&eacute;e comme un dict, o&ugrave; la cl&eacute; est le metric_name et la valeur est une liste contenant toutes les m&eacute;triques sous forme de tuples.</p>
         <p class="text-base my-3 leading-relaxed">Exemple :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">{
+        <pre class="rounded-xl"><code class="language-python">{
     "vmware_vm_power_state": [
         ("vmware_vm_power_state", {"vm_name": "vm1", "label2": "value2"}, 1),
         ("vmware_vm_power_state", {"vm_name": "vm2", "label2": "value2"}, 0),
     ]
-}</code>
-</pre>
-        </p>
+}</code></pre>
         <p class="text-base my-3 leading-relaxed">J'ai donc fait un petit algorithme pour aplatir l'objet en une liste de dicts :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">processed_exporter_data = []
+        <pre class="rounded-xl"><code class="language-python">processed_exporter_data = []
 
 for family in data_from exporter:
     if family.name not in MAPPING_METRICS_NAME:
@@ -230,32 +191,20 @@ for family in data_from exporter:
         for key, value in sample.items():
             row dict[key] = value
         row_dict["value"] = sample
-        processed exporter_data.append(row_dict)</code>
-</pre>
-        </p>
+        processed exporter_data.append(row_dict)</code></pre>
         <p class="text-base my-3 leading-relaxed">J'aurai alors une liste de dicts, &agrave; partir de laquelle un dataframe peut &ecirc;tre cr&eacute;&eacute;.</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">[
+        <pre class="rounded-xl"><code class="language-python">[
     {"__name__": "vmware_vm_power_state", "vm_name": "vm1", "value": 1},
     {"__name__": "vmware_vm_power_state", "vm_name": "vm2", "value": 0},
-]</code>
-</pre>
-        </p>
+]</code></pre>
         <p class="text-base my-3 leading-relaxed">Maintenant, jouons avec les dataframes...</p>
         <h2 class="text-3xl font-bold my-5 leading-snug">&Eacute;tape 2 : Jouer avec les dataframes</h2>
         <p class="text-base my-3 leading-relaxed">Tout d'abord, je cr&eacute;e le dataframe :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">import pandas
+        <pre class="rounded-xl"><code class="language-python">import pandas
 
-metrics_df = pandas.DataFrame(processed_exporter_data)</code>
-</pre>
-        </p>
+metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
         <p class="text-base my-3 leading-relaxed">Ensuite, je supprime les &eacute;tiquettes inutiles :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre>
-<code class="language-python">metrics_df.drop(
+        <pre class="rounded-xl"><code class="language-python">metrics_df.drop(
     colums=[
         "host_name",
         "ds_name",
@@ -264,77 +213,58 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
     ],
     axis=1,
     inplace=True,
-)</code>
-</pre>
-        </p>
+)</code></pre>
         <p class="text-base my-3 leading-relaxed">De cette fa&ccedil;on, j'utilise le dataframe pour supprimer les 4 colonnes.
          <code class="language-python">
           inplace=True</code>est utilis&eacute; pour &eacute;craser le dataframe existant et ne pas en cr&eacute;er un nouveau.</p>
         <p class="text-base my-3 leading-relaxed">Ensuite, je dois fusionner les donn&eacute;es de m&eacute;triques avec les donn&eacute;es de deux autres sources de donn&eacute;es internes (une pour le r&eacute;f&eacute;rentiel des h&ocirc;tes/vm, une pour les lignes m&eacute;tier).</p>
         <p class="text-base my-3 leading-relaxed">Celles-ci sont &eacute;galement repr&eacute;sent&eacute;es sous forme de dataframes.</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">businesslines_referential_df = referential_df.merge(
+        <pre class="rounded-xl"><code class="language-python">businesslines_referential_df = referential_df.merge(
     businesslines_df, how="left", left_on="ecosystem", right_index=True
-)</code>
-</pre>
-        </p>
+)</code></pre>
         <p class="text-base my-3 leading-relaxed">Cette fusion enrichira le dataframe r&eacute;f&eacute;rentiel avec les donn&eacute;es des lignes m&eacute;tier, de droite &agrave; gauche, selon le nom de l'&eacute;cosyst&egrave;me et utilisera l'index du dataframe de droite comme cl&eacute; de jointure.</p>
         <p class="text-base my-3 leading-relaxed">Maintenant, il est temps de fusionner ce dataframe avec le dataframe des m&eacute;triques.</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">metrics_df = metrics_df.merge(
+        <pre class="rounded-xl"><code class="language-python">metrics_df = metrics_df.merge(
     businesslines_referential_df, how="inner", left_on="vm_name", right_index=True
-)</code>
-</pre>
-        </p>
+)</code></pre>
         <p class="text-base my-3 leading-relaxed">Cette fusion est faite avec la m&eacute;thode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.</p>
         <p class="text-base my-3 leading-relaxed">Maintenant, je remplace le nom de m&eacute;trique original par le mappage dont nous avons parl&eacute; plus t&ocirc;t :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)
-</code>
-</pre>
-        </p>
-        <p class="text-base my-3 leading-relaxed">Maintenant "vmware_vm_power_state" est mapp&eacute; &agrave; "power_state".</p>
+        <pre class="rounded-xl"><code class="language-python">metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)</code></pre>
+        <p class="text-base my-3 leading-relaxed">Maintenant "vmware
+         <em class="italic">
+          vm</em>power
+         <em class="italic">
+          state" est mapp&eacute; &agrave; "power</em>state".</p>
         <p class="text-base my-3 leading-relaxed">Le r&eacute;sultat est similaire &agrave; ceci :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <table border="1px solid #fff" width="100%">
-          <tr>
-           <th>__name__</th>
-           <th>vm_name</th>
-           <th>ecosystem</th>
-           <th>business_line</th>
-           <th>value</th>
-          </tr>
-          <tr>
-           <td>power_state</td>
-           <td>vm1</td>
-           <td>TESTECO</td>
-           <td>BL1</td>
-           <td>1</td>
-          </tr>
-         </table>
-        </p>
+        <table class="min-w-full border-collapse my-4" style="border: 1px solid #fff; width: 100%;">
+         <tr>
+          <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">__name__</th>
+          <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">vm_name</th>
+          <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">ecosystem</th>
+          <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">business_line</th>
+          <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">value</th>
+         </tr>
+         <tr>
+          <td class="border border-gray-300 px-4 py-2 text-gray-600">power_state</td>
+          <td class="border border-gray-300 px-4 py-2 text-gray-600">vm1</td>
+          <td class="border border-gray-300 px-4 py-2 text-gray-600">TESTECO</td>
+          <td class="border border-gray-300 px-4 py-2 text-gray-600">BL1</td>
+          <td class="border border-gray-300 px-4 py-2 text-gray-600">1</td>
+         </tr>
+        </table>
         <p class="text-base my-3 leading-relaxed">Maintenant, pour &ecirc;tre r&eacute;colt&eacute;es par prometheus, ces donn&eacute;es doivent &ecirc;tre res&eacute;rialis&eacute;es.</p>
         <h2 class="text-3xl font-bold my-5 leading-snug">&Eacute;tape 3 : Comment ai-je res&eacute;rialis&eacute; les donn&eacute;es ?</h2>
         <p class="text-base my-3 leading-relaxed">Les cha&icirc;nes de m&eacute;triques Prometheus sont assez simples :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">metric_name{label1="value1", label2="value2"} 0</code>
-</pre>
-        </p>
-        <p class="text-base my-3 leading-relaxed">En utilisant une compr&eacute;hension de liste, j'it&egrave;re sur le dataframe pour imprimer une cha&icirc;ne contenant au d&eacute;but le metric_name et &agrave; la fin la metric_value.</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">return "\n".join(
+        <pre class="rounded-xl"><code class="language-python">metric_name{label1="value1", label2="value2"} 0</code></pre>
+        <p class="text-base my-3 leading-relaxed">En utilisant une compr&eacute;hension de liste, j'it&egrave;re sur le dataframe pour imprimer une cha&icirc;ne contenant au d&eacute;but le metric
+         <em class="italic">
+          name et &agrave; la fin la metric</em>value.</p>
+        <pre class="rounded-xl"><code class="language-python">return "\n".join(
     [
         f"{row['__name__']}{generate_dict_label(row)} {row['value']}"
         for index, row in metrics df.iterrows()
     ]
-)</code>
-</pre>
-        </p>
+)</code></pre>
         <p class="text-base my-3 leading-relaxed">La partie d&eacute;licate est de g&eacute;n&eacute;rer les &eacute;tiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.</p>
         <p class="text-base my-3 leading-relaxed">Un dict en python ressemble &agrave;
          <code class="language-python">
@@ -343,9 +273,7 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
           {label="value"}</code>
         </p>
         <p class="text-base my-3 leading-relaxed">J'ai donc &eacute;crit une petite fonction qui g&eacute;n&egrave;re cette cha&icirc;ne.</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">def generate_dict_label(row):
+        <pre class="rounded-xl"><code class="language-python">def generate_dict_label(row):
 
     labels = set(row.index) - {"__name__", "value"}
 
@@ -359,15 +287,9 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
             ]
         )
         + "}"
-    )</code>
-</pre>
-        </p>
+    )</code></pre>
         <p class="text-base my-3 leading-relaxed">Finalement, les donn&eacute;es s&eacute;rialis&eacute;es ressemblent &agrave; :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-python">power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1</code>
-</pre>
-        </p>
+        <pre class="rounded-xl"><code class="language-python">power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1</code></pre>
         <p class="text-base my-3 leading-relaxed">Maintenant, les m&eacute;triques sont r&eacute;colt&eacute;es par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et res&eacute;rialisera les donn&eacute;es provenant d'un exporter prometheus vmware.</p>
        </content>
       </entry>
@@ -386,19 +308,13 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
         <p class="text-base my-3 leading-relaxed">A la fin de ses tests, il doit purger les messages cr&eacute;&eacute; pendant la session, mais rencontrait une erreur de timeout &agrave; l'execution de la requete.</p>
         <p class="text-base my-3 leading-relaxed">Dans le cadre de ce pense b&ecirc;te, la cleanup.policy du topic est configur&eacute;e &agrave; delete, ce qui signifie que les messages sont supprim&eacute;s lorsqu'ils atteignent la r&eacute;tention d&eacute;finie, la m&eacute;thode est diff&eacute;rente pour les topics configur&eacute;s avec la r&eacute;tention compact.</p>
         <p class="text-base my-3 leading-relaxed">Pour supprimer tous les messages d'un topic Kafka, il faut utiliser la commande
-         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+         <code>
           kafka-delete-records</code>fournie par Kafka.</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code>
-</pre>
-        </p>
+        <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
         <p class="text-base my-3 leading-relaxed">Le fichier
-         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+         <code>
           offsets.json</code>doit contenir les offsets des messages &agrave; supprimer. Par exemple, pour un topic &agrave; trois partitions, le fichier doit contenir trois objets, un par partition.</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-json">{
+        <pre class="rounded-xl"><code class="language-json">{
   "partitions": [
     {
       "topic": "${topicName}",
@@ -417,64 +333,41 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code>
     }
   ],
   "version": 1
-}</code>
-</pre>
-        </p>
+}</code></pre>
         <p class="text-base my-3 leading-relaxed">Dans cet exemple, tous les messages situ&eacute;s avant les offsets sp&eacute;cifi&eacute; pour chaque partition seront supprim&eacute;s.</p>
         <p class="text-base my-3 leading-relaxed">Pour obtenir les offsets des messages &agrave; supprimer, il faut utiliser la commande
-         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+         <code>
           kafka-consumer-groups</code>.</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-bash">kafka-consumer-groups --bootstrap-server ${bootstrapServerAndPort} --group ${consumerGroupName} --describe</code>
-</pre>
-        </p>
+        <pre class="rounded-xl"><code class="language-bash">kafka-consumer-groups --bootstrap-server ${bootstrapServerAndPort} --group ${consumerGroupName} --describe</code></pre>
         <p class="text-base my-3 leading-relaxed">Cette commande affiche les offsets des messages consomm&eacute;s par le groupe de consommateurs
-         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+         <code>
           ${consumerGroupName}</code>. Il suffit de r&eacute;cup&eacute;rer ces offsets pour les mettre dans le fichier
-         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+         <code>
           offsets.json</code>.</p>
         <p class="text-base my-3 leading-relaxed">Le r&eacute;sultat est le suivant :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-bash">
-GROUP       TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+        <pre class="rounded-xl"><code class="language-bash">GROUP       TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
 myTestApp   myTestTopic     0          3               3               0               -               -               -
 myTestApp   myTestTopic     1          5               5               0               -               -               -
-myTestApp   myTestTopic     2          6               6               0               -               -               -</code>
-</pre>
-        </p>
+myTestApp   myTestTopic     2          6               6               0               -               -               -</code></pre>
         <p class="text-base my-3 leading-relaxed">Une fois le fichier
-         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+         <code>
           offsets.json</code>pr&ecirc;t, il suffit de lancer la commande
-         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+         <code>
           kafka-delete-records</code>pour supprimer les messages du topic
-         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+         <code>
           ${topicName}</code>.</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code>
-</pre>
-        </p>
+        <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
         <p class="text-base my-3 leading-relaxed">Dans notre cas, l'utilisateur rencontrait un probl&egrave;me de timeout, ce qui peut arriver si le nombre de messages &agrave; supprimer est tr&egrave;s grand. Il faut alors augmenter le timeout de la commande
-         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+         <code>
           kafka-delete-records</code>.</p>
         <p class="text-base my-3 leading-relaxed">Pour se faire, nous devons cr&eacute;er un fichier command-config avec le timeout souhait&eacute; :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-bash">request.timeout.ms=120000</code>
-</pre>
-        </p>
+        <pre class="rounded-xl"><code class="language-bash">request.timeout.ms=120000</code></pre>
         <p class="text-base my-3 leading-relaxed">Puis lancer la commande
-         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+         <code>
           kafka-delete-records</code>avec le fichier de configuration :</p>
-        <p class="text-base my-3 leading-relaxed">
-         <pre class="rounded-xl">
-<code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json --command-config path/to/command-config</code>
-</pre>
-        </p>
+        <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json --command-config path/to/command-config</code></pre>
         <p class="text-base my-3 leading-relaxed">Les messages du topic Kafka
-         <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+         <code>
           ${topicName}</code>ont &eacute;t&eacute; supprim&eacute;s avec succ&egrave;s.</p>
         <h2 class="text-3xl font-bold my-5 leading-snug">M&eacute;thode Gros Bourrin</h2>
         <p class="text-base my-3 leading-relaxed">On peut &eacute;galement supprimer la totalit&eacute; des events d'un topic en changeant la r&eacute;tention du topic &agrave; 1ms, puis en la remettant &agrave; la valeur initiale.</p>
@@ -490,7 +383,6 @@ myTestApp   myTestTopic     2          6               6               0        
     <div class="pt-5 pb-5 grid grid-cols-1 md:grid-cols-4 md:gap-4">
      <div class="mx-auto md:mx-0 md:col-span-1">
       <img alt="logo" class="aspect-square object-fill rounded-xl" loading="lazy" src="/static/img/hyweene.jpg">
-      </img>
      </div>
      <div class="pt-5 md:pl-5 md:pt-0 my-auto md:col-span-3 text-md text-gray-200">
       <div>
@@ -513,7 +405,10 @@ myTestApp   myTestTopic     2          6               6               0        
      <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/a-propos/">A Propos</a></li>
      <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/mentions-legales/">Mentions L&eacute;gales</a></li>
     </ul>
-    <ul class="flex flex-col mb-3 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row"><span class="text-md text-gray-200 font-semibold tracking-tight">&copy; 2024</span><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold tracking-tight" href="/">Hack-With-Hyweene.com</a></ul>
+    <ul class="flex flex-col mb-3 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
+     <li><span class="text-md text-gray-200 font-semibold tracking-tight">&copy; 2024</span></li>
+     <li><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold tracking-tight" href="/">Hack-With-Hyweene.com</a></li>
+    </ul>
    </div>
   </footer>
  </body>

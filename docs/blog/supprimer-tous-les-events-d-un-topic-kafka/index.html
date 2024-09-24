@@ -21,7 +21,6 @@
   <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - Blog RSS" type="application/rss+xml">
   <title>Supprimer tous les events d'un topic Kafka - Blog - Hack with Hyweene</title>
   <meta content="Supprimer tous les events d'un topic Kafka - Blog - Hack with Hyweene" name="title">
-  <meta content="Freelance Developer, DevOps, Ethical Hacker" name="description">
   <link href="https://www.hack-with-hyweene.com/blog/supprimer-tous-les-events-d-un-topic-kafka/" rel="canonical">
   <meta content="Bruno, Giarrizzo, Hyweene, Bruno Giarrizzo, Developpeur, DevOps, Git, Apple, Golang, Go, Python, Swift, SwiftUI, Docker, Kubernetes, POO, OOP, Programmation Orient&eacute;e Objet, Programmation Fonctionnelle, kafka, topic, event, delete, supprimer, message" name="keywords">
   <meta content="Un pense b&ecirc;te pour se rappeller comment supprimer tous les events d'un topic Kafka" name="description">
@@ -53,8 +52,8 @@
     </nav> <aside class="flex h-full w-full lg:hidden"><div class="sm:flex hidden h-full items-center"><a class="h-full" href="https://www.hack-with-hyweene.com"><img alt="favicon" class="h-full" src="/static/img/cl-logo.svg"></a></div>
      <div class="lg:hidden flex-1 h-full flex-nowrap items-center p-5 pl-0 sm:pl-5 lg:text-center"><a class="text-3xl text-gray-300" href="/" translate="no"> <span class="font-bold">Hack</span><span class="px-1">with</span><span class="font-bold">Hyweene</span></a></div>
      <div class="flex items-center">
+      <input class="peer hidden" id="ss-mobile-menu" type="checkbox">
       <label class="relative z-[9999] cursor-pointer px-3 pr-0 py-6" for="ss-mobile-menu">
-       <input class="peer hidden" id="ss-mobile-menu" type="checkbox">
        <svg class="feather feather-menu" fill="none" height="24" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
         <line x1="3" x2="21" y1="12" y2="12">
         </line>
@@ -63,19 +62,19 @@
         <line x1="3" x2="21" y1="18" y2="18">
         </line>
        </svg>
-       <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
-       <div class="fixed top-0 right-0 z-[9999] h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0 peer-checked:shadow-heading">
-        <div class="float-right min-h-full w-[85%] bg-slate-900 px-6 pt-12 shadow-2xl">
-         <menu class="mt-8 mb-8 flex flex-col space-y-4 text-heading">
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/blog/">Blog</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/liens/">Liens</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/apprendre/">Apprendre</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/cv/">CV</a></li>
-          <li><a class="whitespace-nowrap pb-1 font-semibold" href="/a-propos/">A Propos</a></li>
-         </menu>
-        </div>
-       </div>
       </label>
+      <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
+      <div class="fixed top-0 right-0 z-[9999] h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0 peer-checked:shadow-heading">
+       <div class="float-right min-h-full w-[85%] bg-slate-900 px-6 pt-12 shadow-2xl">
+        <menu class="mt-8 mb-8 flex flex-col space-y-4 text-heading">
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/blog/">Blog</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/liens/">Liens</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/apprendre/">Apprendre</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/cv/">CV</a></li>
+         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/a-propos/">A Propos</a></li>
+        </menu>
+       </div>
+      </div>
      </div>
     </aside>
    </div>
@@ -89,19 +88,13 @@
     <p class="text-base my-3 leading-relaxed">A la fin de ses tests, il doit purger les messages cr&eacute;&eacute; pendant la session, mais rencontrait une erreur de timeout &agrave; l'execution de la requete.</p>
     <p class="text-base my-3 leading-relaxed">Dans le cadre de ce pense b&ecirc;te, la cleanup.policy du topic est configur&eacute;e &agrave; delete, ce qui signifie que les messages sont supprim&eacute;s lorsqu'ils atteignent la r&eacute;tention d&eacute;finie, la m&eacute;thode est diff&eacute;rente pour les topics configur&eacute;s avec la r&eacute;tention compact.</p>
     <p class="text-base my-3 leading-relaxed">Pour supprimer tous les messages d'un topic Kafka, il faut utiliser la commande
-     <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+     <code>
       kafka-delete-records</code>fournie par Kafka.</p>
-    <p class="text-base my-3 leading-relaxed">
-     <pre class="rounded-xl">
-<code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code>
-</pre>
-    </p>
+    <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
     <p class="text-base my-3 leading-relaxed">Le fichier
-     <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+     <code>
       offsets.json</code>doit contenir les offsets des messages &agrave; supprimer. Par exemple, pour un topic &agrave; trois partitions, le fichier doit contenir trois objets, un par partition.</p>
-    <p class="text-base my-3 leading-relaxed">
-     <pre class="rounded-xl">
-<code class="language-json">{
+    <pre class="rounded-xl"><code class="language-json">{
   "partitions": [
     {
       "topic": "${topicName}",
@@ -120,64 +113,41 @@
     }
   ],
   "version": 1
-}</code>
-</pre>
-    </p>
+}</code></pre>
     <p class="text-base my-3 leading-relaxed">Dans cet exemple, tous les messages situ&eacute;s avant les offsets sp&eacute;cifi&eacute; pour chaque partition seront supprim&eacute;s.</p>
     <p class="text-base my-3 leading-relaxed">Pour obtenir les offsets des messages &agrave; supprimer, il faut utiliser la commande
-     <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+     <code>
       kafka-consumer-groups</code>.</p>
-    <p class="text-base my-3 leading-relaxed">
-     <pre class="rounded-xl">
-<code class="language-bash">kafka-consumer-groups --bootstrap-server ${bootstrapServerAndPort} --group ${consumerGroupName} --describe</code>
-</pre>
-    </p>
+    <pre class="rounded-xl"><code class="language-bash">kafka-consumer-groups --bootstrap-server ${bootstrapServerAndPort} --group ${consumerGroupName} --describe</code></pre>
     <p class="text-base my-3 leading-relaxed">Cette commande affiche les offsets des messages consomm&eacute;s par le groupe de consommateurs
-     <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+     <code>
       ${consumerGroupName}</code>. Il suffit de r&eacute;cup&eacute;rer ces offsets pour les mettre dans le fichier
-     <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+     <code>
       offsets.json</code>.</p>
     <p class="text-base my-3 leading-relaxed">Le r&eacute;sultat est le suivant :</p>
-    <p class="text-base my-3 leading-relaxed">
-     <pre class="rounded-xl">
-<code class="language-bash">
-GROUP       TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+    <pre class="rounded-xl"><code class="language-bash">GROUP       TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
 myTestApp   myTestTopic     0          3               3               0               -               -               -
 myTestApp   myTestTopic     1          5               5               0               -               -               -
-myTestApp   myTestTopic     2          6               6               0               -               -               -</code>
-</pre>
-    </p>
+myTestApp   myTestTopic     2          6               6               0               -               -               -</code></pre>
     <p class="text-base my-3 leading-relaxed">Une fois le fichier
-     <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+     <code>
       offsets.json</code>pr&ecirc;t, il suffit de lancer la commande
-     <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+     <code>
       kafka-delete-records</code>pour supprimer les messages du topic
-     <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+     <code>
       ${topicName}</code>.</p>
-    <p class="text-base my-3 leading-relaxed">
-     <pre class="rounded-xl">
-<code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code>
-</pre>
-    </p>
+    <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
     <p class="text-base my-3 leading-relaxed">Dans notre cas, l'utilisateur rencontrait un probl&egrave;me de timeout, ce qui peut arriver si le nombre de messages &agrave; supprimer est tr&egrave;s grand. Il faut alors augmenter le timeout de la commande
-     <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+     <code>
       kafka-delete-records</code>.</p>
     <p class="text-base my-3 leading-relaxed">Pour se faire, nous devons cr&eacute;er un fichier command-config avec le timeout souhait&eacute; :</p>
-    <p class="text-base my-3 leading-relaxed">
-     <pre class="rounded-xl">
-<code class="language-bash">request.timeout.ms=120000</code>
-</pre>
-    </p>
+    <pre class="rounded-xl"><code class="language-bash">request.timeout.ms=120000</code></pre>
     <p class="text-base my-3 leading-relaxed">Puis lancer la commande
-     <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+     <code>
       kafka-delete-records</code>avec le fichier de configuration :</p>
-    <p class="text-base my-3 leading-relaxed">
-     <pre class="rounded-xl">
-<code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json --command-config path/to/command-config</code>
-</pre>
-    </p>
+    <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json --command-config path/to/command-config</code></pre>
     <p class="text-base my-3 leading-relaxed">Les messages du topic Kafka
-     <code class="bg-gray-600 font-mono text-sm mr-2 p-1 rounded">
+     <code>
       ${topicName}</code>ont &eacute;t&eacute; supprim&eacute;s avec succ&egrave;s.</p>
     <h2 class="text-3xl font-bold my-5 leading-snug">M&eacute;thode Gros Bourrin</h2>
     <p class="text-base my-3 leading-relaxed">On peut &eacute;galement supprimer la totalit&eacute; des events d'un topic en changeant la r&eacute;tention du topic &agrave; 1ms, puis en la remettant &agrave; la valeur initiale.</p>
@@ -191,7 +161,6 @@ myTestApp   myTestTopic     2          6               6               0        
     <div class="pt-5 pb-5 grid grid-cols-1 md:grid-cols-4 md:gap-4">
      <div class="mx-auto md:mx-0 md:col-span-1">
       <img alt="logo" class="aspect-square object-fill rounded-xl" loading="lazy" src="/static/img/hyweene.jpg">
-      </img>
      </div>
      <div class="pt-5 md:pl-5 md:pt-0 my-auto md:col-span-3 text-md text-gray-200">
       <div>
@@ -214,7 +183,10 @@ myTestApp   myTestTopic     2          6               6               0        
      <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/a-propos/">A Propos</a></li>
      <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/mentions-legales/">Mentions L&eacute;gales</a></li>
     </ul>
-    <ul class="flex flex-col mb-3 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row"><span class="text-md text-gray-200 font-semibold tracking-tight">&copy; 2024</span><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold tracking-tight" href="/">Hack-With-Hyweene.com</a></ul>
+    <ul class="flex flex-col mb-3 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
+     <li><span class="text-md text-gray-200 font-semibold tracking-tight">&copy; 2024</span></li>
+     <li><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold tracking-tight" href="/">Hack-With-Hyweene.com</a></li>
+    </ul>
    </div>
   </footer>
  </body>

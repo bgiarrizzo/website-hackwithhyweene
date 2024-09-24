@@ -12,8 +12,6 @@
             {% if post.category %}<span class="bg-gray-600 text-gray-100 text-sm font-medium me-2 px-2.5 py-0.5 rounded mb-2">{{ post.category }}</span>{% endif %} Publié le {{ post.publish_date_medium }}
         </p>
 
-        
-
         <div class="my-3 flex flex-wrap">
             {% for tag in post.tags %}
                 <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">

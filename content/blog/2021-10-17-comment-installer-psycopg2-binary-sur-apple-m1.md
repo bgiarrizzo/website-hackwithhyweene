@@ -16,14 +16,14 @@ J'essaie de travailler avec les dernières versions des logiciels que j'utilise,
 
 Je l'ai installé avec brew, assez facilement :
 
-<pre>
-<code class="language-bash">brew install python@3.10</code>
-</pre>
+```bash
+brew install python@3.10
+```
 
 J'ai eu des problèmes avec psycopg2-binary lors de l'installation des dépendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais était celui-ci :
 
-<pre class="rounded-xl">
-<code class="language-bash">Error: pg_config executable not found.
+```bash
+Error: pg_config executable not found.
 
 pg_config is required to build psycopg2 from source.  Please add the directory
 containing pg_config to the $PATH or specify the full executable path with the
@@ -31,29 +31,29 @@ option:
 
     python setup.py build_ext --pg-config /path/to/pg_config build ...
 
-or with the pg_config option in 'setup.cfg'.</code>
-</pre>
+or with the pg_config option in 'setup.cfg'.
+```
 
 Il semble qu'il manque un fichier de configuration. J'ai essayé de résoudre ce problème en installant le serveur PostgreSQL pour obtenir ce fichier manquant :
 
-<pre class="rounded-xl">
-<code class="language-bash">brew install postgresql@12</code>
-</pre>
+```bash
+brew install postgresql@12
+```
 
 À ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette façon (en utilisant ZSH, il me dit évidemment de l'écrire dans .zshrc) :
 
-<pre class="rounded-xl">
-<code class="language-bash">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' > ~/.zshrc</code>
-</pre>
+```bash
+echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' > ~/.zshrc
+```
 
 Maintenant, tout est prêt, et je peux l'installer comme je le souhaite :
 
-<pre class="rounded-xl">
-<code class="language-bash">pip(3) install psycopg2-binary</code>
-</pre>
+```bash
+pip(3) install psycopg2-binary
+```
 
 Ou dans le répertoire de mon projet :
 
-<pre class="rounded-xl">
-<code class="language-bash">pipenv install psycopg2-binary</code>
-</pre>
+```bash
+pipenv install psycopg2-binary
+```

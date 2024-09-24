@@ -20,16 +20,16 @@ Les noms des métriques doivent être mappés, car ils sont unifiés avec les m�
 
 La table de mappage est celle ci-dessous :
 
-<pre class="rounded-xl">
-<code class="language-python">MAPPING_METRICS_NAME = {
+```python
+MAPPING_METRICS_NAME = {
     "vmware_vm_power_state" : "power_state"
     "vmware_vm_cpu_usage_average"': "cpu_usage_percentage"
     "vmware_vm_mem_consumed_average": "memory_used"
     "vmware_vm_memory_max": "memory_total"
     "vmware_vm_mem_usage_average": "memory_usage_percentage",
     "vmware_vm_num_cpu": "vcpus"
-}</code>
-</pre>
+}
+```
 
 ## Étape 1 : Analyse des métriques de vmware_exporter
 
@@ -39,31 +39,32 @@ La sortie de l'exporter est un grand fichier str qui doit être analysé pour ê
 
 J'ai utilisé prometheus_client.parser pour cela.
 
-<pre class="rounded-xl">
-<code class="language-python">from prometheus_client.parser import text_string_to_metric_families
+```python
+from prometheus_client.parser import text_string_to_metric_families
 
 data_from_exporter = request_exporter(target)
-metric_families = text_string_to_metric_families(data_from_exporter)</code>
-</pre>
+metric_families = text_string_to_metric_families(data_from_exporter)
+```
 
 La variable metric_families est un objet à plusieurs niveaux contenant des métriques regroupées par nom de métrique.
 
 Elle peut être représentée comme un dict, où la clé est le metric_name et la valeur est une liste contenant toutes les métriques sous forme de tuples.
 
 Exemple :
-<pre class="rounded-xl">
-<code class="language-python">{
+
+```python
+{
     "vmware_vm_power_state": [
         ("vmware_vm_power_state", {"vm_name": "vm1", "label2": "value2"}, 1),
         ("vmware_vm_power_state", {"vm_name": "vm2", "label2": "value2"}, 0),
     ]
-}</code>
-</pre>
+}
+```
 
 J'ai donc fait un petit algorithme pour aplatir l'objet en une liste de dicts :
 
-<pre class="rounded-xl">
-<code class="language-python">processed_exporter_data = []
+```python
+processed_exporter_data = []
 
 for family in data_from exporter:
     if family.name not in MAPPING_METRICS_NAME:
@@ -74,17 +75,17 @@ for family in data_from exporter:
         for key, value in sample.items():
             row dict[key] = value
         row_dict["value"] = sample
-        processed exporter_data.append(row_dict)</code>
-</pre>
+        processed exporter_data.append(row_dict)
+```
 
 J'aurai alors une liste de dicts, à partir de laquelle un dataframe peut être créé.
 
-<pre class="rounded-xl">
-<code class="language-python">[
+```python
+[
     {"__name__": "vmware_vm_power_state", "vm_name": "vm1", "value": 1},
     {"__name__": "vmware_vm_power_state", "vm_name": "vm2", "value": 0},
-]</code>
-</pre>
+]
+```
 
 Maintenant, jouons avec les dataframes...
 
@@ -92,16 +93,16 @@ Maintenant, jouons avec les dataframes...
 
 Tout d'abord, je crée le dataframe :
 
-<pre class="rounded-xl">
-<code class="language-python">import pandas
+```python
+import pandas
 
-metrics_df = pandas.DataFrame(processed_exporter_data)</code>
-</pre>
+metrics_df = pandas.DataFrame(processed_exporter_data)
+```
 
 Ensuite, je supprime les étiquettes inutiles :
 
-<pre>
-<code class="language-python">metrics_df.drop(
+```python
+metrics_df.drop(
     colums=[
         "host_name",
         "ds_name",
@@ -110,8 +111,8 @@ Ensuite, je supprime les étiquettes inutiles :
     ],
     axis=1,
     inplace=True,
-)</code>
-</pre>
+)
+```
 
 De cette façon, j'utilise le dataframe pour supprimer les 4 colonnes. <code class="language-python">inplace=True</code> est utilisé pour écraser le dataframe existant et ne pas en créer un nouveau.
 
@@ -119,36 +120,35 @@ Ensuite, je dois fusionner les données de métriques avec les données de deux 
 
 Celles-ci sont également représentées sous forme de dataframes.
 
-<pre class="rounded-xl">
-<code class="language-python">businesslines_referential_df = referential_df.merge(
+```python
+businesslines_referential_df = referential_df.merge(
     businesslines_df, how="left", left_on="ecosystem", right_index=True
-)</code>
-</pre>
+)
+```
 
 Cette fusion enrichira le dataframe référentiel avec les données des lignes métier, de droite à gauche, selon le nom de l'écosystème et utilisera l'index du dataframe de droite comme clé de jointure.
 
 Maintenant, il est temps de fusionner ce dataframe avec le dataframe des métriques.
 
-<pre class="rounded-xl">
-<code class="language-python">metrics_df = metrics_df.merge(
+```python
+metrics_df = metrics_df.merge(
     businesslines_referential_df, how="inner", left_on="vm_name", right_index=True
-)</code>
-</pre>
+)
+```
 
 Cette fusion est faite avec la méthode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.
 
 Maintenant, je remplace le nom de métrique original par le mappage dont nous avons parlé plus tôt :
 
-<pre class="rounded-xl">
-<code class="language-python">metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)
-</code>
-</pre>
+```python
+metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)
+```
 
 Maintenant "vmware_vm_power_state" est mappé à "power_state".
 
 Le résultat est similaire à ceci :
 
-<table width="100%" border="1px solid #fff">
+<table style="border: 1px solid #fff; width: 100%;">
     <tr>
         <th>__name__</th>
         <th>vm_name</th>
@@ -171,20 +171,20 @@ Maintenant, pour être récoltées par prometheus, ces données doivent être re
 
 Les chaînes de métriques Prometheus sont assez simples :
 
-<pre class="rounded-xl">
-<code class="language-python">metric_name{label1="value1", label2="value2"} 0</code>
-</pre>
+```python
+metric_name{label1="value1", label2="value2"} 0
+```
 
 En utilisant une compréhension de liste, j'itère sur le dataframe pour imprimer une chaîne contenant au début le metric_name et à la fin la metric_value.
 
-<pre class="rounded-xl">
-<code class="language-python">return "\n".join(
+```python
+return "\n".join(
     [
         f"{row['__name__']}{generate_dict_label(row)} {row['value']}"
         for index, row in metrics df.iterrows()
     ]
-)</code>
-</pre>
+)
+```
 
 La partie délicate est de générer les étiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.
 
@@ -192,8 +192,8 @@ Un dict en python ressemble à <code class="language-python">{"key": "value"}</c
 
 J'ai donc écrit une petite fonction qui génère cette chaîne.
 
-<pre class="rounded-xl">
-<code class="language-python">def generate_dict_label(row):
+```python
+def generate_dict_label(row):
 
     labels = set(row.index) - {"__name__", "value"}
 
@@ -207,13 +207,13 @@ J'ai donc écrit une petite fonction qui génère cette chaîne.
             ]
         )
         + "}"
-    )</code>
-</pre>
+    )
+```
 
 Finalement, les données sérialisées ressemblent à :
 
-<pre class="rounded-xl">
-<code class="language-python">power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1</code>
-</pre>
+```python
+power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1
+```
 
 Maintenant, les métriques sont récoltées par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et resérialisera les données provenant d'un exporter prometheus vmware.
