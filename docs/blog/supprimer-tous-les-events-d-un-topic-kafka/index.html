@@ -84,15 +84,15 @@
     <h1 class="text-4xl font-semibold">Supprimer tous les events d'un topic Kafka</h1>
     <p class="my-3 text-gray-400">Publi&eacute; le 16 Sep 2024</p>
     <div class="my-3 flex flex-wrap"><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">kafka</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">topic</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">event</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">delete</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">supprimer</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">message</span></div>
-   </header> <article><p class="text-base my-3 leading-relaxed">Dans ma mission actuelle, je travaille avec Kafka. Je suis &eacute;galement en charge, avec d'autres personnes, du support utilisateur. Aujourd'hui, un utilisateur rencontrait un probl&egrave;me avec la suppression de ses messages dans un topic Kafka d&eacute;di&eacute; &agrave; des tests automatis&eacute;s.</p>
-    <p class="text-base my-3 leading-relaxed">A la fin de ses tests, il doit purger les messages cr&eacute;&eacute; pendant la session, mais rencontrait une erreur de timeout &agrave; l'execution de la requete.</p>
-    <p class="text-base my-3 leading-relaxed">Dans le cadre de ce pense b&ecirc;te, la cleanup.policy du topic est configur&eacute;e &agrave; delete, ce qui signifie que les messages sont supprim&eacute;s lorsqu'ils atteignent la r&eacute;tention d&eacute;finie, la m&eacute;thode est diff&eacute;rente pour les topics configur&eacute;s avec la r&eacute;tention compact.</p>
-    <p class="text-base my-3 leading-relaxed">Pour supprimer tous les messages d'un topic Kafka, il faut utiliser la commande
-     <code>
+   </header> <article><p class="text-base my-4 leading-relaxed">Dans ma mission actuelle, je travaille avec Kafka. Je suis &eacute;galement en charge, avec d'autres personnes, du support utilisateur. Aujourd'hui, un utilisateur rencontrait un probl&egrave;me avec la suppression de ses messages dans un topic Kafka d&eacute;di&eacute; &agrave; des tests automatis&eacute;s.</p>
+    <p class="text-base my-4 leading-relaxed">A la fin de ses tests, il doit purger les messages cr&eacute;&eacute; pendant la session, mais rencontrait une erreur de timeout &agrave; l'execution de la requete.</p>
+    <p class="text-base my-4 leading-relaxed">Dans le cadre de ce pense b&ecirc;te, la cleanup.policy du topic est configur&eacute;e &agrave; delete, ce qui signifie que les messages sont supprim&eacute;s lorsqu'ils atteignent la r&eacute;tention d&eacute;finie, la m&eacute;thode est diff&eacute;rente pour les topics configur&eacute;s avec la r&eacute;tention compact.</p>
+    <p class="text-base my-4 leading-relaxed">Pour supprimer tous les messages d'un topic Kafka, il faut utiliser la commande
+     <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
       kafka-delete-records</code>fournie par Kafka.</p>
     <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
-    <p class="text-base my-3 leading-relaxed">Le fichier
-     <code>
+    <p class="text-base my-4 leading-relaxed">Le fichier
+     <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
       offsets.json</code>doit contenir les offsets des messages &agrave; supprimer. Par exemple, pour un topic &agrave; trois partitions, le fichier doit contenir trois objets, un par partition.</p>
     <pre class="rounded-xl"><code class="language-json">{
   "partitions": [
@@ -114,44 +114,44 @@
   ],
   "version": 1
 }</code></pre>
-    <p class="text-base my-3 leading-relaxed">Dans cet exemple, tous les messages situ&eacute;s avant les offsets sp&eacute;cifi&eacute; pour chaque partition seront supprim&eacute;s.</p>
-    <p class="text-base my-3 leading-relaxed">Pour obtenir les offsets des messages &agrave; supprimer, il faut utiliser la commande
-     <code>
+    <p class="text-base my-4 leading-relaxed">Dans cet exemple, tous les messages situ&eacute;s avant les offsets sp&eacute;cifi&eacute; pour chaque partition seront supprim&eacute;s.</p>
+    <p class="text-base my-4 leading-relaxed">Pour obtenir les offsets des messages &agrave; supprimer, il faut utiliser la commande
+     <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
       kafka-consumer-groups</code>.</p>
     <pre class="rounded-xl"><code class="language-bash">kafka-consumer-groups --bootstrap-server ${bootstrapServerAndPort} --group ${consumerGroupName} --describe</code></pre>
-    <p class="text-base my-3 leading-relaxed">Cette commande affiche les offsets des messages consomm&eacute;s par le groupe de consommateurs
-     <code>
+    <p class="text-base my-4 leading-relaxed">Cette commande affiche les offsets des messages consomm&eacute;s par le groupe de consommateurs
+     <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
       ${consumerGroupName}</code>. Il suffit de r&eacute;cup&eacute;rer ces offsets pour les mettre dans le fichier
-     <code>
+     <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
       offsets.json</code>.</p>
-    <p class="text-base my-3 leading-relaxed">Le r&eacute;sultat est le suivant :</p>
+    <p class="text-base my-4 leading-relaxed">Le r&eacute;sultat est le suivant :</p>
     <pre class="rounded-xl"><code class="language-bash">GROUP       TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
 myTestApp   myTestTopic     0          3               3               0               -               -               -
 myTestApp   myTestTopic     1          5               5               0               -               -               -
 myTestApp   myTestTopic     2          6               6               0               -               -               -</code></pre>
-    <p class="text-base my-3 leading-relaxed">Une fois le fichier
-     <code>
+    <p class="text-base my-4 leading-relaxed">Une fois le fichier
+     <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
       offsets.json</code>pr&ecirc;t, il suffit de lancer la commande
-     <code>
+     <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
       kafka-delete-records</code>pour supprimer les messages du topic
-     <code>
+     <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
       ${topicName}</code>.</p>
     <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
-    <p class="text-base my-3 leading-relaxed">Dans notre cas, l'utilisateur rencontrait un probl&egrave;me de timeout, ce qui peut arriver si le nombre de messages &agrave; supprimer est tr&egrave;s grand. Il faut alors augmenter le timeout de la commande
-     <code>
+    <p class="text-base my-4 leading-relaxed">Dans notre cas, l'utilisateur rencontrait un probl&egrave;me de timeout, ce qui peut arriver si le nombre de messages &agrave; supprimer est tr&egrave;s grand. Il faut alors augmenter le timeout de la commande
+     <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
       kafka-delete-records</code>.</p>
-    <p class="text-base my-3 leading-relaxed">Pour se faire, nous devons cr&eacute;er un fichier command-config avec le timeout souhait&eacute; :</p>
+    <p class="text-base my-4 leading-relaxed">Pour se faire, nous devons cr&eacute;er un fichier command-config avec le timeout souhait&eacute; :</p>
     <pre class="rounded-xl"><code class="language-bash">request.timeout.ms=120000</code></pre>
-    <p class="text-base my-3 leading-relaxed">Puis lancer la commande
-     <code>
+    <p class="text-base my-4 leading-relaxed">Puis lancer la commande
+     <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
       kafka-delete-records</code>avec le fichier de configuration :</p>
     <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json --command-config path/to/command-config</code></pre>
-    <p class="text-base my-3 leading-relaxed">Les messages du topic Kafka
-     <code>
+    <p class="text-base my-4 leading-relaxed">Les messages du topic Kafka
+     <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
       ${topicName}</code>ont &eacute;t&eacute; supprim&eacute;s avec succ&egrave;s.</p>
     <h2 class="text-3xl font-bold my-5 leading-snug">M&eacute;thode Gros Bourrin</h2>
-    <p class="text-base my-3 leading-relaxed">On peut &eacute;galement supprimer la totalit&eacute; des events d'un topic en changeant la r&eacute;tention du topic &agrave; 1ms, puis en la remettant &agrave; la valeur initiale.</p>
-    <p class="text-base my-3 leading-relaxed">Cette m&eacute;thode a l'avantage de fonctionner &eacute;galement pour les topics compact&eacute;s ! :D</p>
+    <p class="text-base my-4 leading-relaxed">On peut &eacute;galement supprimer la totalit&eacute; des events d'un topic en changeant la r&eacute;tention du topic &agrave; 1ms, puis en la remettant &agrave; la valeur initiale.</p>
+    <p class="text-base my-4 leading-relaxed">Cette m&eacute;thode a l'avantage de fonctionner &eacute;galement pour les topics compact&eacute;s ! :D</p>
    </article>
    <script src="/static/js/prism.js">
    </script>

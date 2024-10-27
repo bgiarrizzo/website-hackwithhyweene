@@ -54,22 +54,36 @@ def generate_resume_education(dataset: list, data: dict):
     return data
 
 
+def generate_resume_skills(dataset: list, data: dict):
+    for skill in dataset:
+        if skill.get("tags"):
+            for tag in skill.get("tags"):
+                if tag not in data.get("resume").get("tags"):
+                    data.get("resume").get("tags").append(tag)
+
+    data["skills"] = dataset
+
+    return data
+
 def prepare_resume_data(resume_path):
     head_files = get_all_files_from_path(f"{resume_path}/head")
     experiences_files = get_all_files_from_path(f"{resume_path}/experiences")
     educations_files = get_all_files_from_path(f"{resume_path}/educations")
+    #skills_files = get_all_files_from_path(f"{resume_path}/skills")
 
     head = parse_markdown_files_and_convert_to_html(head_files)
     experiences = parse_markdown_files_and_convert_to_html(experiences_files)
     educations = parse_markdown_files_and_convert_to_html(educations_files)
+    #skills = parse_markdown_files_and_convert_to_html(skills_files)
 
-    return head, experiences, educations
+    return head, experiences, educations#, skills
 
 
 def generate_resume(resume_path):
     print("Generating resume ...")
 
-    head, experiences, educations = prepare_resume_data(resume_path)
+    #head, experiences, educations, skills = prepare_resume_data(resume_path)
+    head, experiences, educations  = prepare_resume_data(resume_path)
 
     resume = {
         "resume": {
@@ -79,6 +93,9 @@ def generate_resume(resume_path):
 
     print("Generating header ...")
     resume |= generate_resume_head(dataset=head, data=resume)
+
+    # print("Generating Skills part ...")
+    # resume |= generate_resume_skills(dataset=skills, data=resume)
 
     print("Generating education part ...")
     resume |= generate_resume_education(dataset=educations, data=resume)

@@ -98,7 +98,7 @@
        <summary>
         Hello World!</summary>
        <content type="html">
-        <p class="text-base my-3 leading-relaxed">Hello World</p>
+        <p class="text-base my-4 leading-relaxed">Hello World</p>
        </content>
       </entry>
       <entry xml:lang="en">
@@ -112,12 +112,12 @@
        <summary>
         J'ai rencontr&eacute; quelques difficult&eacute;s en travaillant avec du code Python acc&eacute;dant &agrave; des bases de donn&eacute;es PostgreSQL. Voici comment j'ai r&eacute;solu le probl&egrave;me.</summary>
        <content type="html">
-        <p class="text-base my-3 leading-relaxed">Le mois dernier, je me suis offert un Apple M1, un tr&egrave;s bon ordinateur, puissant et avec une autonomie impressionnante.</p>
-        <p class="text-base my-3 leading-relaxed">Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqu&eacute;.</p>
-        <p class="text-base my-3 leading-relaxed">J'essaie de travailler avec les derni&egrave;res versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
-        <p class="text-base my-3 leading-relaxed">Je l'ai install&eacute; avec brew, assez facilement :</p>
+        <p class="text-base my-4 leading-relaxed">Le mois dernier, je me suis offert un Apple M1, un tr&egrave;s bon ordinateur, puissant et avec une autonomie impressionnante.</p>
+        <p class="text-base my-4 leading-relaxed">Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqu&eacute;.</p>
+        <p class="text-base my-4 leading-relaxed">J'essaie de travailler avec les derni&egrave;res versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
+        <p class="text-base my-4 leading-relaxed">Je l'ai install&eacute; avec brew, assez facilement :</p>
         <pre class="rounded-xl"><code class="language-bash">brew install python@3.10</code></pre>
-        <p class="text-base my-3 leading-relaxed">J'ai eu des probl&egrave;mes avec psycopg2-binary lors de l'installation des d&eacute;pendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais &eacute;tait celui-ci :</p>
+        <p class="text-base my-4 leading-relaxed">J'ai eu des probl&egrave;mes avec psycopg2-binary lors de l'installation des d&eacute;pendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais &eacute;tait celui-ci :</p>
         <pre class="rounded-xl"><code class="language-bash">Error: pg_config executable not found.
 
 pg_config is required to build psycopg2 from source.  Please add the directory
@@ -127,13 +127,13 @@ option:
     python setup.py build_ext --pg-config /path/to/pg_config build ...
 
 or with the pg_config option in 'setup.cfg'.</code></pre>
-        <p class="text-base my-3 leading-relaxed">Il semble qu'il manque un fichier de configuration. J'ai essay&eacute; de r&eacute;soudre ce probl&egrave;me en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
+        <p class="text-base my-4 leading-relaxed">Il semble qu'il manque un fichier de configuration. J'ai essay&eacute; de r&eacute;soudre ce probl&egrave;me en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
         <pre class="rounded-xl"><code class="language-bash">brew install postgresql@12</code></pre>
-        <p class="text-base my-3 leading-relaxed">&Agrave; ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette fa&ccedil;on (en utilisant ZSH, il me dit &eacute;videmment de l'&eacute;crire dans .zshrc) :</p>
+        <p class="text-base my-4 leading-relaxed">&Agrave; ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette fa&ccedil;on (en utilisant ZSH, il me dit &eacute;videmment de l'&eacute;crire dans .zshrc) :</p>
         <pre class="rounded-xl"><code class="language-bash">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' &gt; ~/.zshrc</code></pre>
-        <p class="text-base my-3 leading-relaxed">Maintenant, tout est pr&ecirc;t, et je peux l'installer comme je le souhaite :</p>
+        <p class="text-base my-4 leading-relaxed">Maintenant, tout est pr&ecirc;t, et je peux l'installer comme je le souhaite :</p>
         <pre class="rounded-xl"><code class="language-bash">pip(3) install psycopg2-binary</code></pre>
-        <p class="text-base my-3 leading-relaxed">Ou dans le r&eacute;pertoire de mon projet :</p>
+        <p class="text-base my-4 leading-relaxed">Ou dans le r&eacute;pertoire de mon projet :</p>
         <pre class="rounded-xl"><code class="language-bash">pipenv install psycopg2-binary</code></pre>
        </content>
       </entry>
@@ -149,11 +149,11 @@ or with the pg_config option in 'setup.cfg'.</code></pre>
         Les m&eacute;triques de l'exporter VMWare n'avaient pas toutes les informations que nous voulions. Voici comment je les ai enrichies.</summary>
        <content type="html">
         <h2 class="text-3xl font-bold my-5 leading-snug">Contexte</h2>
-        <p class="text-base my-3 leading-relaxed">Dans ma mission actuelle, afin de mettre en place une f&eacute;d&eacute;ration de m&eacute;triques, nous devons collecter des m&eacute;triques VMware.</p>
-        <p class="text-base my-3 leading-relaxed">Nous avons donc utilis&eacute; le <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda/vmware_exporter">vmware_exporter</a> de <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda">Daniel Pryor</a>, et pour ne pas le modifier, j'ai &eacute;crit une petite interface avec fastapi.</p>
-        <p class="text-base my-3 leading-relaxed">Les m&eacute;triques sont r&eacute;cup&eacute;r&eacute;es par fastapi, analys&eacute;es, enrichies, res&eacute;rialis&eacute;es, et r&eacute;colt&eacute;es par prometheus.</p>
-        <p class="text-base my-3 leading-relaxed">Les noms des m&eacute;triques doivent &ecirc;tre mapp&eacute;s, car ils sont unifi&eacute;s avec les m&eacute;triques d'openstack et d'IBM cloud.</p>
-        <p class="text-base my-3 leading-relaxed">La table de mappage est celle ci-dessous :</p>
+        <p class="text-base my-4 leading-relaxed">Dans ma mission actuelle, afin de mettre en place une f&eacute;d&eacute;ration de m&eacute;triques, nous devons collecter des m&eacute;triques VMware.</p>
+        <p class="text-base my-4 leading-relaxed">Nous avons donc utilis&eacute; le <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda/vmware_exporter">vmware_exporter</a> de <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/pryorda">Daniel Pryor</a>, et pour ne pas le modifier, j'ai &eacute;crit une petite interface avec fastapi.</p>
+        <p class="text-base my-4 leading-relaxed">Les m&eacute;triques sont r&eacute;cup&eacute;r&eacute;es par fastapi, analys&eacute;es, enrichies, res&eacute;rialis&eacute;es, et r&eacute;colt&eacute;es par prometheus.</p>
+        <p class="text-base my-4 leading-relaxed">Les noms des m&eacute;triques doivent &ecirc;tre mapp&eacute;s, car ils sont unifi&eacute;s avec les m&eacute;triques d'openstack et d'IBM cloud.</p>
+        <p class="text-base my-4 leading-relaxed">La table de mappage est celle ci-dessous :</p>
         <pre class="rounded-xl"><code class="language-python">MAPPING_METRICS_NAME = {
     "vmware_vm_power_state" : "power_state"
     "vmware_vm_cpu_usage_average"': "cpu_usage_percentage"
@@ -163,23 +163,23 @@ or with the pg_config option in 'setup.cfg'.</code></pre>
     "vmware_vm_num_cpu": "vcpus"
 }</code></pre>
         <h2 class="text-3xl font-bold my-5 leading-snug">&Eacute;tape 1 : Analyse des m&eacute;triques de vmware_exporter</h2>
-        <p class="text-base my-3 leading-relaxed">L'exporter est appel&eacute; depuis une fonction nomm&eacute;e request_exporter().</p>
-        <p class="text-base my-3 leading-relaxed">La sortie de l'exporter est un grand fichier str qui doit &ecirc;tre analys&eacute; pour &ecirc;tre trait&eacute;.</p>
-        <p class="text-base my-3 leading-relaxed">J'ai utilis&eacute; prometheus_client.parser pour cela.</p>
+        <p class="text-base my-4 leading-relaxed">L'exporter est appel&eacute; depuis une fonction nomm&eacute;e request_exporter().</p>
+        <p class="text-base my-4 leading-relaxed">La sortie de l'exporter est un grand fichier str qui doit &ecirc;tre analys&eacute; pour &ecirc;tre trait&eacute;.</p>
+        <p class="text-base my-4 leading-relaxed">J'ai utilis&eacute; prometheus_client.parser pour cela.</p>
         <pre class="rounded-xl"><code class="language-python">from prometheus_client.parser import text_string_to_metric_families
 
 data_from_exporter = request_exporter(target)
 metric_families = text_string_to_metric_families(data_from_exporter)</code></pre>
-        <p class="text-base my-3 leading-relaxed">La variable metric_families est un objet &agrave; plusieurs niveaux contenant des m&eacute;triques regroup&eacute;es par nom de m&eacute;trique.</p>
-        <p class="text-base my-3 leading-relaxed">Elle peut &ecirc;tre repr&eacute;sent&eacute;e comme un dict, o&ugrave; la cl&eacute; est le metric_name et la valeur est une liste contenant toutes les m&eacute;triques sous forme de tuples.</p>
-        <p class="text-base my-3 leading-relaxed">Exemple :</p>
+        <p class="text-base my-4 leading-relaxed">La variable metric_families est un objet &agrave; plusieurs niveaux contenant des m&eacute;triques regroup&eacute;es par nom de m&eacute;trique.</p>
+        <p class="text-base my-4 leading-relaxed">Elle peut &ecirc;tre repr&eacute;sent&eacute;e comme un dict, o&ugrave; la cl&eacute; est le metric_name et la valeur est une liste contenant toutes les m&eacute;triques sous forme de tuples.</p>
+        <p class="text-base my-4 leading-relaxed">Exemple :</p>
         <pre class="rounded-xl"><code class="language-python">{
     "vmware_vm_power_state": [
         ("vmware_vm_power_state", {"vm_name": "vm1", "label2": "value2"}, 1),
         ("vmware_vm_power_state", {"vm_name": "vm2", "label2": "value2"}, 0),
     ]
 }</code></pre>
-        <p class="text-base my-3 leading-relaxed">J'ai donc fait un petit algorithme pour aplatir l'objet en une liste de dicts :</p>
+        <p class="text-base my-4 leading-relaxed">J'ai donc fait un petit algorithme pour aplatir l'objet en une liste de dicts :</p>
         <pre class="rounded-xl"><code class="language-python">processed_exporter_data = []
 
 for family in data_from exporter:
@@ -192,18 +192,18 @@ for family in data_from exporter:
             row dict[key] = value
         row_dict["value"] = sample
         processed exporter_data.append(row_dict)</code></pre>
-        <p class="text-base my-3 leading-relaxed">J'aurai alors une liste de dicts, &agrave; partir de laquelle un dataframe peut &ecirc;tre cr&eacute;&eacute;.</p>
+        <p class="text-base my-4 leading-relaxed">J'aurai alors une liste de dicts, &agrave; partir de laquelle un dataframe peut &ecirc;tre cr&eacute;&eacute;.</p>
         <pre class="rounded-xl"><code class="language-python">[
     {"__name__": "vmware_vm_power_state", "vm_name": "vm1", "value": 1},
     {"__name__": "vmware_vm_power_state", "vm_name": "vm2", "value": 0},
 ]</code></pre>
-        <p class="text-base my-3 leading-relaxed">Maintenant, jouons avec les dataframes...</p>
+        <p class="text-base my-4 leading-relaxed">Maintenant, jouons avec les dataframes...</p>
         <h2 class="text-3xl font-bold my-5 leading-snug">&Eacute;tape 2 : Jouer avec les dataframes</h2>
-        <p class="text-base my-3 leading-relaxed">Tout d'abord, je cr&eacute;e le dataframe :</p>
+        <p class="text-base my-4 leading-relaxed">Tout d'abord, je cr&eacute;e le dataframe :</p>
         <pre class="rounded-xl"><code class="language-python">import pandas
 
 metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
-        <p class="text-base my-3 leading-relaxed">Ensuite, je supprime les &eacute;tiquettes inutiles :</p>
+        <p class="text-base my-4 leading-relaxed">Ensuite, je supprime les &eacute;tiquettes inutiles :</p>
         <pre class="rounded-xl"><code class="language-python">metrics_df.drop(
     colums=[
         "host_name",
@@ -214,28 +214,28 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
     axis=1,
     inplace=True,
 )</code></pre>
-        <p class="text-base my-3 leading-relaxed">De cette fa&ccedil;on, j'utilise le dataframe pour supprimer les 4 colonnes.
+        <p class="text-base my-4 leading-relaxed">De cette fa&ccedil;on, j'utilise le dataframe pour supprimer les 4 colonnes.
          <code class="language-python">
           inplace=True</code>est utilis&eacute; pour &eacute;craser le dataframe existant et ne pas en cr&eacute;er un nouveau.</p>
-        <p class="text-base my-3 leading-relaxed">Ensuite, je dois fusionner les donn&eacute;es de m&eacute;triques avec les donn&eacute;es de deux autres sources de donn&eacute;es internes (une pour le r&eacute;f&eacute;rentiel des h&ocirc;tes/vm, une pour les lignes m&eacute;tier).</p>
-        <p class="text-base my-3 leading-relaxed">Celles-ci sont &eacute;galement repr&eacute;sent&eacute;es sous forme de dataframes.</p>
+        <p class="text-base my-4 leading-relaxed">Ensuite, je dois fusionner les donn&eacute;es de m&eacute;triques avec les donn&eacute;es de deux autres sources de donn&eacute;es internes (une pour le r&eacute;f&eacute;rentiel des h&ocirc;tes/vm, une pour les lignes m&eacute;tier).</p>
+        <p class="text-base my-4 leading-relaxed">Celles-ci sont &eacute;galement repr&eacute;sent&eacute;es sous forme de dataframes.</p>
         <pre class="rounded-xl"><code class="language-python">businesslines_referential_df = referential_df.merge(
     businesslines_df, how="left", left_on="ecosystem", right_index=True
 )</code></pre>
-        <p class="text-base my-3 leading-relaxed">Cette fusion enrichira le dataframe r&eacute;f&eacute;rentiel avec les donn&eacute;es des lignes m&eacute;tier, de droite &agrave; gauche, selon le nom de l'&eacute;cosyst&egrave;me et utilisera l'index du dataframe de droite comme cl&eacute; de jointure.</p>
-        <p class="text-base my-3 leading-relaxed">Maintenant, il est temps de fusionner ce dataframe avec le dataframe des m&eacute;triques.</p>
+        <p class="text-base my-4 leading-relaxed">Cette fusion enrichira le dataframe r&eacute;f&eacute;rentiel avec les donn&eacute;es des lignes m&eacute;tier, de droite &agrave; gauche, selon le nom de l'&eacute;cosyst&egrave;me et utilisera l'index du dataframe de droite comme cl&eacute; de jointure.</p>
+        <p class="text-base my-4 leading-relaxed">Maintenant, il est temps de fusionner ce dataframe avec le dataframe des m&eacute;triques.</p>
         <pre class="rounded-xl"><code class="language-python">metrics_df = metrics_df.merge(
     businesslines_referential_df, how="inner", left_on="vm_name", right_index=True
 )</code></pre>
-        <p class="text-base my-3 leading-relaxed">Cette fusion est faite avec la m&eacute;thode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.</p>
-        <p class="text-base my-3 leading-relaxed">Maintenant, je remplace le nom de m&eacute;trique original par le mappage dont nous avons parl&eacute; plus t&ocirc;t :</p>
+        <p class="text-base my-4 leading-relaxed">Cette fusion est faite avec la m&eacute;thode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.</p>
+        <p class="text-base my-4 leading-relaxed">Maintenant, je remplace le nom de m&eacute;trique original par le mappage dont nous avons parl&eacute; plus t&ocirc;t :</p>
         <pre class="rounded-xl"><code class="language-python">metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)</code></pre>
-        <p class="text-base my-3 leading-relaxed">Maintenant "vmware
+        <p class="text-base my-4 leading-relaxed">Maintenant "vmware
          <em class="italic">
           vm</em>power
          <em class="italic">
           state" est mapp&eacute; &agrave; "power</em>state".</p>
-        <p class="text-base my-3 leading-relaxed">Le r&eacute;sultat est similaire &agrave; ceci :</p>
+        <p class="text-base my-4 leading-relaxed">Le r&eacute;sultat est similaire &agrave; ceci :</p>
         <table class="min-w-full border-collapse my-4" style="border: 1px solid #fff; width: 100%;">
          <tr>
           <th class="border border-gray-300 px-4 py-2 text-left font-semibold text-gray-700">__name__</th>
@@ -252,11 +252,11 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
           <td class="border border-gray-300 px-4 py-2 text-gray-600">1</td>
          </tr>
         </table>
-        <p class="text-base my-3 leading-relaxed">Maintenant, pour &ecirc;tre r&eacute;colt&eacute;es par prometheus, ces donn&eacute;es doivent &ecirc;tre res&eacute;rialis&eacute;es.</p>
+        <p class="text-base my-4 leading-relaxed">Maintenant, pour &ecirc;tre r&eacute;colt&eacute;es par prometheus, ces donn&eacute;es doivent &ecirc;tre res&eacute;rialis&eacute;es.</p>
         <h2 class="text-3xl font-bold my-5 leading-snug">&Eacute;tape 3 : Comment ai-je res&eacute;rialis&eacute; les donn&eacute;es ?</h2>
-        <p class="text-base my-3 leading-relaxed">Les cha&icirc;nes de m&eacute;triques Prometheus sont assez simples :</p>
+        <p class="text-base my-4 leading-relaxed">Les cha&icirc;nes de m&eacute;triques Prometheus sont assez simples :</p>
         <pre class="rounded-xl"><code class="language-python">metric_name{label1="value1", label2="value2"} 0</code></pre>
-        <p class="text-base my-3 leading-relaxed">En utilisant une compr&eacute;hension de liste, j'it&egrave;re sur le dataframe pour imprimer une cha&icirc;ne contenant au d&eacute;but le metric
+        <p class="text-base my-4 leading-relaxed">En utilisant une compr&eacute;hension de liste, j'it&egrave;re sur le dataframe pour imprimer une cha&icirc;ne contenant au d&eacute;but le metric
          <em class="italic">
           name et &agrave; la fin la metric</em>value.</p>
         <pre class="rounded-xl"><code class="language-python">return "\n".join(
@@ -265,14 +265,14 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
         for index, row in metrics df.iterrows()
     ]
 )</code></pre>
-        <p class="text-base my-3 leading-relaxed">La partie d&eacute;licate est de g&eacute;n&eacute;rer les &eacute;tiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.</p>
-        <p class="text-base my-3 leading-relaxed">Un dict en python ressemble &agrave;
+        <p class="text-base my-4 leading-relaxed">La partie d&eacute;licate est de g&eacute;n&eacute;rer les &eacute;tiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.</p>
+        <p class="text-base my-4 leading-relaxed">Un dict en python ressemble &agrave;
          <code class="language-python">
           {"key": "value"}</code>, nous devons g&eacute;n&eacute;rer une cha&icirc;ne qui ressemble &agrave;
          <code class="language-python">
           {label="value"}</code>
         </p>
-        <p class="text-base my-3 leading-relaxed">J'ai donc &eacute;crit une petite fonction qui g&eacute;n&egrave;re cette cha&icirc;ne.</p>
+        <p class="text-base my-4 leading-relaxed">J'ai donc &eacute;crit une petite fonction qui g&eacute;n&egrave;re cette cha&icirc;ne.</p>
         <pre class="rounded-xl"><code class="language-python">def generate_dict_label(row):
 
     labels = set(row.index) - {"__name__", "value"}
@@ -288,9 +288,9 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
         )
         + "}"
     )</code></pre>
-        <p class="text-base my-3 leading-relaxed">Finalement, les donn&eacute;es s&eacute;rialis&eacute;es ressemblent &agrave; :</p>
+        <p class="text-base my-4 leading-relaxed">Finalement, les donn&eacute;es s&eacute;rialis&eacute;es ressemblent &agrave; :</p>
         <pre class="rounded-xl"><code class="language-python">power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1</code></pre>
-        <p class="text-base my-3 leading-relaxed">Maintenant, les m&eacute;triques sont r&eacute;colt&eacute;es par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et res&eacute;rialisera les donn&eacute;es provenant d'un exporter prometheus vmware.</p>
+        <p class="text-base my-4 leading-relaxed">Maintenant, les m&eacute;triques sont r&eacute;colt&eacute;es par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et res&eacute;rialisera les donn&eacute;es provenant d'un exporter prometheus vmware.</p>
        </content>
       </entry>
       <entry xml:lang="en">
@@ -304,15 +304,15 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
        <summary>
         Un pense b&ecirc;te pour se rappeller comment supprimer tous les events d'un topic Kafka</summary>
        <content type="html">
-        <p class="text-base my-3 leading-relaxed">Dans ma mission actuelle, je travaille avec Kafka. Je suis &eacute;galement en charge, avec d'autres personnes, du support utilisateur. Aujourd'hui, un utilisateur rencontrait un probl&egrave;me avec la suppression de ses messages dans un topic Kafka d&eacute;di&eacute; &agrave; des tests automatis&eacute;s.</p>
-        <p class="text-base my-3 leading-relaxed">A la fin de ses tests, il doit purger les messages cr&eacute;&eacute; pendant la session, mais rencontrait une erreur de timeout &agrave; l'execution de la requete.</p>
-        <p class="text-base my-3 leading-relaxed">Dans le cadre de ce pense b&ecirc;te, la cleanup.policy du topic est configur&eacute;e &agrave; delete, ce qui signifie que les messages sont supprim&eacute;s lorsqu'ils atteignent la r&eacute;tention d&eacute;finie, la m&eacute;thode est diff&eacute;rente pour les topics configur&eacute;s avec la r&eacute;tention compact.</p>
-        <p class="text-base my-3 leading-relaxed">Pour supprimer tous les messages d'un topic Kafka, il faut utiliser la commande
-         <code>
+        <p class="text-base my-4 leading-relaxed">Dans ma mission actuelle, je travaille avec Kafka. Je suis &eacute;galement en charge, avec d'autres personnes, du support utilisateur. Aujourd'hui, un utilisateur rencontrait un probl&egrave;me avec la suppression de ses messages dans un topic Kafka d&eacute;di&eacute; &agrave; des tests automatis&eacute;s.</p>
+        <p class="text-base my-4 leading-relaxed">A la fin de ses tests, il doit purger les messages cr&eacute;&eacute; pendant la session, mais rencontrait une erreur de timeout &agrave; l'execution de la requete.</p>
+        <p class="text-base my-4 leading-relaxed">Dans le cadre de ce pense b&ecirc;te, la cleanup.policy du topic est configur&eacute;e &agrave; delete, ce qui signifie que les messages sont supprim&eacute;s lorsqu'ils atteignent la r&eacute;tention d&eacute;finie, la m&eacute;thode est diff&eacute;rente pour les topics configur&eacute;s avec la r&eacute;tention compact.</p>
+        <p class="text-base my-4 leading-relaxed">Pour supprimer tous les messages d'un topic Kafka, il faut utiliser la commande
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
           kafka-delete-records</code>fournie par Kafka.</p>
         <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
-        <p class="text-base my-3 leading-relaxed">Le fichier
-         <code>
+        <p class="text-base my-4 leading-relaxed">Le fichier
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
           offsets.json</code>doit contenir les offsets des messages &agrave; supprimer. Par exemple, pour un topic &agrave; trois partitions, le fichier doit contenir trois objets, un par partition.</p>
         <pre class="rounded-xl"><code class="language-json">{
   "partitions": [
@@ -334,44 +334,127 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
   ],
   "version": 1
 }</code></pre>
-        <p class="text-base my-3 leading-relaxed">Dans cet exemple, tous les messages situ&eacute;s avant les offsets sp&eacute;cifi&eacute; pour chaque partition seront supprim&eacute;s.</p>
-        <p class="text-base my-3 leading-relaxed">Pour obtenir les offsets des messages &agrave; supprimer, il faut utiliser la commande
-         <code>
+        <p class="text-base my-4 leading-relaxed">Dans cet exemple, tous les messages situ&eacute;s avant les offsets sp&eacute;cifi&eacute; pour chaque partition seront supprim&eacute;s.</p>
+        <p class="text-base my-4 leading-relaxed">Pour obtenir les offsets des messages &agrave; supprimer, il faut utiliser la commande
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
           kafka-consumer-groups</code>.</p>
         <pre class="rounded-xl"><code class="language-bash">kafka-consumer-groups --bootstrap-server ${bootstrapServerAndPort} --group ${consumerGroupName} --describe</code></pre>
-        <p class="text-base my-3 leading-relaxed">Cette commande affiche les offsets des messages consomm&eacute;s par le groupe de consommateurs
-         <code>
+        <p class="text-base my-4 leading-relaxed">Cette commande affiche les offsets des messages consomm&eacute;s par le groupe de consommateurs
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
           ${consumerGroupName}</code>. Il suffit de r&eacute;cup&eacute;rer ces offsets pour les mettre dans le fichier
-         <code>
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
           offsets.json</code>.</p>
-        <p class="text-base my-3 leading-relaxed">Le r&eacute;sultat est le suivant :</p>
+        <p class="text-base my-4 leading-relaxed">Le r&eacute;sultat est le suivant :</p>
         <pre class="rounded-xl"><code class="language-bash">GROUP       TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
 myTestApp   myTestTopic     0          3               3               0               -               -               -
 myTestApp   myTestTopic     1          5               5               0               -               -               -
 myTestApp   myTestTopic     2          6               6               0               -               -               -</code></pre>
-        <p class="text-base my-3 leading-relaxed">Une fois le fichier
-         <code>
+        <p class="text-base my-4 leading-relaxed">Une fois le fichier
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
           offsets.json</code>pr&ecirc;t, il suffit de lancer la commande
-         <code>
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
           kafka-delete-records</code>pour supprimer les messages du topic
-         <code>
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
           ${topicName}</code>.</p>
         <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
-        <p class="text-base my-3 leading-relaxed">Dans notre cas, l'utilisateur rencontrait un probl&egrave;me de timeout, ce qui peut arriver si le nombre de messages &agrave; supprimer est tr&egrave;s grand. Il faut alors augmenter le timeout de la commande
-         <code>
+        <p class="text-base my-4 leading-relaxed">Dans notre cas, l'utilisateur rencontrait un probl&egrave;me de timeout, ce qui peut arriver si le nombre de messages &agrave; supprimer est tr&egrave;s grand. Il faut alors augmenter le timeout de la commande
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
           kafka-delete-records</code>.</p>
-        <p class="text-base my-3 leading-relaxed">Pour se faire, nous devons cr&eacute;er un fichier command-config avec le timeout souhait&eacute; :</p>
+        <p class="text-base my-4 leading-relaxed">Pour se faire, nous devons cr&eacute;er un fichier command-config avec le timeout souhait&eacute; :</p>
         <pre class="rounded-xl"><code class="language-bash">request.timeout.ms=120000</code></pre>
-        <p class="text-base my-3 leading-relaxed">Puis lancer la commande
-         <code>
+        <p class="text-base my-4 leading-relaxed">Puis lancer la commande
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
           kafka-delete-records</code>avec le fichier de configuration :</p>
         <pre class="rounded-xl"><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json --command-config path/to/command-config</code></pre>
-        <p class="text-base my-3 leading-relaxed">Les messages du topic Kafka
-         <code>
+        <p class="text-base my-4 leading-relaxed">Les messages du topic Kafka
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
           ${topicName}</code>ont &eacute;t&eacute; supprim&eacute;s avec succ&egrave;s.</p>
         <h2 class="text-3xl font-bold my-5 leading-snug">M&eacute;thode Gros Bourrin</h2>
-        <p class="text-base my-3 leading-relaxed">On peut &eacute;galement supprimer la totalit&eacute; des events d'un topic en changeant la r&eacute;tention du topic &agrave; 1ms, puis en la remettant &agrave; la valeur initiale.</p>
-        <p class="text-base my-3 leading-relaxed">Cette m&eacute;thode a l'avantage de fonctionner &eacute;galement pour les topics compact&eacute;s ! :D</p>
+        <p class="text-base my-4 leading-relaxed">On peut &eacute;galement supprimer la totalit&eacute; des events d'un topic en changeant la r&eacute;tention du topic &agrave; 1ms, puis en la remettant &agrave; la valeur initiale.</p>
+        <p class="text-base my-4 leading-relaxed">Cette m&eacute;thode a l'avantage de fonctionner &eacute;galement pour les topics compact&eacute;s ! :D</p>
+       </content>
+      </entry>
+      <entry xml:lang="en">
+       <title type="html">J'ai d&eacute;cid&eacute; que c'&eacute;tait assez</title> <author><name></name>
+        <uri>https://www.hack-with-hyweene.com</uri>
+       </author>
+       <id>https://www.hack-with-hyweene.com/blog/j-ai-decide-que-c-etait-assez/</id>
+       <published>2024-10-27 23:00:00+00:00</published>
+       <updated></updated>
+       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/j-ai-decide-que-c-etait-assez/
+       <summary>
+        J'ai 36 ans, je mesure 1m70, je p&egrave;se 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.</summary>
+       <content type="html">
+        <p class="text-base my-4 leading-relaxed">J'ai 35 ans, je mesure 1m70, je p&egrave;se 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">Le contexte</h2>
+        <p class="text-base my-4 leading-relaxed">J'ai toujours &eacute;t&eacute; en surpoids, depuis petit, j'&eacute;tais le p'tit gros de la classe, le p'tit gros de la famille.</p>
+        <p class="text-base my-4 leading-relaxed">La famille n'aidant pas beaucoup, enfon&ccedil;ant bien le clou, en disant que je devrais faire un effort, parce que &agrave; 10 ans je fais 50kg, si ca continue comme &ccedil;a, &agrave; 20 ans, je ferai 100kg !!</p>
+        <p class="text-base my-4 leading-relaxed">Alors fatalement, en 2012, &agrave; 24 ans, j'approche tout doucement des 95kg :-)</p>
+        <p class="text-base my-4 leading-relaxed">&Eacute;t&eacute; 2012, Je me fais tromper par la nana avec qui j'&eacute;tais &agrave; l'&eacute;poque, ce qui fait un &eacute;lectrochoc, la d&eacute;pression s'installe pendant quelques semaines, je suis tellement &eacute;clat&eacute; mentalement que je suis au point o&ugrave; je refuse de m'alimenter. Et la, je perds du poids, mais pas pour les bonnes raisons.</p>
+        <p class="text-base my-4 leading-relaxed">Mais je me reprends assez vite, mon chien m'a beaucoup aid&eacute;, &agrave; sa fa&ccedil;on, &agrave; ne pas totalement perdre pied.</p>
+        <p class="text-base my-4 leading-relaxed">Je reprends du poil de la b&ecirc;te, et je d&eacute;cide de me mettre, timidement, au sport apr&egrave;s 24 ans sans, quasiment, aucune activit&eacute; physique. J'installe d'abord un sac de frappe dans le garage, qui me permet d'&eacute;vacuer un temps diff&eacute;rentes choses. Mais il manque quelque chose. Alors je me lance dans pas mal d'activit&eacute;s, Natation, Boxe, Jiujitsu, Musculation, etc etc.</p>
+        <p class="text-base my-4 leading-relaxed">Et je me rends compte que j'aime &ccedil;a, j'aime le sport, j'aime la sueur, j'aime la douleur, j'aime la discipline, j'aime les r&eacute;sultats.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">Les r&eacute;sultats</h2>
+        <p class="text-base my-4 leading-relaxed">D&eacute;cembre 2013, pour mon anniversaire, je tombe sous les 75kg, je suis fier, 20kg perdu en 1 an, c'est pas mal.</p>
+        <p class="text-base my-4 leading-relaxed">Mais pas satisfait, je veux autre chose, je veux plus, mais je suis frein&eacute;, par mon manque de connaissance, et surtout, mon alimentation, qui n'est pas tiptop.</p>
+        <p class="text-base my-4 leading-relaxed">La di&egrave;te que j'ai entrepris est une di&egrave;te un peu &agrave; la zob, o&ugrave; je r&eacute;duisais drastiquement les quantit&eacute;s, mais sans vraiment faire attention &agrave; ce que je mangeais. Je me retrouvais souvent sans energie, sans force, sans motivation, et je me disais que c'&eacute;tait normal, que c'&eacute;tait le sport qui me tuait.</p>
+        <p class="text-base my-4 leading-relaxed">J'&eacute;tais aussi frein&eacute; mentalement, parce qu'entre-temps, j'ai fait la b&ecirc;tise de me remettre avec mon ex, qui crisait parce que je passais beaucoup de temps au sport, et pas assez de temps avec elle. Du coup, je r&eacute;duisais mes s&eacute;ances, je r&eacute;duisais mes efforts, je r&eacute;duisais mes r&eacute;sultats.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">Le prime</h2>
+        <p class="text-base my-4 leading-relaxed">&Eacute;t&eacute; 2015, je me s&eacute;pare de mon ex, je me remets &agrave; fond dans le sport, en automne, je rencontre cette dame formidable qui devient ma femme, qui me soutient dans mes efforts, et qui a aussi cette passion du sport, ce qui me pousse &agrave; aller plus loin.</p>
+        <p class="text-base my-4 leading-relaxed">Fin 2016, je planifie mon mariage avec dame Jessica. Je veux avoir un physique aux olives pour cette occasion, je prends un coach, qui me pr&eacute;pare une diete, un programme de muscu + cardio, qui me pousse &agrave;(u) fond. Je tombe &agrave; 63kg, 13% de bodyfat, je suis content, mais pas satisfait, je veux perdre plus ... Je suis dans une mauvaise spirale o&ugrave; je frise l'anorexie.</p>
+        <p class="text-base my-4 leading-relaxed">J'arr&ecirc;te ce suivi, je reprends un peu de poids, je me stabilise &agrave; 70kg, 13% de bodyfat. J'avais ces muscles qui poussaient. Pecs, Bras, jambes, abdos qui se dessinnent. Je suis biiiennnggg !</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">La chute</h2>
+        <p class="text-base my-4 leading-relaxed">Apr&egrave;s des ann&eacute;es d'ob&eacute;sit&eacute;, j'&eacute;tais arriv&eacute; &agrave; un r&eacute;sultat o&ugrave; mon corps me rendait fier. Mais la vie est ce qu'elle est, et les &eacute;preuves n'arrivent jamais toutes seules.</p>
+        <ul class="list-disc pl-5 my-3 space-y-2">
+         <li>En 2018, j'ai eu ma fille, petite couvade des familles, j'ai pris du poids.</li>
+         <li>En 2019, j'ai perdu mon chien, petite d&eacute;prime,, j'arr&ecirc;te le sport, j'ai pris du poids.</li>
+         <li>En 2020, COVID, confinement, t&eacute;l&eacute;travail, j'ai pris du poids.</li>
+        </ul>
+        <p class="text-base my-4 leading-relaxed">&Agrave; mon retour &agrave; la salle de sport, en 2021/2022, je me rends compte que j'ai perdu toutes ces performances que j'avais avant. Du coup, grosse perte de motivation, j'ai plus ou moins baiss&eacute; les bras.</p>
+        <p class="text-base my-4 leading-relaxed">Entre 2019 et 2024 j'ai pris 20kg.</p>
+        <p class="text-base my-4 leading-relaxed">Tr&egrave;s tr&egrave;s grosse perte de confiance en moi, grosse prise de stress, fatigue, mal dans ma peau ...</p>
+        <p class="text-base my-4 leading-relaxed">Et maintenant je supporte m&ecirc;me plus ma gueule dans le mirroir ^^</p>
+        <p class="text-base my-4 leading-relaxed">Ce qui me fait d'autant plus mal au cul aujourd'hui, c'est qu'en 2018, je me disais que jamais je ne pourrais revenir au point o&ugrave; j'en &eacute;tais en 2012, les connaissances accumul&eacute;es, les efforts, la discipline, la sueur, le sang et le reste, c'&eacute;tait pas possible ...</p>
+        <p class="text-base my-4 leading-relaxed">Maintenant, on est en 2024, et m&ecirc;me si mon physique ne ressemble pas &agrave; celui de 2012, je me rends compte que j'ai repris le poids que j'avais &agrave; l'&eacute;poque, et que je suis en train de revenir &agrave; ce point.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">La d&eacute;cision</h2>
+        <p class="text-base my-4 leading-relaxed">Je dois avouer, que Kaizen est pass&eacute; par la. La vid&eacute;o d'InoxTag m'a mis une grande claque dans la gueule, son parcours pour monter l'Everest m'a fait r&eacute;aliser que tout est possible, que tout est atteignable, si on s'en donne les moyens.</p>
+        <p class="text-base my-4 leading-relaxed">J'ai pris une d&eacute;cision, toutes les semaines, je publierai un article ici, qui sera mon petit journal, je pourrai y revenir de temps en temps, pour me rappeller pourquoi, et surtout, voir le chemin parcouru. C'est mon petit journal de bord, mais public.</p>
+        <p class="text-base my-4 leading-relaxed">L'objectif est tr&egrave;s simple :</p>
+        <ul class="list-disc pl-5 my-3 space-y-2">
+         <li>Perdre juste 7kg pour tomber aux 80kg.</li>
+         <li>Passer de 28,7% de bodyfat &agrave; 15 voire 12,5%.</li>
+        </ul>
+        <p class="text-base my-4 leading-relaxed">Ce qui me ferait passer de 87kg pour 25kg de graisses &agrave; 80kg pour 10kg de graisses.</p>
+        <p class="text-base my-4 leading-relaxed">Pour ce faire, je vais devoir diminuer les apports caloriques, augmenter la d&eacute;pense. Un des vecteur est le sport, mais il y a aussi le NEAT, qui est tr&egrave;s important, apr&egrave;s quelques essais, j'ai vu qu'en marchant juste 10000 pas par jours, je pouvais bruler entre 200 et 300 calories de plus par jour.</p>
+        <p class="text-base my-4 leading-relaxed">Ce qui me fait un d&eacute;ficit de 500 calories par jour, 3500 calories par semaine, pour 1kg de gras en moins par semaine.</p>
+        <p class="text-base my-4 leading-relaxed">Donc, en r&eacute;sum&eacute; :</p>
+        <ul class="list-disc pl-5 my-3 space-y-2">
+         <li>Reprendre le sport, 5 fois par semaine, s&eacute;ances d'une heure.</li>
+         <li>10000 pas minimum, par jour.</li>
+         <li>Diminuer les apports caloriques.</li>
+         <li>Augmenter les apports en prot&eacute;ines.</li>
+         <li>Diminuer les apports en glucides.</li>
+        </ul>
+        <hr class="border-t border-gray-300 my-6">
+        <p class="text-base my-4 leading-relaxed">Aujourd'hui : Pes&eacute;e, prise des mesures de la taille, pecs, bras, avant bras, etc etc.</p>
+        <div class="container mx-auto px-4">
+         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="w-full">
+           <img alt="poids" class="w-full h-auto object-cover rounded-lg shadow-md" src="/media/images/blog/illustration/2024-10-27/poids.jpg">
+          </div>
+          <div class="w-full">
+           <img alt="bodyfat" class="w-full h-auto object-cover rounded-lg shadow-md" src="/media/images/blog/illustration/2024-10-27/bodyfat.jpg">
+          </div>
+          <div class="w-full">
+           <img alt="mesures" class="w-full h-auto object-cover rounded-lg shadow-md" src="/media/images/blog/illustration/2024-10-27/mesures.jpg">
+          </div>
+         </div>
+        </div>
+        <hr class="border-t border-gray-300 my-6">
+        <p class="text-base my-4 leading-relaxed">Je pense que ca va parler sport un peu plus dans le coin, parce que le sport, comme la programmation, c'est du Hack.</p>
+        <p class="text-base my-4 leading-relaxed">Si le
+         <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
+          build in public</code>est ce qu'il me faut pour me motiver, alors go :-)</p>
        </content>
       </entry>
      </link>

@@ -81,28 +81,28 @@
    <h1 class="text-4xl font-semibold">Git</h1>
    <h2 class="text-2xl font-semibold my-4 border-b border-gray-400">Intro</h2>
    <h2 class="text-3xl font-bold my-5 leading-snug">A Propos de la gestion des versions</h2>
-   <p class="text-base my-3 leading-relaxed">Pourquoi se soucier de la gestion des versions ?</p>
-   <p class="text-base my-3 leading-relaxed">Un VCS (Version Control System) est un syst&egrave;me qui enregistre les modifications apport&eacute;es &agrave; un fichier ou &agrave; un ensemble de fichiers au fil du temps afin que vous puissiez revenir a un &eacute;tat ant&eacute;rieur d'un fichier si besoin.</p>
-   <p class="text-base my-3 leading-relaxed">En tant que d&eacute;veloppeur, utiliser un VCS est tr&egrave;s sage. Cela permet de garder toutes les versions d'un fichier, &agrave; tout moment. Un VCS permet &eacute;galement de travailler en &eacute;quipe sur un projet ou une fonctionnalit&eacute;, de voir qui a introduit quelle ligne, &agrave; quel endroit, &agrave; quel moment.</p>
-   <p class="text-base my-3 leading-relaxed">Utiliser un VCS permet de rester serein, de ne pas avoir peur de casser quelque chose, de pouvoir revenir en arri&egrave;re si besoin.</p>
+   <p class="text-base my-4 leading-relaxed">Pourquoi se soucier de la gestion des versions ?</p>
+   <p class="text-base my-4 leading-relaxed">Un VCS (Version Control System) est un syst&egrave;me qui enregistre les modifications apport&eacute;es &agrave; un fichier ou &agrave; un ensemble de fichiers au fil du temps afin que vous puissiez revenir a un &eacute;tat ant&eacute;rieur d'un fichier si besoin.</p>
+   <p class="text-base my-4 leading-relaxed">En tant que d&eacute;veloppeur, utiliser un VCS est tr&egrave;s sage. Cela permet de garder toutes les versions d'un fichier, &agrave; tout moment. Un VCS permet &eacute;galement de travailler en &eacute;quipe sur un projet ou une fonctionnalit&eacute;, de voir qui a introduit quelle ligne, &agrave; quel endroit, &agrave; quel moment.</p>
+   <p class="text-base my-4 leading-relaxed">Utiliser un VCS permet de rester serein, de ne pas avoir peur de casser quelque chose, de pouvoir revenir en arri&egrave;re si besoin.</p>
    <h3 class="text-2xl font-semibold my-4">Faire des copies</h3>
-   <p class="text-base my-3 leading-relaxed">La premi&egrave;re m&eacute;thode, &eacute;galement la plus simple et la moins fiable, est de copier les fichiers manuellement.</p>
-   <p class="text-base my-3 leading-relaxed">Pour r&eacute;sumer, vous travaillez dans le dossier de travail "code" et vous copiez manuellement le dossier de travail dans un autre dossier pour conserver une version de sauvegarde (par exemple code-dateDuJour ou code-fonctionnaliteA)</p>
-   <p class="text-base my-3 leading-relaxed">Cela fonctionne, mais c'est tr&egrave;s limit&eacute; et peu fiable.</p>
-   <p class="text-base my-3 leading-relaxed">On a vite fait de se tromper de dossier, d'&eacute;craser le mauvais fichier, etc.</p>
+   <p class="text-base my-4 leading-relaxed">La premi&egrave;re m&eacute;thode, &eacute;galement la plus simple et la moins fiable, est de copier les fichiers manuellement.</p>
+   <p class="text-base my-4 leading-relaxed">Pour r&eacute;sumer, vous travaillez dans le dossier de travail "code" et vous copiez manuellement le dossier de travail dans un autre dossier pour conserver une version de sauvegarde (par exemple code-dateDuJour ou code-fonctionnaliteA)</p>
+   <p class="text-base my-4 leading-relaxed">Cela fonctionne, mais c'est tr&egrave;s limit&eacute; et peu fiable.</p>
+   <p class="text-base my-4 leading-relaxed">On a vite fait de se tromper de dossier, d'&eacute;craser le mauvais fichier, etc.</p>
    <h3 class="text-2xl font-semibold my-4">Les VCS locaux</h3>
-   <p class="text-base my-3 leading-relaxed">Ces VCS utilisent une base de donn&eacute;es locale pour stocker les modifications apport&eacute;es aux fichiers.</p>
-   <p class="text-base my-3 leading-relaxed">RCS (Revision Control System) est un exemple de VCS local.</p>
-   <p class="text-base my-3 leading-relaxed">Ce type de VCS stocke la copie compl&egrave;te d'un fichier, et ne garde que les changements r&eacute;alis&eacute;s entre les versions.</p>
-   <p class="text-base my-3 leading-relaxed">Exemple :</p>
-   <p class="text-base my-3 leading-relaxed">Nous avons un fichier
-    <code>
+   <p class="text-base my-4 leading-relaxed">Ces VCS utilisent une base de donn&eacute;es locale pour stocker les modifications apport&eacute;es aux fichiers.</p>
+   <p class="text-base my-4 leading-relaxed">RCS (Revision Control System) est un exemple de VCS local.</p>
+   <p class="text-base my-4 leading-relaxed">Ce type de VCS stocke la copie compl&egrave;te d'un fichier, et ne garde que les changements r&eacute;alis&eacute;s entre les versions.</p>
+   <p class="text-base my-4 leading-relaxed">Exemple :</p>
+   <p class="text-base my-4 leading-relaxed">Nous avons un fichier
+    <code class="bg-gray-600 rounded p-1 px-2 text-sm font-mono mr-1">
      fichier.txt</code>de 150 lignes.</p>
-   <p class="text-base my-3 leading-relaxed">Si je modifie 10 lignes, le VCS local va stocker mon nouveau fichier de 160 lignes, et un journal des modifications, contenant les 10 lignes modifi&eacute;es.</p>
+   <p class="text-base my-4 leading-relaxed">Si je modifie 10 lignes, le VCS local va stocker mon nouveau fichier de 160 lignes, et un journal des modifications, contenant les 10 lignes modifi&eacute;es.</p>
    <h3 class="text-2xl font-semibold my-4">Les VCS centralis&eacute;s</h3>
-   <p class="text-base my-3 leading-relaxed">Dans le cas d'un VCS centralis&eacute;, un serveur central regroupe toutes les sources et les versions de chaque fichier.</p>
-   <p class="text-base my-3 leading-relaxed">Les d&eacute;veloppeurs travaillent sur une copie locale des fichiers, et envoient leurs modifications au serveur central.</p>
-   <p class="text-base my-3 leading-relaxed">Exemple :</p>
+   <p class="text-base my-4 leading-relaxed">Dans le cas d'un VCS centralis&eacute;, un serveur central regroupe toutes les sources et les versions de chaque fichier.</p>
+   <p class="text-base my-4 leading-relaxed">Les d&eacute;veloppeurs travaillent sur une copie locale des fichiers, et envoient leurs modifications au serveur central.</p>
+   <p class="text-base my-4 leading-relaxed">Exemple :</p>
    <ul class="list-disc pl-5 my-3 space-y-2">
     <li>SVN (Subversion)</li>
     <li>CVS (Concurrent Versions System)</li>
