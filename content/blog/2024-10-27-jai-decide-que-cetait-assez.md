@@ -17,6 +17,10 @@ La famille n'aidant pas beaucoup, enfonçant bien le clou, en disant que je devr
 
 Alors fatalement, en 2012, à 24 ans, j'approche tout doucement des 95kg :-)
 
+<center>
+<img src="/media/images/blog/illustration/2024-10-27/worst.jpg" alt="worst" class="object-cover rounded-lg shadow-md">
+</center>
+
 Été 2012, Je me fais tromper par la nana avec qui j'étais à l'époque, ce qui fait un électrochoc, la dépression s'installe pendant quelques semaines, je suis tellement éclaté mentalement que je suis au point où je refuse de m'alimenter. Et la, je perds du poids, mais pas pour les bonnes raisons.
 
 Mais je me reprends assez vite, mon chien m'a beaucoup aidé, à sa façon, à ne pas totalement perdre pied.
@@ -28,6 +32,10 @@ Et je me rends compte que j'aime ça, j'aime le sport, j'aime la sueur, j'aime l
 ## Les résultats
 
 Décembre 2013, pour mon anniversaire, je tombe sous les 75kg, je suis fier, 20kg perdu en 1 an, c'est pas mal.
+
+<center>
+<img src="/media/images/blog/illustration/2024-10-27/recap.jpg" alt="recap" class="object-cover rounded-lg shadow-md">
+</center>
 
 Mais pas satisfait, je veux autre chose, je veux plus, mais je suis freiné, par mon manque de connaissance, et surtout, mon alimentation, qui n'est pas tiptop.
 
@@ -42,6 +50,10 @@ J'étais aussi freiné mentalement, parce qu'entre-temps, j'ai fait la bêtise d
 Fin 2016, je planifie mon mariage avec dame Jessica. Je veux avoir un physique aux olives pour cette occasion, je prends un coach, qui me prépare une diete, un programme de muscu + cardio, qui me pousse à(u) fond. Je tombe à 63kg, 13% de bodyfat, je suis content, mais pas satisfait, je veux perdre plus ... Je suis dans une mauvaise spirale où je frise l'anorexie.
 
 J'arrête ce suivi, je reprends un peu de poids, je me stabilise à 70kg, 13% de bodyfat. J'avais ces muscles qui poussaient. Pecs, Bras, jambes, abdos qui se dessinnent. Je suis biiiennnggg !
+
+<center>
+<img src="/media/images/blog/illustration/2024-10-27/prime.jpg" alt="prime" class="object-cover rounded-lg shadow-md">
+</center>
 
 ## La chute
 
