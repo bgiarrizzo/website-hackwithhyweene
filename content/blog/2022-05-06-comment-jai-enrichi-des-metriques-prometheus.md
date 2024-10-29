@@ -5,6 +5,7 @@ cover: "2022-05-06.jpg"
 cover_alt: "couverture de l'article sur l'enrichissement des métriques prometheus"
 publish_date: 2022-05-05T09:30:00Z
 update_date: 2022-05-05T09:30:00Z
+category: "Retour d'expérience"
 tags: [prometheus, python, pandas, dataframe, vmware exporter, fastapi]
 ---
 

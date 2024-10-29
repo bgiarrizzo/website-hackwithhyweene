@@ -472,6 +472,62 @@ myTestApp   myTestTopic     2          6               6               0        
           build in public</code>est ce qu'il me faut pour me motiver, alors go :-)</p>
        </content>
       </entry>
+      <entry xml:lang="en">
+       <title type="html">J'ai mont&eacute; mon Hyweeneflix et Hyweenefy perso</title> <author><name></name>
+        <uri>https://www.hack-with-hyweene.com</uri>
+       </author>
+       <id>https://www.hack-with-hyweene.com/blog/j-ai-monte-mon-hyweeneflix-et-hyweenefy-perso/</id>
+       <published>2024-10-29 23:00:00+00:00</published>
+       <updated></updated>
+       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/j-ai-monte-mon-hyweeneflix-et-hyweenefy-perso/
+       <summary>
+        Yo-ho yo-ho, a pirate's life for me !</summary>
+       <content type="html">
+        <p class="text-base my-4 leading-relaxed">L'ann&eacute;e derni&egrave;re, L&eacute;o Duff sortait une vid&eacute;o : <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.youtube.com/watch?v=J8KcJL9gylA">J'ai mont&eacute; mon Netflix perso</a>.</p>
+        <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/J8KcJL9gylA?si=LivAlEtq8iSFQJSd" title="YouTube video player" width="560">
+        </iframe>
+        <p class="text-base my-4 leading-relaxed">J'ai trouv&eacute; l'id&eacute;e super interessante, et j'ai d&eacute;cid&eacute; de la reproduire chez moi.</p>
+        <p class="text-base my-4 leading-relaxed">Ceux qui en 2014 ont connu <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://fr.wikipedia.org/wiki/Popcorn_Time">Popcorn Time</a> connaissent la folie que c'&eacute;tait. Un soft qui permettait de streamer des films et s&eacute;ries en torrent, avec une interface super simple et intuitive. C'&eacute;tait le Netflix du piratage.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">Pour commencer</h2>
+        <p class="text-base my-4 leading-relaxed">Je n'avais pas tr&egrave;s envie de prendre un VPS chez un hoster, et monter un serveur chez moi est le plus safe pour moi. Mes donn&eacute;es sont chez moi, et je peux les prot&eacute;ger comme je veux.</p>
+        <p class="text-base my-4 leading-relaxed">J'avais une petite machine chez moi, un Lenovo ThinkCentre M900 Tiny, avec un i7-6700T, 8Go de RAM, et un SSD de 256Go. Ce n'est pas &eacute;norme, surtout pour une machine qui va servir &agrave; stocker films, s&eacute;ries, musiques et autres, donc je d&eacute;cide d'upgrade tout &ccedil;a.</p>
+        <p class="text-base my-4 leading-relaxed">Je passe &agrave; 32Go de ram, et je rajoute un SSD NVMe de 2To pour stocker mes films et s&eacute;ries.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">Les services h&eacute;berg&eacute;s</h2>
+        <p class="text-base my-4 leading-relaxed">De quoi on a besoin quand on veut monter une seedbox &agrave; la maison, et automatis&eacute;e ?</p>
+        <ul class="list-disc pl-5 my-3 space-y-2">
+         <li>Un client torrent</li>
+         <li>Un paquet de Grabbers</li>
+         <li>Un indexer manager</li>
+         <li>Un serveur de media (type Plex ou Jellyfin)</li>
+        </ul>
+        <h3 class="text-2xl font-semibold my-4">Le client torrent</h3>
+        <p class="text-base my-4 leading-relaxed"><a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://transmissionbt.com/">Transmission</a>, fid&egrave;le au poste. L&eacute;ger, stable, aucun probl&egrave;me avec lui depuis 2014. Je n'utilise quasiment jamais l'interface web, les diff&eacute;rents grabbers ont une interface de monitoring des t&eacute;l&eacute;chargements, et je n'ai pas besoin de plus.</p>
+        <h3 class="text-2xl font-semibold my-4">Les grabbers</h3>
+        <p class="text-base my-4 leading-relaxed">Ceux qui avaient leur seedbox en 2012 connaissent <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/midgetspy/Sick-Beard">SickBeard</a> et <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/CouchPotato/CouchPotatoServer/">CouchPotato</a>, qui permettaient de r&eacute;cup&eacute;rer automatiquement les films et series, via torrent ou usenet.</p>
+        <p class="text-base my-4 leading-relaxed">Aujourd'hui, on a <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Radarr/Radarr">Radarr</a>, <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Sonarr/Sonarr">Sonarr</a>, mais aussi tous leurs petits cousins :</p>
+        <ul class="list-disc pl-5 my-3 space-y-2">
+         <li><a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Readarr/Readarr">Readarr</a>: Avec lequel je r&eacute;cup&egrave;re mes ebooks</li>
+         <li><a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Lidarr/Lidarr">Lidarr</a>: Qui g&egrave;re mes musiques</li>
+         <li><a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a>: Qui permet de g&eacute;rer toute la partie Indexers.</li>
+        </ul>
+        <p class="text-base my-4 leading-relaxed">On a maintenant &eacute;galement <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/morpheus65535/bazarr">Bazarr</a>, un grabber de sous-titres.</p>
+        <p class="text-base my-4 leading-relaxed">Chose tr&egrave;s utile, puisqu'avant, je g&eacute;rais mes sous titres via <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Diaoul/subliminal">Subliminal</a>, qui est une CLI, c'est mignon, mais c'est pas user-friendly. Et &eacute;tant une cli, ce n'est pas automatisable, oblig&eacute; de monter une crontab, qui va se lancer toutes les heures, et qui va v&eacute;rifier l'enti&egrave;ret&eacute; de ma biblioth&egrave;que, inutilement, parce que je n'ai besoin que du dernier sub du dernier film ou dernier &eacute;pisode rajout&eacute;. pas besoin de tout rescan, enfin BREF, je m'&eacute;gare !!</p>
+        <h3 class="text-2xl font-semibold my-4">L'indexer manager</h3>
+        <p class="text-base my-4 leading-relaxed"><a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a> est devenu mon nouveau copain !</p>
+        <p class="text-base my-4 leading-relaxed">Je ne compte plus le temps que j'ai pu passer du temps de sickbeard et couchpotato &agrave; chercher des indexers, &agrave; les ajouter, &agrave; les tester, g&eacute;rer les configuration, v&eacute;rifier si l'indexer n'avait pas &eacute;t&eacute; ferm&eacute; par les autorit&eacute;s, etc.</p>
+        <p class="text-base my-4 leading-relaxed">Prowlarr fait tout ceci pour moi, et il le fait tr&egrave;s bien !</p>
+        <h3 class="text-2xl font-semibold my-4">Le serveur de media</h3>
+        <p class="text-base my-4 leading-relaxed">Mon choix s'est port&eacute; sur <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.plex.tv/">Plex</a>, pour une raison simple : Jellyfin a de gros soucis sur AppleTV ... et j'ai une AppleTV. Donc m&ecirc;me si j'aime jellyfin d'amour, il est l&eacute;ger, gratuit, et son algo de transcodage est tr&egrave;s &eacute;conome, mais pragmatiquement, je dois rester sur plex pour le moment.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">Les services tiers</h2>
+        <p class="text-base my-4 leading-relaxed">Toute cette petite &eacute;quipe de grabbers a besoin d'interconnexions entre services, voici &agrave; quoi ressemble la stack :</p>
+        <p class="text-base my-4 leading-relaxed">
+         <center>
+          <img alt="stack" class="object-cover rounded-lg shadow-md" src="/media/images/blog/illustration/2024-10-29/stack.png">
+         </center>
+        </p>
+        <p class="text-base my-4 leading-relaxed">Volontairement, Plex ou Jellyfin ne sont pas pr&eacute;sents, parce qu'un peu &agrave; part, ils n'ont pas besoin de communiquer avec les autres services, ils ont juste besoin de r&eacute;cup&eacute;rer les m&eacute;dias, dans un dossier qui leur est propre.</p>
+       </content>
+      </entry>
      </link>
     </link>
    </feed>
