@@ -473,13 +473,13 @@ myTestApp   myTestTopic     2          6               6               0        
        </content>
       </entry>
       <entry xml:lang="en">
-       <title type="html">J'ai mont&eacute; mon Hyweeneflix et Hyweenefy perso</title> <author><name></name>
+       <title type="html">J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso</title> <author><name></name>
         <uri>https://www.hack-with-hyweene.com</uri>
        </author>
-       <id>https://www.hack-with-hyweene.com/blog/j-ai-monte-mon-hyweeneflix-et-hyweenefy-perso/</id>
+       <id>https://www.hack-with-hyweene.com/blog/j-ai-monte-mon-hyweene-video-et-hyweene-music-perso/</id>
        <published>2024-10-29 23:00:00+00:00</published>
        <updated></updated>
-       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/j-ai-monte-mon-hyweeneflix-et-hyweenefy-perso/
+       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/j-ai-monte-mon-hyweene-video-et-hyweene-music-perso/
        <summary>
         Yo-ho yo-ho, a pirate's life for me !</summary>
        <content type="html">
@@ -519,13 +519,26 @@ myTestApp   myTestTopic     2          6               6               0        
         <h3 class="text-2xl font-semibold my-4">Le serveur de media</h3>
         <p class="text-base my-4 leading-relaxed">Mon choix s'est port&eacute; sur <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.plex.tv/">Plex</a>, pour une raison simple : Jellyfin a de gros soucis sur AppleTV ... et j'ai une AppleTV. Donc m&ecirc;me si j'aime jellyfin d'amour, il est l&eacute;ger, gratuit, et son algo de transcodage est tr&egrave;s &eacute;conome, mais pragmatiquement, je dois rester sur plex pour le moment.</p>
         <h2 class="text-3xl font-bold my-5 leading-snug">Les services tiers</h2>
-        <p class="text-base my-4 leading-relaxed">Toute cette petite &eacute;quipe de grabbers a besoin d'interconnexions entre services, voici &agrave; quoi ressemble la stack :</p>
+        <p class="text-base my-4 leading-relaxed">Radarr et Sonarr sont syncronis&eacute;s avec <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://trakt.tv/">Trakt</a>, c'est un tracker de films et s&eacute;rie, qui permet de g&eacute;rer sa watchlist, de voir les films et s&eacute;ries que l'on a vu, de voir les films et s&eacute;ries que l'on est en train de voir, etc.</p>
+        <p class="text-base my-4 leading-relaxed">Quand j'ajoute un film ou une serie &agrave; ma watchlist, Radarr ou Sonarr interrogent les trackers pour voir si le film ou la serie est disponible.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">Un petit r&eacute;sum&eacute;</h2>
+        <p class="text-base my-4 leading-relaxed">Toute cette petite &eacute;quipe a besoin d'interconnexions pour fonctionner et que l'automatisation soit parfaite, voici &agrave; quoi ressemble la stack :</p>
         <p class="text-base my-4 leading-relaxed">
          <center>
           <img alt="stack" class="object-cover rounded-lg shadow-md" src="/media/images/blog/illustration/2024-10-29/stack.png">
          </center>
         </p>
         <p class="text-base my-4 leading-relaxed">Volontairement, Plex ou Jellyfin ne sont pas pr&eacute;sents, parce qu'un peu &agrave; part, ils n'ont pas besoin de communiquer avec les autres services, ils ont juste besoin de r&eacute;cup&eacute;rer les m&eacute;dias, dans un dossier qui leur est propre.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">Un Cas d'utilisation</h2>
+        <p class="text-base my-4 leading-relaxed">Je suis au cin&eacute;ma, je vois une bande annonce d'un film qui m'int&eacute;resse, je sors mon t&eacute;l&eacute;phone, je vais sur l'application de trakt, je cherche le film, je l'ajoute &agrave; ma watchlist.</p>
+        <p class="text-base my-4 leading-relaxed">Radarr interroge trakt, voit qu'un nouveau film est ajout&eacute; &agrave; la watchlist, va ajouter ce film &agrave; sa bibliot&egrave;que, puis va commencer &agrave; interroger les trackers.</p>
+        <p class="text-base my-4 leading-relaxed">Quelques semaines plus tard, le film va apparaitre sur les trackers torrents, en 720p, Radarr va le t&eacute;l&eacute;charger, le renommer, le d&eacute;placer dans le dossier de Plex, et Plex va le scanner, et le rendre disponible sur l'application Plex de mon AppleTV.</p>
+        <p class="text-base my-4 leading-relaxed">Si entre temps, une nouvelle version du film, en 1080p voire en 4K a &eacute;t&eacute; d&eacute;tect&eacute;e sur les trackers torrent par Radarr, il va t&eacute;l&eacute;charger la nouvelle version, et supprimer l'ancienne.</p>
+        <p class="text-base my-4 leading-relaxed">Une fois le t&eacute;l&eacute;chargement termin&eacute;, Radarr va envoyer une notification &agrave; Bazarr, qui va chercher les sous-titres, dans les langues que j'aurai pr&eacute;cis&eacute;, et les ajouter au dossier du film.</p>
+        <p class="text-base my-4 leading-relaxed">Ce m&ecirc;me processus est valable pour les s&eacute;ries, les musiques, les ebooks, etc. modulo le t&eacute;l&eacute;chargement des sous titres.</p>
+        <h2 class="text-3xl font-bold my-5 leading-snug">Conclusion</h2>
+        <p class="text-base my-4 leading-relaxed">J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso, et je suis tr&egrave;s content du r&eacute;sultat. C'est super simple &agrave; maintenir, et &ccedil;a me permet de regarder mes films et s&eacute;ries en toute tranquilit&eacute;.</p>
+        <p class="text-base my-4 leading-relaxed">Le seul soucis que j'ai maintenant, c'est l'espace disque qui commence &agrave; manquer ... Je vais devoir commencer &agrave; &eacute;tudier l'achat d'un NAS avec quelques dizaines de To de stockage, mais &ccedil;a, c'est une autre histoire !</p>
        </content>
       </entry>
      </link>
