@@ -18,9 +18,8 @@ def get_blog_posts_links_data(blog_path, links_path):
     return posts, links
 
 
-def generate_homepage(blog_path, links_path):
-    posts, links = get_blog_posts_links_data(blog_path, links_path)
-
+def build_homepage(posts, links):
+    
     print("#", "-" * 80)
     print("Generating homepage ...")
 

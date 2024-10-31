@@ -1,14 +1,11 @@
 from config import settings
 from utils.file import get_all_files_from_path, write_file
 from utils.format import beautify_html
-from utils.markdown import parse_markdown_files_and_convert_to_html
+from utils.markdown import parse_markdown_file_and_convert_to_html
 
 
 def write_resume(resume):
-    data = {
-        "page_title": "Bruno Giarrizzo - CV",
-        "resume": resume
-    }
+    data = {"page_title": "Bruno Giarrizzo - CV", "resume": resume}
     template_name = "resume/main.j2"
     filename = "cv/index.html"
 
@@ -65,42 +62,56 @@ def generate_resume_skills(dataset: list, data: dict):
 
     return data
 
+
 def prepare_resume_data(resume_path):
     head_files = get_all_files_from_path(f"{resume_path}/head")
     experiences_files = get_all_files_from_path(f"{resume_path}/experiences")
     educations_files = get_all_files_from_path(f"{resume_path}/educations")
-    #skills_files = get_all_files_from_path(f"{resume_path}/skills")
+    # skills_files = get_all_files_from_path(f"{resume_path}/skills")
 
-    head = parse_markdown_files_and_convert_to_html(head_files)
-    experiences = parse_markdown_files_and_convert_to_html(experiences_files)
-    educations = parse_markdown_files_and_convert_to_html(educations_files)
-    #skills = parse_markdown_files_and_convert_to_html(skills_files)
+    head = parse_markdown_file_and_convert_to_html(head_files)
+    experiences = parse_markdown_file_and_convert_to_html(experiences_files)
+    educations = parse_markdown_file_and_convert_to_html(educations_files)
+    # skills = parse_markdown_files_and_convert_to_html(skills_files)
 
-    return head, experiences, educations#, skills
+    return head, experiences, educations  # , skills
 
 
-def generate_resume(resume_path):
+def build_resume(resume_path):
     print("Generating resume ...")
-
-    #head, experiences, educations, skills = prepare_resume_data(resume_path)
-    head, experiences, educations  = prepare_resume_data(resume_path)
 
     resume = {
         "resume": {
             "tags": [],
         }
     }
+    heads, experiences, educations = [], [], []
 
-    print("Generating header ...")
-    resume |= generate_resume_head(dataset=head, data=resume)
+    print("Build head")
 
-    # print("Generating Skills part ...")
-    # resume |= generate_resume_skills(dataset=skills, data=resume)
+    head_files = get_all_files_from_path(f"{resume_path}/head")
+    for head_file in head_files:
+        head = parse_markdown_file_and_convert_to_html(head_file)
+        heads.append(head)
 
-    print("Generating education part ...")
-    resume |= generate_resume_education(dataset=educations, data=resume)
+    resume |= generate_resume_head(dataset=heads, data=resume)
 
-    print("Generating experience part ...")
+    print("Build experiences")
+
+    experiences_files = get_all_files_from_path(f"{resume_path}/experiences")
+    for experience_file in experiences_files:
+        experience = parse_markdown_file_and_convert_to_html(experience_file)
+        experiences.append(experience)
+
     resume |= generate_resume_experience(dataset=experiences, data=resume)
+
+    print("Build educations")
+
+    educations_files = get_all_files_from_path(f"{resume_path}/educations")
+    for education_file in educations_files:
+        education = parse_markdown_file_and_convert_to_html(education_file)
+        educations.append(education)
+
+    resume |= generate_resume_education(dataset=educations, data=resume)
 
     write_resume(resume)

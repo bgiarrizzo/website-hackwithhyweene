@@ -2,40 +2,46 @@ import yaml
 from markdown2 import Markdown
 import re
 
+
 class PrismCodeProcessor:
     def __init__(self):
-        self.fence_re = re.compile(r'^```\s*(\w+)?')
+        self.fence_re = re.compile(r"^```\s*(\w+)?")
 
     def process(self, text):
-        lines = text.split('\n')
+        lines = text.split("\n")
         processed_lines = []
         in_code_block = False
         code_block = []
-        lang = ''
+        lang = ""
 
         for line in lines:
             if self.fence_re.match(line):
                 if not in_code_block:
                     in_code_block = True
-                    lang = self.fence_re.match(line).group(1) or 'plaintext'
+                    lang = self.fence_re.match(line).group(1) or "plaintext"
                     code_block = []
                 else:
                     in_code_block = False
-                    code_html = self.escape('\n'.join(code_block))
-                    processed_lines.append(f'<pre class="rounded-xl"><code class="language-{lang}">{code_html}</code></pre>')
+                    code_html = self.escape("\n".join(code_block))
+                    processed_lines.append(
+                        f'<pre class="rounded-xl"><code class="language-{lang}">{code_html}</code></pre>'
+                    )
             elif in_code_block:
                 code_block.append(line)
             else:
                 processed_lines.append(line)
 
         if in_code_block:
-            code_html = self.escape('\n'.join(code_block))
-            processed_lines.append(f'<pre class="rounded-xl"><code class="language-{lang}">{code_html}</code></pre>')
+            code_html = self.escape("\n".join(code_block))
+            processed_lines.append(
+                f'<pre class="rounded-xl"><code class="language-{lang}">{code_html}</code></pre>'
+            )
 
-        return '\n'.join(processed_lines)
+        return "\n".join(processed_lines)
 
     def escape(self, text):
-        return text.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+        return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
 
 class CustomMarkdown(Markdown):
     def __init__(self, *args, **kwargs):
@@ -81,11 +87,11 @@ class CustomMarkdown(Markdown):
             "details": "my-3",
             "summary": "cursor-pointer font-semibold",
             "figure": "my-4",
-            "figcaption": "text-sm mt-2 text-center"
+            "figcaption": "text-sm mt-2 text-center",
         }
 
         for tag, classes in class_mappings.items():
-            html = re.sub(f'<{tag}(>| )', f'<{tag} class="{classes}"\\1', html)
+            html = re.sub(f"<{tag}(>| )", f'<{tag} class="{classes}"\\1', html)
 
         return html
 
@@ -108,10 +114,8 @@ def parse_yaml_header_and_markdown_body_in_file(markdown_file_path):
         return yaml_header, markdown_body
 
 
-def parse_markdown_files_and_convert_to_html(item_files) -> list:
-    items = []
-    for item_file in item_files:
-        yaml_header, markdown_body = parse_yaml_header_and_markdown_body_in_file(item_file)
-        item = yaml_header | {"body": convert_markdown_text_to_html(markdown_body)}
-        items.append(item)
-    return items
+def parse_markdown_file_and_convert_to_html(file):
+    yaml_header, markdown_body = parse_yaml_header_and_markdown_body_in_file(
+        file
+    )
+    return yaml_header | {"body": convert_markdown_text_to_html(markdown_body)}

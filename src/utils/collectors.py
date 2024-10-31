@@ -18,13 +18,13 @@ def collect_files(file_type, source, destination):
     print("#", "-" * 80)
     print(f"Collecting {file_type} files from /{source} to /{destination} ...")
 
-    media_files = []
+    collected_files = []
 
     for root, dirs, files in os.walk(source):
         for file in files:
-            media_files.append(os.path.join(root, file))
+            collected_files.append(os.path.join(root, file))
 
-    for source_file in media_files:
+    for source_file in collected_files:
         destination_file = f"{destination}/{'/'.join(source_file.split('/')[1:])}"
         destination_folder = "/".join(destination_file.split("/")[:-1])
 
@@ -34,8 +34,6 @@ def collect_files(file_type, source, destination):
         print(f"collect_{file_type} : /{source_file} -> /{destination_file}...")
         shutil.copy(source_file, destination_file)
 
-    return media_files
-
 
 def collect_static_files():
     """Collects static files from source and copies them to destination.
@@ -44,7 +42,7 @@ def collect_static_files():
         A list of paths to the copied static files.
     """
 
-    return collect_files(
+    collect_files(
         file_type="static",
         source=f"{settings.STATIC_PATH}",
         destination=f"{settings.BUILD_PATH}/{settings.STATIC_PATH}",
@@ -58,7 +56,7 @@ def collect_media_files():
         A list of paths to the copied media files.
     """
 
-    return collect_files(
+    collect_files(
         file_type="media",
         source=f"{settings.MEDIA_PATH}",
         destination=f"{settings.BUILD_PATH}/{settings.MEDIA_PATH}",

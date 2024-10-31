@@ -1,14 +1,14 @@
 import shutil
 
 from config import settings
-from generators.blog import generate_blog
+from generators.blog import build_blog
 from generators.cname import add_cname_to_build
-from generators.homepage import generate_homepage
-from generators.learn import generate_learning
-from generators.links import generate_links
-from generators.pages import generate_pages
-from generators.resume import generate_resume
-from utils.collection import collect_media_files, collect_static_files
+from generators.homepage import build_homepage
+from generators.learn import build_learning
+from generators.links import build_links
+from generators.pages import build_pages
+from generators.resume import build_resume
+from utils.collectors import collect_media_files, collect_static_files
 
 if __name__ == "__main__":
     print("#", "-" * 80)
@@ -18,16 +18,16 @@ if __name__ == "__main__":
     collect_media_files()
     collect_static_files()
 
-    print("#", "-" * 80)
+    print("#", "-" * 70)
     print("Building site ...")
 
-    generate_blog(settings.BLOG_PATH)
-    generate_links(settings.LINKS_PATH)
-    generate_pages(settings.PAGES_PATH)
-    generate_resume(settings.RESUME_PATH)
+    blog_posts = build_blog(settings.BLOG_PATH)
+    links = build_links(settings.LINKS_PATH)
+    build_pages(settings.PAGES_PATH)
+    build_resume(settings.RESUME_PATH)
 
-    generate_learning(settings.LEARN_PATH)
+    build_learning(settings.LEARN_PATH)
 
-    generate_homepage(settings.BLOG_PATH, settings.LINKS_PATH)
+    build_homepage(blog_posts, links)
 
     add_cname_to_build(settings.BUILD_PATH, settings.CNAME)

@@ -2,13 +2,11 @@ from slugify import slugify
 
 
 def add_slug(data):
-
-    for item in data:
-        if item.get("category"):
-            item["category-slug"] = slugify(item.get("category"))
-        if item.get("module"):
-            item["module-slug"] = slugify(item.get("module"))
-        if item.get("title"):
-            item["slug"] = slugify(item.get("title"))
+    if data.get("category"):
+        data["category-slug"] = slugify(data.get("category"))
+    if data.get("module"):
+        data["module-slug"] = slugify(data.get("module"))
+    if data.get("title"):
+        data["slug"] = slugify(data.get("title"))
 
     return data
