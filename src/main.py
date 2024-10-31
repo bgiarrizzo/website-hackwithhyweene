@@ -21,13 +21,13 @@ if __name__ == "__main__":
     print("#", "-" * 70)
     print("Building site ...")
 
-    blog_posts = build_blog(settings.BLOG_PATH)
+    blog = build_blog(settings.BLOG_PATH)
     links = build_links(settings.LINKS_PATH)
-    build_pages(settings.PAGES_PATH)
-    build_resume(settings.RESUME_PATH)
-
+    pages = build_pages(settings.PAGES_PATH)
+    resume = build_resume(settings.RESUME_PATH)
+    
     build_learning(settings.LEARN_PATH)
 
-    build_homepage(blog_posts, links)
+    build_homepage(blog, links)
 
     add_cname_to_build(settings.BUILD_PATH, settings.CNAME)

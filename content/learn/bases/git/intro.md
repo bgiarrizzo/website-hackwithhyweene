@@ -9,10 +9,10 @@ module_description: "Git est un système de contrôle de version distribué grat
 
 id: 1
 title: Intro
-summary: "Résumé"
+summary: Introduction à Git, un système de contrôle de version distribué. Apprenez les bases de la gestion des versions, les types de VCS, et les concepts clés tels que les commits, les branches et les dépôts.
 
 publish_date: 2024-09-09T09:30:00Z
-update_date: 2024-09-09T09:30:00Z
+update_date: 2024-10-31T16:45:00Z
 ---
 
 ## A Propos de la gestion des versions
@@ -62,18 +62,59 @@ Exemple :
 
 ### Les VCS distribués
 
+Contrairement aux VCS centralisés, où un serveur central stocke toutes les versions de fichiers, avec un VCS distribué chaque contributeur possède une copie locale de l'ensemble du dépôt (ou des branches qui l'intéressent) sur son ordinateur.
+
+Cela offre plusieurs avantages :
+
+- Pas de dépendance à un serveur central
+- Possibilité de travailler hors ligne
+- Sauvegardes multiples
+- Collaboration plus facile, grace a la gestion flexible des branches.
+
+Exemple :
+
+- Git
+- Mercurial
+- Bazaar
+
+***
+
 ## Histoire de Git
+
+Git a été créé par Linus Torvalds en 2005 pour le développement du noyau Linux.
+
+Les développeurs du noyau Linux utilisaient BitKeeper, un VCS propriétaire, pour gérer le code source du noyau. En 2005, des désaccords entre la communauté Linux et BitKeeper ont conduit à la fin de l'utilisation de BitKeeper. L'équipe de développement du noyau avait donc besoin de toute urgence d'un nouveau VCS.
+
+Linus a donc créé git, pour répondre à ce besoin.
+
+***
 
 ## Concepts Clés
 
+Git permet aux développeurs de suivre les modifications apportées au code source au fil du temps.
+
+Il repose sur plusieurs concepts clés qui facilitent la collaboration et l'organisation du développement.
+
+### Version
+
+La notion de version fait référence à l’état spécifique du code à un moment donné, souvent associé à un commit ou une étiquette (tag) pour marquer des points importants, comme les versions stables du logiciel.
+
 ### Repository
+
+Un dépôt est l’endroit où le code source et l’historique des modifications sont stockés. Il peut être local (sur votre machine) ou distant (sur un serveur).
 
 ### Commit
 
+Un commit est un enregistrement des modifications apportées au code. Chaque commit est identifié de manière unique et contient un message décrivant les changements effectués.
+
 ### Branch
+
+Les branches permettent de travailler sur différentes versions du projet simultanément. Elles facilitent le développement de nouvelles fonctionnalités ou la correction de bugs sans affecter la version principale.
 
 ### Remote
 
-## Les bases de Git
+Un dépôt distant est une version du dépôt hébergée sur un serveur. Il permet aux développeurs de collaborer en partageant leurs modifications via des plateformes comme GitHub ou GitLab.
 
-## La CLI
+### Merge
+
+La fusion (merge) est le processus de combinaison des modifications de deux branches différentes. Elle permet d’intégrer les changements apportés par une branche dans une autre.

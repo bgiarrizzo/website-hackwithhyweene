@@ -26,9 +26,13 @@ def build_pages(pages_path):
         page = add_multiple_date_formats(page)
         page = add_slug(page)
 
+        pages.append(page)
+
         if len(page.get("permalink")) == 0:
             print(f"Generating page with empty permalink: {page.get('title')} ...")
         else:
             print(f"Generating page: {page['slug']} ...")
 
         generate_page(page=page)
+
+    return pages

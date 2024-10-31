@@ -115,3 +115,5 @@ def build_resume(resume_path):
     resume |= generate_resume_education(dataset=educations, data=resume)
 
     write_resume(resume)
+
+    return resume

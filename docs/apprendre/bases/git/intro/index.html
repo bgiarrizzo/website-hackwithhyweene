@@ -108,14 +108,41 @@
     <li>CVS (Concurrent Versions System)</li>
    </ul>
    <h3 class="text-2xl font-semibold my-4">Les VCS distribu&eacute;s</h3>
+   <p class="text-base my-4 leading-relaxed">Contrairement aux VCS centralis&eacute;s, o&ugrave; un serveur central stocke toutes les versions de fichiers, avec un VCS distribu&eacute; chaque contributeur poss&egrave;de une copie locale de l'ensemble du d&eacute;p&ocirc;t (ou des branches qui l'int&eacute;ressent) sur son ordinateur.</p>
+   <p class="text-base my-4 leading-relaxed">Cela offre plusieurs avantages :</p>
+   <ul class="list-disc pl-5 my-3 space-y-2">
+    <li>Pas de d&eacute;pendance &agrave; un serveur central</li>
+    <li>Possibilit&eacute; de travailler hors ligne</li>
+    <li>Sauvegardes multiples</li>
+    <li>Collaboration plus facile, grace a la gestion flexible des branches.</li>
+   </ul>
+   <p class="text-base my-4 leading-relaxed">Exemple :</p>
+   <ul class="list-disc pl-5 my-3 space-y-2">
+    <li>Git</li>
+    <li>Mercurial</li>
+    <li>Bazaar</li>
+   </ul>
+   <hr class="border-t border-gray-300 my-6">
    <h2 class="text-3xl font-bold my-5 leading-snug">Histoire de Git</h2>
+   <p class="text-base my-4 leading-relaxed">Git a &eacute;t&eacute; cr&eacute;&eacute; par Linus Torvalds en 2005 pour le d&eacute;veloppement du noyau Linux.</p>
+   <p class="text-base my-4 leading-relaxed">Les d&eacute;veloppeurs du noyau Linux utilisaient BitKeeper, un VCS propri&eacute;taire, pour g&eacute;rer le code source du noyau. En 2005, des d&eacute;saccords entre la communaut&eacute; Linux et BitKeeper ont conduit &agrave; la fin de l'utilisation de BitKeeper. L'&eacute;quipe de d&eacute;veloppement du noyau avait donc besoin de toute urgence d'un nouveau VCS.</p>
+   <p class="text-base my-4 leading-relaxed">Linus a donc cr&eacute;&eacute; git, pour r&eacute;pondre &agrave; ce besoin.</p>
+   <hr class="border-t border-gray-300 my-6">
    <h2 class="text-3xl font-bold my-5 leading-snug">Concepts Cl&eacute;s</h2>
+   <p class="text-base my-4 leading-relaxed">Git permet aux d&eacute;veloppeurs de suivre les modifications apport&eacute;es au code source au fil du temps.</p>
+   <p class="text-base my-4 leading-relaxed">Il repose sur plusieurs concepts cl&eacute;s qui facilitent la collaboration et l'organisation du d&eacute;veloppement.</p>
+   <h3 class="text-2xl font-semibold my-4">Version</h3>
+   <p class="text-base my-4 leading-relaxed">La notion de version fait r&eacute;f&eacute;rence &agrave; l&rsquo;&eacute;tat sp&eacute;cifique du code &agrave; un moment donn&eacute;, souvent associ&eacute; &agrave; un commit ou une &eacute;tiquette (tag) pour marquer des points importants, comme les versions stables du logiciel.</p>
    <h3 class="text-2xl font-semibold my-4">Repository</h3>
+   <p class="text-base my-4 leading-relaxed">Un d&eacute;p&ocirc;t est l&rsquo;endroit o&ugrave; le code source et l&rsquo;historique des modifications sont stock&eacute;s. Il peut &ecirc;tre local (sur votre machine) ou distant (sur un serveur).</p>
    <h3 class="text-2xl font-semibold my-4">Commit</h3>
+   <p class="text-base my-4 leading-relaxed">Un commit est un enregistrement des modifications apport&eacute;es au code. Chaque commit est identifi&eacute; de mani&egrave;re unique et contient un message d&eacute;crivant les changements effectu&eacute;s.</p>
    <h3 class="text-2xl font-semibold my-4">Branch</h3>
+   <p class="text-base my-4 leading-relaxed">Les branches permettent de travailler sur diff&eacute;rentes versions du projet simultan&eacute;ment. Elles facilitent le d&eacute;veloppement de nouvelles fonctionnalit&eacute;s ou la correction de bugs sans affecter la version principale.</p>
    <h3 class="text-2xl font-semibold my-4">Remote</h3>
-   <h2 class="text-3xl font-bold my-5 leading-snug">Les bases de Git</h2>
-   <h2 class="text-3xl font-bold my-5 leading-snug">La CLI</h2>
+   <p class="text-base my-4 leading-relaxed">Un d&eacute;p&ocirc;t distant est une version du d&eacute;p&ocirc;t h&eacute;berg&eacute;e sur un serveur. Il permet aux d&eacute;veloppeurs de collaborer en partageant leurs modifications via des plateformes comme GitHub ou GitLab.</p>
+   <h3 class="text-2xl font-semibold my-4">Merge</h3>
+   <p class="text-base my-4 leading-relaxed">La fusion (merge) est le processus de combinaison des modifications de deux branches diff&eacute;rentes. Elle permet d&rsquo;int&eacute;grer les changements apport&eacute;s par une branche dans une autre.</p>
    <script src="/static/js/prism.js">
    </script>
   </main>

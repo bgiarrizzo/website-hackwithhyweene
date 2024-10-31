@@ -1,13 +1,6 @@
 
 ## 2. Git
 
-### 2.1 Introduction à Git
-
-- Histoire et contexte de Git
-- Systèmes de contrôle de version : centralisés vs distribués
-- Installation et configuration initiale de Git
-- Concepts clés : repository, commit, branch, remote
-
 ### 2.2 Fondamentaux de Git
 
 #### 2.2.1 Commandes de base
