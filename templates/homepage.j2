@@ -6,7 +6,7 @@
     <a href="/blog/">Voir tous les articles</a>
   
     <ul>
-        {% for post in posts[:5] | reverse  %}
+        {% for post in posts[-5:] | reverse  %}
             <li>
                 <a href="/blog/{{ post.slug }}/">{{ post.publish_date_short }} : {% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a>
             </li>
@@ -20,7 +20,7 @@
   <a href="/liens/">Voir tous les liens</a>
 
   <ul>
-    {% for link in links[:5] | reverse  %}
+    {% for link in links[-5:] | reverse  %}
       <li>
         <a href="/liens/{{ link.slug }}">{{ link.publish_date_short }} : {{ link.title }}</a>
       </li>
