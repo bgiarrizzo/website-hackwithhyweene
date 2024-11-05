@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr-FR" prefix="og: http://ogp.me/ns#">
+ <head>
+  <!-- Favicon -->
+  <link href="https://www.hack-with-hyweene.com/static/img/cl-logo.svg" rel="icon">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=5.0" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="Bruno 'Hyweene' Giarrizzo" name="author">
+  <meta content="Hack with Hyweene" name="webmaster">
+  <meta content="fr" name="language">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="googlebot">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="bingbot">
+  <meta content="1 days" name="revisit-after">
+  <meta content="never" name="expires">
+  <meta content="General" name="rating">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="https://www.hack-with-hyweene.com" name="identifier-URL">
+  <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - Blog RSS" type="application/rss+xml">
+  <title>Intro - None - Apprendre - Hack with Hyweene</title>
+  <meta content="Intro - None - Apprendre - Hack with Hyweene" name="title">
+  <link href="https://www.hack-with-hyweene.com/" rel="canonical">
+  <link href="/static/css/prism.css" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T0SNK38Q">
+  </script>
+  <script src="/static/js/analytics.js">
+  </script>
+  <style>body { margin: 0 auto; max-width: 700px; line-height: 1.8; font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif; font-size: 1rem; color: #444; background-color: #fdf6e3; padding: 20px 40px; text-rendering: optimizeLegibility; }
+    h1 { line-height: 1.2; text-align: center; }
+    h2, h3, h4 { line-height: 1.2; border-bottom: 1px solid; }
+    p { hyphens: auto; text-align: justify; }
+    pre, blockquote, .code { background: #f5ead6; font-size: 0.8em; padding: 1em; overflow: scroll; border-radius: 0.5em; }
+    ul, ol { list-style-type: circle; }
+    a { color: #169; text-decoration: none; padding: 0.5em 0; }
+    a:hover { text-decoration: underline; }
+    
+    nav { display: flex; align-items: center; justify-content: space-between; flex-direction: row; text-align: center; font-variant: small-caps; font-weight: bold; border-bottom: 1px solid; border-top: 1px solid; margin-bottom: 1.5em; }
+    
+    main { text-align: justify; }
+    main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
+
+    .cover { display: block; width: 100%; border-radius: 0.5em; }
+
+    figure { width: 65%; display: block; margin-left: auto; margin-right: auto;}
+    figure img { width: 100%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 0.5em; }
+    figure figcaption { text-align: center; font-style: italic; }
+
+    footer { margin-top: 1.5em; }</style>
+ </head>
+ <body>
+  <header>
+   <h1><a href="/">Hack with Hyweene</a></h1>
+  </header>
+  <nav><a href="/blog/">Blog</a>&bull; <a href="/liens/">Liens</a>&bull; <a href="/apprendre/">Apprendre</a>&bull; <a href="/cv/">CV</a></nav>
+  <main>
+   <h1></h1>
+   <h2>Intro</h2>
+   <h2>A Propos de la gestion des versions</h2>
+   <p>Pourquoi se soucier de la gestion des versions ?</p>
+   <p>Un VCS (Version Control System) est un syst&egrave;me qui enregistre les modifications apport&eacute;es &agrave; un fichier ou &agrave; un ensemble de fichiers au fil du temps afin que vous puissiez revenir a un &eacute;tat ant&eacute;rieur d'un fichier si besoin.</p>
+   <p>En tant que d&eacute;veloppeur, utiliser un VCS est tr&egrave;s sage. Cela permet de garder toutes les versions d'un fichier, &agrave; tout moment. Un VCS permet &eacute;galement de travailler en &eacute;quipe sur un projet ou une fonctionnalit&eacute;, de voir qui a introduit quelle ligne, &agrave; quel endroit, &agrave; quel moment.</p>
+   <p>Utiliser un VCS permet de rester serein, de ne pas avoir peur de casser quelque chose, de pouvoir revenir en arri&egrave;re si besoin.</p>
+   <h3>Faire des copies</h3>
+   <p>La premi&egrave;re m&eacute;thode, &eacute;galement la plus simple et la moins fiable, est de copier les fichiers manuellement.</p>
+   <p>Pour r&eacute;sumer, vous travaillez dans le dossier de travail "code" et vous copiez manuellement le dossier de travail dans un autre dossier pour conserver une version de sauvegarde (par exemple code-dateDuJour ou code-fonctionnaliteA)</p>
+   <p>Cela fonctionne, mais c'est tr&egrave;s limit&eacute; et peu fiable.</p>
+   <p>On a vite fait de se tromper de dossier, d'&eacute;craser le mauvais fichier, etc.</p>
+   <h3>Les VCS locaux</h3>
+   <p>Ces VCS utilisent une base de donn&eacute;es locale pour stocker les modifications apport&eacute;es aux fichiers.</p>
+   <p>RCS (Revision Control System) est un exemple de VCS local.</p>
+   <p>Ce type de VCS stocke la copie compl&egrave;te d'un fichier, et ne garde que les changements r&eacute;alis&eacute;s entre les versions.</p>
+   <p>Exemple :</p>
+   <p>Nous avons un fichier
+    <code>
+     fichier.txt</code>de 150 lignes.</p>
+   <p>Si je modifie 10 lignes, le VCS local va stocker mon nouveau fichier de 160 lignes, et un journal des modifications, contenant les 10 lignes modifi&eacute;es.</p>
+   <h3>Les VCS centralis&eacute;s</h3>
+   <p>Dans le cas d'un VCS centralis&eacute;, un serveur central regroupe toutes les sources et les versions de chaque fichier.</p>
+   <p>Les d&eacute;veloppeurs travaillent sur une copie locale des fichiers, et envoient leurs modifications au serveur central.</p>
+   <p>Exemple :</p>
+   <ul>
+    <li>SVN (Subversion)</li>
+    <li>CVS (Concurrent Versions System)</li>
+   </ul>
+   <h3>Les VCS distribu&eacute;s</h3>
+   <p>Contrairement aux VCS centralis&eacute;s, o&ugrave; un serveur central stocke toutes les versions de fichiers, avec un VCS distribu&eacute; chaque contributeur poss&egrave;de une copie locale de l'ensemble du d&eacute;p&ocirc;t (ou des branches qui l'int&eacute;ressent) sur son ordinateur.</p>
+   <p>Cela offre plusieurs avantages :</p>
+   <ul>
+    <li>Pas de d&eacute;pendance &agrave; un serveur central</li>
+    <li>Possibilit&eacute; de travailler hors ligne</li>
+    <li>Sauvegardes multiples</li>
+    <li>Collaboration plus facile, grace a la gestion flexible des branches.</li>
+   </ul>
+   <p>Exemple :</p>
+   <ul>
+    <li>Git</li>
+    <li>Mercurial</li>
+    <li>Bazaar</li>
+   </ul>
+   <hr>
+   <h2>Histoire de Git</h2>
+   <p>Git a &eacute;t&eacute; cr&eacute;&eacute; par Linus Torvalds en 2005 pour le d&eacute;veloppement du noyau Linux.</p>
+   <p>Les d&eacute;veloppeurs du noyau Linux utilisaient BitKeeper, un VCS propri&eacute;taire, pour g&eacute;rer le code source du noyau. En 2005, des d&eacute;saccords entre la communaut&eacute; Linux et BitKeeper ont conduit &agrave; la fin de l'utilisation de BitKeeper. L'&eacute;quipe de d&eacute;veloppement du noyau avait donc besoin de toute urgence d'un nouveau VCS.</p>
+   <p>Linus a donc cr&eacute;&eacute; git, pour r&eacute;pondre &agrave; ce besoin.</p>
+   <hr>
+   <h2>Concepts Cl&eacute;s</h2>
+   <p>Git permet aux d&eacute;veloppeurs de suivre les modifications apport&eacute;es au code source au fil du temps.</p>
+   <p>Il repose sur plusieurs concepts cl&eacute;s qui facilitent la collaboration et l'organisation du d&eacute;veloppement.</p>
+   <h3>Version</h3>
+   <p>La notion de version fait r&eacute;f&eacute;rence &agrave; l&rsquo;&eacute;tat sp&eacute;cifique du code &agrave; un moment donn&eacute;, souvent associ&eacute; &agrave; un commit ou une &eacute;tiquette (tag) pour marquer des points importants, comme les versions stables du logiciel.</p>
+   <h3>Repository</h3>
+   <p>Un d&eacute;p&ocirc;t est l&rsquo;endroit o&ugrave; le code source et l&rsquo;historique des modifications sont stock&eacute;s. Il peut &ecirc;tre local (sur votre machine) ou distant (sur un serveur).</p>
+   <h3>Commit</h3>
+   <p>Un commit est un enregistrement des modifications apport&eacute;es au code. Chaque commit est identifi&eacute; de mani&egrave;re unique et contient un message d&eacute;crivant les changements effectu&eacute;s.</p>
+   <h3>Branch</h3>
+   <p>Les branches permettent de travailler sur diff&eacute;rentes versions du projet simultan&eacute;ment. Elles facilitent le d&eacute;veloppement de nouvelles fonctionnalit&eacute;s ou la correction de bugs sans affecter la version principale.</p>
+   <h3>Remote</h3>
+   <p>Un d&eacute;p&ocirc;t distant est une version du d&eacute;p&ocirc;t h&eacute;berg&eacute;e sur un serveur. Il permet aux d&eacute;veloppeurs de collaborer en partageant leurs modifications via des plateformes comme GitHub ou GitLab.</p>
+   <h3>Merge</h3>
+   <p>La fusion (merge) est le processus de combinaison des modifications de deux branches diff&eacute;rentes. Elle permet d&rsquo;int&eacute;grer les changements apport&eacute;s par une branche dans une autre.</p>
+   <script src="/static/js/prism.js">
+   </script>
+  </main>
+  <footer>
+   <nav><a href="/a-propos/">A Propos</a>&bull; <a href="/mentions-legales/">Mentions L&eacute;gales</a>&bull; <a href="https://www.hack-with-hyweene.com">https://www.hack-with-hyweene.com</a></nav>
+  </footer>
+ </body>
+</html>

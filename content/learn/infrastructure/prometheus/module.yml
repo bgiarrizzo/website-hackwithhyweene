@@ -1,4 +1,0 @@
-module_id: 2
-module: Prometheus
-module_logo: logo.png
-module_description: "Prometheus est un système de surveillance open-source qui collecte des métriques à partir de cibles configurées à l'aide de services de découverte et stocke ces métriques dans une base de données de séries temporelles."

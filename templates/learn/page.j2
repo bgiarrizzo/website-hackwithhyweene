@@ -1,20 +1,20 @@
 {% if learn.update_date | is_outdated %}
-    <div class="rounded-xl bg-yellow-100 p-4 my-4">
-        <p class="text-orange-800 font-bold mb-2">
-            Attention
+    <div>
+        <p>
+            <strong>Attention</strong>
         </p>
-        <p class="text-yellow-800">
+        <p>
             Ce truc a été modifié il y a plus de six mois (le {{ learn.update_date_medium }}). Il est possible qu'il ne soit plus à jour.
         </p>
-        <p class="text-yellow-800">
+        <p>
             Si vous rencontrez des erreurs ou des différences en le suivant, n'hésitez pas à me contacter pour me le signaler.
         </p>
     </div>
 {% endif %}
 
-<h1 class="text-4xl font-semibold">{{ learn.module }}</h1>
+<h1>{{ learn.module }}</h1>
 
-<h2 class="text-2xl font-semibold my-4 border-b border-gray-400">{{ learn.title }}</h2>
+<h2>{{ learn.title }}</h2>
 
 {{ learn.body }}
 

@@ -17,9 +17,9 @@ La famille n'aidant pas beaucoup, enfonçant bien le clou, en disant que je devr
 
 Alors fatalement, en 2012, à 24 ans, j'approche tout doucement des 95kg :-)
 
-<center>
-<img src="/media/images/blog/illustration/2024-10-27/worst.jpg" alt="worst" class="object-cover rounded-lg shadow-md">
-</center>
+<figure>
+  <img src="/media/images/blog/illustration/2024-10-27/worst.jpg" alt="worst">
+</figure>
 
 Été 2012, Je me fais tromper par la nana avec qui j'étais à l'époque, ce qui fait un électrochoc, la dépression s'installe pendant quelques semaines, je suis tellement éclaté mentalement que je suis au point où je refuse de m'alimenter. Et la, je perds du poids, mais pas pour les bonnes raisons.
 
@@ -33,9 +33,9 @@ Et je me rends compte que j'aime ça, j'aime le sport, j'aime la sueur, j'aime l
 
 Décembre 2013, pour mon anniversaire, je tombe sous les 75kg, je suis fier, 20kg perdu en 1 an, c'est pas mal.
 
-<center>
-<img src="/media/images/blog/illustration/2024-10-27/recap.jpg" alt="recap" class="object-cover rounded-lg shadow-md">
-</center>
+<figure>
+  <img src="/media/images/blog/illustration/2024-10-27/recap.jpg" alt="recap">
+</figure>
 
 Mais pas satisfait, je veux autre chose, je veux plus, mais je suis freiné, par mon manque de connaissance, et surtout, mon alimentation, qui n'est pas tiptop.
 
@@ -51,9 +51,9 @@ Fin 2016, je planifie mon mariage avec dame Jessica. Je veux avoir un physique a
 
 J'arrête ce suivi, je reprends un peu de poids, je me stabilise à 70kg, 13% de bodyfat. J'avais ces muscles qui poussaient. Pecs, Bras, jambes, abdos qui se dessinnent. Je suis biiiennnggg !
 
-<center>
-<img src="/media/images/blog/illustration/2024-10-27/prime.jpg" alt="prime" class="object-cover rounded-lg shadow-md">
-</center>
+<figure>
+  <img src="/media/images/blog/illustration/2024-10-27/prime.jpg" alt="prime">
+</figure>
 
 ## La chute
 
@@ -104,19 +104,20 @@ Donc, en résumé :
 
 Aujourd'hui : Pesée, prise des mesures de la taille, pecs, bras, avant bras, etc etc.
 
-<div class="container mx-auto px-4">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-    <div class="w-full">
-      <img src="/media/images/blog/illustration/2024-10-27/poids.jpg" alt="poids" class="w-full h-auto object-cover rounded-lg shadow-md">
-    </div>
-    <div class="w-full">
-      <img src="/media/images/blog/illustration/2024-10-27/bodyfat.jpg" alt="bodyfat" class="w-full h-auto object-cover rounded-lg shadow-md">
-    </div>
-    <div class="w-full">
-      <img src="/media/images/blog/illustration/2024-10-27/mesures.jpg" alt="mesures" class="w-full h-auto object-cover rounded-lg shadow-md">
-    </div>
-  </div>
-</div>
+<figure>
+  <img src="/media/images/blog/illustration/2024-10-27/poids.jpg" alt="poids">
+  <figcaption>La pesée</figcaption>
+</figure>
+
+<figure>
+  <img src="/media/images/blog/illustration/2024-10-27/bodyfat.jpg" alt="bodyfat">
+  <figcaption>Le bodyfat</figcaption>
+</figure>
+
+<figure>
+  <img src="/media/images/blog/illustration/2024-10-27/mesures.jpg" alt="mesures">
+  <figcaption>Les mesures</figcaption>
+</figure>
 
 ***
 

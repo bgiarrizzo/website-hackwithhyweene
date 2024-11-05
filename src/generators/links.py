@@ -15,6 +15,13 @@ def generate_rss_feed(links: list):
     write_file(data, template_name, filename)
 
 
+def generate_link_page(link):
+    data = {"page_title": link.get("title"), "link": link}
+    template_name = "links/single.j2"
+    filename = f"liens/{link.get('slug')}/index.html"
+
+    write_file(data, template_name, filename)
+
 def generate_link_page_list(links):
     data = {"page_title": "Liens", "all_links": links}
     template_name = "links/list.j2"
@@ -42,6 +49,7 @@ def build_links(links_path):
     
     for link_file in link_files:
         link = prepare_link_data(link_file)
+        generate_link_page(link)
 
         links.append(link)
 

@@ -4,10 +4,6 @@ from utils.markdown import parse_markdown_file_and_convert_to_html
 from utils.slug import add_slug
 
 
-class Blog:
-    posts: list = []
-
-
 def generate_rss_feed(posts: list):
     data = {"posts": posts}
     template_name = "blog/feed_rss.j2"

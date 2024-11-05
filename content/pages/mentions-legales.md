@@ -4,7 +4,7 @@ meta_title: Mentions légales
 permalink: mentions-legales
 ---
 
-## Editeur du site / Responsable de publication / Responsable du traitement
+## Responsable de publication
 
 Le site [www.hack-with-hyweene.com](https://www.hack-with-hyweene.com/) est édité par la société [cyberlife.sh](https://www.cyberlife.sh/) SARL au capital de 750 euros, dont le siège social est situé au :
 

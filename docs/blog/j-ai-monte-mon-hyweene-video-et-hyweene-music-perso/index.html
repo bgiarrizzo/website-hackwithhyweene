@@ -24,158 +24,100 @@
   <link href="https://www.hack-with-hyweene.com/blog/j-ai-monte-mon-hyweene-video-et-hyweene-music-perso/" rel="canonical">
   <meta content="Bruno, Giarrizzo, Hyweene, Bruno Giarrizzo, Developpeur, DevOps, Git, Apple, Golang, Go, Python, Swift, SwiftUI, Docker, Kubernetes, POO, OOP, Programmation Orient&eacute;e Objet, Programmation Fonctionnelle, films, s&eacute;ries, netlix, spotify, radarr, sonarr, lidarr, bazarr, prowlarr, jellyfin, plex, hyweeneflix, hyweenefy" name="keywords">
   <meta content="Yo-ho yo-ho, a pirate's life for me !" name="description">
-  <script src="https://cdn.tailwindcss.com">
-  </script>
   <link href="/static/css/prism.css" rel="stylesheet">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T0SNK38Q">
   </script>
   <script src="/static/js/analytics.js">
   </script>
+  <style>body { margin: 0 auto; max-width: 700px; line-height: 1.8; font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif; font-size: 1rem; color: #444; background-color: #fdf6e3; padding: 20px 40px; text-rendering: optimizeLegibility; }
+    h1 { line-height: 1.2; text-align: center; }
+    h2, h3, h4 { line-height: 1.2; border-bottom: 1px solid; }
+    p { hyphens: auto; text-align: justify; }
+    pre, blockquote, .code { background: #f5ead6; font-size: 0.8em; padding: 1em; overflow: scroll; border-radius: 0.5em; }
+    ul, ol { list-style-type: circle; }
+    a { color: #169; text-decoration: none; padding: 0.5em 0; }
+    a:hover { text-decoration: underline; }
+    
+    nav { display: flex; align-items: center; justify-content: space-between; flex-direction: row; text-align: center; font-variant: small-caps; font-weight: bold; border-bottom: 1px solid; border-top: 1px solid; margin-bottom: 1.5em; }
+    
+    main { text-align: justify; }
+    main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
+
+    .cover { display: block; width: 100%; border-radius: 0.5em; }
+
+    figure { width: 65%; display: block; margin-left: auto; margin-right: auto;}
+    figure img { width: 100%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 0.5em; }
+    figure figcaption { text-align: center; font-style: italic; }
+
+    footer { margin-top: 1.5em; }</style>
  </head>
- <body class="bg-slate-800">
-  <header class="z-40 h-24 w-full sm:mb-0 relative border-b border-gray-500 text-gray-300">
-   <div class="bg-slate-900 bg-opacity-90 backdrop-blur absolute inset-0">
-   </div>
-   <div class="relative mx-auto flex h-full flex-row items-center justify-between lg:max-w-4xl px-5 lg:px-0 py-2">
-    <div class="hidden lg:flex h-full mx-auto"><a class="h-14 my-auto" href="/"><img alt="favicon" class="h-14 my-auto mr-4" src="/static/img/cl-logo.svg"></a></div>
-    <div class="hidden lg:flex h-full flex-nowrap items-center"><a class="text-3xl text-gray-300 mr-4" href="/" translate="no"> <span class="font-bold">Hack</span><span class="px-1">with</span><span class="font-bold">Hyweene</span></a></div>
-    <nav aria-label="Navigation" class="hidden lg:flex justify-end flex-grow tracking-wide mx-4">
-     <h2 class="sr-only" id="navigation">Navigation</h2>
-     <menu class="text-heading flex space-x-10 tracking-wider">
-      <li class="group relative"><a class="flex cursor-pointer items-center gap-4 whitespace-nowrap py-4 text-base font-semibold" href="/blog/"> <span>Blog</span></a></li>
-      <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/liens/">Liens</a></li>
-      <li class="group relative"><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/apprendre/">Apprendre</a></li>
-      <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/cv/">CV</a></li>
-      <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/a-propos/">&Agrave; Propos</a></li>
-     </menu>
-    </nav> <aside class="flex h-full w-full lg:hidden"><div class="sm:flex hidden h-full items-center"><a class="h-full" href="https://www.hack-with-hyweene.com"><img alt="favicon" class="h-full" src="/static/img/cl-logo.svg"></a></div>
-     <div class="lg:hidden flex-1 h-full flex-nowrap items-center p-5 pl-0 sm:pl-5 lg:text-center"><a class="text-3xl text-gray-300" href="/" translate="no"> <span class="font-bold">Hack</span><span class="px-1">with</span><span class="font-bold">Hyweene</span></a></div>
-     <div class="flex items-center">
-      <input class="peer hidden" id="ss-mobile-menu" type="checkbox">
-      <label class="relative z-[9999] cursor-pointer px-3 pr-0 py-6" for="ss-mobile-menu">
-       <svg class="feather feather-menu" fill="none" height="24" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-        <line x1="3" x2="21" y1="12" y2="12">
-        </line>
-        <line x1="3" x2="21" y1="6" y2="6">
-        </line>
-        <line x1="3" x2="21" y1="18" y2="18">
-        </line>
-       </svg>
-      </label>
-      <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
-      <div class="fixed top-0 right-0 z-[9999] h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0 peer-checked:shadow-heading">
-       <div class="float-right min-h-full w-[85%] bg-slate-900 px-6 pt-12 shadow-2xl">
-        <menu class="mt-8 mb-8 flex flex-col space-y-4 text-heading">
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/blog/">Blog</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/liens/">Liens</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/apprendre/">Apprendre</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/cv/">CV</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/a-propos/">A Propos</a></li>
-        </menu>
-       </div>
-      </div>
-     </div>
-    </aside>
-   </div>
+ <body>
+  <header>
+   <h1><a href="/">Hack with Hyweene</a></h1>
   </header>
-  <main class="lg:max-w-4xl mt-10 mx-5 lg:mx-auto text-gray-300">
-   <header class="border-b border-gray-400">
-    <h1 class="text-4xl font-semibold">J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso</h1>
-    <p class="my-3 text-gray-400">Publi&eacute; le 29 Oct 2024</p>
-    <div class="my-3 flex flex-wrap"><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">films</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">s&eacute;ries</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">netlix</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">spotify</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">radarr</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">sonarr</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">lidarr</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">bazarr</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">prowlarr</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">jellyfin</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">plex</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">hyweeneflix</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">hyweenefy</span></div>
-   </header> <article><p class="text-base my-4 leading-relaxed">L'ann&eacute;e derni&egrave;re, L&eacute;o Duff sortait une vid&eacute;o : <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.youtube.com/watch?v=J8KcJL9gylA">J'ai mont&eacute; mon Netflix perso</a>.</p>
-    <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/J8KcJL9gylA?si=LivAlEtq8iSFQJSd" title="YouTube video player" width="560">
-    </iframe>
-    <p class="text-base my-4 leading-relaxed">J'ai trouv&eacute; l'id&eacute;e super interessante, et j'ai d&eacute;cid&eacute; de la reproduire chez moi.</p>
-    <p class="text-base my-4 leading-relaxed">Ceux qui en 2014 ont connu <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://fr.wikipedia.org/wiki/Popcorn_Time">Popcorn Time</a> connaissent la folie que c'&eacute;tait. Un soft qui permettait de streamer des films et s&eacute;ries en torrent, avec une interface super simple et intuitive. C'&eacute;tait le Netflix du piratage.</p>
-    <h2 class="text-3xl font-bold my-5 leading-snug">Pour commencer</h2>
-    <p class="text-base my-4 leading-relaxed">Je n'avais pas tr&egrave;s envie de prendre un VPS chez un hoster, et monter un serveur chez moi est le plus safe pour moi. Mes donn&eacute;es sont chez moi, et je peux les prot&eacute;ger comme je veux.</p>
-    <p class="text-base my-4 leading-relaxed">J'avais une petite machine chez moi, un Lenovo ThinkCentre M900 Tiny, avec un i7-6700T, 8Go de RAM, et un SSD de 256Go. Ce n'est pas &eacute;norme, surtout pour une machine qui va servir &agrave; stocker films, s&eacute;ries, musiques et autres, donc je d&eacute;cide d'upgrade tout &ccedil;a.</p>
-    <p class="text-base my-4 leading-relaxed">Je passe &agrave; 32Go de ram, et je rajoute un SSD NVMe de 2To pour stocker mes films et s&eacute;ries.</p>
-    <h2 class="text-3xl font-bold my-5 leading-snug">Les services h&eacute;berg&eacute;s</h2>
-    <p class="text-base my-4 leading-relaxed">De quoi on a besoin quand on veut monter une seedbox &agrave; la maison, et automatis&eacute;e ?</p>
-    <ul class="list-disc pl-5 my-3 space-y-2">
-     <li>Un client torrent</li>
-     <li>Un paquet de Grabbers</li>
-     <li>Un indexer manager</li>
-     <li>Un serveur de media (type Plex ou Jellyfin)</li>
-    </ul>
-    <h3 class="text-2xl font-semibold my-4">Le client torrent</h3>
-    <p class="text-base my-4 leading-relaxed"><a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://transmissionbt.com/">Transmission</a>, fid&egrave;le au poste. L&eacute;ger, stable, aucun probl&egrave;me avec lui depuis 2014. Je n'utilise quasiment jamais l'interface web, les diff&eacute;rents grabbers ont une interface de monitoring des t&eacute;l&eacute;chargements, et je n'ai pas besoin de plus.</p>
-    <h3 class="text-2xl font-semibold my-4">Les grabbers</h3>
-    <p class="text-base my-4 leading-relaxed">Ceux qui avaient leur seedbox en 2012 connaissent <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/midgetspy/Sick-Beard">SickBeard</a> et <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/CouchPotato/CouchPotatoServer/">CouchPotato</a>, qui permettaient de r&eacute;cup&eacute;rer automatiquement les films et series, via torrent ou usenet.</p>
-    <p class="text-base my-4 leading-relaxed">Aujourd'hui, on a <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Radarr/Radarr">Radarr</a>, <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Sonarr/Sonarr">Sonarr</a>, mais aussi tous leurs petits cousins :</p>
-    <ul class="list-disc pl-5 my-3 space-y-2">
-     <li><a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Readarr/Readarr">Readarr</a>: Avec lequel je r&eacute;cup&egrave;re mes ebooks</li>
-     <li><a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Lidarr/Lidarr">Lidarr</a>: Qui g&egrave;re mes musiques</li>
-     <li><a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a>: Qui permet de g&eacute;rer toute la partie Indexers.</li>
-    </ul>
-    <p class="text-base my-4 leading-relaxed">On a maintenant &eacute;galement <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/morpheus65535/bazarr">Bazarr</a>, un grabber de sous-titres.</p>
-    <p class="text-base my-4 leading-relaxed">Chose tr&egrave;s utile, puisqu'avant, je g&eacute;rais mes sous titres via <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Diaoul/subliminal">Subliminal</a>, qui est une CLI, c'est mignon, mais c'est pas user-friendly. Et &eacute;tant une cli, ce n'est pas automatisable, oblig&eacute; de monter une crontab, qui va se lancer toutes les heures, et qui va v&eacute;rifier l'enti&egrave;ret&eacute; de ma biblioth&egrave;que, inutilement, parce que je n'ai besoin que du dernier sub du dernier film ou dernier &eacute;pisode rajout&eacute;. pas besoin de tout rescan, enfin BREF, je m'&eacute;gare !!</p>
-    <h3 class="text-2xl font-semibold my-4">L'indexer manager</h3>
-    <p class="text-base my-4 leading-relaxed"><a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a> est devenu mon nouveau copain !</p>
-    <p class="text-base my-4 leading-relaxed">Je ne compte plus le temps que j'ai pu passer du temps de sickbeard et couchpotato &agrave; chercher des indexers, &agrave; les ajouter, &agrave; les tester, g&eacute;rer les configuration, v&eacute;rifier si l'indexer n'avait pas &eacute;t&eacute; ferm&eacute; par les autorit&eacute;s, etc.</p>
-    <p class="text-base my-4 leading-relaxed">Prowlarr fait tout ceci pour moi, et il le fait tr&egrave;s bien !</p>
-    <h3 class="text-2xl font-semibold my-4">Le serveur de media</h3>
-    <p class="text-base my-4 leading-relaxed">Mon choix s'est port&eacute; sur <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.plex.tv/">Plex</a>, pour une raison simple : Jellyfin a de gros soucis sur AppleTV ... et j'ai une AppleTV. Donc m&ecirc;me si j'aime jellyfin d'amour, il est l&eacute;ger, gratuit, et son algo de transcodage est tr&egrave;s &eacute;conome, mais pragmatiquement, je dois rester sur plex pour le moment.</p>
-    <h2 class="text-3xl font-bold my-5 leading-snug">Les services tiers</h2>
-    <p class="text-base my-4 leading-relaxed">Radarr et Sonarr sont syncronis&eacute;s avec <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://trakt.tv/">Trakt</a>, c'est un tracker de films et s&eacute;rie, qui permet de g&eacute;rer sa watchlist, de voir les films et s&eacute;ries que l'on a vu, de voir les films et s&eacute;ries que l'on est en train de voir, etc.</p>
-    <p class="text-base my-4 leading-relaxed">Quand j'ajoute un film ou une serie &agrave; ma watchlist, Radarr ou Sonarr interrogent les trackers pour voir si le film ou la serie est disponible.</p>
-    <h2 class="text-3xl font-bold my-5 leading-snug">Un petit r&eacute;sum&eacute;</h2>
-    <p class="text-base my-4 leading-relaxed">Toute cette petite &eacute;quipe a besoin d'interconnexions pour fonctionner et que l'automatisation soit parfaite, voici &agrave; quoi ressemble la stack :</p>
-    <p class="text-base my-4 leading-relaxed">
-     <center>
-      <img alt="stack" class="object-cover rounded-lg shadow-md" src="/media/images/blog/illustration/2024-10-29/stack.png">
-     </center>
-    </p>
-    <p class="text-base my-4 leading-relaxed">Volontairement, Plex ou Jellyfin ne sont pas pr&eacute;sents, parce qu'un peu &agrave; part, ils n'ont pas besoin de communiquer avec les autres services, ils ont juste besoin de r&eacute;cup&eacute;rer les m&eacute;dias, dans un dossier qui leur est propre.</p>
-    <h2 class="text-3xl font-bold my-5 leading-snug">Un Cas d'utilisation</h2>
-    <p class="text-base my-4 leading-relaxed">Je suis au cin&eacute;ma, je vois une bande annonce d'un film qui m'int&eacute;resse, je sors mon t&eacute;l&eacute;phone, je vais sur l'application de trakt, je cherche le film, je l'ajoute &agrave; ma watchlist.</p>
-    <p class="text-base my-4 leading-relaxed">Radarr interroge trakt, voit qu'un nouveau film est ajout&eacute; &agrave; la watchlist, va ajouter ce film &agrave; sa bibliot&egrave;que, puis va commencer &agrave; interroger les trackers.</p>
-    <p class="text-base my-4 leading-relaxed">Quelques semaines plus tard, le film va apparaitre sur les trackers torrents, en 720p, Radarr va le t&eacute;l&eacute;charger, le renommer, le d&eacute;placer dans le dossier de Plex, et Plex va le scanner, et le rendre disponible sur l'application Plex de mon AppleTV.</p>
-    <p class="text-base my-4 leading-relaxed">Si entre temps, une nouvelle version du film, en 1080p voire en 4K a &eacute;t&eacute; d&eacute;tect&eacute;e sur les trackers torrent par Radarr, il va t&eacute;l&eacute;charger la nouvelle version, et supprimer l'ancienne.</p>
-    <p class="text-base my-4 leading-relaxed">Une fois le t&eacute;l&eacute;chargement termin&eacute;, Radarr va envoyer une notification &agrave; Bazarr, qui va chercher les sous-titres, dans les langues que j'aurai pr&eacute;cis&eacute;, et les ajouter au dossier du film.</p>
-    <p class="text-base my-4 leading-relaxed">Ce m&ecirc;me processus est valable pour les s&eacute;ries, les musiques, les ebooks, etc. modulo le t&eacute;l&eacute;chargement des sous titres.</p>
-    <h2 class="text-3xl font-bold my-5 leading-snug">Conclusion</h2>
-    <p class="text-base my-4 leading-relaxed">J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso, et je suis tr&egrave;s content du r&eacute;sultat. C'est super simple &agrave; maintenir, et &ccedil;a me permet de regarder mes films et s&eacute;ries en toute tranquilit&eacute;.</p>
-    <p class="text-base my-4 leading-relaxed">Le seul soucis que j'ai maintenant, c'est l'espace disque qui commence &agrave; manquer ... Je vais devoir commencer &agrave; &eacute;tudier l'achat d'un NAS avec quelques dizaines de To de stockage, mais &ccedil;a, c'est une autre histoire !</p>
-   </article>
+  <nav><a href="/blog/">Blog</a>&bull; <a href="/liens/">Liens</a>&bull; <a href="/apprendre/">Apprendre</a>&bull; <a href="/cv/">CV</a></nav>
+  <main>
+   <img alt="J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso" class="cover" src="/media/images/blog/covers/2024-10-29.png">
+   <h1>J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso</h1>
+   <p>Publi&eacute; le 29 Oct 2024</p>
+   <div>#films #s&eacute;ries #netlix #spotify #radarr #sonarr #lidarr #bazarr #prowlarr #jellyfin #plex #hyweeneflix #hyweenefy</div>
+   <hr>
+   <p>L'ann&eacute;e derni&egrave;re, L&eacute;o Duff sortait une vid&eacute;o : <a href="https://www.youtube.com/watch?v=J8KcJL9gylA">J'ai mont&eacute; mon Netflix perso</a>.</p>
+   <p>J'ai trouv&eacute; l'id&eacute;e super interessante, et j'ai d&eacute;cid&eacute; de la reproduire chez moi.</p>
+   <p>Ceux qui en 2014 ont connu <a href="https://fr.wikipedia.org/wiki/Popcorn_Time">Popcorn Time</a> connaissent la folie que c'&eacute;tait. Un soft qui permettait de streamer des films et s&eacute;ries en torrent, avec une interface super simple et intuitive. C'&eacute;tait le Netflix du piratage.</p>
+   <h2>Pour commencer</h2>
+   <p>Je n'avais pas tr&egrave;s envie de prendre un VPS chez un hoster, et monter un serveur chez moi est le plus safe pour moi. Mes donn&eacute;es sont chez moi, et je peux les prot&eacute;ger comme je veux.</p>
+   <p>J'avais une petite machine chez moi, un Lenovo ThinkCentre M900 Tiny, avec un i7-6700T, 8Go de RAM, et un SSD de 256Go. Ce n'est pas &eacute;norme, surtout pour une machine qui va servir &agrave; stocker films, s&eacute;ries, musiques et autres, donc je d&eacute;cide d'upgrade tout &ccedil;a.</p>
+   <p>Je passe &agrave; 32Go de ram, et je rajoute un SSD NVMe de 2To pour stocker mes films et s&eacute;ries.</p>
+   <h2>Les services h&eacute;berg&eacute;s</h2>
+   <p>De quoi on a besoin quand on veut monter une seedbox &agrave; la maison, et automatis&eacute;e ?</p>
+   <ul>
+    <li>Un client torrent</li>
+    <li>Un paquet de Grabbers</li>
+    <li>Un indexer manager</li>
+    <li>Un serveur de media (type Plex ou Jellyfin)</li>
+   </ul>
+   <h3>Le client torrent</h3>
+   <p><a href="https://transmissionbt.com/">Transmission</a>, fid&egrave;le au poste. L&eacute;ger, stable, aucun probl&egrave;me avec lui depuis 2014. Je n'utilise quasiment jamais l'interface web, les diff&eacute;rents grabbers ont une interface de monitoring des t&eacute;l&eacute;chargements, et je n'ai pas besoin de plus.</p>
+   <h3>Les grabbers</h3>
+   <p>Ceux qui avaient leur seedbox en 2012 connaissent <a href="https://github.com/midgetspy/Sick-Beard">SickBeard</a> et <a href="https://github.com/CouchPotato/CouchPotatoServer/">CouchPotato</a>, qui permettaient de r&eacute;cup&eacute;rer automatiquement les films et series, via torrent ou usenet.</p>
+   <p>Aujourd'hui, on a <a href="https://github.com/Radarr/Radarr">Radarr</a>, <a href="https://github.com/Sonarr/Sonarr">Sonarr</a>, mais aussi tous leurs petits cousins :</p>
+   <ul>
+    <li><a href="https://github.com/Readarr/Readarr">Readarr</a>: Avec lequel je r&eacute;cup&egrave;re mes ebooks</li>
+    <li><a href="https://github.com/Lidarr/Lidarr">Lidarr</a>: Qui g&egrave;re mes musiques</li>
+    <li><a href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a>: Qui permet de g&eacute;rer toute la partie Indexers.</li>
+   </ul>
+   <p>On a maintenant &eacute;galement <a href="https://github.com/morpheus65535/bazarr">Bazarr</a>, un grabber de sous-titres.</p>
+   <p>Chose tr&egrave;s utile, puisqu'avant, je g&eacute;rais mes sous titres via <a href="https://github.com/Diaoul/subliminal">Subliminal</a>, qui est une CLI, c'est mignon, mais c'est pas user-friendly. Et &eacute;tant une cli, ce n'est pas automatisable, oblig&eacute; de monter une crontab, qui va se lancer toutes les heures, et qui va v&eacute;rifier l'enti&egrave;ret&eacute; de ma biblioth&egrave;que, inutilement, parce que je n'ai besoin que du dernier sub du dernier film ou dernier &eacute;pisode rajout&eacute;. pas besoin de tout rescan, enfin BREF, je m'&eacute;gare !!</p>
+   <h3>L'indexer manager</h3>
+   <p><a href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a> est devenu mon nouveau copain !</p>
+   <p>Je ne compte plus le temps que j'ai pu passer du temps de sickbeard et couchpotato &agrave; chercher des indexers, &agrave; les ajouter, &agrave; les tester, g&eacute;rer les configuration, v&eacute;rifier si l'indexer n'avait pas &eacute;t&eacute; ferm&eacute; par les autorit&eacute;s, etc.</p>
+   <p>Prowlarr fait tout ceci pour moi, et il le fait tr&egrave;s bien !</p>
+   <h3>Le serveur de media</h3>
+   <p>Mon choix s'est port&eacute; sur <a href="https://www.plex.tv/">Plex</a>, pour une raison simple : Jellyfin a de gros soucis sur AppleTV ... et j'ai une AppleTV. Donc m&ecirc;me si j'aime jellyfin d'amour, il est l&eacute;ger, gratuit, et son algo de transcodage est tr&egrave;s &eacute;conome, mais pragmatiquement, je dois rester sur plex pour le moment.</p>
+   <h2>Les services tiers</h2>
+   <p>Radarr et Sonarr sont syncronis&eacute;s avec <a href="https://trakt.tv/">Trakt</a>, c'est un tracker de films et s&eacute;rie, qui permet de g&eacute;rer sa watchlist, de voir les films et s&eacute;ries que l'on a vu, de voir les films et s&eacute;ries que l'on est en train de voir, etc.</p>
+   <p>Quand j'ajoute un film ou une serie &agrave; ma watchlist, Radarr ou Sonarr interrogent les trackers pour voir si le film ou la serie est disponible.</p>
+   <h2>Un petit r&eacute;sum&eacute;</h2>
+   <p>Toute cette petite &eacute;quipe a besoin d'interconnexions pour fonctionner et que l'automatisation soit parfaite, voici &agrave; quoi ressemble la stack :</p>
+   <figure><a href="/media/images/blog/illustration/2024-10-29/stack.png" target="_blank"><img alt="stack" src="/media/images/blog/illustration/2024-10-29/stack.png"></a></figure>
+   <p>Volontairement, Plex ou Jellyfin ne sont pas pr&eacute;sents, parce qu'un peu &agrave; part, ils n'ont pas besoin de communiquer avec les autres services, ils ont juste besoin de r&eacute;cup&eacute;rer les m&eacute;dias, dans un dossier qui leur est propre.</p>
+   <h2>Un Cas d'utilisation</h2>
+   <p>Je suis au cin&eacute;ma, je vois une bande annonce d'un film qui m'int&eacute;resse, je sors mon t&eacute;l&eacute;phone, je vais sur l'application de trakt, je cherche le film, je l'ajoute &agrave; ma watchlist.</p>
+   <p>Radarr interroge trakt, voit qu'un nouveau film est ajout&eacute; &agrave; la watchlist, va ajouter ce film &agrave; sa bibliot&egrave;que, puis va commencer &agrave; interroger les trackers.</p>
+   <p>Quelques semaines plus tard, le film va apparaitre sur les trackers torrents, en 720p, Radarr va le t&eacute;l&eacute;charger, le renommer, le d&eacute;placer dans le dossier de Plex, et Plex va le scanner, et le rendre disponible sur l'application Plex de mon AppleTV.</p>
+   <p>Si entre temps, une nouvelle version du film, en 1080p voire en 4K a &eacute;t&eacute; d&eacute;tect&eacute;e sur les trackers torrent par Radarr, il va t&eacute;l&eacute;charger la nouvelle version, et supprimer l'ancienne.</p>
+   <p>Une fois le t&eacute;l&eacute;chargement termin&eacute;, Radarr va envoyer une notification &agrave; Bazarr, qui va chercher les sous-titres, dans les langues que j'aurai pr&eacute;cis&eacute;, et les ajouter au dossier du film.</p>
+   <p>Ce m&ecirc;me processus est valable pour les s&eacute;ries, les musiques, les ebooks, etc. modulo le t&eacute;l&eacute;chargement des sous titres.</p>
+   <h2>Conclusion</h2>
+   <p>J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso, et je suis tr&egrave;s content du r&eacute;sultat. C'est super simple &agrave; maintenir, et &ccedil;a me permet de regarder mes films et s&eacute;ries en toute tranquilit&eacute;.</p>
+   <p>Le seul soucis que j'ai maintenant, c'est l'espace disque qui commence &agrave; manquer ... Je vais devoir commencer &agrave; &eacute;tudier l'achat d'un NAS avec quelques dizaines de To de stockage, mais &ccedil;a, c'est une autre histoire !</p>
    <script src="/static/js/prism.js">
    </script>
   </main>
-  <footer class="px-5 mt-10 xl:px-0 bg-slate-900 text-gray-200 border-t border-gray-500">
-   <div class="mx-auto lg:max-w-4xl">
-    <div class="pt-5 pb-5 grid grid-cols-1 md:grid-cols-4 md:gap-4">
-     <div class="mx-auto md:mx-0 md:col-span-1">
-      <img alt="logo" class="aspect-square object-fill rounded-xl" loading="lazy" src="/static/img/hyweene.jpg">
-     </div>
-     <div class="pt-5 md:pl-5 md:pt-0 my-auto md:col-span-3 text-md text-gray-200">
-      <div>
-       <h2 class="text-2xl font-semibold text-white">Hyweene</h2>
-       <p class="pt-2">Je m'appelle Hyweene (aussi connu comme Bruno Giarrizzo), 35 ans.</p>
-       <p class="pt-2">Je suis un ancien administrateur syst&egrave;me et r&eacute;seau, j'ai pris la d&eacute;cision de me reconvertir dans le d&eacute;veloppement web et mobile.</p>
-       <p class="pt-2">Ce site est la compilation de ce que j'apprends pour combler mes propres lacunes et, peut &ecirc;tre, aider d'autres &agrave; apprendre.</p>
-       <p class="pt-2">Vous voulez en savoir plus sur le pourquoi de ce site ? <a class="text-sky-400/75 font-semibold underline hover:text-sky-400 transition-colors duration-300" href="/a-propos/">Cliquez ici</a>.</p>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div class="pt-5 pb-5 border-t border-gray-500 mx-auto lg:max-w-4xl">
-    <p>Swift, SwiftUI, le logo Swift, Swift Playgrounds, Xcode, Instruments, Cocoa Touch, Touch ID, AirDrop,
-            iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac et macOS sont des marques d&eacute;pos&eacute;es d'Apple
-            Inc., enregistr&eacute;es aux &Eacute;tats-Unis et dans d'autres pays.</p>
-   </div>
-   <div class="flex flex-col-reverse mx-auto justify-between pt-5 pb-5 lg:flex-row bg-top border-t border-gray-500 lg:max-w-4xl">
-    <ul>
-     <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/a-propos/">A Propos</a></li>
-     <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/mentions-legales/">Mentions L&eacute;gales</a></li>
-    </ul>
-    <ul class="flex flex-col mb-3 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
-     <li><span class="text-md text-gray-200 font-semibold tracking-tight">&copy; 2024</span></li>
-     <li><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold tracking-tight" href="/">Hack-With-Hyweene.com</a></li>
-    </ul>
-   </div>
+  <footer>
+   <nav><a href="/a-propos/">A Propos</a>&bull; <a href="/mentions-legales/">Mentions L&eacute;gales</a>&bull; <a href="https://www.hack-with-hyweene.com">https://www.hack-with-hyweene.com</a></nav>
   </footer>
  </body>
 </html>

@@ -6,19 +6,20 @@
         <link href="{{ site.url }}/static/img/cl-logo.svg" rel="icon" />
 
         {% include "includes/meta.j2" %}
+        {% include "includes/style.j2" %}
     
     </head>
 
-    <body class="bg-slate-800">
+    <body>
 
+        {% include "includes/header.j2" %}
         {% include "includes/navigation.j2" %}
 
-        <main class="lg:max-w-4xl mt-10 mx-5 lg:mx-auto text-gray-300">
+        <main>
             {{ content }}
         </main>
             
         {% include "includes/footer.j2" %}
-        {% include "includes/style.j2" %}
         
     </body>
 

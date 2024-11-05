@@ -24,74 +24,52 @@
   <link href="https://www.hack-with-hyweene.com/blog/comment-installer-psycopg2-binary-sur-apple-m1/" rel="canonical">
   <meta content="Bruno, Giarrizzo, Hyweene, Bruno Giarrizzo, Developpeur, DevOps, Git, Apple, Golang, Go, Python, Swift, SwiftUI, Docker, Kubernetes, POO, OOP, Programmation Orient&eacute;e Objet, Programmation Fonctionnelle, apple, m1, postgres, python3.10, psycopg2, psycopg2-binary, installation" name="keywords">
   <meta content="J'ai rencontr&eacute; quelques difficult&eacute;s en travaillant avec du code Python acc&eacute;dant &agrave; des bases de donn&eacute;es PostgreSQL. Voici comment j'ai r&eacute;solu le probl&egrave;me." name="description">
-  <script src="https://cdn.tailwindcss.com">
-  </script>
   <link href="/static/css/prism.css" rel="stylesheet">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T0SNK38Q">
   </script>
   <script src="/static/js/analytics.js">
   </script>
+  <style>body { margin: 0 auto; max-width: 700px; line-height: 1.8; font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif; font-size: 1rem; color: #444; background-color: #fdf6e3; padding: 20px 40px; text-rendering: optimizeLegibility; }
+    h1 { line-height: 1.2; text-align: center; }
+    h2, h3, h4 { line-height: 1.2; border-bottom: 1px solid; }
+    p { hyphens: auto; text-align: justify; }
+    pre, blockquote, .code { background: #f5ead6; font-size: 0.8em; padding: 1em; overflow: scroll; border-radius: 0.5em; }
+    ul, ol { list-style-type: circle; }
+    a { color: #169; text-decoration: none; padding: 0.5em 0; }
+    a:hover { text-decoration: underline; }
+    
+    nav { display: flex; align-items: center; justify-content: space-between; flex-direction: row; text-align: center; font-variant: small-caps; font-weight: bold; border-bottom: 1px solid; border-top: 1px solid; margin-bottom: 1.5em; }
+    
+    main { text-align: justify; }
+    main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
+
+    .cover { display: block; width: 100%; border-radius: 0.5em; }
+
+    figure { width: 65%; display: block; margin-left: auto; margin-right: auto;}
+    figure img { width: 100%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 0.5em; }
+    figure figcaption { text-align: center; font-style: italic; }
+
+    footer { margin-top: 1.5em; }</style>
  </head>
- <body class="bg-slate-800">
-  <header class="z-40 h-24 w-full sm:mb-0 relative border-b border-gray-500 text-gray-300">
-   <div class="bg-slate-900 bg-opacity-90 backdrop-blur absolute inset-0">
-   </div>
-   <div class="relative mx-auto flex h-full flex-row items-center justify-between lg:max-w-4xl px-5 lg:px-0 py-2">
-    <div class="hidden lg:flex h-full mx-auto"><a class="h-14 my-auto" href="/"><img alt="favicon" class="h-14 my-auto mr-4" src="/static/img/cl-logo.svg"></a></div>
-    <div class="hidden lg:flex h-full flex-nowrap items-center"><a class="text-3xl text-gray-300 mr-4" href="/" translate="no"> <span class="font-bold">Hack</span><span class="px-1">with</span><span class="font-bold">Hyweene</span></a></div>
-    <nav aria-label="Navigation" class="hidden lg:flex justify-end flex-grow tracking-wide mx-4">
-     <h2 class="sr-only" id="navigation">Navigation</h2>
-     <menu class="text-heading flex space-x-10 tracking-wider">
-      <li class="group relative"><a class="flex cursor-pointer items-center gap-4 whitespace-nowrap py-4 text-base font-semibold" href="/blog/"> <span>Blog</span></a></li>
-      <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/liens/">Liens</a></li>
-      <li class="group relative"><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/apprendre/">Apprendre</a></li>
-      <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/cv/">CV</a></li>
-      <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/a-propos/">&Agrave; Propos</a></li>
-     </menu>
-    </nav> <aside class="flex h-full w-full lg:hidden"><div class="sm:flex hidden h-full items-center"><a class="h-full" href="https://www.hack-with-hyweene.com"><img alt="favicon" class="h-full" src="/static/img/cl-logo.svg"></a></div>
-     <div class="lg:hidden flex-1 h-full flex-nowrap items-center p-5 pl-0 sm:pl-5 lg:text-center"><a class="text-3xl text-gray-300" href="/" translate="no"> <span class="font-bold">Hack</span><span class="px-1">with</span><span class="font-bold">Hyweene</span></a></div>
-     <div class="flex items-center">
-      <input class="peer hidden" id="ss-mobile-menu" type="checkbox">
-      <label class="relative z-[9999] cursor-pointer px-3 pr-0 py-6" for="ss-mobile-menu">
-       <svg class="feather feather-menu" fill="none" height="24" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-        <line x1="3" x2="21" y1="12" y2="12">
-        </line>
-        <line x1="3" x2="21" y1="6" y2="6">
-        </line>
-        <line x1="3" x2="21" y1="18" y2="18">
-        </line>
-       </svg>
-      </label>
-      <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
-      <div class="fixed top-0 right-0 z-[9999] h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0 peer-checked:shadow-heading">
-       <div class="float-right min-h-full w-[85%] bg-slate-900 px-6 pt-12 shadow-2xl">
-        <menu class="mt-8 mb-8 flex flex-col space-y-4 text-heading">
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/blog/">Blog</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/liens/">Liens</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/apprendre/">Apprendre</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/cv/">CV</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/a-propos/">A Propos</a></li>
-        </menu>
-       </div>
-      </div>
-     </div>
-    </aside>
-   </div>
+ <body>
+  <header>
+   <h1><a href="/">Hack with Hyweene</a></h1>
   </header>
-  <main class="lg:max-w-4xl mt-10 mx-5 lg:mx-auto text-gray-300">
-   <header class="border-b border-gray-400">
-    <img alt="Comment installer psycopg2-binary sur Apple M1" class="w-full object-cover object-center rounded-xl shadow-lg mb-5" src="/media/images/blog/covers/2021-10-17.png">
-    <h1 class="text-4xl font-semibold">Comment installer psycopg2-binary sur Apple M1</h1>
-    <p class="my-3 text-gray-400">Publi&eacute; le 17 Oct 2021</p>
-    <div class="my-3 flex flex-wrap"><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">apple</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">m1</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">postgres</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">python3.10</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">psycopg2</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">psycopg2-binary</span><span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">installation</span></div>
-   </header> <article><p class="text-base my-4 leading-relaxed">Le mois dernier, je me suis offert un Apple M1, un tr&egrave;s bon ordinateur, puissant et avec une autonomie impressionnante.</p>
-    <p class="text-base my-4 leading-relaxed">Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqu&eacute;.</p>
-    <p class="text-base my-4 leading-relaxed">J'essaie de travailler avec les derni&egrave;res versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
-    <p class="text-base my-4 leading-relaxed">Je l'ai install&eacute; avec brew, assez facilement :</p>
-    <pre class="rounded-xl"><code class="language-bash">brew install python@3.10</code></pre>
-    <p class="text-base my-4 leading-relaxed">J'ai eu des probl&egrave;mes avec psycopg2-binary lors de l'installation des d&eacute;pendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais &eacute;tait celui-ci :</p>
-    <pre class="rounded-xl"><code class="language-bash">Error: pg_config executable not found.
+  <nav><a href="/blog/">Blog</a>&bull; <a href="/liens/">Liens</a>&bull; <a href="/apprendre/">Apprendre</a>&bull; <a href="/cv/">CV</a></nav>
+  <main>
+   <img alt="Comment installer psycopg2-binary sur Apple M1" class="cover" src="/media/images/blog/covers/2021-10-17.png">
+   <h1>Comment installer psycopg2-binary sur Apple M1</h1>
+   <p>Publi&eacute; le 17 Oct 2021</p>
+   <div>#apple #m1 #postgres #python3.10 #psycopg2 #psycopg2-binary #installation</div>
+   <hr>
+   <p>Le mois dernier, je me suis offert un Apple M1, un tr&egrave;s bon ordinateur, puissant et avec une autonomie impressionnante.</p>
+   <p>Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqu&eacute;.</p>
+   <p>J'essaie de travailler avec les derni&egrave;res versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
+   <p>Je l'ai install&eacute; avec brew, assez facilement :</p>
+   <pre><code class="language-bash">brew install python@3.10</code></pre>
+   <p>J'ai eu des probl&egrave;mes avec psycopg2-binary lors de l'installation des d&eacute;pendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais &eacute;tait celui-ci :</p>
+   <pre><code class="language-bash">Error: pg_config executable not found.
 
 pg_config is required to build psycopg2 from source.  Please add the directory
 containing pg_config to the $PATH or specify the full executable path with the
@@ -100,50 +78,19 @@ option:
     python setup.py build_ext --pg-config /path/to/pg_config build ...
 
 or with the pg_config option in 'setup.cfg'.</code></pre>
-    <p class="text-base my-4 leading-relaxed">Il semble qu'il manque un fichier de configuration. J'ai essay&eacute; de r&eacute;soudre ce probl&egrave;me en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
-    <pre class="rounded-xl"><code class="language-bash">brew install postgresql@12</code></pre>
-    <p class="text-base my-4 leading-relaxed">&Agrave; ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette fa&ccedil;on (en utilisant ZSH, il me dit &eacute;videmment de l'&eacute;crire dans .zshrc) :</p>
-    <pre class="rounded-xl"><code class="language-bash">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' &gt; ~/.zshrc</code></pre>
-    <p class="text-base my-4 leading-relaxed">Maintenant, tout est pr&ecirc;t, et je peux l'installer comme je le souhaite :</p>
-    <pre class="rounded-xl"><code class="language-bash">pip(3) install psycopg2-binary</code></pre>
-    <p class="text-base my-4 leading-relaxed">Ou dans le r&eacute;pertoire de mon projet :</p>
-    <pre class="rounded-xl"><code class="language-bash">pipenv install psycopg2-binary</code></pre>
-   </article>
+   <p>Il semble qu'il manque un fichier de configuration. J'ai essay&eacute; de r&eacute;soudre ce probl&egrave;me en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
+   <pre><code class="language-bash">brew install postgresql@12</code></pre>
+   <p>&Agrave; ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette fa&ccedil;on (en utilisant ZSH, il me dit &eacute;videmment de l'&eacute;crire dans .zshrc) :</p>
+   <pre><code class="language-bash">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' &gt; ~/.zshrc</code></pre>
+   <p>Maintenant, tout est pr&ecirc;t, et je peux l'installer comme je le souhaite :</p>
+   <pre><code class="language-bash">pip(3) install psycopg2-binary</code></pre>
+   <p>Ou dans le r&eacute;pertoire de mon projet :</p>
+   <pre><code class="language-bash">pipenv install psycopg2-binary</code></pre>
    <script src="/static/js/prism.js">
    </script>
   </main>
-  <footer class="px-5 mt-10 xl:px-0 bg-slate-900 text-gray-200 border-t border-gray-500">
-   <div class="mx-auto lg:max-w-4xl">
-    <div class="pt-5 pb-5 grid grid-cols-1 md:grid-cols-4 md:gap-4">
-     <div class="mx-auto md:mx-0 md:col-span-1">
-      <img alt="logo" class="aspect-square object-fill rounded-xl" loading="lazy" src="/static/img/hyweene.jpg">
-     </div>
-     <div class="pt-5 md:pl-5 md:pt-0 my-auto md:col-span-3 text-md text-gray-200">
-      <div>
-       <h2 class="text-2xl font-semibold text-white">Hyweene</h2>
-       <p class="pt-2">Je m'appelle Hyweene (aussi connu comme Bruno Giarrizzo), 35 ans.</p>
-       <p class="pt-2">Je suis un ancien administrateur syst&egrave;me et r&eacute;seau, j'ai pris la d&eacute;cision de me reconvertir dans le d&eacute;veloppement web et mobile.</p>
-       <p class="pt-2">Ce site est la compilation de ce que j'apprends pour combler mes propres lacunes et, peut &ecirc;tre, aider d'autres &agrave; apprendre.</p>
-       <p class="pt-2">Vous voulez en savoir plus sur le pourquoi de ce site ? <a class="text-sky-400/75 font-semibold underline hover:text-sky-400 transition-colors duration-300" href="/a-propos/">Cliquez ici</a>.</p>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div class="pt-5 pb-5 border-t border-gray-500 mx-auto lg:max-w-4xl">
-    <p>Swift, SwiftUI, le logo Swift, Swift Playgrounds, Xcode, Instruments, Cocoa Touch, Touch ID, AirDrop,
-            iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac et macOS sont des marques d&eacute;pos&eacute;es d'Apple
-            Inc., enregistr&eacute;es aux &Eacute;tats-Unis et dans d'autres pays.</p>
-   </div>
-   <div class="flex flex-col-reverse mx-auto justify-between pt-5 pb-5 lg:flex-row bg-top border-t border-gray-500 lg:max-w-4xl">
-    <ul>
-     <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/a-propos/">A Propos</a></li>
-     <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/mentions-legales/">Mentions L&eacute;gales</a></li>
-    </ul>
-    <ul class="flex flex-col mb-3 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
-     <li><span class="text-md text-gray-200 font-semibold tracking-tight">&copy; 2024</span></li>
-     <li><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold tracking-tight" href="/">Hack-With-Hyweene.com</a></li>
-    </ul>
-   </div>
+  <footer>
+   <nav><a href="/a-propos/">A Propos</a>&bull; <a href="/mentions-legales/">Mentions L&eacute;gales</a>&bull; <a href="https://www.hack-with-hyweene.com">https://www.hack-with-hyweene.com</a></nav>
   </footer>
  </body>
 </html>

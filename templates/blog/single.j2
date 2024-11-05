@@ -1,25 +1,19 @@
-<header class="border-b border-gray-400">
-  {% if post.cover %}
-    <img src="/media/images/blog/covers/{{ post.cover }}" alt="{{ post.title }}" class="w-full object-cover object-center rounded-xl shadow-lg mb-5">
-  {% endif %}
-  
-  <h1 class="text-4xl font-semibold">{{ post.title }}</h1>
+{% if post.cover %}
+  <img class="cover" src="/media/images/blog/covers/{{ post.cover }}" alt="{{ post.title }}">
+{% endif %}
 
-  <p class="my-3 text-gray-400">
-    Publié le {{ post.publish_date_medium }}
-  </p>
+<h1>{{ post.title }}</h1>
 
-  <div class="my-3 flex flex-wrap">
-    {% for tag in post.tags %}
-      <span class="bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mb-2">
-        {{ tag }}
-      </span>
-    {% endfor %}
-  </div>
-</header>
+<p>
+  Publié le {{ post.publish_date_medium }}
+</p>
 
-<article>
-  {{ post.body }}
-</article>
+<div>
+  {% for tag in post.tags %}#{{ tag }} {% endfor %}
+</div>
+
+<hr />
+
+{{ post.body }}
 
 <script src="/static/js/prism.js"></script>

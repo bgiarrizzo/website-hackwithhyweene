@@ -1,0 +1,2 @@
+class Site:
+    name: str

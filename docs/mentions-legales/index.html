@@ -23,139 +23,84 @@
   <meta content="Mentions l&eacute;gales - Hack with Hyweene" name="title">
   <link href="https://www.hack-with-hyweene.com/mentions-legales/" rel="canonical">
   <meta content="Bruno, Giarrizzo, Hyweene, Bruno Giarrizzo, Developpeur, DevOps, Git, Apple, Golang, Go, Python, Swift, SwiftUI, Docker, Kubernetes, POO, OOP, Programmation Orient&eacute;e Objet, Programmation Fonctionnelle, " name="keywords">
-  <script src="https://cdn.tailwindcss.com">
-  </script>
   <link href="/static/css/prism.css" rel="stylesheet">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T0SNK38Q">
   </script>
   <script src="/static/js/analytics.js">
   </script>
+  <style>body { margin: 0 auto; max-width: 700px; line-height: 1.8; font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif; font-size: 1rem; color: #444; background-color: #fdf6e3; padding: 20px 40px; text-rendering: optimizeLegibility; }
+    h1 { line-height: 1.2; text-align: center; }
+    h2, h3, h4 { line-height: 1.2; border-bottom: 1px solid; }
+    p { hyphens: auto; text-align: justify; }
+    pre, blockquote, .code { background: #f5ead6; font-size: 0.8em; padding: 1em; overflow: scroll; border-radius: 0.5em; }
+    ul, ol { list-style-type: circle; }
+    a { color: #169; text-decoration: none; padding: 0.5em 0; }
+    a:hover { text-decoration: underline; }
+    
+    nav { display: flex; align-items: center; justify-content: space-between; flex-direction: row; text-align: center; font-variant: small-caps; font-weight: bold; border-bottom: 1px solid; border-top: 1px solid; margin-bottom: 1.5em; }
+    
+    main { text-align: justify; }
+    main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
+
+    .cover { display: block; width: 100%; border-radius: 0.5em; }
+
+    figure { width: 65%; display: block; margin-left: auto; margin-right: auto;}
+    figure img { width: 100%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 0.5em; }
+    figure figcaption { text-align: center; font-style: italic; }
+
+    footer { margin-top: 1.5em; }</style>
  </head>
- <body class="bg-slate-800">
-  <header class="z-40 h-24 w-full sm:mb-0 relative border-b border-gray-500 text-gray-300">
-   <div class="bg-slate-900 bg-opacity-90 backdrop-blur absolute inset-0">
-   </div>
-   <div class="relative mx-auto flex h-full flex-row items-center justify-between lg:max-w-4xl px-5 lg:px-0 py-2">
-    <div class="hidden lg:flex h-full mx-auto"><a class="h-14 my-auto" href="/"><img alt="favicon" class="h-14 my-auto mr-4" src="/static/img/cl-logo.svg"></a></div>
-    <div class="hidden lg:flex h-full flex-nowrap items-center"><a class="text-3xl text-gray-300 mr-4" href="/" translate="no"> <span class="font-bold">Hack</span><span class="px-1">with</span><span class="font-bold">Hyweene</span></a></div>
-    <nav aria-label="Navigation" class="hidden lg:flex justify-end flex-grow tracking-wide mx-4">
-     <h2 class="sr-only" id="navigation">Navigation</h2>
-     <menu class="text-heading flex space-x-10 tracking-wider">
-      <li class="group relative"><a class="flex cursor-pointer items-center gap-4 whitespace-nowrap py-4 text-base font-semibold" href="/blog/"> <span>Blog</span></a></li>
-      <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/liens/">Liens</a></li>
-      <li class="group relative"><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/apprendre/">Apprendre</a></li>
-      <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/cv/">CV</a></li>
-      <li><a class="inline-flex whitespace-nowrap text-base py-4 font-semibold" href="/a-propos/">&Agrave; Propos</a></li>
-     </menu>
-    </nav> <aside class="flex h-full w-full lg:hidden"><div class="sm:flex hidden h-full items-center"><a class="h-full" href="https://www.hack-with-hyweene.com"><img alt="favicon" class="h-full" src="/static/img/cl-logo.svg"></a></div>
-     <div class="lg:hidden flex-1 h-full flex-nowrap items-center p-5 pl-0 sm:pl-5 lg:text-center"><a class="text-3xl text-gray-300" href="/" translate="no"> <span class="font-bold">Hack</span><span class="px-1">with</span><span class="font-bold">Hyweene</span></a></div>
-     <div class="flex items-center">
-      <input class="peer hidden" id="ss-mobile-menu" type="checkbox">
-      <label class="relative z-[9999] cursor-pointer px-3 pr-0 py-6" for="ss-mobile-menu">
-       <svg class="feather feather-menu" fill="none" height="24" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-        <line x1="3" x2="21" y1="12" y2="12">
-        </line>
-        <line x1="3" x2="21" y1="6" y2="6">
-        </line>
-        <line x1="3" x2="21" y1="18" y2="18">
-        </line>
-       </svg>
-      </label>
-      <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
-      <div class="fixed top-0 right-0 z-[9999] h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0 peer-checked:shadow-heading">
-       <div class="float-right min-h-full w-[85%] bg-slate-900 px-6 pt-12 shadow-2xl">
-        <menu class="mt-8 mb-8 flex flex-col space-y-4 text-heading">
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/blog/">Blog</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/liens/">Liens</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/apprendre/">Apprendre</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/cv/">CV</a></li>
-         <li><a class="whitespace-nowrap pb-1 font-semibold" href="/a-propos/">A Propos</a></li>
-        </menu>
-       </div>
-      </div>
-     </div>
-    </aside>
-   </div>
+ <body>
+  <header>
+   <h1><a href="/">Hack with Hyweene</a></h1>
   </header>
-  <main class="lg:max-w-4xl mt-10 mx-5 lg:mx-auto text-gray-300">
-   <header>
-    <h1 class="text-4xl font-semibold mb-4">Mentions l&eacute;gales</h1>
-   </header>
-   <section>
-    <h2 class="text-3xl font-bold my-5 leading-snug">Editeur du site / Responsable de publication / Responsable du traitement</h2>
-    <p class="text-base my-4 leading-relaxed">Le site <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a> est &eacute;dit&eacute; par la soci&eacute;t&eacute; <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.cyberlife.sh/">cyberlife.sh</a> SARL au capital de 750 euros, dont le si&egrave;ge social est situ&eacute; au :</p>
-    <p class="text-base my-4 leading-relaxed">229 rue Saint-Honor&eacute;,<br> 
-     75001 Paris,<br> 
-     France</p>
-    <p class="text-base my-4 leading-relaxed">Inscrite au registre du commerce et des soci&eacute;t&eacute;s de Paris sous les :</p>
-    <p class="text-base my-4 leading-relaxed">RCS 905190138,<br> 
-     Siret 90519013800016,<br> 
-     TVA FR39905190138.</p>
-    <h2 class="text-3xl font-bold my-5 leading-snug">Responsable de Publication</h2>
-    <p class="text-base my-4 leading-relaxed">Monsieur Bruno Giarrizzo, dit Hyweene, auteur du pr&eacute;sent site, et pr&eacute;sident de la soci&eacute;t&eacute; <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.cyberlife.sh/">Cyberlife.sh</a>.</p>
-    <p class="text-base my-4 leading-relaxed">Email : b.giarrizzo [@] cyberlife.sh</p>
-    <h2 class="text-3xl font-bold my-5 leading-snug">H&eacute;bergeur</h2>
-    <p class="text-base my-4 leading-relaxed">Le site <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a> est h&eacute;berg&eacute; par la soci&eacute;t&eacute; <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://github.com/about">GitHub Inc.</a> dont le si&egrave;ge social est situ&eacute; au :</p>
-    <p class="text-base my-4 leading-relaxed">88 Colin P Kelly Jr St,<br> 
-     San Francisco,<br> 
-     CA 94107,<br> 
-     &Eacute;tats-Unis</p>
-    <p class="text-base my-4 leading-relaxed">Les donn&eacute;es transitent &eacute;galement, pour la mise en cache, par la soci&eacute;t&eacute; <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.cloudflare.com/en-gb/about-overview/">Cloudflare Inc.</a> dont le si&egrave;ge social est situ&eacute; au :</p>
-    <p class="text-base my-4 leading-relaxed">101 Townsend St,<br> 
-     San Francisco,<br> 
-     CA 94107,<br> 
-     &Eacute;tats-Unis</p>
-    <h2 class="text-3xl font-bold my-5 leading-snug">Concernant le contenu des pages</h2>
-    <p class="text-base my-4 leading-relaxed">Sauf mentions contraires, je suis l&rsquo;unique auteur de ce site.
+  <nav><a href="/blog/">Blog</a>&bull; <a href="/liens/">Liens</a>&bull; <a href="/apprendre/">Apprendre</a>&bull; <a href="/cv/">CV</a></nav>
+  <main>
+   <h1>Mentions l&eacute;gales</h1>
+   <hr>
+   <h2>Responsable de publication</h2>
+   <p>Le site <a href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a> est &eacute;dit&eacute; par la soci&eacute;t&eacute; <a href="https://www.cyberlife.sh/">cyberlife.sh</a> SARL au capital de 750 euros, dont le si&egrave;ge social est situ&eacute; au :</p>
+   <p>229 rue Saint-Honor&eacute;,<br> 
+    75001 Paris,<br> 
+    France</p>
+   <p>Inscrite au registre du commerce et des soci&eacute;t&eacute;s de Paris sous les :</p>
+   <p>RCS 905190138,<br> 
+    Siret 90519013800016,<br> 
+    TVA FR39905190138.</p>
+   <h2>Responsable de Publication</h2>
+   <p>Monsieur Bruno Giarrizzo, dit Hyweene, auteur du pr&eacute;sent site, et pr&eacute;sident de la soci&eacute;t&eacute; <a href="https://www.cyberlife.sh/">Cyberlife.sh</a>.</p>
+   <p>Email : b.giarrizzo [@] cyberlife.sh</p>
+   <h2>H&eacute;bergeur</h2>
+   <p>Le site <a href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a> est h&eacute;berg&eacute; par la soci&eacute;t&eacute; <a href="https://github.com/about">GitHub Inc.</a> dont le si&egrave;ge social est situ&eacute; au :</p>
+   <p>88 Colin P Kelly Jr St,<br> 
+    San Francisco,<br> 
+    CA 94107,<br> 
+    &Eacute;tats-Unis</p>
+   <p>Les donn&eacute;es transitent &eacute;galement, pour la mise en cache, par la soci&eacute;t&eacute; <a href="https://www.cloudflare.com/en-gb/about-overview/">Cloudflare Inc.</a> dont le si&egrave;ge social est situ&eacute; au :</p>
+   <p>101 Townsend St,<br> 
+    San Francisco,<br> 
+    CA 94107,<br> 
+    &Eacute;tats-Unis</p>
+   <h2>Concernant le contenu des pages</h2>
+   <p>Sauf mentions contraires, je suis l&rsquo;unique auteur de ce site.
 Ni ma famille ou mes proches, ni mes clients ou &eacute;ventuels employeurs ne sont ou ne peuvent &ecirc;tre tenus comme responsables de ce qui se trouve ici, ni n&rsquo;ont un droit de regard dessus.</p>
-    <p class="text-base my-4 leading-relaxed">Je me r&eacute;serve un droit total sur tout son contenu.</p>
-    <p class="text-base my-4 leading-relaxed">En m&rsquo;envoyant un message par le biais de la page de contact, vous acceptez que tout ou partie du contenu dudit message puisse &ecirc;tre publi&eacute; anonymement sur ce site.</p>
-    <p class="text-base my-4 leading-relaxed">Le contenu du blog refl&egrave;te des opinions subjectives de l&rsquo;auteur au moment de la publication, et qui peuvent ou non &ecirc;tre partag&eacute;es. Le but de ce site n&rsquo;est pas d&rsquo;&ecirc;tre un site d&rsquo;information.</p>
-    <h2 class="text-3xl font-bold my-5 leading-snug">Propri&eacute;t&eacute; intellectuelle</h2>
-    <p class="text-base my-4 leading-relaxed">L'ensemble des contenus figurant sur le site <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a> sont la propri&eacute;t&eacute; exclusive de la soci&eacute;t&eacute; <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.cyberlife.sh/">cyberlife.sh</a>.</p>
-    <p class="text-base my-4 leading-relaxed">Toute reproduction ou repr&eacute;sentation totale ou partielle de ce site par quelque proc&eacute;d&eacute; que ce soit, sans l'autorisation expresse de la soci&eacute;t&eacute; <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.cyberlife.sh/">cyberlife.sh</a> est interdite et constituerait une contrefa&ccedil;on sanctionn&eacute;e par les articles L 335-2 et suivants du Code de la propri&eacute;t&eacute; intellectuelle.</p>
-    <p class="text-base my-4 leading-relaxed">Toute reproduction, imitation ou usage, total ou partiel, des contenus figurant sur le site Internet <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a> sans l'autorisation expresse de l'&eacute;diteur engage la responsabilit&eacute; de leur auteur au titre de contrefa&ccedil;on quand ils sont prot&eacute;g&eacute;s par un droit de propri&eacute;t&eacute; intellectuelle et sur le fondement de la responsabilit&eacute; civile dans tout autre cas de figure.</p>
-    <p class="text-base my-4 leading-relaxed">Il en est de m&ecirc;me pour les &eacute;ventuelles bases de donn&eacute;es figurant sur le site Internet <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a> qui sont prot&eacute;g&eacute;es par les dispositions de la loi du 1er juillet 1998 portant transposition dans le Code de la propri&eacute;t&eacute; intellectuelle (CPI) de la directive europ&eacute;enne du 11 mars 1996 relative &agrave; la protection juridique des bases de donn&eacute;es.</p>
-    <p class="text-base my-4 leading-relaxed">Toute information accessible via un lien hypertexte n'est pas publi&eacute;e par la soci&eacute;t&eacute; <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.cyberlife.sh/">cyberlife.sh</a>. La soci&eacute;t&eacute; <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.cyberlife.sh/">cyberlife.sh</a> ne dispose d'aucun droit sur le contenu pr&eacute;sent dans les liens hypertextes.</p>
-    <h2 class="text-3xl font-bold my-5 leading-snug">Responsabilit&eacute;</h2>
-    <p class="text-base my-4 leading-relaxed">La responsabilit&eacute; de l&rsquo;Editeur ne peut &ecirc;tre engag&eacute;e en cas de d&eacute;faillance, panne ou interruption emp&ecirc;chant l&rsquo;acc&egrave;s au Site ou limitant son usage.</p>
-    <p class="text-base my-4 leading-relaxed">Le mat&eacute;riel de connexion et de navigation utilis&eacute;e rel&egrave;ve de la seule responsabilit&eacute; de son utilisateur, lequel doit prendre toutes les mesures appropri&eacute;es pour prot&eacute;ger son mat&eacute;riel, s&rsquo;agissant notamment d&rsquo;attaques virales.</p>
-    <p class="text-base my-4 leading-relaxed">L&rsquo;Editeur d&eacute;cline toute responsabilit&eacute; r&eacute;sultant d&rsquo;une intrusion frauduleuse d&rsquo;un tiers ayant entrain&eacute; une modification des informations pr&eacute;sent&eacute;es sur le site <a class="text-sky-500 font-semibold underline hover:text-sky-600 transition-colors duration-300" href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a>.</p>
-   </section>
+   <p>Je me r&eacute;serve un droit total sur tout son contenu.</p>
+   <p>En m&rsquo;envoyant un message par le biais de la page de contact, vous acceptez que tout ou partie du contenu dudit message puisse &ecirc;tre publi&eacute; anonymement sur ce site.</p>
+   <p>Le contenu du blog refl&egrave;te des opinions subjectives de l&rsquo;auteur au moment de la publication, et qui peuvent ou non &ecirc;tre partag&eacute;es. Le but de ce site n&rsquo;est pas d&rsquo;&ecirc;tre un site d&rsquo;information.</p>
+   <h2>Propri&eacute;t&eacute; intellectuelle</h2>
+   <p>L'ensemble des contenus figurant sur le site <a href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a> sont la propri&eacute;t&eacute; exclusive de la soci&eacute;t&eacute; <a href="https://www.cyberlife.sh/">cyberlife.sh</a>.</p>
+   <p>Toute reproduction ou repr&eacute;sentation totale ou partielle de ce site par quelque proc&eacute;d&eacute; que ce soit, sans l'autorisation expresse de la soci&eacute;t&eacute; <a href="https://www.cyberlife.sh/">cyberlife.sh</a> est interdite et constituerait une contrefa&ccedil;on sanctionn&eacute;e par les articles L 335-2 et suivants du Code de la propri&eacute;t&eacute; intellectuelle.</p>
+   <p>Toute reproduction, imitation ou usage, total ou partiel, des contenus figurant sur le site Internet <a href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a> sans l'autorisation expresse de l'&eacute;diteur engage la responsabilit&eacute; de leur auteur au titre de contrefa&ccedil;on quand ils sont prot&eacute;g&eacute;s par un droit de propri&eacute;t&eacute; intellectuelle et sur le fondement de la responsabilit&eacute; civile dans tout autre cas de figure.</p>
+   <p>Il en est de m&ecirc;me pour les &eacute;ventuelles bases de donn&eacute;es figurant sur le site Internet <a href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a> qui sont prot&eacute;g&eacute;es par les dispositions de la loi du 1er juillet 1998 portant transposition dans le Code de la propri&eacute;t&eacute; intellectuelle (CPI) de la directive europ&eacute;enne du 11 mars 1996 relative &agrave; la protection juridique des bases de donn&eacute;es.</p>
+   <p>Toute information accessible via un lien hypertexte n'est pas publi&eacute;e par la soci&eacute;t&eacute; <a href="https://www.cyberlife.sh/">cyberlife.sh</a>. La soci&eacute;t&eacute; <a href="https://www.cyberlife.sh/">cyberlife.sh</a> ne dispose d'aucun droit sur le contenu pr&eacute;sent dans les liens hypertextes.</p>
+   <h2>Responsabilit&eacute;</h2>
+   <p>La responsabilit&eacute; de l&rsquo;Editeur ne peut &ecirc;tre engag&eacute;e en cas de d&eacute;faillance, panne ou interruption emp&ecirc;chant l&rsquo;acc&egrave;s au Site ou limitant son usage.</p>
+   <p>Le mat&eacute;riel de connexion et de navigation utilis&eacute;e rel&egrave;ve de la seule responsabilit&eacute; de son utilisateur, lequel doit prendre toutes les mesures appropri&eacute;es pour prot&eacute;ger son mat&eacute;riel, s&rsquo;agissant notamment d&rsquo;attaques virales.</p>
+   <p>L&rsquo;Editeur d&eacute;cline toute responsabilit&eacute; r&eacute;sultant d&rsquo;une intrusion frauduleuse d&rsquo;un tiers ayant entrain&eacute; une modification des informations pr&eacute;sent&eacute;es sur le site <a href="https://www.hack-with-hyweene.com/">www.hack-with-hyweene.com</a>.</p>
   </main>
-  <footer class="px-5 mt-10 xl:px-0 bg-slate-900 text-gray-200 border-t border-gray-500">
-   <div class="mx-auto lg:max-w-4xl">
-    <div class="pt-5 pb-5 grid grid-cols-1 md:grid-cols-4 md:gap-4">
-     <div class="mx-auto md:mx-0 md:col-span-1">
-      <img alt="logo" class="aspect-square object-fill rounded-xl" loading="lazy" src="/static/img/hyweene.jpg">
-     </div>
-     <div class="pt-5 md:pl-5 md:pt-0 my-auto md:col-span-3 text-md text-gray-200">
-      <div>
-       <h2 class="text-2xl font-semibold text-white">Hyweene</h2>
-       <p class="pt-2">Je m'appelle Hyweene (aussi connu comme Bruno Giarrizzo), 35 ans.</p>
-       <p class="pt-2">Je suis un ancien administrateur syst&egrave;me et r&eacute;seau, j'ai pris la d&eacute;cision de me reconvertir dans le d&eacute;veloppement web et mobile.</p>
-       <p class="pt-2">Ce site est la compilation de ce que j'apprends pour combler mes propres lacunes et, peut &ecirc;tre, aider d'autres &agrave; apprendre.</p>
-       <p class="pt-2">Vous voulez en savoir plus sur le pourquoi de ce site ? <a class="text-sky-400/75 font-semibold underline hover:text-sky-400 transition-colors duration-300" href="/a-propos/">Cliquez ici</a>.</p>
-      </div>
-     </div>
-    </div>
-   </div>
-   <div class="pt-5 pb-5 border-t border-gray-500 mx-auto lg:max-w-4xl">
-    <p>Swift, SwiftUI, le logo Swift, Swift Playgrounds, Xcode, Instruments, Cocoa Touch, Touch ID, AirDrop,
-            iBeacon, iPhone, iPad, Safari, App Store, watchOS, tvOS, Mac et macOS sont des marques d&eacute;pos&eacute;es d'Apple
-            Inc., enregistr&eacute;es aux &Eacute;tats-Unis et dans d'autres pays.</p>
-   </div>
-   <div class="flex flex-col-reverse mx-auto justify-between pt-5 pb-5 lg:flex-row bg-top border-t border-gray-500 lg:max-w-4xl">
-    <ul>
-     <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/a-propos/">A Propos</a></li>
-     <li class="inline-block mr-5"><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold" href="/mentions-legales/">Mentions L&eacute;gales</a></li>
-    </ul>
-    <ul class="flex flex-col mb-3 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
-     <li><span class="text-md text-gray-200 font-semibold tracking-tight">&copy; 2024</span></li>
-     <li><a class="text-md text-gray-200 hover:text-blue-400 transition-colors duration-300 font-semibold tracking-tight" href="/">Hack-With-Hyweene.com</a></li>
-    </ul>
-   </div>
+  <footer>
+   <nav><a href="/a-propos/">A Propos</a>&bull; <a href="/mentions-legales/">Mentions L&eacute;gales</a>&bull; <a href="https://www.hack-with-hyweene.com">https://www.hack-with-hyweene.com</a></nav>
   </footer>
  </body>
 </html>

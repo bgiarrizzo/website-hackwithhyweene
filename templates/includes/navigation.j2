@@ -1,87 +1,9 @@
-<header class="z-40 h-24 w-full sm:mb-0 relative border-b border-gray-500 text-gray-300">
-    <div class="bg-slate-900 bg-opacity-90 backdrop-blur absolute inset-0"></div>
-    <div class="relative mx-auto flex h-full flex-row items-center justify-between lg:max-w-4xl px-5 lg:px-0 py-2">
-        <div class="hidden lg:flex h-full mx-auto">
-            <a href="/" class="h-14 my-auto">
-                <img src="/static/img/cl-logo.svg" alt="favicon" class="h-14 my-auto mr-4">
-            </a>
-        </div>
-        <div class="hidden lg:flex h-full flex-nowrap items-center">
-            <a href="/" class="text-3xl text-gray-300 mr-4" translate="no">
-                <span class="font-bold">Hack</span>
-                <span class="px-1">with</span>
-                <span class="font-bold">Hyweene</span>
-            </a>
-        </div>
-        <nav class="hidden lg:flex justify-end flex-grow tracking-wide mx-4" aria-label="Navigation">
-            <h2 class="sr-only" id="navigation">Navigation</h2>
-            <menu class="text-heading flex space-x-10 tracking-wider">
-                <li class="group relative">
-                    <a href="/blog/"
-                        class="flex cursor-pointer items-center gap-4 whitespace-nowrap py-4 text-base font-semibold">
-                        <span>Blog</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/liens/" class="inline-flex whitespace-nowrap text-base py-4 font-semibold">Liens</a>
-                </li>
-                <li class="group relative">
-                    <a href="/apprendre/" class="inline-flex whitespace-nowrap text-base py-4 font-semibold">Apprendre</a>
-                </li>
-                <li>
-                    <a href="/cv/" class="inline-flex whitespace-nowrap text-base py-4 font-semibold">CV</a>
-                </li>
-                <li>
-                    <a href="/a-propos/" class="inline-flex whitespace-nowrap text-base py-4 font-semibold">À Propos</a>
-                </li>
-            </menu>
-        </nav>
-        
-        <aside class="flex h-full w-full lg:hidden">
-            <div class="sm:flex hidden h-full items-center">
-                <a href="{{ site.url }}" class="h-full">
-                    <img src="/static/img/cl-logo.svg" alt="favicon" class="h-full">
-                </a>
-            </div>
-            <div class="lg:hidden flex-1 h-full flex-nowrap items-center p-5 pl-0 sm:pl-5 lg:text-center">
-                <a href="/" class="text-3xl text-gray-300" translate="no">
-                    <span class="font-bold">Hack</span>
-                    <span class="px-1">with</span>
-                    <span class="font-bold">Hyweene</span>
-                </a>
-            </div>
-            <div class="flex items-center">
-                <input class="peer hidden" type="checkbox" id="ss-mobile-menu">
-                <label class="relative z-[9999] cursor-pointer px-3 pr-0 py-6" for="ss-mobile-menu">
-                    <svg class="feather feather-menu" fill="none" height="24" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="3" x2="21" y1="12" y2="12"></line>
-                        <line x1="3" x2="21" y1="6" y2="6"></line>
-                        <line x1="3" x2="21" y1="18" y2="18"></line>
-                    </svg>
-                </label>
-                <div class="fixed inset-0 z-[9999] hidden h-full w-full bg-heading/50 backdrop-blur-sm peer-checked:block">&nbsp;</div>
-                <div class="fixed top-0 right-0 z-[9999] h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0 peer-checked:shadow-heading">
-                    <div class="float-right min-h-full w-[85%] bg-slate-900 px-6 pt-12 shadow-2xl">
-                        <menu class="mt-8 mb-8 flex flex-col space-y-4 text-heading">
-                            <li>
-                                <a href="/blog/" class="whitespace-nowrap pb-1 font-semibold">Blog</a>
-                            </li>
-                            <li>
-                                <a href="/liens/" class="whitespace-nowrap pb-1 font-semibold">Liens</a>
-                            </li>
-                            <li>
-                                <a href="/apprendre/" class="whitespace-nowrap pb-1 font-semibold">Apprendre</a>
-                            </li>
-                            <li>
-                                <a href="/cv/" class="whitespace-nowrap pb-1 font-semibold">CV</a>
-                            </li>
-                            <li>
-                                <a href="/a-propos/" class="whitespace-nowrap pb-1 font-semibold">A Propos</a>
-                            </li>
-                        </menu>
-                    </div>
-                </div>
-            </div>
-        </aside>
-    </div>
-</header>
+<nav>
+    <a href="/blog/">Blog</a>
+    &bull;
+    <a href="/liens/">Liens</a>
+    &bull;
+    <a href="/apprendre/">Apprendre</a>
+    &bull;
+    <a href="/cv/">CV</a>
+</nav>

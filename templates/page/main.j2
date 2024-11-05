@@ -1,16 +1,13 @@
+{% if page.cover %}
+  <img class="cover" src="/media/images/pages/{{ page.cover }}" alt="page cover image">
+{% endif %}
 
-<header>
-  {% if page.cover %}
-    <img src="/media/images/pages/{{ page.cover }}" alt="page cover image" class="w-full object-cover object-center rounded-xl shadow-lg mb-5">
-  {% endif %}
+{% if page.title %}
+  <h1>
+    {{ page.title }}
+  </h1>
+{% endif %}
 
-  {% if page.title %}
-    <h1 class="text-4xl font-semibold mb-4">
-      {{ page.title }}
-    </h1>
-  {% endif %}
-</header>
+<hr />
 
-<section>
-  {{ page.body }}
-</section>
+{{ page.body }}

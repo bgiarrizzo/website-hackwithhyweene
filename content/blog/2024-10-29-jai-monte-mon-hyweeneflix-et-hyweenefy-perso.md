@@ -3,18 +3,14 @@ title: J'ai monté mon Hyweene Video et Hyweene Music perso
 summary: Yo-ho yo-ho, a pirate's life for me !
 publish_date: 2024-10-29T23:00:00Z
 publish_date: 2024-10-29T23:00:00Z
+cover: "2024-10-29.png"
+cover_alt: "couverture hyweeneflix"
 category: "Retour d'expérience"
 tags: [films, séries, netlix, spotify, radarr, sonarr, lidarr, bazarr, prowlarr, jellyfin, plex, hyweeneflix, hyweenefy]
 ---
 
 L'année dernière, Léo Duff sortait une vidéo : [J'ai monté mon Netflix perso](https://www.youtube.com/watch?v=J8KcJL9gylA).
 
-<iframe
-  src="https://www.youtube.com/embed/J8KcJL9gylA?si=LivAlEtq8iSFQJSd"
-  width="560" height="315" title="YouTube video player" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-  >
-</iframe>
 
 J'ai trouvé l'idée super interessante, et j'ai décidé de la reproduire chez moi.
 
@@ -77,9 +73,11 @@ Quand j'ajoute un film ou une serie à ma watchlist, Radarr ou Sonarr interrogen
 
 Toute cette petite équipe a besoin d'interconnexions pour fonctionner et que l'automatisation soit parfaite, voici à quoi ressemble la stack :
 
-<center>
-<img src="/media/images/blog/illustration/2024-10-29/stack.png" alt="stack" class="object-cover rounded-lg shadow-md">
-</center>
+<figure>
+  <a href="/media/images/blog/illustration/2024-10-29/stack.png" target="_blank">
+    <img src="/media/images/blog/illustration/2024-10-29/stack.png" alt="stack">
+  </a>
+</figure>
 
 Volontairement, Plex ou Jellyfin ne sont pas présents, parce qu'un peu à part, ils n'ont pas besoin de communiquer avec les autres services, ils ont juste besoin de récupérer les médias, dans un dossier qui leur est propre.
 
