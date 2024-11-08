@@ -1,0 +1,27 @@
+---
+id: 2
+title: Techniques avancées et outils
+summary: ...
+
+publish_date: 2024-11-08T09:30:00Z
+update_date: 2024-11-08T09:30:00Z
+---
+
+...
+
+#### 2.5.1 Gestion de l'historique
+
+- Réécriture de l'historique (git commit --amend, git rebase -i)
+- Utilisation de git reflog pour récupérer des commits perdus
+- Nettoyage du repository (git gc, git prune)
+
+#### 2.5.2 Bisection et débogage
+
+- Utilisation de git bisect pour trouver les régressions
+- Débogage avec git blame
+
+#### 2.5.3 Outils et intégrations
+
+- Interfaces graphiques pour Git (GitKraken, SourceTree, etc.)
+- Intégration de Git dans les IDE
+- Outils d'analyse de repository (GitStats, Git-stats)

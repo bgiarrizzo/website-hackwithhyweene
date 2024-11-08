@@ -1,0 +1,29 @@
+---
+id: 2
+title: Workflows avancés
+summary: ...
+
+publish_date: 2024-11-08T09:30:00Z
+update_date: 2024-11-08T09:30:00Z
+---
+
+...
+
+#### 2.3.1 Modèles de workflow
+
+- GitFlow : branches de fonctionnalités, de release et de hotfix
+- GitHub Flow : modèle simplifié basé sur les pull requests
+- Gitlab Flow : intégration continue et déploiement continu
+- Trunk-based development
+
+#### 2.3.2 Techniques avancées
+
+- Rebase et ses utilisations (git rebase)
+- Rebase interactif pour nettoyer l'historique
+- Cherry-picking (git cherry-pick)
+- Utilisation de tags pour le versioning (git tag)
+
+#### 2.3.3 Gestion des sous-modules et des sous-arbres
+
+- Sous-modules Git : ajout, mise à jour et gestion
+- Sous-arbres Git : alternative aux sous-modules

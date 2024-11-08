@@ -1,0 +1,28 @@
+---
+id: 2
+title: Collaboration et code review
+summary: ...
+
+publish_date: 2024-11-08T09:30:00Z
+update_date: 2024-11-08T09:30:00Z
+---
+
+...
+
+#### 2.4.1 Pull requests
+
+- Création et gestion des pull requests
+- Bonnes pratiques pour les pull requests
+- Revue de code efficace
+
+#### 2.4.2 Gestion des conflits
+
+- Stratégies avancées de résolution des conflits
+- Utilisation d'outils de fusion (mergetools)
+- Prévention des conflits
+
+#### 2.4.3 Automatisation avec Git hooks
+
+- Hooks côté client (pre-commit, post-commit, etc.)
+- Hooks côté serveur
+- Intégration des hooks avec les outils CI/CD

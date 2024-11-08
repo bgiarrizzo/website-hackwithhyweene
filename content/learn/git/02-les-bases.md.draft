@@ -1,0 +1,31 @@
+---
+id: 2
+title: Fondamentaux de Git
+summary: ...
+
+publish_date: 2024-11-08T09:30:00Z
+update_date: 2024-11-08T09:30:00Z
+---
+
+...
+
+#### 2.2.1 Commandes de base
+
+- git init et git clone
+- git add et staging area
+- git commit et bonnes pratiques pour les messages de commit
+- git status, git log, et git diff
+- git push et git pull
+- git fetch vs git pull
+
+#### 2.2.2 Branches et fusion
+
+- Création et gestion des branches (git branch, git checkout, git switch)
+- Fusion de branches (git merge)
+- Résolution des conflits de base
+- Stratégies de branchement (feature branches, release branches)
+
+#### 2.2.3 Remote repositories
+
+- Ajout et gestion des remotes (git remote)
+- Travail avec des repositories distants (GitHub, GitLab, Bitbucket)

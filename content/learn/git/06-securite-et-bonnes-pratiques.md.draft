@@ -1,0 +1,14 @@
+---
+id: 2
+title: Securité et bonnes pratiques
+summary: ...
+
+publish_date: 2024-11-08T09:30:00Z
+update_date: 2024-11-08T09:30:00Z
+---
+
+...
+
+- Gestion des secrets et données sensibles
+- Signature des commits et des tags
+- Bonnes pratiques pour la sécurité du repository

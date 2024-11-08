@@ -5,6 +5,6 @@
     <h2>{{ page.title }}</h2>
 
     <p>{{ page.summary }}</p>
-    <p>Publié le {{ page.publish_date_medium }} {% if page.update_date_medium %}- Mis à jour le {{ page.update_date_medium }}{% endif %}</p>
+    <p>Publié le {{ page.publish_date_medium }} {% if page.update_date_medium %}{% if not page.update_date_medium == page.publish_date_medium %}- Mis à jour le {{ page.update_date_medium }}{% endif %}{% endif %}</p>
     <a href="/apprendre/{{ module.slug }}/{{ page.slug }}">Lire la suite</a>
 {% endfor %}
