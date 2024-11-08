@@ -19,8 +19,8 @@
   <meta content="yes" name="apple-mobile-web-app-capable">
   <meta content="https://www.hack-with-hyweene.com" name="identifier-URL">
   <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - Blog RSS" type="application/rss+xml">
-  <title>Types simples - None - Apprendre - Hack with Hyweene</title>
-  <meta content="Types simples - None - Apprendre - Hack with Hyweene" name="title">
+  <title>Types simples - Swift - Apprendre - Hack with Hyweene</title>
+  <meta content="Types simples - Swift - Apprendre - Hack with Hyweene" name="title">
   <link href="https://www.hack-with-hyweene.com/" rel="canonical">
   <link href="/static/css/prism.css" rel="stylesheet">
   <!-- Google tag (gtag.js) -->
@@ -48,7 +48,9 @@
     figure img { width: 100%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 0.5em; }
     figure figcaption { text-align: center; font-style: italic; }
 
-    footer { margin-top: 1.5em; }</style>
+    footer { margin-top: 1.5em; }
+
+    code { background: #f8cca0; padding: 0.25em;  margin-right: 0.5em; border-radius: 0.5em; }</style>
  </head>
  <body>
   <header>
@@ -58,14 +60,134 @@
   <main>
    <h1></h1>
    <h2>Types simples</h2>
-   <p>Variables
-Strings and integers
-Multi-line strings
-Doubles and booleans
-String interpolation
-Constants
-Type annotations
-Simple types: Summary</p>
+   <h2>Variables</h2>
+   <p>Avec swift, pour cr&eacute;er une nouvelle variable, il faut utiliser le mot cl&eacute;
+    <code>
+     var</code>suivi du nom de la variable.</p>
+   <pre><code class="language-swift">var chaine = "Bonjour !"</code></pre>
+   <p>Ceci cr&eacute;er une variable nomm&eacute;e
+    <code>
+     chaine</code>qui contient la valeur
+    <code>
+     Bonjour !</code>.</p>
+   <p>Swift est un langage fortement typ&eacute;, ce qui signifie que chaque variable doit avoir un type. Dans l'exemple ci-dessus, le type de la variable est inf&eacute;r&eacute; par le compilateur. Cependant, il est possible de sp&eacute;cifier le type de la variable en utilisant une annotation de type.</p>
+   <pre><code class="language-swift">var chaine: String = "Bonjour !"</code></pre>
+   <p>Pour mettre &agrave; jour cette variable, il suffit pour ceci de r&eacute;assigner une nouvelle valeur.</p>
+   <pre><code class="language-swift">chaine = "Au revoir !"</code></pre>
+   <p>Le mot cl&eacute;
+    <code>
+     var</code>est ici inutile, puisqu'il sert &agrave; cr&eacute;er la variable, il n'est pas n&eacute;cessaire pour la mettre &agrave; jour.</p>
+   <h2>Constantes</h2>
+   <p>On a vu, dans les exemples pr&eacute;c&eacute;dents, que pour cr&eacute;er une variable, on utilise le mot cl&eacute;
+    <code>
+     var</code>. Pour cr&eacute;er une constante, on utilise le mot cl&eacute;
+    <code>
+     let</code>.</p>
+   <pre><code class="language-swift">let chaineQuiNeChangeraPas = "1,2,3 ... Soleil !"</code></pre>
+   <p>Si vous voulez mettre &agrave; jour cette constante, le compilateur renverra une erreur. C'est une forme de s&eacute;curit&eacute;, une fois qu'une constante est cr&eacute;&eacute;e, elle ne peut &ecirc;tre modifi&eacute;e.</p>
+   <h2>Entiers, Floats, Doubles and bool&eacute;ens</h2>
+   <p>Swift propose plusieurs types de donn&eacute;es simples pour les entiers, les doubles et les bool&eacute;ens.</p>
+   <h3>Les entiers (Integers)</h3>
+   <p>Les entiers sont des nombres entiers positifs ou n&eacute;gatifs. Swift propose plusieurs types d'entiers :</p>
+   <table>
+    <thead>
+     <tr>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Intervalle</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>Int8</td>
+      <td>Entier sign&eacute; sur 8 bits</td>
+      <td>-128 &agrave; 127</td>
+     </tr>
+     <tr>
+      <td>Int16</td>
+      <td>Entier sign&eacute; sur 16 bits</td>
+      <td>-2^15 &agrave; 2^15-1</td>
+     </tr>
+     <tr>
+      <td>Int32</td>
+      <td>Entier sign&eacute; sur 32 bits</td>
+      <td>-2^31 &agrave; 2^31-1</td>
+     </tr>
+     <tr>
+      <td>Int64</td>
+      <td>Entier sign&eacute; sur 64 bits</td>
+      <td>-2^63 &agrave; 2^63-1</td>
+     </tr>
+     <tr>
+      <td>UInt</td>
+      <td>Entier non sign&eacute;</td>
+      <td>0 &agrave; 2^32 (32-bit) 0 &agrave; 2^64 (64-bit)</td>
+     </tr>
+    </tbody>
+   </table>
+   <pre><code class="language-swift">let taille: Int = 170</code></pre>
+   <p>Parfois, on peut manipuler de grands nombres, et il peut &ecirc;tre difficile de les lire, swift nous propose une syntaxe pour nous simplifer la lecture :</p>
+   <pre><code class="language-swift">let populationDeLaTerre: Int = 8_500_000_000</code></pre>
+   <h3>Les nombres &agrave; virgule flottante (Floats and Doubles)</h3>
+   <p>Les nombres &agrave; virgule flottante peuvent &ecirc;tre repr&eacute;sent&eacute;s par deux types de donn&eacute;es :</p>
+   <table>
+    <thead>
+     <tr>
+      <th>Type</th>
+      <th>Description</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>Float</td>
+      <td>Nombre &agrave; virgule flottante sur 32 bits</td>
+     </tr>
+     <tr>
+      <td>Double</td>
+      <td>Nombre &agrave; virgule flottante sur 64 bits</td>
+     </tr>
+    </tbody>
+   </table>
+   <h4>Floats</h4>
+   <p>Les floats sont cod&eacute;s sur 32 bits et repr&eacute;sente 6 &agrave; 8 d&eacute;cimales.</p>
+   <pre><code class="language-swift">let poids: Float = 75.55</code></pre>
+   <h4>Doubles</h4>
+   <p>Les doubles sont cod&eacute;s sur 64 bits et repr&eacute;sentent 15 &agrave; 17 d&eacute;cimales.</p>
+   <pre><code class="language-swift">let constanteGravitationnelle: Double = 6.67430e-11</code></pre>
+   <h3>Bool&eacute;ens</h3>
+   <p>Les bool&eacute;ens sont des valeurs binaires qui peuvent &ecirc;tre
+    <code>
+     true</code>ou
+    <code>
+     false</code>.</p>
+   <pre><code class="language-swift">let estMajeur: Bool = true</code></pre>
+   <h2>Strings et Multi-line strings</h2>
+   <p>Les cha&icirc;nes de caract&egrave;res sont des s&eacute;quences de caract&egrave;res. Swift propose plusieurs fonctionnalit&eacute;s pour les manipuler.</p>
+   <h3>Strings</h3>
+   <p>Les cha&icirc;nes de caract&egrave;res peuvent &ecirc;tre cr&eacute;&eacute;es en utilisant des guillemets doubles.</p>
+   <pre><code class="language-swift">let prenom: String = "Jean"</code></pre>
+   <h3>Multi-line strings</h3>
+   <p>Comme en Python, les cha&icirc;nes de caract&egrave;res multi-lignes peuvent &ecirc;tre cr&eacute;&eacute;es en utilisant trois guillemets doubles.</p>
+   <pre><code class="language-swift">let declarationDesDroitsDeLHomme: String = """
+Article Premier
+Les hommes naissent et demeurent libres et &eacute;gaux en droits.
+Les distinctions sociales ne peuvent &ecirc;tre fond&eacute;es que sur l'utilit&eacute; commune.
+"""</code></pre>
+   <h2>String interpolation</h2>
+   <p>Il peut &ecirc;tre utile de combiner une chaine de caract&egrave;res fixe avec une variable. On peut proc&eacute;der de cette fa&ccedil;on :</p>
+   <pre><code class="language-swift">let prenom: String = "Jean"
+let age: Int = 25
+let message: String = "Bonjour, je m'appelle \(prenom) et j'ai \(age) ans."</code></pre>
+   <p>Dans cet exemple,
+    <code>
+     prenom</code>et
+    <code>
+     age</code>sont ins&eacute;r&eacute;s dans la cha&icirc;ne de caract&egrave;res
+    <code>
+     message</code>en utilisant la syntaxe
+    <code>
+     \(variable)</code>, ce qui donnera comme r&eacute;sultat :</p>
+   <pre><code class="language-swift">"Bonjour, je m'appelle Jean et j'ai 25 ans."</code></pre>
    <script src="/static/js/prism.js">
    </script>
   </main>

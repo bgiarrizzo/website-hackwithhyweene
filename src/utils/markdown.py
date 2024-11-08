@@ -2,7 +2,6 @@ import yaml
 from markdown2 import Markdown
 import re
 
-
 class PrismCodeProcessor:
     def __init__(self):
         self.fence_re = re.compile(r"^```\s*(\w+)?")
@@ -53,7 +52,7 @@ class CustomMarkdown(Markdown):
         return super().convert(text)
 
 
-markdown_parser = CustomMarkdown(extras=["fenced-code-blocks"])
+markdown_parser = CustomMarkdown(extras=["tables"])
 
 
 def convert_markdown_text_to_html(markdown_content):
@@ -62,17 +61,24 @@ def convert_markdown_text_to_html(markdown_content):
 
 def parse_yaml_header_and_markdown_body_in_file(markdown_file_path):
     with open(markdown_file_path, mode="r", encoding="utf-8") as markdown_file:
-        markdown_file_content = markdown_file.read()
-        markdown_file_content = markdown_file_content.split("---")
-
-        yaml_header = yaml.load(markdown_file_content[1], Loader=yaml.FullLoader)
-        markdown_body = markdown_file_content[2]
+        content = markdown_file.read()
+        
+        pattern = r'^---\s*\n(.*?)\n---\s*\n'
+        match = re.match(pattern, content, re.DOTALL)
+        
+        if match:
+            yaml_header_str = match.group(1)
+            yaml_header = yaml.safe_load(yaml_header_str)
+            
+            body_start = match.end()
+            markdown_body = content[body_start:].strip()
+        else:
+            yaml_header = {}
+            markdown_body = content
 
         return yaml_header, markdown_body
 
 
 def parse_markdown_file_and_convert_to_html(file):
-    yaml_header, markdown_body = parse_yaml_header_and_markdown_body_in_file(
-        file
-    )
+    yaml_header, markdown_body = parse_yaml_header_and_markdown_body_in_file(file)
     return yaml_header | {"body": convert_markdown_text_to_html(markdown_body)}

@@ -5,10 +5,12 @@ class Resume:
     end_date: str
     body: str
 
+
 class ResumeEducation(Resume):
     school: str
     formation_type: str
     status: str
+
 
 class ResumeExperience(Resume):
     company: str

@@ -7,7 +7,7 @@
     <ul>
         {% for post in posts %}
             <li>
-                <a href="/blog/{{ post.slug }}/">{{ post.publish_date_short }} : {% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a>
+                <a href="/blog/{{ post.slug }}/">{{ post.publish_date_medium }} : {% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a>
             </li>
         {% endfor %}
     </ul>

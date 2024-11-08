@@ -8,7 +8,7 @@
     <ul>
         {% for post in posts[-5:] | reverse  %}
             <li>
-                <a href="/blog/{{ post.slug }}/">{{ post.publish_date_short }} : {% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a>
+                <a href="/blog/{{ post.slug }}/">{{ post.publish_date_medium }} : {% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a>
             </li>
         {% endfor %}
     </ul>
@@ -22,7 +22,7 @@
   <ul>
     {% for link in links[-5:] | reverse  %}
       <li>
-        <a href="/liens/{{ link.slug }}">{{ link.publish_date_short }} : {{ link.title }}</a>
+        <a href="/liens/{{ link.slug }}">{{ link.publish_date_medium }} : {{ link.title }}</a>
       </li>
     {% endfor %}
   </ul>

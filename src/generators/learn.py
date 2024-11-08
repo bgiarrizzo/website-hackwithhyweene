@@ -11,7 +11,7 @@ def generate_module_page(module_slug, page):
     template_name = "learn/page.j2"
     data = {
         "learn": page,
-        "page_title": f"{page.get('title')} - {page.get('module')} - Apprendre",
+        "page_title": f"{page.get('title')} - {page.get('module_name')} - Apprendre",
     }
     filename = f"apprendre/{module_slug}/{page.get('slug')}/index.html"
 
@@ -20,6 +20,7 @@ def generate_module_page(module_slug, page):
 
 def generate_learning_module_pages(module_data):
     for module_page in module_data.get("module_pages"):
+        module_page["module_name"] = module_data.get("module_name")
         print(f"Generating module page: {module_page.get('title')} ...")
         generate_module_page(module_data.get("module_slug"), module_page)
 
@@ -57,10 +58,10 @@ def prepare_learn_data(learning_path):
 
     for module_file in get_all_files_from_path(learning_path, extension=".yml"):
         module = parse_yaml(module_file)
-        
+
         if module.get("disabled"):
             continue
-        
+
         module["module_slug"] = slugify(module["module_name"])
         module["module_path"] = "/".join(module_file.split("/")[:-1])
         module["module_pages"] = []
@@ -71,7 +72,7 @@ def prepare_learn_data(learning_path):
             module_page = parse_markdown_file_and_convert_to_html(module_page)
             module_page = add_multiple_date_formats(module_page)
             module_page = add_slug(module_page)
-            
+
             module["module_pages"].append(module_page)
 
         modules.append(module)

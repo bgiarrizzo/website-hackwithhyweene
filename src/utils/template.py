@@ -9,13 +9,13 @@ from config import settings
 def date_older_than_one_year(date):
     if not date:
         return False
-    
+
     # Convertir les deux dates en naive datetime si elles ne le sont pas déjà
     if date.tzinfo:
         date = date.replace(tzinfo=None)
-    
+
     now = datetime.now()
-    
+
     # Comparer les dates
     return date < now - timedelta(days=180)
 

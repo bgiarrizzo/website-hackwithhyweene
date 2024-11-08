@@ -22,6 +22,7 @@ def generate_link_page(link):
 
     write_file(data, template_name, filename)
 
+
 def generate_link_page_list(links):
     data = {"page_title": "Liens", "all_links": links}
     template_name = "links/list.j2"
@@ -46,7 +47,7 @@ def build_links(links_path):
     print("Generating links ...")
 
     link_files = get_all_files_from_path(links_path)
-    
+
     for link_file in link_files:
         link = prepare_link_data(link_file)
         generate_link_page(link)

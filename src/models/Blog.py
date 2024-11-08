@@ -1,5 +1,6 @@
 from typing import List
 
+
 class BlogPost:
     id: str
     title: str
@@ -29,4 +30,3 @@ class BlogPostList:
 
 class Blog:
     posts: BlogPostList = BlogPostList()
-

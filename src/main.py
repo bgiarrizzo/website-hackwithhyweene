@@ -25,7 +25,7 @@ if __name__ == "__main__":
     links = build_links(settings.LINKS_PATH)
     pages = build_pages(settings.PAGES_PATH)
     resume = build_resume(settings.RESUME_PATH)
-    
+
     build_learning(settings.LEARN_PATH)
 
     build_homepage(blog, links)
