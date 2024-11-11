@@ -4,7 +4,7 @@ title: Types simples
 summary: Swift propose des types simples tels que les entiers, les chaînes de caractères, les doubles et les booléens, qui sont fondamentaux pour la manipulation des données. Le langage privilégie la sécurité des types en encourageant l'utilisation de constantes avec "let" et permet des annotations de type pour une meilleure clarté. De plus, des fonctionnalités comme l'interpolation de chaînes et les chaînes multi-lignes simplifient la gestion du texte.
 
 publish_date: 2024-11-08T19:00:00Z
-update_date: 2024-11-08T19:00:00Z
+update_date: 2024-11-11T22:30:00Z
 ---
 
 ## Variables
@@ -17,7 +17,7 @@ var chaine = "Bonjour !"
 
 Ceci créer une variable nommée `chaine` qui contient la valeur `Bonjour !`.
 
-Swift est un langage fortement typé, ce qui signifie que chaque variable doit avoir un type. Dans l'exemple ci-dessus, le type de la variable est inféré par le compilateur. Cependant, il est possible de spécifier le type de la variable en utilisant une annotation de type.
+Swift est un langage fortement typé, ce qui signifie que chaque variable doit avoir un type. Dans l'exemple ci-dessus, le type de la variable est inféré par le compilateur. Cependant, il est possible de spécifier le type de la variable de manière plus explicite, en utilisant une annotation de type.
 
 ```swift
 var chaine: String = "Bonjour !"
