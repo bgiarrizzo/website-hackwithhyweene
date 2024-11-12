@@ -1,43 +1,47 @@
-<img class="cover" src="/media/images/pages/resume/cover.png" alt="resume cover image">
+{% extends "main.j2" %}
 
-<h1 class="text-4xl font-semibold mb-5">CV</h1>
+{% block content %}
+    <img class="cover" src="/media/images/pages/resume/cover.png" alt="resume cover image">
 
-<hr />
+    <h1 class="text-4xl font-semibold mb-5">CV</h1>
 
-{{ resume.head }}
+    <hr />
 
-{% if resume.experiences %}
-    <h2>Experiences Professionnelles</h2>
+    {{ resume.head }}
 
-    {% for experience in resume.experiences|reverse %}
-        <section>
-            <h3>{{ experience.company }}</h3>
-            <p class="font-bold">{{ experience.title }} - ({{ experience.contract_type }}) : {{ experience.start_date }} -> {{ experience.end_date }}</p>
+    {% if resume.experiences %}
+        <h2>Experiences Professionnelles</h2>
 
-            {{ experience.body }}
+        {% for experience in resume.experiences|reverse %}
+            <section>
+                <h3>{{ experience.company }}</h3>
+                <p class="font-bold">{{ experience.title }} - ({{ experience.contract_type }}) : {{ experience.start_date }} -> {{ experience.end_date }}</p>
 
-            {% if experience.tags %}
-                <footer>
-                    {% for tag in experience.tags %}#{{ tag }} {% endfor %}
-                </footer>
-            {% endif %}
-        </section>
-    {% endfor %}
-{% endif %}
+                {{ experience.body }}
 
-{% if resume.educations %}
-    <h2>Education</h2>
+                {% if experience.tags %}
+                    <footer>
+                        {% for tag in experience.tags %}#{{ tag }} {% endfor %}
+                    </footer>
+                {% endif %}
+            </section>
+        {% endfor %}
+    {% endif %}
 
-    {% for education in resume.educations|reverse %}
-        <section>
-            <h3>{{ education.title }}</h3>
-            <p class="font-bold">{{ education.school }} - {{ education.formation_type }} : {{ education.start_date }} -> {{ education.end_date }} ( {{ education.status }} )</p>
+    {% if resume.educations %}
+        <h2>Education</h2>
 
-            {{ education.body }}
+        {% for education in resume.educations|reverse %}
+            <section>
+                <h3>{{ education.title }}</h3>
+                <p class="font-bold">{{ education.school }} - {{ education.formation_type }} : {{ education.start_date }} -> {{ education.end_date }} ( {{ education.status }} )</p>
 
-            {% if education.tags %}
-                {% for tag in education.tags %}#{{ tag }} {% endfor %}
-            {% endif %}
-        </section>
-    {% endfor %}
-{% endif %}
+                {{ education.body }}
+
+                {% if education.tags %}
+                    {% for tag in education.tags %}#{{ tag }} {% endfor %}
+                {% endif %}
+            </section>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

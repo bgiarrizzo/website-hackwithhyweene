@@ -1,6 +1,6 @@
 ---
 title: Transformation - Semaine 2
-summary: Première semaine de transformation, et je suis mitigé.
+summary: Semaine 2, bien mieux, mais on peut encore gratter plus loin !
 publish_date: 2024-11-11T22:00:00Z
 publish_date: 2024-11-11T22:00:00Z
 category: "Sport & Transformation"
@@ -9,7 +9,7 @@ tags: ["sport", "transformation", "fitness", "santé", "bien-être", "perte de p
 
 <a href="/blog/transformation-semaine-1/">La semaine dernière</a>, j'avais dit être mitigé par mon parcours.
 
-J'avais eu un gros problème à me mettre en train, j'avais aussi eu de gros soucis pour dormir correctement (la moyenne de `7h14` de sommeil sur la semaine, due a des nuits de `5h30` a fait plutôt mal), et un jour ferié mal placé m'ont donné du mal.
+J'avais eu un gros problème à me mettre en train, j'avais aussi eu de gros soucis pour dormir correctement (la moyenne de `7h33` de sommeil sur la semaine, due a des nuits de `5h30` a fait plutôt mal), et un jour ferié mal placé m'ont donné du mal.
 
 Mais je me suis rattrappé cette semaine !
 

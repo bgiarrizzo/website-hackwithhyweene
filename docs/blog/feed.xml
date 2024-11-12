@@ -1,104 +1,43 @@
-<!DOCTYPE html>
-<html lang="fr-FR" prefix="og: http://ogp.me/ns#">
- <head>
-  <!-- Favicon -->
-  <link href="https://www.hack-with-hyweene.com/static/img/cl-logo.svg" rel="icon">
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=5.0" name="viewport">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="telephone=no" name="format-detection">
-  <meta content="Bruno 'Hyweene' Giarrizzo" name="author">
-  <meta content="Hack with Hyweene" name="webmaster">
-  <meta content="fr" name="language">
-  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
-  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="googlebot">
-  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="bingbot">
-  <meta content="1 days" name="revisit-after">
-  <meta content="never" name="expires">
-  <meta content="General" name="rating">
-  <meta content="yes" name="apple-mobile-web-app-capable">
-  <meta content="https://www.hack-with-hyweene.com" name="identifier-URL">
-  <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - Blog RSS" type="application/rss+xml">
-  <title>Hack with Hyweene</title>
-  <meta content="Hack with Hyweene" name="title">
-  <meta content="Bruno, Giarrizzo, Hyweene, Bruno Giarrizzo, Developpeur, DevOps, Git, Apple, Golang, Go, Python, Swift, SwiftUI, Docker, Kubernetes, POO, OOP, Programmation Orient&eacute;e Objet, Programmation Fonctionnelle" name="keywords">
-  <link href="https://www.hack-with-hyweene.com/" rel="canonical">
-  <link href="/static/css/prism.css" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T0SNK38Q">
-  </script>
-  <script src="/static/js/analytics.js">
-  </script>
-  <style>body { margin: 0 auto; max-width: 700px; line-height: 1.8; font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif; font-size: 1rem; color: #444; background-color: #fdf6e3; padding: 20px 40px; text-rendering: optimizeLegibility; }
-    h1 { line-height: 1.2; text-align: center; }
-    h2, h3, h4 { line-height: 1.2; border-bottom: 1px solid; }
-    p { hyphens: auto; text-align: justify; }
-    pre, blockquote, .code { background: #f5ead6; font-size: 0.8em; padding: 1em; overflow: scroll; border-radius: 0.5em; }
-    ul, ol { list-style-type: circle; }
-    a { color: #169; text-decoration: none; padding: 0.5em 0; }
-    a:hover { text-decoration: underline; }
-    
-    nav { display: flex; align-items: center; justify-content: space-between; flex-direction: row; text-align: center; font-variant: small-caps; font-weight: bold; border-bottom: 1px solid; border-top: 1px solid; margin-bottom: 1.5em; }
-    
-    main { text-align: justify; }
-    main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
-
-    .cover { display: block; width: 100%; border-radius: 0.5em; }
-
-    figure { width: 65%; display: block; margin-left: auto; margin-right: auto;}
-    figure img { width: 100%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 0.5em; }
-    figure figcaption { text-align: center; font-style: italic; }
-
-    footer { margin-top: 1.5em; }
-
-    code { background: #f8cca0; padding: 0.25em;  margin-right: 0.5em; border-radius: 0.5em; }</style>
- </head>
- <body>
-  <header>
-   <h1><a href="/">Hack with Hyweene</a></h1>
-  </header>
-  <nav><a href="/blog/">Blog</a>&bull; <a href="/liens/">Liens</a>&bull; <a href="/apprendre/">Apprendre</a>&bull; <a href="/cv/">CV</a></nav>
-  <main>
-   <?xml version="1.0" encoding="utf-8"?>
-   <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>hack-with-hyweene.com</title>
-    <subtitle>Freelance Developer, DevOps, Ethical Hacker</subtitle>
-    <updated></updated>
-    <link href="https://www.hack-with-hyweene.com/blog/" rel="alternate" type="text/html">
-     <id>https://www.hack-with-hyweene.com/blog/</id>
-     <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="self" type="application/atom+xml">
-      <entry xml:lang="en">
-       <title type="html">Hello World!</title> <author><name></name>
-        <uri>https://www.hack-with-hyweene.com</uri>
-       </author>
-       <id>https://www.hack-with-hyweene.com/blog/hello-world/</id>
-       <published>2020-08-27 09:30:00+00:00</published>
-       <updated>2020-08-27 09:30:00+00:00</updated>
-       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/hello-world/
-       <summary>
-        Hello World!</summary>
-       <content type="html">
-        <p>Hello World</p>
-       </content>
-      </entry>
-      <entry xml:lang="en">
-       <title type="html">Comment installer psycopg2-binary sur Apple M1</title> <author><name></name>
-        <uri>https://www.hack-with-hyweene.com</uri>
-       </author>
-       <id>https://www.hack-with-hyweene.com/blog/comment-installer-psycopg2-binary-sur-apple-m1/</id>
-       <published>2021-10-17 09:30:00+00:00</published>
-       <updated>2021-10-17 09:30:00+00:00</updated>
-       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/comment-installer-psycopg2-binary-sur-apple-m1/
-       <summary>
-        J'ai rencontr&eacute; quelques difficult&eacute;s en travaillant avec du code Python acc&eacute;dant &agrave; des bases de donn&eacute;es PostgreSQL. Voici comment j'ai r&eacute;solu le probl&egrave;me.</summary>
-       <content type="html">
-        <p>Le mois dernier, je me suis offert un Apple M1, un tr&egrave;s bon ordinateur, puissant et avec une autonomie impressionnante.</p>
-        <p>Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqu&eacute;.</p>
-        <p>J'essaie de travailler avec les derni&egrave;res versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
-        <p>Je l'ai install&eacute; avec brew, assez facilement :</p>
-        <pre><code class="language-bash">brew install python@3.10</code></pre>
-        <p>J'ai eu des probl&egrave;mes avec psycopg2-binary lors de l'installation des d&eacute;pendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais &eacute;tait celui-ci :</p>
-        <pre><code class="language-bash">Error: pg_config executable not found.
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>hack-with-hyweene.com</title>
+ <subtitle>Freelance Developer, DevOps, Ethical Hacker</subtitle>
+ <updated></updated>
+ <link href="https://www.hack-with-hyweene.com/blog/" rel="alternate" type="text/html">
+ <id>https://www.hack-with-hyweene.com/blog/</id>
+ <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="self" type="application/atom+xml">
+ <entry xml:lang="en">
+  <title type="html">Hello World!</title> <author><name></name>
+   <uri>https://www.hack-with-hyweene.com</uri>
+  </author>
+  <id>https://www.hack-with-hyweene.com/blog/hello-world/</id>
+  <published>2020-08-27 09:30:00+00:00</published>
+  <updated>2020-08-27 09:30:00+00:00</updated>
+  <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/hello-world/
+  <summary>
+   Hello World!</summary>
+  <content type="html">
+   <p>Hello World</p>
+  </content>
+ </entry>
+ <entry xml:lang="en">
+  <title type="html">Comment installer psycopg2-binary sur Apple M1</title> <author><name></name>
+   <uri>https://www.hack-with-hyweene.com</uri>
+  </author>
+  <id>https://www.hack-with-hyweene.com/blog/comment-installer-psycopg2-binary-sur-apple-m1/</id>
+  <published>2021-10-17 09:30:00+00:00</published>
+  <updated>2021-10-17 09:30:00+00:00</updated>
+  <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/comment-installer-psycopg2-binary-sur-apple-m1/
+  <summary>
+   J'ai rencontr&eacute; quelques difficult&eacute;s en travaillant avec du code Python acc&eacute;dant &agrave; des bases de donn&eacute;es PostgreSQL. Voici comment j'ai r&eacute;solu le probl&egrave;me.</summary>
+  <content type="html">
+   <p>Le mois dernier, je me suis offert un Apple M1, un tr&egrave;s bon ordinateur, puissant et avec une autonomie impressionnante.</p>
+   <p>Mon travail avec est assez simple, je code des API Python, quelques applications frontales simples avec TypeScript/React, j'essaie un peu de Go, j'apprends Swift et j'administre quelques clusters Kubernetes. Rien de trop sophistiqu&eacute;.</p>
+   <p>J'essaie de travailler avec les derni&egrave;res versions des logiciels que j'utilise, et dans ce cas, Python 3.10.</p>
+   <p>Je l'ai install&eacute; avec brew, assez facilement :</p>
+   <pre><code class="language-bash">brew install python@3.10</code></pre>
+   <p>J'ai eu des probl&egrave;mes avec psycopg2-binary lors de l'installation des d&eacute;pendances d'un des projets sur lesquels je travaille. Le message d'erreur que j'obtenais &eacute;tait celui-ci :</p>
+   <pre><code class="language-bash">Error: pg_config executable not found.
 
 pg_config is required to build psycopg2 from source.  Please add the directory
 containing pg_config to the $PATH or specify the full executable path with the
@@ -107,34 +46,34 @@ option:
     python setup.py build_ext --pg-config /path/to/pg_config build ...
 
 or with the pg_config option in 'setup.cfg'.</code></pre>
-        <p>Il semble qu'il manque un fichier de configuration. J'ai essay&eacute; de r&eacute;soudre ce probl&egrave;me en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
-        <pre><code class="language-bash">brew install postgresql@12</code></pre>
-        <p>&Agrave; ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette fa&ccedil;on (en utilisant ZSH, il me dit &eacute;videmment de l'&eacute;crire dans .zshrc) :</p>
-        <pre><code class="language-bash">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' &gt; ~/.zshrc</code></pre>
-        <p>Maintenant, tout est pr&ecirc;t, et je peux l'installer comme je le souhaite :</p>
-        <pre><code class="language-bash">pip(3) install psycopg2-binary</code></pre>
-        <p>Ou dans le r&eacute;pertoire de mon projet :</p>
-        <pre><code class="language-bash">pipenv install psycopg2-binary</code></pre>
-       </content>
-      </entry>
-      <entry xml:lang="en">
-       <title type="html">Comment j'ai enrichi des m&eacute;triques Prometheus</title> <author><name></name>
-        <uri>https://www.hack-with-hyweene.com</uri>
-       </author>
-       <id>https://www.hack-with-hyweene.com/blog/comment-j-ai-enrichi-des-metriques-prometheus/</id>
-       <published>2022-05-05 09:30:00+00:00</published>
-       <updated>2022-05-05 09:30:00+00:00</updated>
-       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/comment-j-ai-enrichi-des-metriques-prometheus/
-       <summary>
-        Les m&eacute;triques de l'exporter VMWare n'avaient pas toutes les informations que nous voulions. Voici comment je les ai enrichies.</summary>
-       <content type="html">
-        <h2>Contexte</h2>
-        <p>Dans ma mission actuelle, afin de mettre en place une f&eacute;d&eacute;ration de m&eacute;triques, nous devons collecter des m&eacute;triques VMware.</p>
-        <p>Nous avons donc utilis&eacute; le <a href="https://github.com/pryorda/vmware_exporter">vmware_exporter</a> de <a href="https://github.com/pryorda">Daniel Pryor</a>, et pour ne pas le modifier, j'ai &eacute;crit une petite interface avec fastapi.</p>
-        <p>Les m&eacute;triques sont r&eacute;cup&eacute;r&eacute;es par fastapi, analys&eacute;es, enrichies, res&eacute;rialis&eacute;es, et r&eacute;colt&eacute;es par prometheus.</p>
-        <p>Les noms des m&eacute;triques doivent &ecirc;tre mapp&eacute;s, car ils sont unifi&eacute;s avec les m&eacute;triques d'openstack et d'IBM cloud.</p>
-        <p>La table de mappage est celle ci-dessous :</p>
-        <pre><code class="language-python">MAPPING_METRICS_NAME = {
+   <p>Il semble qu'il manque un fichier de configuration. J'ai essay&eacute; de r&eacute;soudre ce probl&egrave;me en installant le serveur PostgreSQL pour obtenir ce fichier manquant :</p>
+   <pre><code class="language-bash">brew install postgresql@12</code></pre>
+   <p>&Agrave; ce stade, brew me dit de configurer le chemin vers PG dans mon PATH, de cette fa&ccedil;on (en utilisant ZSH, il me dit &eacute;videmment de l'&eacute;crire dans .zshrc) :</p>
+   <pre><code class="language-bash">echo 'export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"' &gt; ~/.zshrc</code></pre>
+   <p>Maintenant, tout est pr&ecirc;t, et je peux l'installer comme je le souhaite :</p>
+   <pre><code class="language-bash">pip(3) install psycopg2-binary</code></pre>
+   <p>Ou dans le r&eacute;pertoire de mon projet :</p>
+   <pre><code class="language-bash">pipenv install psycopg2-binary</code></pre>
+  </content>
+ </entry>
+ <entry xml:lang="en">
+  <title type="html">Comment j'ai enrichi des m&eacute;triques Prometheus</title> <author><name></name>
+   <uri>https://www.hack-with-hyweene.com</uri>
+  </author>
+  <id>https://www.hack-with-hyweene.com/blog/comment-j-ai-enrichi-des-metriques-prometheus/</id>
+  <published>2022-05-05 09:30:00+00:00</published>
+  <updated>2022-05-05 09:30:00+00:00</updated>
+  <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/comment-j-ai-enrichi-des-metriques-prometheus/
+  <summary>
+   Les m&eacute;triques de l'exporter VMWare n'avaient pas toutes les informations que nous voulions. Voici comment je les ai enrichies.</summary>
+  <content type="html">
+   <h2>Contexte</h2>
+   <p>Dans ma mission actuelle, afin de mettre en place une f&eacute;d&eacute;ration de m&eacute;triques, nous devons collecter des m&eacute;triques VMware.</p>
+   <p>Nous avons donc utilis&eacute; le <a href="https://github.com/pryorda/vmware_exporter">vmware_exporter</a> de <a href="https://github.com/pryorda">Daniel Pryor</a>, et pour ne pas le modifier, j'ai &eacute;crit une petite interface avec fastapi.</p>
+   <p>Les m&eacute;triques sont r&eacute;cup&eacute;r&eacute;es par fastapi, analys&eacute;es, enrichies, res&eacute;rialis&eacute;es, et r&eacute;colt&eacute;es par prometheus.</p>
+   <p>Les noms des m&eacute;triques doivent &ecirc;tre mapp&eacute;s, car ils sont unifi&eacute;s avec les m&eacute;triques d'openstack et d'IBM cloud.</p>
+   <p>La table de mappage est celle ci-dessous :</p>
+   <pre><code class="language-python">MAPPING_METRICS_NAME = {
     "vmware_vm_power_state" : "power_state"
     "vmware_vm_cpu_usage_average"': "cpu_usage_percentage"
     "vmware_vm_mem_consumed_average": "memory_used"
@@ -142,25 +81,25 @@ or with the pg_config option in 'setup.cfg'.</code></pre>
     "vmware_vm_mem_usage_average": "memory_usage_percentage",
     "vmware_vm_num_cpu": "vcpus"
 }</code></pre>
-        <h2>&Eacute;tape 1 : Analyse des m&eacute;triques de vmware_exporter</h2>
-        <p>L'exporter est appel&eacute; depuis une fonction nomm&eacute;e request_exporter().</p>
-        <p>La sortie de l'exporter est un grand fichier str qui doit &ecirc;tre analys&eacute; pour &ecirc;tre trait&eacute;.</p>
-        <p>J'ai utilis&eacute; prometheus_client.parser pour cela.</p>
-        <pre><code class="language-python">from prometheus_client.parser import text_string_to_metric_families
+   <h2>&Eacute;tape 1 : Analyse des m&eacute;triques de vmware_exporter</h2>
+   <p>L'exporter est appel&eacute; depuis une fonction nomm&eacute;e request_exporter().</p>
+   <p>La sortie de l'exporter est un grand fichier str qui doit &ecirc;tre analys&eacute; pour &ecirc;tre trait&eacute;.</p>
+   <p>J'ai utilis&eacute; prometheus_client.parser pour cela.</p>
+   <pre><code class="language-python">from prometheus_client.parser import text_string_to_metric_families
 
 data_from_exporter = request_exporter(target)
 metric_families = text_string_to_metric_families(data_from_exporter)</code></pre>
-        <p>La variable metric_families est un objet &agrave; plusieurs niveaux contenant des m&eacute;triques regroup&eacute;es par nom de m&eacute;trique.</p>
-        <p>Elle peut &ecirc;tre repr&eacute;sent&eacute;e comme un dict, o&ugrave; la cl&eacute; est le metric_name et la valeur est une liste contenant toutes les m&eacute;triques sous forme de tuples.</p>
-        <p>Exemple :</p>
-        <pre><code class="language-python">{
+   <p>La variable metric_families est un objet &agrave; plusieurs niveaux contenant des m&eacute;triques regroup&eacute;es par nom de m&eacute;trique.</p>
+   <p>Elle peut &ecirc;tre repr&eacute;sent&eacute;e comme un dict, o&ugrave; la cl&eacute; est le metric_name et la valeur est une liste contenant toutes les m&eacute;triques sous forme de tuples.</p>
+   <p>Exemple :</p>
+   <pre><code class="language-python">{
     "vmware_vm_power_state": [
         ("vmware_vm_power_state", {"vm_name": "vm1", "label2": "value2"}, 1),
         ("vmware_vm_power_state", {"vm_name": "vm2", "label2": "value2"}, 0),
     ]
 }</code></pre>
-        <p>J'ai donc fait un petit algorithme pour aplatir l'objet en une liste de dicts :</p>
-        <pre><code class="language-python">processed_exporter_data = []
+   <p>J'ai donc fait un petit algorithme pour aplatir l'objet en une liste de dicts :</p>
+   <pre><code class="language-python">processed_exporter_data = []
 
 for family in data_from exporter:
     if family.name not in MAPPING_METRICS_NAME:
@@ -172,19 +111,19 @@ for family in data_from exporter:
             row dict[key] = value
         row_dict["value"] = sample
         processed exporter_data.append(row_dict)</code></pre>
-        <p>J'aurai alors une liste de dicts, &agrave; partir de laquelle un dataframe peut &ecirc;tre cr&eacute;&eacute;.</p>
-        <pre><code class="language-python">[
+   <p>J'aurai alors une liste de dicts, &agrave; partir de laquelle un dataframe peut &ecirc;tre cr&eacute;&eacute;.</p>
+   <pre><code class="language-python">[
     {"__name__": "vmware_vm_power_state", "vm_name": "vm1", "value": 1},
     {"__name__": "vmware_vm_power_state", "vm_name": "vm2", "value": 0},
 ]</code></pre>
-        <p>Maintenant, jouons avec les dataframes...</p>
-        <h2>&Eacute;tape 2 : Jouer avec les dataframes</h2>
-        <p>Tout d'abord, je cr&eacute;e le dataframe :</p>
-        <pre><code class="language-python">import pandas
+   <p>Maintenant, jouons avec les dataframes...</p>
+   <h2>&Eacute;tape 2 : Jouer avec les dataframes</h2>
+   <p>Tout d'abord, je cr&eacute;e le dataframe :</p>
+   <pre><code class="language-python">import pandas
 
 metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
-        <p>Ensuite, je supprime les &eacute;tiquettes inutiles :</p>
-        <pre><code class="language-python">metrics_df.drop(
+   <p>Ensuite, je supprime les &eacute;tiquettes inutiles :</p>
+   <pre><code class="language-python">metrics_df.drop(
     colums=[
         "host_name",
         "ds_name",
@@ -194,66 +133,66 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
     axis=1,
     inplace=True,
 )</code></pre>
-        <p>De cette fa&ccedil;on, j'utilise le dataframe pour supprimer les 4 colonnes.
-         <code class="language-python">
-          inplace=True</code>est utilis&eacute; pour &eacute;craser le dataframe existant et ne pas en cr&eacute;er un nouveau.</p>
-        <p>Ensuite, je dois fusionner les donn&eacute;es de m&eacute;triques avec les donn&eacute;es de deux autres sources de donn&eacute;es internes (une pour le r&eacute;f&eacute;rentiel des h&ocirc;tes/vm, une pour les lignes m&eacute;tier).</p>
-        <p>Celles-ci sont &eacute;galement repr&eacute;sent&eacute;es sous forme de dataframes.</p>
-        <pre><code class="language-python">businesslines_referential_df = referential_df.merge(
+   <p>De cette fa&ccedil;on, j'utilise le dataframe pour supprimer les 4 colonnes.
+    <code class="language-python">
+     inplace=True</code>est utilis&eacute; pour &eacute;craser le dataframe existant et ne pas en cr&eacute;er un nouveau.</p>
+   <p>Ensuite, je dois fusionner les donn&eacute;es de m&eacute;triques avec les donn&eacute;es de deux autres sources de donn&eacute;es internes (une pour le r&eacute;f&eacute;rentiel des h&ocirc;tes/vm, une pour les lignes m&eacute;tier).</p>
+   <p>Celles-ci sont &eacute;galement repr&eacute;sent&eacute;es sous forme de dataframes.</p>
+   <pre><code class="language-python">businesslines_referential_df = referential_df.merge(
     businesslines_df, how="left", left_on="ecosystem", right_index=True
 )</code></pre>
-        <p>Cette fusion enrichira le dataframe r&eacute;f&eacute;rentiel avec les donn&eacute;es des lignes m&eacute;tier, de droite &agrave; gauche, selon le nom de l'&eacute;cosyst&egrave;me et utilisera l'index du dataframe de droite comme cl&eacute; de jointure.</p>
-        <p>Maintenant, il est temps de fusionner ce dataframe avec le dataframe des m&eacute;triques.</p>
-        <pre><code class="language-python">metrics_df = metrics_df.merge(
+   <p>Cette fusion enrichira le dataframe r&eacute;f&eacute;rentiel avec les donn&eacute;es des lignes m&eacute;tier, de droite &agrave; gauche, selon le nom de l'&eacute;cosyst&egrave;me et utilisera l'index du dataframe de droite comme cl&eacute; de jointure.</p>
+   <p>Maintenant, il est temps de fusionner ce dataframe avec le dataframe des m&eacute;triques.</p>
+   <pre><code class="language-python">metrics_df = metrics_df.merge(
     businesslines_referential_df, how="inner", left_on="vm_name", right_index=True
 )</code></pre>
-        <p>Cette fusion est faite avec la m&eacute;thode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.</p>
-        <p>Maintenant, je remplace le nom de m&eacute;trique original par le mappage dont nous avons parl&eacute; plus t&ocirc;t :</p>
-        <pre><code class="language-python">metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)</code></pre>
-        <p>Maintenant "vmware
-         <em>
-          vm</em>power
-         <em>
-          state" est mapp&eacute; &agrave; "power</em>state".</p>
-        <p>Le r&eacute;sultat est similaire &agrave; ceci :</p>
-        <table style="border: 1px solid #fff; width: 100%;">
-         <tr>
-          <th>__name__</th>
-          <th>vm_name</th>
-          <th>ecosystem</th>
-          <th>business_line</th>
-          <th>value</th>
-         </tr>
-         <tr>
-          <td>power_state</td>
-          <td>vm1</td>
-          <td>TESTECO</td>
-          <td>BL1</td>
-          <td>1</td>
-         </tr>
-        </table>
-        <p>Maintenant, pour &ecirc;tre r&eacute;colt&eacute;es par prometheus, ces donn&eacute;es doivent &ecirc;tre res&eacute;rialis&eacute;es.</p>
-        <h2>&Eacute;tape 3 : Comment ai-je res&eacute;rialis&eacute; les donn&eacute;es ?</h2>
-        <p>Les cha&icirc;nes de m&eacute;triques Prometheus sont assez simples :</p>
-        <pre><code class="language-python">metric_name{label1="value1", label2="value2"} 0</code></pre>
-        <p>En utilisant une compr&eacute;hension de liste, j'it&egrave;re sur le dataframe pour imprimer une cha&icirc;ne contenant au d&eacute;but le metric
-         <em>
-          name et &agrave; la fin la metric</em>value.</p>
-        <pre><code class="language-python">return "\n".join(
+   <p>Cette fusion est faite avec la m&eacute;thode inner, ainsi nous ne gardons que les colonnes communes, selon vm_name.</p>
+   <p>Maintenant, je remplace le nom de m&eacute;trique original par le mappage dont nous avons parl&eacute; plus t&ocirc;t :</p>
+   <pre><code class="language-python">metrics_df.replace({"__name_": MAPPING_METRICS_NAME}, inplace=True)</code></pre>
+   <p>Maintenant "vmware
+    <em>
+     vm</em>power
+    <em>
+     state" est mapp&eacute; &agrave; "power</em>state".</p>
+   <p>Le r&eacute;sultat est similaire &agrave; ceci :</p>
+   <table style="border: 1px solid #fff; width: 100%;">
+    <tr>
+     <th>__name__</th>
+     <th>vm_name</th>
+     <th>ecosystem</th>
+     <th>business_line</th>
+     <th>value</th>
+    </tr>
+    <tr>
+     <td>power_state</td>
+     <td>vm1</td>
+     <td>TESTECO</td>
+     <td>BL1</td>
+     <td>1</td>
+    </tr>
+   </table>
+   <p>Maintenant, pour &ecirc;tre r&eacute;colt&eacute;es par prometheus, ces donn&eacute;es doivent &ecirc;tre res&eacute;rialis&eacute;es.</p>
+   <h2>&Eacute;tape 3 : Comment ai-je res&eacute;rialis&eacute; les donn&eacute;es ?</h2>
+   <p>Les cha&icirc;nes de m&eacute;triques Prometheus sont assez simples :</p>
+   <pre><code class="language-python">metric_name{label1="value1", label2="value2"} 0</code></pre>
+   <p>En utilisant une compr&eacute;hension de liste, j'it&egrave;re sur le dataframe pour imprimer une cha&icirc;ne contenant au d&eacute;but le metric
+    <em>
+     name et &agrave; la fin la metric</em>value.</p>
+   <pre><code class="language-python">return "\n".join(
     [
         f"{row['__name__']}{generate_dict_label(row)} {row['value']}"
         for index, row in metrics df.iterrows()
     ]
 )</code></pre>
-        <p>La partie d&eacute;licate est de g&eacute;n&eacute;rer les &eacute;tiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.</p>
-        <p>Un dict en python ressemble &agrave;
-         <code class="language-python">
-          {"key": "value"}</code>, nous devons g&eacute;n&eacute;rer une cha&icirc;ne qui ressemble &agrave;
-         <code class="language-python">
-          {label="value"}</code>
-        </p>
-        <p>J'ai donc &eacute;crit une petite fonction qui g&eacute;n&egrave;re cette cha&icirc;ne.</p>
-        <pre><code class="language-python">def generate_dict_label(row):
+   <p>La partie d&eacute;licate est de g&eacute;n&eacute;rer les &eacute;tiquettes, car nous ne pouvons pas modifier la sortie d'un dict en python.</p>
+   <p>Un dict en python ressemble &agrave;
+    <code class="language-python">
+     {"key": "value"}</code>, nous devons g&eacute;n&eacute;rer une cha&icirc;ne qui ressemble &agrave;
+    <code class="language-python">
+     {label="value"}</code>
+   </p>
+   <p>J'ai donc &eacute;crit une petite fonction qui g&eacute;n&egrave;re cette cha&icirc;ne.</p>
+   <pre><code class="language-python">def generate_dict_label(row):
 
     labels = set(row.index) - {"__name__", "value"}
 
@@ -268,33 +207,33 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
         )
         + "}"
     )</code></pre>
-        <p>Finalement, les donn&eacute;es s&eacute;rialis&eacute;es ressemblent &agrave; :</p>
-        <pre><code class="language-python">power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1</code></pre>
-        <p>Maintenant, les m&eacute;triques sont r&eacute;colt&eacute;es par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et res&eacute;rialisera les donn&eacute;es provenant d'un exporter prometheus vmware.</p>
-       </content>
-      </entry>
-      <entry xml:lang="en">
-       <title type="html">Supprimer tous les events d'un topic Kafka</title> <author><name></name>
-        <uri>https://www.hack-with-hyweene.com</uri>
-       </author>
-       <id>https://www.hack-with-hyweene.com/blog/supprimer-tous-les-events-d-un-topic-kafka/</id>
-       <published>2024-09-16 11:30:00+00:00</published>
-       <updated>2024-09-16 11:30:00+00:00</updated>
-       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/supprimer-tous-les-events-d-un-topic-kafka/
-       <summary>
-        Un pense b&ecirc;te pour se rappeller comment supprimer tous les events d'un topic Kafka</summary>
-       <content type="html">
-        <p>Dans ma mission actuelle, je travaille avec Kafka. Je suis &eacute;galement en charge, avec d'autres personnes, du support utilisateur. Aujourd'hui, un utilisateur rencontrait un probl&egrave;me avec la suppression de ses messages dans un topic Kafka d&eacute;di&eacute; &agrave; des tests automatis&eacute;s.</p>
-        <p>A la fin de ses tests, il doit purger les messages cr&eacute;&eacute; pendant la session, mais rencontrait une erreur de timeout &agrave; l'execution de la requete.</p>
-        <p>Dans le cadre de ce pense b&ecirc;te, la cleanup.policy du topic est configur&eacute;e &agrave; delete, ce qui signifie que les messages sont supprim&eacute;s lorsqu'ils atteignent la r&eacute;tention d&eacute;finie, la m&eacute;thode est diff&eacute;rente pour les topics configur&eacute;s avec la r&eacute;tention compact.</p>
-        <p>Pour supprimer tous les messages d'un topic Kafka, il faut utiliser la commande
-         <code>
-          kafka-delete-records</code>fournie par Kafka.</p>
-        <pre><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
-        <p>Le fichier
-         <code>
-          offsets.json</code>doit contenir les offsets des messages &agrave; supprimer. Par exemple, pour un topic &agrave; trois partitions, le fichier doit contenir trois objets, un par partition.</p>
-        <pre><code class="language-json">{
+   <p>Finalement, les donn&eacute;es s&eacute;rialis&eacute;es ressemblent &agrave; :</p>
+   <pre><code class="language-python">power_state{vm_name="vm1", ecosystem="TESTECO", business_line="BL1"} 1</code></pre>
+   <p>Maintenant, les m&eacute;triques sont r&eacute;colt&eacute;es par prometheus en appelant un petit module fait avec fastapi, qui analysera, enrichira et res&eacute;rialisera les donn&eacute;es provenant d'un exporter prometheus vmware.</p>
+  </content>
+ </entry>
+ <entry xml:lang="en">
+  <title type="html">Supprimer tous les events d'un topic Kafka</title> <author><name></name>
+   <uri>https://www.hack-with-hyweene.com</uri>
+  </author>
+  <id>https://www.hack-with-hyweene.com/blog/supprimer-tous-les-events-d-un-topic-kafka/</id>
+  <published>2024-09-16 11:30:00+00:00</published>
+  <updated>2024-09-16 11:30:00+00:00</updated>
+  <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/supprimer-tous-les-events-d-un-topic-kafka/
+  <summary>
+   Un pense b&ecirc;te pour se rappeller comment supprimer tous les events d'un topic Kafka</summary>
+  <content type="html">
+   <p>Dans ma mission actuelle, je travaille avec Kafka. Je suis &eacute;galement en charge, avec d'autres personnes, du support utilisateur. Aujourd'hui, un utilisateur rencontrait un probl&egrave;me avec la suppression de ses messages dans un topic Kafka d&eacute;di&eacute; &agrave; des tests automatis&eacute;s.</p>
+   <p>A la fin de ses tests, il doit purger les messages cr&eacute;&eacute; pendant la session, mais rencontrait une erreur de timeout &agrave; l'execution de la requete.</p>
+   <p>Dans le cadre de ce pense b&ecirc;te, la cleanup.policy du topic est configur&eacute;e &agrave; delete, ce qui signifie que les messages sont supprim&eacute;s lorsqu'ils atteignent la r&eacute;tention d&eacute;finie, la m&eacute;thode est diff&eacute;rente pour les topics configur&eacute;s avec la r&eacute;tention compact.</p>
+   <p>Pour supprimer tous les messages d'un topic Kafka, il faut utiliser la commande
+    <code>
+     kafka-delete-records</code>fournie par Kafka.</p>
+   <pre><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
+   <p>Le fichier
+    <code>
+     offsets.json</code>doit contenir les offsets des messages &agrave; supprimer. Par exemple, pour un topic &agrave; trois partitions, le fichier doit contenir trois objets, un par partition.</p>
+   <pre><code class="language-json">{
   "partitions": [
     {
       "topic": "${topicName}",
@@ -314,410 +253,402 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
   ],
   "version": 1
 }</code></pre>
-        <p>Dans cet exemple, tous les messages situ&eacute;s avant les offsets sp&eacute;cifi&eacute; pour chaque partition seront supprim&eacute;s.</p>
-        <p>Pour obtenir les offsets des messages &agrave; supprimer, il faut utiliser la commande
-         <code>
-          kafka-consumer-groups</code>.</p>
-        <pre><code class="language-bash">kafka-consumer-groups --bootstrap-server ${bootstrapServerAndPort} --group ${consumerGroupName} --describe</code></pre>
-        <p>Cette commande affiche les offsets des messages consomm&eacute;s par le groupe de consommateurs
-         <code>
-          ${consumerGroupName}</code>. Il suffit de r&eacute;cup&eacute;rer ces offsets pour les mettre dans le fichier
-         <code>
-          offsets.json</code>.</p>
-        <p>Le r&eacute;sultat est le suivant :</p>
-        <pre><code class="language-bash">GROUP       TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
+   <p>Dans cet exemple, tous les messages situ&eacute;s avant les offsets sp&eacute;cifi&eacute; pour chaque partition seront supprim&eacute;s.</p>
+   <p>Pour obtenir les offsets des messages &agrave; supprimer, il faut utiliser la commande
+    <code>
+     kafka-consumer-groups</code>.</p>
+   <pre><code class="language-bash">kafka-consumer-groups --bootstrap-server ${bootstrapServerAndPort} --group ${consumerGroupName} --describe</code></pre>
+   <p>Cette commande affiche les offsets des messages consomm&eacute;s par le groupe de consommateurs
+    <code>
+     ${consumerGroupName}</code>. Il suffit de r&eacute;cup&eacute;rer ces offsets pour les mettre dans le fichier
+    <code>
+     offsets.json</code>.</p>
+   <p>Le r&eacute;sultat est le suivant :</p>
+   <pre><code class="language-bash">GROUP       TOPIC           PARTITION  CURRENT-OFFSET  LOG-END-OFFSET  LAG             CONSUMER-ID     HOST            CLIENT-ID
 myTestApp   myTestTopic     0          3               3               0               -               -               -
 myTestApp   myTestTopic     1          5               5               0               -               -               -
 myTestApp   myTestTopic     2          6               6               0               -               -               -</code></pre>
-        <p>Une fois le fichier
-         <code>
-          offsets.json</code>pr&ecirc;t, il suffit de lancer la commande
-         <code>
-          kafka-delete-records</code>pour supprimer les messages du topic
-         <code>
-          ${topicName}</code>.</p>
-        <pre><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
-        <p>Dans notre cas, l'utilisateur rencontrait un probl&egrave;me de timeout, ce qui peut arriver si le nombre de messages &agrave; supprimer est tr&egrave;s grand. Il faut alors augmenter le timeout de la commande
-         <code>
-          kafka-delete-records</code>.</p>
-        <p>Pour se faire, nous devons cr&eacute;er un fichier command-config avec le timeout souhait&eacute; :</p>
-        <pre><code class="language-bash">request.timeout.ms=120000</code></pre>
-        <p>Puis lancer la commande
-         <code>
-          kafka-delete-records</code>avec le fichier de configuration :</p>
-        <pre><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json --command-config path/to/command-config</code></pre>
-        <p>Les messages du topic Kafka
-         <code>
-          ${topicName}</code>ont &eacute;t&eacute; supprim&eacute;s avec succ&egrave;s.</p>
-        <h2>M&eacute;thode Gros Bourrin</h2>
-        <p>On peut &eacute;galement supprimer la totalit&eacute; des events d'un topic en changeant la r&eacute;tention du topic &agrave; 1ms, puis en la remettant &agrave; la valeur initiale.</p>
-        <p>Cette m&eacute;thode a l'avantage de fonctionner &eacute;galement pour les topics compact&eacute;s ! :D</p>
-       </content>
-      </entry>
-      <entry xml:lang="en">
-       <title type="html">J'ai d&eacute;cid&eacute; que c'&eacute;tait assez</title> <author><name></name>
-        <uri>https://www.hack-with-hyweene.com</uri>
-       </author>
-       <id>https://www.hack-with-hyweene.com/blog/j-ai-decide-que-c-etait-assez/</id>
-       <published>2024-10-27 23:00:00+00:00</published>
-       <updated></updated>
-       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/j-ai-decide-que-c-etait-assez/
-       <summary>
-        J'ai 36 ans, je mesure 1m70, je p&egrave;se 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.</summary>
-       <content type="html">
-        <p>J'ai 35 ans, je mesure 1m70, je p&egrave;se 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.</p>
-        <h2>Le contexte</h2>
-        <p>J'ai toujours &eacute;t&eacute; en surpoids, depuis petit, j'&eacute;tais le p'tit gros de la classe, le p'tit gros de la famille.</p>
-        <p>La famille n'aidant pas beaucoup, enfon&ccedil;ant bien le clou, en disant que je devrais faire un effort, parce que &agrave; 10 ans je fais 50kg, si ca continue comme &ccedil;a, &agrave; 20 ans, je ferai 100kg !!</p>
-        <p>Alors fatalement, en 2012, &agrave; 24 ans, j'approche tout doucement des 95kg :-)</p>
-        <figure>
-         <img alt="worst" src="/media/images/blog/illustration/2024-10-27/worst.jpg">
-        </figure>
-        <p>&Eacute;t&eacute; 2012, Je me fais tromper par la nana avec qui j'&eacute;tais &agrave; l'&eacute;poque, ce qui fait un &eacute;lectrochoc, la d&eacute;pression s'installe pendant quelques semaines, je suis tellement &eacute;clat&eacute; mentalement que je suis au point o&ugrave; je refuse de m'alimenter. Et la, je perds du poids, mais pas pour les bonnes raisons.</p>
-        <p>Mais je me reprends assez vite, mon chien m'a beaucoup aid&eacute;, &agrave; sa fa&ccedil;on, &agrave; ne pas totalement perdre pied.</p>
-        <p>Je reprends du poil de la b&ecirc;te, et je d&eacute;cide de me mettre, timidement, au sport apr&egrave;s 24 ans sans, quasiment, aucune activit&eacute; physique. J'installe d'abord un sac de frappe dans le garage, qui me permet d'&eacute;vacuer un temps diff&eacute;rentes choses. Mais il manque quelque chose. Alors je me lance dans pas mal d'activit&eacute;s, Natation, Boxe, Jiujitsu, Musculation, etc etc.</p>
-        <p>Et je me rends compte que j'aime &ccedil;a, j'aime le sport, j'aime la sueur, j'aime la douleur, j'aime la discipline, j'aime les r&eacute;sultats.</p>
-        <h2>Les r&eacute;sultats</h2>
-        <p>D&eacute;cembre 2013, pour mon anniversaire, je tombe sous les 75kg, je suis fier, 20kg perdu en 1 an, c'est pas mal.</p>
-        <figure>
-         <img alt="recap" src="/media/images/blog/illustration/2024-10-27/recap.jpg">
-        </figure>
-        <p>Mais pas satisfait, je veux autre chose, je veux plus, mais je suis frein&eacute;, par mon manque de connaissance, et surtout, mon alimentation, qui n'est pas tiptop.</p>
-        <p>La di&egrave;te que j'ai entrepris est une di&egrave;te un peu &agrave; la zob, o&ugrave; je r&eacute;duisais drastiquement les quantit&eacute;s, mais sans vraiment faire attention &agrave; ce que je mangeais. Je me retrouvais souvent sans energie, sans force, sans motivation, et je me disais que c'&eacute;tait normal, que c'&eacute;tait le sport qui me tuait.</p>
-        <p>J'&eacute;tais aussi frein&eacute; mentalement, parce qu'entre-temps, j'ai fait la b&ecirc;tise de me remettre avec mon ex, qui crisait parce que je passais beaucoup de temps au sport, et pas assez de temps avec elle. Du coup, je r&eacute;duisais mes s&eacute;ances, je r&eacute;duisais mes efforts, je r&eacute;duisais mes r&eacute;sultats.</p>
-        <h2>Le prime</h2>
-        <p>&Eacute;t&eacute; 2015, je me s&eacute;pare de mon ex, je me remets &agrave; fond dans le sport, en automne, je rencontre cette dame formidable qui devient ma femme, qui me soutient dans mes efforts, et qui a aussi cette passion du sport, ce qui me pousse &agrave; aller plus loin.</p>
-        <p>Fin 2016, je planifie mon mariage avec dame Jessica. Je veux avoir un physique aux olives pour cette occasion, je prends un coach, qui me pr&eacute;pare une diete, un programme de muscu + cardio, qui me pousse &agrave;(u) fond. Je tombe &agrave; 63kg, 13% de bodyfat, je suis content, mais pas satisfait, je veux perdre plus ... Je suis dans une mauvaise spirale o&ugrave; je frise l'anorexie.</p>
-        <p>J'arr&ecirc;te ce suivi, je reprends un peu de poids, je me stabilise &agrave; 70kg, 13% de bodyfat. J'avais ces muscles qui poussaient. Pecs, Bras, jambes, abdos qui se dessinnent. Je suis biiiennnggg !</p>
-        <figure>
-         <img alt="prime" src="/media/images/blog/illustration/2024-10-27/prime.jpg">
-        </figure>
-        <h2>La chute</h2>
-        <p>Apr&egrave;s des ann&eacute;es d'ob&eacute;sit&eacute;, j'&eacute;tais arriv&eacute; &agrave; un r&eacute;sultat o&ugrave; mon corps me rendait fier. Mais la vie est ce qu'elle est, et les &eacute;preuves n'arrivent jamais toutes seules.</p>
-        <ul>
-         <li>En 2018, j'ai eu ma fille, petite couvade des familles, j'ai pris du poids.</li>
-         <li>En 2019, j'ai perdu mon chien, petite d&eacute;prime,, j'arr&ecirc;te le sport, j'ai pris du poids.</li>
-         <li>En 2020, COVID, confinement, t&eacute;l&eacute;travail, j'ai pris du poids.</li>
-        </ul>
-        <p>&Agrave; mon retour &agrave; la salle de sport, en 2021/2022, je me rends compte que j'ai perdu toutes ces performances que j'avais avant. Du coup, grosse perte de motivation, j'ai plus ou moins baiss&eacute; les bras.</p>
-        <p>Entre 2019 et 2024 j'ai pris 20kg.</p>
-        <p>Tr&egrave;s tr&egrave;s grosse perte de confiance en moi, grosse prise de stress, fatigue, mal dans ma peau ...</p>
-        <p>Et maintenant je supporte m&ecirc;me plus ma gueule dans le mirroir ^^</p>
-        <p>Ce qui me fait d'autant plus mal au cul aujourd'hui, c'est qu'en 2018, je me disais que jamais je ne pourrais revenir au point o&ugrave; j'en &eacute;tais en 2012, les connaissances accumul&eacute;es, les efforts, la discipline, la sueur, le sang et le reste, c'&eacute;tait pas possible ...</p>
-        <p>Maintenant, on est en 2024, et m&ecirc;me si mon physique ne ressemble pas &agrave; celui de 2012, je me rends compte que j'ai repris le poids que j'avais &agrave; l'&eacute;poque, et que je suis en train de revenir &agrave; ce point.</p>
-        <h2>La d&eacute;cision</h2>
-        <p>Je dois avouer, que Kaizen est pass&eacute; par la. La vid&eacute;o d'InoxTag m'a mis une grande claque dans la gueule, son parcours pour monter l'Everest m'a fait r&eacute;aliser que tout est possible, que tout est atteignable, si on s'en donne les moyens.</p>
-        <p>J'ai pris une d&eacute;cision, toutes les semaines, je publierai un article ici, qui sera mon petit journal, je pourrai y revenir de temps en temps, pour me rappeller pourquoi, et surtout, voir le chemin parcouru. C'est mon petit journal de bord, mais public.</p>
-        <p>L'objectif est tr&egrave;s simple :</p>
-        <ul>
-         <li>Perdre juste 7kg pour tomber aux 80kg.</li>
-         <li>Passer de 28,7% de bodyfat &agrave; 15 voire 12,5%.</li>
-        </ul>
-        <p>Ce qui me ferait passer de 87kg pour 25kg de graisses &agrave; 80kg pour 10kg de graisses.</p>
-        <p>Pour ce faire, je vais devoir diminuer les apports caloriques, augmenter la d&eacute;pense. Un des vecteur est le sport, mais il y a aussi le NEAT, qui est tr&egrave;s important, apr&egrave;s quelques essais, j'ai vu qu'en marchant juste 10000 pas par jours, je pouvais bruler entre 200 et 300 calories de plus par jour.</p>
-        <p>Ce qui me fait un d&eacute;ficit de 500 calories par jour, 3500 calories par semaine, pour 1kg de gras en moins par semaine.</p>
-        <p>Donc, en r&eacute;sum&eacute; :</p>
-        <ul>
-         <li>Reprendre le sport, 5 fois par semaine, s&eacute;ances d'une heure.</li>
-         <li>10000 pas minimum, par jour.</li>
-         <li>Diminuer les apports caloriques.</li>
-         <li>Augmenter les apports en prot&eacute;ines.</li>
-         <li>Diminuer les apports en glucides.</li>
-        </ul>
-        <hr>
-        <p>Aujourd'hui : Pes&eacute;e, prise des mesures de la taille, pecs, bras, avant bras, etc etc.</p>
-        <figure>
-         <img alt="poids" src="/media/images/blog/illustration/2024-10-27/poids.jpg">
-         <figcaption>La pes&eacute;e</figcaption>
-        </figure>
-        <figure>
-         <img alt="bodyfat" src="/media/images/blog/illustration/2024-10-27/bodyfat.jpg">
-         <figcaption>Le bodyfat</figcaption>
-        </figure>
-        <figure>
-         <img alt="mesures" src="/media/images/blog/illustration/2024-10-27/mesures.jpg">
-         <figcaption>Les mesures</figcaption>
-        </figure>
-        <hr>
-        <p>Je pense que ca va parler sport un peu plus dans le coin, parce que le sport, comme la programmation, c'est du Hack.</p>
-        <p>Si le
-         <code>
-          build in public</code>est ce qu'il me faut pour me motiver, alors go :-)</p>
-       </content>
-      </entry>
-      <entry xml:lang="en">
-       <title type="html">J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso</title> <author><name></name>
-        <uri>https://www.hack-with-hyweene.com</uri>
-       </author>
-       <id>https://www.hack-with-hyweene.com/blog/j-ai-monte-mon-hyweene-video-et-hyweene-music-perso/</id>
-       <published>2024-10-29 23:00:00+00:00</published>
-       <updated></updated>
-       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/j-ai-monte-mon-hyweene-video-et-hyweene-music-perso/
-       <summary>
-        Yo-ho yo-ho, a pirate's life for me !</summary>
-       <content type="html">
-        <p>L'ann&eacute;e derni&egrave;re, L&eacute;o Duff sortait une vid&eacute;o : <a href="https://www.youtube.com/watch?v=J8KcJL9gylA">J'ai mont&eacute; mon Netflix perso</a>.</p>
-        <p>J'ai trouv&eacute; l'id&eacute;e super interessante, et j'ai d&eacute;cid&eacute; de la reproduire chez moi.</p>
-        <p>Ceux qui en 2014 ont connu <a href="https://fr.wikipedia.org/wiki/Popcorn_Time">Popcorn Time</a> connaissent la folie que c'&eacute;tait. Un soft qui permettait de streamer des films et s&eacute;ries en torrent, avec une interface super simple et intuitive. C'&eacute;tait le Netflix du piratage.</p>
-        <h2>Pour commencer</h2>
-        <p>Je n'avais pas tr&egrave;s envie de prendre un VPS chez un hoster, et monter un serveur chez moi est le plus safe pour moi. Mes donn&eacute;es sont chez moi, et je peux les prot&eacute;ger comme je veux.</p>
-        <p>J'avais une petite machine chez moi, un Lenovo ThinkCentre M900 Tiny, avec un i7-6700T, 8Go de RAM, et un SSD de 256Go. Ce n'est pas &eacute;norme, surtout pour une machine qui va servir &agrave; stocker films, s&eacute;ries, musiques et autres, donc je d&eacute;cide d'upgrade tout &ccedil;a.</p>
-        <p>Je passe &agrave; 32Go de ram, et je rajoute un SSD NVMe de 2To pour stocker mes films et s&eacute;ries.</p>
-        <h2>Les services h&eacute;berg&eacute;s</h2>
-        <p>De quoi on a besoin quand on veut monter une seedbox &agrave; la maison, et automatis&eacute;e ?</p>
-        <ul>
-         <li>Un client torrent</li>
-         <li>Un paquet de Grabbers</li>
-         <li>Un indexer manager</li>
-         <li>Un serveur de media (type Plex ou Jellyfin)</li>
-        </ul>
-        <h3>Le client torrent</h3>
-        <p><a href="https://transmissionbt.com/">Transmission</a>, fid&egrave;le au poste. L&eacute;ger, stable, aucun probl&egrave;me avec lui depuis 2014. Je n'utilise quasiment jamais l'interface web, les diff&eacute;rents grabbers ont une interface de monitoring des t&eacute;l&eacute;chargements, et je n'ai pas besoin de plus.</p>
-        <h3>Les grabbers</h3>
-        <p>Ceux qui avaient leur seedbox en 2012 connaissent <a href="https://github.com/midgetspy/Sick-Beard">SickBeard</a> et <a href="https://github.com/CouchPotato/CouchPotatoServer/">CouchPotato</a>, qui permettaient de r&eacute;cup&eacute;rer automatiquement les films et series, via torrent ou usenet.</p>
-        <p>Aujourd'hui, on a <a href="https://github.com/Radarr/Radarr">Radarr</a>, <a href="https://github.com/Sonarr/Sonarr">Sonarr</a>, mais aussi tous leurs petits cousins :</p>
-        <ul>
-         <li><a href="https://github.com/Readarr/Readarr">Readarr</a>: Avec lequel je r&eacute;cup&egrave;re mes ebooks</li>
-         <li><a href="https://github.com/Lidarr/Lidarr">Lidarr</a>: Qui g&egrave;re mes musiques</li>
-         <li><a href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a>: Qui permet de g&eacute;rer toute la partie Indexers.</li>
-        </ul>
-        <p>On a maintenant &eacute;galement <a href="https://github.com/morpheus65535/bazarr">Bazarr</a>, un grabber de sous-titres.</p>
-        <p>Chose tr&egrave;s utile, puisqu'avant, je g&eacute;rais mes sous titres via <a href="https://github.com/Diaoul/subliminal">Subliminal</a>, qui est une CLI, c'est mignon, mais c'est pas user-friendly. Et &eacute;tant une cli, ce n'est pas automatisable, oblig&eacute; de monter une crontab, qui va se lancer toutes les heures, et qui va v&eacute;rifier l'enti&egrave;ret&eacute; de ma biblioth&egrave;que, inutilement, parce que je n'ai besoin que du dernier sub du dernier film ou dernier &eacute;pisode rajout&eacute;. pas besoin de tout rescan, enfin BREF, je m'&eacute;gare !!</p>
-        <h3>L'indexer manager</h3>
-        <p><a href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a> est devenu mon nouveau copain !</p>
-        <p>Je ne compte plus le temps que j'ai pu passer du temps de sickbeard et couchpotato &agrave; chercher des indexers, &agrave; les ajouter, &agrave; les tester, g&eacute;rer les configuration, v&eacute;rifier si l'indexer n'avait pas &eacute;t&eacute; ferm&eacute; par les autorit&eacute;s, etc.</p>
-        <p>Prowlarr fait tout ceci pour moi, et il le fait tr&egrave;s bien !</p>
-        <h3>Le serveur de media</h3>
-        <p>Mon choix s'est port&eacute; sur <a href="https://www.plex.tv/">Plex</a>, pour une raison simple : Jellyfin a de gros soucis sur AppleTV ... et j'ai une AppleTV. Donc m&ecirc;me si j'aime jellyfin d'amour, il est l&eacute;ger, gratuit, et son algo de transcodage est tr&egrave;s &eacute;conome, mais pragmatiquement, je dois rester sur plex pour le moment.</p>
-        <h2>Les services tiers</h2>
-        <p>Radarr et Sonarr sont syncronis&eacute;s avec <a href="https://trakt.tv/">Trakt</a>, c'est un tracker de films et s&eacute;rie, qui permet de g&eacute;rer sa watchlist, de voir les films et s&eacute;ries que l'on a vu, de voir les films et s&eacute;ries que l'on est en train de voir, etc.</p>
-        <p>Quand j'ajoute un film ou une serie &agrave; ma watchlist, Radarr ou Sonarr interrogent les trackers pour voir si le film ou la serie est disponible.</p>
-        <h2>Un petit r&eacute;sum&eacute;</h2>
-        <p>Toute cette petite &eacute;quipe a besoin d'interconnexions pour fonctionner et que l'automatisation soit parfaite, voici &agrave; quoi ressemble la stack :</p>
-        <figure><a href="/media/images/blog/illustration/2024-10-29/stack.png" target="_blank"><img alt="stack" src="/media/images/blog/illustration/2024-10-29/stack.png"></a></figure>
-        <p>Volontairement, Plex ou Jellyfin ne sont pas pr&eacute;sents, parce qu'un peu &agrave; part, ils n'ont pas besoin de communiquer avec les autres services, ils ont juste besoin de r&eacute;cup&eacute;rer les m&eacute;dias, dans un dossier qui leur est propre.</p>
-        <h2>Un Cas d'utilisation</h2>
-        <p>Je suis au cin&eacute;ma, je vois une bande annonce d'un film qui m'int&eacute;resse, je sors mon t&eacute;l&eacute;phone, je vais sur l'application de trakt, je cherche le film, je l'ajoute &agrave; ma watchlist.</p>
-        <p>Radarr interroge trakt, voit qu'un nouveau film est ajout&eacute; &agrave; la watchlist, va ajouter ce film &agrave; sa bibliot&egrave;que, puis va commencer &agrave; interroger les trackers.</p>
-        <p>Quelques semaines plus tard, le film va apparaitre sur les trackers torrents, en 720p, Radarr va le t&eacute;l&eacute;charger, le renommer, le d&eacute;placer dans le dossier de Plex, et Plex va le scanner, et le rendre disponible sur l'application Plex de mon AppleTV.</p>
-        <p>Si entre temps, une nouvelle version du film, en 1080p voire en 4K a &eacute;t&eacute; d&eacute;tect&eacute;e sur les trackers torrent par Radarr, il va t&eacute;l&eacute;charger la nouvelle version, et supprimer l'ancienne.</p>
-        <p>Une fois le t&eacute;l&eacute;chargement termin&eacute;, Radarr va envoyer une notification &agrave; Bazarr, qui va chercher les sous-titres, dans les langues que j'aurai pr&eacute;cis&eacute;, et les ajouter au dossier du film.</p>
-        <p>Ce m&ecirc;me processus est valable pour les s&eacute;ries, les musiques, les ebooks, etc. modulo le t&eacute;l&eacute;chargement des sous titres.</p>
-        <h2>Conclusion</h2>
-        <p>J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso, et je suis tr&egrave;s content du r&eacute;sultat. C'est super simple &agrave; maintenir, et &ccedil;a me permet de regarder mes films et s&eacute;ries en toute tranquilit&eacute;.</p>
-        <p>Le seul soucis que j'ai maintenant, c'est l'espace disque qui commence &agrave; manquer ... Je vais devoir commencer &agrave; &eacute;tudier l'achat d'un NAS avec quelques dizaines de To de stockage, mais &ccedil;a, c'est une autre histoire !</p>
-       </content>
-      </entry>
-      <entry xml:lang="en">
-       <title type="html">Transformation - Semaine 1</title> <author><name></name>
-        <uri>https://www.hack-with-hyweene.com</uri>
-       </author>
-       <id>https://www.hack-with-hyweene.com/blog/transformation-semaine-1/</id>
-       <published>2024-11-03 20:00:00+00:00</published>
-       <updated></updated>
-       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/transformation-semaine-1/
-       <summary>
-        Premi&egrave;re semaine de transformation, et je suis mitig&eacute;.</summary>
-       <content type="html">
-        <p><a href="/blog/j-ai-decide-que-c-etait-assez/">Dans l'&eacute;pisode pr&eacute;c&eacute;dent</a>, j'ai d&eacute;marr&eacute; une petite transformation, parce que ras le pif de mon bide, de mes seins et de mon double menton :)</p>
-        <p>Donc, aujourd'hui, premi&egrave;re semaine de transformation, et je suis mitig&eacute;.</p>
-        <p>On sait tous que le plus dur, c'est de s'y remettre, et c'est vrai. Je me suis relanc&eacute;, lundi et mardi ont &eacute;t&eacute; de tr&egrave;s bons jours, mais je sais comme je suis, j'ai voulu taper dans le fond, et ca fait mal. Ca faisait tellement mal que mercredi je n'ai pas su bouger ...</p>
-        <p>On est samedi soir, Petit r&eacute;cap  de la semaine + pr&eacute;diction pour demain :</p>
-        <ul>
-         <li>Lundi, s&eacute;ance pecs + 10385 pas</li>
-         <li>Mardi, s&eacute;ance bras (biceps/triceps) + 11853 pas. Et craquage de bouffe le soir, macdo, j'ai pas pu r&eacute;sister.</li>
-        </ul>
-        <p>Mercredi, KO technique. Pas &eacute;vident.</p>
-        <ul>
-         <li>Jeudi, pas de salle de sport, mais 12161 pas.</li>
-         <li>Vendredi, f&eacute;ri&eacute;, salle de sport ferm&eacute;e, ma fille est dans une forme olympique et nous en fait voir de toutes les couleurs, moins de 3000 pas.</li>
-         <li>Samedi, c'est l'anniversaire de ma fille, on a pass&eacute; toute la journ&eacute;e dehors, raclette le midi, cin&eacute;ma, 8024 pas.</li>
-         <li>Dimanche, la salle ferme a 13h, il va falloir se lever t&ocirc;t, pour pouvoir faire une s&eacute;ance &eacute;paules + au moins 10000 pas.</li>
-        </ul>
-        <p>&Agrave; l'heure o&ugrave; j'&eacute;cris ces lignes, je suis &agrave; 86,2kg, la balance m'indique 30% de bodyfat, je pense qu'elle d&eacute;raille un peu, le bodyfat fait beaucoup de yoyo, et m'indique des valeurs incoh&eacute;rentes d'un jour &agrave; l'autre (30% un jour, 25% le lendemain, etc etc), je vais essayer de me fier &agrave; la moyenne de tout &ccedil;a.</p>
-        <p>Je suis mitig&eacute;, je sais que c'est le d&eacute;but, et que tout les astres ne peuvent pas s'aligner d&egrave;s le d&eacute;marrage, d'autant que je dois jouer avec une grosse d&eacute;pendance &agrave; la bouffe. Je suis comme un cam&eacute; qui a besoin d'une dose, ou qui ne sait r&eacute;sister &agrave; rien dans un moment de stress !</p>
-        <p>Je pense que cette semaine a &eacute;t&eacute; un d&eacute;marrage tr&egrave;s timide, mais il va falloir faire quelques ajustements :</p>
-        <ul>
-         <li>D&eacute;j&agrave;, &eacute;viter la junkfood par flemme, je vais pr&eacute;parer 5 &agrave; 6 tupps de repas d'avance, comme ceci, j'aurai de quoi faire jusque mercredi, et je pourrai &ecirc;tre plus serein la dessus.</li>
-         <li>Le sommeil, tr&egrave;s important &eacute;galement, cette semaine je suis sur une moyenne de 7h24 de sommeil sur la semaine, c'est pas mal, mais il faut essayer de viser les 8h, et surtout, ma fille recommence l'&eacute;cole, se l&egrave;ve plus tot; je vais devoir l'y d&eacute;poser, et me lever plus t&ocirc;t, donc imp&eacute;ratif, pour tenir l'engagement, dodo plus t&ocirc;t.</li>
-         <li>Eviter la flemme de la salle, me tenir &agrave; vraiment terminer mon travail &agrave; 12h, pour pouvoir &ecirc;tre en s&eacute;ance &agrave; 12h30, &eacute;viter de trainer, de me dire que j'ai le temps, et au final, voir arriver 13h, et me rendre compte que je n'ai plus le temps (comme ce jeudi).</li>
-        </ul>
-        <p>En trois mots, discipline, rigueur, et organisation.</p>
-        <hr>
-        <p>Dimanche soir, il est 21h15, je suis sur le tapis pour boucler mes 10000 pas, ma montre m'indique 7500, je marche, tranquillement, en tapant ce billet. Mais je me rends compte que j'ai oubli&eacute; de prendre mes mesures ce matin ! Tampis, ca sera pour demain matin (note, j'ai oubli&eacute; aussi, je ferai une mise &agrave; jour mardi matin). Par contre, bonne surprise au niveau de la pes&eacute;e, malgr&eacute; la raclette et le popcorn au cin&eacute;ma, les d&eacute;gats n'ont pas &eacute;t&eacute; si consid&eacute;rables, j'&eacute;tais &agrave; xxx ce matin, juste 400g de pris par rapport &agrave; la hier.</p>
-        <p>Comme dit plus haut, ce matin s&eacute;ance &eacute;paules, j'ai fait un changement dans les programmes, j'avais l'habitude de faire des s&eacute;ances 4x12, avec un poids honorable, mais j'ai d&eacute;cid&eacute; de suivre un des conseils de Rudy Coia, et de passer sur des series plus longues, et plus l&eacute;g&egrave;res, donc au lieu de 4x12 @ 10kg &agrave; la poulie, je suis pass&eacute; sur des 4x20 @ 5kg, et ca brule pas mal. Il va falloir que je me documente sur tout ca, et arr&ecirc;ter de faire au feeling, peut &ecirc;tre commencer avec un bouquin de Fred Delavier ...</p>
-        <hr>
-        <p>Pour finir, avec les traditionnelles captures d'&eacute;cran du tracking :</p>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-03/pas.png">
-          <figcaption>Les pas</figcaption>
-         </img>
-        </figure>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-03/sommeil.png">
-          <figcaption>Le sommeil</figcaption>
-         </img>
-        </figure>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-03/poids.png">
-          <figcaption>Le poids</figcaption>
-         </img>
-        </figure>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-03/bodyfat.png">
-          <figcaption>Le bodyfat</figcaption>
-         </img>
-        </figure>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-03/mesures.png">
-          <figcaption>Les mesures</figcaption>
-         </img>
-        </figure>
-       </content>
-      </entry>
-      <entry xml:lang="en">
-       <title type="html">Transformation - Semaine 2</title> <author><name></name>
-        <uri>https://www.hack-with-hyweene.com</uri>
-       </author>
-       <id>https://www.hack-with-hyweene.com/blog/transformation-semaine-2/</id>
-       <published>2024-11-11 22:00:00+00:00</published>
-       <updated></updated>
-       <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/transformation-semaine-2/
-       <summary>
-        Semaine 2, bien mieux, mais on peut encore gratter plus loin !</summary>
-       <content type="html">
-        <p><a href="/blog/transformation-semaine-1/">La semaine derni&egrave;re</a>, j'avais dit &ecirc;tre mitig&eacute; par mon parcours.</p>
-        <p>J'avais eu un gros probl&egrave;me &agrave; me mettre en train, j'avais aussi eu de gros soucis pour dormir correctement (la moyenne de
-         <code>
-          7h33</code>de sommeil sur la semaine, due a des nuits de
-         <code>
-          5h30</code>a fait plut&ocirc;t mal), et un jour feri&eacute; mal plac&eacute; m'ont donn&eacute; du mal.</p>
-        <p>Mais je me suis rattrapp&eacute; cette semaine !</p>
-        <h2>Petit r&eacute;cap</h2>
-        <p>Une moyenne de
-         <code>
-          12164</code>pas par jour sur la semaine, c'est bien au del&agrave; des
-         <code>
-          8606</code>de moyenne de la semaine derni&egrave;re ! J'aimerais bien arriver &agrave; 15000 pas par jour, mais pour &ccedil;a, il va falloir faire attention au sommeil, parce que faire une s&eacute;ance dans la journ&eacute;e, plus 12k pas, et je suis rinc&eacute;.</p>
-        <p>Parlant de sommeil, on est &agrave;
-         <code>
-          7h14</code>, ce qui est en dessous de la semaine derni&egrave;re &agrave;
-         <code>
-          7h33</code>, rat&eacute; ...</p>
-        <p>Le poids est en baisse, pass&eacute; de
-         <code>
-          86,38kg</code>dimanche dernier &agrave;
-         <code>
-          85,82kg</code>ce dimanche. Juste
-         <code>
-          560g</code>perdus, je tablais sur 1kg, mais c'est d&eacute;j&agrave; &ccedil;a. On fera mieux la semaine prochaine.</p>
-        <p>Je ne peux toujours pas me fier au chiffre du bodyfat sur cette balance, elle m'indique
-         <code>
-          28%</code>ce dimanche, contre
-         <code>
-          28,9%</code>la semaine derni&egrave;re. Je dis que je ne m'y fie pas, parce qu'elle m'indiquait vendredi que j'&eacute;tais &agrave;
-         <code>
-          27,1%</code>... J'ai un peu de mal &agrave; croire que je suis pass&eacute; de
-         <code>
-          28,7</code>&agrave;
-         <code>
-          27,1</code>en une journ&eacute;e, puis remont&eacute; &agrave;
-         <code>
-          28,3</code>le lendemain.</p>
-        <p>Bref, je pense que je vais tester la balance de ma salle de sport, ca sera surement plus fiable :D</p>
-        <h2>Le d&eacute;tail de la semaine</h2>
-        <ul>
-         <li>Lundi : Pecs, s&eacute;ance de foufou, je les ai senti pendant 2 jours, et
-          <code>
-           12278</code>pas.</li>
-         <li>Mardi : Biceps &amp; Triceps +
-          <code>
-           11550</code>pas.</li>
-         <li>Mercredi : Petit emp&egrave;chement qui m'a fait rater la s&eacute;ance, mais
-          <code>
-           12259</code>pas.</li>
-         <li>Jeudi : Dos, et
-          <code>
-           14207</code>pas.</li>
-         <li>Vendredi : &Eacute;paules, et
-          <code>
-           11080</code>pas.</li>
-         <li>Samedi : Repos, et
-          <code>
-           12731</code>pas.</li>
-         <li>Dimanche : Jambes
-          <em>
-           (je les sens encore quand j'&eacute;cris ces lignes, et j'ai encore du mal &agrave; m'assoir et me lever des toilettes)</em>, et
-          <code>
-           11048</code>pas.</li>
-        </ul>
-        <h2>Les points positifs</h2>
-        <ul>
-         <li>J'ai appliqu&eacute; <a href="https://www.youtube.com/watch?v=bfLHTLQZ5nc">la r&egrave;gle des 2 jours</a>, cette r&egrave;gle qui dit que pour mettre en place durablement une nouvelle habitude, il faut &eacute;viter de faire une pause de plus d'une journ&eacute;e entre deux occurences. Donc si pause mercredi, on &eacute;vite d'en faire une le jeudi. J'ai donc fait 5 s&eacute;ances cette semaine.</li>
-         <li>J'ai vraiment tenu a augmenter le nombre de pas par jour, le r&eacute;sultat est la, 4000 de plus par jour sur la moyenne de la semaine. On va essayer d'aller plus haut cette semaine : 15000 pas par jour.</li>
-         <li>J'ai encore quelques probl&egrave;mes pour g&eacute;rer la bouffe, m&ecirc;me si j'ai recommenc&eacute; &agrave; refaire du batchcooking pour &eacute;viter de faire n'importe quoi, mais j'entraine mon cerveau &agrave; ne pas vriller, c'est un exercice difficile, mais j'en parle avec les gens, &ccedil;a aide.</li>
-        </ul>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-10/enculer-tartiflette.png">
-          <figcaption>Seb, merci bro 🥲</figcaption>
-         </img>
-        </figure>
-        <ul>
-         <li>Ma dame et ma fille se sont fait un mcdo cette semaine, j'ai r&eacute;sist&eacute; ! J'ai tap&eacute; dans une frite et deux petits pilons de poulet, c'&eacute;tait la lutte de ne pas dire que je voulais quelque chose, mais j'ai rien fait, je suis rest&eacute; sur mon poulet/riz/haricots verts, fier de moi ! :D</li>
-         <li>Je me suis bien but&eacute; cette semaine, et petit message de ma dame qui fait plaisir pendant une s&eacute;ance d'&eacute;paules qui brulent :D</li>
-        </ul>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-10/poupinette-fiere.jpeg">
-          <figcaption>Ma dame, je t'aime 🥰</figcaption>
-         </img>
-        </figure>
-        <h2>Les points n&eacute;gatifs</h2>
-        <ul>
-         <li>Le sommeil, toujours le sommeil. Je ne vais pas me trouver d'excuses, si je prends la tablette au lit, je finis par me coucher tard, pas de secret, faut que je mette plus de distance avec les &eacute;crans le soir.</li>
-         <li>Pas mal de maux de t&ecirc;te cette semaine, certainement du &agrave; un manque d'hydratation, faudrait pas oublier de boire ...</li>
-        </ul>
-        <h2>Les objectifs pour la semaine prochaine</h2>
-        <ul>
-         <li>
-          <code>15000</code>pas par jour, on va y arriver !</li>
-         <li>
-          <code>7h30</code>, voire
-          <code>
-           8h</code>de sommeil par nuit, y'a pas de raisons de ne pas y arriver !</li>
-         <li>1kg de moins, ca serait bien de passer sous les
-          <code>
-           85kg</code>, mon plus bas depuis le 21 Octobre 2023 !!</li>
-        </ul>
-        <hr>
-        <p>Pour finir, avec les traditionnelles captures d'&eacute;cran du tracking :</p>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-10/pas.png">
-         <figcaption>Les pas</figcaption>
-        </figure>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-10/sommeil.png">
-         <figcaption>Le sommeil</figcaption>
-        </figure>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-10/poids.png">
-         <figcaption>Le poids</figcaption>
-        </figure>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-10/bodyfat.png">
-         <figcaption>Le bodyfat</figcaption>
-        </figure>
-        <figure>
-         <img src="/media/images/blog/illustration/2024-11-10/mesures.png">
-         <figcaption>Les mesures</figcaption>
-        </figure>
-       </content>
-      </entry>
-     </link>
-    </link>
-   </feed>
-  </main>
-  <footer>
-   <nav><a href="/a-propos/">A Propos</a>&bull; <a href="/mentions-legales/">Mentions L&eacute;gales</a>&bull; <a href="https://www.hack-with-hyweene.com">https://www.hack-with-hyweene.com</a></nav>
-  </footer>
- </body>
-</html>
+   <p>Une fois le fichier
+    <code>
+     offsets.json</code>pr&ecirc;t, il suffit de lancer la commande
+    <code>
+     kafka-delete-records</code>pour supprimer les messages du topic
+    <code>
+     ${topicName}</code>.</p>
+   <pre><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json</code></pre>
+   <p>Dans notre cas, l'utilisateur rencontrait un probl&egrave;me de timeout, ce qui peut arriver si le nombre de messages &agrave; supprimer est tr&egrave;s grand. Il faut alors augmenter le timeout de la commande
+    <code>
+     kafka-delete-records</code>.</p>
+   <p>Pour se faire, nous devons cr&eacute;er un fichier command-config avec le timeout souhait&eacute; :</p>
+   <pre><code class="language-bash">request.timeout.ms=120000</code></pre>
+   <p>Puis lancer la commande
+    <code>
+     kafka-delete-records</code>avec le fichier de configuration :</p>
+   <pre><code class="language-bash">kafka-delete-records --bootstrap-server ${bootstrapServerAndPort} --topic ${topicName} --offset-json-file path/to/offsets.json --command-config path/to/command-config</code></pre>
+   <p>Les messages du topic Kafka
+    <code>
+     ${topicName}</code>ont &eacute;t&eacute; supprim&eacute;s avec succ&egrave;s.</p>
+   <h2>M&eacute;thode Gros Bourrin</h2>
+   <p>On peut &eacute;galement supprimer la totalit&eacute; des events d'un topic en changeant la r&eacute;tention du topic &agrave; 1ms, puis en la remettant &agrave; la valeur initiale.</p>
+   <p>Cette m&eacute;thode a l'avantage de fonctionner &eacute;galement pour les topics compact&eacute;s ! :D</p>
+  </content>
+ </entry>
+ <entry xml:lang="en">
+  <title type="html">J'ai d&eacute;cid&eacute; que c'&eacute;tait assez</title> <author><name></name>
+   <uri>https://www.hack-with-hyweene.com</uri>
+  </author>
+  <id>https://www.hack-with-hyweene.com/blog/j-ai-decide-que-c-etait-assez/</id>
+  <published>2024-10-27 23:00:00+00:00</published>
+  <updated></updated>
+  <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/j-ai-decide-que-c-etait-assez/
+  <summary>
+   J'ai 36 ans, je mesure 1m70, je p&egrave;se 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.</summary>
+  <content type="html">
+   <p>J'ai 35 ans, je mesure 1m70, je p&egrave;se 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.</p>
+   <h2>Le contexte</h2>
+   <p>J'ai toujours &eacute;t&eacute; en surpoids, depuis petit, j'&eacute;tais le p'tit gros de la classe, le p'tit gros de la famille.</p>
+   <p>La famille n'aidant pas beaucoup, enfon&ccedil;ant bien le clou, en disant que je devrais faire un effort, parce que &agrave; 10 ans je fais 50kg, si ca continue comme &ccedil;a, &agrave; 20 ans, je ferai 100kg !!</p>
+   <p>Alors fatalement, en 2012, &agrave; 24 ans, j'approche tout doucement des 95kg :-)</p>
+   <figure>
+    <img alt="worst" src="/media/images/blog/illustration/2024-10-27/worst.jpg">
+   </figure>
+   <p>&Eacute;t&eacute; 2012, Je me fais tromper par la nana avec qui j'&eacute;tais &agrave; l'&eacute;poque, ce qui fait un &eacute;lectrochoc, la d&eacute;pression s'installe pendant quelques semaines, je suis tellement &eacute;clat&eacute; mentalement que je suis au point o&ugrave; je refuse de m'alimenter. Et la, je perds du poids, mais pas pour les bonnes raisons.</p>
+   <p>Mais je me reprends assez vite, mon chien m'a beaucoup aid&eacute;, &agrave; sa fa&ccedil;on, &agrave; ne pas totalement perdre pied.</p>
+   <p>Je reprends du poil de la b&ecirc;te, et je d&eacute;cide de me mettre, timidement, au sport apr&egrave;s 24 ans sans, quasiment, aucune activit&eacute; physique. J'installe d'abord un sac de frappe dans le garage, qui me permet d'&eacute;vacuer un temps diff&eacute;rentes choses. Mais il manque quelque chose. Alors je me lance dans pas mal d'activit&eacute;s, Natation, Boxe, Jiujitsu, Musculation, etc etc.</p>
+   <p>Et je me rends compte que j'aime &ccedil;a, j'aime le sport, j'aime la sueur, j'aime la douleur, j'aime la discipline, j'aime les r&eacute;sultats.</p>
+   <h2>Les r&eacute;sultats</h2>
+   <p>D&eacute;cembre 2013, pour mon anniversaire, je tombe sous les 75kg, je suis fier, 20kg perdu en 1 an, c'est pas mal.</p>
+   <figure>
+    <img alt="recap" src="/media/images/blog/illustration/2024-10-27/recap.jpg">
+   </figure>
+   <p>Mais pas satisfait, je veux autre chose, je veux plus, mais je suis frein&eacute;, par mon manque de connaissance, et surtout, mon alimentation, qui n'est pas tiptop.</p>
+   <p>La di&egrave;te que j'ai entrepris est une di&egrave;te un peu &agrave; la zob, o&ugrave; je r&eacute;duisais drastiquement les quantit&eacute;s, mais sans vraiment faire attention &agrave; ce que je mangeais. Je me retrouvais souvent sans energie, sans force, sans motivation, et je me disais que c'&eacute;tait normal, que c'&eacute;tait le sport qui me tuait.</p>
+   <p>J'&eacute;tais aussi frein&eacute; mentalement, parce qu'entre-temps, j'ai fait la b&ecirc;tise de me remettre avec mon ex, qui crisait parce que je passais beaucoup de temps au sport, et pas assez de temps avec elle. Du coup, je r&eacute;duisais mes s&eacute;ances, je r&eacute;duisais mes efforts, je r&eacute;duisais mes r&eacute;sultats.</p>
+   <h2>Le prime</h2>
+   <p>&Eacute;t&eacute; 2015, je me s&eacute;pare de mon ex, je me remets &agrave; fond dans le sport, en automne, je rencontre cette dame formidable qui devient ma femme, qui me soutient dans mes efforts, et qui a aussi cette passion du sport, ce qui me pousse &agrave; aller plus loin.</p>
+   <p>Fin 2016, je planifie mon mariage avec dame Jessica. Je veux avoir un physique aux olives pour cette occasion, je prends un coach, qui me pr&eacute;pare une diete, un programme de muscu + cardio, qui me pousse &agrave;(u) fond. Je tombe &agrave; 63kg, 13% de bodyfat, je suis content, mais pas satisfait, je veux perdre plus ... Je suis dans une mauvaise spirale o&ugrave; je frise l'anorexie.</p>
+   <p>J'arr&ecirc;te ce suivi, je reprends un peu de poids, je me stabilise &agrave; 70kg, 13% de bodyfat. J'avais ces muscles qui poussaient. Pecs, Bras, jambes, abdos qui se dessinnent. Je suis biiiennnggg !</p>
+   <figure>
+    <img alt="prime" src="/media/images/blog/illustration/2024-10-27/prime.jpg">
+   </figure>
+   <h2>La chute</h2>
+   <p>Apr&egrave;s des ann&eacute;es d'ob&eacute;sit&eacute;, j'&eacute;tais arriv&eacute; &agrave; un r&eacute;sultat o&ugrave; mon corps me rendait fier. Mais la vie est ce qu'elle est, et les &eacute;preuves n'arrivent jamais toutes seules.</p>
+   <ul>
+    <li>En 2018, j'ai eu ma fille, petite couvade des familles, j'ai pris du poids.</li>
+    <li>En 2019, j'ai perdu mon chien, petite d&eacute;prime,, j'arr&ecirc;te le sport, j'ai pris du poids.</li>
+    <li>En 2020, COVID, confinement, t&eacute;l&eacute;travail, j'ai pris du poids.</li>
+   </ul>
+   <p>&Agrave; mon retour &agrave; la salle de sport, en 2021/2022, je me rends compte que j'ai perdu toutes ces performances que j'avais avant. Du coup, grosse perte de motivation, j'ai plus ou moins baiss&eacute; les bras.</p>
+   <p>Entre 2019 et 2024 j'ai pris 20kg.</p>
+   <p>Tr&egrave;s tr&egrave;s grosse perte de confiance en moi, grosse prise de stress, fatigue, mal dans ma peau ...</p>
+   <p>Et maintenant je supporte m&ecirc;me plus ma gueule dans le mirroir ^^</p>
+   <p>Ce qui me fait d'autant plus mal au cul aujourd'hui, c'est qu'en 2018, je me disais que jamais je ne pourrais revenir au point o&ugrave; j'en &eacute;tais en 2012, les connaissances accumul&eacute;es, les efforts, la discipline, la sueur, le sang et le reste, c'&eacute;tait pas possible ...</p>
+   <p>Maintenant, on est en 2024, et m&ecirc;me si mon physique ne ressemble pas &agrave; celui de 2012, je me rends compte que j'ai repris le poids que j'avais &agrave; l'&eacute;poque, et que je suis en train de revenir &agrave; ce point.</p>
+   <h2>La d&eacute;cision</h2>
+   <p>Je dois avouer, que Kaizen est pass&eacute; par la. La vid&eacute;o d'InoxTag m'a mis une grande claque dans la gueule, son parcours pour monter l'Everest m'a fait r&eacute;aliser que tout est possible, que tout est atteignable, si on s'en donne les moyens.</p>
+   <p>J'ai pris une d&eacute;cision, toutes les semaines, je publierai un article ici, qui sera mon petit journal, je pourrai y revenir de temps en temps, pour me rappeller pourquoi, et surtout, voir le chemin parcouru. C'est mon petit journal de bord, mais public.</p>
+   <p>L'objectif est tr&egrave;s simple :</p>
+   <ul>
+    <li>Perdre juste 7kg pour tomber aux 80kg.</li>
+    <li>Passer de 28,7% de bodyfat &agrave; 15 voire 12,5%.</li>
+   </ul>
+   <p>Ce qui me ferait passer de 87kg pour 25kg de graisses &agrave; 80kg pour 10kg de graisses.</p>
+   <p>Pour ce faire, je vais devoir diminuer les apports caloriques, augmenter la d&eacute;pense. Un des vecteur est le sport, mais il y a aussi le NEAT, qui est tr&egrave;s important, apr&egrave;s quelques essais, j'ai vu qu'en marchant juste 10000 pas par jours, je pouvais bruler entre 200 et 300 calories de plus par jour.</p>
+   <p>Ce qui me fait un d&eacute;ficit de 500 calories par jour, 3500 calories par semaine, pour 1kg de gras en moins par semaine.</p>
+   <p>Donc, en r&eacute;sum&eacute; :</p>
+   <ul>
+    <li>Reprendre le sport, 5 fois par semaine, s&eacute;ances d'une heure.</li>
+    <li>10000 pas minimum, par jour.</li>
+    <li>Diminuer les apports caloriques.</li>
+    <li>Augmenter les apports en prot&eacute;ines.</li>
+    <li>Diminuer les apports en glucides.</li>
+   </ul>
+   <hr>
+   <p>Aujourd'hui : Pes&eacute;e, prise des mesures de la taille, pecs, bras, avant bras, etc etc.</p>
+   <figure>
+    <img alt="poids" src="/media/images/blog/illustration/2024-10-27/poids.jpg">
+    <figcaption>La pes&eacute;e</figcaption>
+   </figure>
+   <figure>
+    <img alt="bodyfat" src="/media/images/blog/illustration/2024-10-27/bodyfat.jpg">
+    <figcaption>Le bodyfat</figcaption>
+   </figure>
+   <figure>
+    <img alt="mesures" src="/media/images/blog/illustration/2024-10-27/mesures.jpg">
+    <figcaption>Les mesures</figcaption>
+   </figure>
+   <hr>
+   <p>Je pense que ca va parler sport un peu plus dans le coin, parce que le sport, comme la programmation, c'est du Hack.</p>
+   <p>Si le
+    <code>
+     build in public</code>est ce qu'il me faut pour me motiver, alors go :-)</p>
+  </content>
+ </entry>
+ <entry xml:lang="en">
+  <title type="html">J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso</title> <author><name></name>
+   <uri>https://www.hack-with-hyweene.com</uri>
+  </author>
+  <id>https://www.hack-with-hyweene.com/blog/j-ai-monte-mon-hyweene-video-et-hyweene-music-perso/</id>
+  <published>2024-10-29 23:00:00+00:00</published>
+  <updated></updated>
+  <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/j-ai-monte-mon-hyweene-video-et-hyweene-music-perso/
+  <summary>
+   Yo-ho yo-ho, a pirate's life for me !</summary>
+  <content type="html">
+   <p>L'ann&eacute;e derni&egrave;re, L&eacute;o Duff sortait une vid&eacute;o : <a href="https://www.youtube.com/watch?v=J8KcJL9gylA">J'ai mont&eacute; mon Netflix perso</a>.</p>
+   <p>J'ai trouv&eacute; l'id&eacute;e super interessante, et j'ai d&eacute;cid&eacute; de la reproduire chez moi.</p>
+   <p>Ceux qui en 2014 ont connu <a href="https://fr.wikipedia.org/wiki/Popcorn_Time">Popcorn Time</a> connaissent la folie que c'&eacute;tait. Un soft qui permettait de streamer des films et s&eacute;ries en torrent, avec une interface super simple et intuitive. C'&eacute;tait le Netflix du piratage.</p>
+   <h2>Pour commencer</h2>
+   <p>Je n'avais pas tr&egrave;s envie de prendre un VPS chez un hoster, et monter un serveur chez moi est le plus safe pour moi. Mes donn&eacute;es sont chez moi, et je peux les prot&eacute;ger comme je veux.</p>
+   <p>J'avais une petite machine chez moi, un Lenovo ThinkCentre M900 Tiny, avec un i7-6700T, 8Go de RAM, et un SSD de 256Go. Ce n'est pas &eacute;norme, surtout pour une machine qui va servir &agrave; stocker films, s&eacute;ries, musiques et autres, donc je d&eacute;cide d'upgrade tout &ccedil;a.</p>
+   <p>Je passe &agrave; 32Go de ram, et je rajoute un SSD NVMe de 2To pour stocker mes films et s&eacute;ries.</p>
+   <h2>Les services h&eacute;berg&eacute;s</h2>
+   <p>De quoi on a besoin quand on veut monter une seedbox &agrave; la maison, et automatis&eacute;e ?</p>
+   <ul>
+    <li>Un client torrent</li>
+    <li>Un paquet de Grabbers</li>
+    <li>Un indexer manager</li>
+    <li>Un serveur de media (type Plex ou Jellyfin)</li>
+   </ul>
+   <h3>Le client torrent</h3>
+   <p><a href="https://transmissionbt.com/">Transmission</a>, fid&egrave;le au poste. L&eacute;ger, stable, aucun probl&egrave;me avec lui depuis 2014. Je n'utilise quasiment jamais l'interface web, les diff&eacute;rents grabbers ont une interface de monitoring des t&eacute;l&eacute;chargements, et je n'ai pas besoin de plus.</p>
+   <h3>Les grabbers</h3>
+   <p>Ceux qui avaient leur seedbox en 2012 connaissent <a href="https://github.com/midgetspy/Sick-Beard">SickBeard</a> et <a href="https://github.com/CouchPotato/CouchPotatoServer/">CouchPotato</a>, qui permettaient de r&eacute;cup&eacute;rer automatiquement les films et series, via torrent ou usenet.</p>
+   <p>Aujourd'hui, on a <a href="https://github.com/Radarr/Radarr">Radarr</a>, <a href="https://github.com/Sonarr/Sonarr">Sonarr</a>, mais aussi tous leurs petits cousins :</p>
+   <ul>
+    <li><a href="https://github.com/Readarr/Readarr">Readarr</a>: Avec lequel je r&eacute;cup&egrave;re mes ebooks</li>
+    <li><a href="https://github.com/Lidarr/Lidarr">Lidarr</a>: Qui g&egrave;re mes musiques</li>
+    <li><a href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a>: Qui permet de g&eacute;rer toute la partie Indexers.</li>
+   </ul>
+   <p>On a maintenant &eacute;galement <a href="https://github.com/morpheus65535/bazarr">Bazarr</a>, un grabber de sous-titres.</p>
+   <p>Chose tr&egrave;s utile, puisqu'avant, je g&eacute;rais mes sous titres via <a href="https://github.com/Diaoul/subliminal">Subliminal</a>, qui est une CLI, c'est mignon, mais c'est pas user-friendly. Et &eacute;tant une cli, ce n'est pas automatisable, oblig&eacute; de monter une crontab, qui va se lancer toutes les heures, et qui va v&eacute;rifier l'enti&egrave;ret&eacute; de ma biblioth&egrave;que, inutilement, parce que je n'ai besoin que du dernier sub du dernier film ou dernier &eacute;pisode rajout&eacute;. pas besoin de tout rescan, enfin BREF, je m'&eacute;gare !!</p>
+   <h3>L'indexer manager</h3>
+   <p><a href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a> est devenu mon nouveau copain !</p>
+   <p>Je ne compte plus le temps que j'ai pu passer du temps de sickbeard et couchpotato &agrave; chercher des indexers, &agrave; les ajouter, &agrave; les tester, g&eacute;rer les configuration, v&eacute;rifier si l'indexer n'avait pas &eacute;t&eacute; ferm&eacute; par les autorit&eacute;s, etc.</p>
+   <p>Prowlarr fait tout ceci pour moi, et il le fait tr&egrave;s bien !</p>
+   <h3>Le serveur de media</h3>
+   <p>Mon choix s'est port&eacute; sur <a href="https://www.plex.tv/">Plex</a>, pour une raison simple : Jellyfin a de gros soucis sur AppleTV ... et j'ai une AppleTV. Donc m&ecirc;me si j'aime jellyfin d'amour, il est l&eacute;ger, gratuit, et son algo de transcodage est tr&egrave;s &eacute;conome, mais pragmatiquement, je dois rester sur plex pour le moment.</p>
+   <h2>Les services tiers</h2>
+   <p>Radarr et Sonarr sont syncronis&eacute;s avec <a href="https://trakt.tv/">Trakt</a>, c'est un tracker de films et s&eacute;rie, qui permet de g&eacute;rer sa watchlist, de voir les films et s&eacute;ries que l'on a vu, de voir les films et s&eacute;ries que l'on est en train de voir, etc.</p>
+   <p>Quand j'ajoute un film ou une serie &agrave; ma watchlist, Radarr ou Sonarr interrogent les trackers pour voir si le film ou la serie est disponible.</p>
+   <h2>Un petit r&eacute;sum&eacute;</h2>
+   <p>Toute cette petite &eacute;quipe a besoin d'interconnexions pour fonctionner et que l'automatisation soit parfaite, voici &agrave; quoi ressemble la stack :</p>
+   <figure><a href="/media/images/blog/illustration/2024-10-29/stack.png" target="_blank"><img alt="stack" src="/media/images/blog/illustration/2024-10-29/stack.png"></a></figure>
+   <p>Volontairement, Plex ou Jellyfin ne sont pas pr&eacute;sents, parce qu'un peu &agrave; part, ils n'ont pas besoin de communiquer avec les autres services, ils ont juste besoin de r&eacute;cup&eacute;rer les m&eacute;dias, dans un dossier qui leur est propre.</p>
+   <h2>Un Cas d'utilisation</h2>
+   <p>Je suis au cin&eacute;ma, je vois une bande annonce d'un film qui m'int&eacute;resse, je sors mon t&eacute;l&eacute;phone, je vais sur l'application de trakt, je cherche le film, je l'ajoute &agrave; ma watchlist.</p>
+   <p>Radarr interroge trakt, voit qu'un nouveau film est ajout&eacute; &agrave; la watchlist, va ajouter ce film &agrave; sa bibliot&egrave;que, puis va commencer &agrave; interroger les trackers.</p>
+   <p>Quelques semaines plus tard, le film va apparaitre sur les trackers torrents, en 720p, Radarr va le t&eacute;l&eacute;charger, le renommer, le d&eacute;placer dans le dossier de Plex, et Plex va le scanner, et le rendre disponible sur l'application Plex de mon AppleTV.</p>
+   <p>Si entre temps, une nouvelle version du film, en 1080p voire en 4K a &eacute;t&eacute; d&eacute;tect&eacute;e sur les trackers torrent par Radarr, il va t&eacute;l&eacute;charger la nouvelle version, et supprimer l'ancienne.</p>
+   <p>Une fois le t&eacute;l&eacute;chargement termin&eacute;, Radarr va envoyer une notification &agrave; Bazarr, qui va chercher les sous-titres, dans les langues que j'aurai pr&eacute;cis&eacute;, et les ajouter au dossier du film.</p>
+   <p>Ce m&ecirc;me processus est valable pour les s&eacute;ries, les musiques, les ebooks, etc. modulo le t&eacute;l&eacute;chargement des sous titres.</p>
+   <h2>Conclusion</h2>
+   <p>J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso, et je suis tr&egrave;s content du r&eacute;sultat. C'est super simple &agrave; maintenir, et &ccedil;a me permet de regarder mes films et s&eacute;ries en toute tranquilit&eacute;.</p>
+   <p>Le seul soucis que j'ai maintenant, c'est l'espace disque qui commence &agrave; manquer ... Je vais devoir commencer &agrave; &eacute;tudier l'achat d'un NAS avec quelques dizaines de To de stockage, mais &ccedil;a, c'est une autre histoire !</p>
+  </content>
+ </entry>
+ <entry xml:lang="en">
+  <title type="html">Transformation - Semaine 1</title> <author><name></name>
+   <uri>https://www.hack-with-hyweene.com</uri>
+  </author>
+  <id>https://www.hack-with-hyweene.com/blog/transformation-semaine-1/</id>
+  <published>2024-11-03 20:00:00+00:00</published>
+  <updated></updated>
+  <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/transformation-semaine-1/
+  <summary>
+   Premi&egrave;re semaine de transformation, et je suis mitig&eacute;.</summary>
+  <content type="html">
+   <p><a href="/blog/j-ai-decide-que-c-etait-assez/">Dans l'&eacute;pisode pr&eacute;c&eacute;dent</a>, j'ai d&eacute;marr&eacute; une petite transformation, parce que ras le pif de mon bide, de mes seins et de mon double menton :)</p>
+   <p>Donc, aujourd'hui, premi&egrave;re semaine de transformation, et je suis mitig&eacute;.</p>
+   <p>On sait tous que le plus dur, c'est de s'y remettre, et c'est vrai. Je me suis relanc&eacute;, lundi et mardi ont &eacute;t&eacute; de tr&egrave;s bons jours, mais je sais comme je suis, j'ai voulu taper dans le fond, et ca fait mal. Ca faisait tellement mal que mercredi je n'ai pas su bouger ...</p>
+   <p>On est samedi soir, Petit r&eacute;cap  de la semaine + pr&eacute;diction pour demain :</p>
+   <ul>
+    <li>Lundi, s&eacute;ance pecs + 10385 pas</li>
+    <li>Mardi, s&eacute;ance bras (biceps/triceps) + 11853 pas. Et craquage de bouffe le soir, macdo, j'ai pas pu r&eacute;sister.</li>
+   </ul>
+   <p>Mercredi, KO technique. Pas &eacute;vident.</p>
+   <ul>
+    <li>Jeudi, pas de salle de sport, mais 12161 pas.</li>
+    <li>Vendredi, f&eacute;ri&eacute;, salle de sport ferm&eacute;e, ma fille est dans une forme olympique et nous en fait voir de toutes les couleurs, moins de 3000 pas.</li>
+    <li>Samedi, c'est l'anniversaire de ma fille, on a pass&eacute; toute la journ&eacute;e dehors, raclette le midi, cin&eacute;ma, 8024 pas.</li>
+    <li>Dimanche, la salle ferme a 13h, il va falloir se lever t&ocirc;t, pour pouvoir faire une s&eacute;ance &eacute;paules + au moins 10000 pas.</li>
+   </ul>
+   <p>&Agrave; l'heure o&ugrave; j'&eacute;cris ces lignes, je suis &agrave; 86,2kg, la balance m'indique 30% de bodyfat, je pense qu'elle d&eacute;raille un peu, le bodyfat fait beaucoup de yoyo, et m'indique des valeurs incoh&eacute;rentes d'un jour &agrave; l'autre (30% un jour, 25% le lendemain, etc etc), je vais essayer de me fier &agrave; la moyenne de tout &ccedil;a.</p>
+   <p>Je suis mitig&eacute;, je sais que c'est le d&eacute;but, et que tout les astres ne peuvent pas s'aligner d&egrave;s le d&eacute;marrage, d'autant que je dois jouer avec une grosse d&eacute;pendance &agrave; la bouffe. Je suis comme un cam&eacute; qui a besoin d'une dose, ou qui ne sait r&eacute;sister &agrave; rien dans un moment de stress !</p>
+   <p>Je pense que cette semaine a &eacute;t&eacute; un d&eacute;marrage tr&egrave;s timide, mais il va falloir faire quelques ajustements :</p>
+   <ul>
+    <li>D&eacute;j&agrave;, &eacute;viter la junkfood par flemme, je vais pr&eacute;parer 5 &agrave; 6 tupps de repas d'avance, comme ceci, j'aurai de quoi faire jusque mercredi, et je pourrai &ecirc;tre plus serein la dessus.</li>
+    <li>Le sommeil, tr&egrave;s important &eacute;galement, cette semaine je suis sur une moyenne de 7h24 de sommeil sur la semaine, c'est pas mal, mais il faut essayer de viser les 8h, et surtout, ma fille recommence l'&eacute;cole, se l&egrave;ve plus tot; je vais devoir l'y d&eacute;poser, et me lever plus t&ocirc;t, donc imp&eacute;ratif, pour tenir l'engagement, dodo plus t&ocirc;t.</li>
+    <li>Eviter la flemme de la salle, me tenir &agrave; vraiment terminer mon travail &agrave; 12h, pour pouvoir &ecirc;tre en s&eacute;ance &agrave; 12h30, &eacute;viter de trainer, de me dire que j'ai le temps, et au final, voir arriver 13h, et me rendre compte que je n'ai plus le temps (comme ce jeudi).</li>
+   </ul>
+   <p>En trois mots, discipline, rigueur, et organisation.</p>
+   <hr>
+   <p>Dimanche soir, il est 21h15, je suis sur le tapis pour boucler mes 10000 pas, ma montre m'indique 7500, je marche, tranquillement, en tapant ce billet. Mais je me rends compte que j'ai oubli&eacute; de prendre mes mesures ce matin ! Tampis, ca sera pour demain matin (note, j'ai oubli&eacute; aussi, je ferai une mise &agrave; jour mardi matin). Par contre, bonne surprise au niveau de la pes&eacute;e, malgr&eacute; la raclette et le popcorn au cin&eacute;ma, les d&eacute;gats n'ont pas &eacute;t&eacute; si consid&eacute;rables, j'&eacute;tais &agrave; xxx ce matin, juste 400g de pris par rapport &agrave; la hier.</p>
+   <p>Comme dit plus haut, ce matin s&eacute;ance &eacute;paules, j'ai fait un changement dans les programmes, j'avais l'habitude de faire des s&eacute;ances 4x12, avec un poids honorable, mais j'ai d&eacute;cid&eacute; de suivre un des conseils de Rudy Coia, et de passer sur des series plus longues, et plus l&eacute;g&egrave;res, donc au lieu de 4x12 @ 10kg &agrave; la poulie, je suis pass&eacute; sur des 4x20 @ 5kg, et ca brule pas mal. Il va falloir que je me documente sur tout ca, et arr&ecirc;ter de faire au feeling, peut &ecirc;tre commencer avec un bouquin de Fred Delavier ...</p>
+   <hr>
+   <p>Pour finir, avec les traditionnelles captures d'&eacute;cran du tracking :</p>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-03/pas.png">
+     <figcaption>Les pas</figcaption>
+    </img>
+   </figure>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-03/sommeil.png">
+     <figcaption>Le sommeil</figcaption>
+    </img>
+   </figure>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-03/poids.png">
+     <figcaption>Le poids</figcaption>
+    </img>
+   </figure>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-03/bodyfat.png">
+     <figcaption>Le bodyfat</figcaption>
+    </img>
+   </figure>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-03/mesures.png">
+     <figcaption>Les mesures</figcaption>
+    </img>
+   </figure>
+  </content>
+ </entry>
+ <entry xml:lang="en">
+  <title type="html">Transformation - Semaine 2</title> <author><name></name>
+   <uri>https://www.hack-with-hyweene.com</uri>
+  </author>
+  <id>https://www.hack-with-hyweene.com/blog/transformation-semaine-2/</id>
+  <published>2024-11-11 22:00:00+00:00</published>
+  <updated></updated>
+  <link rel="alternate" type="text/html">https://www.hack-with-hyweene.com/blog/transformation-semaine-2/
+  <summary>
+   Semaine 2, bien mieux, mais on peut encore gratter plus loin !</summary>
+  <content type="html">
+   <p><a href="/blog/transformation-semaine-1/">La semaine derni&egrave;re</a>, j'avais dit &ecirc;tre mitig&eacute; par mon parcours.</p>
+   <p>J'avais eu un gros probl&egrave;me &agrave; me mettre en train, j'avais aussi eu de gros soucis pour dormir correctement (la moyenne de
+    <code>
+     7h33</code>de sommeil sur la semaine, due a des nuits de
+    <code>
+     5h30</code>a fait plut&ocirc;t mal), et un jour feri&eacute; mal plac&eacute; m'ont donn&eacute; du mal.</p>
+   <p>Mais je me suis rattrapp&eacute; cette semaine !</p>
+   <h2>Petit r&eacute;cap</h2>
+   <p>Une moyenne de
+    <code>
+     12164</code>pas par jour sur la semaine, c'est bien au del&agrave; des
+    <code>
+     8606</code>de moyenne de la semaine derni&egrave;re ! J'aimerais bien arriver &agrave; 15000 pas par jour, mais pour &ccedil;a, il va falloir faire attention au sommeil, parce que faire une s&eacute;ance dans la journ&eacute;e, plus 12k pas, et je suis rinc&eacute;.</p>
+   <p>Parlant de sommeil, on est &agrave;
+    <code>
+     7h14</code>, ce qui est en dessous de la semaine derni&egrave;re &agrave;
+    <code>
+     7h33</code>, rat&eacute; ...</p>
+   <p>Le poids est en baisse, pass&eacute; de
+    <code>
+     86,38kg</code>dimanche dernier &agrave;
+    <code>
+     85,82kg</code>ce dimanche. Juste
+    <code>
+     560g</code>perdus, je tablais sur 1kg, mais c'est d&eacute;j&agrave; &ccedil;a. On fera mieux la semaine prochaine.</p>
+   <p>Je ne peux toujours pas me fier au chiffre du bodyfat sur cette balance, elle m'indique
+    <code>
+     28%</code>ce dimanche, contre
+    <code>
+     28,9%</code>la semaine derni&egrave;re. Je dis que je ne m'y fie pas, parce qu'elle m'indiquait vendredi que j'&eacute;tais &agrave;
+    <code>
+     27,1%</code>... J'ai un peu de mal &agrave; croire que je suis pass&eacute; de
+    <code>
+     28,7</code>&agrave;
+    <code>
+     27,1</code>en une journ&eacute;e, puis remont&eacute; &agrave;
+    <code>
+     28,3</code>le lendemain.</p>
+   <p>Bref, je pense que je vais tester la balance de ma salle de sport, ca sera surement plus fiable :D</p>
+   <h2>Le d&eacute;tail de la semaine</h2>
+   <ul>
+    <li>Lundi : Pecs, s&eacute;ance de foufou, je les ai senti pendant 2 jours, et
+     <code>
+      12278</code>pas.</li>
+    <li>Mardi : Biceps &amp; Triceps +
+     <code>
+      11550</code>pas.</li>
+    <li>Mercredi : Petit emp&egrave;chement qui m'a fait rater la s&eacute;ance, mais
+     <code>
+      12259</code>pas.</li>
+    <li>Jeudi : Dos, et
+     <code>
+      14207</code>pas.</li>
+    <li>Vendredi : &Eacute;paules, et
+     <code>
+      11080</code>pas.</li>
+    <li>Samedi : Repos, et
+     <code>
+      12731</code>pas.</li>
+    <li>Dimanche : Jambes
+     <em>
+      (je les sens encore quand j'&eacute;cris ces lignes, et j'ai encore du mal &agrave; m'assoir et me lever des toilettes)</em>, et
+     <code>
+      11048</code>pas.</li>
+   </ul>
+   <h2>Les points positifs</h2>
+   <ul>
+    <li>J'ai appliqu&eacute; <a href="https://www.youtube.com/watch?v=bfLHTLQZ5nc">la r&egrave;gle des 2 jours</a>, cette r&egrave;gle qui dit que pour mettre en place durablement une nouvelle habitude, il faut &eacute;viter de faire une pause de plus d'une journ&eacute;e entre deux occurences. Donc si pause mercredi, on &eacute;vite d'en faire une le jeudi. J'ai donc fait 5 s&eacute;ances cette semaine.</li>
+    <li>J'ai vraiment tenu a augmenter le nombre de pas par jour, le r&eacute;sultat est la, 4000 de plus par jour sur la moyenne de la semaine. On va essayer d'aller plus haut cette semaine : 15000 pas par jour.</li>
+    <li>J'ai encore quelques probl&egrave;mes pour g&eacute;rer la bouffe, m&ecirc;me si j'ai recommenc&eacute; &agrave; refaire du batchcooking pour &eacute;viter de faire n'importe quoi, mais j'entraine mon cerveau &agrave; ne pas vriller, c'est un exercice difficile, mais j'en parle avec les gens, &ccedil;a aide.</li>
+   </ul>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-10/enculer-tartiflette.png">
+     <figcaption>Seb, merci bro 🥲</figcaption>
+    </img>
+   </figure>
+   <ul>
+    <li>Ma dame et ma fille se sont fait un mcdo cette semaine, j'ai r&eacute;sist&eacute; ! J'ai tap&eacute; dans une frite et deux petits pilons de poulet, c'&eacute;tait la lutte de ne pas dire que je voulais quelque chose, mais j'ai rien fait, je suis rest&eacute; sur mon poulet/riz/haricots verts, fier de moi ! :D</li>
+    <li>Je me suis bien but&eacute; cette semaine, et petit message de ma dame qui fait plaisir pendant une s&eacute;ance d'&eacute;paules qui brulent :D</li>
+   </ul>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-10/poupinette-fiere.jpeg">
+     <figcaption>Ma dame, je t'aime 🥰</figcaption>
+    </img>
+   </figure>
+   <h2>Les points n&eacute;gatifs</h2>
+   <ul>
+    <li>Le sommeil, toujours le sommeil. Je ne vais pas me trouver d'excuses, si je prends la tablette au lit, je finis par me coucher tard, pas de secret, faut que je mette plus de distance avec les &eacute;crans le soir.</li>
+    <li>Pas mal de maux de t&ecirc;te cette semaine, certainement du &agrave; un manque d'hydratation, faudrait pas oublier de boire ...</li>
+   </ul>
+   <h2>Les objectifs pour la semaine prochaine</h2>
+   <ul>
+    <li>
+     <code>15000</code>pas par jour, on va y arriver !</li>
+    <li>
+     <code>7h30</code>, voire
+     <code>
+      8h</code>de sommeil par nuit, y'a pas de raisons de ne pas y arriver !</li>
+    <li>1kg de moins, ca serait bien de passer sous les
+     <code>
+      85kg</code>, mon plus bas depuis le 21 Octobre 2023 !!</li>
+   </ul>
+   <hr>
+   <p>Pour finir, avec les traditionnelles captures d'&eacute;cran du tracking :</p>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-10/pas.png">
+    <figcaption>Les pas</figcaption>
+   </figure>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-10/sommeil.png">
+    <figcaption>Le sommeil</figcaption>
+   </figure>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-10/poids.png">
+    <figcaption>Le poids</figcaption>
+   </figure>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-10/bodyfat.png">
+    <figcaption>Le bodyfat</figcaption>
+   </figure>
+   <figure>
+    <img src="/media/images/blog/illustration/2024-11-10/mesures.png">
+    <figcaption>Les mesures</figcaption>
+   </figure>
+  </content>
+ </entry>
+</feed>

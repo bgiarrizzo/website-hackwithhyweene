@@ -1,21 +1,25 @@
-{% if learn.update_date | is_outdated %}
-    <div>
-        <p>
-            <strong>Attention</strong>
-        </p>
-        <p>
-            Ce truc a été modifié il y a plus de six mois (le {{ learn.update_date_medium }}). Il est possible qu'il ne soit plus à jour.
-        </p>
-        <p>
-            Si vous rencontrez des erreurs ou des différences en le suivant, n'hésitez pas à me contacter pour me le signaler.
-        </p>
-    </div>
-{% endif %}
+{% extends "main.j2" %}
 
-<h1>{{ learn.module }}</h1>
+{% block content %}
+    {% if learn.update_date | is_outdated %}
+        <div>
+            <p>
+                <strong>Attention</strong>
+            </p>
+            <p>
+                Ce truc a été modifié il y a plus de six mois (le {{ learn.update_date_medium }}). Il est possible qu'il ne soit plus à jour.
+            </p>
+            <p>
+                Si vous rencontrez des erreurs ou des différences en le suivant, n'hésitez pas à me contacter pour me le signaler.
+            </p>
+        </div>
+    {% endif %}
 
-<h2>{{ learn.title }}</h2>
+    <h1>{{ learn.module }}</h1>
 
-{{ learn.body }}
+    <h2>{{ learn.title }}</h2>
 
-<script src="/static/js/prism.js"></script>
+    {{ learn.body }}
+
+    <script src="/static/js/prism.js"></script>
+{% endblock %}

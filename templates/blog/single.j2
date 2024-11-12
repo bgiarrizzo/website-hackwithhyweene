@@ -1,19 +1,23 @@
-{% if post.cover %}
-  <img class="cover" src="/media/images/blog/covers/{{ post.cover }}" alt="{{ post.title }}">
-{% endif %}
+{% extends "main.j2" %}
 
-<h1>{{ post.title }}</h1>
+{% block content %}
+    {% if post.cover %}
+        <img class="cover" src="/media/images/blog/covers/{{ post.cover }}" alt="{{ post.title }}">
+    {% endif %}
 
-<p>
-  Publié le {{ post.publish_date_medium }}
-</p>
+    <h1>{{ post.title }}</h1>
 
-<div>
-  {% for tag in post.tags %}#{{ tag }} {% endfor %}
-</div>
+    <p>
+        Publié le {{ post.publish_date_medium }}
+    </p>
 
-<hr />
+    <div>
+        {% for tag in post.tags %}#{{ tag }} {% endfor %}
+    </div>
 
-{{ post.body }}
+    <hr />
 
-<script src="/static/js/prism.js"></script>
+    {{ post.body }}
+
+    <script src="/static/js/prism.js"></script>
+{% endblock %}

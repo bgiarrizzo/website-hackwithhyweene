@@ -1,8 +1,11 @@
+{% extends "main.j2" %}
 
-<h1>{{ link.title }}</h1>
+{% block content %}
+    <h1>{{ link.title }}</h1>
 
-<p class="subtitle">Original Link : <a href="{{ link.url }}" target="_blank">{{ link.url }}</a></p>
+    <p class="subtitle">Original Link : <a href="{{ link.url }}" target="_blank">{{ link.url }}</a></p>
 
-<hr />
+    <hr />
 
-{{ link.body }}
+    {{ link.body }}
+{% endblock %}

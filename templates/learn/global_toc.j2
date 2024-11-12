@@ -1,14 +1,15 @@
+{% extends "main.j2" %}
 
-<h1>Apprendre</h1>
+{% block content %}
+    <h1>Apprendre</h1>
 
-{% for module in table_of_contents | sort(attribute="module_id") %}
+    {% for module in table_of_contents | sort(attribute="module_id") %}
 
-    <h2>{{ module.module_name }}</h2>
+        <h2>{{ module.module_name }}</h2>
 
-    <p>{{ module.module_description }}</p>
+        <p>{{ module.module_description }}</p>
 
-    <a href="/apprendre/{{ module.module_slug }}/">Voir le module</a>
+        <a href="/apprendre/{{ module.module_slug }}/">Voir le module</a>
 
-{% endfor %}
-
- 
+    {% endfor %}
+{% endblock %}

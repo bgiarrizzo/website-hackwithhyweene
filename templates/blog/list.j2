@@ -1,15 +1,20 @@
-<h1 class="text-4xl font-semibold">Blog</h1>
 
-{% for year, posts in all_posts | reverse | groupby("publish_date_year") | reverse %}
+{% extends "main.j2" %}
 
-    <h2>{{ year }}</h2>
+{% block content %}
+    <h1 class="text-4xl font-semibold">Blog</h1>
 
-    <ul>
-        {% for post in posts %}
-            <li>
-                <a href="/blog/{{ post.slug }}/">{{ post.publish_date_medium }} : {% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+    {% for year, posts in all_posts | reverse | groupby("publish_date_year") | reverse %}
 
-{% endfor %}
+        <h2>{{ year }}</h2>
+
+        <ul>
+            {% for post in posts %}
+                <li>
+                    <a href="/blog/{{ post.slug }}/">{{ post.publish_date_medium }} : {% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+    {% endfor %}
+{% endblock %}

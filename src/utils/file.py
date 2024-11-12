@@ -14,22 +14,9 @@ def get_all_files_from_path(target_path, extension=".md") -> list:
 
 
 def write_file(data, template_name, filename):
-    page_template = render_template(template_name, prepare_template_data([data]))
-    content = {"content": page_template}
-    template_data = prepare_template_data([data, content])
+    template_data = prepare_template_data([data])
 
-    if "blog_feed_rss" in template_name:
-        content = beautify(
-            rendered_page=render_template("blog_feed_rss.j2", template_data), type="xml"
-        )
-    elif "links_feed_rss" in template_name:
-        content = beautify(
-            rendered_page=render_template("links_feed_rss.j2", template_data),
-            type="xml",
-        )
-    else:
-        content = beautify(
-            rendered_page=render_template("main.j2", template_data), type="html5"
-        )
+    final_content = render_template(template_name, template_data)
 
-    write_page(filename=filename, content=content)
+    beautified_content = beautify(rendered_page=final_content, type="html5")
+    write_page(filename=filename, content=beautified_content)

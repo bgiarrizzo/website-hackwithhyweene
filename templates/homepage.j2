@@ -1,30 +1,34 @@
-<h1 class="text-4xl font-semibold">Publié récemment</h1>
+{% extends "main.j2" %}
 
-{% if posts %}
-    <h2 class="text-2xl font-semibold mt-8 border-b border-gray-400">Articles du blog</h2>
+{% block content %}
+    <h1 class="text-4xl font-semibold">Publié récemment</h1>
 
-    <a href="/blog/">Voir tous les articles</a>
-  
-    <ul>
-        {% for post in posts[-5:] | reverse  %}
+    {% if posts %}
+        <h2 class="text-2xl font-semibold mt-8 border-b border-gray-400">Articles du blog</h2>
+
+        <a href="/blog/">Voir tous les articles</a>
+        
+        <ul>
+            {% for post in posts[-5:] | reverse  %}
+                <li>
+                    <a href="/blog/{{ post.slug }}/">{{ post.publish_date_medium }} : {% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if links %}
+        <h2 class="text-2xl font-semibold mt-8 border-b border-gray-400">Liens</h2>
+
+        <a href="/liens/">Voir tous les liens</a>
+
+        <ul>
+        {% for link in links[-5:] | reverse  %}
             <li>
-                <a href="/blog/{{ post.slug }}/">{{ post.publish_date_medium }} : {% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a>
+                <a href="/liens/{{ link.slug }}">{{ link.publish_date_medium }} : {{ link.title }}</a>
             </li>
         {% endfor %}
-    </ul>
-{% endif %}
-
-{% if links %}
-  <h2 class="text-2xl font-semibold mt-8 border-b border-gray-400">Liens</h2>
-
-  <a href="/liens/">Voir tous les liens</a>
-
-  <ul>
-    {% for link in links[-5:] | reverse  %}
-      <li>
-        <a href="/liens/{{ link.slug }}">{{ link.publish_date_medium }} : {{ link.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-  
-{% endif %}
+        </ul>
+        
+    {% endif %}
+{% endblock %}

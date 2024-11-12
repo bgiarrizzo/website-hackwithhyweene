@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr-FR" prefix="og: http://ogp.me/ns#" >
     <head>
-
         <!-- Favicon -->
         <link href="{{ site.url }}/static/img/cl-logo.svg" rel="icon" />
-
         {% include "includes/meta.j2" %}
         {% include "includes/style.j2" %}
-    
     </head>
-
     <body>
-
-        {% include "includes/header.j2" %}
-        {% include "includes/navigation.j2" %}
+        <header>
+            <h1>
+                <a href="/">Hack with Hyweene</a>
+            </h1>
+        </header>
+        <nav>
+            <a href="/blog/">Blog</a>
+            &bull;
+            <a href="/liens/">Liens</a>
+            &bull;
+            <a href="/apprendre/">Apprendre</a>
+            &bull;
+            <a href="/cv/">CV</a>
+        </nav>
 
         <main>
-            {{ content }}
+            {% block content %}
+                <h1>Default content block</h1> 
+                <p>Default content block</p>
+            {% endblock content %}
         </main>
             
-        {% include "includes/footer.j2" %}
-        
+        <footer>
+            <nav>
+                <a href="/a-propos/">A Propos</a>
+                &bull;
+                <a href="/mentions-legales/">Mentions Légales</a>
+                &bull;
+                <a href="{{ site.url }}">{{ site.url }}</a>
+            </nav>
+        </footer>
     </body>
-
 </html>
