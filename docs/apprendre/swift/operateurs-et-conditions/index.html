@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr-FR" prefix="og: http://ogp.me/ns#">
+ <head>
+  <!-- Favicon -->
+  <link href="https://www.hack-with-hyweene.com/static/img/cl-logo.svg" rel="icon">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=5.0" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="Bruno 'Hyweene' Giarrizzo" name="author">
+  <meta content="Hack with Hyweene" name="webmaster">
+  <meta content="fr" name="language">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="googlebot">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="bingbot">
+  <meta content="1 days" name="revisit-after">
+  <meta content="never" name="expires">
+  <meta content="General" name="rating">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="https://www.hack-with-hyweene.com" name="identifier-URL">
+  <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - Blog RSS" type="application/rss+xml">
+  <title>Op&eacute;rateurs et conditions - Swift - Apprendre - Hack with Hyweene</title>
+  <meta content="Op&eacute;rateurs et conditions - Swift - Apprendre - Hack with Hyweene" name="title">
+  <link href="https://www.hack-with-hyweene.com/" rel="canonical">
+  <link href="/static/css/prism.css" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T0SNK38Q">
+  </script>
+  <script src="/static/js/analytics.js">
+  </script>
+  <style>body { margin: 0 auto; max-width: 700px; line-height: 1.8; font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif; font-size: 1rem; color: #444; background-color: #fdf6e3; padding: 20px 40px; text-rendering: optimizeLegibility; }
+    h1 { line-height: 1.2; text-align: center; }
+    h2, h3, h4 { line-height: 1.2; border-bottom: 1px solid; }
+    p { hyphens: auto; text-align: justify; }
+    pre, blockquote, .code { background: #f5ead6; font-size: 0.8em; padding: 1em; overflow: scroll; border-radius: 0.5em; }
+    ul, ol { list-style-type: circle; }
+    a { color: #169; text-decoration: none; padding: 0.5em 0; }
+    a:hover { text-decoration: underline; }
+    
+    nav { display: flex; align-items: center; justify-content: space-between; flex-direction: row; text-align: center; font-variant: small-caps; font-weight: bold; border-bottom: 1px solid; border-top: 1px solid; margin-bottom: 1.5em; }
+    
+    main { text-align: justify; }
+    main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
+
+    .cover { display: block; width: 100%; border-radius: 0.5em; }
+
+    figure { width: 65%; display: block; margin-left: auto; margin-right: auto;}
+    figure img { width: 100%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 0.5em; }
+    figure figcaption { text-align: center; font-style: italic; }
+
+    footer { margin-top: 1.5em; }
+
+    code { background: #f8cca0; padding: 0.25em;  margin-right: 0.5em; border-radius: 0.5em; }</style>
+ </head>
+ <body>
+  <header>
+   <h1><a href="/">Hack with Hyweene</a></h1>
+  </header>
+  <nav><a href="/blog/">Blog</a>&bull; <a href="/liens/">Liens</a>&bull; <a href="/apprendre/">Apprendre</a>&bull; <a href="/cv/">CV</a></nav>
+  <main>
+   <h1></h1>
+   <h2>Op&eacute;rateurs et conditions</h2>
+   <h2>Op&eacute;rateurs Arithmetiques</h2>
+   <p>Comme dans tous les langages de programmation, on a besoin de faire des calculs. Swift propose les op&eacute;rateurs arithm&eacute;tiques suivants :</p>
+   <ul>
+    <li>Addition
+     <code>
+      +</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">let a = 5
+let b = 3
+var c = a + b // c = 8</code></pre>
+   <ul>
+    <li>Soustraction
+     <code>
+      -</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">var c = a - b // c = 2</code></pre>
+   <ul>
+    <li>Multiplication
+     <code>
+      *</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">var c = a * b // c = 15</code></pre>
+   <ul>
+    <li>Division
+     <code>
+      /</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">var c = a / b // c = 1</code></pre>
+   <ul>
+    <li>Modulo
+     <code>
+      %</code>: le reste de la division</li>
+   </ul>
+   <pre><code class="language-swift">var c = a % b // c = 2</code></pre>
+   <p>Le r&eacute;sultat est 2, parce que 5 divis&eacute; par 3 donne 1 avec un reste de 2.</p>
+   <h2>Assignation compos&eacute;e</h2>
+   <p>Swift donne une syntaxe plus rapide pour les op&eacute;rations d'assignation. Exemple, on veut ajouter 5 &agrave; une variable
+    <code>
+     a</code>:</p>
+   <pre><code class="language-swift">var a = 5
+a += 5 // a = 10</code></pre>
+   <p>Cela fonctionne avec d'autres types, exemple avec une string :</p>
+   <pre><code class="language-swift">var maChaine = "Hello"
+maChaine += " World" // maChaine = "Hello World"</code></pre>
+   <h2>Op&eacute;rateurs de comparaison</h2>
+   <p>Swift propose les op&eacute;rateurs de comparaison suivants :</p>
+   <ul>
+    <li>&Eacute;galit&eacute;
+     <code>
+      ==</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">let a = 5
+let b = 3
+let c = 5
+
+a == b // false
+a == c // true</code></pre>
+   <ul>
+    <li>Diff&eacute;rence
+     <code>
+      !=</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">a != b // true
+a != c // false</code></pre>
+   <ul>
+    <li>Sup&eacute;rieur
+     <code>
+      &gt;</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">a &gt; b // true
+a &gt; c // false</code></pre>
+   <ul>
+    <li>Inf&eacute;rieur
+     <code>
+      &lt;</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">a &lt; b // false
+a &lt; c // false</code></pre>
+   <ul>
+    <li>Sup&eacute;rieur ou &eacute;gal
+     <code>
+      &gt;=</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">a &gt;= b // true
+a &gt;= c // true</code></pre>
+   <ul>
+    <li>Inf&eacute;rieur ou &eacute;gal
+     <code>
+      &lt;=</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">a &lt;= b // false
+a &lt;= c // true</code></pre>
+   <p>Ces op&eacute;rateurs peuvent aussi &ecirc;tre utilis&eacute;s sur des strings :</p>
+   <pre><code class="language-swift">let chaine1 = "Hello"
+let chaine2 = "World"
+
+chaine1 == chaine2 // false
+chaine1 != chaine2 // true
+chaine1 &lt; chaine2 // true
+chaine1 &gt; chaine2 // false</code></pre>
+   <p>Parce que swift compare les strings en fonction de leur ordre alphab&eacute;tique.</p>
+   <h2>Conditions</h2>
+   <p>Les conditions permettent de prendre des d&eacute;cisions dans votre code. Swift propose les conditions suivantes :</p>
+   <ul>
+    <li>
+     <code>if</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">let a = 5
+let b = 3
+
+if a &gt; b {
+    print("a est sup&eacute;rieur &agrave; b")
+}</code></pre>
+   <ul>
+    <li>
+     <code>else</code>
+    </li>
+   </ul>
+   <pre><code class="language-swift">if a &gt; b {
+    print("a est sup&eacute;rieur &agrave; b")
+} else {
+    print("a est inf&eacute;rieur ou &eacute;gal &agrave; b")
+}</code></pre>
+   <ul>
+    <li>
+     <code>else if</code>: Permet d'enchainer avec une condition suppl&eacute;mentaire.</li>
+   </ul>
+   <pre><code class="language-swift">if a &gt; b {
+    print("a est sup&eacute;rieur &agrave; b")
+} else if a &lt; b {
+    print("a est inf&eacute;rieur &agrave; b")
+} else {
+    print("a est &eacute;gal &agrave; b")
+}</code></pre>
+   <h2>Combinaison d'op&eacute;rateurs</h2>
+   <p>Parfois, on a besoin de combiner plusieurs conditions. Swift propose les op&eacute;rateurs suivants :</p>
+   <ul>
+    <li>
+     <code>&amp;&amp;</code>: ET</li>
+   </ul>
+   <pre><code class="language-swift">let workoutIntensityLowLimit: Int = 0
+let workoutIntensityHighLimit: Int = 10
+var workoutIntensity: Int = 5
+
+if workoutIntensity &gt;= workoutIntensityLowLimit &amp;&amp; workoutIntensity &lt;= workoutIntensityHighLimit {
+    print("Valeur correcte")
+}</code></pre>
+   <ul>
+    <li>
+     <code>||</code>: OU</li>
+   </ul>
+   <pre><code class="language-swift">var workoutIntensity: Int = 15
+
+if workoutIntensity &lt; workoutIntensityLowLimit || workoutIntensity &gt; workoutIntensityHighLimit {
+    print("Valeur incorrecte")
+}</code></pre>
+   <ul>
+    <li>
+     <code>!</code>: NON</li>
+   </ul>
+   <pre><code class="language-swift">var isFound = true
+
+if !isFound {
+    print("Non trouv&eacute;")
+}</code></pre>
+   <h2>L'op&eacute;rateur ternaire</h2>
+   <p>L'op&eacute;rateur ternaire est un op&eacute;rateur qui fonctionne en trois parties. Il est souvent utilis&eacute; pour affecter une valeur en fonction d'une condition.</p>
+   <pre><code class="language-swift">let a = 5
+let b = 3
+
+let c = a &gt; b ? "a est sup&eacute;rieur &agrave; b" : "a est inf&eacute;rieur ou &eacute;gal &agrave; b"</code></pre>
+   <p>Ce qu'on peut traduire par :</p>
+   <pre><code class="language-swift">if a &gt; b {
+    c = "a est sup&eacute;rieur &agrave; b"
+} else {
+    c = "a est inf&eacute;rieur ou &eacute;gal &agrave; b"
+}</code></pre>
+   <h2>Instructions switch</h2>
+   <p>Le
+    <code>
+     switch</code>permet d'&eacute;viter de chainer de multiples conditions
+    <code>
+     if/else</code>. Il est souvent utilis&eacute; pour comparer une variable &agrave; plusieurs valeurs.</p>
+   <pre><code class="language-swift">let fruit = "pomme"
+
+switch fruit {
+case "banane":
+    print("C'est une banane")
+case "fraise":
+    print("C'est une fraise")
+case "pomme":
+    print("C'est une pomme")
+default:
+    print("Je ne sais pas quel fruit c'est")
+}
+
+// Affiche : C'est une pomme</code></pre>
+   <h2>Op&eacute;rateurs de plage</h2>
+   <p>Swift propose des op&eacute;rateurs de plage pour cr&eacute;er des intervalles de valeurs.</p>
+   <ul>
+    <li>
+     <code>a...b</code>: Cr&eacute;e un intervalle de valeurs de
+     <code>
+      a</code>&agrave;
+     <code>
+      b</code>inclus.</li>
+   </ul>
+   <pre><code class="language-swift">for i in 1...5 {
+    print(i)
+}
+
+// Affiche : 1 2 3 4 5</code></pre>
+   <ul>
+    <li>
+     <code>a..&lt;b</code>: Cr&eacute;e un intervalle de valeurs de
+     <code>
+      a</code>&agrave;
+     <code>
+      b</code>exclu.</li>
+   </ul>
+   <pre><code class="language-swift">for i in 1..&lt;5 {
+    print(i)
+}
+
+// Affiche : 1 2 3 4</code></pre>
+   <script src="/static/js/prism.js">
+   </script>
+  </main>
+  <footer>
+   <nav><a href="/a-propos/">A Propos</a>&bull; <a href="/mentions-legales/">Mentions L&eacute;gales</a>&bull; <a href="https://www.hack-with-hyweene.com">https://www.hack-with-hyweene.com</a></nav>
+  </footer>
+ </body>
+</html>
