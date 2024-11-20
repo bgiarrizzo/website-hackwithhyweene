@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr-FR" prefix="og: http://ogp.me/ns#">
+ <head>
+  <!-- Favicon -->
+  <link href="https://www.hack-with-hyweene.com/static/img/cl-logo.svg" rel="icon">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=5.0" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="Bruno 'Hyweene' Giarrizzo" name="author">
+  <meta content="Hack with Hyweene" name="webmaster">
+  <meta content="fr" name="language">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="googlebot">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="bingbot">
+  <meta content="1 days" name="revisit-after">
+  <meta content="never" name="expires">
+  <meta content="General" name="rating">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="https://www.hack-with-hyweene.com" name="identifier-URL">
+  <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - Blog RSS" type="application/rss+xml">
+  <title>Types complexes - Swift - Apprendre - Hack with Hyweene</title>
+  <meta content="Types complexes - Swift - Apprendre - Hack with Hyweene" name="title">
+  <link href="https://www.hack-with-hyweene.com/" rel="canonical">
+  <link href="/static/css/prism.css" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T0SNK38Q">
+  </script>
+  <script src="/static/js/analytics.js">
+  </script>
+  <style>body { margin: 0 auto; max-width: 700px; line-height: 1.8; font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif; font-size: 1rem; color: #444; background-color: #fdf6e3; padding: 20px 40px; text-rendering: optimizeLegibility; }
+    h1 { line-height: 1.2; text-align: center; }
+    h2, h3, h4 { line-height: 1.2; border-bottom: 1px solid; }
+    p { hyphens: auto; text-align: justify; }
+    pre, blockquote, .code { background: #f5ead6; font-size: 0.8em; padding: 1em; overflow: scroll; border-radius: 0.5em; }
+    ul, ol { list-style-type: circle; }
+    a { color: #169; text-decoration: none; padding: 0.5em 0; }
+    a:hover { text-decoration: underline; }
+    
+    nav { display: flex; align-items: center; justify-content: space-between; flex-direction: row; text-align: center; font-variant: small-caps; font-weight: bold; border-bottom: 1px solid; border-top: 1px solid; margin-bottom: 1.5em; }
+    
+    main { text-align: justify; }
+    main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
+
+    .cover { display: block; width: 100%; border-radius: 0.5em; }
+
+    figure { width: 65%; display: block; margin-left: auto; margin-right: auto;}
+    figure img { width: 100%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 0.5em; }
+    figure figcaption { text-align: center; font-style: italic; }
+
+    footer { margin-top: 1.5em; }
+
+    code { background: #f8cca0; padding: 0.25em;  margin-right: 0.5em; border-radius: 0.5em; }</style>
+ </head>
+ <body>
+  <header>
+   <h1><a href="/">Hack with Hyweene</a></h1>
+  </header>
+  <nav><a href="/blog/">Blog</a>&bull; <a href="/liens/">Liens</a>&bull; <a href="/apprendre/">Apprendre</a>&bull; <a href="/cv/">CV</a></nav>
+  <main>
+   <h1></h1>
+   <h2>Types complexes</h2>
+   <h2>Arrays, Sets, Tuples, et Dictionnaires</h2>
+   <h3>Arrays</h3>
+   <p>Les arrays (ou listes) sont des collections de donn&eacute;es qui sont stock&eacute;es sous une seule variable. Les &eacute;l&eacute;ments d'un array sont ordonn&eacute;s et peuvent &ecirc;tre acc&eacute;d&eacute;s par leur index.</p>
+   <p>Les arrays sont fortement typ&eacute;s avec swift, ce qui veut dire qu'on ne peut m&eacute;langer torchons et serviettes. A l'inverse de Python par exemple, si on cr&eacute;&eacute; un array, et que le type des &eacute;l&eacute;ments qu'il contiendra est de type
+    <code>
+     Int</code>, alors on ne pourra pas stocker autre choses que des
+    <code>
+     Int</code>.</p>
+   <p>Par exemple, en python :</p>
+   <pre><code class="language-python">maListe = ["bonjour", 1, "au revoir", 5]</code></pre>
+   <p>On voit que la liste contient, indiff&eacute;remment des strings, des nombres &agrave; virgules, des entiers. On pourrait m&ecirc;me y stocker un dictionnaire ou voire m&ecirc;me, une sous liste.</p>
+   <p>Alors qu'en swift, les choses sont plus strictes :</p>
+   <pre><code class="language-swift">let maListePleineDeNombresEntiers: [Int] = [1, 2, 3, 4]</code></pre>
+   <p>Si on essaye de stocker autre chose qu'un
+    <code>
+     Int</code>dans cette liste, on aura une erreur.</p>
+   <h3>Sets</h3>
+   <p>Les sets sont des collections non ordonn&eacute;es de donn&eacute;es uniques. Cela signifie que chaque &eacute;l&eacute;ment d'un set est unique et ne peut pas &ecirc;tre dupliqu&eacute;.</p>
+   <p>Les sets, comme les arrays, sont fortement typ&eacute;s. Donc comme les listes, il n'est pas possible de m&eacute;langer les types.</p>
+   <pre><code class="language-swift">let monSetPleinDeNombresEntiers: Set&lt;Int&gt; = Set([1, 2, 3, 4])
+let monSetPleinDeStrings: Set&lt;String&gt; = Set(["bleu", "rouge", "vert"])</code></pre>
+   <p>Si on essaye d'ajouter une valeur d&eacute;j&agrave; pr&eacute;sente dans le set, elle ne sera pas ajout&eacute;e.</p>
+   <pre><code class="language-swift">let monSetPleinDeStrings: Set&lt;String&gt; = Set(["bleu", "rouge", "vert", "bleu"])</code></pre>
+   <p>Dans cet exemple, le set ne contiendra que
+    <code>
+     ["bleu", "rouge", "vert"]</code>.</p>
+   <h3>Tuples</h3>
+   <p>Les tuples sont des collections de valeurs qui peuvent &ecirc;tre de diff&eacute;rents types. Les tuples sont utilis&eacute;s pour regrouper des valeurs qui sont li&eacute;es entre elles.</p>
+   <pre><code class="language-swift">let personne = (prenom: "Hyweene", pseudo: "Hyweene", age: 36)</code></pre>
+   <p>On peut acc&eacute;der aux valeurs d'un tuple en utilisant leur index ou leur nom.</p>
+   <pre><code class="language-swift">print(personne.0) // Hyweene
+print(personne.1) // Hyweene
+print(personne.2) // 36</code></pre>
+   <p>Il est &eacute;galement possible d'acc&eacute;der &agrave; la valeur en utilisant le nom de la propri&eacute;t&eacute;.</p>
+   <pre><code class="language-swift">print(personne.prenom) // Hyweene
+print(personne.pseudo) // Hyweene
+print(personne.age) // 36</code></pre>
+   <h3>Diff&eacute;rences entre les trois types</h3>
+   <p>Les arrays, les sets et les tuples sont des types de collections en Swift, mais ils ont des caract&eacute;ristiques diff&eacute;rentes.</p>
+   <ul>
+    <li>Les arrays sont des collections ordonn&eacute;es d'&eacute;l&eacute;ments qui peuvent &ecirc;tre dupliqu&eacute;s.</li>
+    <li>Les sets sont des collections non ordonn&eacute;es d'&eacute;l&eacute;ments uniques.</li>
+    <li>Les tuples sont des collections d'&eacute;l&eacute;ments qui peuvent &ecirc;tre de diff&eacute;rents types et qui sont utilis&eacute;s pour regrouper des valeurs li&eacute;es.</li>
+   </ul>
+   <h2>Dictionnaires</h2>
+   <p>Les dictionnaires (ou objets) sont des collections de donn&eacute;es qui stockent des paires cl&eacute;-valeur. Chaque &eacute;l&eacute;ment d'un dictionnaire est associ&eacute; &agrave; une cl&eacute; unique qui permet d'acc&eacute;der &agrave; sa valeur.</p>
+   <p>Les dictionnaires, comme les listes ou sets sont fortement typ&eacute;s, et la encore, on ne peut m&eacute;langer les types.</p>
+   <pre><code class="language-swift">let taille: [String: Int] = [
+    "Hyweene": 174, 
+    "Poupinette": 160, 
+    "Poupette": 115
+]</code></pre>
+   <p>Pour y acc&eacute;der, comme en python, on utilise la cl&eacute; :</p>
+   <pre><code class="language-swift">print(taille["Hyweene"]) // 174
+print(taille["Poupinette"]) // 160
+print(taille["Poupette"]) // 115</code></pre>
+   <h3>Valeurs par d&eacute;faut</h3>
+   <p>Il est possible de d&eacute;finir une valeur par d&eacute;faut pour un dictionnaire si la cl&eacute; n'existe pas.</p>
+   <pre><code class="language-swift">let fruitPrefere: [String: String] = [
+    "Hyweene": "Banane", 
+    "Poupinette": "Fraise"
+]</code></pre>
+   <p>Ici, nous n'avons pas d&eacute;fini de valeur pour le fruit pr&eacute;f&eacute;r&eacute; de Poupette. Si nous essayons d'acc&eacute;der &agrave; cette valeur, nous obtiendrons
+    <code>
+     nil</code>.</p>
+   <pre><code class="language-swift">print(fruitPrefere["Poupette"]) // nil</code></pre>
+   <p>Pour palier ceci, on peut d&eacute;finir une valeur par d&eacute;faut.</p>
+   <pre><code class="language-swift">print(fruitPrefere["Poupette", default: "Pomme"]) // Pomme</code></pre>
+   <h2>Cr&eacute;er des collections vides</h2>
+   <p>Il est possible de cr&eacute;er des Arrays, Sets ou Dictionnaires vides en utilisant la syntaxe suivante :</p>
+   <pre><code class="language-swift">var arrayVideDeStrings = [String]()
+var arrayVideDeNombres = Array&lt;Int&gt;()
+
+var setVide = Set&lt;String&gt;()
+
+var dictionnaireVide1 = [String: Int]()
+var dictionnaireVide2 = Dictionary&lt;String, Int&gt;()</code></pre>
+   <h2>Enum&eacute;rations</h2>
+   <p>Les &eacute;num&eacute;rations (ou enums) sont des types de donn&eacute;es qui permettent de d&eacute;finir un groupe de valeurs possibles. Les &eacute;num&eacute;rations sont utiles pour d&eacute;finir des types de donn&eacute;es qui ont un nombre fini de valeurs possibles.</p>
+   <p>Par exemple, si on veut repr&eacute;senter deux possibilit&eacute;s :</p>
+   <ul>
+    <li>Soit le r&eacute;sultat est
+     <code>
+      succ&egrave;s</code>
+    </li>
+    <li>Soit le r&eacute;sultat est
+     <code>
+      &eacute;chec</code>
+    </li>
+   </ul>
+   <p>On serait tent&eacute; de l'&eacute;cire comme ceci :</p>
+   <pre><code class="language-swift">let resultat = "succ&egrave;s"
+let resultat2 = "&eacute;chec"</code></pre>
+   <p>Ce sont deux strings, qui repr&eacute;sentent les deux &eacute;tats possibles. Mais on pourrait se tromper en &eacute;crivant
+    <code>
+     fail</code>au lieu de
+    <code>
+     &eacute;chec</code>par exemple.</p>
+   <p>Avec une &eacute;num&eacute;ration, on pourrait &eacute;crire :</p>
+   <pre><code class="language-swift">enum Result {
+    case success
+    case failure
+}</code></pre>
+   <p>Et on pourrait l'utiliser comme ceci :</p>
+   <pre><code class="language-swift">let resultat: Result = .success</code></pre>
+   <p>Ou alors :</p>
+   <pre><code class="language-swift">let resultat: Result.success</code></pre>
+   <p>Ceci &eacute;vite de se tromper dans les valeurs possibles, et am&eacute;liore la lisibilit&eacute; du code.</p>
+   <h3>Avec valeurs associ&eacute;es</h3>
+   <p>Il est possible d'associer des valeurs &agrave; chaque cas d'une &eacute;num&eacute;ration.</p>
+   <p>Si on veut d&eacute;finir une s&eacute;ance d'entrainement, on pourrait &eacute;crire :</p>
+   <pre><code class="language-swift">enum Workout {
+    case running
+    case cycling
+    case weightlifting
+}</code></pre>
+   <p>Alors ok, on court, on roule &agrave; v&eacute;lo, on soul&egrave;ve des poids, mais nous n'avons pas beaucoup plus de d&eacute;tails sur ces entrainements.</p>
+   <p>C'est la qu'on peut rajouter des valeurs &agrave; chaque cas de l'&eacute;num&eacute;ration.</p>
+   <pre><code class="language-swift">enum Workout {
+    case running(distance: Double)
+    case cycling(speed: Double)
+    case weightlifting(intensity: Int)
+}</code></pre>
+   <p>Maintenant, on est plus pr&eacute;cis, on sait quelle disance on a couru, &agrave; quelle vitesse on a roul&eacute;, et on sait l'intensit&eacute; de notre s&eacute;ance de muscu.</p>
+   <p>On peut maintenant cr&eacute;er une instance de notre &eacute;num&eacute;ration :</p>
+   <pre><code class="language-swift">let weightliftIntensity: Workout = .weightlifting(intensity: 5)</code></pre>
+   <h3>Avec valeurs brutes</h3>
+   <p>Parfois, on peut vouloir associer une valeur &agrave; chaque cas de l'&eacute;num. Exemple, on veut classer les diff&eacute;rents films de Star Wars :</p>
+   <pre><code class="language-swift">enum StarWars: Int {
+    case phantomMenace
+    case attackOfTheClones
+    case revengeOfTheSith
+    case aNewHope
+    case theEmpireStrikesBack
+    case returnOfTheJedi
+}</code></pre>
+   <p>Swift doit attribuer automatiquement des valeurs a chaque cas en partant de 0. Mais on peut attribuer ce que l'on veut :</p>
+   <pre><code class="language-swift">enum StarWars: Int {
+    case aNewHope = 4
+    case theEmpireStrikesBack = 5
+    case returnOfTheJedi = 6
+    case phantomMenace = 1
+    case attackOfTheClones = 2
+    case revengeOfTheSith = 3
+}</code></pre>
+   <p>Et si on veut r&eacute;cup&eacute;rer la valeur d'un des films :</p>
+   <pre><code class="language-swift">let swep4 = StarWars(rawValue: 4)</code></pre>
+   <hr>
+   <p>Dans notre &eacute;num de base, le premier film est
+    <code>
+     La Menace Fant&ocirc;me</code>, sa valeur brute sera 0, mais on ne dit pas
+    <code>
+     Star Wars Episode 0: La Menace Fant&ocirc;me</code>, donc on lui attribuera la valeur 1.</p>
+   <pre><code class="language-swift">enum StarWars: Int {
+    case phantomMenace = 1
+    case attackOfTheClones
+    case revengeOfTheSith
+    case aNewHope
+    case theEmpireStrikesBack
+    case returnOfTheJedi
+}</code></pre>
+   <p>Ensuite, swift fera le travail pour nous et attribuera les bonnes valeurs aux autres films en partant de celle attribu&eacute;e &agrave; la menace fant&ocirc;me.</p>
+   <script src="/static/js/prism.js">
+   </script>
+  </main>
+  <footer>
+   <nav><a href="/a-propos/">A Propos</a>&bull; <a href="/mentions-legales/">Mentions L&eacute;gales</a>&bull; <a href="https://www.hack-with-hyweene.com">https://www.hack-with-hyweene.com</a></nav>
+  </footer>
+ </body>
+</html>
