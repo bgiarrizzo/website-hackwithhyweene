@@ -67,7 +67,7 @@ or with the pg_config option in 'setup.cfg'.</code></pre>
   <summary>
    Les m&eacute;triques de l'exporter VMWare n'avaient pas toutes les informations que nous voulions. Voici comment je les ai enrichies.</summary>
   <content type="html">
-   <h2>Contexte</h2>
+   <h2 id="contexte">Contexte</h2>
    <p>Dans ma mission actuelle, afin de mettre en place une f&eacute;d&eacute;ration de m&eacute;triques, nous devons collecter des m&eacute;triques VMware.</p>
    <p>Nous avons donc utilis&eacute; le <a href="https://github.com/pryorda/vmware_exporter">vmware_exporter</a> de <a href="https://github.com/pryorda">Daniel Pryor</a>, et pour ne pas le modifier, j'ai &eacute;crit une petite interface avec fastapi.</p>
    <p>Les m&eacute;triques sont r&eacute;cup&eacute;r&eacute;es par fastapi, analys&eacute;es, enrichies, res&eacute;rialis&eacute;es, et r&eacute;colt&eacute;es par prometheus.</p>
@@ -81,7 +81,7 @@ or with the pg_config option in 'setup.cfg'.</code></pre>
     "vmware_vm_mem_usage_average": "memory_usage_percentage",
     "vmware_vm_num_cpu": "vcpus"
 }</code></pre>
-   <h2>&Eacute;tape 1 : Analyse des m&eacute;triques de vmware_exporter</h2>
+   <h2 id="etape-1-analyse-des-metriques-de-vmware_exporter">&Eacute;tape 1 : Analyse des m&eacute;triques de vmware_exporter</h2>
    <p>L'exporter est appel&eacute; depuis une fonction nomm&eacute;e request_exporter().</p>
    <p>La sortie de l'exporter est un grand fichier str qui doit &ecirc;tre analys&eacute; pour &ecirc;tre trait&eacute;.</p>
    <p>J'ai utilis&eacute; prometheus_client.parser pour cela.</p>
@@ -117,7 +117,7 @@ for family in data_from exporter:
     {"__name__": "vmware_vm_power_state", "vm_name": "vm2", "value": 0},
 ]</code></pre>
    <p>Maintenant, jouons avec les dataframes...</p>
-   <h2>&Eacute;tape 2 : Jouer avec les dataframes</h2>
+   <h2 id="etape-2-jouer-avec-les-dataframes">&Eacute;tape 2 : Jouer avec les dataframes</h2>
    <p>Tout d'abord, je cr&eacute;e le dataframe :</p>
    <pre><code class="language-python">import pandas
 
@@ -172,7 +172,7 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
     </tr>
    </table>
    <p>Maintenant, pour &ecirc;tre r&eacute;colt&eacute;es par prometheus, ces donn&eacute;es doivent &ecirc;tre res&eacute;rialis&eacute;es.</p>
-   <h2>&Eacute;tape 3 : Comment ai-je res&eacute;rialis&eacute; les donn&eacute;es ?</h2>
+   <h2 id="etape-3-comment-ai-je-reserialise-les-donnees">&Eacute;tape 3 : Comment ai-je res&eacute;rialis&eacute; les donn&eacute;es ?</h2>
    <p>Les cha&icirc;nes de m&eacute;triques Prometheus sont assez simples :</p>
    <pre><code class="language-python">metric_name{label1="value1", label2="value2"} 0</code></pre>
    <p>En utilisant une compr&eacute;hension de liste, j'it&egrave;re sur le dataframe pour imprimer une cha&icirc;ne contenant au d&eacute;but le metric
@@ -288,7 +288,7 @@ myTestApp   myTestTopic     2          6               6               0        
    <p>Les messages du topic Kafka
     <code>
      ${topicName}</code>ont &eacute;t&eacute; supprim&eacute;s avec succ&egrave;s.</p>
-   <h2>M&eacute;thode Gros Bourrin</h2>
+   <h2 id="methode-gros-bourrin">M&eacute;thode Gros Bourrin</h2>
    <p>On peut &eacute;galement supprimer la totalit&eacute; des events d'un topic en changeant la r&eacute;tention du topic &agrave; 1ms, puis en la remettant &agrave; la valeur initiale.</p>
    <p>Cette m&eacute;thode a l'avantage de fonctionner &eacute;galement pour les topics compact&eacute;s ! :D</p>
   </content>
@@ -312,7 +312,7 @@ myTestApp   myTestTopic     2          6               6               0        
    </ul>
    <hr>
    <p>J'ai 35 ans, je mesure 1m70, je p&egrave;se 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.</p>
-   <h2>Le contexte</h2>
+   <h2 id="le-contexte">Le contexte</h2>
    <p>J'ai toujours &eacute;t&eacute; en surpoids, depuis petit, j'&eacute;tais le p'tit gros de la classe, le p'tit gros de la famille.</p>
    <p>La famille n'aidant pas beaucoup, enfon&ccedil;ant bien le clou, en disant que je devrais faire un effort, parce que &agrave; 10 ans je fais 50kg, si ca continue comme &ccedil;a, &agrave; 20 ans, je ferai 100kg !!</p>
    <p>Alors fatalement, en 2012, &agrave; 24 ans, j'approche tout doucement des 95kg :-)</p>
@@ -323,7 +323,7 @@ myTestApp   myTestTopic     2          6               6               0        
    <p>Mais je me reprends assez vite, mon chien m'a beaucoup aid&eacute;, &agrave; sa fa&ccedil;on, &agrave; ne pas totalement perdre pied.</p>
    <p>Je reprends du poil de la b&ecirc;te, et je d&eacute;cide de me mettre, timidement, au sport apr&egrave;s 24 ans sans, quasiment, aucune activit&eacute; physique. J'installe d'abord un sac de frappe dans le garage, qui me permet d'&eacute;vacuer un temps diff&eacute;rentes choses. Mais il manque quelque chose. Alors je me lance dans pas mal d'activit&eacute;s, Natation, Boxe, Jiujitsu, Musculation, etc etc.</p>
    <p>Et je me rends compte que j'aime &ccedil;a, j'aime le sport, j'aime la sueur, j'aime la douleur, j'aime la discipline, j'aime les r&eacute;sultats.</p>
-   <h2>Les r&eacute;sultats</h2>
+   <h2 id="les-resultats">Les r&eacute;sultats</h2>
    <p>D&eacute;cembre 2013, pour mon anniversaire, je tombe sous les 75kg, je suis fier, 20kg perdu en 1 an, c'est pas mal.</p>
    <figure>
     <img alt="recap" src="/media/images/blog/illustration/2024-10-27/recap.jpg">
@@ -331,14 +331,14 @@ myTestApp   myTestTopic     2          6               6               0        
    <p>Mais pas satisfait, je veux autre chose, je veux plus, mais je suis frein&eacute;, par mon manque de connaissance, et surtout, mon alimentation, qui n'est pas tiptop.</p>
    <p>La di&egrave;te que j'ai entrepris est une di&egrave;te un peu &agrave; la zob, o&ugrave; je r&eacute;duisais drastiquement les quantit&eacute;s, mais sans vraiment faire attention &agrave; ce que je mangeais. Je me retrouvais souvent sans energie, sans force, sans motivation, et je me disais que c'&eacute;tait normal, que c'&eacute;tait le sport qui me tuait.</p>
    <p>J'&eacute;tais aussi frein&eacute; mentalement, parce qu'entre-temps, j'ai fait la b&ecirc;tise de me remettre avec mon ex, qui crisait parce que je passais beaucoup de temps au sport, et pas assez de temps avec elle. Du coup, je r&eacute;duisais mes s&eacute;ances, je r&eacute;duisais mes efforts, je r&eacute;duisais mes r&eacute;sultats.</p>
-   <h2>Le prime</h2>
+   <h2 id="le-prime">Le prime</h2>
    <p>&Eacute;t&eacute; 2015, je me s&eacute;pare de mon ex, je me remets &agrave; fond dans le sport, en automne, je rencontre cette dame formidable qui devient ma femme, qui me soutient dans mes efforts, et qui a aussi cette passion du sport, ce qui me pousse &agrave; aller plus loin.</p>
    <p>Fin 2016, je planifie mon mariage avec dame Jessica. Je veux avoir un physique aux olives pour cette occasion, je prends un coach, qui me pr&eacute;pare une diete, un programme de muscu + cardio, qui me pousse &agrave;(u) fond. Je tombe &agrave; 63kg, 13% de bodyfat, je suis content, mais pas satisfait, je veux perdre plus ... Je suis dans une mauvaise spirale o&ugrave; je frise l'anorexie.</p>
    <p>J'arr&ecirc;te ce suivi, je reprends un peu de poids, je me stabilise &agrave; 70kg, 13% de bodyfat. J'avais ces muscles qui poussaient. Pecs, Bras, jambes, abdos qui se dessinnent. Je suis biiiennnggg !</p>
    <figure>
     <img alt="prime" src="/media/images/blog/illustration/2024-10-27/prime.jpg">
    </figure>
-   <h2>La chute</h2>
+   <h2 id="la-chute">La chute</h2>
    <p>Apr&egrave;s des ann&eacute;es d'ob&eacute;sit&eacute;, j'&eacute;tais arriv&eacute; &agrave; un r&eacute;sultat o&ugrave; mon corps me rendait fier. Mais la vie est ce qu'elle est, et les &eacute;preuves n'arrivent jamais toutes seules.</p>
    <ul>
     <li>En 2018, j'ai eu ma fille, petite couvade des familles, j'ai pris du poids.</li>
@@ -351,7 +351,7 @@ myTestApp   myTestTopic     2          6               6               0        
    <p>Et maintenant je supporte m&ecirc;me plus ma gueule dans le mirroir ^^</p>
    <p>Ce qui me fait d'autant plus mal au cul aujourd'hui, c'est qu'en 2018, je me disais que jamais je ne pourrais revenir au point o&ugrave; j'en &eacute;tais en 2012, les connaissances accumul&eacute;es, les efforts, la discipline, la sueur, le sang et le reste, c'&eacute;tait pas possible ...</p>
    <p>Maintenant, on est en 2024, et m&ecirc;me si mon physique ne ressemble pas &agrave; celui de 2012, je me rends compte que j'ai repris le poids que j'avais &agrave; l'&eacute;poque, et que je suis en train de revenir &agrave; ce point.</p>
-   <h2>La d&eacute;cision</h2>
+   <h2 id="la-decision">La d&eacute;cision</h2>
    <p>Je dois avouer, que Kaizen est pass&eacute; par la. La vid&eacute;o d'InoxTag m'a mis une grande claque dans la gueule, son parcours pour monter l'Everest m'a fait r&eacute;aliser que tout est possible, que tout est atteignable, si on s'en donne les moyens.</p>
    <p>J'ai pris une d&eacute;cision, toutes les semaines, je publierai un article ici, qui sera mon petit journal, je pourrai y revenir de temps en temps, pour me rappeller pourquoi, et surtout, voir le chemin parcouru. C'est mon petit journal de bord, mais public.</p>
    <p>L'objectif est tr&egrave;s simple :</p>
@@ -405,11 +405,11 @@ myTestApp   myTestTopic     2          6               6               0        
    <p>L'ann&eacute;e derni&egrave;re, L&eacute;o Duff sortait une vid&eacute;o : <a href="https://www.youtube.com/watch?v=J8KcJL9gylA">J'ai mont&eacute; mon Netflix perso</a>.</p>
    <p>J'ai trouv&eacute; l'id&eacute;e super interessante, et j'ai d&eacute;cid&eacute; de la reproduire chez moi.</p>
    <p>Ceux qui en 2014 ont connu <a href="https://fr.wikipedia.org/wiki/Popcorn_Time">Popcorn Time</a> connaissent la folie que c'&eacute;tait. Un soft qui permettait de streamer des films et s&eacute;ries en torrent, avec une interface super simple et intuitive. C'&eacute;tait le Netflix du piratage.</p>
-   <h2>Pour commencer</h2>
+   <h2 id="pour-commencer">Pour commencer</h2>
    <p>Je n'avais pas tr&egrave;s envie de prendre un VPS chez un hoster, et monter un serveur chez moi est le plus safe pour moi. Mes donn&eacute;es sont chez moi, et je peux les prot&eacute;ger comme je veux.</p>
    <p>J'avais une petite machine chez moi, un Lenovo ThinkCentre M900 Tiny, avec un i7-6700T, 8Go de RAM, et un SSD de 256Go. Ce n'est pas &eacute;norme, surtout pour une machine qui va servir &agrave; stocker films, s&eacute;ries, musiques et autres, donc je d&eacute;cide d'upgrade tout &ccedil;a.</p>
    <p>Je passe &agrave; 32Go de ram, et je rajoute un SSD NVMe de 2To pour stocker mes films et s&eacute;ries.</p>
-   <h2>Les services h&eacute;berg&eacute;s</h2>
+   <h2 id="les-services-heberges">Les services h&eacute;berg&eacute;s</h2>
    <p>De quoi on a besoin quand on veut monter une seedbox &agrave; la maison, et automatis&eacute;e ?</p>
    <ul>
     <li>Un client torrent</li>
@@ -417,9 +417,9 @@ myTestApp   myTestTopic     2          6               6               0        
     <li>Un indexer manager</li>
     <li>Un serveur de media (type Plex ou Jellyfin)</li>
    </ul>
-   <h3>Le client torrent</h3>
+   <h3 id="le-client-torrent">Le client torrent</h3>
    <p><a href="https://transmissionbt.com/">Transmission</a>, fid&egrave;le au poste. L&eacute;ger, stable, aucun probl&egrave;me avec lui depuis 2014. Je n'utilise quasiment jamais l'interface web, les diff&eacute;rents grabbers ont une interface de monitoring des t&eacute;l&eacute;chargements, et je n'ai pas besoin de plus.</p>
-   <h3>Les grabbers</h3>
+   <h3 id="les-grabbers">Les grabbers</h3>
    <p>Ceux qui avaient leur seedbox en 2012 connaissent <a href="https://github.com/midgetspy/Sick-Beard">SickBeard</a> et <a href="https://github.com/CouchPotato/CouchPotatoServer/">CouchPotato</a>, qui permettaient de r&eacute;cup&eacute;rer automatiquement les films et series, via torrent ou usenet.</p>
    <p>Aujourd'hui, on a <a href="https://github.com/Radarr/Radarr">Radarr</a>, <a href="https://github.com/Sonarr/Sonarr">Sonarr</a>, mais aussi tous leurs petits cousins :</p>
    <ul>
@@ -429,27 +429,27 @@ myTestApp   myTestTopic     2          6               6               0        
    </ul>
    <p>On a maintenant &eacute;galement <a href="https://github.com/morpheus65535/bazarr">Bazarr</a>, un grabber de sous-titres.</p>
    <p>Chose tr&egrave;s utile, puisqu'avant, je g&eacute;rais mes sous titres via <a href="https://github.com/Diaoul/subliminal">Subliminal</a>, qui est une CLI, c'est mignon, mais c'est pas user-friendly. Et &eacute;tant une cli, ce n'est pas automatisable, oblig&eacute; de monter une crontab, qui va se lancer toutes les heures, et qui va v&eacute;rifier l'enti&egrave;ret&eacute; de ma biblioth&egrave;que, inutilement, parce que je n'ai besoin que du dernier sub du dernier film ou dernier &eacute;pisode rajout&eacute;. pas besoin de tout rescan, enfin BREF, je m'&eacute;gare !!</p>
-   <h3>L'indexer manager</h3>
+   <h3 id="lindexer-manager">L'indexer manager</h3>
    <p><a href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a> est devenu mon nouveau copain !</p>
    <p>Je ne compte plus le temps que j'ai pu passer du temps de sickbeard et couchpotato &agrave; chercher des indexers, &agrave; les ajouter, &agrave; les tester, g&eacute;rer les configuration, v&eacute;rifier si l'indexer n'avait pas &eacute;t&eacute; ferm&eacute; par les autorit&eacute;s, etc.</p>
    <p>Prowlarr fait tout ceci pour moi, et il le fait tr&egrave;s bien !</p>
-   <h3>Le serveur de media</h3>
+   <h3 id="le-serveur-de-media">Le serveur de media</h3>
    <p>Mon choix s'est port&eacute; sur <a href="https://www.plex.tv/">Plex</a>, pour une raison simple : Jellyfin a de gros soucis sur AppleTV ... et j'ai une AppleTV. Donc m&ecirc;me si j'aime jellyfin d'amour, il est l&eacute;ger, gratuit, et son algo de transcodage est tr&egrave;s &eacute;conome, mais pragmatiquement, je dois rester sur plex pour le moment.</p>
-   <h2>Les services tiers</h2>
+   <h2 id="les-services-tiers">Les services tiers</h2>
    <p>Radarr et Sonarr sont syncronis&eacute;s avec <a href="https://trakt.tv/">Trakt</a>, c'est un tracker de films et s&eacute;rie, qui permet de g&eacute;rer sa watchlist, de voir les films et s&eacute;ries que l'on a vu, de voir les films et s&eacute;ries que l'on est en train de voir, etc.</p>
    <p>Quand j'ajoute un film ou une serie &agrave; ma watchlist, Radarr ou Sonarr interrogent les trackers pour voir si le film ou la serie est disponible.</p>
-   <h2>Un petit r&eacute;sum&eacute;</h2>
+   <h2 id="un-petit-resume">Un petit r&eacute;sum&eacute;</h2>
    <p>Toute cette petite &eacute;quipe a besoin d'interconnexions pour fonctionner et que l'automatisation soit parfaite, voici &agrave; quoi ressemble la stack :</p>
    <figure><a href="/media/images/blog/illustration/2024-10-29/stack.png" target="_blank"><img alt="stack" src="/media/images/blog/illustration/2024-10-29/stack.png"></a></figure>
    <p>Volontairement, Plex ou Jellyfin ne sont pas pr&eacute;sents, parce qu'un peu &agrave; part, ils n'ont pas besoin de communiquer avec les autres services, ils ont juste besoin de r&eacute;cup&eacute;rer les m&eacute;dias, dans un dossier qui leur est propre.</p>
-   <h2>Un Cas d'utilisation</h2>
+   <h2 id="un-cas-dutilisation">Un Cas d'utilisation</h2>
    <p>Je suis au cin&eacute;ma, je vois une bande annonce d'un film qui m'int&eacute;resse, je sors mon t&eacute;l&eacute;phone, je vais sur l'application de trakt, je cherche le film, je l'ajoute &agrave; ma watchlist.</p>
    <p>Radarr interroge trakt, voit qu'un nouveau film est ajout&eacute; &agrave; la watchlist, va ajouter ce film &agrave; sa bibliot&egrave;que, puis va commencer &agrave; interroger les trackers.</p>
    <p>Quelques semaines plus tard, le film va apparaitre sur les trackers torrents, en 720p, Radarr va le t&eacute;l&eacute;charger, le renommer, le d&eacute;placer dans le dossier de Plex, et Plex va le scanner, et le rendre disponible sur l'application Plex de mon AppleTV.</p>
    <p>Si entre temps, une nouvelle version du film, en 1080p voire en 4K a &eacute;t&eacute; d&eacute;tect&eacute;e sur les trackers torrent par Radarr, il va t&eacute;l&eacute;charger la nouvelle version, et supprimer l'ancienne.</p>
    <p>Une fois le t&eacute;l&eacute;chargement termin&eacute;, Radarr va envoyer une notification &agrave; Bazarr, qui va chercher les sous-titres, dans les langues que j'aurai pr&eacute;cis&eacute;, et les ajouter au dossier du film.</p>
    <p>Ce m&ecirc;me processus est valable pour les s&eacute;ries, les musiques, les ebooks, etc. modulo le t&eacute;l&eacute;chargement des sous titres.</p>
-   <h2>Conclusion</h2>
+   <h2 id="conclusion">Conclusion</h2>
    <p>J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso, et je suis tr&egrave;s content du r&eacute;sultat. C'est super simple &agrave; maintenir, et &ccedil;a me permet de regarder mes films et s&eacute;ries en toute tranquilit&eacute;.</p>
    <p>Le seul soucis que j'ai maintenant, c'est l'espace disque qui commence &agrave; manquer ... Je vais devoir commencer &agrave; &eacute;tudier l'achat d'un NAS avec quelques dizaines de To de stockage, mais &ccedil;a, c'est une autre histoire !</p>
   </content>
@@ -553,7 +553,7 @@ myTestApp   myTestTopic     2          6               6               0        
     <code>
      5h30</code>a fait plut&ocirc;t mal), et un jour feri&eacute; mal plac&eacute; m'ont donn&eacute; du mal.</p>
    <p>Mais je me suis rattrapp&eacute; cette semaine !</p>
-   <h2>Petit r&eacute;cap</h2>
+   <h2 id="petit-recap">Petit r&eacute;cap</h2>
    <p>Une moyenne de
     <code>
      12164</code>pas par jour sur la semaine, c'est bien au del&agrave; des
@@ -585,7 +585,7 @@ myTestApp   myTestTopic     2          6               6               0        
     <code>
      28,3</code>le lendemain.</p>
    <p>Bref, je pense que je vais tester la balance de ma salle de sport, ca sera surement plus fiable :D</p>
-   <h2>Le d&eacute;tail de la semaine</h2>
+   <h2 id="le-detail-de-la-semaine">Le d&eacute;tail de la semaine</h2>
    <ul>
     <li>Lundi : Pecs, s&eacute;ance de foufou, je les ai senti pendant 2 jours, et
      <code>
@@ -611,7 +611,7 @@ myTestApp   myTestTopic     2          6               6               0        
      <code>
       11048</code>pas.</li>
    </ul>
-   <h2>Les points positifs</h2>
+   <h2 id="les-points-positifs">Les points positifs</h2>
    <ul>
     <li>J'ai appliqu&eacute; <a href="https://www.youtube.com/watch?v=bfLHTLQZ5nc">la r&egrave;gle des 2 jours</a>, cette r&egrave;gle qui dit que pour mettre en place durablement une nouvelle habitude, il faut &eacute;viter de faire une pause de plus d'une journ&eacute;e entre deux occurences. Donc si pause mercredi, on &eacute;vite d'en faire une le jeudi. J'ai donc fait 5 s&eacute;ances cette semaine.</li>
     <li>J'ai vraiment tenu a augmenter le nombre de pas par jour, le r&eacute;sultat est la, 4000 de plus par jour sur la moyenne de la semaine. On va essayer d'aller plus haut cette semaine : 15000 pas par jour.</li>
@@ -631,12 +631,12 @@ myTestApp   myTestTopic     2          6               6               0        
      <figcaption>Ma dame, je t'aime 🥰</figcaption>
     </img>
    </figure>
-   <h2>Les points n&eacute;gatifs</h2>
+   <h2 id="les-points-negatifs">Les points n&eacute;gatifs</h2>
    <ul>
     <li>Le sommeil, toujours le sommeil. Je ne vais pas me trouver d'excuses, si je prends la tablette au lit, je finis par me coucher tard, pas de secret, faut que je mette plus de distance avec les &eacute;crans le soir.</li>
     <li>Pas mal de maux de t&ecirc;te cette semaine, certainement du &agrave; un manque d'hydratation, faudrait pas oublier de boire ...</li>
    </ul>
-   <h2>Les objectifs pour la semaine prochaine</h2>
+   <h2 id="les-objectifs-pour-la-semaine-prochaine">Les objectifs pour la semaine prochaine</h2>
    <ul>
     <li>
      <code>15000</code>pas par jour, on va y arriver !</li>

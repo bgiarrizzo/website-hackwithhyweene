@@ -42,21 +42,62 @@ class PrismCodeProcessor:
         return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def toc_to_html_list(toc_list):
+    if not toc_list:
+        return ""
+
+    html = []
+    current_level = 1
+    stack = [1]
+
+    for level, id, title in toc_list:
+        while level < current_level:
+            html.append("</ul></li>")
+            stack.pop()
+            current_level = stack[-1]
+
+        if level > current_level:
+            html.append("<ul>")
+            stack.append(level)
+        elif level < current_level:
+            html.append("</li>")
+
+        html.append(f'<li><a href="#{id}">{title}</a>')
+        current_level = level
+
+    while len(stack) > 1:
+        html.append("</ul></li>")
+        stack.pop()
+
+    return "".join(html)
+
+
 class CustomMarkdown(Markdown):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.prism_processor = PrismCodeProcessor()
+        self.toc_html = None
 
     def convert(self, text):
         text = self.prism_processor.process(text)
-        return super().convert(text)
+        html = super().convert(text)
+        
+        # Récupérer la table des matières
+        if hasattr(self, '_toc'):
+            # self.toc_html = self._toc
+            self.toc_html = toc_to_html_list(self._toc)
+        else:
+            self.toc_html = ""  # Si aucune table des matières n'est générée
+        
+        return html
 
-
-markdown_parser = CustomMarkdown(extras=["tables"])
+markdown_parser = CustomMarkdown(extras=["tables", "toc"])
 
 
 def convert_markdown_text_to_html(markdown_content):
-    return markdown_parser.convert(markdown_content)
+    html = markdown_parser.convert(markdown_content)
+    toc_html = markdown_parser.toc_html
+    return html, toc_html
 
 
 def parse_yaml_header_and_markdown_body_in_file(markdown_file_path):
@@ -81,4 +122,5 @@ def parse_yaml_header_and_markdown_body_in_file(markdown_file_path):
 
 def parse_markdown_file_and_convert_to_html(file):
     yaml_header, markdown_body = parse_yaml_header_and_markdown_body_in_file(file)
-    return yaml_header | {"body": convert_markdown_text_to_html(markdown_body)}
+    html_body, toc_html = convert_markdown_text_to_html(markdown_body)
+    return yaml_header | {"body": html_body, "toc_html": toc_html}

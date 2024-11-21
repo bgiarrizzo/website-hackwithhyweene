@@ -62,7 +62,17 @@
   <main>
    <h1>Swift</h1>
    <h2>Op&eacute;rateurs et conditions</h2>
-   <h2>Op&eacute;rateurs Arithmetiques</h2>
+   <ul>
+    <li><a href="#operateurs-arithmetiques">Op&eacute;rateurs Arithmetiques</a><li><a href="#assignation-composee">Assignation compos&eacute;e</a><li><a href="#operateurs-de-comparaison">Op&eacute;rateurs de comparaison</a><li><a href="#conditions">Conditions</a><li><a href="#combinaison-doperateurs">Combinaison d'op&eacute;rateurs</a><li><a href="#loperateur-ternaire">L'op&eacute;rateur ternaire</a><li><a href="#instructions-switch">Instructions switch</a><li><a href="#operateurs-de-plage">Op&eacute;rateurs de plage</a></li>
+          </li>
+         </li>
+        </li>
+       </li>
+      </li>
+     </li>
+    </li>
+   </ul>
+   <h2 id="operateurs-arithmetiques">Op&eacute;rateurs Arithmetiques</h2>
    <p>Comme dans tous les langages de programmation, on a besoin de faire des calculs. Swift propose les op&eacute;rateurs arithm&eacute;tiques suivants :</p>
    <ul>
     <li>Addition
@@ -101,7 +111,7 @@ var c = a + b // c = 8</code></pre>
    </ul>
    <pre><code class="language-swift">var c = a % b // c = 2</code></pre>
    <p>Le r&eacute;sultat est 2, parce que 5 divis&eacute; par 3 donne 1 avec un reste de 2.</p>
-   <h2>Assignation compos&eacute;e</h2>
+   <h2 id="assignation-composee">Assignation compos&eacute;e</h2>
    <p>Swift donne une syntaxe plus rapide pour les op&eacute;rations d'assignation. Exemple, on veut ajouter 5 &agrave; une variable
     <code>
      a</code>:</p>
@@ -110,7 +120,7 @@ a += 5 // a = 10</code></pre>
    <p>Cela fonctionne avec d'autres types, exemple avec une string :</p>
    <pre><code class="language-swift">var maChaine = "Hello"
 maChaine += " World" // maChaine = "Hello World"</code></pre>
-   <h2>Op&eacute;rateurs de comparaison</h2>
+   <h2 id="operateurs-de-comparaison">Op&eacute;rateurs de comparaison</h2>
    <p>Swift propose les op&eacute;rateurs de comparaison suivants :</p>
    <ul>
     <li>&Eacute;galit&eacute;
@@ -173,7 +183,7 @@ chaine1 != chaine2 // true
 chaine1 &lt; chaine2 // true
 chaine1 &gt; chaine2 // false</code></pre>
    <p>Parce que swift compare les strings en fonction de leur ordre alphab&eacute;tique.</p>
-   <h2>Conditions</h2>
+   <h2 id="conditions">Conditions</h2>
    <p>Les conditions permettent de prendre des d&eacute;cisions dans votre code. Swift propose les conditions suivantes :</p>
    <ul>
     <li>
@@ -207,7 +217,7 @@ if a &gt; b {
 } else {
     print("a est &eacute;gal &agrave; b")
 }</code></pre>
-   <h2>Combinaison d'op&eacute;rateurs</h2>
+   <h2 id="combinaison-doperateurs">Combinaison d'op&eacute;rateurs</h2>
    <p>Parfois, on a besoin de combiner plusieurs conditions. Swift propose les op&eacute;rateurs suivants :</p>
    <ul>
     <li>
@@ -238,7 +248,7 @@ if workoutIntensity &lt; workoutIntensityLowLimit || workoutIntensity &gt; worko
 if !isFound {
     print("Non trouv&eacute;")
 }</code></pre>
-   <h2>L'op&eacute;rateur ternaire</h2>
+   <h2 id="loperateur-ternaire">L'op&eacute;rateur ternaire</h2>
    <p>L'op&eacute;rateur ternaire est un op&eacute;rateur qui fonctionne en trois parties. Il est souvent utilis&eacute; pour affecter une valeur en fonction d'une condition.</p>
    <pre><code class="language-swift">let a = 5
 let b = 3
@@ -250,7 +260,7 @@ let c = a &gt; b ? "a est sup&eacute;rieur &agrave; b" : "a est inf&eacute;rieur
 } else {
     c = "a est inf&eacute;rieur ou &eacute;gal &agrave; b"
 }</code></pre>
-   <h2>Instructions switch</h2>
+   <h2 id="instructions-switch">Instructions switch</h2>
    <p>Le
     <code>
      switch</code>permet d'&eacute;viter de chainer de multiples conditions
@@ -270,7 +280,7 @@ default:
 }
 
 // Affiche : C'est une pomme</code></pre>
-   <h2>Op&eacute;rateurs de plage</h2>
+   <h2 id="operateurs-de-plage">Op&eacute;rateurs de plage</h2>
    <p>Swift propose des op&eacute;rateurs de plage pour cr&eacute;er des intervalles de valeurs.</p>
    <ul>
     <li>

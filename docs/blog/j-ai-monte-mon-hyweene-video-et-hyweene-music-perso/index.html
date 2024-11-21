@@ -67,11 +67,11 @@
    <p>L'ann&eacute;e derni&egrave;re, L&eacute;o Duff sortait une vid&eacute;o : <a href="https://www.youtube.com/watch?v=J8KcJL9gylA">J'ai mont&eacute; mon Netflix perso</a>.</p>
    <p>J'ai trouv&eacute; l'id&eacute;e super interessante, et j'ai d&eacute;cid&eacute; de la reproduire chez moi.</p>
    <p>Ceux qui en 2014 ont connu <a href="https://fr.wikipedia.org/wiki/Popcorn_Time">Popcorn Time</a> connaissent la folie que c'&eacute;tait. Un soft qui permettait de streamer des films et s&eacute;ries en torrent, avec une interface super simple et intuitive. C'&eacute;tait le Netflix du piratage.</p>
-   <h2>Pour commencer</h2>
+   <h2 id="pour-commencer">Pour commencer</h2>
    <p>Je n'avais pas tr&egrave;s envie de prendre un VPS chez un hoster, et monter un serveur chez moi est le plus safe pour moi. Mes donn&eacute;es sont chez moi, et je peux les prot&eacute;ger comme je veux.</p>
    <p>J'avais une petite machine chez moi, un Lenovo ThinkCentre M900 Tiny, avec un i7-6700T, 8Go de RAM, et un SSD de 256Go. Ce n'est pas &eacute;norme, surtout pour une machine qui va servir &agrave; stocker films, s&eacute;ries, musiques et autres, donc je d&eacute;cide d'upgrade tout &ccedil;a.</p>
    <p>Je passe &agrave; 32Go de ram, et je rajoute un SSD NVMe de 2To pour stocker mes films et s&eacute;ries.</p>
-   <h2>Les services h&eacute;berg&eacute;s</h2>
+   <h2 id="les-services-heberges">Les services h&eacute;berg&eacute;s</h2>
    <p>De quoi on a besoin quand on veut monter une seedbox &agrave; la maison, et automatis&eacute;e ?</p>
    <ul>
     <li>Un client torrent</li>
@@ -79,9 +79,9 @@
     <li>Un indexer manager</li>
     <li>Un serveur de media (type Plex ou Jellyfin)</li>
    </ul>
-   <h3>Le client torrent</h3>
+   <h3 id="le-client-torrent">Le client torrent</h3>
    <p><a href="https://transmissionbt.com/">Transmission</a>, fid&egrave;le au poste. L&eacute;ger, stable, aucun probl&egrave;me avec lui depuis 2014. Je n'utilise quasiment jamais l'interface web, les diff&eacute;rents grabbers ont une interface de monitoring des t&eacute;l&eacute;chargements, et je n'ai pas besoin de plus.</p>
-   <h3>Les grabbers</h3>
+   <h3 id="les-grabbers">Les grabbers</h3>
    <p>Ceux qui avaient leur seedbox en 2012 connaissent <a href="https://github.com/midgetspy/Sick-Beard">SickBeard</a> et <a href="https://github.com/CouchPotato/CouchPotatoServer/">CouchPotato</a>, qui permettaient de r&eacute;cup&eacute;rer automatiquement les films et series, via torrent ou usenet.</p>
    <p>Aujourd'hui, on a <a href="https://github.com/Radarr/Radarr">Radarr</a>, <a href="https://github.com/Sonarr/Sonarr">Sonarr</a>, mais aussi tous leurs petits cousins :</p>
    <ul>
@@ -91,27 +91,27 @@
    </ul>
    <p>On a maintenant &eacute;galement <a href="https://github.com/morpheus65535/bazarr">Bazarr</a>, un grabber de sous-titres.</p>
    <p>Chose tr&egrave;s utile, puisqu'avant, je g&eacute;rais mes sous titres via <a href="https://github.com/Diaoul/subliminal">Subliminal</a>, qui est une CLI, c'est mignon, mais c'est pas user-friendly. Et &eacute;tant une cli, ce n'est pas automatisable, oblig&eacute; de monter une crontab, qui va se lancer toutes les heures, et qui va v&eacute;rifier l'enti&egrave;ret&eacute; de ma biblioth&egrave;que, inutilement, parce que je n'ai besoin que du dernier sub du dernier film ou dernier &eacute;pisode rajout&eacute;. pas besoin de tout rescan, enfin BREF, je m'&eacute;gare !!</p>
-   <h3>L'indexer manager</h3>
+   <h3 id="lindexer-manager">L'indexer manager</h3>
    <p><a href="https://github.com/Prowlarr/Prowlarr">Prowlarr</a> est devenu mon nouveau copain !</p>
    <p>Je ne compte plus le temps que j'ai pu passer du temps de sickbeard et couchpotato &agrave; chercher des indexers, &agrave; les ajouter, &agrave; les tester, g&eacute;rer les configuration, v&eacute;rifier si l'indexer n'avait pas &eacute;t&eacute; ferm&eacute; par les autorit&eacute;s, etc.</p>
    <p>Prowlarr fait tout ceci pour moi, et il le fait tr&egrave;s bien !</p>
-   <h3>Le serveur de media</h3>
+   <h3 id="le-serveur-de-media">Le serveur de media</h3>
    <p>Mon choix s'est port&eacute; sur <a href="https://www.plex.tv/">Plex</a>, pour une raison simple : Jellyfin a de gros soucis sur AppleTV ... et j'ai une AppleTV. Donc m&ecirc;me si j'aime jellyfin d'amour, il est l&eacute;ger, gratuit, et son algo de transcodage est tr&egrave;s &eacute;conome, mais pragmatiquement, je dois rester sur plex pour le moment.</p>
-   <h2>Les services tiers</h2>
+   <h2 id="les-services-tiers">Les services tiers</h2>
    <p>Radarr et Sonarr sont syncronis&eacute;s avec <a href="https://trakt.tv/">Trakt</a>, c'est un tracker de films et s&eacute;rie, qui permet de g&eacute;rer sa watchlist, de voir les films et s&eacute;ries que l'on a vu, de voir les films et s&eacute;ries que l'on est en train de voir, etc.</p>
    <p>Quand j'ajoute un film ou une serie &agrave; ma watchlist, Radarr ou Sonarr interrogent les trackers pour voir si le film ou la serie est disponible.</p>
-   <h2>Un petit r&eacute;sum&eacute;</h2>
+   <h2 id="un-petit-resume">Un petit r&eacute;sum&eacute;</h2>
    <p>Toute cette petite &eacute;quipe a besoin d'interconnexions pour fonctionner et que l'automatisation soit parfaite, voici &agrave; quoi ressemble la stack :</p>
    <figure><a href="/media/images/blog/illustration/2024-10-29/stack.png" target="_blank"><img alt="stack" src="/media/images/blog/illustration/2024-10-29/stack.png"></a></figure>
    <p>Volontairement, Plex ou Jellyfin ne sont pas pr&eacute;sents, parce qu'un peu &agrave; part, ils n'ont pas besoin de communiquer avec les autres services, ils ont juste besoin de r&eacute;cup&eacute;rer les m&eacute;dias, dans un dossier qui leur est propre.</p>
-   <h2>Un Cas d'utilisation</h2>
+   <h2 id="un-cas-dutilisation">Un Cas d'utilisation</h2>
    <p>Je suis au cin&eacute;ma, je vois une bande annonce d'un film qui m'int&eacute;resse, je sors mon t&eacute;l&eacute;phone, je vais sur l'application de trakt, je cherche le film, je l'ajoute &agrave; ma watchlist.</p>
    <p>Radarr interroge trakt, voit qu'un nouveau film est ajout&eacute; &agrave; la watchlist, va ajouter ce film &agrave; sa bibliot&egrave;que, puis va commencer &agrave; interroger les trackers.</p>
    <p>Quelques semaines plus tard, le film va apparaitre sur les trackers torrents, en 720p, Radarr va le t&eacute;l&eacute;charger, le renommer, le d&eacute;placer dans le dossier de Plex, et Plex va le scanner, et le rendre disponible sur l'application Plex de mon AppleTV.</p>
    <p>Si entre temps, une nouvelle version du film, en 1080p voire en 4K a &eacute;t&eacute; d&eacute;tect&eacute;e sur les trackers torrent par Radarr, il va t&eacute;l&eacute;charger la nouvelle version, et supprimer l'ancienne.</p>
    <p>Une fois le t&eacute;l&eacute;chargement termin&eacute;, Radarr va envoyer une notification &agrave; Bazarr, qui va chercher les sous-titres, dans les langues que j'aurai pr&eacute;cis&eacute;, et les ajouter au dossier du film.</p>
    <p>Ce m&ecirc;me processus est valable pour les s&eacute;ries, les musiques, les ebooks, etc. modulo le t&eacute;l&eacute;chargement des sous titres.</p>
-   <h2>Conclusion</h2>
+   <h2 id="conclusion">Conclusion</h2>
    <p>J'ai mont&eacute; mon Hyweene Video et Hyweene Music perso, et je suis tr&egrave;s content du r&eacute;sultat. C'est super simple &agrave; maintenir, et &ccedil;a me permet de regarder mes films et s&eacute;ries en toute tranquilit&eacute;.</p>
    <p>Le seul soucis que j'ai maintenant, c'est l'espace disque qui commence &agrave; manquer ... Je vais devoir commencer &agrave; &eacute;tudier l'achat d'un NAS avec quelques dizaines de To de stockage, mais &ccedil;a, c'est une autre histoire !</p>
    <script src="/static/js/prism.js">

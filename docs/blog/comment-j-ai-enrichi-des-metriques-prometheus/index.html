@@ -65,7 +65,7 @@
    <p>Publi&eacute; le 05 May 2022</p>
    <div>#prometheus #python #pandas #dataframe #vmware exporter #fastapi</div>
    <hr>
-   <h2>Contexte</h2>
+   <h2 id="contexte">Contexte</h2>
    <p>Dans ma mission actuelle, afin de mettre en place une f&eacute;d&eacute;ration de m&eacute;triques, nous devons collecter des m&eacute;triques VMware.</p>
    <p>Nous avons donc utilis&eacute; le <a href="https://github.com/pryorda/vmware_exporter">vmware_exporter</a> de <a href="https://github.com/pryorda">Daniel Pryor</a>, et pour ne pas le modifier, j'ai &eacute;crit une petite interface avec fastapi.</p>
    <p>Les m&eacute;triques sont r&eacute;cup&eacute;r&eacute;es par fastapi, analys&eacute;es, enrichies, res&eacute;rialis&eacute;es, et r&eacute;colt&eacute;es par prometheus.</p>
@@ -79,7 +79,7 @@
     "vmware_vm_mem_usage_average": "memory_usage_percentage",
     "vmware_vm_num_cpu": "vcpus"
 }</code></pre>
-   <h2>&Eacute;tape 1 : Analyse des m&eacute;triques de vmware_exporter</h2>
+   <h2 id="etape-1-analyse-des-metriques-de-vmware_exporter">&Eacute;tape 1 : Analyse des m&eacute;triques de vmware_exporter</h2>
    <p>L'exporter est appel&eacute; depuis une fonction nomm&eacute;e request_exporter().</p>
    <p>La sortie de l'exporter est un grand fichier str qui doit &ecirc;tre analys&eacute; pour &ecirc;tre trait&eacute;.</p>
    <p>J'ai utilis&eacute; prometheus_client.parser pour cela.</p>
@@ -115,7 +115,7 @@ for family in data_from exporter:
     {"__name__": "vmware_vm_power_state", "vm_name": "vm2", "value": 0},
 ]</code></pre>
    <p>Maintenant, jouons avec les dataframes...</p>
-   <h2>&Eacute;tape 2 : Jouer avec les dataframes</h2>
+   <h2 id="etape-2-jouer-avec-les-dataframes">&Eacute;tape 2 : Jouer avec les dataframes</h2>
    <p>Tout d'abord, je cr&eacute;e le dataframe :</p>
    <pre><code class="language-python">import pandas
 
@@ -170,7 +170,7 @@ metrics_df = pandas.DataFrame(processed_exporter_data)</code></pre>
     </tr>
    </table>
    <p>Maintenant, pour &ecirc;tre r&eacute;colt&eacute;es par prometheus, ces donn&eacute;es doivent &ecirc;tre res&eacute;rialis&eacute;es.</p>
-   <h2>&Eacute;tape 3 : Comment ai-je res&eacute;rialis&eacute; les donn&eacute;es ?</h2>
+   <h2 id="etape-3-comment-ai-je-reserialise-les-donnees">&Eacute;tape 3 : Comment ai-je res&eacute;rialis&eacute; les donn&eacute;es ?</h2>
    <p>Les cha&icirc;nes de m&eacute;triques Prometheus sont assez simples :</p>
    <pre><code class="language-python">metric_name{label1="value1", label2="value2"} 0</code></pre>
    <p>En utilisant une compr&eacute;hension de liste, j'it&egrave;re sur le dataframe pour imprimer une cha&icirc;ne contenant au d&eacute;but le metric

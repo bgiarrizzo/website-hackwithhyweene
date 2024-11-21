@@ -62,8 +62,27 @@
   <main>
    <h1>Swift</h1>
    <h2>Types complexes</h2>
-   <h2>Arrays, Sets, Tuples, et Dictionnaires</h2>
-   <h3>Arrays</h3>
+   <ul>
+    <li><a href="#arrays-sets-tuples-et-dictionnaires">Arrays, Sets, Tuples, et Dictionnaires</a><ul>
+      <li><a href="#arrays">Arrays</a><li><a href="#sets">Sets</a><li><a href="#tuples">Tuples</a><li><a href="#differences-entre-les-trois-types">Diff&eacute;rences entre les trois types</a></li>
+        </li>
+       </li>
+      </li>
+     </ul>
+    </li>
+    <li><a href="#dictionnaires">Dictionnaires</a><ul>
+      <li><a href="#valeurs-par-defaut">Valeurs par d&eacute;faut</a></li>
+     </ul>
+    </li>
+    <li><a href="#creer-des-collections-vides">Cr&eacute;er des collections vides</a><li><a href="#enumerations">Enum&eacute;rations</a><ul>
+       <li><a href="#avec-valeurs-associees">Avec valeurs associ&eacute;es</a><li><a href="#avec-valeurs-brutes">Avec valeurs brutes</a></li>
+       </li>
+      </ul>
+     </li>
+    </li>
+   </ul>
+   <h2 id="arrays-sets-tuples-et-dictionnaires">Arrays, Sets, Tuples, et Dictionnaires</h2>
+   <h3 id="arrays">Arrays</h3>
    <p>Les arrays (ou listes) sont des collections de donn&eacute;es qui sont stock&eacute;es sous une seule variable. Les &eacute;l&eacute;ments d'un array sont ordonn&eacute;s et peuvent &ecirc;tre acc&eacute;d&eacute;s par leur index.</p>
    <p>Les arrays sont fortement typ&eacute;s avec swift, ce qui veut dire qu'on ne peut m&eacute;langer torchons et serviettes. A l'inverse de Python par exemple, si on cr&eacute;&eacute; un array, et que le type des &eacute;l&eacute;ments qu'il contiendra est de type
     <code>
@@ -78,7 +97,7 @@
    <p>Si on essaye de stocker autre chose qu'un
     <code>
      Int</code>dans cette liste, on aura une erreur.</p>
-   <h3>Sets</h3>
+   <h3 id="sets">Sets</h3>
    <p>Les sets sont des collections non ordonn&eacute;es de donn&eacute;es uniques. Cela signifie que chaque &eacute;l&eacute;ment d'un set est unique et ne peut pas &ecirc;tre dupliqu&eacute;.</p>
    <p>Les sets, comme les arrays, sont fortement typ&eacute;s. Donc comme les listes, il n'est pas possible de m&eacute;langer les types.</p>
    <pre><code class="language-swift">let monSetPleinDeNombresEntiers: Set&lt;Int&gt; = Set([1, 2, 3, 4])
@@ -88,7 +107,7 @@ let monSetPleinDeStrings: Set&lt;String&gt; = Set(["bleu", "rouge", "vert"])</co
    <p>Dans cet exemple, le set ne contiendra que
     <code>
      ["bleu", "rouge", "vert"]</code>.</p>
-   <h3>Tuples</h3>
+   <h3 id="tuples">Tuples</h3>
    <p>Les tuples sont des collections de valeurs qui peuvent &ecirc;tre de diff&eacute;rents types. Les tuples sont utilis&eacute;s pour regrouper des valeurs qui sont li&eacute;es entre elles.</p>
    <pre><code class="language-swift">let personne = (prenom: "Bruno", pseudo: "Hyweene", age: 36)</code></pre>
    <p>On peut acc&eacute;der aux valeurs d'un tuple en utilisant leur index ou leur nom.</p>
@@ -99,14 +118,14 @@ print(personne.2) // 36</code></pre>
    <pre><code class="language-swift">print(personne.prenom) // Bruno
 print(personne.pseudo) // Hyweene
 print(personne.age) // 36</code></pre>
-   <h3>Diff&eacute;rences entre les trois types</h3>
+   <h3 id="differences-entre-les-trois-types">Diff&eacute;rences entre les trois types</h3>
    <p>Les arrays, les sets et les tuples sont des types de collections en Swift, mais ils ont des caract&eacute;ristiques diff&eacute;rentes.</p>
    <ul>
     <li>Les arrays sont des collections ordonn&eacute;es d'&eacute;l&eacute;ments qui peuvent &ecirc;tre dupliqu&eacute;s.</li>
     <li>Les sets sont des collections non ordonn&eacute;es d'&eacute;l&eacute;ments uniques.</li>
     <li>Les tuples sont des collections d'&eacute;l&eacute;ments qui peuvent &ecirc;tre de diff&eacute;rents types et qui sont utilis&eacute;s pour regrouper des valeurs li&eacute;es.</li>
    </ul>
-   <h2>Dictionnaires</h2>
+   <h2 id="dictionnaires">Dictionnaires</h2>
    <p>Les dictionnaires (ou objets) sont des collections de donn&eacute;es qui stockent des paires cl&eacute;-valeur. Chaque &eacute;l&eacute;ment d'un dictionnaire est associ&eacute; &agrave; une cl&eacute; unique qui permet d'acc&eacute;der &agrave; sa valeur.</p>
    <p>Les dictionnaires, comme les listes ou sets sont fortement typ&eacute;s, et la encore, on ne peut m&eacute;langer les types.</p>
    <pre><code class="language-swift">let taille: [String: Int] = [
@@ -118,7 +137,7 @@ print(personne.age) // 36</code></pre>
    <pre><code class="language-swift">print(taille["Hyweene"]) // 174
 print(taille["Poupinette"]) // 160
 print(taille["Poupette"]) // 115</code></pre>
-   <h3>Valeurs par d&eacute;faut</h3>
+   <h3 id="valeurs-par-defaut">Valeurs par d&eacute;faut</h3>
    <p>Il est possible de d&eacute;finir une valeur par d&eacute;faut pour un dictionnaire si la cl&eacute; n'existe pas.</p>
    <pre><code class="language-swift">let fruitPrefere: [String: String] = [
     "Hyweene": "Banane", 
@@ -130,7 +149,7 @@ print(taille["Poupette"]) // 115</code></pre>
    <pre><code class="language-swift">print(fruitPrefere["Poupette"]) // nil</code></pre>
    <p>Pour palier ceci, on peut d&eacute;finir une valeur par d&eacute;faut.</p>
    <pre><code class="language-swift">print(fruitPrefere["Poupette", default: "Pomme"]) // Pomme</code></pre>
-   <h2>Cr&eacute;er des collections vides</h2>
+   <h2 id="creer-des-collections-vides">Cr&eacute;er des collections vides</h2>
    <p>Il est possible de cr&eacute;er des Arrays, Sets ou Dictionnaires vides en utilisant la syntaxe suivante :</p>
    <pre><code class="language-swift">var arrayVideDeStrings = [String]()
 var arrayVideDeNombres = Array&lt;Int&gt;()
@@ -139,7 +158,7 @@ var setVide = Set&lt;String&gt;()
 
 var dictionnaireVide1 = [String: Int]()
 var dictionnaireVide2 = Dictionary&lt;String, Int&gt;()</code></pre>
-   <h2>Enum&eacute;rations</h2>
+   <h2 id="enumerations">Enum&eacute;rations</h2>
    <p>Les &eacute;num&eacute;rations (ou enums) sont des types de donn&eacute;es qui permettent de d&eacute;finir un groupe de valeurs possibles. Les &eacute;num&eacute;rations sont utiles pour d&eacute;finir des types de donn&eacute;es qui ont un nombre fini de valeurs possibles.</p>
    <p>Par exemple, si on veut repr&eacute;senter deux possibilit&eacute;s :</p>
    <ul>
@@ -170,7 +189,7 @@ let resultat2 = "&eacute;chec"</code></pre>
    <p>Ou alors :</p>
    <pre><code class="language-swift">let resultat: Result.success</code></pre>
    <p>Ceci &eacute;vite de se tromper dans les valeurs possibles, et am&eacute;liore la lisibilit&eacute; du code.</p>
-   <h3>Avec valeurs associ&eacute;es</h3>
+   <h3 id="avec-valeurs-associees">Avec valeurs associ&eacute;es</h3>
    <p>Il est possible d'associer des valeurs &agrave; chaque cas d'une &eacute;num&eacute;ration.</p>
    <p>Si on veut d&eacute;finir une s&eacute;ance d'entrainement, on pourrait &eacute;crire :</p>
    <pre><code class="language-swift">enum Workout {
@@ -188,7 +207,7 @@ let resultat2 = "&eacute;chec"</code></pre>
    <p>Maintenant, on est plus pr&eacute;cis, on sait quelle disance on a couru, &agrave; quelle vitesse on a roul&eacute;, et on sait l'intensit&eacute; de notre s&eacute;ance de muscu.</p>
    <p>On peut maintenant cr&eacute;er une instance de notre &eacute;num&eacute;ration :</p>
    <pre><code class="language-swift">let weightliftIntensity: Workout = .weightlifting(intensity: 5)</code></pre>
-   <h3>Avec valeurs brutes</h3>
+   <h3 id="avec-valeurs-brutes">Avec valeurs brutes</h3>
    <p>Parfois, on peut vouloir associer une valeur &agrave; chaque cas de l'&eacute;num. Exemple, on veut classer les diff&eacute;rents films de Star Wars :</p>
    <pre><code class="language-swift">enum StarWars: Int {
     case phantomMenace
