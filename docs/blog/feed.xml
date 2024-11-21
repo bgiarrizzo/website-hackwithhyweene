@@ -455,7 +455,7 @@ myTestApp   myTestTopic     2          6               6               0        
   </content>
  </entry>
  <entry xml:lang="en">
-  <title type="html">Transformation - Semaine 1</title> <author><name></name>
+  <title type="html">Transformation: Semaine 1</title> <author><name></name>
    <uri>https://www.hack-with-hyweene.com</uri>
   </author>
   <id>https://www.hack-with-hyweene.com/blog/transformation-semaine-1/</id>
@@ -529,7 +529,7 @@ myTestApp   myTestTopic     2          6               6               0        
   </content>
  </entry>
  <entry xml:lang="en">
-  <title type="html">Transformation - Semaine 2</title> <author><name></name>
+  <title type="html">Transformation: Semaine 2</title> <author><name></name>
    <uri>https://www.hack-with-hyweene.com</uri>
   </author>
   <id>https://www.hack-with-hyweene.com/blog/transformation-semaine-2/</id>

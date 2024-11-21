@@ -4,7 +4,6 @@
         <!-- Favicon -->
         <link href="{{ site.url }}/static/img/cl-logo.svg" rel="icon" />
 
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=5.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,30 +27,21 @@
         <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - RSS du Blog" href="{{ site.url }}/blog/feed.xml">
         <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - RSS des Liens" href="{{ site.url }}/links/feed.xml">
 
-        {% if page_title %}
-            <title>{{ page_title }} - {{ site.name }}</title>
-            <meta name="title" content="{{ page_title }} - {{ site.name }}">
-        {% else %}
+        {% block title %}
             <title>{{ site.name }}</title>
-            <meta name="title" content="{{ site.name }}">
-        {% endif %}
+        {% endblock title %}
 
-        {% if page %}
-            {% if page.permalink %}
-                <link rel="canonical" href="{{ site.url }}/{{ page.permalink }}/">
-            {% endif %}
-            {% if page.summary %}
-                <meta name="description" content="{{ page.summary }}">
-            {% endif %}
-        {% elif post %}
-            <link rel="canonical" href="{{ site.url }}/blog/{{ post.slug }}/">
-            <meta name="description" content="{{ post.summary }}">
-        {% elif all_posts %}
-            <link rel="canonical" href="{{ site.url }}/blog/">
-            <meta name="title" content="Blog - {{ site.name }}">
-        {% else %}
+        {% block metaTitle %}
+            <meta name="title" content="{{ site.name }}">
+        {% endblock metaTitle %}
+
+        {% block linkCanonical %}
             <link rel="canonical" href="{{ site.url }}/">
-        {% endif %}
+        {% endblock linkCanonical %}
+
+        {% block metaDescription %}
+            <meta name="description" content="{{ site.description }}">
+        {% endblock metaDescription %}
 
         {% block prismCss %}
         {% endblock prismCss %}

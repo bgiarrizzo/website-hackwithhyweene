@@ -1,5 +1,5 @@
 ---
-title: Transformation - Semaine 2
+title: "Transformation: Semaine 2"
 summary: Semaine 2, bien mieux, mais on peut encore gratter plus loin !
 publish_date: 2024-11-11T22:00:00Z
 publish_date: 2024-11-11T22:00:00Z

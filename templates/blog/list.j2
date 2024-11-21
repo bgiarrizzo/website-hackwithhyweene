@@ -1,5 +1,16 @@
-
 {% extends "main.j2" %}
+
+{% block title %}
+    <title>Blog - {{ site.name }}</title>
+{% endblock title %}
+
+{% block metaTitle %}
+    <meta name="title" content="Blog - {{ site.name }}">
+{% endblock metaTitle %}
+
+{% block linkCanonical %}
+    <link rel="canonical" href="{{ site.url }}/blog/">
+{% endblock linkCanonical %}
 
 {% block content %}
     <h1 class="text-4xl font-semibold">Blog</h1>

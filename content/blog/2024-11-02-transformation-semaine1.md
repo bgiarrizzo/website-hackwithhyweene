@@ -1,5 +1,5 @@
 ---
-title: Transformation - Semaine 1
+title: "Transformation: Semaine 1"
 summary: Première semaine de transformation, et je suis mitigé.
 publish_date: 2024-11-03T20:00:00Z
 publish_date: 2024-11-03T20:00:00Z

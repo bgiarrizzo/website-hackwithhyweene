@@ -1,5 +1,21 @@
 {% extends "main.j2" %}
 
+{% block title %}
+    <title>CV - {{ site.name }}</title>
+{% endblock title %}
+
+{% block metaTitle %}
+    <meta name="title" content="CV - {{ site.name }}">
+{% endblock metaTitle %}
+
+{% block linkCanonical %}
+    <link rel="canonical" href="{{ site.url }}/cv/">
+{% endblock linkCanonical %}
+
+{% block metaDescription %}
+    <meta name="description" content="Bruno Giarrizzo, Freelance, développeur Python & Go et DevOps">
+{% endblock metaDescription %}
+
 {% block meta_keywords %}
     <meta name="keywords" content="{{ site.keywords | join(', ') }}, CV, Curriculum Vitae, Resume, Python, FastAPI, Golang, Swift, Kubernetes, Terraform, Helm">
 {% endblock meta_keywords %}
