@@ -11,7 +11,6 @@ def generate_module_page(module_slug, page):
     template_name = "learn/page.j2"
     data = {
         "learn": page,
-        "page_title": f"{page.get('title')} - {page.get('module_name')} - Apprendre",
     }
     filename = f"apprendre/{module_slug}/{page.get('slug')}/index.html"
 
@@ -20,7 +19,10 @@ def generate_module_page(module_slug, page):
 
 def generate_learning_module_pages(module_data):
     for module_page in module_data.get("module_pages"):
-        module_page["module_name"] = module_data.get("module_name")
+        module_page["module"] = {
+            "name": module_data.get("module_name"),
+            "slug": module_data.get("module_slug"),
+        }
         print(f"Generating module page: {module_page.get('title')} ...")
         generate_module_page(module_data.get("module_slug"), module_page)
 
@@ -29,7 +31,6 @@ def generate_module_table_of_contents(module_data):
     template_name = "learn/module_toc.j2"
 
     data = {
-        "page_title": f"Table des matières - {module_data.get('module_name')} - Apprendre",
         "module": {
             "name": module_data.get("module_name"),
             "slug": module_data.get("module_slug"),

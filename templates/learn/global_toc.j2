@@ -1,5 +1,17 @@
 {% extends "main.j2" %}
 
+{% block title %}
+    <title>Apprendre - {{ site.name }}</title>
+{% endblock title %}
+
+{% block metaTitle %}
+    <meta name="title" content="Apprendre - {{ site.name }}">
+{% endblock metaTitle %}
+
+{% block linkCanonical %}
+    <link rel="canonical" href="{{ site.url }}/apprendre/">
+{% endblock linkCanonical %}
+
 {% block content %}
     <h1>Apprendre</h1>
 

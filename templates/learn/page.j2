@@ -1,5 +1,17 @@
 {% extends "main.j2" %}
 
+{% block title %}
+    <title>{{ learn.title }} - {{ learn.module.name }} - Apprendre - {{ site.name }}</title>
+{% endblock title %}
+
+{% block metaTitle %}
+    <meta name="title" content="{{ learn.title }} - {{ learn.module.name }} - Apprendre - {{ site.name }}">
+{% endblock metaTitle %}
+
+{% block linkCanonical %}
+    <link rel="canonical" href="{{ site.url }}/apprendre/{{ learn.module.slug }}/{{ learn.slug }}/">
+{% endblock linkCanonical %}
+
 {% block meta_keywords %}
     <meta name="keywords" content="{{ site.keywords | join(', ') }}, Apprendre, {{ learn.tags }}">
 {% endblock meta_keywords %}
@@ -25,7 +37,7 @@
         </div>
     {% endif %}
 
-    <h1>{{ learn.module }}</h1>
+    <h1>{{ learn.module.name }}</h1>
 
     <h2>{{ learn.title }}</h2>
 
