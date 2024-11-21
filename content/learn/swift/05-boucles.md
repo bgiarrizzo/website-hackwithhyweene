@@ -1,7 +1,7 @@
 ---
 id: 5
 title: Boucles
-summary: "Les opérateurs vous permettent de manipuler des données et de prendre des décisions dans votre code."
+summary: "Les boucles vous permettent de répéter un bloc de code un nombre spécifique de fois ou tant qu'une condition est vraie."
 tags: swift, swift playground, xcode, boucles, for, while, repeat, loop control, break, continue, boucles infinies, étiquettes, labels, sortir de boucles, ignorer des éléments
 
 prism_needed: true
