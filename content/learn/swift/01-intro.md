@@ -1,7 +1,7 @@
 ---
 id: 1
 title: Intro
-summary: Voici ma compilation de notes d'apprentissage sur Swift.
+summary: "Voici ma compilation de notes d'apprentissage sur Swift. Ce module est conçu pour les débutants qui souhaitent apprendre les bases du langage Swift, utilisé pour le développement d'applications iOS, macOS, watchOS et tvOS."
 tags: swift, introduction, ios, macos, watchos, tvos, apple, langage, programmation, open-source, chris lattner, objectif-c, wwdc, xcode, swift playground, swift package manager
 
 prism_needed: false

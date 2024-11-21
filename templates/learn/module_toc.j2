@@ -12,6 +12,10 @@
     <link rel="canonical" href="{{ site.url }}/apprendre/{{ module.slug }}/">
 {% endblock linkCanonical %}
 
+{% block metaDescription %}
+    <meta name="description" content="{{ module.description }}">
+{% endblock metaDescription %}
+
 {% block content %}
     <h1 class="text-4xl font-semibold">{{ module.name }}</h1>
 

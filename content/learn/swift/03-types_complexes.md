@@ -1,7 +1,7 @@
 ---
 id: 3
 title: Types complexes
-summary: Swift propose des types complexes tels que les tableaux, les ensembles, les tuples et les dictionnaires pour stocker des données structurées. Ces types sont essentiels pour la manipulation des données et offrent des fonctionnalités avancées pour la gestion des collections.
+summary: "Swift propose des types complexes tels que les tableaux, les ensembles, les tuples et les dictionnaires pour stocker des données structurées. Ces types sont essentiels pour la manipulation des données et offrent des fonctionnalités avancées pour la gestion des collections."
 tags: swift, types, types complexes, arrays, sets, tuples, dictionaries, collections, enums, swift playground, xcode
 
 prism_needed: true

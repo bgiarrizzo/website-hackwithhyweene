@@ -1,7 +1,7 @@
 ---
 id: 1
 title: Intro
-summary: Introduction à Git, un système de contrôle de version distribué. Apprenez les bases de la gestion des versions, les types de VCS, et les concepts clés tels que les commits, les branches et les dépôts.
+summary: "Introduction à Git, un système de contrôle de version distribué. Apprenez les bases de la gestion des versions, les types de VCS, et les concepts clés tels que les commits, les branches et les dépôts."
 tags: git, système de contrôle de version, contrôle, version, versionning, vcs, distribué, linus torvalds, historique, repository, commit, branche, remote, merge, fusion
 
 prism_needed: false

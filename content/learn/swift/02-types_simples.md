@@ -1,7 +1,7 @@
 ---
 id: 2
 title: Types simples
-summary: Swift propose des types simples tels que les entiers, les chaînes de caractères, les doubles et les booléens, qui sont fondamentaux pour la manipulation des données. Le langage privilégie la sécurité des types en encourageant l'utilisation de constantes avec "let" et permet des annotations de type pour une meilleure clarté. De plus, des fonctionnalités comme l'interpolation de chaînes et les chaînes multi-lignes simplifient la gestion du texte.
+summary: "Swift propose des types simples tels que les entiers, les chaînes de caractères, les doubles et les booléens, qui sont fondamentaux pour la manipulation des données. Le langage privilégie la sécurité des types en encourageant l'utilisation de constantes avec 'let' et permet des annotations de type pour une meilleure clarté. De plus, des fonctionnalités comme l'interpolation de chaînes et les chaînes multi-lignes simplifient la gestion du texte."
 tags: swift, types, types simples, variables, constantes, entiers, floats, doubles, booléens, strings, interpolation, multi-line strings, swift playground, xcode
 
 prism_needed: true

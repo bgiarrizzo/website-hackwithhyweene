@@ -12,6 +12,10 @@
     <link rel="canonical" href="{{ site.url }}/apprendre/{{ learn.module.slug }}/{{ learn.slug }}/">
 {% endblock linkCanonical %}
 
+{% block metaDescription %}
+    <meta name="description" content="{{ learn.summary }}">
+{% endblock metaDescription %}
+
 {% block meta_keywords %}
     <meta name="keywords" content="{{ site.keywords | join(', ') }}, Apprendre, {{ learn.tags }}">
 {% endblock meta_keywords %}

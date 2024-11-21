@@ -34,6 +34,7 @@ def generate_module_table_of_contents(module_data):
         "module": {
             "name": module_data.get("module_name"),
             "slug": module_data.get("module_slug"),
+            "description": module_data.get("module_description"),
         },
         "pages": module_data.get("module_pages"),
     }
