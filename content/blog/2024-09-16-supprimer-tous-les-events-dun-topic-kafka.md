@@ -5,6 +5,8 @@ publish_date: 2024-09-16T11:30:00Z
 update_date: 2024-09-16T11:30:00Z
 category: "Pense bête"
 tags: [kafka, topic, event, delete, supprimer, message]
+prism_needed: true
+
 ---
 
 Dans ma mission actuelle, je travaille avec Kafka. Je suis également en charge, avec d'autres personnes, du support utilisateur. Aujourd'hui, un utilisateur rencontrait un problème avec la suppression de ses messages dans un topic Kafka dédié à des tests automatisés.

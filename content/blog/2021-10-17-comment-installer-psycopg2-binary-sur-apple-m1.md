@@ -6,6 +6,9 @@ cover_alt: "couverture de l'article sur l'installation de psycopg2-binary sur ma
 publish_date: 2021-10-17T09:30:00Z
 update_date: 2021-10-17T09:30:00Z
 tags: [apple, m1, postgres, python3.10, psycopg2, psycopg2-binary, installation]
+
+prism_needed: true
+
 ---
 
 Le mois dernier, je me suis offert un Apple M1, un très bon ordinateur, puissant et avec une autonomie impressionnante.

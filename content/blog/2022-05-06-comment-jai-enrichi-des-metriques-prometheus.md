@@ -7,6 +7,8 @@ publish_date: 2022-05-05T09:30:00Z
 update_date: 2022-05-05T09:30:00Z
 category: "Retour d'expérience"
 tags: [prometheus, python, pandas, dataframe, vmware exporter, fastapi]
+prism_needed: true
+
 ---
 
 ## Contexte
