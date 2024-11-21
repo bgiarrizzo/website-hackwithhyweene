@@ -20,6 +20,8 @@ def date_older_than_one_year(date):
     return date < now - timedelta(days=180)
 
 
+
+
 def write_page(filename, content):
     makedirs(path.dirname(f"{settings.BUILD_PATH}/{filename}"), exist_ok=True)
 
@@ -32,6 +34,7 @@ def render_template(template_name, data):
         loader=FileSystemLoader(settings.TEMPLATE_PATH),
     )
     env.filters["is_outdated"] = date_older_than_one_year
+    env.globals["yearNow"] = datetime.now().year
     template = env.get_template(template_name)
     return template.render(data)
 
