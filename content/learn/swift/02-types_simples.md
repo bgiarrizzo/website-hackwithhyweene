@@ -2,6 +2,9 @@
 id: 2
 title: Types simples
 summary: Swift propose des types simples tels que les entiers, les chaînes de caractères, les doubles et les booléens, qui sont fondamentaux pour la manipulation des données. Le langage privilégie la sécurité des types en encourageant l'utilisation de constantes avec "let" et permet des annotations de type pour une meilleure clarté. De plus, des fonctionnalités comme l'interpolation de chaînes et les chaînes multi-lignes simplifient la gestion du texte.
+tags: swift, types, types simples, variables, constantes, entiers, floats, doubles, booléens, strings, interpolation, multi-line strings, swift playground, xcode
+
+prism_needed: true
 
 publish_date: 2024-11-08T19:00:00Z
 update_date: 2024-11-11T22:30:00Z
@@ -49,13 +52,13 @@ Swift propose plusieurs types de données simples pour les entiers, les doubles 
 
 Les entiers sont des nombres entiers positifs ou négatifs. Swift propose plusieurs types d'entiers :
 
-| Type       | Description | Intervalle |
-| ---------- | ----------- | ---------- |
-| Int8 | Entier signé sur 8 bits | -128 à 127 |
-| Int16 | Entier signé sur 16 bits | -2^15 à 2^15-1 |
-| Int32 | Entier signé sur 32 bits | -2^31 à 2^31-1 |
-| Int64 | Entier signé sur 64 bits | -2^63 à 2^63-1 |
-| UInt | Entier non signé | 0 à 2^32 (32-bit) 0 à 2^64 (64-bit) |
+| Type       | Description              | Intervalle                          |
+| ---------- | ------------------------ | ----------------------------------- |
+| Int8       | Entier signé sur 8 bits  | -128 à 127                          |
+| Int16      | Entier signé sur 16 bits | -2^15 à 2^15-1                      |
+| Int32      | Entier signé sur 32 bits | -2^31 à 2^31-1                      |
+| Int64      | Entier signé sur 64 bits | -2^63 à 2^63-1                      |
+| UInt       | Entier non signé         | 0 à 2^32 (32-bit) 0 à 2^64 (64-bit) |
 
 ```swift
 let taille: Int = 170
@@ -71,10 +74,10 @@ let populationDeLaTerre: Int = 8_500_000_000
 
 Les nombres à virgule flottante peuvent être représentés par deux types de données :
 
-| Type       | Description |
-| ---------- | ----------- |
-| Float | Nombre à virgule flottante sur 32 bits |
-| Double | Nombre à virgule flottante sur 64 bits |
+| Type       | Description                            |
+| ---------- | -------------------------------------- |
+| Float      | Nombre à virgule flottante sur 32 bits |
+| Double     | Nombre à virgule flottante sur 64 bits |
 
 #### Floats
 

@@ -1,5 +1,9 @@
 {% extends "main.j2" %}
 
+{% block meta_keywords %}
+    <meta name="keywords" content="{{ site.keywords | join(', ') }}, CV, Curriculum Vitae, Resume, Python, FastAPI, Golang, Swift, Kubernetes, Terraform, Helm">
+{% endblock meta_keywords %}
+
 {% block content %}
     <img class="cover" src="/media/images/pages/resume/cover.png" alt="resume cover image">
 

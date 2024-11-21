@@ -7,6 +7,14 @@ category: "Sport & Transformation"
 tags: ["sport", "transformation", "fitness", "santé", "bien-être", "perte de poids", "muscu", "musculation", "poids", "bodyfat", "sommeil", "pas", "étapes", "objectifs", "résultats", "suivi", "semaine", "semaine 2", "tracking"]
 ---
 
+Dans la même série :
+
+- Episode 1 : [J'ai décidé que c'était assez](/blog/j-ai-decide-que-c-etait-assez/)
+- Episode 2 : [Transformation - Semaine 1](/blog/transformation-semaine-1/)
+- Episode 3 : [Transformation - Semaine 2](/blog/transformation-semaine-2/)
+
+---
+
 <a href="/blog/transformation-semaine-1/">La semaine dernière</a>, j'avais dit être mitigé par mon parcours.
 
 J'avais eu un gros problème à me mettre en train, j'avais aussi eu de gros soucis pour dormir correctement (la moyenne de `7h33` de sommeil sur la semaine, due a des nuits de `5h30` a fait plutôt mal), et un jour ferié mal placé m'ont donné du mal.
@@ -27,27 +35,27 @@ Bref, je pense que je vais tester la balance de ma salle de sport, ca sera surem
 
 ## Le détail de la semaine
 
-* Lundi : Pecs, séance de foufou, je les ai senti pendant 2 jours, et `12278` pas.
-* Mardi : Biceps & Triceps + `11550` pas.
-* Mercredi : Petit empèchement qui m'a fait rater la séance, mais `12259` pas.
-* Jeudi : Dos, et `14207` pas.
-* Vendredi : Épaules, et `11080` pas.
-* Samedi : Repos, et `12731` pas.
-* Dimanche : Jambes _(je les sens encore quand j'écris ces lignes, et j'ai encore du mal à m'assoir et me lever des toilettes)_, et `11048` pas.
+- Lundi : Pecs, séance de foufou, je les ai senti pendant 2 jours, et `12278` pas.
+- Mardi : Biceps & Triceps + `11550` pas.
+- Mercredi : Petit empèchement qui m'a fait rater la séance, mais `12259` pas.
+- Jeudi : Dos, et `14207` pas.
+- Vendredi : Épaules, et `11080` pas.
+- Samedi : Repos, et `12731` pas.
+- Dimanche : Jambes _(je les sens encore quand j'écris ces lignes, et j'ai encore du mal à m'assoir et me lever des toilettes)_, et `11048` pas.
 
 ## Les points positifs
 
-* J'ai appliqué [la règle des 2 jours](https://www.youtube.com/watch?v=bfLHTLQZ5nc), cette règle qui dit que pour mettre en place durablement une nouvelle habitude, il faut éviter de faire une pause de plus d'une journée entre deux occurences. Donc si pause mercredi, on évite d'en faire une le jeudi. J'ai donc fait 5 séances cette semaine.
-* J'ai vraiment tenu a augmenter le nombre de pas par jour, le résultat est la, 4000 de plus par jour sur la moyenne de la semaine. On va essayer d'aller plus haut cette semaine : 15000 pas par jour.
-* J'ai encore quelques problèmes pour gérer la bouffe, même si j'ai recommencé à refaire du batchcooking pour éviter de faire n'importe quoi, mais j'entraine mon cerveau à ne pas vriller, c'est un exercice difficile, mais j'en parle avec les gens, ça aide.
+- J'ai appliqué [la règle des 2 jours](https://www.youtube.com/watch?v=bfLHTLQZ5nc), cette règle qui dit que pour mettre en place durablement une nouvelle habitude, il faut éviter de faire une pause de plus d'une journée entre deux occurences. Donc si pause mercredi, on évite d'en faire une le jeudi. J'ai donc fait 5 séances cette semaine.
+- J'ai vraiment tenu a augmenter le nombre de pas par jour, le résultat est la, 4000 de plus par jour sur la moyenne de la semaine. On va essayer d'aller plus haut cette semaine : 15000 pas par jour.
+- J'ai encore quelques problèmes pour gérer la bouffe, même si j'ai recommencé à refaire du batchcooking pour éviter de faire n'importe quoi, mais j'entraine mon cerveau à ne pas vriller, c'est un exercice difficile, mais j'en parle avec les gens, ça aide.
 
 <figure>
   <img src="/media/images/blog/illustration/2024-11-10/enculer-tartiflette.png"/>
   <figcaption>Seb, merci bro 🥲</figcaption>
 </figure>
 
-* Ma dame et ma fille se sont fait un mcdo cette semaine, j'ai résisté ! J'ai tapé dans une frite et deux petits pilons de poulet, c'était la lutte de ne pas dire que je voulais quelque chose, mais j'ai rien fait, je suis resté sur mon poulet/riz/haricots verts, fier de moi ! :D
-* Je me suis bien buté cette semaine, et petit message de ma dame qui fait plaisir pendant une séance d'épaules qui brulent :D
+- Ma dame et ma fille se sont fait un mcdo cette semaine, j'ai résisté ! J'ai tapé dans une frite et deux petits pilons de poulet, c'était la lutte de ne pas dire que je voulais quelque chose, mais j'ai rien fait, je suis resté sur mon poulet/riz/haricots verts, fier de moi ! :D
+- Je me suis bien buté cette semaine, et petit message de ma dame qui fait plaisir pendant une séance d'épaules qui brulent :D
 
 <figure>
   <img src="/media/images/blog/illustration/2024-11-10/poupinette-fiere.jpeg"/>
@@ -56,14 +64,14 @@ Bref, je pense que je vais tester la balance de ma salle de sport, ca sera surem
 
 ## Les points négatifs
 
-* Le sommeil, toujours le sommeil. Je ne vais pas me trouver d'excuses, si je prends la tablette au lit, je finis par me coucher tard, pas de secret, faut que je mette plus de distance avec les écrans le soir.
-* Pas mal de maux de tête cette semaine, certainement du à un manque d'hydratation, faudrait pas oublier de boire ...
+- Le sommeil, toujours le sommeil. Je ne vais pas me trouver d'excuses, si je prends la tablette au lit, je finis par me coucher tard, pas de secret, faut que je mette plus de distance avec les écrans le soir.
+- Pas mal de maux de tête cette semaine, certainement du à un manque d'hydratation, faudrait pas oublier de boire ...
 
 ## Les objectifs pour la semaine prochaine
 
-* `15000` pas par jour, on va y arriver !
-* `7h30`, voire `8h` de sommeil par nuit, y'a pas de raisons de ne pas y arriver !
-* 1kg de moins, ca serait bien de passer sous les `85kg`, mon plus bas depuis le 21 Octobre 2023 !!
+- `15000` pas par jour, on va y arriver !
+- `7h30`, voire `8h` de sommeil par nuit, y'a pas de raisons de ne pas y arriver !
+- 1kg de moins, ca serait bien de passer sous les `85kg`, mon plus bas depuis le 21 Octobre 2023 !!
 
 ***
 

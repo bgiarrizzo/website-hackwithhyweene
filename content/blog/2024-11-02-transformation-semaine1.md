@@ -7,6 +7,14 @@ category: "Sport & Transformation"
 tags: [santé, bien-être, alimentation, sport, mental, confiance en soi, stress, craquage, surpoids, transformation, poids, bodyfat, sommeil, pas, tracking, organisation, discipline, rigueur, motivation]
 ---
 
+Dans la même série :
+
+- Episode 1 : [J'ai décidé que c'était assez](/blog/j-ai-decide-que-c-etait-assez/)
+- Episode 2 : [Transformation - Semaine 1](/blog/transformation-semaine-1/)
+- Episode 3 : [Transformation - Semaine 2](/blog/transformation-semaine-2/)
+
+---
+
 <a href="/blog/j-ai-decide-que-c-etait-assez/">Dans l'épisode précédent</a>, j'ai démarré une petite transformation, parce que ras le pif de mon bide, de mes seins et de mon double menton :)
 
 Donc, aujourd'hui, première semaine de transformation, et je suis mitigé.

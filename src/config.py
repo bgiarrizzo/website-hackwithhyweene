@@ -31,20 +31,8 @@ class Settings(BaseSettings):
         "Hyweene",
         "Bruno Giarrizzo",
         "Developpeur",
+        "Developer",
         "DevOps",
-        "Git",
-        "Apple",
-        "Golang",
-        "Go",
-        "Python",
-        "Swift",
-        "SwiftUI",
-        "Docker",
-        "Kubernetes",
-        "POO",
-        "OOP",
-        "Programmation Orientée Objet",
-        "Programmation Fonctionnelle",
     ]
     LANGUAGE: str = "fr"
 

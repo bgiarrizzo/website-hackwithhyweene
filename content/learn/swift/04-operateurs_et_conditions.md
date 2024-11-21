@@ -2,6 +2,9 @@
 id: 4
 title: Opérateurs et conditions
 summary: Les opérateurs vous permettent de manipuler des données et de prendre des décisions dans votre code.
+tags: swift, opérateurs, conditions, if, else, switch, range, comparaison, arithmétique, assignation, ternaire, booléens, switch, opérateurs de plages, swift playground, xcode
+
+prism_needed: true
 
 publish_date: 2024-11-20T18:15:00Z
 update_date: 2024-11-20T18:15:00Z

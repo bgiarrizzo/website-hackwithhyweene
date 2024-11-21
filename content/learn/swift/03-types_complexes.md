@@ -2,6 +2,9 @@
 id: 3
 title: Types complexes
 summary: Swift propose des types complexes tels que les tableaux, les ensembles, les tuples et les dictionnaires pour stocker des données structurées. Ces types sont essentiels pour la manipulation des données et offrent des fonctionnalités avancées pour la gestion des collections.
+tags: swift, types, types complexes, arrays, sets, tuples, dictionaries, collections, enums, swift playground, xcode
+
+prism_needed: true
 
 publish_date: 2024-11-20T17:10:00Z
 update_date: 2024-11-20T17:10:00Z
@@ -55,13 +58,13 @@ Dans cet exemple, le set ne contiendra que `["bleu", "rouge", "vert"]`.
 Les tuples sont des collections de valeurs qui peuvent être de différents types. Les tuples sont utilisés pour regrouper des valeurs qui sont liées entre elles.
 
 ```swift
-let personne = (prenom: "Hyweene", pseudo: "Hyweene", age: 36)
+let personne = (prenom: "Bruno", pseudo: "Hyweene", age: 36)
 ```
 
 On peut accéder aux valeurs d'un tuple en utilisant leur index ou leur nom.
 
 ```swift
-print(personne.0) // Hyweene
+print(personne.0) // Bruno
 print(personne.1) // Hyweene
 print(personne.2) // 36
 ```
@@ -69,7 +72,7 @@ print(personne.2) // 36
 Il est également possible d'accéder à la valeur en utilisant le nom de la propriété.
 
 ```swift
-print(personne.prenom) // Hyweene
+print(personne.prenom) // Bruno
 print(personne.pseudo) // Hyweene
 print(personne.age) // 36
 ```

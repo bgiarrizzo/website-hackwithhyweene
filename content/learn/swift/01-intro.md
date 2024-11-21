@@ -2,6 +2,9 @@
 id: 1
 title: Intro
 summary: Voici ma compilation de notes d'apprentissage sur Swift.
+tags: swift, introduction, ios, macos, watchos, tvos, apple, langage, programmation, open-source, chris lattner, objectif-c, wwdc, xcode, swift playground, swift package manager
+
+prism_needed: false
 
 publish_date: 2024-11-08T19:00:00Z
 update_date: 2024-11-08T19:00:00Z

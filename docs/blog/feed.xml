@@ -304,6 +304,13 @@ myTestApp   myTestTopic     2          6               6               0        
   <summary>
    J'ai 36 ans, je mesure 1m70, je p&egrave;se 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.</summary>
   <content type="html">
+   <p>Dans la m&ecirc;me s&eacute;rie :</p>
+   <ul>
+    <li>Episode 1 : <a href="/blog/j-ai-decide-que-c-etait-assez/">J'ai d&eacute;cid&eacute; que c'&eacute;tait assez</a></li>
+    <li>Episode 2 : <a href="/blog/transformation-semaine-1/">Transformation - Semaine 1</a></li>
+    <li>Episode 3 : <a href="/blog/transformation-semaine-2/">Transformation - Semaine 2</a></li>
+   </ul>
+   <hr>
    <p>J'ai 35 ans, je mesure 1m70, je p&egrave;se 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.</p>
    <h2>Le contexte</h2>
    <p>J'ai toujours &eacute;t&eacute; en surpoids, depuis petit, j'&eacute;tais le p'tit gros de la classe, le p'tit gros de la famille.</p>
@@ -458,6 +465,13 @@ myTestApp   myTestTopic     2          6               6               0        
   <summary>
    Premi&egrave;re semaine de transformation, et je suis mitig&eacute;.</summary>
   <content type="html">
+   <p>Dans la m&ecirc;me s&eacute;rie :</p>
+   <ul>
+    <li>Episode 1 : <a href="/blog/j-ai-decide-que-c-etait-assez/">J'ai d&eacute;cid&eacute; que c'&eacute;tait assez</a></li>
+    <li>Episode 2 : <a href="/blog/transformation-semaine-1/">Transformation - Semaine 1</a></li>
+    <li>Episode 3 : <a href="/blog/transformation-semaine-2/">Transformation - Semaine 2</a></li>
+   </ul>
+   <hr>
    <p><a href="/blog/j-ai-decide-que-c-etait-assez/">Dans l'&eacute;pisode pr&eacute;c&eacute;dent</a>, j'ai d&eacute;marr&eacute; une petite transformation, parce que ras le pif de mon bide, de mes seins et de mon double menton :)</p>
    <p>Donc, aujourd'hui, premi&egrave;re semaine de transformation, et je suis mitig&eacute;.</p>
    <p>On sait tous que le plus dur, c'est de s'y remettre, et c'est vrai. Je me suis relanc&eacute;, lundi et mardi ont &eacute;t&eacute; de tr&egrave;s bons jours, mais je sais comme je suis, j'ai voulu taper dans le fond, et ca fait mal. Ca faisait tellement mal que mercredi je n'ai pas su bouger ...</p>
@@ -525,6 +539,13 @@ myTestApp   myTestTopic     2          6               6               0        
   <summary>
    Semaine 2, bien mieux, mais on peut encore gratter plus loin !</summary>
   <content type="html">
+   <p>Dans la m&ecirc;me s&eacute;rie :</p>
+   <ul>
+    <li>Episode 1 : <a href="/blog/j-ai-decide-que-c-etait-assez/">J'ai d&eacute;cid&eacute; que c'&eacute;tait assez</a></li>
+    <li>Episode 2 : <a href="/blog/transformation-semaine-1/">Transformation - Semaine 1</a></li>
+    <li>Episode 3 : <a href="/blog/transformation-semaine-2/">Transformation - Semaine 2</a></li>
+   </ul>
+   <hr>
    <p><a href="/blog/transformation-semaine-1/">La semaine derni&egrave;re</a>, j'avais dit &ecirc;tre mitig&eacute; par mon parcours.</p>
    <p>J'avais eu un gros probl&egrave;me &agrave; me mettre en train, j'avais aussi eu de gros soucis pour dormir correctement (la moyenne de
     <code>

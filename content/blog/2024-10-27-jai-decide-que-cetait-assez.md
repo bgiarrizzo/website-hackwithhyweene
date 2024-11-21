@@ -7,6 +7,14 @@ category: "Sport & Transformation"
 tags: [santé, bien-être, alimentation, sport, mental, confiance en soi, stress, fatigue, surpoids]
 ---
 
+Dans la même série :
+
+- Episode 1 : [J'ai décidé que c'était assez](/blog/j-ai-decide-que-c-etait-assez/)
+- Episode 2 : [Transformation - Semaine 1](/blog/transformation-semaine-1/)
+- Episode 3 : [Transformation - Semaine 2](/blog/transformation-semaine-2/)
+
+---
+
 J'ai 35 ans, je mesure 1m70, je pèse 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.
 
 ## Le contexte

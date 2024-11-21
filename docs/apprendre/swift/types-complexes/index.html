@@ -18,7 +18,8 @@
   <meta content="General" name="rating">
   <meta content="yes" name="apple-mobile-web-app-capable">
   <meta content="https://www.hack-with-hyweene.com" name="identifier-URL">
-  <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - Blog RSS" type="application/rss+xml">
+  <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - RSS du Blog" type="application/rss+xml">
+  <link href="https://www.hack-with-hyweene.com/links/feed.xml" rel="alternate" title="Hack with Hyweene - RSS des Liens" type="application/rss+xml">
   <title>Types complexes - Swift - Apprendre - Hack with Hyweene</title>
   <meta content="Types complexes - Swift - Apprendre - Hack with Hyweene" name="title">
   <link href="https://www.hack-with-hyweene.com/" rel="canonical">
@@ -26,8 +27,8 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T0SNK38Q">
   </script>
-  <script src="/static/js/analytics.js">
-  </script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-S4T0SNK38Q');</script>
+  <meta content="Bruno, Giarrizzo, Hyweene, Bruno Giarrizzo, Developpeur, Developer, DevOps, Apprendre, swift, types, types complexes, arrays, sets, tuples, dictionaries, collections, enums, swift playground, xcode" name="keywords">
   <style>body { margin: 0 auto; max-width: 700px; line-height: 1.8; font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif; font-size: 1rem; color: #444; background-color: #fdf6e3; padding: 20px 40px; text-rendering: optimizeLegibility; }
     h1 { line-height: 1.2; text-align: center; }
     h2, h3, h4 { line-height: 1.2; border-bottom: 1px solid; }
@@ -88,13 +89,13 @@ let monSetPleinDeStrings: Set&lt;String&gt; = Set(["bleu", "rouge", "vert"])</co
      ["bleu", "rouge", "vert"]</code>.</p>
    <h3>Tuples</h3>
    <p>Les tuples sont des collections de valeurs qui peuvent &ecirc;tre de diff&eacute;rents types. Les tuples sont utilis&eacute;s pour regrouper des valeurs qui sont li&eacute;es entre elles.</p>
-   <pre><code class="language-swift">let personne = (prenom: "Hyweene", pseudo: "Hyweene", age: 36)</code></pre>
+   <pre><code class="language-swift">let personne = (prenom: "Bruno", pseudo: "Hyweene", age: 36)</code></pre>
    <p>On peut acc&eacute;der aux valeurs d'un tuple en utilisant leur index ou leur nom.</p>
-   <pre><code class="language-swift">print(personne.0) // Hyweene
+   <pre><code class="language-swift">print(personne.0) // Bruno
 print(personne.1) // Hyweene
 print(personne.2) // 36</code></pre>
    <p>Il est &eacute;galement possible d'acc&eacute;der &agrave; la valeur en utilisant le nom de la propri&eacute;t&eacute;.</p>
-   <pre><code class="language-swift">print(personne.prenom) // Hyweene
+   <pre><code class="language-swift">print(personne.prenom) // Bruno
 print(personne.pseudo) // Hyweene
 print(personne.age) // 36</code></pre>
    <h3>Diff&eacute;rences entre les trois types</h3>
