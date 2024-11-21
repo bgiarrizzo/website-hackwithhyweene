@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr-FR" prefix="og: http://ogp.me/ns#">
+ <head>
+  <!-- Favicon -->
+  <link href="https://www.hack-with-hyweene.com/static/img/cl-logo.svg" rel="icon">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=5.0" name="viewport">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="Bruno 'Hyweene' Giarrizzo" name="author">
+  <meta content="Hack with Hyweene" name="webmaster">
+  <meta content="fr" name="language">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="googlebot">
+  <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="bingbot">
+  <meta content="1 days" name="revisit-after">
+  <meta content="never" name="expires">
+  <meta content="General" name="rating">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="https://www.hack-with-hyweene.com" name="identifier-URL">
+  <link href="https://www.hack-with-hyweene.com/blog/feed.xml" rel="alternate" title="Hack with Hyweene - RSS du Blog" type="application/rss+xml">
+  <link href="https://www.hack-with-hyweene.com/links/feed.xml" rel="alternate" title="Hack with Hyweene - RSS des Liens" type="application/rss+xml">
+  <title>Fonctions - Swift - Apprendre - Hack with Hyweene</title>
+  <meta content="Fonctions - Swift - Apprendre - Hack with Hyweene" name="title">
+  <link href="https://www.hack-with-hyweene.com/apprendre/swift/fonctions/" rel="canonical">
+  <meta content="Les fonctions permettent de r&eacute;utiliser du code en le regroupant dans une fonction. Cela permet de rendre le code plus lisible et plus facile &agrave; maintenir." name="description">
+  <link href="/static/css/prism.css" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4T0SNK38Q">
+  </script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-S4T0SNK38Q');</script>
+  <meta content="Bruno, Giarrizzo, Hyweene, Bruno Giarrizzo, Developpeur, Developer, DevOps, Apprendre, swift, swift playground, xcode, fonctions, param&egrave;tres, valeurs de retour, &eacute;tiquettes de param&egrave;tres, param&egrave;tres par d&eacute;faut, param&egrave;tres variables, erreurs, param&egrave;tres inout, inout, throws, try, catch, do" name="keywords">
+  <style>body { margin: 0 auto; max-width: 700px; line-height: 1.8; font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif; font-size: 1rem; color: #444; background-color: #fdf6e3; padding: 20px 40px; text-rendering: optimizeLegibility; }
+    h1 { line-height: 1.2; text-align: center; }
+    h2, h3, h4 { line-height: 1.2; border-bottom: 1px solid; }
+    p { hyphens: auto; text-align: justify; }
+    pre, blockquote, .code { background: #f5ead6; font-size: 0.8em; padding: 1em; overflow: scroll; border-radius: 0.5em; }
+    ul, ol { list-style-type: circle; }
+    a { color: #169; text-decoration: none; padding: 0.5em 0; }
+    a:hover { text-decoration: underline; }
+    
+    nav { display: flex; align-items: center; justify-content: space-between; flex-direction: row; text-align: center; font-variant: small-caps; font-weight: bold; border-bottom: 1px solid; border-top: 1px solid; margin-bottom: 1.5em; }
+    
+    main { text-align: justify; }
+    main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
+
+    .cover { display: block; width: 100%; border-radius: 0.5em; }
+
+    figure { width: 65%; display: block; margin-left: auto; margin-right: auto;}
+    figure img { width: 100%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 0.5em; }
+    figure figcaption { text-align: center; font-style: italic; }
+
+    footer { margin-top: 1.5em; }
+
+    code { background: #f8cca0; padding: 0.25em;  margin-right: 0.5em; border-radius: 0.5em; }</style>
+ </head>
+ <body>
+  <header>
+   <h1><a href="/">Hack with Hyweene</a></h1>
+  </header>
+  <nav><a href="/blog/">Blog</a>&bull; <a href="/liens/">Liens</a>&bull; <a href="/apprendre/">Apprendre</a>&bull; <a href="/cv/">CV</a></nav>
+  <main>
+   <h1>Swift</h1>
+   <h2>Fonctions</h2>
+   <h2>Ecrire des fonctions</h2>
+   <p>Les fonctions sont des blocs de code qui effectuent une t&acirc;che sp&eacute;cifique. Vous pouvez appeler une fonction pour ex&eacute;cuter le code qu'elle contient. Voici un exemple de fonction simple qui imprime un message :</p>
+   <pre><code class="language-swift">func disBonjour() {
+    print("Bonjour !")
+}</code></pre>
+   <p>Pour appeler la fonction, utilisez son nom suivi de parenth&egrave;ses :</p>
+   <pre><code class="language-swift">disBonjour() // Affiche "Bonjour !"</code></pre>
+   <h2>Fonctions avec param&egrave;tres</h2>
+   <p>Afin de personnaliser le comportement d'une fonction, on peut lui passer des parametres, voici un exemple :</p>
+   <pre><code class="language-swift">func disBonsoir(prenom: String) {
+    print("Bonsoir, \(prenom) !")
+}</code></pre>
+   <p>A l'execution cela donnera :</p>
+   <pre><code class="language-swift">disBonsoir(prenom: "Kevin") // Affiche "Bonsoir, Kevin !"</code></pre>
+   <p>(Et une petite ref ann&eacute;es 90s, ca fait pas de mal :-D )</p>
+   <h2>Retourner des valeurs</h2>
+   <p>Les fonctions peuvent retourner des valeurs, pratique si on veut faire un calcul par exemple :</p>
+   <pre><code class="language-swift">func calculCarre(nombre: Int) -&gt; Int {
+    return nombre * nombre
+}</code></pre>
+   <p>Pour utiliser la valeur retourn&eacute;e, on peut l'assigner &agrave; une variable :</p>
+   <pre><code class="language-swift">let carre = calculCarre(nombre: 5)
+
+print(carre) // Affiche "25"</code></pre>
+   <h2>&Eacute;tiquettes de param&egrave;tres</h2>
+   <p>Par d&eacute;faut, les fonctions Swift n&eacute;cessitent que les param&egrave;tres soient nomm&eacute;s lorsqu'ils sont appel&eacute;s. Cela permet de rendre le code plus lisible.</p>
+   <p>Prenons une nouvelle fonction :</p>
+   <pre><code class="language-swift">func saluer(nom: String) -&gt; String {
+    return "Bienvenue, \(nom) !"
+}</code></pre>
+   <p>Le parametre de la fonction s'appelle
+    <code>
+     chez</code>, et on peut utiliser
+    <code>
+     chez</code>pour utiliser sa valeur &agrave; l'interieur de la fonction.</p>
+   <p>Mais on peut &eacute;galement renommer le parametre &agrave; l'interieur de la fonction, ce qui permet de rendre le code plus explicite :</p>
+   <pre><code class="language-swift">func saluer(personne nom: String) -&gt; String {
+    return "Bienvenue, \(nom) !"
+}</code></pre>
+   <p>A l'usage, cela donne :</p>
+   <pre><code class="language-swift">let message = saluer(personne: "Jessica")
+
+print(message) // Affiche "Bienvenue, Jessica !"</code></pre>
+   <h2>Omettre les &eacute;tiquettes de param&egrave;tres</h2>
+   <p>Si on ne veut pas utiliser d'&eacute;tiquettes de param&egrave;tres, on peut les omettre en utilisant
+    <code>
+     _</code>:</p>
+   <pre><code class="language-swift">func saluer(_ nom: String) -&gt; String {
+    return "Bienvenue, \(nom) !"
+}</code></pre>
+   <p>A l'usage, cela donne :</p>
+   <pre><code class="language-swift">let message = saluer("Jessica")
+
+print(message) // Affiche "Bienvenue, Jessica !"</code></pre>
+   <h2>Param&egrave;tres par d&eacute;faut</h2>
+   <p>On peut d&eacute;finir des valeurs par d&eacute;faut pour les param&egrave;tres d'une fonction :</p>
+   <pre><code class="language-swift">func saluer(personne nom: String, ignorer: Bool = True) {
+    if ignorer {
+        print("Bienvenue, \(nom) !")
+    }
+}</code></pre>
+   <p>On peut l'appeller de deux fa&ccedil;ons :</p>
+   <pre><code class="language-swift">saluer(personne: "Bruno") // N'affiche rien (pas tr&egrave;s poli !)
+saluer(personne: "Bruno", ignorer: false) // Affiche "Bienvenue, Bruno !" (ha, c'est mieux !)</code></pre>
+   <h2>Fonction &agrave; nombre d'arguments variable</h2>
+   <p>On peut d&eacute;finir une fonction qui prend un nombre variable d'arguments en utilisant
+    <code>
+     ...</code>:</p>
+   <pre><code class="language-swift">func addition(_ nombres: Int...) -&gt; Int {
+    var total = 0
+    for nombre in nombres {
+        total += nombre
+    }
+    return total
+}</code></pre>
+   <p>On peut appeller la fonction avec le nombre d'arguments qu'on veut :</p>
+   <pre><code class="language-swift">let total = addition(1, 2, 3, 4, 5)
+
+print(total) // Affiche "15"</code></pre>
+   <h2>Fonctions qui retournent des erreurs</h2>
+   <p>Les fonctions peuvent lancer des erreurs en utilisant le mot-cl&eacute;
+    <code>
+     throws</code>. Voici un exemple de fonction qui lance une erreur si on lui passe un nombre n&eacute;gatif :</p>
+   <pre><code class="language-swift">enum Erreur: Error {
+    case nombreNegatif
+}
+
+func verifierNombre(_ nombre: Int) throws {
+    if nombre &lt; 0 {
+        throw Erreur.nombreNegatif
+    }
+}</code></pre>
+   <p>De la m&ecirc;me fa&ccedil;on qu'en Python o&ugrave; on va faire un
+    <code>
+     try</code>pour executer la fonction et un
+    <code>
+     except</code>pour g&eacute;rer l'erreur, si erreur il y a, en Swift on va utiliser
+    <code>
+     do</code>et
+    <code>
+     catch</code>:</p>
+   <pre><code class="language-swift">do {
+    try verifierNombre(-1)
+    print("Nombre valide")
+} catch {
+    print("Erreur : \(error)")
+}</code></pre>
+   <h2>Fonctions avec des param&egrave;tres inout</h2>
+   <p>Les param&egrave;tres d'une fonction sont constants par d&eacute;faut, ce qui signifie qu'on ne peut pas les modifier &agrave; l'int&eacute;rieur de la fonction. Pour modifier un param&egrave;tre, on peut utiliser le mot-cl&eacute;
+    <code>
+     inout</code>:</p>
+   <pre><code class="language-swift">func passerAuCarre(_ nombre: inout Int) {
+    nombre *= nombre
+}</code></pre>
+   <p>Ici, on veut modifier la valeur de
+    <code>
+     nombre</code>directement &agrave; l'interieur de la fonction. Pour cela, on doit passer la variable avec
+    <code>
+     &amp;</code>:</p>
+   <pre><code class="language-swift">var nombre = 5
+passerAuCarre(&amp;nombre)
+
+print(nombre) // Affiche "25"</code></pre>
+   <script src="/static/js/prism.js">
+   </script>
+  </main>
+  <footer>
+   <nav><a href="/a-propos/">A Propos</a>&bull; <a href="/mentions-legales/">Mentions L&eacute;gales</a>&bull; <a href="https://www.hack-with-hyweene.com">&copy; 2020 - 2024</a></nav>
+  </footer>
+ </body>
+</html>
