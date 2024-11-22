@@ -3,8 +3,12 @@ id: 12
 title: Conclusion
 summary: Résumé
 
-publish_date: 2024-09-09T09:30:00Z
-update_date: 2024-09-09T09:30:00Z
+tags: swift, swift playground, xcode, fonctions, paramètres, valeurs de retour, étiquettes de paramètres, paramètres par défaut, paramètres variables, erreurs, paramètres inout, inout, throws, try, catch, do
+
+prism_needed: true
+
+publish_date: 2024-11-21T22:45:00Z
+update_date: 2024-11-21T22:45:00Z
 ---
 
 ...
