@@ -4,7 +4,7 @@ title: Développeur DevOps
 company: Adeo Services (Leroy Merlin)
 company_url: https://www.adeo.com/en/
 start_date: 2022/06
-end_date: Aujourd'hui
+end_date: 2025/01
 contract_type: Contrat Freelance
 tags:
   [

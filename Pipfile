@@ -15,6 +15,7 @@ isort = "isort src/"
 isort_dry = "isort src/ --check-only"
 flake8 = "flake8 src/"
 html5validator = "html5validator --root docs/"
+generate_docstrings = "pyment -f false -o numpydoc -w src"
 
 [packages]
 jinja2 = "*"
@@ -36,3 +37,4 @@ flake8 = "*"
 flake8-bandit = "*"
 djlint = "*"
 html5validator = "*"
+pyment = "*"

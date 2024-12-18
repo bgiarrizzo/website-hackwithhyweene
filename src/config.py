@@ -4,6 +4,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
+    """ """
     SHORT_URL: str = "hack-with-hyweene.com"
     CNAME: str = f"www.{SHORT_URL}"
     BASE_URL: str = f"https://{CNAME}"
@@ -34,12 +35,14 @@ class Settings(BaseSettings):
         "Developer",
         "DevOps",
     ]
-    LANGUAGE: str = "fr"
+    LANGUAGE: str = "fr-FR"
 
     def get_working_directory(self):
+        """ """
         return os.getcwd()
 
     class Config:
+        """ """
         # pylint: disable=too-few-public-methods
         case_sensitive = True
 
