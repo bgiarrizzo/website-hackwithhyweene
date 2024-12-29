@@ -46,7 +46,58 @@ salut("Jean") // Affiche "Salut, Jean!"
 
 ## Closure retournant une valeur
 
-Closures as parameters
+Les closures peuvent aussi retourner des valeurs, pour ceci il faut placer la valeur retournée, dans la closure, en utilisant le mot clé `return`.
+
+Reprenons notre exemple précédent :
+
+```swift
+let salut = { (nom: String) in
+    print("Salut, \(nom)!")
+}
+```
+
+Nous allons le modifier un peu :
+
+```swift
+let messageDeSalutation = { (nom: String) -> String in
+    return "Salut, \(nom)!"
+}
+```
+
+Maintenant, cette closure retourne une chaîne de caractères.
+
+```swift
+let message = messageDeSalutation("Jean")
+print(message) // Affiche "Salut, Jean!"
+```
+
+## Closure utilisée comme paramètre
+
+Étant donné que les closures peuvent être utilisées comme des strings, des integers, ou tout autre type de données, elles peuvent être passées en tant que paramètres à d'autres fonctions.
+
+On va reprendre notre exemple où la closure dit bonjour à quelqu'un.
+
+```swift
+let salut = { (nom: String) in
+    print("Salut, \(nom)!")
+}
+```
+
+On va créer une autre fonction qui simule quelqu'un qui se promène dans la rue et rencontre quelqu'un, et lui dit bonjour.
+
+```swift
+func promenade(rencontre: () -> Void) {
+    print("Je me promène dans la rue.")
+    print("Oh tiens, voila Bob !")
+    
+    salut("Bob")
+}
+
+promenade(rencontre: salut) // Affiche "Je me promène dans la rue.", "Oh tiens, voila Bob !", "Salut, Bob!"
+```
+
+## Syntaxe de fermeture
+
 Trailing closure syntax
 Using closures as parameters when they accept parameters
 Using closures as parameters when they return values
