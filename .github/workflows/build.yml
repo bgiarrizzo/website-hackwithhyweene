@@ -1,9 +1,11 @@
-name: Build Website
+name: Build Website if Content Changes
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'content/**'
 
 jobs:
     build:
@@ -36,13 +38,30 @@ jobs:
             pipenv install --deploy --skip-lock
 
         - name: Build website
+          id: build
           run: |
             pipenv run build
 
-        - name: Git add and commit
-          run: |
-            git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            git config --global user.name "github-actions[bot]"
-            git add docs
-            git commit -m "Website Build"
-            git push
+        - name: Upload Pages Artifact
+          id: push
+          uses: actions/upload-pages-artifact@v3
+          with:
+            path: build/
+
+    deploy:
+      runs-on: ubuntu-latest
+      timeout-minutes: 10
+      needs: build
+
+      permissions:
+        pages: write
+        id-token: write
+
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v4
