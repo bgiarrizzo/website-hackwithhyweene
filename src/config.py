@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     CNAME: str = f"www.{SHORT_URL}"
     BASE_URL: str = f"https://{CNAME}"
 
-    BUILD_PATH: str = "docs"
+    BUILD_PATH: str = "build"
     MEDIA_PATH: str = "media"
     STATIC_PATH: str = "static"
 
