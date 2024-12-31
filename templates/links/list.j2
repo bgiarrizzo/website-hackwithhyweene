@@ -21,7 +21,7 @@
 
         {% for month, links_by_month in links | groupby("publish_date_month") | reverse %}
 
-        <h3 class="text-xl font-semibold my-4 border-b border-gray-400">{{ month }}</h3>
+        <h3 class="text-xl font-semibold my-4 border-b border-gray-400">{{ month[3:] }}</h3>
         
             <ul>
                 {% for link in links_by_month %}
@@ -34,4 +34,4 @@
         {% endfor %}
 
     {% endfor %}
-{% endblock %}
+{% endblock content %}
