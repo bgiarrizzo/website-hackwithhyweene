@@ -10,7 +10,7 @@ def add_multiple_date_formats(data):
             data[f"{key}_full"] = data.get(key).strftime("%A, %d %B %Y %I:%M %p")
 
             data[f"{key}_year"] = data.get(key).year
-            data[f"{key}_month"] = data.get(key).strftime("%B")
+            data[f"{key}_month"] = data.get(key).strftime("%m-%B")
             data[f"{key}_month_short"] = data.get(key).strftime("%m")
             data[f"{key}_day"] = data.get(key).day
 
