@@ -10,11 +10,11 @@ python_version = "3.12"
 black = "black src/"
 black_dry = "black src/ --check"
 build = "python src/main.py"
-dev = "python -m http.server 8000 --directory docs/"
+dev = "python -m http.server 8000 --directory build/"
 isort = "isort src/"
 isort_dry = "isort src/ --check-only"
 flake8 = "flake8 src/"
-html5validator = "html5validator --root docs/"
+html5validator = "html5validator --root build/"
 generate_docstrings = "pyment -f false -o numpydoc -w src"
 
 [packages]
