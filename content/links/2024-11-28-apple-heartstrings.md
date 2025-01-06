@@ -1,5 +1,5 @@
 ---
-title: Apple Heartstrings
+title: "Apple Heartstrings"
 url: https://www.youtube.com/watch?v=EvnJhwIwqds
 publish_date: 2024-11-28T15:50:00Z
 update_date: 2024-11-28T15:50:00Z
