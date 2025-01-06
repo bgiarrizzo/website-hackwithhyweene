@@ -6,7 +6,7 @@ from utils.slug import add_slug
 
 def generate_rss_feed(posts: list):
     data = {"posts": posts}
-    template_name = "blog/feed_rss.j2"
+    template_name = "blog/feed.xml"
     filename = "blog/feed.xml"
 
     write_file(data=data, template_name=template_name, filename=filename)

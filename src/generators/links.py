@@ -9,7 +9,7 @@ from utils.slug import add_slug
 
 def generate_rss_feed(links: list):
     data = {"links": links}
-    template_name = "links/feed_rss.j2"
+    template_name = "links/feed.xml"
     filename = "liens/feed.xml"
 
     write_file(data, template_name, filename)
