@@ -3,11 +3,11 @@
   <id>{{ site.url }}/links/</id>
   <title>{{ site.short_url }} - Liens</title>
   <subtitle>{{ site.description }}</subtitle>
-  <link rel="self" type="application/atom+xml">{{ site.url }}/links/feed.xml</link>
-  <link>{{ site.url }}/links/</link>
+  <link rel="self" type="application/atom+xml" href="{{ site.url }}/links/feed.xml"></link>
+  <link href="{{ site.url }}/links/"></link>
 
   {% set last_link = links|last %}
-  <updated>{{ last_link.publish_date }}</updated>
+  <updated>{{ last_link.publish_date_rfc3339 }}</updated>
 
   <author>
     <name>{{ site.author }}</name>
@@ -18,15 +18,15 @@
     <entry>
       <id>{{ site.url }}/links/{{ link.slug }}/</id>
       <title>{{ link.title }}</title>
-      <link>{{ site.url }}/links/{{ link.slug }}/</link>
-      <published>{{ link.publish_date }}</published>
-      <updated>{{ link.update_date }}</updated>
+      <link rel="alternate" type="text/html" href="{{ site.url }}/links/{{ link.slug }}/"></link>
+      <published>{{ link.publish_date_rfc3339 }}</published>
+      <updated>{{ link.update_date_rfc3339 }}</updated>
       {% if link.summary %}
         <summary>
           {{ link.summary }}
         </summary>
       {% endif %}
-      <content>
+      <content type="html">
         {{ link.body }}
       </content>
     </entry>

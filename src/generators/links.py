@@ -12,7 +12,7 @@ def generate_rss_feed(links: list):
     template_name = "links/feed.xml"
     filename = "liens/feed.xml"
 
-    write_file(data, template_name, filename)
+    write_file(data, template_name, filename, filetype="xml")
 
 
 def generate_link_page(link):

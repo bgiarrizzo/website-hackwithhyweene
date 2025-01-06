@@ -3,6 +3,7 @@ def add_multiple_date_formats(data):
 
     for key in date_keys:
         if data.get(key):
+            data[f"{key}_rfc3339"] = data.get(key).strftime("%Y-%m-%dT%H:%M:%SZ")
             data[f"{key}_condensed"] = data.get(key).strftime("%Y%m%d")
             data[f"{key}_short"] = data.get(key).strftime("%d-%b-%Y")
             data[f"{key}_medium"] = data.get(key).strftime("%d %b %Y")

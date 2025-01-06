@@ -13,10 +13,10 @@ def get_all_files_from_path(target_path, extension=".md") -> list:
     return file_list
 
 
-def write_file(data, template_name, filename):
+def write_file(data, template_name, filename, filetype="html5"):
     template_data = prepare_template_data([data])
 
     final_content = render_template(template_name, template_data)
 
-    beautified_content = beautify(rendered_page=final_content, type="html5")
+    beautified_content = beautify(rendered_page=final_content, type=filetype)
     write_page(filename=filename, content=beautified_content)
