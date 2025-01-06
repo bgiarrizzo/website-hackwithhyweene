@@ -2,7 +2,7 @@
 title: "Transformation: Semaine 1"
 summary: Première semaine de transformation, et je suis mitigé.
 publish_date: 2024-11-03T20:00:00Z
-publish_date: 2024-11-03T20:00:00Z
+update_date: 2024-11-03T20:00:00Z
 category: "Sport & Transformation"
 tags: [santé, bien-être, alimentation, sport, mental, confiance en soi, stress, craquage, surpoids, transformation, poids, bodyfat, sommeil, pas, tracking, organisation, discipline, rigueur, motivation]
 ---
@@ -16,7 +16,7 @@ Dans la même série :
 
 ---
 
-<a href="/blog/j-ai-decide-que-c-etait-assez/">Dans l'épisode précédent</a>, j'ai démarré une petite transformation, parce que ras le pif de mon bide, de mes seins et de mon double menton :)
+[Dans l'épisode précédent](/blog/j-ai-decide-que-c-etait-assez/), j'ai démarré une petite transformation, parce que ras le pif de mon bide, de mes seins et de mon double menton :)
 
 Donc, aujourd'hui, première semaine de transformation, et je suis mitigé.
 

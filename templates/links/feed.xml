@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xml:lang="fr">
   <id>{{ site.url }}/links/</id>
   <title>{{ site.short_url }} - Liens</title>
   <subtitle>{{ site.description }}</subtitle>
@@ -21,14 +21,17 @@
       <link rel="alternate" type="text/html" href="{{ site.url }}/links/{{ link.slug }}/"></link>
       <published>{{ link.publish_date_rfc3339 }}</published>
       <updated>{{ link.update_date_rfc3339 }}</updated>
-      {% if link.summary %}
+
+    {% if link.summary %}
         <summary>
           {{ link.summary }}
         </summary>
-      {% endif %}
+    {% endif %}
+
       <content type="html">
         {{ link.body }}
       </content>
+      
     </entry>
   {% endfor %}
 </feed>

@@ -2,7 +2,7 @@
 title: "Transformation: Semaine 2"
 summary: Semaine 2, bien mieux, mais on peut encore gratter plus loin !
 publish_date: 2024-11-11T22:00:00Z
-publish_date: 2024-11-11T22:00:00Z
+update_date: 2024-11-11T22:00:00Z
 category: "Sport & Transformation"
 tags: ["sport", "transformation", "fitness", "santé", "bien-être", "perte de poids", "muscu", "musculation", "poids", "bodyfat", "sommeil", "pas", "étapes", "objectifs", "résultats", "suivi", "semaine", "semaine 2", "tracking"]
 ---
@@ -16,7 +16,7 @@ Dans la même série :
 
 ---
 
-<a href="/blog/transformation-semaine-1/">La semaine dernière</a>, j'avais dit être mitigé par mon parcours.
+[La semaine dernière](/blog/transformation-semaine-1/), j'avais dit être mitigé par mon parcours.
 
 J'avais eu un gros problème à me mettre en train, j'avais aussi eu de gros soucis pour dormir correctement (la moyenne de `7h33` de sommeil sur la semaine, due a des nuits de `5h30` a fait plutôt mal), et un jour ferié mal placé m'ont donné du mal.
 
@@ -51,7 +51,7 @@ Bref, je pense que je vais tester la balance de ma salle de sport, ca sera surem
 - J'ai encore quelques problèmes pour gérer la bouffe, même si j'ai recommencé à refaire du batchcooking pour éviter de faire n'importe quoi, mais j'entraine mon cerveau à ne pas vriller, c'est un exercice difficile, mais j'en parle avec les gens, ça aide.
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-11-10/enculer-tartiflette.png"/>
+  <img src="/media/images/blog/illustration/2024-11-10/enculer-tartiflette.png" />
   <figcaption>Seb, merci bro 🥲</figcaption>
 </figure>
 
@@ -59,7 +59,7 @@ Bref, je pense que je vais tester la balance de ma salle de sport, ca sera surem
 - Je me suis bien buté cette semaine, et petit message de ma dame qui fait plaisir pendant une séance d'épaules qui brulent :D
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-11-10/poupinette-fiere.jpeg"/>
+  <img src="/media/images/blog/illustration/2024-11-10/poupinette-fiere.jpeg" />
   <figcaption>Ma dame, je t'aime 🥰</figcaption>
 </figure>
 
@@ -79,26 +79,26 @@ Bref, je pense que je vais tester la balance de ma salle de sport, ca sera surem
 Pour finir, avec les traditionnelles captures d'écran du tracking :
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-11-10/pas.png"/>
+  <img src="/media/images/blog/illustration/2024-11-10/pas.png" />
   <figcaption>Les pas</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-11-10/sommeil.png"/>
+  <img src="/media/images/blog/illustration/2024-11-10/sommeil.png" />
   <figcaption>Le sommeil</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-11-10/poids.png"/>
+  <img src="/media/images/blog/illustration/2024-11-10/poids.png" />
   <figcaption>Le poids</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-11-10/bodyfat.png"/>
+  <img src="/media/images/blog/illustration/2024-11-10/bodyfat.png" />
   <figcaption>Le bodyfat</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-11-10/mesures.png"/>
+  <img src="/media/images/blog/illustration/2024-11-10/mesures.png" />
   <figcaption>Les mesures</figcaption>
 </figure>

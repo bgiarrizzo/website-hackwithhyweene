@@ -2,7 +2,7 @@
 title: J'ai décidé que c'était assez
 summary: J'ai 36 ans, je mesure 1m70, je pèse 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.
 publish_date: 2024-10-27T23:00:00Z
-publish_date: 2024-10-27T23:00:00Z
+update_date: 2024-10-27T23:00:00Z
 category: "Sport & Transformation"
 tags: [santé, bien-être, alimentation, sport, mental, confiance en soi, stress, fatigue, surpoids]
 ---
@@ -27,7 +27,7 @@ La famille n'aidant pas beaucoup, enfonçant bien le clou, en disant que je devr
 Alors fatalement, en 2012, à 24 ans, j'approche tout doucement des 95kg :-)
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-10-27/worst.jpg" alt="worst">
+  <img src="/media/images/blog/illustration/2024-10-27/worst.jpg" alt="worst" />
 </figure>
 
 Été 2012, Je me fais tromper par la nana avec qui j'étais à l'époque, ce qui fait un électrochoc, la dépression s'installe pendant quelques semaines, je suis tellement éclaté mentalement que je suis au point où je refuse de m'alimenter. Et la, je perds du poids, mais pas pour les bonnes raisons.
@@ -43,7 +43,7 @@ Et je me rends compte que j'aime ça, j'aime le sport, j'aime la sueur, j'aime l
 Décembre 2013, pour mon anniversaire, je tombe sous les 75kg, je suis fier, 20kg perdu en 1 an, c'est pas mal.
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-10-27/recap.jpg" alt="recap">
+  <img src="/media/images/blog/illustration/2024-10-27/recap.jpg" alt="recap" />
 </figure>
 
 Mais pas satisfait, je veux autre chose, je veux plus, mais je suis freiné, par mon manque de connaissance, et surtout, mon alimentation, qui n'est pas tiptop.
@@ -61,7 +61,7 @@ Fin 2016, je planifie mon mariage avec dame Jessica. Je veux avoir un physique a
 J'arrête ce suivi, je reprends un peu de poids, je me stabilise à 70kg, 13% de bodyfat. J'avais ces muscles qui poussaient. Pecs, Bras, jambes, abdos qui se dessinnent. Je suis biiiennnggg !
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-10-27/prime.jpg" alt="prime">
+  <img src="/media/images/blog/illustration/2024-10-27/prime.jpg" alt="prime" />
 </figure>
 
 ## La chute
@@ -114,17 +114,17 @@ Donc, en résumé :
 Aujourd'hui : Pesée, prise des mesures de la taille, pecs, bras, avant bras, etc etc.
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-10-27/poids.jpg" alt="poids">
+  <img src="/media/images/blog/illustration/2024-10-27/poids.jpg" alt="poids" />
   <figcaption>La pesée</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-10-27/bodyfat.jpg" alt="bodyfat">
+  <img src="/media/images/blog/illustration/2024-10-27/bodyfat.jpg" alt="bodyfat" />
   <figcaption>Le bodyfat</figcaption>
 </figure>
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-10-27/mesures.jpg" alt="mesures">
+  <img src="/media/images/blog/illustration/2024-10-27/mesures.jpg" alt="mesures" />
   <figcaption>Les mesures</figcaption>
 </figure>
 

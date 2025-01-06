@@ -2,7 +2,7 @@
 title: "Transformation: Bilan de fin d'année"
 summary: Ca fait longtemps, il s'est passé beaucoup de choses ...
 publish_date: 2024-12-31T22:00:00Z
-publish_date: 2024-12-31T22:00:00Z
+update_date: 2024-12-31T22:00:00Z
 category: "Sport & Transformation"
 tags: ["sport", "transformation", "fitness", "santé", "bien-être", "perte de poids", "muscu", "musculation", "poids", "bodyfat", "sommeil", "pas", "étapes", "objectifs", "résultats", "suivi", "mois"]
 ---
@@ -33,7 +33,7 @@ Enfin, toujours est-il, sur environ 8 semaines, si on prend mon plus bas d'hier 
 Ca donne une moyenne de `0.49kg` (ou `0,42kg`) par semaine, pile dans l'objectif de 500g/semaine.
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-12-31/poids.jpg"/>
+  <img src="/media/images/blog/illustration/2024-12-31/poids.jpg" />
   <figcaption>Sur le poids, la tendance est bonne !</figcaption>
 </figure>
 
@@ -48,7 +48,7 @@ Soit environ `1.1%` de perdu en 2 mois.
 Mais comme j'ai dit plus haut, pas de chiffre fiable, mais je sens un changement dans les vêtements, donc on se sent avancer !
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-12-31/bodyfat.jpg"/>
+  <img src="/media/images/blog/illustration/2024-12-31/bodyfat.jpg" />
   <figcaption>La tendance est bonne, la aussi ^^</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ Mais avant ça, j'ai fait une semaine de 6h39 ... ^^"
 Bref, Novembre : `7h19`, Décembre : `7h02` ... Quand je pense que début novembre j'avais dit qu'il fallait que je pousse le plus possible vers une moyenne de `8h` ...
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-12-31/sommeil.png"/>
+  <img src="/media/images/blog/illustration/2024-12-31/sommeil.png" />
   <figcaption>Le sommeil (oui y'a une nuit mi-décembre où j'ai pas beaucoup dormi, ca va !)</figcaption>
 </figure>
 
@@ -74,7 +74,7 @@ La, par contre, quand on s'est quitté, j'avais une moyenne à `12 164` pas par 
 Et depuis, j'avais pris la décision de monter plus haut, bien plus haut. Et malgré un creux vers le mi-Novembre, j'ai réussi à garder une bonne moyenne autour de `15 000` sur les 30 derniers jours ! :)
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-12-31/pas.png"/>
+  <img src="/media/images/blog/illustration/2024-12-31/pas.png" />
   <figcaption>Les pas (décembre indique 14,7k, mais capture faite à 11h50, flemme d'en reprendre une après avoir terminé ma session ce soir :D)</figcaption>
 </figure>
 
@@ -115,7 +115,7 @@ Il se trouve que j'ai [une salle à 10 minutes de chez moi](https://kravmagastyl
 Donc je vais faire une séance d'essai début janvier, et si c'est ok, je prends une année, et caser les 3 séances par semaine dans mon planning.
 
 <figure>
-  <img src="/media/images/blog/illustration/2024-12-31/robert-mccall.jpg"/>
+  <img src="/media/images/blog/illustration/2024-12-31/robert-mccall.jpg" />
   <figcaption>J'ai toujours voulu avoir la classe de Robert McCall :p</figcaption>
 </figure>
 

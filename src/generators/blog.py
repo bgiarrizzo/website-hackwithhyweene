@@ -9,7 +9,7 @@ def generate_rss_feed(posts: list):
     template_name = "blog/feed.xml"
     filename = "blog/feed.xml"
 
-    write_file(data=data, template_name=template_name, filename=filename)
+    write_file(data=data, template_name=template_name, filename=filename, filetype="xml")
 
 
 def generate_blog_post(post):
