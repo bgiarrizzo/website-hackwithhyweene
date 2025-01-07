@@ -9,4 +9,4 @@ tags: [
 "mort"]
 ---
 
-Alors c’est bon, après Patrick Poivey, on rentre dans la période papy boom ou les voix de nos films de gosses s’en vont ??!?! 😔 
+Alors c’est bon, après Patrick Poivey, Alain Dorval, Daniel Beretta, on rentre dans la période papy boom ou les voix de nos films de gosses s’en vont ??!?! 😔 
