@@ -1,8 +1,8 @@
 ---
 title: J'ai monté mon Hyweene Video et Hyweene Music perso
 summary: Yo-ho yo-ho, a pirate's life for me !
-publish_date: 2024-10-29T23:00:00Z
-update_date: 2024-10-29T23:00:00Z
+publish_date: 2024-10-29T23:00:00+01:00
+update_date: 2024-10-29T23:00:00+01:00
 cover: "2024-10-29.png"
 cover_alt: "couverture hyweeneflix"
 category: "Retour d'expérience"

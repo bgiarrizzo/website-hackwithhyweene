@@ -6,8 +6,8 @@ tags: swift, swift playground, xcode, boucles, for, while, repeat, loop control,
 
 prism_needed: true
 
-publish_date: 2024-11-21T22:15:00Z
-update_date: 2024-11-21T22:15:00Z
+publish_date: 2024-11-21T22:15:00+01:00
+update_date: 2024-11-21T22:15:00+01:00
 ---
 
 ## Boucles For

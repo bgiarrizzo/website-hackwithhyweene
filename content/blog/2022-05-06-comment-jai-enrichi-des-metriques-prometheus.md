@@ -3,8 +3,8 @@ title: "Comment j'ai enrichi des métriques Prometheus"
 summary: Les métriques de l'exporter VMWare n'avaient pas toutes les informations que nous voulions. Voici comment je les ai enrichies.
 cover: "2022-05-06.jpg"
 cover_alt: "couverture de l'article sur l'enrichissement des métriques prometheus"
-publish_date: 2022-05-05T09:30:00Z
-update_date: 2022-05-05T09:30:00Z
+publish_date: 2022-05-05T09:30:00+01:00
+update_date: 2022-05-05T09:30:00+01:00
 category: "Retour d'expérience"
 tags: [prometheus, python, pandas, dataframe, vmware exporter, fastapi]
 prism_needed: true

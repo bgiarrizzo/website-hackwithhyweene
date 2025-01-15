@@ -1,8 +1,8 @@
 ---
 title: "Transformation: Semaine 2"
 summary: Semaine 2, bien mieux, mais on peut encore gratter plus loin !
-publish_date: 2024-11-11T22:00:00Z
-update_date: 2024-11-11T22:00:00Z
+publish_date: 2024-11-11T22:00:00+01:00
+update_date: 2024-11-11T22:00:00+01:00
 category: "Sport & Transformation"
 tags: ["sport", "transformation", "fitness", "santé", "bien-être", "perte de poids", "muscu", "musculation", "poids", "bodyfat", "sommeil", "pas", "étapes", "objectifs", "résultats", "suivi", "semaine", "semaine 2", "tracking"]
 ---

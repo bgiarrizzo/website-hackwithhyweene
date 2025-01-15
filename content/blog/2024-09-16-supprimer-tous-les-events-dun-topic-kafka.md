@@ -1,8 +1,8 @@
 ---
 title: "Supprimer tous les events d'un topic Kafka"
 summary: "Un pense bête pour se rappeller comment supprimer tous les events d'un topic Kafka"
-publish_date: 2024-09-16T11:30:00Z
-update_date: 2024-09-16T11:30:00Z
+publish_date: 2024-09-16T11:30:00+01:00
+update_date: 2024-09-16T11:30:00+01:00
 category: "Pense bête"
 tags: [kafka, topic, event, delete, supprimer, message]
 prism_needed: true

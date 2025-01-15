@@ -6,8 +6,8 @@ tags: git, système de contrôle de version, contrôle, version, versionning, vc
 
 prism_needed: false
 
-publish_date: 2024-09-09T09:30:00Z
-update_date: 2024-10-31T16:45:00Z
+publish_date: 2024-09-09T09:30:00+01:00
+update_date: 2024-10-31T16:45:00+01:00
 ---
 
 ## A Propos de la gestion des versions

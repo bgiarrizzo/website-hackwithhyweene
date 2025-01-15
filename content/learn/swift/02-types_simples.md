@@ -6,8 +6,8 @@ tags: swift, types, types simples, variables, constantes, entiers, floats, doubl
 
 prism_needed: true
 
-publish_date: 2024-11-08T19:00:00Z
-update_date: 2024-11-11T22:30:00Z
+publish_date: 2024-11-08T19:00:00+01:00
+update_date: 2024-11-11T22:30:00+01:00
 ---
 
 ## Variables

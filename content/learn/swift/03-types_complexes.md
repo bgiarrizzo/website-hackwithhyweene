@@ -6,8 +6,8 @@ tags: swift, types, types complexes, arrays, sets, tuples, dictionaries, collect
 
 prism_needed: true
 
-publish_date: 2024-11-20T17:10:00Z
-update_date: 2024-11-20T17:10:00Z
+publish_date: 2024-11-20T17:10:00+01:00
+update_date: 2024-11-20T17:10:00+01:00
 ---
 
 ## Arrays, Sets, Tuples, et Dictionnaires

@@ -6,8 +6,8 @@ tags: swift, introduction, ios, macos, watchos, tvos, apple, langage, programmat
 
 prism_needed: false
 
-publish_date: 2024-11-08T19:00:00Z
-update_date: 2024-11-08T19:00:00Z
+publish_date: 2024-11-08T19:00:00+01:00
+update_date: 2024-11-08T19:00:00+01:00
 ---
 
 Swift est un langage de programmation objet, compilé et multi-paradigme. Il est conçu pour être rapide, sûr et expressif.
