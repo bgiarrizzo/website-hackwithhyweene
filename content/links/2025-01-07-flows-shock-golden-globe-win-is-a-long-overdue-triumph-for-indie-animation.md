@@ -1,8 +1,8 @@
 ---
 title: "‘Flow’s’ Shock Golden Globe Win Is a Long Overdue Triumph for Indie Animation"
 url: https://variety.com/2025/film/columns/flow-golden-globe-win-independent-animation-1236266805/
-publish_date: 2025-01-07T14:21:25Z
-update_date: 2025-01-07T14:21:25Z
+publish_date: 2025-01-07T14:21:25+01:00
+update_date: 2025-01-07T14:21:25+01:00
 tags: [
 "Flow",
 "blender",

@@ -1,8 +1,8 @@
 ---
 title: "Suède : Le gouvernement veut espionner les adolescents"
 url: https://secoursrouge.org/suede-le-gouvernement-veut-espionner-les-adolescents/
-publish_date: 2025-01-06T16:45:57Z
-update_date: 2025-01-06T16:45:57Z
+publish_date: 2025-01-06T16:45:57+01:00
+update_date: 2025-01-06T16:45:57+01:00
 tags: ["gouvernement", "surveillance", "espionnage", "adolescents"]
 ---
 
