@@ -28,7 +28,7 @@
     {% endif %}
 
       <content type="html">
-        {{ link.body }}
+        {{ link.body | e }}
       </content>
       
     </entry>

@@ -29,7 +29,7 @@
     {% endif %}
       
       <content type="html">
-        {{ post.body }}
+        {{ post.body | e}}
       </content>
       
     </entry>
