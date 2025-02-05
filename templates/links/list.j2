@@ -22,9 +22,9 @@
         {% for month, links_by_month in links | groupby("publish_date_month") | reverse %}
 
         <h3 class="text-xl font-semibold my-4 border-b border-gray-400">{{ month[3:] }}</h3>
-        
+
             <ul>
-                {% for link in links_by_month %}
+                {% for link in links_by_month | sort(attribute='publish_date', reverse=True) %}
                     <li>
                         <a href="/liens/{{ link.slug }}">{{ link.publish_date_short }} : {{ link.title }}</a>
                     </li>
