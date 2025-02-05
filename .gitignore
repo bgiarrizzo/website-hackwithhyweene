@@ -506,3 +506,5 @@ xcuserdata
 
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,swiftpackagemanager,swiftpm,django,python,flask,go,java,scala,rust
+
+.DS_Store
