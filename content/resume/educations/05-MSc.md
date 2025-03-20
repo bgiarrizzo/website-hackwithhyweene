@@ -4,8 +4,8 @@ title: Master Of Science
 school: Supinfo (Valenciennes, 59)
 start_date: 2015
 end_date: 2017
-formation_type: Work-study program
-status: Done
+formation_type: Alternance
+status: Terminé
 ---
 
 Le Master of Science de SUPINFO m'a permis d'acquérir une expertise approfondie dans le domaine des technologies de l'information et de la communication. Cette formation de haut niveau combine des enseignements théoriques poussés et une forte orientation pratique à travers des projets concrets et des périodes en entreprise.

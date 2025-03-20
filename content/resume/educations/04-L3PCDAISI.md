@@ -4,8 +4,8 @@ title: Licence Pro - CyberDefense
 school: IUT Valenciennes (Maubeuge, 59)
 start_date: 2014
 end_date: 2015
-formation_type: Full-time education
-status: Done
+formation_type: Formation initiale
+status: Terminé
 ---
 
 La licence professionnelle CDAISI m'a permis d'acquérir des compétences avancées en cybersécurité et protection des systèmes d'information. Au cours de cette formation, j'ai développé une expertise dans :

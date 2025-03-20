@@ -4,8 +4,8 @@ title: Licence Pro - IT Management
 school: UVHC (Maubeuge, 59)
 start_date: 2013
 end_date: 2014
-formation_type: Work-study program
-status: Done
+formation_type: Alternance
+status: Terminé
 ---
 
 La licence professionnelle en informatique de gestion m'a permis d'acquérir une double compétence en informatique et en gestion des systèmes d'information. Au cours de cette formation, j'ai développé des compétences techniques en programmation, bases de données, réseaux et sécurité informatique, tout en approfondissant mes connaissances en gestion de projet, analyse des besoins et management des systèmes d'information.

@@ -4,8 +4,8 @@ title: BTS - IT Services
 school: Lycée Henri Wallon (Valenciennes, 59)
 start_date: 2011
 end_date: 2013
-formation_type: Full-time education
-status: Done
+formation_type: Formation initiale
+status: Terminé
 ---
 
 Le BTS SIO est une formation de niveau bac+2 qui m'a permis d'acquérir des compétences solides dans le domaine des services informatiques aux organisations. Ce cursus allie enseignements théoriques et pratiques, couvrant des domaines tels que le support et la mise à disposition de services informatiques, le développement d'applications, la gestion de réseaux et la cybersécurité.

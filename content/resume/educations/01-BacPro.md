@@ -4,8 +4,8 @@ title: BacPro - Workstation, Networks, Installation & Maintenance
 school: Lycée Fernand Léger (Coudekerque-Branche, 59)
 start_date: 2007
 end_date: 2009
-formation_type: Full-time education
-status: Done
+formation_type: Formation initiale
+status: Terminé
 ---
 
 Le Bac professionnel MRIM est une formation qui m'a permis d'acquérir des compétences solides en installation et maintenance de parcs informatiques et de réseaux.
