@@ -19,6 +19,6 @@ Au cours de ce cursus, j'ai développé des compétences avancées dans des doma
 * L'intelligence artificielle et le big data
 * Le cloud computing et les technologies émergentes
 
-La formation m'a également permis de me spécialiser dans [mentionnez votre spécialisation si applicable], tout en conservant une vision globale des enjeux technologiques actuels.
+La formation m'a également permis d'approfondir les notions de gestion de projet, tout en conservant une vision globale des enjeux technologiques actuels.
 
 Grâce à l'alternance et aux projets réalisés en collaboration avec des entreprises partenaires, j'ai pu mettre en pratique ces compétences dans un contexte professionnel et développer mon autonomie. Cette expérience m'a préparé à occuper des postes à responsabilité dans le domaine de l'informatique, tels qu'architecte logiciel, chef de projet IT, ou expert en cybersécurité.
