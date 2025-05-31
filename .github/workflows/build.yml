@@ -15,10 +15,10 @@ jobs:
           with:
             fetch-depth: 1
 
-        - name: Setup Python 3.13
+        - name: Setup Python 3.11
           uses: actions/setup-python@v4
           with:
-            python-version: 3.13
+            python-version: 3.11
 
         - name: Upgrade pip, pipenv wheel to latest
           run: |

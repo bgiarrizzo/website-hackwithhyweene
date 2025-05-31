@@ -13,7 +13,7 @@ def generate_rss_feed(posts: list):
 
 
 def generate_blog_post(post):
-    data = {"page_title": f"{post.get("title")} - Blog", "post": post}
+    data = {"page_title": f"{post.get('title')} - Blog", "post": post}
     template_name = "blog/single.j2"
     filename = f"blog/{post['slug']}/index.html"
 
