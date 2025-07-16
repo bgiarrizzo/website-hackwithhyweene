@@ -7,7 +7,7 @@ def add_multiple_date_formats(data):
             data[f"{key}_condensed"] = data.get(key).strftime("%Y%m%d")
             data[f"{key}_short"] = data.get(key).strftime("%d-%b-%Y")
             data[f"{key}_medium"] = data.get(key).strftime("%d %b %Y")
-            data[f"{key}_long"] = data.get(key).strftime("%A, %d %B %Y")
+            data[f"{key}_long"] = data.get(key).strftime("%d %B %Y")
             data[f"{key}_full"] = data.get(key).strftime("%A, %d %B %Y %I:%M %p")
 
             data[f"{key}_year"] = data.get(key).year
