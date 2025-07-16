@@ -6,8 +6,8 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     """ """
     SHORT_URL: str = "hack-with-hyweene.com"
-    CNAME: str = f"www.{SHORT_URL}"
-    BASE_URL: str = f"https://{CNAME}"
+    CNAME: str = f"{SHORT_URL}"
+    BASE_URL: str = f"https://{SHORT_URL}"
 
     BUILD_PATH: str = "build"
     MEDIA_PATH: str = "media"
@@ -22,18 +22,21 @@ class Settings(BaseSettings):
     RESUME_PATH: str = f"{ CONTENT_PATH }/resume"
     LEARN_PATH: str = f"{ CONTENT_PATH }/learn"
 
-    NAME: str = "Hack with Hyweene"
+    NAME: str = "Bruno Giarrizzo"
     AUTHOR: str = "Bruno 'Hyweene' Giarrizzo"
+    GITHUB_LINK: str = "https://github.com/bgiarrizzo/"
+    LINKEDIN_LINK: str = "https://www.linkedin.com/in/bruno-giarrizzo/"
 
-    DESCRIPTION: str = "Freelance Developer, DevOps, Ethical Hacker"
+    DESCRIPTION: str = "Developpeur, DevOps, Linuxien, Ethical Hacker"
     KEYWORDS: list = [
         "Bruno",
         "Giarrizzo",
         "Hyweene",
         "Bruno Giarrizzo",
         "Developpeur",
-        "Developer",
+        "Linuxien",
         "DevOps",
+        "Ethical Hacker",
     ]
     LANGUAGE: str = "fr-FR"
 

@@ -49,6 +49,8 @@ def prepare_template_data(datalist):
             "name": settings.NAME,
             "author": settings.AUTHOR,
             "keywords": settings.KEYWORDS,
+            "github_link": settings.GITHUB_LINK,
+            "linkedin_link": settings.LINKEDIN_LINK,
         }
     }
 
