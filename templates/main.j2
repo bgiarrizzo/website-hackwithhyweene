@@ -54,19 +54,36 @@
     </head>
     <body>
         <header>
-            <h1>
-                <a href="/">Hack with Hyweene</a>
-            </h1>
+            <nav>
+                <h1>
+                    <a href="/">{{ site.name }}</a>
+                </h1>
+
+                <input type="checkbox" id="menu-toggle" />
+
+                <label for="menu-toggle" class="menu-icon">
+                    &#9776;
+                </label>
+
+                <ul>
+                    <li>
+                        <a href="/blog/">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/liens/">Liens</a>
+                    </li>
+                    <li>
+                        <a href="/apprendre/">Apprendre</a>
+                    </li>
+                    <li>
+                        <a href="/cv/">CV</a>
+                    </li>
+                    <li>
+                        <a href="/a-propos/">A Propos</a>
+                    </li>
+                </ul>
+            </nav>
         </header>
-        <nav>
-            <a href="/blog/">Blog</a>
-            &bull;
-            <a href="/liens/">Liens</a>
-            &bull;
-            <a href="/apprendre/">Apprendre</a>
-            &bull;
-            <a href="/cv/">CV</a>
-        </nav>
 
         <main>
             {% block content %}
@@ -74,15 +91,25 @@
                 <p>Default content block</p>
             {% endblock content %}
         </main>
-            
+
         <footer>
-            <nav>
-                <a href="/a-propos/">A Propos</a>
-                &bull;
-                <a href="/mentions-legales/">Mentions Légales</a>
-                &bull;
-                <a href="{{ site.url }}">© 2020 - {{ yearNow }}</a>
-            </nav>
+            <p>
+                <i>
+                    Tout le contenu de ce site est écrit à la main.<br>
+                    Ce site ne contient pas de contenu généré par une IA.
+                </i>
+            </p>
+            <p class="footer-licence">
+                © 2020 - {{ yearNow }} - <b>{{ site.author }}</b>
+            </p>
+            <p class="footer-text-small">
+                Ce site est construit de la manière dont l'internet était censé être.<br>
+                Cela signifie un site simple, axé sur le contenu, partageant des pensées et des connaissances gratuitement.<br>
+                C'est pourquoi ce site n'a pas de traqueurs, pas de publicités et ne nécessite pas l'exécution de Javascript.
+            </p>
+            <p class="footer-text-small">
+                Posts: CC-BY-SA | Source code: AGPL-3.0
+            </p>
         </footer>
     </body>
 </html>

@@ -23,10 +23,6 @@
 {% block content %}
     <img class="cover" src="/media/images/pages/resume/cover.png" alt="resume cover image">
 
-    <h1 class="text-4xl font-semibold mb-5">CV</h1>
-
-    <hr />
-
     {{ resume.head }}
 
     {% if resume.experiences %}
@@ -35,7 +31,7 @@
         {% for experience in resume.experiences|reverse %}
             <section>
                 <h3>{{ experience.company }}</h3>
-                <p class="font-bold">{{ experience.title }} - ({{ experience.contract_type }}) : {{ experience.start_date }} -> {{ experience.end_date }}</p>
+                <p>{{ experience.title }} - ({{ experience.contract_type }}) : {{ experience.start_date }} -> {{ experience.end_date }}</p>
 
                 {{ experience.body }}
 
@@ -54,7 +50,7 @@
         {% for education in resume.educations|reverse %}
             <section>
                 <h3>{{ education.title }}</h3>
-                <p class="font-bold">{{ education.school }} - {{ education.formation_type }} : {{ education.start_date }} -> {{ education.end_date }} ( {{ education.status }} )</p>
+                <p>{{ education.school }} - {{ education.formation_type }} : {{ education.start_date }} -> {{ education.end_date }} ( {{ education.status }} )</p>
 
                 {{ education.body }}
 
@@ -64,4 +60,4 @@
             </section>
         {% endfor %}
     {% endif %}
-{% endblock %}
+{% endblock content %}

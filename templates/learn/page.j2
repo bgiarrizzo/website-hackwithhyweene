@@ -28,9 +28,9 @@
 
 {% block content %}
     {% if learn.update_date | is_outdated %}
-        <div>
+        <div class="alert-outdated-resource">
             <p>
-                <strong>Attention</strong>
+                <b>Attention</b>
             </p>
             <p>
                 Ce truc a été modifié il y a plus de six mois (le {{ learn.update_date_medium }}). Il est possible qu'il ne soit plus à jour.

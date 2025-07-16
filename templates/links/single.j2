@@ -19,9 +19,9 @@
 {% block content %}
     <h1>{{ link.title }}</h1>
 
-    <p class="subtitle">Original Link : <a href="{{ link.url }}" target="_blank">{{ link.url }}</a></p>
+    <p>Lien d'origine : <a href="{{ link.url }}" target="_blank">{{ link.url }}</a></p>
 
     <hr />
 
     {{ link.body }}
-{% endblock %}
+{% endblock content %}

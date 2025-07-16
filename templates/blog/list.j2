@@ -14,18 +14,20 @@
 
 {% block content %}
     <h1>Blog</h1>
+    
+    <p>Les derniers articles du blog sont accessible également via <a href="/blog/feed.xml">RSS</a>.</p>
 
     {% for year, posts in all_posts | reverse | groupby("publish_date_year") | reverse %}
 
-        <h2>{{ year }}</h2>
+        <h2 class="blog-list-header">{{ year }}</h2>
 
-        <ul>
+        <ul class="blog-list">
             {% for post in posts | sort(attribute='publish_date', reverse=True)%}
                 <li>
-                    <a href="/blog/{{ post.slug }}/">{{ post.publish_date_medium }} : {% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a>
+                    <a href="/blog/{{ post.slug }}/">{% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a> <span>{{ post.publish_date_long }}</span>
                 </li>
             {% endfor %}
         </ul>
 
     {% endfor %}
-{% endblock %}
+{% endblock content %}

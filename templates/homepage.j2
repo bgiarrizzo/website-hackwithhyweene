@@ -1,34 +1,18 @@
 {% extends "main.j2" %}
 
 {% block content %}
-    <h1 class="text-4xl font-semibold">Publié récemment</h1>
+    <div class="homepage">
+        <h1>Bruno Giarrizzo</h1>
 
-    {% if posts %}
-        <h2 class="text-2xl font-semibold mt-8 border-b border-gray-400">Articles du blog</h2>
+        <h2>{{ site.description }}</h2>
 
-        <a href="/blog/">Voir tous les articles</a>
-        
-        <ul>
-            {% for post in posts[-10:] | reverse  %}
-                <li>
-                    <a href="/blog/{{ post.slug }}/">{{ post.publish_date_medium }} : {% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a>
-                </li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-
-    {% if links %}
-        <h2 class="text-2xl font-semibold mt-8 border-b border-gray-400">Liens</h2>
-
-        <a href="/liens/">Voir tous les liens</a>
-
-        <ul>
-        {% for link in links[-10:] | reverse  %}
+        <ul class="homepage-links">
             <li>
-                <a href="/liens/{{ link.slug }}">{{ link.publish_date_medium }} : {{ link.title }}</a>
+                <a href="{{ site.github_link }}" target="_blank">Github</a>
             </li>
-        {% endfor %}
+            <li>
+                <a href="{{ site.linkedin_link }}" target="_blank">LinkedIn</a>
+            </li>
         </ul>
-        
-    {% endif %}
-{% endblock %}
+    </div>
+{% endblock content %}
