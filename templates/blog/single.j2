@@ -16,6 +16,11 @@
     <meta name="keywords" content="{{ site.keywords | join(', ') }}, {{ post.tags | join(', ') }}">
 {% endblock meta_keywords %}
 
+{% block specific_css %}
+    .blog-post-category { font-style: italic; font-weight: bold; margin-top: 0px; }
+    .blog-post-tags { font-style: italic; font-weight: bold; margin-top: 0px; }
+{% endblock specific_css %}
+
 {% block prismCss %}
     {% if post.prism_needed %}
         <link href="/static/css/prism.css" rel="stylesheet">
