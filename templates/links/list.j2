@@ -43,7 +43,8 @@
             <ul class="link-list">
                 {% for link in links_by_month | sort(attribute='publish_date', reverse=True) %}
                     <li>
-                        <a href="/liens/{{ link.slug }}">{{ link.title }}</a> <span>{{ link.publish_date_long }}</span>
+                        <span>{{ link.publish_date_long }}</span>
+                        <a href="/liens/{{ link.slug }}">{{ link.title }}</a>
                     </li>
                 {% endfor %}
             </ul>

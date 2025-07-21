@@ -39,7 +39,8 @@
         <ul class="blog-list">
             {% for post in posts | sort(attribute='publish_date', reverse=True)%}
                 <li>
-                    <a href="/blog/{{ post.slug }}/">{% if post.category %}{{ post.category }} -{% endif %} {{ post.title }}</a> <span>{{ post.publish_date_long }}</span>
+                    <span>{{ post.publish_date_long }}</span>
+                    <a href="/blog/{{ post.slug }}/">{{ post.title }}</a>
                 </li>
             {% endfor %}
         </ul>
