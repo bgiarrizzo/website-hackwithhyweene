@@ -2,7 +2,7 @@ import shutil
 
 from config import settings
 from generators.blog import build_blog
-from generators.cname import add_cname_to_build
+from generators.robotstxt import add_robotstxt_to_build
 from generators.homepage import build_homepage
 from generators.learn import build_learning
 from generators.links import build_links
@@ -30,4 +30,4 @@ if __name__ == "__main__":
 
     build_homepage(blog, links)
 
-    add_cname_to_build(settings.BUILD_PATH, settings.CNAME)
+    add_robotstxt_to_build(settings.BASE_URL)
