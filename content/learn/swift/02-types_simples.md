@@ -44,7 +44,7 @@ let chaineQuiNeChangeraPas = "1,2,3 ... Soleil !"
 
 Si vous voulez mettre à jour cette constante, le compilateur renverra une erreur. C'est une forme de sécurité, une fois qu'une constante est créée, elle ne peut être modifiée.
 
-## Entiers, Floats, Doubles and booléens
+## Entiers, Floats, Doubles et booléens
 
 Swift propose plusieurs types de données simples pour les entiers, les doubles et les booléens.
 
