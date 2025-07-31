@@ -4,8 +4,7 @@ url: https://intelligence-artificielle.developpez.com/actu/366291/Les-outils-d-I
 publish_date: 2024-12-30T21:09:48+01:00
 update_date: 2024-12-30T21:09:48+01:00
 tags: [
-"IA",
-" manipulation"]
+"IA", "manipulation"]
 ---
 
 Stupéfaction ! On ne l’avait pas vu venir ! Comment dire, je tombe des nues !

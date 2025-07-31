@@ -4,9 +4,9 @@ url: https://arfy.fr/dotclear/index.php?post/2025/07/27/futura-sciences-Les-Mont
 publish_date: 2025-07-27T20:45:12+01:00
 update_date: 2025-07-27T20:45:12+01:00
 tags: [
-"Monthy， python， silly， walk， solution， probleme， santé， publique"]
+"Monty", "Python", "silly", "walk", "solution", "probleme", "sante", "publique"]
 ---
 
-J’ai fait 15 a 20000 pas par jours, je fais 1h de vélo a 35km/h.
+J’ai fait 15 à 20000 pas par jours, je fais 1h de vélo à 25km/h en moyenne.
 
-Si j’avais su que la solution était aussi simple, je me serais moins embêté !! 😅 
+Si j’avais su que la solution était aussi simple, je me serais moins embêté !! 😅
