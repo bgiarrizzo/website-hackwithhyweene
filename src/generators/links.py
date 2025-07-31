@@ -54,6 +54,8 @@ def build_links(links_path):
 
         links.append(link)
 
+        print(f"Generating link: {link['slug']} ...")
+
     print("Generating RSS feed ...")
     generate_rss_feed(links)
 

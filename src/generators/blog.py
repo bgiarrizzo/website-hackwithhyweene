@@ -50,6 +50,8 @@ def build_blog(blog_path):
 
         posts.append(post)
 
+        print(f"Generating blog post: {post['slug']} ...")
+
     print("Generating blog page list ...")
     generate_blog_page_list(posts)
 

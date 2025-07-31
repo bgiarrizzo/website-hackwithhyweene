@@ -31,3 +31,7 @@ if __name__ == "__main__":
     build_homepage(blog, links)
 
     add_robotstxt_to_build(settings.BASE_URL)
+
+    print("#", "-" * 70)
+    print("Build completed successfully!")
+    print("#", "-" * 80)
