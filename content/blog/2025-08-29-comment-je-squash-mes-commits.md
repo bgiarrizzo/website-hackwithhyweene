@@ -1,8 +1,8 @@
 ---
 title: "Comment je squash mes commits git"
 summary: "Squasher ses commits pour une meilleure lisibilité"
-publish_date: 2024-09-16T09:30:00+01:00
-update_date: 2024-09-16T09:30:00+01:00
+publish_date: 2025-08-29T11:30:00+01:00
+update_date: 2025-08-29T11:30:00+01:00
 category: "Pense-bête"
 tags: [git, commit, squash, rebase]
 ---
