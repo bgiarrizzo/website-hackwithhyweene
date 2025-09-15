@@ -10,10 +10,6 @@ publish_date: 2025-07-31T15:30:00+01:00
 update_date: 2025-07-31T15:30:00+01:00
 ---
 
-## Fonctions avancées
-
-Les fonctions avancées en Python permettent d'explorer des concepts plus complexes qui enrichissent la programmation fonctionnelle. Voici quelques-unes de ces fonctionnalités :
-
 ### Fonctions anonymes (lambda)
 
 Les fonctions anonymes, ou fonctions lambda, sont des fonctions définies sans nom. Elles sont souvent utilisées pour des opérations simples et rapides. Voici un exemple :
