@@ -1,22 +1,193 @@
 ---
-id: 1
-title: Intro
-summary: Résumé
+id: 8
+title: Classes
+summary: Les classes, comme la documentation python l'indique, sont un moyen de réunir données et fonctionnalités. Une classe est comme un constructeur d'objets, ou un moyen de créer des objets.
+tags: python, fonctions, avancées, fonction avancées, programmation
 
-publish_date: 2024-09-09T09:30:00+01:00
-update_date: 2024-09-09T09:30:00+01:00
+prism_needed: true
+
+publish_date: 2025-09-16T15:30:00+01:00
+update_date: 2025-09-16T15:30:00+01:00
 ---
 
-Définition d’une classe
+## Définition d’une classe
 
-Constructeur (init) et attributs d’instance
+Pour définir une classe basique, en python, c'est très simple : 
 
-Méthodes d’instance, de classe, statiques
+```python
+class Personne:
+    nom = "Hyweene"
 
-Encapsulation : attributs privés et protégés
+personneA = Personne()
+personneB = Personne()
+```
 
-Héritage simple et surcharge de méthodes
+Dans cet exemple, je déclare une classe avec un attribut de classe qui a une valeur par défaut, ici `Hyweene`.
 
-Introduction à la composition
+Je l'instancie deux fois : 
 
-Représentation d’objets (str, repr)
+```python
+print(personneA) # <__main__.Personne object at 0x732dd6b33650>
+print(personneB) # <__main__.Personne object at 0x732dd6b33aa0>
+
+print(personneA.nom) # Affiche "Hyweene"
+print(personneB.nom) # Affiche "Hyweene"
+```
+
+Une fois la classe instanciée, on peut créer ou modifier un attribut sur une instance précise. Cela n’affecte pas l’attribut de classe lui-même, mais crée un attribut d’instance qui masque la valeur par défaut. Chaque instance peut donc avoir sa propre valeur :
+
+```python
+personneA.nom = "Michel"
+personneB.nom = "JeanLuc"
+```
+
+Sans pour autant modifier la valeur dans la seconde instance :
+
+```python
+print(personneA.nom) # Affiche "Michel"
+print(personneB.nom) # Affiche "JeanLuc"
+```
+
+Pour pouvoir définir la valeur de l'attribut à l'instanciation (à la création de l'objet), il vaudra mieux passer par un constructeur (`__init__`).
+
+## Constructeur (init) et attributs d’instance
+
+```python
+class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+personne = Personne(nom="Hyweene", age=36)
+```
+
+Ici, j'ai défini un constructeur qui me permettra d'attribuer une valeur voulue tout de suite à l'instanciation.
+
+Voici le résultat :
+
+```python
+print(personne) # Affiche <__main__.Personne object at 0x732dd6f8f380>
+print(personne.nom) # Affiche "Hyweene"
+print(personne.age) # Affiche 36
+```
+
+Si par erreur j'oubliais de définir une valeur pour l'attribut `nom` ou `age`, l'interpreteur python me renverrait une erreur :
+
+```python
+class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+personne = Personne()
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: Personne.__init__() missing 1 required positional argument: 'nom'
+```
+
+## Méthodes d’instance, de classe, statiques
+
+Pour définir les différentes méthodes, je vais réutiliser ma classe `Personne` : 
+
+### Méthodes d'instance
+
+Une méthode d'instance est utilisée le plus fréquemment pour manipuler des données de l'objet instancié.
+
+L'argument `self` représente l'instance qui appelle la méthode, on y fait référence pour utiliser les différents attributs.
+
+```python
+class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+    def presentation(self):
+        print(f"Bonjour, Je m'appelle {self.nom}, j'ai {self.age} ans.")
+```
+
+Ici, je définis mon objet `Personne`, son nom et age, puis une fonction qui permettra de présenter cette personne : 
+
+```python
+personne = Personne(nom="Hyweene", age=36)
+personne.presentation() # Affiche "Je m'appelle Hyweene, j'ai 36 ans."
+```
+
+### Méthodes de classe
+
+Une méthode de classe est utilisée pour des méthodes qui doivent accéder ou modifier des données partagées entre toutes les instances d'une même classe.
+
+Par exemple : 
+
+```python
+class Personne:
+    nombre_de_personnes = 0
+
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+        Personne.nombre_de_personnes += 1
+
+    @classmethod
+    def compteur_personnes(cls):
+        return cls.nombre_de_personnes
+```
+
+Je définis un compteur de population (on imaginera que le nombre d'instance = population) : 
+
+```python
+personne1 = Personne(nom="machin", age=25)
+personne2 = Personne(nom="truc", age=32)
+personne3 = Personne(nom="bidule", age=10)
+personne4 = Personne(nom="chose", age=54)
+personne5 = Personne(nom="bob", age=38)
+personne6 = Personne(nom="alice", age=63)
+```
+
+On a bien créé 6 instances de personne, et si on appelle la méthode `compteur_personnes()`, dans n'importe quelle instance, on aura toujours le même nombre : 
+
+```python
+Personne.compteur_personnes() # Affiche 6
+```
+
+Si, par contre, on appelle `compteur_personnes()` juste après chaque instanciation de la classe, on verra `nombre_de_personnes` s'incrémenter à chaques étapes : 
+
+```python
+personne1 = Personne(nom="machin", age=25)
+print(Personne.compteur_personnes()) # Affiche 1
+personne2 = Personne(nom="truc", age=32)
+print(Personne.compteur_personnes()) # Affiche 2
+personne3 = Personne(nom="bidule", age=10)
+print(Personne.compteur_personnes()) # Affiche 3
+personne4 = Personne(nom="chose", age=54)
+print(Personne.compteur_personnes()) # Affiche 4
+personne5 = Personne(nom="bob", age=38)
+print(Personne.compteur_personnes()) # Affiche 5
+personne6 = Personne(nom="alice", age=63)
+print(Personne.compteur_personnes()) # Affiche 6
+```
+
+### Méthodes Statiques
+
+Une méthode statique ne reçoit ni `self`, ni `cls`. Elle appartient au namespace de la classe, mais ne travaille pas sur la classe ou sur une instance.
+
+Elle est utile pour écrire des utilitaires.
+
+Exemple :
+
+```python
+class Math:
+    @staticmethod
+    def addition(a, b):
+        return a + b
+
+print(Math.addition(1,2)) # Affiche 3
+```
+
+## Encapsulation : attributs privés et protégés
+
+## Héritage simple et surcharge de méthodes
+
+## Introduction à la composition
+
+## Représentation d’objets (str, repr)
