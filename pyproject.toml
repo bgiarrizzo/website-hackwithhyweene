@@ -1,0 +1,26 @@
+[project]
+name = "website-hackwithhyweene"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "jinja2",
+    "pyyaml",
+    "markdown",
+    "pydantic",
+    "python-slugify",
+    "pydantic-settings",
+    "lxml",
+    "prettierfier",
+    "defusedxml",
+    "beautifulsoup4",
+    "markdown2[all]",
+    "click",
+]
+
+[dependency-groups]
+dev = [
+    "html5validator",
+    "pyment>=0.3.3",
+]

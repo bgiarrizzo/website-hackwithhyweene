@@ -7,13 +7,8 @@ name = "pypi"
 python_version = "3"
 
 [scripts]
-black = "black src/"
-black_dry = "black src/ --check"
 build = "python src/main.py"
 dev = "python -m http.server 8000 --directory build/"
-isort = "isort src/"
-isort_dry = "isort src/ --check-only"
-flake8 = "flake8 src/"
 html5validator = "html5validator --root build/"
 generate_docstrings = "pyment -f false -o numpydoc -w src"
 
@@ -29,12 +24,7 @@ prettierfier = "*"
 defusedxml = "*"
 beautifulsoup4 = "*"
 markdown2 = {extras = ["all"], version = "*"}
+click = "*"
 
 [dev-packages]
-black = "*"
-isort = "*"
-flake8 = "*"
-flake8-bandit = "*"
-djlint = "*"
 html5validator = "*"
-pyment = "*"
