@@ -1,7 +1,7 @@
 [project]
 name = "website-hackwithhyweene"
 version = "0.1.0"
-description = "Add your description here"
+description = "A static site generator for hack-with-hyweene.com"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -16,7 +16,6 @@ dependencies = [
     "defusedxml",
     "beautifulsoup4",
     "markdown2[all]",
-    "click",
 ]
 
 [dependency-groups]
