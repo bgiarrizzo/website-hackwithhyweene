@@ -1,5 +1,6 @@
 .DEFAULT_GOAL := help
-VENV_PATH := $(shell pwd)/.venv
+VENV_FOLDER := .venv
+VENV_PATH := $(shell pwd)/$(VENV_FOLDER)
 VENV_BIN := $(VENV_PATH)/bin
 PYTHON := $(VENV_BIN)/python
 UV := uv
@@ -13,7 +14,14 @@ install: ## Install dependencies
 install_dev: ## Install development dependencies
 	$(UV) sync --dev
 
-venv: ## Create virtual environment
+create_venv: ## Create virtual environment
+	@if ! command -v python &> /dev/null; then \
+		python3 -m venv $(VENV_FOLDER); \
+	else \
+		python -m venv $(VENV_FOLDER); \
+	fi
+
+venv: create_venv ## Load virtual environment
 	. $(VENV_BIN)/activate
 
 build: venv install ## Build the project
