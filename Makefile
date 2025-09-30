@@ -29,10 +29,14 @@ install_uv: ## Install the packager
 
 
 create_venv: ## Create virtual environment
-	@if ! command -v python &> /dev/null; then \
-		python3 -m venv $(VENV_FOLDER); \
+	@if [ ! -d "$(VENV_FOLDER)" ]; then \
+		if ! command -v python &> /dev/null; then \
+			python3 -m venv $(VENV_FOLDER); \
+		else \
+			python -m venv $(VENV_FOLDER); \
+		fi \
 	else \
-		python -m venv $(VENV_FOLDER); \
+		echo "Virtual environment already exists at $(VENV_PATH)"; \
 	fi
 
 venv: create_venv ## Load virtual environment
