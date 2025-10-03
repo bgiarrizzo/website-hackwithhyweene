@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     """ """
     SHORT_URL: str = "hack-with-hyweene.com"
     CNAME: str = f"{SHORT_URL}"
-    BASE_URL: str = f"https://{SHORT_URL}"
+    BASE_URL: str = f"https://www.{SHORT_URL}"
 
     BUILD_PATH: str = "build"
     MEDIA_PATH: str = "media"
