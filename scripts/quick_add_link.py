@@ -48,24 +48,24 @@ def get_html_page(url: str):
     return response.text
 
 
-def get_link_title(html_page: str):
+def get_link_title(html_page: str) -> str:
     soup = BeautifulSoup(html_page, "html.parser")
     soup_title = soup.find("title").string
-    return soup_title
+    return str(soup_title)
 
 
-def get_link_comment():
+def get_link_comment() -> str:
     input_comment = input("Your Comment (one line only) : ")
     return input_comment
 
 
-def get_link_tags():
+def get_link_tags() -> list[str]:
     input_tags = input("Tags (separate with commas ',' or ', ') : ")
     tag_list = input_tags.split(",")
     return [tag.strip() for tag in tag_list]
 
 
-def craft_link_filename(date: str, slug: str):
+def craft_link_filename(date: str, slug: str) -> str:
     return f"{date}-{slug}.md"
 
 
@@ -79,6 +79,14 @@ def generate_markdown_file(link_data: dict):
 
     with open(f"content/links/{link_data['filename']}", "w") as f:
         f.write(outputText)
+
+
+def git_commit_and_push(filename: str):
+    import subprocess
+
+    subprocess.run(["git", "add", f"content/links/{filename}"])
+    subprocess.run(["git", "commit", "-m", f"add new link - {filename}"])
+    subprocess.run(["git", "push"])
 
 
 if __name__ == "__main__":
@@ -104,3 +112,5 @@ if __name__ == "__main__":
     link_data["date"].pop("now")
 
     generate_markdown_file(link_data=link_data)
+
+    git_commit_and_push(filename=link_data["filename"])
