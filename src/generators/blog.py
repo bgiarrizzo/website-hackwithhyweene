@@ -15,7 +15,7 @@ def generate_rss_feed(posts: list):
 def generate_blog_post(post):
     data = {"page_title": f"{post.get('title')} - Blog", "post": post}
     template_name = "blog/single.j2"
-    filename = f"blog/{post['slug']}/index.html"
+    filename = f"blog/{post['publish_date_not_condensed']}-{post['slug']}/index.html"
 
     write_file(data=data, template_name=template_name, filename=filename)
 

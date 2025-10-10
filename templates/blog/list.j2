@@ -40,7 +40,7 @@
             {% for post in posts | sort(attribute='publish_date', reverse=True)%}
                 <li>
                     <span>{{ post.publish_date_long }}</span>
-                    <a href="/blog/{{ post.slug }}/">{{ post.title }}</a>
+                    <a href="/blog/{{ post.publish_date_not_condensed }}-{{ post.slug }}/">{{ post.title }}</a>
                 </li>
             {% endfor %}
         </ul>

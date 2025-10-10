@@ -18,7 +18,9 @@ def generate_rss_feed(links: list):
 def generate_link_page(link):
     data = {"page_title": link.get("title"), "link": link}
     template_name = "links/single.j2"
-    filename = f"liens/{link.get('slug')}/index.html"
+    filename = (
+        f"liens/{link.get('publish_date_not_condensed')}-{link.get('slug')}/index.html"
+    )
 
     write_file(data, template_name, filename)
 
@@ -54,7 +56,9 @@ def build_links(links_path):
 
         links.append(link)
 
-        print(f"Generating link: {link['slug']} ...")
+        print(
+            f"Generating link: {link['publish_date_not_condensed']}-{link['slug']} ..."
+        )
 
     print("Generating RSS feed ...")
     generate_rss_feed(links)

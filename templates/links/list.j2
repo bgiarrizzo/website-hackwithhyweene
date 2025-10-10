@@ -44,7 +44,7 @@
                 {% for link in links_by_month | sort(attribute='publish_date', reverse=True) %}
                     <li>
                         <span>{{ link.publish_date_long }}</span>
-                        <a href="/liens/{{ link.slug }}">{{ link.title }}</a>
+                        <a href="/liens/{{ link.publish_date_not_condensed }}-{{ link.slug }}">{{ link.title }}</a>
                     </li>
                 {% endfor %}
             </ul>
