@@ -70,7 +70,7 @@ def craft_link_filename(date: str, slug: str):
 
 
 def generate_markdown_file(link_data: dict):
-    templateLoader = jinja2.FileSystemLoader(searchpath="../templates")
+    templateLoader = jinja2.FileSystemLoader(searchpath="./templates/links/")
     templateEnv = jinja2.Environment(loader=templateLoader)
     TEMPLATE_FILE = "link.md.j2"
     template = templateEnv.get_template(TEMPLATE_FILE)
@@ -83,46 +83,24 @@ def generate_markdown_file(link_data: dict):
 
 if __name__ == "__main__":
     link_data = {}
-
     link_data["url"] = get_url_from_args()
 
-    html_page = get_html_page(
-        url=link_data["url"],
-    )
+    html_page = get_html_page(url=link_data["url"])
 
-    # Get Date
     link_data["date"] = {}
     link_data["date"]["now"] = datetime.now()
     link_data["date"]["short"] = link_data["date"]["now"].strftime("%Y-%m-%d")
     link_data["date"]["full"] = link_data["date"]["now"].strftime(
         "%Y-%m-%dT%H:%M:%S+01:00"
     )
-
-    # Get Title
-    print("Getting link title ...")
-    link_data["title"] = get_link_title(
-        html_page=html_page,
-    )
-
-    # Slugify Title
-    link_data["slug"] = slugify(
-        text=link_data["title"],
-    )
-
-    # Prepare Filename
+    link_data["title"] = get_link_title(html_page=html_page)
+    link_data["slug"] = slugify(text=link_data["title"])
     link_data["filename"] = craft_link_filename(
         date=link_data["date"]["short"],
         slug=link_data["slug"],
     )
-
-    # Get Comment
     link_data["comment"] = get_link_comment()
-
-    # Get Tags
     link_data["tags"] = get_link_tags()
-
     link_data["date"].pop("now")
 
-    print(
-        json.dumps(link_data, indent=4, sort_keys=True, ensure_ascii=False),
-    )
+    generate_markdown_file(link_data=link_data)
