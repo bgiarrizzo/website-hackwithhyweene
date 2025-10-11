@@ -2,7 +2,7 @@ from datetime import datetime
 
 class DateFormat:
     def __init__(self, date):
-        # Si la date est None, on prend la date actuelle
+        # If date is None, use current date
         if date is None:
             self.original = datetime.now()
         elif isinstance(date, datetime):
