@@ -11,7 +11,7 @@ class DateFormat:
             if date.lower() == "now":
                 self.original = datetime.now()
             else:
-                # Suppose la chaîne est en format ISO 8601 valide
+                # Assume string is in valid ISO 8601 format
                 self.original = datetime.fromisoformat(date)
         else:
             raise TypeError("date must be str, datetime, or None")
