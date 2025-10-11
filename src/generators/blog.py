@@ -37,7 +37,7 @@ class BlogPost:
     ):
         self.file_path = file_path
         self.body: Optional[str] = None
-        self.category: Optional[BlogPostCategory] = None
+        self.category: Optional['BlogPostCategory'] = None
         self.content: Optional[str] = None
         self.publish_date: Optional[DateFormat] = None
         self.slug: Optional[str] = None
