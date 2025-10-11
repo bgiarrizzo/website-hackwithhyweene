@@ -7,7 +7,7 @@
   <link href="{{ site.url }}/blog/"></link>
 
   {% set last_post = posts|last %}
-  <updated>{{ last_post.publish_date_rfc3339 }}</updated>
+  <updated>{{ last_post.publish_date.rfc3339 }}</updated>
 
   <author>
     <name>{{ site.author }}</name>
@@ -19,8 +19,8 @@
       <id>{{ site.url }}/blog/{{ post.slug }}/</id>
       <title>{{ post.title }}</title>
       <link rel="alternate" type="text/html" href="{{ site.url }}/blog/{{ post.slug }}/"></link>
-      <published>{{ post.publish_date_rfc3339 }}</published>
-      <updated>{{ post.update_date_rfc3339 }}</updated>
+      <published>{{ post.publish_date.rfc3339 }}</published>
+      <updated>{{ post.update_date.rfc3339 }}</updated>
 
     {% if post.summary %}
         <summary>
