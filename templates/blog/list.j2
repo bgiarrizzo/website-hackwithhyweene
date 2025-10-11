@@ -32,15 +32,15 @@
     
     <p>Les derniers articles du blog sont accessible également via <a href="/blog/feed.xml">RSS</a>.</p>
 
-    {% for year, posts in all_posts | reverse | groupby("publish_date_year") | reverse %}
+    {% for year, posts in all_posts | reverse | groupby("publish_date.year") | reverse %}
 
         <h2 class="blog-list-header">{{ year }}</h2>
 
         <ul class="blog-list">
-            {% for post in posts | sort(attribute='publish_date', reverse=True)%}
+            {% for post in posts | sort(attribute='publish_date.original', reverse=True)%}
                 <li>
-                    <span>{{ post.publish_date_long }}</span>
-                    <a href="/blog/{{ post.publish_date_not_condensed }}-{{ post.slug }}/">{{ post.title }}</a>
+                    <span>{{ post.publish_date.long }}</span>
+                    <a href="/blog/{{ post.publish_date.short }}-{{ post.slug }}/">{{ post.title }}</a>
                 </li>
             {% endfor %}
         </ul>

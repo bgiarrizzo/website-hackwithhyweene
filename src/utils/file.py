@@ -6,7 +6,7 @@ from utils.template import prepare_template_data, render_template, write_page
 
 def get_all_files_from_path(target_path, extension=".md") -> list:
     file_list = []
-    for root, dirs, files in walk(target_path):
+    for root, _, files in walk(target_path):
         for file in sorted(files):
             if file.endswith(extension):
                 file_list.append(path.join(root, file))

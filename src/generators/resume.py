@@ -1,6 +1,4 @@
-from config import settings
 from utils.file import get_all_files_from_path, write_file
-from utils.format import beautify_html
 from utils.markdown import parse_markdown_file_and_convert_to_html
 
 
@@ -77,7 +75,7 @@ def prepare_resume_data(resume_path):
     return head, experiences, educations  # , skills
 
 
-def build_resume(resume_path):
+def build_resume(resume_path, website_data=None):
     print("Generating resume ...")
 
     resume = {

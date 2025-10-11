@@ -1,14 +1,20 @@
-from os import path 
-
 from utils.file import write_file
 
-def write_robotstxt(robots_txt_content):
-    data = {"url": robots_txt_content}
-    template_name = "robots.txt.j2"
-    filename = "robots.txt"
 
-    write_file(data, template_name, filename)
+class RobotsTxt:
+    def __init__(self, url):
+        self.url = url
+
+    def write_robotstxt(self):
+        data = {"url": self.url}
+        template_name = "robots.txt.j2"
+        filename = "robots.txt"
+        print(f"Writing robots.txt: {filename}")
+        write_file(data, template_name, filename)
 
 
-def add_robotstxt_to_build(robots_txt_content):
-    write_robotstxt(robots_txt_content)
+def build_robots_txt(url):
+    print("#", "-" * 80)
+    print("Generating robots.txt ...")
+
+    RobotsTxt(url=url).write_robotstxt()

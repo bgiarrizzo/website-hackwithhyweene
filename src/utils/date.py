@@ -1,22 +1,25 @@
-def add_multiple_date_formats(data):
-    date_keys = ["publish_date", "update_date"]
+from datetime import datetime
 
-    for key in date_keys:
-        if data.get(key):
-            data[f"{key}_rfc3339"] = data.get(key).strftime("%Y-%m-%dT%H:%M:%SZ")
-            data[f"{key}_condensed"] = data.get(key).strftime("%Y%m%d")
-            data[f"{key}_not_condensed"] = data.get(key).strftime("%Y-%m-%d")
-            data[f"{key}_short"] = data.get(key).strftime("%d-%b-%Y")
-            data[f"{key}_medium"] = data.get(key).strftime("%d %b %Y")
-            data[f"{key}_long"] = data.get(key).strftime("%d %B %Y")
-            data[f"{key}_full"] = data.get(key).strftime("%A, %d %B %Y %I:%M %p")
+class DateFormat:
+    def __init__(self, date):
+        # Si la date est None, on prend la date actuelle
+        if date is None:
+            self.original = datetime.now()
+        elif isinstance(date, datetime):
+            self.original = date
+        elif isinstance(date, str):
+            if date.lower() == "now":
+                self.original = datetime.now()
+            else:
+                # Suppose la chaîne est en format ISO 8601 valide
+                self.original = datetime.fromisoformat(date)
+        else:
+            raise TypeError("date must be str, datetime, or None")
 
-            data[f"{key}_year"] = data.get(key).year
-            data[f"{key}_month"] = data.get(key).strftime("%m-%B")
-            data[f"{key}_month_short"] = data.get(key).strftime("%m")
-            data[f"{key}_day"] = data.get(key).day
-
-            data[f"{key}_iso"] = data.get(key).isoformat()
-            data[f"{key}_rfc"] = data.get(key).strftime("%a, %d %b %Y %H:%M:%S %z")
-
-    return data
+        self.rfc3339 = self.original.strftime("%Y-%m-%dT%H:%M:%SZ")
+        self.condensed = self.original.strftime("%Y%m%d")
+        self.short = self.original.strftime("%Y-%m-%d")
+        self.medium = self.original.strftime("%d %b %Y")
+        self.long = self.original.strftime("%d %B %Y")
+        self.year = self.original.year
+        self.month = self.original.strftime("%m-%B")
