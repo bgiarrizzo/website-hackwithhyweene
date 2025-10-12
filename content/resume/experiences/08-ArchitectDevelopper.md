@@ -4,7 +4,7 @@ title: Architecte Technique & Développeur
 company: Erwin Labs
 company_url: https://www.erwin-labs.com/
 start_date: 2024/10
-end_date: Aujourd'hui
+end_date: 2025/07
 location: Paris, 75, France
 work_mode: Full Remote
 contract_type: Contrat Freelance
