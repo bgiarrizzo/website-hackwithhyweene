@@ -1,13 +1,13 @@
 ---
-title: "REST API et Status Code HTTP"
-summary: "Un tableau récapitulatif des principaux verbes HTTP utilisés dans une API REST, accompagnés des codes de statut HTTP les plus fréquemment associés."
+title: "REST : Méthodes et Status Code HTTP"
+summary: "Un tableau récapitulatif des principales méthodes HTTP utilisées dans une API REST, accompagnés des codes de statut HTTP les plus fréquemment associés."
 publish_date: 2025-03-31T12:15:00+02:00
 update_date: 2025-03-31T12:15:00+02:00
 category: "Pense bête"
-tags: ["API", "REST", "HTTP", "Status Code", "Verbe HTTP"]
+tags: ["REST", "HTTP", "Status Code", "Méthode"]
 ---
 
-Bon, j'en avais assez de chercher sur les internets après les codes de statut HTTP, alors j'ai décidé de faire un tableau récapitulatif des principaux verbes HTTP utilisés dans une API REST, accompagnés des codes de statut HTTP les plus fréquemment associés.
+Bon, j'en avais assez de chercher sur les internets après les codes de statut HTTP, alors j'ai décidé de faire un tableau récapitulatif des principaux méthodes HTTP utilisés dans une API REST, accompagnés des codes de statut HTTP les plus fréquemment associés.
 
 Ça m'évitera de devoir retrouver le lien à chaque fois que je code et que j'ai un trou de mémoire :-D
 
@@ -23,7 +23,7 @@ Bon, j'en avais assez de chercher sur les internets après les codes de statut H
 | **HEAD**        | 200 (OK), 404 (Not Found)                                            |
 | **OPTIONS**     | 200 (OK)                                                             |
 
-## Détails des verbes HTTP
+## Détails des méthodes HTTP
 
 - **GET** :
   - Utilisé pour lire des données sans modification.

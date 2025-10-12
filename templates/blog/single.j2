@@ -17,8 +17,11 @@
 {% endblock meta_keywords %}
 
 {% block specific_css %}
-    .blog-post-category { font-style: italic; font-weight: bold; margin-top: 0px; }
-    .blog-post-tags { font-style: italic; font-weight: bold; margin-top: 0px; }
+    main h1 { margin-top: 1.5em; font-size: 2.25em; }
+    .blog-post-date { margin-top: 1em; border-bottom: 0px; font-size: 2em; font-weight: 600; }
+    .blog-post-reading-time { margin-top: 0px; margin-bottom: 0px; }
+    .blog-post-category { margin-top: 0px; margin-bottom: 0px; }
+    .blog-post-tags { margin-top: 0px; }
 {% endblock specific_css %}
 
 {% block prismCss %}
@@ -28,23 +31,24 @@
 {% endblock prismCss %}
 
 {% block content %}
-    {% if post.cover %}
-        <img class="cover" src="/media/images/blog/covers/{{ post.cover }}" alt="{{ post.title }}">
-    {% endif %}
-
     <h1>{{ post.title }}</h1>
 
-    <h2>{{ post.publish_date.long }}</h2>
+    <h2 class="blog-post-date">{{ post.publish_date.long }}</h2>
 
-    <p class="blog-post-category">Catégorie : {{ post.category }}</p>
+    <p class="blog-post-reading-time"><b>Temps de lecture estimé</b> : {{ post.reading_time }}</p>
+    <p class="blog-post-category"><b>Catégorie</b> : <a href="/blog/category/{{ post.category.slug }}/">{{ post.category.name }}</a></p>
     <p class="blog-post-tags">
-        Tags : 
+        <b>Tags</b> :
         {% for tag in post.tags %}
-            <span>#{{ tag }}</span>&nbsp;
+            {{ tag | capitalize }}{% if not loop.last %}, {% endif %}
         {% endfor %}
     </p>
 
-    <hr />
+    {% if post.cover %}
+        <img class="cover" src="/media/images/blog/covers/{{ post.cover }}" alt="{{ post.title }}">
+    {% else %}
+        <hr />
+    {% endif %}
 
     {{ post.body }}
 

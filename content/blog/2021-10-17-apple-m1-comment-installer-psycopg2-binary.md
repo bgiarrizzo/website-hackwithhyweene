@@ -1,15 +1,14 @@
 ---
-title: "Comment installer psycopg2-binary sur Apple M1"
+title: "Apple M1 : Comment installer psycopg2-binary"
 summary: J'ai rencontré quelques difficultés en travaillant avec du code Python accédant à des bases de données PostgreSQL. Voici comment j'ai résolu le problème.
 cover: "2021-10-17.png"
 cover_alt: "couverture de l'article sur l'installation de psycopg2-binary sur mac m1"
 publish_date: 2021-10-17T09:30:00+01:00
 update_date: 2021-10-17T09:30:00+01:00
 category: "Pense bête"
-tags: [apple, m1, postgres, python3.10, psycopg2, psycopg2-binary, installation]
+tags: [apple, m1, postgres, python, psycopg2]
 
 prism_needed: true
-
 ---
 
 Le mois dernier, je me suis offert un Apple M1, un très bon ordinateur, puissant et avec une autonomie impressionnante.

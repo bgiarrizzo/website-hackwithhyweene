@@ -1,5 +1,6 @@
 from typing import Optional
 
+import readtime
 from slugify import slugify
 
 from utils.file import get_all_files_from_path, write_file
@@ -74,6 +75,7 @@ class BlogPost:
         self.title: Optional[str] = None
         self.update_date: Optional[DateFormat] = None
         self.prism_needed: bool = False
+        self.cover: Optional[str] = None
         self._process_file()
 
     def _process_file(self):
@@ -94,6 +96,8 @@ class BlogPost:
         )
         self.update_date = DateFormat(date=update_date)
         self.prism_needed = data.get("prism_needed", False)
+        self.cover = data.get("cover", None)
+        self.reading_time = readtime.of_text(self.body).text
 
     def write_post_file(self):
         data = {"page_title": f"{self.title} - Blog", "post": self}

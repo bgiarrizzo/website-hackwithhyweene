@@ -72,7 +72,7 @@
             p { hyphens: auto; text-align: justify; }
             pre, blockquote, .code { background: #f5ead6; font-size: 0.8em; padding: 1em; overflow: scroll; border-radius: 0.5em; }
             ul, ol { list-style-type: circle; }
-            a { color: #169; text-decoration: none; padding: 0.5em 0; }
+            a { color: #169; text-decoration: none; padding: 0.5em 0; font-weight: bold; }
             a:hover { text-decoration: underline; }
 
             /* ------------------- */
@@ -92,7 +92,7 @@
             nav ul li a:hover { text-decoration: underline; }
             nav h1 { margin: 0; }
 
-            @media (max-width: 768px) {
+            @media (max-width: 992px) {
                 nav { position: relative; flex-direction: row; justify-content: space-between; align-items: center; }
                 .menu-icon { display: block; color: #169; }
                 nav ul { position: absolute; top: 100%; left: 60%; right: 0; background-color: #fdf6e3; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index: 1000; width: 40%; display: none; flex-direction: column; padding-left: 0; margin-top: 0.5em; border: 2px solid #aaa; border-radius: 0.5em; }
@@ -106,7 +106,7 @@
             /* Main content */
             /* ------------ */
 
-            main { flex: 1 0 auto; text-align: justify; position: relative; }
+            main { flex: 1 0 auto; text-align: justify; position: relative; max-width: 100%; }
             main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
 
             .alert-outdated-resource { background-color: #f8d7da; color: #721c24; padding: 0.5em 1em; border-radius: 0.5em; margin-bottom: 1.5em; border: 1px solid #f5c6cb; }
@@ -153,19 +153,22 @@
 
                 <ul>
                     <li>
-                        <a href="/blog/">Blog</a>
+                        <a href="/blog/">/blog/</a>
                     </li>
                     <li>
-                        <a href="/liens/">Liens</a>
+                        <a href="/liens/">/liens/</a>
                     </li>
                     <li>
-                        <a href="/apprendre/">Apprendre</a>
+                        <a href="/projets/">/projets/</a>
                     </li>
                     <li>
-                        <a href="/cv/">CV</a>
+                        <a href="/apprendre/">/apprendre/</a>
                     </li>
                     <li>
-                        <a href="/a-propos/">A Propos</a>
+                        <a href="/cv/">/cv/</a>
+                    </li>
+                    <li>
+                        <a href="/a-propos/">/a-propos/</a>
                     </li>
                 </ul>
             </nav>

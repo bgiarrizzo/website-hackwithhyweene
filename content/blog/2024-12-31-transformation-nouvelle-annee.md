@@ -1,10 +1,10 @@
 ---
-title: "Transformation: Bilan de fin d'année"
+title: "Transformation : Bilan de fin d'année"
 summary: Ca fait longtemps, il s'est passé beaucoup de choses ...
 publish_date: 2024-12-31T22:00:00+01:00
 update_date: 2024-12-31T22:00:00+01:00
 category: "Sport"
-tags: ["sport", "transformation", "fitness", "santé", "bien-être", "perte de poids", "muscu", "musculation", "poids", "bodyfat", "sommeil", "pas", "étapes", "objectifs", "résultats", "suivi", "mois"]
+tags: [santé, sport, surpoids, confiance en soi, suivi]
 ---
 
 Dans la même série :
