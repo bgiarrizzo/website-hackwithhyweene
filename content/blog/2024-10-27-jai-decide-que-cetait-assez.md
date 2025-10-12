@@ -3,7 +3,7 @@ title: J'ai décidé que c'était assez
 summary: J'ai 36 ans, je mesure 1m70, je pèse 87kg, je suis en surpoids. J'ai du bide, j'ai des bourrelets, des seins, j'ai mal au dos.
 publish_date: 2024-10-27T23:00:00+01:00
 update_date: 2024-10-27T23:00:00+01:00
-category: "Sport & Transformation"
+category: "Sport"
 tags: [santé, bien-être, alimentation, sport, mental, confiance en soi, stress, fatigue, surpoids]
 ---
 

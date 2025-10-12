@@ -4,22 +4,7 @@ from os import makedirs, path
 from jinja2 import Environment, FileSystemLoader
 
 from config import settings
-
-
-def date_older_than_one_year(date):
-    if not date:
-        return False
-
-    # Convertir les deux dates en naive datetime si elles ne le sont pas déjà
-    if date.tzinfo:
-        date = date.replace(tzinfo=None)
-
-    now = datetime.now()
-
-    # Comparer les dates
-    return date < now - timedelta(days=180)
-
-
+from utils.date import date_older_than_six_months
 
 
 def write_page(filename, content):
@@ -33,7 +18,7 @@ def render_template(template_name, data):
     env = Environment(
         loader=FileSystemLoader(settings.TEMPLATE_PATH),
     )
-    env.filters["is_outdated"] = date_older_than_one_year
+    env.filters["is_outdated"] = date_older_than_six_months
     env.globals["yearNow"] = datetime.now().year
     template = env.get_template(template_name)
     return template.render(data)

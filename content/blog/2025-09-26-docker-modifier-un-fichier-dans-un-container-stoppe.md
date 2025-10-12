@@ -1,10 +1,12 @@
 ---
-title: "Docker: Modifier un fichier dans un container stoppé"
+title: "Docker : Modifier un fichier dans un container stoppé"
 summary: "Modifier un fichier dans un container Docker stoppé"
 publish_date: 2025-09-26T14:00:00+01:00
 update_date: 2025-09-26T14:00:00+01:00
 category: "Pense-bête"
 tags: [docker, container, fichier, modification]
+
+prism_needed: true
 ---
 
 Dernièrement, j'ai modifié un fichier de conf apache2 directement dans un container docker. Au redémarrage, le container redemarrait en boucle, car la conf était foireuse.

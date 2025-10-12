@@ -1,69 +1,78 @@
+from typing import Optional
+
 from slugify import slugify
 
-from utils.date import add_multiple_date_formats
 from utils.file import get_all_files_from_path, write_file
-from utils.id import add_id
 from utils.markdown import parse_markdown_file_and_convert_to_html
-from utils.slug import add_slug
+from utils.date import DateFormat
 
 
-def generate_rss_feed(links: list):
-    data = {"links": links}
-    template_name = "links/feed.xml"
-    filename = "liens/feed.xml"
+class Links:
+    def __init__(self, links: list):
+        self.links = links
 
-    write_file(data, template_name, filename, filetype="xml")
+    def write_link_list_file(self):
+        data = {"page_title": "Liens", "all_links": self.links}
+        template_name = "links/list.j2"
+        filename = "liens/index.html"
+        print("#", "-" * 70)
+        print(f"Writing link list: {filename}")
+        write_file(data=data, template_name=template_name, filename=filename)
+        print("#", "-" * 70)
 
-
-def generate_link_page(link):
-    data = {"page_title": link.get("title"), "link": link}
-    template_name = "links/single.j2"
-    filename = (
-        f"liens/{link.get('publish_date_not_condensed')}-{link.get('slug')}/index.html"
-    )
-
-    write_file(data, template_name, filename)
-
-
-def generate_link_page_list(links):
-    data = {"page_title": "Liens", "all_links": links}
-    template_name = "links/list.j2"
-    filename = "liens/index.html"
-
-    write_file(data, template_name, filename)
+    def write_rss_feed(self):
+        data = {"links": self.links}
+        template_name = "links/feed.xml"
+        filename = "liens/feed.xml"
+        print("#", "-" * 70)
+        print(f"Writing links RSS feed: {filename}")
+        write_file(data, template_name, filename, filetype="xml")
 
 
-def prepare_link_data(link_file):
-    link = parse_markdown_file_and_convert_to_html(link_file)
-    link = add_multiple_date_formats(link)
-    link = add_slug(link)
-    link = add_id(link)
+class LinkItem:
+    def __init__(
+        self,
+        file_path: str,
+    ):
+        self.file_path = file_path
+        self.title: Optional[str] = None
+        self.url: Optional[str] = None
+        self.description: Optional[str] = None
+        self.publish_date: Optional[DateFormat] = None
+        self.update_date: Optional[DateFormat] = None
+        self.slug: Optional[str] = None
+        self._process_file()
 
-    return link
+    def _process_file(self):
+        data = parse_markdown_file_and_convert_to_html(self.file_path)
+        self.title = data.get("title")
+        self.url = data.get("url")
+        self.description = data.get("description", "")
+        self.publish_date = DateFormat(date=data.get("publish_date", "now"))
+        self.slug = slugify(self.title) if self.title else None
+
+    def write_link_page(self):
+        data = {"page_title": self.title, "link": self}
+        template_name = "links/single.j2"
+        assert self.publish_date is not None
+        filename = f"liens/{self.publish_date.short}-{self.slug}/index.html"
+        print(f"Writing link page: {filename}")
+        write_file(data=data, template_name=template_name, filename=filename)
 
 
-def build_links(links_path):
-    links = []
-
+def process_links_data(links_path, website_data=None):
     print("#", "-" * 80)
     print("Generating links ...")
+
+    links_list = []
 
     link_files = get_all_files_from_path(links_path)
 
     for link_file in link_files:
-        link = prepare_link_data(link_file)
-        generate_link_page(link)
+        link = LinkItem(link_file)
+        link.write_link_page()
+        links_list.append(link)
 
-        links.append(link)
-
-        print(
-            f"Generating link: {link['publish_date_not_condensed']}-{link['slug']} ..."
-        )
-
-    print("Generating RSS feed ...")
-    generate_rss_feed(links)
-
-    print("Generating link list ...")
-    generate_link_page_list(links)
-
-    return links
+    links = Links(links_list)
+    links.write_rss_feed()
+    links.write_link_list_file()

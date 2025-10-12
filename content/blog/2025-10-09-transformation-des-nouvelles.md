@@ -3,7 +3,7 @@ title: "Transformation: Des nouvelles"
 summary: Ca fait longtemps, il s'est rien passé !!
 publish_date: 2025-10-09T12:30:00+01:00
 update_date: 2025-10-09T12:30:00+01:00
-category: "Sport & Transformation"
+category: "Sport"
 tags: ["sport", "transformation", "fitness", "santé", "bien-être", "perte de poids", "muscu", "musculation", "poids", "bodyfat", "sommeil", "pas", "étapes", "objectifs", "résultats", "suivi", "mois"]
 ---
 

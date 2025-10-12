@@ -1,4 +1,4 @@
-module_id: 2
-module_name: Python
-module_logo: logo.png
-module_description: Python est un langage de programmation polyvalent et facile à apprendre, utilisé pour le développement web, l'analyse de données, l'intelligence artificielle et bien plus encore.
+id: 2
+name: Python
+logo: logo.png
+description: Python est un langage de programmation polyvalent et facile à apprendre, utilisé pour le développement web, l'analyse de données, l'intelligence artificielle et bien plus encore.

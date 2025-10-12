@@ -32,19 +32,19 @@
 
     <p>Les derniers liens partagés sont accessibles également via <a href="/liens/feed.xml">RSS</a>.</p>
 
-    {% for year, links in all_links | reverse | groupby("publish_date_year") | reverse %}
+    {% for year, links in all_links | reverse | groupby("publish_date.year") | reverse %}
 
         <h2 class="link-list-header">{{ year }}</h2>
 
-        {% for month, links_by_month in links | groupby("publish_date_month") | reverse %}
+        {% for month, links_by_month in links | groupby("publish_date.month") | reverse %}
 
         <h3 class="link-list-header">{{ month[3:] }}</h3>
 
             <ul class="link-list">
-                {% for link in links_by_month | sort(attribute='publish_date', reverse=True) %}
+                {% for link in links_by_month | sort(attribute='publish_date.original', reverse=True) %}
                     <li>
-                        <span>{{ link.publish_date_long }}</span>
-                        <a href="/liens/{{ link.publish_date_not_condensed }}-{{ link.slug }}">{{ link.title }}</a>
+                        <span>{{ link.publish_date.long }}</span>
+                        <a href="/liens/{{ link.publish_date.short }}-{{ link.slug }}">{{ link.title }}</a>
                     </li>
                 {% endfor %}
             </ul>

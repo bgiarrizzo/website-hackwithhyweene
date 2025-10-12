@@ -1,6 +1,6 @@
-module_id: 5
-module_name: Docker
-module_logo: logo.png
-module_description: "Docker est une plateforme qui permet de créer, déployer et gérer des applications dans des conteneurs légers et portables. Il facilite la gestion des dépendances et l'isolation des environnements."
+id: 5
+name: Docker
+logo: logo.png
+description: "Docker est une plateforme qui permet de créer, déployer et gérer des applications dans des conteneurs légers et portables. Il facilite la gestion des dépendances et l'isolation des environnements."
 
 disabled: true

@@ -1,37 +1,35 @@
 import shutil
 
 from config import settings
-from generators.blog import build_blog
-from generators.robotstxt import add_robotstxt_to_build
+from generators.blog import process_blog_data
+from generators.pages import process_pages_data
+from generators.links import process_links_data
+from generators.learn import process_learn_data
+from generators.resume import process_resume_data
+from generators.robotstxt import build_robots_txt
 from generators.homepage import build_homepage
-from generators.learn import build_learning
-from generators.links import build_links
-from generators.pages import build_pages
-from generators.resume import build_resume
 from utils.collectors import collect_media_files, collect_static_files
 
 if __name__ == "__main__":
-    print("#", "-" * 80)
+    print("#", "-" * 100)
     print("Cleaning build folder ...")
     shutil.rmtree(settings.BUILD_PATH, ignore_errors=True)
 
     collect_media_files()
     collect_static_files()
 
-    print("#", "-" * 70)
+    print("#", "-" * 90)
     print("Building site ...")
 
-    blog = build_blog(settings.BLOG_PATH)
-    links = build_links(settings.LINKS_PATH)
-    pages = build_pages(settings.PAGES_PATH)
-    resume = build_resume(settings.RESUME_PATH)
+    process_blog_data(settings.BLOG_PATH)
+    process_pages_data(settings.PAGES_PATH)
+    process_links_data(settings.LINKS_PATH)
+    process_learn_data(settings.LEARN_PATH)
+    process_resume_data(settings.RESUME_PATH)
 
-    build_learning(settings.LEARN_PATH)
+    build_homepage()
+    build_robots_txt(settings.BASE_URL)
 
-    build_homepage(blog, links)
-
-    add_robotstxt_to_build(settings.BASE_URL)
-
-    print("#", "-" * 70)
+    print("#", "-" * 90)
     print("Build completed successfully!")
-    print("#", "-" * 80)
+    print("#", "-" * 100)

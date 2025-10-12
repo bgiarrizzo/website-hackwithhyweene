@@ -37,9 +37,13 @@ Je publie également des liens, vous pouvez également vous abonner à mon [flux
 
 On peut me retrouver sur IRC, sous le pseudo `Hyweene`, sur les serveurs de :
 
-- [Libera.chat](https://libera.chat/) : 
+- [Libera.chat](https://libera.chat/) :
+    - #HackWithHyweene : mon canal perso
     - #debian-fr, #linux-fr
     - #python-fr, #swift-lang, #fastapi, #latex
     - #kubernetes, #docker, #terraform, #ansible
 - [Geeknode.org](https://www.geeknode.org/) : 
     - #geeknode, #ffdn, #autoheb, #geekfault, #troll
+- [EpikNet](https://www.epiknet.org/) :
+    - #Linux, #debian
+    - #sciences, #Informatique, #programmation
