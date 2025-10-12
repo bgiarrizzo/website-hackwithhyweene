@@ -81,7 +81,7 @@ class ResumeEducation:
         self.id = data.get("id")
         self.title = data.get("title")
         self.school = data.get("school")
-        self.localtion = data.get("location", "")
+        self.location = data.get("location", "")
         self.start_date = data.get("start_date")
         self.end_date = data.get("end_date")
         self.formation_type = data.get("formation_type")
