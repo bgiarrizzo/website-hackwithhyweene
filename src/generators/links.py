@@ -3,7 +3,6 @@ from typing import Optional
 from slugify import slugify
 
 from utils.file import get_all_files_from_path, write_file
-from utils.id import add_id
 from utils.markdown import parse_markdown_file_and_convert_to_html
 from utils.date import DateFormat
 
