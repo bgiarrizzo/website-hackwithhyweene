@@ -5,6 +5,8 @@ company: BNP Paribas - Corporate Institutional Banking (CIB)
 company_url: https://group.bnpparibas/decouvrez-le-groupe/nos-metiers-et-expertises/corporate-institutional-banking
 start_date: 2020/09
 end_date: 2022/06
+location: Paris, 75, France
+work_mode: Full Remote
 contract_type: Contrat Freelance
 tags:
   [

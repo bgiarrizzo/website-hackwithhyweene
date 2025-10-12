@@ -4,6 +4,8 @@ title: Chef de Projet
 company: Decathlon
 company_url: http://www.decathlon.com/
 start_date: 2015/11
+location: Lille, 59, France
+work_mode: Sur site
 end_date: 2017/04
 contract_type: Apprentissage
 ---

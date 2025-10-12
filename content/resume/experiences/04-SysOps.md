@@ -5,6 +5,8 @@ company: Altima Hosting
 company_url: http://www.altima-hosting.com/
 start_date: 2017/04
 end_date: 2017/07
+work_mode: Sur site
+location: Roubaix, 59, France
 contract_type: CDI
 tags:
   [

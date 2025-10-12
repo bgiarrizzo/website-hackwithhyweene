@@ -14,7 +14,6 @@ id: 0
 ### Mes techno préférées
 
 - Python (avec FastAPI)
-- JS (avec React & Next.js)
 - Swift (avec SwiftUI)
 - Kubernetes
 - Terraform

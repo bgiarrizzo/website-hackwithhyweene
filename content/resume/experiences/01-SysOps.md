@@ -3,6 +3,8 @@ id: 01
 title: SysOps
 company: Mairie de Denain
 company_url: http://www.ville-denain.fr/
+location: Denain, 59, France
+work_mode: Sur site
 start_date: 2013/09
 end_date: 2014/08
 contract_type: Apprentissage

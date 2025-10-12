@@ -5,6 +5,8 @@ company: Motoblouz
 company_url: http://www.motoblouz.com/
 start_date: 2017/09
 end_date: 2019/11
+work_mode: Sur site
+location: Carvin, 62, France
 contract_type: CDI
 tags:
   [

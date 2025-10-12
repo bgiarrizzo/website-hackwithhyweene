@@ -43,7 +43,7 @@
         {% for experience in resume.experiences|reverse %}
             <section>
                 <h3>{{ experience.company }}</h3>
-                <p>{{ experience.title }} - ({{ experience.contract_type }}) : {{ experience.start_date }} -> {{ experience.end_date }}</p>
+                <p>{{ experience.title }} - ({{ experience.contract_type }}, {{ experience.work_mode }}) : {{ experience.start_date }} -> {{ experience.end_date }}</p>
 
                 {{ experience.body }}
 
@@ -62,7 +62,7 @@
         {% for education in resume.educations|reverse %}
             <section>
                 <h3>{{ education.title }}</h3>
-                <p>{{ education.school }} - {{ education.formation_type }} : {{ education.start_date }} -> {{ education.end_date }} ( {{ education.status }} )</p>
+                <p>{{ education.school }}, {{ education.location }} - {{ education.formation_type }} : {{ education.start_date }} -> {{ education.end_date }} ( {{ education.status }} )</p>
 
                 {{ education.body }}
 

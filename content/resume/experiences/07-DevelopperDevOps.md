@@ -5,6 +5,8 @@ company: Adeo Services (Leroy Merlin)
 company_url: https://www.adeo.com/en/
 start_date: 2022/06
 end_date: 2025/01
+location: Ronchin, 59, France
+work_mode: Hybride (2 jours sur site)
 contract_type: Contrat Freelance
 tags:
   [

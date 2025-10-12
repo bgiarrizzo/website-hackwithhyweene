@@ -3,6 +3,8 @@ id: 02
 title: SysSecOps
 company: Motoblouz
 company_url: http://www.motoblouz.com/
+location: Carvin, 62, France
+work_mode: Sur site
 start_date: 2015/01
 end_date: 2015/08
 contract_type: Stage

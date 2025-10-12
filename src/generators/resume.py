@@ -64,6 +64,7 @@ class ResumeExperience:
         self.company = data.get("company")
         self.company_url = data.get("company_url")
         self.location = data.get("location", "")
+        self.work_mode = data.get("work_mode", "")
         self.start_date = data.get("start_date")
         self.end_date = data.get("end_date")
         self.contract_type = data.get("contract_type")

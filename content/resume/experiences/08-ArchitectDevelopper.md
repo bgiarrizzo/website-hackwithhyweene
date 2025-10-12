@@ -5,6 +5,8 @@ company: Erwin Labs
 company_url: https://www.erwin-labs.com/
 start_date: 2024/10
 end_date: Aujourd'hui
+location: Paris, 75, France
+work_mode: Full Remote
 contract_type: Contrat Freelance
 tags:
   [
