@@ -19,7 +19,11 @@
       <title>{{ link.title }}</title>
       <link rel="alternate" type="text/html" href="{{ site.url }}/liens/{{ link.slug }}/"></link>
       <published>{{ link.publish_date.rfc3339 }}</published>
-      <updated>{{ link.update_date.rfc3339 }}</updated>
+      {% if link.update_date and link.update_date != link.publish_date %}
+        <updated>{{ link.update_date.rfc3339 }}</updated>
+      {% else %}
+        <updated>{{ link.publish_date.rfc3339 }}</updated>
+      {% endif %}
 
     {% if link.summary %}
         <summary>

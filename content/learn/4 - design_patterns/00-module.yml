@@ -1,6 +1,6 @@
-module_id: 4
-module_name: Design Patterns
-module_logo: logo.png
-module_description: "Les Design Patterns sont des solutions éprouvées à des problèmes courants dans le développement logiciel. Ils aident à structurer le code de manière efficace et maintenable."
+id: 4
+name: Design Patterns
+logo: logo.png
+description: "Les Design Patterns sont des solutions éprouvées à des problèmes courants dans le développement logiciel. Ils aident à structurer le code de manière efficace et maintenable."
 
 disabled: true

@@ -3,7 +3,7 @@ title: "Transformation: Semaine 1"
 summary: Première semaine de transformation, et je suis mitigé.
 publish_date: 2024-11-03T20:00:00+01:00
 update_date: 2024-11-03T20:00:00+01:00
-category: "Sport & Transformation"
+category: "Sport"
 tags: [santé, bien-être, alimentation, sport, mental, confiance en soi, stress, craquage, surpoids, transformation, poids, bodyfat, sommeil, pas, tracking, organisation, discipline, rigueur, motivation]
 ---
 

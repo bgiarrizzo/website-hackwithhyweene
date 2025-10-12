@@ -10,13 +10,41 @@ from utils.date import DateFormat
 class Blog:
     def __init__(self, posts: list):
         self.posts = posts
+        self.categories = self._get_categories()
+
+    def _get_categories(self):
+        categories = {}
+        for post in self.posts:
+            if post.category and post.category.slug not in categories:
+                categories[post.category.slug] = post.category
+        return list(categories.values())
 
     def write_post_list_file(self):
-        data = {"page_title": "Blog", "all_posts": self.posts}
+        data = {
+            "page_title": "Blog",
+            "all_posts": self.posts,
+            "categories": self.categories,
+        }
         template_name = "blog/list.j2"
         filename = "blog/index.html"
         print("#", "-" * 70)
         print(f"Writing blog post list: {filename}")
+        write_file(data=data, template_name=template_name, filename=filename)
+
+    def write_post_list_by_category_file(self, category):
+        filtered_posts = [
+            post for post in self.posts if post.category.slug == category.slug
+        ]
+        data = {
+            "page_title": f"Blog - {category.name}",
+            "all_posts": filtered_posts,
+            "category": category,
+            "categories": self.categories,
+        }
+        template_name = "blog/list.j2"
+        filename = f"blog/category/{category.slug}/index.html"
+        print("#", "-" * 70)
+        print(f"Writing blog post list by category: {filename}")
         write_file(data=data, template_name=template_name, filename=filename)
 
     def write_rss_feed(self):
@@ -45,6 +73,7 @@ class BlogPost:
         self.tags: list = []
         self.title: Optional[str] = None
         self.update_date: Optional[DateFormat] = None
+        self.prism_needed: bool = False
         self._process_file()
 
     def _process_file(self):
@@ -58,7 +87,13 @@ class BlogPost:
         self.slug = slugify(self.title) if self.title else None
         self.summary = data.get("summary", "")
         self.tags = data.get("tags", [])
-        self.update_date = DateFormat(date=data.get("update_date", "now"))
+        update_date = (
+            data.get("update_date")
+            if data.get("update_date")
+            else data.get("publish_date", "now")
+        )
+        self.update_date = DateFormat(date=update_date)
+        self.prism_needed = data.get("prism_needed", False)
 
     def write_post_file(self):
         data = {"page_title": f"{self.title} - Blog", "post": self}
@@ -79,15 +114,19 @@ def process_blog_data(blog_path):
     print("#", "-" * 80)
     print("Processing blog data ...")
 
-    blog_posts = []
+    posts = []
 
     post_files = get_all_files_from_path(blog_path)
 
     for post_file in post_files:
         post = BlogPost(file_path=post_file)
         post.write_post_file()
-        blog_posts.append(post)
+        posts.append(post)
 
-    blog = Blog(posts=blog_posts)
-    blog.write_post_list_file()
+    blog = Blog(posts=posts)
     blog.write_rss_feed()
+
+    blog.write_post_list_file()
+
+    for category in blog.categories:
+        blog.write_post_list_by_category_file(category=category)

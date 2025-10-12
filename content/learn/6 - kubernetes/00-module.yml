@@ -1,6 +1,6 @@
-module_id: 6
-module_name: Kubernetes
-module_logo: logo.png
-module_description: "Kubernetes est une solution d'orchestration de conteneurs. C'est une plateforme qui permet de déployer une application, de la mettre à l'échelle, ainsi que de faciliter le maintien en condition opérationelle des applications hebergées dans des conteneurs."
+id: 6
+name: Kubernetes
+logo: logo.png
+description: "Kubernetes est une solution d'orchestration de conteneurs. C'est une plateforme qui permet de déployer une application, de la mettre à l'échelle, ainsi que de faciliter le maintien en condition opérationelle des applications hebergées dans des conteneurs."
 
 disabled: true

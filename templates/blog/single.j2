@@ -48,5 +48,7 @@
 
     {{ post.body }}
 
-    <script src="/static/js/prism.js"></script>
+    {% if post.prism_needed %}
+        <script src="/static/js/prism.js"></script>
+    {% endif %}
 {% endblock content %}

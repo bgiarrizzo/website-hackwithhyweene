@@ -19,6 +19,7 @@ class Links:
         print("#", "-" * 70)
         print(f"Writing link list: {filename}")
         write_file(data=data, template_name=template_name, filename=filename)
+        print("#", "-" * 70)
 
     def write_rss_feed(self):
         data = {"links": self.links}
@@ -39,6 +40,7 @@ class LinkItem:
         self.url: Optional[str] = None
         self.description: Optional[str] = None
         self.publish_date: Optional[DateFormat] = None
+        self.update_date: Optional[DateFormat] = None
         self.slug: Optional[str] = None
         self._process_file()
 

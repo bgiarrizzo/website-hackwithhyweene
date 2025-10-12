@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 class DateFormat:
     def __init__(self, date):
@@ -23,3 +23,20 @@ class DateFormat:
         self.long = self.original.strftime("%d %B %Y")
         self.year = self.original.year
         self.month = self.original.strftime("%m-%B")
+
+        self.tzinfo = self.original.tzinfo
+
+    def replace(self, tzinfo):
+        new_date = self.original.replace(tzinfo=tzinfo)
+        return DateFormat(new_date)
+
+
+def date_older_than_six_months(date):
+    if not date:
+        return False
+
+    if date.tzinfo is None:
+        date = date.replace(tzinfo=None)
+
+    now = datetime.now(tz=date.tzinfo)
+    return date.original < now - timedelta(days=180)

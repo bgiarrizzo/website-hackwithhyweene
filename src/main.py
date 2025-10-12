@@ -4,6 +4,7 @@ from config import settings
 from generators.blog import process_blog_data
 from generators.pages import process_pages_data
 from generators.links import process_links_data
+from generators.learn import process_learn_data
 from generators.robotstxt import build_robots_txt
 from generators.homepage import build_homepage
 from utils.collectors import collect_media_files, collect_static_files
@@ -22,8 +23,8 @@ if __name__ == "__main__":
     process_blog_data(settings.BLOG_PATH)
     process_pages_data(settings.PAGES_PATH)
     process_links_data(settings.LINKS_PATH)
+    process_learn_data(settings.LEARN_PATH)
     # process_resume_data(settings.RESUME_PATH)
-    # process_learn_data(settings.LEARN_PATH)
 
     build_homepage()
     build_robots_txt(settings.BASE_URL)
