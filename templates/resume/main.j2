@@ -23,7 +23,19 @@
 {% block content %}
     <img class="cover" src="/media/images/pages/resume/cover.png" alt="resume cover image">
 
-    {{ resume.head }}
+    {% if resume.head %}
+        {{ resume.head.body }}
+    {% endif %}
+
+    {% if resume.skills %}
+        <h2>Compétences</h2>
+
+        {% for skill in resume.skills %}
+            <section>
+                {{ skill.body }}
+            </section>
+        {% endfor %}
+    {% endif %}
 
     {% if resume.experiences %}
         <h2>Experiences Professionnelles</h2>

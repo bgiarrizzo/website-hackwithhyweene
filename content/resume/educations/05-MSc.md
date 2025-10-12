@@ -1,7 +1,8 @@
 ---
 id: 05
 title: Master Of Science
-school: Supinfo (Valenciennes, 59)
+school: Supinfo
+location: Valenciennes, 59, France
 start_date: 2015
 end_date: 2017
 formation_type: Alternance

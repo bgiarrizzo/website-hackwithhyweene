@@ -1,7 +1,8 @@
 ---
 id: 01
 title: BacPro - Workstation, Networks, Installation & Maintenance
-school: Lycée Fernand Léger (Coudekerque-Branche, 59)
+school: Lycée Fernand Léger
+location: Coudekerque-Branche, 59, France
 start_date: 2007
 end_date: 2009
 formation_type: Formation initiale

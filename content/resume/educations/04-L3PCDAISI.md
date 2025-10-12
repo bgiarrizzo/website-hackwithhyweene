@@ -1,7 +1,8 @@
 ---
 id: 04
 title: Licence Pro - CyberDefense
-school: IUT Valenciennes (Maubeuge, 59)
+school: IUT Valenciennes
+location: Maubeuge, 59, France
 start_date: 2014
 end_date: 2015
 formation_type: Formation initiale

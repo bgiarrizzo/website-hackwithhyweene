@@ -1,7 +1,8 @@
 ---
 id: 02
 title: BTS - IT Services
-school: Lycée Henri Wallon (Valenciennes, 59)
+school: Lycée Henri Wallon
+location: Valenciennes, 59, France
 start_date: 2011
 end_date: 2013
 formation_type: Formation initiale
