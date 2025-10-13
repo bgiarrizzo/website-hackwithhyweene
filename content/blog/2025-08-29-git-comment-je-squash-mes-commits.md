@@ -24,7 +24,13 @@ Dans cette méthode, j'ai juste une liste de commits à squasher (3, 4, ou plus)
 D'abord je liste mes commits, avec git log par exemple :
 
 ```bash
-git log --oneline
+bgiarrizzo@cloe:~/code/test$ git log --oneline --graph --decorate
+* a8cc58e (HEAD -> main) fix4
+* a0a31be fix3
+* b6a85bc fix2
+* e8da457 fix
+* 27447d0 Ma feature
+* aa9cc7b Premier Commit
 ```
 
 Cette commande m'affiche la liste de mes commits, leur id et leur message.
@@ -33,6 +39,74 @@ On peut aussi utiliser tig, qui fait la même chose, mais avec une interface gra
 
 ```bash
 tig
+```
+
+Je copie l'id du commit de base, dans mon cas 27447d0.
+Ensuite, je lance la commande git rebase -i avec l'id du commit de base :
+
+```bash
+git rebase -i 27447d0
+```
+
+Vim s'ouvre avec la liste des commits à squasher :
+
+```bash
+pick 27447d0 Ma feature
+pick e8da457 fix
+pick b6a85bc fix2
+pick a0a31be fix3
+pick a8cc58e fix4
+
+[...]
+```
+
+Je remplace pick par squash pour les commits que je veux fusionner :
+
+```bash
+pick 27447d0 Ma feature
+s e8da457 fix
+s b6a85bc fix2
+s a0a31be fix3
+s a8cc58e fix4
+```
+
+Je sauvegarde et ferme vim, un autre vim s'ouvre pour me demander le message du commit final.
+
+Comme je n'aime pas les long messages de commit, je garde juste le message du premier commit, et je supprime (ou commente) les autres lignes.
+
+```bash
+# This is a combination of 5 commits.
+# This is the 1st commit message:
+
+Ma feature
+
+# This is the commit message #2:
+
+fix
+
+# This is the commit message #3:
+
+fix2
+
+# This is the commit message #4:
+
+fix3
+
+# This is the commit message #5:
+
+fix4
+
+[...]
+```
+
+Je sauvegarde et ferme vim, git termine le rebase.
+
+Pour terminer, je check l'historique avec git log pour vérifier que tout est ok :
+
+```bash
+bgiarrizzo@cloe:~/code/test$ git log --oneline --graph --decorate
+* 450009b (HEAD -> main) Ma feature
+* aa9cc7b Premier Commit
 ```
 
 ### Méthode Complète
