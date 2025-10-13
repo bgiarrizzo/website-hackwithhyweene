@@ -97,9 +97,10 @@ class LearnModulePage:
 
 def process_learn_data(learning_path):
     modules = []
-    modules_pages = []
 
     for module_file in get_all_files_from_path(learning_path, extension=".yml"):
+        modules_pages = []
+
         module = LearnModule(module_file)
 
         if module.disabled:
