@@ -2,7 +2,7 @@
 id: 2
 title: Fondamentaux de Git
 summary: ...
-
+tags: git, système de contrôle de version, contrôle, version, versionning, vcs, git basics, git commands, branches, merging, remote repositories
 publish_date: 2024-11-08T09:30:00+01:00
 update_date: 2024-11-08T09:30:00+01:00
 ---
