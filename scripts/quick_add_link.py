@@ -86,7 +86,6 @@ def git_commit_and_push(filename: str):
 
     subprocess.run(["git", "add", f"content/links/{filename}"])
     subprocess.run(["git", "commit", "-m", f"add new link - {filename}"])
-    subprocess.run(["git", "push"])
 
 
 if __name__ == "__main__":

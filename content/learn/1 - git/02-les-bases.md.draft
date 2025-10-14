@@ -317,14 +317,20 @@ git switch nom-de-la-branche
 
 Celle ci est plus claire que `git checkout` pour le changement de branche, mais `git checkout` reste nécessaire pour d'autres opérations comme la restauration de fichiers.
 
-<!-- ### Fusion de branches (git merge)
+### Fusion de branches (git merge)
+
+
 
 #### Rebase VS Merge
 
 ### Résolution des conflits de base
+
+
 ### Stratégies de branchement (feature branches, release branches)
+
+
 
 ## Remote repositories
 
 ### Ajout et gestion des remotes (git remote)
-### Travail avec des repositories distants (GitHub, GitLab, Bitbucket) -->
+### Travail avec des repositories distants (GitHub, GitLab, Bitbucket)

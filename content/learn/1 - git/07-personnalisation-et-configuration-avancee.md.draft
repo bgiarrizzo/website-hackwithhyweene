@@ -9,6 +9,6 @@ update_date: 2024-11-08T09:30:00+01:00
 
 ...
 
-- Configuration globale et locale de Git
-- Alias Git pour la productivité
-- Personnalisation de l'environnement Git
+## Configuration globale et locale de Git
+## Alias Git pour la productivité
+## Personnalisation de l'environnement Git

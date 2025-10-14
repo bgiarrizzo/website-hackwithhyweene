@@ -1,0 +1,11 @@
+---
+title: "NGinx : Se débarasser de l'erreur http2 sur un configtest"
+summary: Comment résoudre l'erreur http2 sur un configtest NGinx.
+publish_date: 2025-10-15T11:55:00+01:00
+update_date: 2025-10-15T11:30:00+01:00
+category: "Pense bête"
+tags: [nginx, http2, error, config]
+prism_needed: true
+---
+
+https://memo-linux.com/corriger-le-message-nginx-warn-the-listen-http2-directive-is-deprecated/
