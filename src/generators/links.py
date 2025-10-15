@@ -40,6 +40,7 @@ class LinkItem:
         self.description: Optional[str] = None
         self.publish_date: Optional[DateFormat] = None
         self.update_date: Optional[DateFormat] = None
+        self.body: Optional[str] = None
         self.slug: Optional[str] = None
         self._process_file()
 
@@ -47,6 +48,7 @@ class LinkItem:
         data = parse_markdown_file_and_convert_to_html(self.file_path)
         self.title = data.get("title")
         self.url = data.get("url")
+        self.body = data.get("body", "")
         self.description = data.get("description", "")
         self.publish_date = DateFormat(date=data.get("publish_date", "now"))
         self.slug = slugify(self.title) if self.title else None
