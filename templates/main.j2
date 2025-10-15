@@ -52,8 +52,8 @@
 
         <style type="text/css">
             body {
-                background-color: #fdf6e3;
-                color: #444;
+                background-color: {{ site.colors.body_background_color }};
+                color: {{ site.colors.body_font_color }};
                 display: flex;
                 flex-direction: column;
                 font-family: 'Monospace', monospace, 'Courier New', Courier, 'Lucida Console', 'Lucida Sans Typewriter', 'Lucida Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', monospace;
@@ -70,9 +70,9 @@
             h1 { line-height: 1.2; }
             h2, h3, h4 { line-height: 1.2; border-bottom: 1px solid; padding-bottom: 0.25em; }
             p { hyphens: auto; text-align: justify; }
-            pre, blockquote, .code { background: #f5ead6; font-size: 1em; padding: 1.5em; overflow: scroll; border-radius: 0.5em; }
+            pre, blockquote, .code { background: {{ site.colors.blockquote_background_color }}; font-size: 1em; padding: 1.5em; overflow: scroll; border-radius: 0.5em; }
             ul, ol { list-style-type: circle; }
-            a { color: #169; text-decoration: none; padding: 0.5em 0; font-weight: bold; }
+            a { color: {{ site.colors.body_link_color }}; text-decoration: none; padding: 0.5em 0; font-weight: bold; }
             a:hover { text-decoration: underline; }
 
             blockquote p { margin: 0; }
@@ -90,14 +90,14 @@
             nav { display: flex; align-items: center; justify-content: space-between; flex-direction: row; text-align: center; font-weight: bold; font-size: 1em; margin-bottom: 1.5em; }
             nav ul { display: flex; align-items: center; justify-content: center; flex-direction: row; list-style-type: none; margin: 0; padding: 0; }
             nav ul li { margin: 0 1em; }
-            nav ul li a { color: #169; text-decoration: none; padding: 0.5em 0; }
+            nav ul li a { color: {{ site.colors.body_link_color }}; text-decoration: none; padding: 0.5em 0; }
             nav ul li a:hover { text-decoration: underline; }
             nav h1 { margin: 0; }
 
             @media (max-width: 992px) {
                 nav { position: relative; flex-direction: row; justify-content: space-between; align-items: center; }
-                .menu-icon { display: block; color: #169; }
-                nav ul { position: absolute; top: 100%; left: 60%; right: 0; background-color: #fdf6e3; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index: 1000; width: 40%; display: none; flex-direction: column; padding-left: 0; margin-top: 0.5em; border: 2px solid #aaa; border-radius: 0.5em; }
+                .menu-icon { display: block; color: {{ site.colors.body_link_color }}; }
+                nav ul { position: absolute; top: 100%; left: 60%; right: 0; background-color: {{ site.colors.body_background_color }}; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index: 1000; width: 40%; display: none; flex-direction: column; padding-left: 0; margin-top: 0.5em; border: 2px solid #aaa; border-radius: 0.5em; }
                 #menu-toggle:checked + .menu-icon + ul { display: flex; }
                 nav ul li { border-bottom: 1px solid #aaa; width: 100%; }
                 nav ul li:last-child { border-bottom: 0; }
@@ -111,11 +111,11 @@
             main { flex: 1 0 auto; text-align: justify; position: relative; max-width: 100%; }
             main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
 
-            .alert-outdated-resource { background-color: #f8d7da; color: #721c24; padding: 0.5em 1em; border-radius: 0.5em; margin-bottom: 1.5em; border: 1px solid #f5c6cb; }
+            .alert-outdated-resource { background-color: {{ site.colors.outdated_resource_background_color }}; color: {{ site.colors.outdated_resource_font_color }}; padding: 0.5em 1em; border-radius: 0.5em; margin-bottom: 1.5em; border: 1px solid {{ site.colors.outdated_resource_background_color }}; }
 
             .cover { display: block; width: 100%; border-radius: 0.5em; }
 
-            code { background: #f8cca0; margin-right: 0.4em; border-radius: 0.5em; padding: 0.3em 0.5em; font-size: 0.9em; }
+            code { background: {{ site.colors.code_background_color }}; margin-right: 0.4em; border-radius: 0.5em; padding: 0.3em 0.5em; font-size: 0.9em; }
 
             figure { width: 65%; display: block; margin-left: auto; margin-right: auto;}
             figure img { width: 100%; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; border-radius: 0.5em; }

@@ -36,6 +36,7 @@ def prepare_template_data(datalist):
             "keywords": settings.KEYWORDS,
             "github_link": settings.GITHUB_LINK,
             "linkedin_link": settings.LINKEDIN_LINK,
+            "colors": settings.COLORS,
         }
     }
 
