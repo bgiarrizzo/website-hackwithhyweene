@@ -15,5 +15,4 @@ Disney+ également, qui est passé en 5 ans de 6.99 à 15.99€.
 
 Et ils n'avaient pas de pression de rentabilité parce que les investisseurs avaient banqué des milliards et voulaient faire leur exit.
 
-
 Comme le dealer qui t'offre ta première dose gratos, maintenant que t'es dépendant de ton IA, tu vas banquer, parce que OpenAI va devoir vitevite rentrer dans ses frais et rentabiliser.
