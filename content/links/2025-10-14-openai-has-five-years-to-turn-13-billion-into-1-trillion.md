@@ -6,13 +6,15 @@ update_date: 2025-10-15T10:54:24+01:00
 tags: ['openai', 'rentabilité', 'augmentations']
 ---
 
+> Raking in billions though it may be, OpenAI has also committed to spending over $1 trillion over the next decade (yes, trillion).
+
 Ca sent les augmentations de subscriptions sur 5 ans ça ...
 
-Parce que faut pas rêver, OpenAI va bien devoir trouver ces thunes quelque part.
+Parce que faut pas rêver, si ils veulent dépenser 1 000 milliards (oui oui) de dollars en 5 ans, OpenAI va bien devoir trouver ces thunes quelque part, parce que c'est pas les investisseurs qui vont banquer 200 milliards par an, surtout si le bénéfice net n'est que de 10 milliards l'année dernière.
 
-On se souvient de l'arrivée de Netflix, avec son offre à 9.99€ par mois, qui sont devenus 14.99€.
+On se souvient de l'arrivée de Netflix, avec son offre 4k + 4 écrans, à 11.99€ par mois, qui sont devenus 21.99€.
 Disney+ également, qui est passé en 5 ans de 6.99 à 15.99€.
 
-Et ils n'avaient pas de pression de rentabilité parce que les investisseurs avaient banqué des milliards et voulaient faire leur exit.
+Et ils avaient juste des actionnaires pour faire pression, pas des investisseurs qui voulaient faire leur exit rapido ...
 
-Comme le dealer qui t'offre ta première dose gratos, maintenant que t'es dépendant de ton IA, tu vas banquer, parce que OpenAI va devoir vitevite rentrer dans ses frais et rentabiliser.
+Comme le dealer qui t'offre ta première dose gratos, maintenant que t'es dépendant de ton IA, tu vas banquer, parce que OpenAI va devoir vite vite rentrer dans ses frais.
