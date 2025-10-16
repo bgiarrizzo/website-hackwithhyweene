@@ -13,11 +13,11 @@
 {% endblock linkCanonical %}
 
 {% block metaDescription %}
-    <meta name="description" content="Bruno Giarrizzo, Freelance, développeur Python & Go et DevOps">
+    <meta name="description" content="{{ site.name }}, {{ site.description }}">
 {% endblock metaDescription %}
 
 {% block meta_keywords %}
-    <meta name="keywords" content="{{ site.keywords | join(', ') }}, CV, Curriculum Vitae, Resume, Python, FastAPI, Golang, Swift, Kubernetes, Terraform, Helm">
+    <meta name="keywords" content="{{ site.keywords | join(', ') }}, CV, Curriculum Vitae, Resume, Compétences, Experiences, Education">
 {% endblock meta_keywords %}
 
 {% block content %}

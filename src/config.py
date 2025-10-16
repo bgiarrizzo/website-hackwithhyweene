@@ -7,7 +7,6 @@ class Settings(BaseSettings):
     """ """
 
     SHORT_URL: str = "hack-with-hyweene.com"
-    CNAME: str = f"{SHORT_URL}"
     BASE_URL: str = f"https://www.{SHORT_URL}"
 
     BUILD_PATH: str = "build"
@@ -28,7 +27,7 @@ class Settings(BaseSettings):
     GITHUB_LINK: str = "https://github.com/bgiarrizzo/"
     LINKEDIN_LINK: str = "https://www.linkedin.com/in/bruno-giarrizzo/"
 
-    DESCRIPTION: str = "Developpeur, DevOps, Linuxien, Ethical Hacker"
+    DESCRIPTION: str = "Linuxien, Developpeur Python, Swift et DevOps"
     KEYWORDS: list = [
         "Bruno",
         "Giarrizzo",
@@ -38,6 +37,13 @@ class Settings(BaseSettings):
         "Linuxien",
         "DevOps",
         "Ethical Hacker",
+        "Python",
+        "Swift",
+        "FastAPI",
+        "Kubernetes",
+        "Terraform",
+        "Helm",
+        "Docker",
     ]
     LANGUAGE: str = "fr-FR"
 
