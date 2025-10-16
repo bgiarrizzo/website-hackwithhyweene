@@ -18,3 +18,5 @@ Disney+ également, qui est passé en 5 ans de 6.99 à 15.99€.
 Et ils avaient juste des actionnaires pour faire pression, pas des investisseurs qui voulaient faire leur exit rapido ...
 
 Comme le dealer qui t'offre ta première dose gratos, maintenant que t'es dépendant de ton IA, tu vas banquer, parce que OpenAI va devoir vite vite rentrer dans ses frais.
+
+(Et si tu te dis que tu t'en fous, parce que toi tu utilises la version gratuite, bah ca va se merdifier à vitesse grand V pour toi, pour te pousser à cracher au bassinet aussi :-D)
