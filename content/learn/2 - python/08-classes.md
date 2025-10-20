@@ -6,8 +6,7 @@ tags: python, fonctions, avancées, fonction avancées, programmation
 
 prism_needed: true
 
-publish_date: 2025-09-16T15:30:00+01:00
-update_date: 2025-09-16T15:30:00+01:00
+publish_date: 2025-10-20T18:00:00+01:00
 ---
 
 ## Définition d’une classe
@@ -186,8 +185,159 @@ print(Math.addition(1,2)) # Affiche 3
 
 ## Encapsulation : attributs privés et protégés
 
+L'encapsulation est un concept en POO qui vise à cacher les détails internes d'une classe pour proteger ses données et contrôler l'accès.
+
+Ca permet d'éviter des erreurs et faciliter la maintenance du code.
+
+### Pourquoi encapsuler ?
+
+Admettons qu'une classe est une boite. Les attributs sont dedans et seules quelques méthodes permettent d'y acceder. Via l'encapsulation, on peut :
+
+- Protéger les données d'une utilisation incorrecte.
+- Controler la modification par des méthodes spécifiques.
+- Faciliter la maintenance en limitant les points d'accès aux données.
+
+### Niveaux de visibilité
+
+- Public : accessible de partout.
+
+Exemple : 
+
+```python
+class Personne:
+    def __init__(self, nom):
+        self.nom = nom  # Attribut public
+    
+personne = Personne("Hyweene")
+print(personne.nom)  # Accès direct à l'attribut public
+```
+
+- Protégé : préfixé par un underscore `_`, indique que l'attribut ou la méthode est destiné à être utilisé uniquement à l'intérieur de la classe et de ses sous-classes.
+
+```python
+class Personne:
+    def __init__(self, nom):
+        self._nom = nom  # Attribut protégé
+    
+personne = Personne("Hyweene")
+print(personne._nom)  # Accès direct à l'attribut protégé (possible mais déconseillé)
+```
+
+- Privé : préfixé par deux underscores `__`, indique que l'attribut ou la méthode est destiné à être utilisé uniquement à l'intérieur de la classe elle-même.
+
+```python
+class Personne:
+    def __init__(self, nom):
+        self.__nom = nom  # Attribut privé  
+    
+personne = Personne("Hyweene")
+print(personne.__nom) 
+
+...
+
+AttributeError: 'Personne' object has no attribute '__nom'
+```
+
+On obtient une erreur car l'attribut est privé.
+
+On peut corriger en ajoutant une méthode publique pour accéder à l'attribut privé :
+
+```python
+class Personne:
+    def __init__(self, nom):
+        self.__nom = nom  # Attribut privé
+
+    def get_nom(self):
+        return self.__nom  # Méthode publique pour accéder à l'attribut privé  
+
+personne = Personne("Hyweene")
+print(personne.get_nom())  # Affiche "Hyweene"
+```
+
 ## Héritage simple et surcharge de méthodes
+
+L'héritage est un concept fondamental en POO qui permet de créer une nouvelle classe (classe dérivée ou sous-classe) basée sur une classe existante. 
+
+La sous-classe hérite des attributs et des méthodes de la super-classe. On peut facilement réutiliser ce code, et créer des hiérarchies de classes.
+
+### Exemple d'héritage simple
+
+```python
+class Animal:
+    def parler(self):
+        return "L'animal fait un bruit."
+
+class Chien(Animal):
+    def parler(self):
+        return "Le chien aboie."
+
+class Chat(Animal):
+    def parler(self):
+        return "Le chat miaule."
+```
+
+Ici, j'ai une classe mère : `Animal` avec une méthode `parler()`.
+
+Quand je créé les classes filles `Chien` et `Chat`, elles héritent de la méthode `parler()`.
+Je peux les surcharger pour qu'elles aient un comportement spécifique.
+
+```python
+animal = Animal()
+chien = Chien()
+chat = Chat()
+
+print(animal.parler())  # Affiche "L'animal fait un bruit."
+print(chien.parler())   # Affiche "Le chien aboie."
+print(chat.parler())    # Affiche "Le chat miaule."
+```
 
 ## Introduction à la composition
 
+La composition permet de construire des objets complexes en combinant des objets plus simples.
+
+```python
+class Moteur:
+    def demarrer(self):
+        return "Moteur démarré."
+    
+class Voiture:
+    def __init__(self):
+        self.moteur = Moteur()
+    
+    def demarrer_voiture(self):
+        return self.moteur.demarrer()
+```
+
+Ici, j'ai une classe `Moteur` avec une méthode `demarrer()`.
+
+La classe `Voiture` contient une instance de `Moteur` comme attribut.
+
+```python
+voiture = Voiture()
+print(voiture.demarrer_voiture())  # Affiche "Moteur démarré."
+```
+
 ## Représentation d’objets (str, repr)
+
+Pour personnaliser la représentation en chaîne de caractères d'un objet, on peut définir les méthodes spéciales `__str__` et `__repr__` dans une classe.
+
+```python
+class Personne:
+    def __init__(self, nom, age):
+        self.nom = nom
+        self.age = age
+
+    def __str__(self):
+        return f"{self.nom}, {self.age} ans"
+
+    def __repr__(self):
+        return f"Personne(nom='{self.nom}', age={self.age})"
+```
+
+Ici, j'ai défini une classe `Personne` avec un constructeur, puis j'ai ajouté les méthodes `__str__` et `__repr__`.
+
+```python
+personne = Personne("Hyweene", 36)
+print(str(personne))  # Affiche "Hyweene, 36 ans"
+print(repr(personne)) # Affiche "Personne(nom='Hyweene', age=36)"
+```

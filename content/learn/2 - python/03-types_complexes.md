@@ -7,7 +7,6 @@ tags: python, types, types complexes, listes, tuples, ensembles, dictionnaires
 prism_needed: true
 
 publish_date: 2025-07-28T09:30:00+01:00
-update_date: 2025-07-28T09:30:00+01:00
 ---
 
 ## Listes, Sets, Tuples et Dictionnaires

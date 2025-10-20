@@ -7,7 +7,6 @@ tags: swift, swift playground, xcode, fonctions, paramètres, valeurs de retour,
 prism_needed: true
 
 publish_date: 2024-11-21T22:45:00+01:00
-update_date: 2024-11-21T22:45:00+01:00
 ---
 
 ## Ecrire des fonctions

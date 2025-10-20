@@ -7,7 +7,6 @@ tags: python, boucles, for, while, structures de contrôle
 prism_needed: true
 
 publish_date: 2025-07-28T18:30:00+01:00
-update_date: 2025-07-28T18:30:00+01:00
 ---
 
 ## Boucles For

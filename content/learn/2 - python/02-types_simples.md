@@ -7,7 +7,6 @@ tags: python, types, types simples, variables, constantes, entiers, floats, doub
 prism_needed: true
 
 publish_date: 2025-07-28T09:30:00+01:00
-update_date: 2025-07-28T09:30:00+01:00
 ---
 
 ## Variables

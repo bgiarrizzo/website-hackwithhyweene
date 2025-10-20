@@ -4,7 +4,6 @@ title: Intro
 summary: Voici ma compilation de notes d'apprentissage de Python. Ce module est conçu pour les débutants qui souhaitent apprendre les bases du langage Python, utilisé pour le développement d'applications web, d'analyse de données, d'intelligence artificielle et bien plus encore.
 
 publish_date: 2025-07-25T09:30:00+01:00
-update_date: 2025-07-25T09:30:00+01:00
 ---
 
 Python est un langage de programmation polyvalent et puissant, largement utilisé dans divers domaines tels que le développement web, l'analyse de données, l'intelligence artificielle et bien plus encore. Sa syntaxe simple et claire en fait un excellent choix pour les débutants, tout en offrant des fonctionnalités avancées pour les développeurs expérimentés.

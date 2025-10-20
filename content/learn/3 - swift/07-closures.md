@@ -7,7 +7,6 @@ tags: swift, swift playground, xcode, closures
 prism_needed: true
 
 publish_date: 2024-05-21T12:45:00+01:00
-update_date: 2024-05-21T12:45:00+01:00
 ---
 
 Une closure est un bloc de code qui peut être stocké dans une variable, et executé à l'appel de cette variable.
