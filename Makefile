@@ -53,3 +53,12 @@ html5validator: venv install_dev build ## Validate HTML files in the build direc
 
 generate_docstrings: venv install_dev ## Generate modules/classes/functions docstrings
 	. $(VENV_BIN)/activate; pyment -f false -o numpydoc -w src
+
+top_50_pages: ## Show top 50 requested pages from access.log
+	sudo zcat -f -- /var/log/nginx/hack-with-hyweene.com/access.* | grep -v 404| awk '{ print $$7 }' | sort | uniq -c | grep -Ev "static|xml|html|400|stats|php|wp-|wordpr|\.env|\.git|\.txt" | sort -nr | head -n 50
+
+top_50_requesters: ## Show top 50 IP addresses from access.log
+	sudo zcat -f -- /var/log/nginx/hack-with-hyweene.com/access.* | grep -v 404| awk '{ print $$1 }' | sort | uniq -c | sort -nr | head -n 50
+
+top_15_referrers: ## Show top 50 referrers from access.log
+	sudo zcat -f -- /var/log/nginx/hack-with-hyweene.com/access.* | grep -v 404| awk '{ print $$11 }' | sort | uniq -c | grep -v "-" | sort -nr | head -n 15
