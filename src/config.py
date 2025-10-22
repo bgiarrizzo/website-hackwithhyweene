@@ -2,6 +2,37 @@ import os
 
 from pydantic_settings import BaseSettings
 
+gruvbox = {
+    "bg_h": "#1d2021",
+    "bg": "#282828",
+    "bg_s": "#32302f",
+    "bg1": "#3c3836",
+    "bg2": "#504945",
+    "bg3": "#665c54",
+    "bg4": "#7c6f64",
+    "fg": "#fbf1c7",
+    "fg1": "#ebdbb2",
+    "fg2": "#d5c4a1",
+    "fg3": "#bdae93",
+    "fg4": "#a89984",
+    "aqua-dim": "#689d6a",
+    "aqua": "#8ec07c",
+    "blue-dim": "#458588",
+    "blue": "#83a598",
+    "gray-dim": "#a89984",
+    "gray": "#928374",
+    "green-dim": "#98971a",
+    "green": "#b8bb26",
+    "orange-dim": "#d65d0e",
+    "orange": "#fe8019",
+    "purple-dim": "#b16286",
+    "purple": "#d3869b",
+    "red-dim": "#cc2412",
+    "red": "#fb4934",
+    "yellow-dim": "#d79921",
+    "yellow": "#fabd2f",
+}
+
 
 class Settings(BaseSettings):
     """ """
@@ -48,15 +79,21 @@ class Settings(BaseSettings):
     LANGUAGE: str = "fr-FR"
 
     COLORS: dict = {
-        "blockquote_background_color": "#f5ead6",
-        "blockquote_font_color": "#444444",
-        "body_background_color": "#fdf6e3",
-        "body_font_color": "#444444",
-        "body_link_color": "#169",
-        "code_background_color": "#f8cca0",
-        "code_font_color": "#444444",
-        "outdated_resource_background_color": "#f8d7da",
-        "outdated_resource_font_color": "#721c24",
+        "blockquote_background_color": gruvbox.get("bg1"),
+        "blockquote_font_color": gruvbox.get("fg1"),
+        "body_background_color": gruvbox.get("bg_h"),
+        "body_font_color": gruvbox.get("fg1"),
+        "body_link_color": gruvbox.get("blue-dim"),
+        "code_background_color": gruvbox.get("bg2"),
+        "code_font_color": gruvbox.get("fg1"),
+        "nav_link_color": gruvbox.get("green-dim"),
+        "nav_title_font_color": gruvbox.get("red-dim"),
+        "outdated_resource_background_color": gruvbox.get("bg1"),
+        "outdated_resource_font_color": gruvbox.get("red"),
+        "heading_h1_font_color": gruvbox.get("orange"),
+        "heading_h2_font_color": gruvbox.get("yellow-dim"),
+        "heading_h3_font_color": gruvbox.get("green-dim"),
+        "heading_h4_font_color": gruvbox.get("blue-dim"),
     }
 
     def get_working_directory(self):
