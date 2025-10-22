@@ -1,6 +1,7 @@
-from typing import List
+from typing import Set, List
 from utils.file import get_all_files_from_path, write_file
 from utils.markdown import parse_markdown_file_and_convert_to_html
+from config import settings
 
 
 class Resume:
@@ -16,9 +17,12 @@ class Resume:
         self.educations = educations
         self.skills = skills
 
-        self.tags: List[str] = [
-            tag for experience in experiences for tag in experience.tags
-        ]
+        self.tags: Set[str] = {
+            tag.lower()
+            for experience in experiences
+            for tag in experience.tags
+            if tag.lower() not in [keyword.lower() for keyword in settings.KEYWORDS]
+        }
 
     def write_resume_file(self):
         data = {

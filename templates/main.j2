@@ -47,7 +47,7 @@
         {% endblock prismCss %}
 
         {% block meta_keywords %}
-            <meta name="keywords" content="{{ site.keywords | join(', ') }}">
+            <meta name="keywords" content="{{ site.keywords | join(', ') | lower }}">
         {% endblock meta_keywords %}
 
         <style type="text/css">
@@ -88,13 +88,14 @@
 
             header { padding-top: 1em; position: relative; }
             nav { display: flex; align-items: center; justify-content: space-between; flex-direction: row; text-align: center; font-weight: bold; font-size: 1em; margin-bottom: 1.5em; }
+            nav h1 a { color: {{ site.colors.nav_title_font_color }}; text-decoration: none; }
             nav ul { display: flex; align-items: center; justify-content: center; flex-direction: row; list-style-type: none; margin: 0; padding: 0; }
             nav ul li { margin: 0 1em; }
-            nav ul li a { color: {{ site.colors.body_link_color }}; text-decoration: none; padding: 0.5em 0; }
+            nav ul li a { color: {{ site.colors.nav_link_color }}; text-decoration: none; padding: 0.5em 0; }
             nav ul li a:hover { text-decoration: underline; }
             nav h1 { margin: 0; }
 
-            @media (max-width: 992px) {
+            @media (max-width: 998px) {
                 nav { position: relative; flex-direction: row; justify-content: space-between; align-items: center; }
                 .menu-icon { display: block; color: {{ site.colors.body_link_color }}; }
                 nav ul { position: absolute; top: 100%; left: 60%; right: 0; background-color: {{ site.colors.body_background_color }}; box-shadow: 0 4px 8px rgba(0,0,0,0.1); z-index: 1000; width: 40%; display: none; flex-direction: column; padding-left: 0; margin-top: 0.5em; border: 2px solid #aaa; border-radius: 0.5em; }
@@ -109,6 +110,12 @@
             /* ------------ */
 
             main { flex: 1 0 auto; text-align: justify; position: relative; max-width: 100%; }
+            
+            main h1 { color: {{ site.colors.heading_h1_font_color }}; }
+            main h2 { color: {{ site.colors.heading_h2_font_color }}; }
+            main h3 { color: {{ site.colors.heading_h3_font_color }}; }
+            main h4 { color: {{ site.colors.heading_h4_font_color }}; }
+
             main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
 
             .alert-outdated-resource { background-color: {{ site.colors.outdated_resource_background_color }}; color: {{ site.colors.outdated_resource_font_color }}; padding: 0.5em 1em; border-radius: 0.5em; margin-bottom: 1.5em; border: 1px solid {{ site.colors.outdated_resource_background_color }}; }

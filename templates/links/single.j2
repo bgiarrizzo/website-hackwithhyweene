@@ -13,7 +13,7 @@
 {% endblock linkCanonical %}
 
 {% block meta_keywords %}
-    <meta name="keywords" content="{{ site.keywords | join(', ') }}, Liens, {{ link.tags | join(', ')}}">
+    <meta name="keywords" content="{{ site.keywords | join(', ') | lower }}, Liens, {{ link.tags | join(', ') | lower }}">
 {% endblock meta_keywords %}
 
 {% block content %}
