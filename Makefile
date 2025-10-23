@@ -57,6 +57,12 @@ generate_docstrings: venv install_dev ## Generate modules/classes/functions docs
 top_50_pages: ## Show top 50 requested pages from access.log
 	sudo zcat -f -- /var/log/nginx/hack-with-hyweene.com/access.* | grep -v 404| awk '{ print $$7 }' | sort | uniq -c | grep -Ev "static|xml|html|400|stats|php|wp-|wordpr|\.env|\.git|\.txt" | sort -nr | head -n 50
 
+top_10_blog_posts: ## Show top 10 requested blog posts from access.log
+	sudo zcat -f -- /var/log/nginx/hack-with-hyweene.com/access.* | grep -v 404| awk '{ print $$7 }' | sort | uniq -c | grep "/blog/" | grep -Ev "static|xml|html|400|stats|php|wp-|wordpr|\.env|\.git|\.txt" | sort -nr | head -n 10
+
+top_10_links: ## Show top 10 requested links from access.log
+	sudo zcat -f -- /var/log/nginx/hack-with-hyweene.com/access.* | grep -v 404| awk '{ print $$7 }' | sort | uniq -c | grep "/liens/" | grep -Ev "static|xml|html|400|stats|php|wp-|wordpr|\.env|\.git|\.txt" | sort -nr | head -n 10
+
 top_50_requesters: ## Show top 50 IP addresses from access.log
 	sudo zcat -f -- /var/log/nginx/hack-with-hyweene.com/access.* | grep -v 404| awk '{ print $$1 }' | sort | uniq -c | sort -nr | head -n 50
 
