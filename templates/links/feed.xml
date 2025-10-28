@@ -15,9 +15,9 @@
   
   {% for link in links %}
     <entry>
-    <id>{{ site.url }}/liens/{{ link.slug }}/</id>
+    <id>{{ site.url }}/liens/{{ link.publish_date.short }}-{{ link.slug }}/</id>
       <title>{{ link.title }}</title>
-      <link rel="alternate" type="text/html" href="{{ site.url }}/liens/{{ link.slug }}/"></link>
+      <link rel="alternate" type="text/html" href="{{ site.url }}/liens/{{ link.publish_date.short }}-{{ link.slug }}/"></link>
       <published>{{ link.publish_date.rfc3339 }}</published>
       {% if link.update_date and link.update_date != link.publish_date %}
         <updated>{{ link.update_date.rfc3339 }}</updated>

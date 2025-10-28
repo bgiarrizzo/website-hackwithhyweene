@@ -16,9 +16,9 @@
 
   {% for post in posts %}
     <entry>
-      <id>{{ site.url }}/blog/{{ post.slug }}/</id>
+      <id>{{ site.url }}/blog/{{ post.publish_date.short }}-{{ post.slug }}/</id>
       <title>{{ post.title }}</title>
-      <link rel="alternate" type="text/html" href="{{ site.url }}/blog/{{ post.slug }}/"></link>
+      <link rel="alternate" type="text/html" href="{{ site.url }}/blog/{{ post.publish_date.short }}-{{ post.slug }}/"></link>
       <published>{{ post.publish_date.rfc3339 }}</published>
       <updated>{{ post.update_date.rfc3339 }}</updated>
 
