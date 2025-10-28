@@ -17,7 +17,7 @@ Dans la même série :
 
 ---
 
-[La semaine dernière](/blog/transformation-semaine-1/), j'avais dit être mitigé par mon parcours.
+[La semaine dernière](/blog/2024-11-02-transformation-semaine-1/), j'avais dit être mitigé par mon parcours.
 
 J'avais eu un gros problème à me mettre en train, j'avais aussi eu de gros soucis pour dormir correctement (la moyenne de `7h33` de sommeil sur la semaine, due a des nuits de `5h30` a fait plutôt mal), et un jour ferié mal placé m'ont donné du mal.
 

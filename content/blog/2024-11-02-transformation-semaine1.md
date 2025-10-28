@@ -17,7 +17,7 @@ Dans la même série :
 
 ---
 
-[Dans l'épisode précédent](/blog/j-ai-decide-que-c-etait-assez/), j'ai démarré une petite transformation, parce que ras le pif de mon bide, de mes seins et de mon double menton :)
+[Dans l'épisode précédent](/blog/2024-10-27-j-ai-decide-que-c-etait-assez/), j'ai démarré une petite transformation, parce que ras le pif de mon bide, de mes seins et de mon double menton :)
 
 Donc, aujourd'hui, première semaine de transformation, et je suis mitigé.
 
