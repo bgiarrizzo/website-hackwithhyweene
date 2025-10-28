@@ -73,6 +73,8 @@ class BlogPost:
         self.summary: Optional[str] = None
         self.tags: list = []
         self.title: Optional[str] = None
+        self.path: Optional[str] = None
+        self.reading_time: Optional[str] = None
         self.update_date: Optional[DateFormat] = None
         self.prism_needed: bool = False
         self.cover: Optional[str] = None
@@ -98,12 +100,13 @@ class BlogPost:
         self.prism_needed = data.get("prism_needed", False)
         self.cover = data.get("cover", None)
         self.reading_time = readtime.of_text(self.body).text
+        self.path = f"{self.publish_date.short}-{self.slug}"
 
     def write_post_file(self):
         data = {"page_title": f"{self.title} - Blog", "post": self}
         template_name = "blog/single.j2"
         assert self.publish_date is not None
-        filename = f"blog/{self.publish_date.short}-{self.slug}/index.html"
+        filename = f"blog/{self.path}/index.html"
         print(f"Writing blog post: {filename}")
         write_file(data=data, template_name=template_name, filename=filename)
 

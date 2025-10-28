@@ -37,6 +37,7 @@ class LinkItem:
         self.file_path = file_path
         self.title: Optional[str] = None
         self.url: Optional[str] = None
+        self.path: Optional[str] = None
         self.description: Optional[str] = None
         self.publish_date: Optional[DateFormat] = None
         self.update_date: Optional[DateFormat] = None
@@ -52,12 +53,13 @@ class LinkItem:
         self.description = data.get("description", "")
         self.publish_date = DateFormat(date=data.get("publish_date", "now"))
         self.slug = slugify(self.title) if self.title else None
+        self.path = f"{self.publish_date.short}-{self.slug}"
 
     def write_link_page(self):
         data = {"page_title": self.title, "link": self}
         template_name = "links/single.j2"
         assert self.publish_date is not None
-        filename = f"liens/{self.publish_date.short}-{self.slug}/index.html"
+        filename = f"liens/{self.path}/index.html"
         print(f"Writing link page: {filename}")
         write_file(data=data, template_name=template_name, filename=filename)
 
