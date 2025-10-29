@@ -151,7 +151,7 @@
         <header>
             <nav>
                 <h1>
-                    <a href="/">{{ site.name }}</a>
+                    <a href="{{ site.url }}/">{{ site.name }}</a>
                 </h1>
 
                 <input type="checkbox" id="menu-toggle" />
@@ -162,25 +162,25 @@
 
                 <ul>
                     <li>
-                        <a href="/blog/">/blog/</a>
+                        <a href="{{ site.url }}/blog/">/blog/</a>
                     </li>
                     {#<li>
-                        <a href="/microblog/">/microblog/</a>
+                        <a href="{{ site.url }}/microblog/">/microblog/</a>
                     </li>#}
                     <li>
-                        <a href="/liens/">/liens/</a>
+                        <a href="{{ site.url }}/liens/">/liens/</a>
                     </li>
                     <li>
-                        <a href="/projets/">/projets/</a>
+                        <a href="{{ site.url }}/projets/">/projets/</a>
                     </li>
                     <li>
-                        <a href="/apprendre/">/apprendre/</a>
+                        <a href="{{ site.url }}/apprendre/">/apprendre/</a>
                     </li>
                     <li>
-                        <a href="/cv/">/cv/</a>
+                        <a href="{{ site.url }}/cv/">/cv/</a>
                     </li>
                     <li>
-                        <a href="/a-propos/">/a-propos/</a>
+                        <a href="{{ site.url }}/a-propos/">/a-propos/</a>
                     </li>
                 </ul>
             </nav>

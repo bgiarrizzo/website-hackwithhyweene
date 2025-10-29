@@ -45,7 +45,7 @@
     </p>
 
     {% if post.cover %}
-        <img class="cover" src="/media/images/blog/covers/{{ post.cover }}" alt="{{ post.title }}">
+        <img class="cover" src="{{ site.url }}/media/images/blog/covers/{{ post.cover }}" alt="{{ post.title }}">
     {% else %}
         <hr />
     {% endif %}
@@ -53,6 +53,6 @@
     {{ post.body }}
 
     {% if post.prism_needed %}
-        <script src="/static/js/prism.js"></script>
+        <script src="{{ site.url }}/static/js/prism.js"></script>
     {% endif %}
 {% endblock content %}

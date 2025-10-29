@@ -22,7 +22,7 @@
 
 {% block content %}
     {% if page.cover %}
-        <img class="cover" src="/media/images/pages/{{ page.cover }}" alt="page cover image">
+        <img class="cover" src="{{ site.url }}/media/images/pages/{{ page.cover }}" alt="page cover image">
     {% endif %}
 
     {% if page.title %}

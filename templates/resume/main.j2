@@ -21,7 +21,7 @@
 {% endblock meta_keywords %}
 
 {% block content %}
-    <img class="cover" src="/media/images/pages/resume/cover.png" alt="resume cover image">
+    <img class="cover" src="{{ site.url }}/media/images/pages/resume/cover.png" alt="resume cover image">
 
     {% if resume.head %}
         {{ resume.head.body }}
