@@ -23,6 +23,16 @@ class Learn:
         print(f"Writing modules list : {filename}")
         write_file(data=data, template_name=template_name, filename=filename)
 
+    def write_sitemap_xml_file(self):
+        data = {
+            "modules": self.modules,
+        }
+        template_name = "learn/sitemap.xml"
+        filename = "apprendre/sitemap.xml"
+        print("#", "-" * 70)
+        print(f"Writing sitemap XML : {filename}")
+        write_file(data=data, template_name=template_name, filename=filename)
+
 
 class LearnModule:
     def __init__(self, file_path: str):
@@ -121,3 +131,4 @@ def process_learn_data(learning_path):
 
     learn = Learn(modules)
     learn.write_modules_list_file()
+    learn.write_sitemap_xml_file()

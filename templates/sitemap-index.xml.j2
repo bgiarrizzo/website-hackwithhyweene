@@ -1,0 +1,9 @@
+<sitemapindex>
+    {% for sitemap in sitemaps %}
+        <sitemap>
+            <loc>
+                {{ site.url }}/{{ sitemap }}/sitemap.xml
+            </loc>
+        </sitemap>
+    {% endfor %}
+</sitemapindex>

@@ -1,0 +1,32 @@
+<urlset>
+    <url>
+        <loc>
+            {{ site.url }}/apprendre/index.html
+        </loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    {% for module in modules %}
+        <url>
+            <loc>
+                {{ site.url }}/apprendre/{{ module.slug }}/index.html
+            </loc>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+        </url>
+        {% for page in module.pages %}
+        <url>
+            <loc>
+                {{ site.url }}/apprendre/{{ module.slug }}/{{ page.slug }}/index.html
+            </loc>
+            <changefreq>weekly</changefreq>
+            <priority>1.0</priority>
+            {% if page.update_date %}
+                <lastmod>if {{ page.update_date.short }}</lastmod>
+            {% else %}
+                <lastmod>if {{ page.publish_date.short }}</lastmod>
+            {% endif %}
+        </url>
+        {% endfor %}
+    {% endfor %}
+</urlset>

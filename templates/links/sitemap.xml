@@ -1,0 +1,16 @@
+<urlset>
+    {% for link in links %}
+    <url>
+        <loc>
+            {{ site.url }}/liens/{{ link.path }}/index.html
+        </loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        {% if link.update_date %}
+            <lastmod>{{ link.update_date.short }}</lastmod>
+        {% else %}
+            <lastmod>{{ link.publish_date.short }}</lastmod>
+        {% endif %}
+    </url>
+    {% endfor %}
+</urlset>

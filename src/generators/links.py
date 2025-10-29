@@ -28,6 +28,14 @@ class Links:
         print(f"Writing links RSS feed: {filename}")
         write_file(data, template_name, filename, filetype="xml")
 
+    def write_sitemap(self):
+        data = {"links": self.links}
+        template_name = "links/sitemap.xml"
+        filename = "liens/sitemap.xml"
+        print("#", "-" * 70)
+        print(f"Writing links sitemap: {filename}")
+        write_file(data, template_name, filename, filetype="xml")
+
 
 class LinkItem:
     def __init__(
@@ -79,4 +87,5 @@ def process_links_data(links_path, website_data=None):
 
     links = Links(links_list)
     links.write_rss_feed()
+    links.write_sitemap()
     links.write_link_list_file()

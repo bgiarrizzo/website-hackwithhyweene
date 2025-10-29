@@ -1,0 +1,16 @@
+<urlset>
+    {% for post in posts %}
+    <url>
+        <loc>
+            {{ site.url }}/blog/{{ post.path }}/index.html
+        </loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        {% if post.update_date %}
+            <lastmod>{{ post.update_date.short }}</lastmod>
+        {% else %}
+            <lastmod>{{ post.publish_date.short }}</lastmod>
+        {% endif %}
+    </url>
+    {% endfor %}
+</urlset>

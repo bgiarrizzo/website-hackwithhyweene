@@ -58,6 +58,14 @@ class Blog:
             data=data, template_name=template_name, filename=filename, filetype="xml"
         )
 
+    def write_sitemap(self):
+        data = {"posts": self.posts}
+        template_name = "blog/sitemap.xml"
+        filename = "blog/sitemap.xml"
+        print("#", "-" * 70)
+        print(f"Writing blog sitemap: {filename}")
+        write_file(data, template_name, filename, filetype="xml")
+
 
 class BlogPost:
     def __init__(
@@ -66,7 +74,7 @@ class BlogPost:
     ):
         self.file_path = file_path
         self.body: Optional[str] = None
-        self.category: Optional['BlogPostCategory'] = None
+        self.category: Optional["BlogPostCategory"] = None
         self.content: Optional[str] = None
         self.publish_date: Optional[DateFormat] = None
         self.slug: Optional[str] = None
@@ -132,6 +140,7 @@ def process_blog_data(blog_path):
 
     blog = Blog(posts=posts)
     blog.write_rss_feed()
+    blog.write_sitemap()
 
     blog.write_post_list_file()
 
