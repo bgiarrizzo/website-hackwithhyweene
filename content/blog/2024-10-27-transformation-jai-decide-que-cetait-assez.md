@@ -9,8 +9,8 @@ tags: [santé, sport, surpoids, confiance en soi]
 
 Dans la même série :
 
-- Episode 1 : [J'ai décidé que c'était assez](/blog/2024-10-27-j-ai-decide-que-c-etait-assez/)
-- Episode 2 : [Transformation - Semaine 1](/blog/2024-11-02-transformation-semaine-1/)
+- Episode 1 : [J'ai décidé que c'était assez](/blog/2024-10-27-transformation-j-ai-decide-que-c-etait-assez/)
+- Episode 2 : [Transformation - Semaine 1](/blog/2024-11-03-transformation-semaine-1/)
 - Episode 3 : [Transformation - Semaine 2](/blog/2024-11-11-transformation-semaine-2/)
 - Episode 4 : [Transformation - Bilan de fin d'année](/blog/2024-12-31-transformation-bilan-de-fin-d-annee/)
 - Episode 5 : [Transformation - Des nouvelles](/blog/2025-10-09-transformation-des-nouvelles/)
