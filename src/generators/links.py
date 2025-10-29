@@ -72,7 +72,7 @@ class LinkItem:
         write_file(data=data, template_name=template_name, filename=filename)
 
 
-def process_links_data(links_path, website_data=None):
+def process_links_data(links_path):
     print("#", "-" * 80)
     print("Generating links ...")
 
