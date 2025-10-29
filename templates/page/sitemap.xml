@@ -1,0 +1,20 @@
+<urlset>
+    <url>
+        <loc>
+            {{ site.url }}/cv/index.html
+        </loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    {% for page in pages %}
+        {% if page.slug != "home" %}
+            <url>
+                <loc>
+                    {{ site.url }}/{{ page.slug }}/index.html
+                </loc>
+                <changefreq>weekly</changefreq>
+                <priority>1.0</priority>
+            </url>
+        {% endif %}
+    {% endfor %}
+</urlset>

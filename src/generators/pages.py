@@ -7,6 +7,19 @@ from utils.file import get_all_files_from_path, write_file
 from utils.markdown import parse_markdown_file_and_convert_to_html
 
 
+class Pages:
+    def __init__(self, pages: list):
+        self.pages = pages
+
+    def write_sitemap(self):
+        data = {"pages": self.pages}
+        template_name = "page/sitemap.xml"
+        filename = "sitemap-pages.xml"
+        print("#", "-" * 70)
+        print(f"Writing pages sitemap: {filename}")
+        write_file(data, template_name, filename, filetype="xml")
+
+
 class Page:
     def __init__(
         self,
@@ -43,13 +56,26 @@ class Page:
 
         write_file(data=data, template_name=template_name, filename=filename)
 
+    def write_sitemap_xml(self):
+        data = {"page": self}
+        template_name = "page/sitemap.xml"
+        filename = f"sitemap-pages.xml"
+        print(f"Writing page sitemap: {filename}")
+        write_file(data, template_name, filename, filetype="xml")
 
-def process_pages_data(pages_path, website_data=None):
+
+def process_pages_data(pages_path):
     print("#", "-" * 80)
     print("Generating pages ...")
+
+    pages_list = []
 
     page_files = get_all_files_from_path(pages_path)
 
     for page_file in page_files:
         page = Page(file_path=page_file)
         page.write_page()
+        pages_list.append(page)
+
+    pages = Pages(pages_list)
+    pages.write_sitemap()
