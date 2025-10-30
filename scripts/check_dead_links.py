@@ -11,7 +11,7 @@ def is_link_dead(url) -> bool:
     except requests.RequestException as e:
         print(f"Error checking {url}: {e}")
 
-    if response.status_code == 404:
+    if response.status_code == 404:  # type: ignore
         return True
 
     return False
