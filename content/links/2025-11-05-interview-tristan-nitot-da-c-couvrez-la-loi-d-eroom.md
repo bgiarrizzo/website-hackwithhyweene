@@ -1,5 +1,5 @@
 ---
-title: "Interview Tristan Nitot, dÃ©couvrez la loi d'erooM"
+title: "Interview Tristan Nitot, découvrez la loi d'erooM"
 url: "https://www.lewebvert.fr/blog/2024-06-20-interview-tristan-nitot/"
 publish_date: 2025-11-05T12:31:13+01:00
 update_date: 2025-11-05T12:31:13+01:00

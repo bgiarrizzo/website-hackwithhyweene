@@ -1,8 +1,5 @@
 ---
-title: "
-  The Real Danger of AI-Assisted Coding | Tarek Ziadé
-  
-"
+title: "The Real Danger of AI-Assisted Coding | Tarek Ziadé"
 url: "https://blog.ziade.org/2025/10/11/danger-of-ai-coding/"
 publish_date: 2025-11-05T12:15:19+01:00
 update_date: 2025-11-05T12:15:19+01:00
