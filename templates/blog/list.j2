@@ -20,6 +20,7 @@
     .blog-list span { min-width: 175px; text-align: right; }
     .blog-list-header { border-bottom: 0px; }
 
+    #blog-categories { text-align: center; margin-bottom: 0.5em; margin-top: 2em; }
     .blog-list-categories { font-weight: bold; list-style-type: none; padding: 0; margin: 0 0 2em 0; display: flex; flex-wrap: wrap; gap: 1em; justify-content: center; }
 
     @media (max-width: 768px) {
@@ -34,14 +35,14 @@
     
     <p>Les derniers articles du blog sont accessible également via <a href="/blog/feed.xml">RSS</a>.</p>
 
-    <p style="text-align: center; margin-bottom: 0.5em; margin-top: 2em;">
+    <div id="blog-categories">
         Categories : <a href="/blog/"><b><i>Toutes</i></b></a>
         <ul class="blog-list-categories">
             {% for category in categories %}
                 <li><a href="/blog/category/{{ category.slug }}/">{{ category.name }}</a></li> {% if not loop.last %}|{% endif %}
             {% endfor %}
         </ul>
-    </p>
+    </div>
 
     {% if category %}
         <h2 class="blog-list-header">Catégorie: {{ category.name }}</h2>
