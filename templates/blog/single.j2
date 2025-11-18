@@ -43,12 +43,8 @@
             {{ tag | capitalize }}{% if not loop.last %}, {% endif %}
         {% endfor %}
     </p>
-
-    {% if post.cover %}
-        <img class="cover" src="{{ site.url }}/media/images/blog/covers/{{ post.cover }}" alt="{{ post.title }}">
-    {% else %}
-        <hr />
-    {% endif %}
+    
+    <hr />
 
     {{ post.body }}
 

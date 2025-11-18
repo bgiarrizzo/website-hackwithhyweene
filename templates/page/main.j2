@@ -21,10 +21,6 @@
 {% endblock meta_keywords %}
 
 {% block content %}
-    {% if page.cover %}
-        <img class="cover" src="{{ site.url }}/media/images/pages/{{ page.cover }}" alt="page cover image">
-    {% endif %}
-
     {% if page.title %}
         <h1>
             {{ page.title }}
