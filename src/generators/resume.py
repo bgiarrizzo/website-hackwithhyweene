@@ -1,10 +1,13 @@
 from typing import Set, List
-from utils.file import get_all_files_from_path, write_file
-from utils.markdown import parse_markdown_file_and_convert_to_html
+
 from config import settings
 
+from generators.factory import Factory
+from utils.file import get_all_files_from_path, write_file
+from utils.markdown import parse_markdown_file_and_convert_to_html
 
-class Resume:
+
+class Resume(Factory):
     def __init__(
         self,
         head: "ResumeHead",
@@ -36,7 +39,7 @@ class Resume:
         write_file(data=data, template_name=template_name, filename=filename)
 
 
-class ResumeHead:
+class ResumeHead(Factory):
     def __init__(self, file_path: str):
         self.file_path = file_path
         self._process_file(file_path)
@@ -46,7 +49,7 @@ class ResumeHead:
         self.body = data.get("body")
 
 
-class ResumeSkill:
+class ResumeSkill(Factory):
     def __init__(self, file_path: str):
         self.file_path = file_path
         self._process_file(file_path)
@@ -56,7 +59,7 @@ class ResumeSkill:
         self.body = data.get("body")
 
 
-class ResumeExperience:
+class ResumeExperience(Factory):
     def __init__(self, file_path: str):
         self.file_path = file_path
         self._process_file(file_path)
@@ -76,7 +79,7 @@ class ResumeExperience:
         self.body = data.get("body")
 
 
-class ResumeEducation:
+class ResumeEducation(Factory):
     def __init__(self, file_path: str):
         self.file_path = file_path
         self._process_file(file_path)

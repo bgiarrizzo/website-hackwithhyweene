@@ -2,13 +2,14 @@ from typing import Optional
 
 from slugify import slugify
 
+from generators.factory import Factory
 from utils.file import get_all_files_from_path, write_file
 from utils.markdown import parse_markdown_file_and_convert_to_html
 from utils.yaml import parse_yaml
 from utils.date import DateFormat
 
 
-class Learn:
+class Learn(Factory):
     def __init__(self, modules: list):
         self.modules = modules
 
@@ -34,7 +35,7 @@ class Learn:
         write_file(data=data, template_name=template_name, filename=filename)
 
 
-class LearnModule:
+class LearnModule(Factory):
     def __init__(self, file_path: str):
         self.file_path = file_path
         self.pages: list = []
@@ -62,7 +63,7 @@ class LearnModule:
         print("#", "-" * 70)
 
 
-class LearnModulePage:
+class LearnModulePage(Factory):
     def __init__(self, file_path: str, module: LearnModule):
         self.file_path = file_path
         self.module = module

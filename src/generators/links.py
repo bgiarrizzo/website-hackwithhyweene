@@ -2,12 +2,13 @@ from typing import Optional
 
 from slugify import slugify
 
+from generators.factory import Factory
 from utils.file import get_all_files_from_path, write_file
 from utils.markdown import parse_markdown_file_and_convert_to_html
 from utils.date import DateFormat
 
 
-class Links:
+class Links(Factory):
     def __init__(self, links: list):
         self.links = links
 
@@ -37,7 +38,7 @@ class Links:
         write_file(data, template_name, filename, filetype="xml")
 
 
-class LinkItem:
+class LinkItem(Factory):
     def __init__(
         self,
         file_path: str,

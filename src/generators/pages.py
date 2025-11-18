@@ -2,12 +2,12 @@ from typing import Optional
 
 from slugify import slugify
 
-from config import settings
+from generators.factory import Factory
 from utils.file import get_all_files_from_path, write_file
 from utils.markdown import parse_markdown_file_and_convert_to_html
 
 
-class Pages:
+class Pages(Factory):
     def __init__(self, pages: list):
         self.pages = pages
 
@@ -20,7 +20,7 @@ class Pages:
         write_file(data, template_name, filename, filetype="xml")
 
 
-class Page:
+class Page(Factory):
     def __init__(
         self,
         file_path: str,

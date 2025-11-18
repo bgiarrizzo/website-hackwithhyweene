@@ -3,12 +3,13 @@ from typing import Optional
 import readtime
 from slugify import slugify
 
+from generators.factory import Factory
 from utils.file import get_all_files_from_path, write_file
 from utils.markdown import parse_markdown_file_and_convert_to_html
 from utils.date import DateFormat
 
 
-class Blog:
+class Blog(Factory):
     def __init__(self, posts: list):
         self.posts = posts
         self.categories = self._get_categories()
@@ -67,7 +68,7 @@ class Blog:
         write_file(data, template_name, filename, filetype="xml")
 
 
-class BlogPost:
+class BlogPost(Factory):
     def __init__(
         self,
         file_path: str,
@@ -119,7 +120,7 @@ class BlogPost:
         write_file(data=data, template_name=template_name, filename=filename)
 
 
-class BlogPostCategory:
+class BlogPostCategory(Factory):
     def __init__(self, name: str):
         self.name = name
         self.slug = slugify(name)

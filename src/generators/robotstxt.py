@@ -1,7 +1,8 @@
+from generators.factory import Factory
 from utils.file import write_file
 
 
-class RobotsTxt:
+class RobotsTxt(Factory):
     def __init__(self, url):
         self.url = url
 

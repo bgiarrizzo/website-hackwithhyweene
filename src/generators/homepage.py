@@ -1,7 +1,8 @@
+from generators.factory import Factory
 from utils.file import write_file
 
 
-class Homepage:
+class Homepage(Factory):
     def __init__(self):
         pass
 

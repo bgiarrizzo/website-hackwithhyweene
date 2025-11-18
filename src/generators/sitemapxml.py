@@ -1,7 +1,8 @@
+from generators.factory import Factory
 from utils.file import write_file
 
 
-class SitemapXML:
+class SitemapXML(Factory):
     def __init__(self, url):
         self.url = url
 

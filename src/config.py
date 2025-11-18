@@ -86,6 +86,7 @@ class Settings(BaseSettings):
         "body_link_color": gruvbox.get("blue-dim"),
         "code_background_color": gruvbox.get("bg2"),
         "code_font_color": gruvbox.get("fg1"),
+        "code_border_color": gruvbox.get("fg4"),
         "nav_link_color": gruvbox.get("green-dim"),
         "nav_title_font_color": gruvbox.get("red-dim"),
         "outdated_resource_background_color": gruvbox.get("bg1"),
