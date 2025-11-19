@@ -49,14 +49,36 @@ class CustomMarkdown(Markdown):
         self.toc_html = None
 
     def toc_to_html_list(self):
-        html = []
         if not self._toc:
             return ""
+
+        html = []
+        stack = []
+        current_level = 0
+
+        html.append('<div class="toc-main">')
+
         for level, id, title in self._toc:
-            indent = (level - 2) * 40
-            html.append(
-                f'<div style="margin-left:{indent}px"> * <a href="#{id}">{title}</a></div>'
-            )
+            level = level - 2
+            while current_level > level:
+                html.append("</div>")
+                stack.pop()
+                current_level -= 1
+            if level > current_level:
+                html.append('<div class="toc-sub">')
+                stack.append(level)
+                current_level = level
+
+            html.append(f'<div class="toc-entry">* <a href="#{id}">{title}</a></div>')
+
+        while current_level > 0:
+            html.append("</div>")
+            current_level -= 1
+            if stack:
+                stack.pop()
+
+        html.append("</div>")
+
         return "".join(html)
 
     def convert(self, text):

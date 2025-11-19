@@ -102,7 +102,7 @@ mon_dictionnaire = {
 print(mon_dictionnaire["adresse"]["ville"])  # Paris
 ```
 
-### Différences entre les types complexes
+## Différences entre les types complexes
 
 Les listes, les sets, les tuples et les dictionnaires sont des types de données complexes en Python, chacun ayant ses propres caractéristiques :
 
