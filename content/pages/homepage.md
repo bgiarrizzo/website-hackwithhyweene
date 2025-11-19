@@ -7,7 +7,7 @@ cover: about/cover.jpg
 
 Bienvenue sur mon site ! 
 
-Je suis Bruno Giarrizzo (ou Hyweene), SysOps / Développeur / Bricoleur, passionné par l'IT depuis l'adolescence, basé à Lille, dans le Nord de la France. Avec plus de 10 ans d'expérience pro dans le domaine de l'informatique, j'ai acquis une certaine expérience en tant que SysOps et DevOps, ainsi qu'en développement Python et Golang.
+Je suis Bruno Giarrizzo (ou Hyweene), SysOps / Développeur / Bricoleur, passionné par l'IT depuis l'adolescence, basé à Lille, dans le Nord de la France. Avec plus de 10 ans d'expérience pro dans le domaine de l'informatique, j'ai acquis une certaine expérience en tant que SysOps et DevOps, ainsi qu'en développement Python.
 
 ## Mon parcours
 
@@ -21,9 +21,10 @@ Au cours de ma carrière, j'ai eu l'opportunité de travailler sur divers projet
 
 Je suis particulièrement à l'aise avec les technologies suivantes :
 
-- **Langages de programmation** : Python (avec FastAPI), Bash
+- **Langages de programmation** : Python (avec FastAPI), Bash, Golang, Swift
 - **Conteneurisation et orchestration** : Docker, Kubernetes
 - **Infrastructure as Code** : Terraform, Helm
+- **Automatisation de configuration** : Ansible
 
 ## Mes valeurs
 
