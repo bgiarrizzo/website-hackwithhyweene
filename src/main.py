@@ -8,7 +8,6 @@ from generators.learn import process_learn_data
 from generators.resume import process_resume_data
 from generators.robotstxt import build_robots_txt
 from generators.sitemapxml import build_sitemap_index_xml
-from generators.homepage import build_homepage
 from utils.collectors import collect_media_files, collect_static_files
 
 if __name__ == "__main__":
@@ -28,7 +27,6 @@ if __name__ == "__main__":
     process_learn_data(settings.LEARN_PATH)
     process_resume_data(settings.RESUME_PATH)
 
-    build_homepage()
     build_robots_txt(settings.BASE_URL)
 
     build_sitemap_index_xml(settings.BASE_URL)

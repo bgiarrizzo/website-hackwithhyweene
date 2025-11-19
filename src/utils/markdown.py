@@ -42,52 +42,31 @@ class PrismCodeProcessor:
         return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def toc_to_html_list(toc_list):
-    if not toc_list:
-        return ""
-
-    html = []
-    current_level = 1
-    stack = [1]
-
-    for level, id, title in toc_list:
-        while level < current_level:
-            html.append("</ul></li>")
-            stack.pop()
-            current_level = stack[-1]
-
-        if level > current_level:
-            html.append("<ul>")
-            stack.append(level)
-        elif level < current_level:
-            html.append("</li>")
-
-        html.append(f'<li><a href="#{id}">{title}</a>')
-        current_level = level
-
-    while len(stack) > 1:
-        html.append("</ul></li>")
-        stack.pop()
-
-    return "".join(html)
-
-
 class CustomMarkdown(Markdown):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.prism_processor = PrismCodeProcessor()
         self.toc_html = None
 
+    def toc_to_html_list(self):
+        html = []
+        if not self._toc:
+            return ""
+        for level, id, title in self._toc:
+            indent = (level - 2) * 40
+            html.append(
+                f'<div style="margin-left:{indent}px"> * <a href="#{id}">{title}</a></div>'
+            )
+        return "".join(html)
+
     def convert(self, text):
         text = self.prism_processor.process(text)
         html = super().convert(text)
-        
-        # Récupérer la table des matières
+
         if hasattr(self, '_toc'):
-            # self.toc_html = self._toc
-            self.toc_html = toc_to_html_list(self._toc)
+            self.toc_html = self.toc_to_html_list()
         else:
-            self.toc_html = ""  # Si aucune table des matières n'est générée
+            self.toc_html = ""
         
         return html
 

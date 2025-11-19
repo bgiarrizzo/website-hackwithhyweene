@@ -2,8 +2,6 @@
 id: 0
 ---
 
-## Bruno Giarrizzo
-
 - Développeur Python, Swift &amp; DevOps
 - **Localisation** : Lille, 59000, Nord, France
 

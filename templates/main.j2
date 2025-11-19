@@ -55,61 +55,40 @@
             body {
                 background-color: {{ site.colors.body_background_color }};
                 color: {{ site.colors.body_font_color }};
-                display: flex;
-                flex-direction: column;
                 font-family: 'Monospace', monospace, 'Courier New', Courier, 'Lucida Console', 'Lucida Sans Typewriter', 'Lucida Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', monospace;
                 font-size: 1rem;
-                height: 100vh;
                 line-height: 1.8;
                 margin: 0 auto;
-                max-height: 100vh;
-                max-width: 1200px;
                 padding: 0 2em;
             }
 
             h1 { line-height: 1.2; }
             h2, h3, h4 { line-height: 1.2; border-bottom: 1px solid; padding-bottom: 0.25em; }
             p { text-align: justify; }
-            pre, blockquote, .code { background: {{ site.colors.blockquote_background_color }}; font-size: 1em; padding: 1.5em; overflow: scroll; }
+            blockquote { background: {{ site.colors.blockquote_background_color }}; font-size: 1em; padding: 1.5em; }
+            blockquote p { margin: 0; }
             ul, ol { list-style-type: circle; }
             a { color: {{ site.colors.body_link_color }}; text-decoration: none; padding: 0.5em 0; font-weight: bold; }
             a:hover { text-decoration: underline; }
-
-            blockquote p { margin: 0; }
 
             /* ------------------- */
             /* Header / Navigation */
             /* ------------------- */
 
-            @media print { header { display: none; } }
-            
-            #menu-toggle { display: none; }
-            .menu-icon { display: none; font-size: 2em; padding: 0 0.2em; }
+            header { padding-top: 1em; }
+            header h1 { margin: 0; }
+            header h1 a { color: {{ site.colors.header_title_font_color }}; text-decoration: none; }
 
-            header { padding-top: 1em; position: relative; }
-            nav { display: flex; align-items: center; justify-content: space-between; flex-direction: row; text-align: center; font-weight: bold; font-size: 1em; margin-bottom: 1.5em; }
-            nav h1 a { color: {{ site.colors.nav_title_font_color }}; text-decoration: none; }
-            nav ul { display: flex; align-items: center; justify-content: center; flex-direction: row; list-style-type: none; margin: 0; padding: 0; }
-            nav ul li { margin: 0 1em; }
-            nav ul li a { color: {{ site.colors.nav_link_color }}; text-decoration: none; padding: 0.5em 0; }
-            nav ul li a:hover { text-decoration: underline; }
-            nav h1 { margin: 0; }
-
-            @media (max-width: 998px) {
-                nav { position: relative; flex-direction: row; justify-content: space-between; align-items: center; }
-                .menu-icon { display: block; color: {{ site.colors.body_link_color }}; }
-                nav ul { position: absolute; top: 100%; left: 60%; right: 0; background-color: {{ site.colors.body_background_color }}; z-index: 1000; width: 40%; display: none; flex-direction: column; padding-left: 0; margin-top: 0.5em; border: 2px solid #aaa; }
-                #menu-toggle:checked + .menu-icon + ul { display: flex; }
-                nav ul li { border-bottom: 1px solid #aaa; width: 100%; }
-                nav ul li:last-child { border-bottom: 0; }
-                nav ul li a { display: block; padding: 0.5em 1em; }
-            }
+            body nav { display: inline-block; width: 100%; margin-top: 1em; margin-bottom: 1em; border-top: 2px solid; border-bottom: 2px solid; }
+            body nav ul { list-style-type: none; padding: 0; margin: 1em 0;}
+            body nav ul li { margin-right: 1.5em; margin-bottom: 1em; float: left; }
+            body nav ul li:first-child { margin-left: 0; }
 
             /* ------------ */
             /* Main content */
             /* ------------ */
 
-            main { flex: 1 0 auto; text-align: justify; position: relative; max-width: 100%; }
+            main {  text-align: justify; }
             
             main h1 { color: {{ site.colors.heading_h1_font_color }}; }
             main h2 { color: {{ site.colors.heading_h2_font_color }}; }
@@ -118,8 +97,6 @@
 
             main hr { margin-top: 1.5em; margin-bottom: 1.5em; }
 
-            .alert-outdated-resource { background-color: {{ site.colors.outdated_resource_background_color }}; color: {{ site.colors.outdated_resource_font_color }}; padding: 0.5em 1em; margin-bottom: 1.5em; border: 1px solid {{ site.colors.outdated_resource_background_color }}; }
-
             pre { border-color: {{ site.colors.code_border_color }}; border-width: 1px; border-style: solid; }
             code { background: {{ site.colors.code_background_color }}; margin-right: 0.4em; padding: 0.3em 0.5em; font-size: 0.9em; }
 
@@ -127,14 +104,12 @@
             figure img { width: 100%; }
             figure figcaption { text-align: center; font-style: italic; }
 
-            table { width: 100%; border-collapse: collapse; margin: 1.5em 0; border: 1px solid; }
+            table { width: 100%; margin: 1.5em 0; border: 1px solid; }
             table th, table td { padding: 0.5em; border: 1px solid; text-align: left; }
 
             /* ------ */
             /* Footer */
             /* ------ */
-
-            @media print { footer { display: none; } }
 
             footer{ line-height: 4rem; width: 100%; text-align: center; line-height: 1.8em; padding-top: 1.5em; padding-bottom: 1.5em; }
             footer p { margin: 0.5em 0; text-align: center; font-size: 0.8em; line-height: 1.5em; }
@@ -148,47 +123,36 @@
 
     <body>
         <header>
-            <nav>
-                <h1>
-                    <a href="{{ site.url }}/">{{ site.name }}</a>
-                </h1>
-
-                <input name="menu-toggle" type="checkbox" id="menu-toggle" />
-
-                <label for="menu-toggle" class="menu-icon">
-                    &#9776;
-                </label>
-
-                <ul>
-                    <li>
-                        <a href="{{ site.url }}/blog/">/blog/</a>
-                    </li>
-                    {#<li>
-                        <a href="{{ site.url }}/microblog/">/microblog/</a>
-                    </li>#}
-                    <li>
-                        <a href="{{ site.url }}/liens/">/liens/</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.url }}/projets/">/projets/</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.url }}/apprendre/">/apprendre/</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.url }}/cv/">/cv/</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.url }}/a-propos/">/a-propos/</a>
-                    </li>
-                </ul>
-            </nav>
+            <h1>
+                <a href="{{ site.url }}/">{{ site.name }}</a>
+            </h1>
         </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ site.url }}/blog/">/blog/</a>
+                </li>
+                {#<li>
+                    <a href="{{ site.url }}/microblog/">/microblog/</a>
+                </li>#}
+                <li>
+                    <a href="{{ site.url }}/liens/">/liens/</a>
+                </li>
+                <li>
+                    <a href="{{ site.url }}/projets/">/projets/</a>
+                </li>
+                <li>
+                    <a href="{{ site.url }}/apprendre/">/apprendre/</a>
+                </li>
+                <li>
+                    <a href="{{ site.url }}/cv/">/cv/</a>
+                </li>
+            </ul>
+        </nav>
 
         <main>
             {% block content %}
-                <h1>Default content block</h1> 
-                <p>Default content block</p>
             {% endblock content %}
         </main>
 
@@ -212,4 +176,7 @@
             </p>
         </footer>
     </body>
+
+    {% block specific_js %}
+    {% endblock specific_js %}
 </html>

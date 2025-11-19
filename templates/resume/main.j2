@@ -20,8 +20,15 @@
     <meta name="keywords" content="{{ site.keywords | join(', ') | lower }}, cv, curriculum vitae, resume, compétences, experiences, education, {{ resume.tags | join(', ') | lower}}">
 {% endblock meta_keywords %}
 
+{% block specific_css %}
+    .cover-container { text-align: center; }
+    .cover { max-width: 100%; }
+{% endblock specific_css %}
+
 {% block content %}
-    <img class="cover" src="{{ site.url }}/media/images/pages/resume/cover.png" alt="resume cover image">
+    <div class="cover-container">
+        <img class="cover" src="{{ site.url }}/media/images/pages/resume/cover.png" alt="resume cover image">
+    </div>
 
     {% if resume.head %}
         {{ resume.head.body }}
