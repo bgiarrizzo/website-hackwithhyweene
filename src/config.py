@@ -48,6 +48,7 @@ class Settings(BaseSettings):
 
     CONTENT_PATH: str = "content"
     BLOG_PATH: str = f"{CONTENT_PATH}/blog"
+    MICROBLOG_PATH: str = f"{CONTENT_PATH}/microblog"
     LINKS_PATH: str = f"{CONTENT_PATH}/links"
     PAGES_PATH: str = f"{CONTENT_PATH}/pages"
     RESUME_PATH: str = f"{CONTENT_PATH}/resume"
@@ -95,6 +96,7 @@ class Settings(BaseSettings):
         "heading_h2_font_color": gruvbox.get("yellow-dim"),
         "heading_h3_font_color": gruvbox.get("green-dim"),
         "heading_h4_font_color": gruvbox.get("blue-dim"),
+        "microblog_post_border_color": gruvbox.get("fg3"),
     }
 
     def get_working_directory(self):

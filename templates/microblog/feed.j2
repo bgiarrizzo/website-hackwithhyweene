@@ -1,0 +1,41 @@
+{% extends "main.j2" %}
+
+{% block title %}
+    <title>Blog - {{ site.name }}</title>
+{% endblock title %}
+
+{% block metaTitle %}
+    <meta name="title" content="Blog - {{ site.name }}">
+{% endblock metaTitle %}
+
+{% block linkCanonical %}
+    <link rel="canonical" href="{{ site.url }}/blog/">
+{% endblock linkCanonical %}
+
+{% block specific_css %}
+    .microblog-post { border: 1px solid {{ site.colors.microblog_post_border_color }} ;}
+{% endblock specific_css %}
+
+{% block content %}
+    <h1>Microblog</h1>
+    
+    <p>Les derniers posts sont accessible également via <a href="/blog/feed.xml">RSS</a>.</p>
+
+    {# Group posts by year and sort them in descending order #}
+
+    {% for year, posts in all_posts | reverse | groupby("publish_date.year") | reverse %}
+
+        <section>
+            <h2 class="blog-list-header">{{ year }}</h2>
+
+            {% for post in posts | sort(attribute='publish_date.original', reverse=True) %}
+                <article class="microblog-post>
+                    {{ post.content }}
+                    ---
+                    {{ post.publish_date.long }}
+                </article>
+            {% endfor %}
+        </section>
+
+    {% endfor %}
+{% endblock content %}
