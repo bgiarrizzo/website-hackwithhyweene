@@ -2,7 +2,6 @@ import shutil
 
 from config import settings
 from generators.blog import process_blog_data
-from generators.microblog import process_microblog_data
 from generators.pages import process_pages_data
 from generators.links import process_links_data
 from generators.learn import process_learn_data
@@ -23,7 +22,6 @@ if __name__ == "__main__":
     print("Building site ...")
 
     process_blog_data(settings.BLOG_PATH)
-    process_microblog_data(settings.MICROBLOG_PATH)
     process_pages_data(settings.PAGES_PATH)
     process_links_data(settings.LINKS_PATH)
     process_learn_data(settings.LEARN_PATH)
