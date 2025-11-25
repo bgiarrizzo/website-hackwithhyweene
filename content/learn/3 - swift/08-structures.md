@@ -1,14 +1,13 @@
 ---
 id: 8
 title: Structures
-summary: Résumé
+summary: 
 
-tags: swift, swift playground, xcode, fonctions, paramètres, valeurs de retour, étiquettes de paramètres, paramètres par défaut, paramètres variables, erreurs, paramètres inout, inout, throws, try, catch, do
+tags: swift, swift playground, xcode, structures, struct
 
 prism_needed: true
 
-publish_date: 2024-11-21T22:45:00+01:00
-update_date: 2024-11-21T22:45:00+01:00
+publish_date: 2025-11-25T12:00:00+01:00
 ---
 
 Creating your own structs
