@@ -125,3 +125,11 @@ top_50_requesters: ## Show top 50 IP addresses from access.log
 .PHONY: top_15_referrers
 top_15_referrers: ## Show top 50 referrers from access.log
 	sudo zcat -f -- $(LOG_PATH_SERVER_SIDE)/access.* | grep -Ev "$(LOG_PARSE_EXCLUDE_PATTERNS)"| awk '{ print $$11 }' | sort | uniq -c | grep -v "-" | sort -nr | head -n 15
+
+.PHONY: top_50_403_file
+top_50_403_file: ## Show top 50 403 files
+	sudo zcat -f -- $(LOG_PATH_SERVER_SIDE)/access.* | grep '" 403' | awk '{ print $$7 }' | sort | uniq -c | sort -nr | head -n 50
+
+.PHONY: top_50_403_requester
+top_50_403_requester: ## Show top 50 403 requesters
+	sudo zcat -f -- $(LOG_PATH_SERVER_SIDE)/access.* | grep '" 403' | awk '{ print $$1 }' | sort | uniq -c | sort -nr | head -n 50
