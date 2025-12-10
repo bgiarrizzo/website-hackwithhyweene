@@ -60,7 +60,6 @@ class LearnModule(Factory):
         print("#", "-" * 70)
         print(f"Writing learning module table of contents: {filename}")
         write_file(data=data, template_name=template_name, filename=filename)
-        print("#", "-" * 70)
 
 
 class LearnModulePage(Factory):
@@ -76,6 +75,7 @@ class LearnModulePage(Factory):
         self.toc: Optional[str] = None
         self.body: Optional[str] = None
         self.prism_needed: bool = False
+        self.disabled: bool = False
         self._process_file()
 
     def _process_file(self):
@@ -94,6 +94,7 @@ class LearnModulePage(Factory):
         self.toc = data.get("toc_html", "")
         self.body = data.get("body", "")
         self.prism_needed = data.get("prism_needed", False)
+        self.disabled = data.get("disabled", False)
 
     def write_module_page(self):
         template_name = "learn/page.j2"
@@ -121,6 +122,10 @@ def process_learn_data(learning_path):
 
         for module_page_item in module_page_list:
             module_page = LearnModulePage(module_page_item, module)
+
+            if module_page.disabled:
+                continue
+
             module_page.write_module_page()
 
             modules_pages.append(module_page)

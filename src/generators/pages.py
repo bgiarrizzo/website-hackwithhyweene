@@ -15,7 +15,7 @@ class Pages(Factory):
         data = {"pages": self.pages}
         template_name = "page/sitemap.xml"
         filename = "sitemap-pages.xml"
-        print("#", "-" * 70)
+
         print(f"Writing pages sitemap: {filename}")
         write_file(data, template_name, filename, filetype="xml")
 

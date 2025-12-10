@@ -12,20 +12,11 @@ class Links(Factory):
     def __init__(self, links: list):
         self.links = links
 
-    def write_link_list_file(self):
-        data = {"page_title": "Liens", "all_links": self.links}
-        template_name = "links/list.j2"
-        filename = "liens/index.html"
-        print("#", "-" * 70)
-        print(f"Writing link list: {filename}")
-        write_file(data=data, template_name=template_name, filename=filename)
-        print("#", "-" * 70)
-
     def write_rss_feed(self):
         data = {"links": self.links}
         template_name = "links/feed.xml"
         filename = "liens/feed.xml"
-        print("#", "-" * 70)
+
         print(f"Writing links RSS feed: {filename}")
         write_file(data, template_name, filename, filetype="xml")
 
@@ -33,9 +24,18 @@ class Links(Factory):
         data = {"links": self.links}
         template_name = "links/sitemap.xml"
         filename = "liens/sitemap.xml"
-        print("#", "-" * 70)
+
         print(f"Writing links sitemap: {filename}")
         write_file(data, template_name, filename, filetype="xml")
+
+    def write_link_list_file(self):
+        data = {"page_title": "Liens", "all_links": self.links}
+        template_name = "links/list.j2"
+        filename = "liens/index.html"
+        
+        print(f"Writing link list: {filename}")
+        write_file(data=data, template_name=template_name, filename=filename)
+        print("#", "-" * 70)
 
 
 class LinkItem(Factory):
