@@ -38,7 +38,7 @@
 
         {% for month, links_by_month in links | groupby("publish_date.month") | reverse %}
 
-        <h3 class="link-list-header">{{ month | capitalize }}</h3>
+        <h3 class="link-list-header">{{ month[3:] | capitalize }}</h3>
 
             <ul class="link-list">
                 {% for link in links_by_month | sort(attribute='publish_date.original', reverse=True) %}

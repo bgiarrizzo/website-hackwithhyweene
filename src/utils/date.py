@@ -23,7 +23,7 @@ class DateFormat:
         self.medium = self.original.strftime("%d %b %Y")
         self.long = self.original.strftime("%d %B %Y")
         self.year = self.original.year
-        self.month = self.original.strftime("%B")
+        self.month = self.original.strftime("%m-%B")
 
         self.tzinfo = self.original.tzinfo
 
