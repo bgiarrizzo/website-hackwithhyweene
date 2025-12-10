@@ -41,7 +41,7 @@ def get_url_from_args():
 
 def get_html_page(url: str):
     response = requests.get(url)
-
+    response.encoding = "utf-8"
     if response.status_code != 200:
         raise FileNotFoundError
 

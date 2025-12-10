@@ -106,6 +106,10 @@ html5validator: venv install_dev build ## Validate HTML files in the build direc
 generate_docstrings: venv install_dev ## Generate modules/classes/functions docstrings
 	. $(VENV_BIN)/activate; pyment -f false -o numpydoc -w src
 
+.PHONY: quick_add_link
+quick_add_link: venv install_dev ## Quick add a new link to the website
+	. $(VENV_BIN)/activate; $(PY_INTERPRETER) $(SCRIPTS_PATH)/quick_add_link.py $(URL)
+
 .PHONY: top_50_pages
 top_50_pages: ## Show top 50 requested pages from access.log
 	sudo zcat -f -- $(LOG_PATH_SERVER_SIDE)/access.* | grep -Ev "$(LOG_PARSE_EXCLUDE_PATTERNS)"| awk '{ print $$7 }' | sort | uniq -c | sort -nr | head -n 50
