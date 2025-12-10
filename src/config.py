@@ -77,6 +77,7 @@ class Settings(BaseSettings):
         "Docker",
     ]
     LANGUAGE: str = "fr-FR"
+    LOCALE: str = "fr_FR.UTF-8"
 
     COLORS: dict = {
         "blockquote_background_color": gruvbox.get("bg1"),
@@ -91,10 +92,12 @@ class Settings(BaseSettings):
         "header_title_font_color": gruvbox.get("red-dim"),
         "outdated_resource_background_color": gruvbox.get("bg1"),
         "outdated_resource_font_color": gruvbox.get("red"),
-        "heading_h1_font_color": gruvbox.get("orange"),
-        "heading_h2_font_color": gruvbox.get("yellow-dim"),
-        "heading_h3_font_color": gruvbox.get("green-dim"),
-        "heading_h4_font_color": gruvbox.get("blue-dim"),
+        "heading_h1_font_color": gruvbox.get("red"),
+        "heading_h2_font_color": gruvbox.get("orange"),
+        "heading_h3_font_color": gruvbox.get("yellow"),
+        "heading_h4_font_color": gruvbox.get("green"),
+        "heading_h5_font_color": gruvbox.get("blue"),
+        "heading_h6_font_color": gruvbox.get("purple"),
         "microblog_post_border_color": gruvbox.get("fg3"),
         "microblog_list_header_border_color": gruvbox.get("fg2"),
         "microblog_post_footer_color": gruvbox.get("fg4"),

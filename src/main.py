@@ -1,3 +1,4 @@
+import locale
 import shutil
 
 from config import settings
@@ -9,6 +10,8 @@ from generators.resume import process_resume_data
 from generators.robotstxt import build_robots_txt
 from generators.sitemapxml import build_sitemap_index_xml
 from utils.collectors import collect_media_files, collect_static_files
+
+locale.setlocale(locale.LC_ALL, settings.LOCALE)
 
 if __name__ == "__main__":
     print("#", "-" * 100)
