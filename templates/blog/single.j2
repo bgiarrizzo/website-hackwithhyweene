@@ -34,8 +34,8 @@
 {% block content %}
     <h1>{{ post.title }}</h1>
 
-    <h2 class="blog-post-date">{{ post.publish_date.long }}</h2>
-
+    <p><b>Date</b> : {{ post.publish_date.long }}</p>
+    
     <p class="blog-post-reading-time"><b>Temps de lecture estimé</b> : {{ post.reading_time }}</p>
     <p class="blog-post-category"><b>Catégorie</b> : <a href="/blog/category/{{ post.category.slug }}/">{{ post.category.name }}</a></p>
     <p class="blog-post-tags">
