@@ -6,7 +6,9 @@ update_date: 2025-12-10T15:00:00+01:00
 tags: [rte, electricite, consommation]
 ---
 
-- Tu consommes trop, tu payes plus parce que ça coûte cher à produire.
-- Tu consommes pas assez, tu payes plus parce que ça coûte cher à produire.
+- Tu consommes trop => Tu payes plus parce que ça coûte cher à produire.
+- Tu consommes pas assez => Tu payes plus parce que ça coûte cher à produire.
 
-¯\_(ツ)_/¯
+Pile ils gagnent, face tu perds ...
+
+¯\\\_(ツ)\_/¯
