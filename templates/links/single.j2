@@ -24,4 +24,10 @@
     <hr />
 
     {{ link.body }}
+
+    {% if link.url.endswith('jpg') or link.url.endswith('png') or link.url.endswith('jpeg') or link.url.endswith('gif') %}
+        <figure>
+            <img src="{{ link.url }}" width="100%" />
+        </figure>
+    {% endif %}
 {% endblock content %}
