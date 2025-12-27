@@ -15,23 +15,25 @@
   </author>
 
   {% for post in posts %}
-    <entry>
-      <id>{{ site.url }}/blog/{{ post.path }}/</id>
-      <title>{{ post.title }}</title>
-      <link rel="alternate" type="text/html" href="{{ site.url }}/blog/{{ post.path }}/"></link>
-      <published>{{ post.publish_date.rfc3339 }}</published>
-      <updated>{{ post.update_date.rfc3339 }}</updated>
+    {% if not post.draft %}
+      <entry>
+        <id>{{ site.url }}/blog/{{ post.path }}/</id>
+        <title>{{ post.title }}</title>
+        <link rel="alternate" type="text/html" href="{{ site.url }}/blog/{{ post.path }}/"></link>
+        <published>{{ post.publish_date.rfc3339 }}</published>
+        <updated>{{ post.update_date.rfc3339 }}</updated>
 
-    {% if post.summary %}
-        <summary>
-          {{ post.summary }}
-        </summary>
-    {% endif %}
-      
-      <content type="html">
-        {{ post.body | e}}
-      </content>
-      
-    </entry>
+      {% if post.summary %}
+          <summary>
+            {{ post.summary }}
+          </summary>
+      {% endif %}
+        
+        <content type="html">
+          {{ post.body | e}}
+        </content>
+        
+      </entry>
+    {% endif%}
   {% endfor %}
 </feed>

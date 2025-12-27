@@ -87,6 +87,7 @@ class BlogPost(Factory):
         self.update_date: Optional[DateFormat] = None
         self.prism_needed: bool = False
         self.cover: Optional[str] = None
+        self.draft: Optional[bool] = False
         self._process_file()
 
     def _process_file(self):
@@ -97,6 +98,7 @@ class BlogPost(Factory):
         self.category = BlogPostCategory(name=category_name)
         self.content = data.get("body")
         self.publish_date = DateFormat(date=data.get("publish_date", "now"))
+        self.draft = data.get("draft")
         self.slug = slugify(self.title) if self.title else None
         self.summary = data.get("summary", "")
         self.tags = data.get("tags", [])
