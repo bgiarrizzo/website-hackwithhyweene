@@ -15,7 +15,7 @@ SRC_PATH := $(PROJECT_FOLDER)/$(SRC_FOLDER)
 VENV_PATH := $(PROJECT_FOLDER)/$(VENV_FOLDER)
 
 LOG_PATH_SERVER_SIDE := /var/log/nginx/hack-with-hyweene.com
-LOG_PARSE_EXCLUDE_PATTERNS := 403|192.168.1.|static|xml|html|400|stats|php|wp-|wordpr|\.env|\.git|\.txt
+LOG_PARSE_EXCLUDE_PATTERNS := 403|192.168.1.|static|html|400|stats|php|wp-|wordpr|\.env|\.git|\.txt
 VENV_BIN := $(VENV_PATH)/$(BIN_FOLDER)
 PY_INTERPRETER := $(VENV_BIN)/python
 
@@ -109,6 +109,10 @@ generate_docstrings: venv install_dev ## Generate modules/classes/functions docs
 .PHONY: quick_add_link
 quick_add_link: venv install_dev ## Quick add a new link to the website
 	. $(VENV_BIN)/activate; $(PY_INTERPRETER) $(SCRIPTS_PATH)/quick_add_link.py $(URL)
+
+.PHONY: top_25_rss_readers
+top_25_rss_readers: ## Show top 25 rss readers from access.log
+	sudo zcat -f -- $(LOG_PATH_SERVER_SIDE)/access.log | grep -Ev "$(LOG_PARSE_EXCLUDE_PATTERNS)" | grep "feed.xml" | awk -F\" '{ split($$1, a, " "); ip=a[1]; ua=$$6; print ua }' | sort | uniq -c | sort -nr | head -n 25
 
 .PHONY: top_50_pages
 top_50_pages: ## Show top 50 requested pages from access.log
