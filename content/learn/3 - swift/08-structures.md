@@ -12,16 +12,28 @@ publish_date: 2025-11-25T12:00:00+01:00
 disabled: true
 ---
 
-Creating your own structs
-Computed properties
-Property observers
-Methods
-Mutating methods
-Properties and methods of strings
-Properties and methods of arrays
-Initializers
-Referring to the current instance
-Lazy properties
-Static properties and methods
-Access control
-Structs summary
+Créer vos propres structures
+
+Propriétés calculées
+
+Observateurs de propriétés
+
+Méthodes
+
+Méthodes mutantes
+
+Propriétés et méthodes des chaînes de caractères
+
+Propriétés et méthodes des tableaux
+
+Initialiseurs
+
+Référence à l’instance courante
+
+Propriétés paresseuses
+
+Propriétés et méthodes statiques
+
+Contrôle d’accès
+
+Résumé sur les structures

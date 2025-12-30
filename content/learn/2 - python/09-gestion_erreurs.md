@@ -20,5 +20,3 @@ disabled: true
 ## Gestion d’exceptions multiples
 
 ## Bonnes pratiques pour le traitement des erreurs
-
-## Exemples pratiques
