@@ -1,5 +1,4 @@
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:thr="http://purl.org/syndication/thread/1.0"
-  xml:lang="fr">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:thr="http://purl.org/syndication/thread/1.0" xml:lang="fr">
   <id>{{ site.url }}/blog/</id>
   <title>{{ site.short_url }} - Blog</title>
   <subtitle>{{ site.description }}</subtitle>
@@ -23,16 +22,16 @@
         <published>{{ post.publish_date.rfc3339 }}</published>
         <updated>{{ post.update_date.rfc3339 }}</updated>
 
-      {% if post.summary %}
+        {% if post.summary %}
           <summary>
             {{ post.summary }}
           </summary>
-      {% endif %}
-        
+        {% endif %}
+
         <content type="html">
-          {{ post.body | e}}
+          {{ post.body | e }}
         </content>
-        
+
       </entry>
     {% endif%}
   {% endfor %}
