@@ -12,28 +12,55 @@ publish_date: 2025-11-25T12:00:00+01:00
 disabled: true
 ---
 
-Créer vos propres structures
+## Créer vos propres structures
 
-Propriétés calculées
+Swift permet de créer ses propres types, le plus fréquent est la structure (ou struct).
 
-Observateurs de propriétés
+Elles peuvent contenir leur propres variables, ou constantes, leur propres fonction.
 
-Méthodes
+On va prendre comme exemple une attraction dans un Disneyland par exemple : 
 
-Méthodes mutantes
+```swift
+struct Attraction {
+    var name: String
+}
+```
 
-Propriétés et méthodes des chaînes de caractères
+Ce code défini la struct, et nous allons maintenant l'instancier : 
 
-Propriétés et méthodes des tableaux
+```swift 
+var space_mountain = Attraction(name: "Space Mountain")
+print(space_mountain.name)
+```
 
-Initialiseurs
+On a écrit `name` et `space_mountain` comme des variables, on peut donc les modifier à l'envie : 
 
-Référence à l’instance courante
+```swift
+space_mountain.name = "Space Mountain : Mission 2"
+```
 
-Propriétés paresseuses
+Les propriétés d'une struct peuvent avoir des valeurs par défaut, comme une variable classique, et on peut compter sur l'inférence de type de Swift :)
 
-Propriétés et méthodes statiques
+## Propriétés calculées
 
-Contrôle d’accès
+## Observateurs de propriétés
 
-Résumé sur les structures
+## Méthodes
+
+## Méthodes mutantes
+
+## Propriétés et méthodes des chaînes de caractères
+
+## Propriétés et méthodes des tableaux
+
+## Initialiseurs
+
+## Référence à l’instance courante
+
+## Propriétés paresseuses
+
+## Propriétés et méthodes statiques
+
+## Contrôle d’accès
+
+## Résumé sur les structures
