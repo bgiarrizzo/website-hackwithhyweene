@@ -3,7 +3,7 @@ title: "Tmux : Renommer une session"
 summary: Un petit pense bête pour renommer une session tmux.
 publish_date: 2025-10-14T14:30:00+01:00
 update_date: 2025-10-14T14:30:00+01:00
-category: "Pense bête"
+category: "Pense-bête"
 tags: [tmux, terminal, productivité]
 prism_needed: true
 ---

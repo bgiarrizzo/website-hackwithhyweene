@@ -3,7 +3,7 @@ title: "Certbot : Récupérer un certificat SSL/TLS"
 summary: Un petit pense bête pour récupérer un certificat SSL/TLS avec Certbot.
 publish_date: 2025-10-15T11:30:00+01:00
 update_date: 2025-10-15T11:30:00+01:00
-category: "Pense bête"
+category: "Pense-bête"
 tags: [certbot, ssl, tls, https]
 prism_needed: true
 ---

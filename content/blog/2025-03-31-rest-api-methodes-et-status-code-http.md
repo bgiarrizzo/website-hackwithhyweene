@@ -3,7 +3,7 @@ title: "REST : Méthodes et Status Code HTTP"
 summary: "Un tableau récapitulatif des principales méthodes HTTP utilisées dans une API REST, accompagnés des codes de statut HTTP les plus fréquemment associés."
 publish_date: 2025-03-31T12:15:00+02:00
 update_date: 2025-03-31T12:15:00+02:00
-category: "Pense bête"
+category: "Pense-bête"
 tags: ["REST", "HTTP", "Status Code", "Méthode"]
 ---
 
