@@ -37,7 +37,7 @@ gruvbox = {
 class Settings(BaseSettings):
     """ """
 
-    SHORT_URL: str = "hack-with-hyweene.com"
+    SHORT_URL: str = "hyweene.fr"
     BASE_URL: str = f"https://www.{SHORT_URL}"
 
     BUILD_PATH: str = "build"
