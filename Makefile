@@ -32,25 +32,25 @@ help:
 	@grep -E '(^[a-zA-Z0-9_-]+:.*?##)|(^##)' $(firstword $(MAKEFILE_LIST)) | awk 'BEGIN {FS = ":.*?## "; printf "Usage: make \033[32m<target>\033[0m\n"}{printf "\033[32m%-20s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m## /\n[33m/'
 
 .PHONY: install
-install: install_uv ## Install dependencies
+install: install_mise ## Install dependencies
 	$(PACKAGER) sync
 
 .PHONY: install_dev
-install_dev: install_uv ## Install development dependencies
+install_dev: install_mise ## Install development dependencies
 	$(PACKAGER) sync --dev
 
-.PHONY: install_uv
-install_uv: ## Install the packager
-	@if ! command -v uv >/dev/null 2>&1; then \
+.PHONY: install_mise
+install_mise: ## Install the packager
+	@if ! command -v mise >/dev/null 2>&1; then \
 		if ! command -v curl >/dev/null 2>&1; then \
 			echo "curl could not be found, please install it first."; \
 			exit 1; \
 		else \
-			echo "Installing uv..."; \
-			curl -LsSf https://astral.sh/uv/install.sh | sh; \
+			echo "-----> Mise not installed. Installing Mise..."; \
+			curl -fsSL https://mise.run | sh; \
 		fi; \
 	else \
-		echo "uv is already installed."; \
+		echo "Mise is already installed."; \
 	fi
 
 .PHONY: install_smolwebvalidator

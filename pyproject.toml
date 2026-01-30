@@ -1,9 +1,9 @@
 [project]
-name = "website-hackwithhyweene"
+name = "website-hyweene"
 version = "0.1.0"
-description = "A static site generator for hack-with-hyweene.com"
+description = "A static site generator for hyweene.fr"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = "==3.12"
 dependencies = [
     "jinja2",
     "pyyaml",
