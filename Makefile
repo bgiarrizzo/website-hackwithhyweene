@@ -19,7 +19,8 @@ LOG_PARSE_EXCLUDE_PATTERNS := 403|192.168.1.|static|html|400|stats|php|wp-|wordp
 VENV_BIN := $(VENV_PATH)/$(BIN_FOLDER)
 PY_INTERPRETER := $(VENV_BIN)/python
 
-PACKAGER := uv
+MISE := ~/.local/bin/mise
+PACKAGER := uv@latest
 
 # Check if .env file exists and load it
 ifneq ("$(wildcard $(DOTENV_PATH))","")
@@ -33,11 +34,11 @@ help:
 
 .PHONY: install
 install: install_mise ## Install dependencies
-	eval "$(mise activate bash)"; $(PACKAGER) sync
+	$(MISE) exec $(PACKAGER) -- sync
 
 .PHONY: install_dev
 install_dev: install_mise ## Install development dependencies
-	eval "$(mise activate bash)"; $(PACKAGER) sync --dev
+	$(MISE) exec $(PACKAGER) -- sync --dev
 
 .PHONY: install_mise
 install_mise: ## Install the packager
