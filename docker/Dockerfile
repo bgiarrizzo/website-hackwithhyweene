@@ -15,7 +15,7 @@ RUN cd src && \
     swift package resolve && \
     swift build -c release && \
     cd .. && \
-    ./src/.build/release/hyweene build --docker
+    .build/release/hyweene build --docker
 
 # -----------------------------------------------------------------------------
 # Final image
