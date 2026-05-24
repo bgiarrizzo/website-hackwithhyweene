@@ -1,0 +1,15 @@
+menu:
+  - name: /blog
+    url: /blog/
+  - name: /liens
+    url: /liens/
+  - name: /now
+    url: /now/
+  - name: /about
+    url: /about/
+  - name: /projets
+    url: /projets/
+  - name: /apprendre
+    url: /apprendre/
+  - name: /cv
+    url: /cv/

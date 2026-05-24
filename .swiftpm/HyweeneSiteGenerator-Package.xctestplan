@@ -1,0 +1,30 @@
+{
+  "configurations" : [
+    {
+      "id" : "311FC3D8-0A0D-477A-829C-E7135C2141EB",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:",
+      "identifier" : "hyweene",
+      "name" : "hyweene"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "HyweeneSiteGeneratorTests",
+        "name" : "HyweeneSiteGeneratorTests"
+      }
+    }
+  ],
+  "version" : 1
+}

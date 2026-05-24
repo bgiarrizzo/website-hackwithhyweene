@@ -15,7 +15,7 @@ status: Accepted
 
 ## Context
 
-`hyweene dev` must detect changes in `content/` and `generator/Templates/` to trigger
+`hyweene dev` must detect changes in `content/` and `src/Templates/` to trigger
 automatic rebuilds. Multiple change-detection mechanisms exist on macOS and Linux.
 
 The main constraint is **portability**: the project must work on both macOS and Linux
@@ -24,7 +24,7 @@ The main constraint is **portability**: the project must work on both macOS and 
 ## Decision
 
 We decided to implement a **snapshot polling watcher** in
-`Runtime/DirectoryWatcher.swift`:
+`src/Application/Infrastructure/FileSystem/DirectoryWatcher.swift`:
 
 - At each interval (500 ms by default), `DirectoryWatcher` recursively scans watched
   directories and builds a `[path: modificationDate]` dictionary snapshot.

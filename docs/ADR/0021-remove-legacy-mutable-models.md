@@ -13,7 +13,7 @@ Status: Accepted
 
 ## Context
 
-After migrating blog, links, pages, learn, homepage, and resume generation behind Domain use cases and Data repositories, the old mutable model files in `Sources/HyweeneSiteGenerator/Models/` became unused:
+After migrating blog, links, pages, learn, homepage, and resume generation behind Domain use cases and Infrastructure repositories, the old mutable model files previously located under the source `Models/` layer became unused:
 
 - `BlogPost.swift`
 - `LinkItem.swift`

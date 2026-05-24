@@ -30,7 +30,7 @@ We decided to split the Swift package into two distinct targets:
   `HyweeneCLIApp`. It contains no standalone logic.
 
 CLI subcommands (`build`, `dev`, `quick-add-link`, `check-dead-links`) are defined in
-`HyweeneSiteGenerator/Runtime/CLIApp.swift` so they remain testable.
+`src/Application/App/CLIApp.swift` so they remain testable.
 
 ## Consequences
 

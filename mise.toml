@@ -4,26 +4,26 @@ run = "mise tasks ls"
 
 [tasks.install]
 description = "Install Swift dependencies"
-run = "cd generator && swift package resolve && swift build -c release && mv .build/release/hyweene ~/.local/bin/"
+run = "cd src && swift package resolve && swift build -c release"
 
 [tasks.build]
 description = "Build the static site once"
 depends = ["install"]
-run = "hyweene build"
+run = ".build/release/hyweene build"
 
 [tasks.dev]
 description = "Run development mode (watch + local server)"
 depends = ["install"]
-run = "hyweene dev --host 0.0.0.0 --port 1234"
+run = ".build/release/hyweene dev --host 0.0.0.0 --port 1234"
 
 [tasks.test]
 description = "Run unit tests"
-run = "cd generator && swift test --enable-code-coverage"
+run = "cd src && swift test --enable-code-coverage"
 
 [tasks.serve]
 description = "Serve the generated site on localhost:8000"
 depends = ["build"]
-run = "hyweene serve --host localhost --port 8000"
+run = ".build/release/hyweene serve --host localhost --port 8000"
 
 [tasks.quick_add_link]
 description = "Quick-add a curated link from URL env var (URL=...)"
@@ -34,7 +34,7 @@ if [ -z "${URL:-}" ]; then
   exit 1
 fi
 
-hyweene quick-add-link "$URL"
+.build/release/hyweene quick-add-link "$URL"
 '''
 
 [tools]

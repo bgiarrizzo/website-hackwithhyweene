@@ -31,6 +31,7 @@ Behavior:
 ## Features
 
 - Parsing Markdown + frontmatter YAML
+- Navigation menu loaded from YAML (`content/nav-menu.yml`)
 - Templates Stencil
 - Generation of blog, links, pages, resume, and learning sections
 - RSS + sitemaps
@@ -54,7 +55,6 @@ mise run test
 ## Direct Usage
 
 ```bash
-cd generator
 swift build
 
 # One-time build
@@ -89,11 +89,83 @@ Current migration status:
 ## Tests
 
 ```bash
-cd generator
 swift test
 ```
+
+## Environment Variables
+
+All configuration values can be overridden via environment variables. Unset variables fall back to their default values.
+
+### URL Configuration
+
+| Variable | Description | Type | Default |
+|----------|-------------|------|---------|
+| `SITE_SCHEME` | Site protocol | `String` | `https` |
+| `SITE_SHORT_URL` | Short site URL | `String` | `hyweene.fr` |
+| `SITE_LONG_URL` | Full site URL | `String` | `www.hyweene.fr` |
+| `SITE_BASE_URL` | Full base URL with scheme | `String` | `https://www.hyweene.fr` |
+
+### Path Configuration
+
+| Variable | Description | Type | Default |
+|----------|-------------|------|---------|
+| `SITE_RELEASES_PATH` | Directory where versioned releases are stored | `String` | `releases` |
+| `SITE_CURRENT_RELEASE_PATH` | Symlink (or copy) pointing to the active release | `String` | `current` |
+| `SITE_CONTENT_PATH` | Content root directory | `String` | `content` |
+| `SITE_NAV_MENU_PATH` | Navigation menu YAML file path | `String` | `content/nav-menu.yml` |
+| `SITE_MEDIA_PATH` | Media assets directory | `String` | `content/media` |
+| `SITE_STATIC_PATH` | Static files directory (CSS, JS, images) | `String` | `content/static` |
+| `SITE_TEMPLATE_PATH` | Stencil templates directory | `String` | `src/Templates` |
+| `SITE_TEXT_CONTENT_PATH` | Text content root directory | `String` | `content/text` |
+| `SITE_BLOG_PATH` | Blog posts directory | `String` | `content/text/blog` |
+| `SITE_LINKS_PATH` | Links directory | `String` | `content/text/links` |
+| `SITE_PAGES_PATH` | Static pages directory | `String` | `content/text/pages` |
+| `SITE_RESUME_PATH` | Resume data directory | `String` | `content/text/resume` |
+| `SITE_LEARN_PATH` | Learning modules directory | `String` | `content/text/learn` |
+
+### Author Information
+
+| Variable | Description | Type | Default |
+|----------|-------------|------|---------|
+| `SITE_AUTHOR_NAME` | Author short name | `String` | `Bruno Giarrizzo` |
+| `SITE_AUTHOR_FULL` | Author full display name | `String` | `Bruno 'Hyweene' Giarrizzo` |
+| `SITE_GITHUB_LINK` | Author GitHub profile URL | `String` | `https://github.com/bgiarrizzo/` |
+| `SITE_LINKEDIN_LINK` | Author LinkedIn profile URL | `String` | `https://www.linkedin.com/in/bruno-giarrizzo/` |
+
+### Site Metadata
+
+| Variable | Description | Type | Default |
+|----------|-------------|------|---------|
+| `SITE_DESCRIPTION` | Site meta description | `String` | `Linuxien, Developpeur Python, Swift et DevOps` |
+| `SITE_KEYWORDS` | SEO keywords (comma-separated list) | `[String]` | `Bruno,Giarrizzo,Hyweene,...` |
+| `SITE_LANGUAGE` | HTML `lang` attribute value | `String` | `fr-FR` |
+| `SITE_LOCALE` | System locale for date/number formatting | `String` | `fr_FR.UTF-8` |
+
+## Navigation Menu Configuration
+
+The main navigation menu is loaded from YAML and injected globally in templates.
+
+- Default file: `content/nav-menu.yml`
+- Override path: `SITE_NAV_MENU_PATH`
+- Schema:
+
+```yaml
+menu:
+    - name: /blog
+        url: /blog/
+    - name: /about
+        url: /about/
+```
+
+The menu loader is strict: missing file, invalid YAML, or invalid/missing `name` or `url`
+fields fail the build explicitly.
 
 ## Compatibility
 
 - Swift 6+
 - macOS 15+
+
+## Troubleshooting
+
+- If template rendering fails with a path like `generator/Templates`, verify `SITE_TEMPLATE_PATH`.
+- The runtime now falls back to `src/Templates` when `SITE_TEMPLATE_PATH` points to a missing legacy path.

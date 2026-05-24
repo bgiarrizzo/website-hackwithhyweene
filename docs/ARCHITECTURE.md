@@ -1,111 +1,226 @@
-# ARCHITECTURE
+---
+title: "Hyweene Static Site Generator — Architecture"
+filename: "ARCHITECTURE.md"
+description: "Architecture overview, layer model, folder layout, and dependency rules."
+creation_date: 2026-04-27
+update_date: 2026-05-24
+category: architecture
+author: Bruno Giarrizzo
+status: active
+---
+
+# Hyweene Static Site Generator — Architecture
 
 ## Overview
 
-The generator is currently organized into two runtime layers:
+The project is a Swift package under `src/` with a library target for generator logic and an executable target for CLI entry.
 
-- `HyweeneSiteGenerator` library (testable business logic)
-- `hyweene` executable (CLI routing via `swift-argument-parser`)
+The architecture follows a CLI-oriented layered model aligned with AGENTS guidance.
 
-CLI subcommands (`build`, `dev`, `quick-add-link`, `check-dead-links`) are defined in the library (`Runtime/CLIApp.swift`) so they remain testable, while the executable only exposes the `@main` entry point.
+```text
+App -> Application -> Domain
+Infrastructure -> Domain
+Shared is cross-cutting and reused by all layers when appropriate.
+```
 
-## Target Architecture (AGENTS alignment)
+All layers are present and actively used.
 
-The target is Clean Architecture adapted for a CLI static site generator:
+CLI command organization:
 
-- `Runtime/App`:
-   - CLI argument parsing and command entry points
-   - command-to-use-case orchestration
-   - user-facing error mapping
-- `Domain`:
-   - immutable entities
-   - one use case per business capability (`execute()`)
-   - repository protocols only
-- `Data`:
-   - repository implementations
-   - DTOs and mappers
-   - adapters to filesystem, template engine, and network
-- `Core`:
-   - shared utilities, parsers, and infrastructure helpers
+- Root command is defined in `src/Application/App/CLIApp.swift`.
+- Each subcommand is defined in its own file under `src/Application/App/Commands/`.
 
-Dependency direction:
+## Canonical folder layout
 
-- `Runtime/App -> Domain <- Data`
+```text
+src/
+├── Sources/
+│   ├── hyweene/
+│   │   └── command.swift
+│   └── HyweeneSiteGenerator/
+│       ├── App/
+│       ├── Application/
+│       │   ├── UseCases/
+│       │   └── Services/
+│       ├── Domain/
+│       │   ├── Models/
+│       │   └── Repositories/
+│       ├── Infrastructure/
+│       │   ├── DTOs/
+│       │   ├── Mappers/
+│       │   ├── Repositories/
+│       │   ├── FileSystem/
+│       │   ├── Network/
+│       │   ├── Parsers/
+│       │   └── Templates/
+│       └── Shared/
+└── Tests/
+    └── HyweeneSiteGeneratorTests/
+        ├── App/
+        ├── Application/
+        ├── Domain/
+        ├── Infrastructure/
+        └── Shared/
+```
 
-## Build Pipeline
+## Layer rules
 
-1. Copy assets (`content/media`, `content/static`)
-2. Run independent generators in parallel:
-   - BlogGenerator
-   - LinksGenerator
-   - PagesGenerator
-   - LearnGenerator
-   - ResumeGenerator
-3. Run dependent generators sequentially:
-   - HomepageGenerator (depends on blog + links)
-   - SitemapGenerator
-4. Publish:
-   - update the `current` symlink
-   - clean old releases
+| Layer | Responsibility | Must not |
+|---|---|---|
+| **App** | CLI parsing, command wiring, boundary error mapping | Embed business rules or persistence details |
+| **Application** | Orchestration, workflows, service coordination | Depend directly on infrastructure concrete types when protocol abstraction exists |
+| **Domain** | Core entities/results and repository contracts | Depend on Application or Infrastructure |
+| **Infrastructure** | Filesystem/network/parsing/template concrete adapters | Contain command parsing or presentation logic |
+| **Shared** | Reusable configuration and utilities | Become a hidden business-logic layer |
 
-This pipeline behavior is a compatibility contract and must remain stable during refactors.
+## Layer diagram
 
-## Parallelization
+```text
+┌─────────────────────────────────────────────┐
+│                    App                      │
+│           CLI commands and wiring           │
+└──────────────────┬──────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────┐
+│                Application                  │
+│         Use cases and orchestration         │
+└──────────────────┬──────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────┐
+│                  Domain                     │
+│      Models/entities and repository APIs    │
+└──────────────────┬──────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────┐
+│              Infrastructure                 │
+│   Repositories, parsers, templates, IO      │
+└─────────────────────────────────────────────┘
+```
 
-Parallelization relies on a dedicated concurrent executor:
+## Dependency injection
 
-- Parallel loops for posts, links, learning modules/pages, and static pages
-- Error propagation on first failure
-- Cancellation of remaining operations after failure
+Dependencies are primarily injected by initializer wiring at runtime boundary.
 
-## Dev Mode
+```swift
+// Production: CLI runtime creates concrete adapters and passes them to services/use cases.
 
-Dev mode combines:
+// Testing: tests provide in-memory or fake implementations of repository protocols.
+```
 
-- Initial build
-- Minimal local HTTP server (`Network` on Apple platforms, native Swift fallback with POSIX sockets on Linux)
-- Snapshot-based file watcher (polling) with 500 ms debounce
-- Rebuild when a change is detected
+Repository protocols live in `Domain/Repositories`; concrete implementations live in `Infrastructure/Repositories`.
 
-The server keeps serving the latest valid release if a rebuild fails.
+## Testing strategy
 
-## CLI Link Tools
+| Type | Strategy |
+|---|---|
+| **Domain** | Unit test entities/results and business invariants |
+| **Use Case / Service** | Unit test execution paths with deterministic fixtures |
+| **App** | Command parsing and boundary behavior tests |
+| **Infrastructure** | Focused integration/contract tests for adapters |
+| **End-to-end build flow** | Build runtime tests for release behavior where relevant |
 
-The CLI runtime also includes content maintenance commands:
+```text
+src/Tests/HyweeneSiteGeneratorTests/
+├── App/
+├── Application/
+├── Domain/
+├── Infrastructure/
+└── Shared/
+```
 
-- `quick-add-link`: fetch remote HTML title + generate a link Markdown file (interactive or non-interactive with `--comment`)
-- `check-dead-links`: recursively scan generated HTML + detect external 404 links
+## Domain
 
-## Migration Strategy
+### Entities
 
-- Introduce Domain use cases and repository protocols before removing legacy classes.
-- Keep old and new paths side-by-side when necessary.
-- Validate generated output consistency at each migration step.
-- Add tests for each migrated type in the mirrored test tree.
+Domain models represent blog, links, pages, learn modules/pages, and resume aggregates with typed result objects for generation outcomes.
 
-## Migration Progress (May 2026)
+### Use cases
 
-- Blog pipeline migrated:
-   - `GenerateBlogUseCase`
-   - `BlogPostEntity`, `BuildBlogResult`
-   - `ContentRepository` + file/template adapters
-- Links pipeline migrated:
-   - `GenerateLinksUseCase`
-   - `LinkItemEntity`, `BuildLinksResult`
-   - `LinkContentRepository` + file/template adapters
-- Pages pipeline migrated:
-   - `GeneratePagesUseCase`
-   - `PageEntity`, `BuildPagesResult`
-   - `PageContentRepository` + file/template adapters
-- Learn pipeline migrated:
-   - `GenerateLearnUseCase`
-   - `LearnModuleEntity`, `LearnModulePageEntity`, `BuildLearnResult`
-   - `LearnContentRepository` + filesystem adapter
-- Homepage composition migrated:
-   - `GenerateHomepageUseCase`
-   - runtime input is now `[BlogPostEntity]` + `[LinkItemEntity]`
-- Resume pipeline migrated:
-   - `GenerateResumeUseCase`
-   - `ResumeEntity` aggregate with typed section entities
-   - `ResumeContentRepository` + filesystem adapter
-- Runtime generators (`BlogGenerator`, `LinksGenerator`, `PagesGenerator`, `LearnGenerator`, `HomepageGenerator`, `ResumeGenerator`) are now orchestration adapters delegating to Domain use cases.
+Use cases expose focused generation operations (`GenerateBlogUseCase`, `GenerateLinksUseCase`, `GeneratePagesUseCase`, `GenerateLearnUseCase`, `GenerateHomepageUseCase`, `GenerateResumeUseCase`) plus `BuildSiteUseCase` orchestration.
+
+### Rules
+
+- Build outputs must remain deterministic for identical inputs.
+- Domain layer owns business shape and validation boundaries.
+- Repository contracts in Domain shield use cases from concrete IO details.
+
+## Presentation
+
+### View / screen structure
+
+Not applicable: CLI-first project without graphical presentation layer.
+
+### View model responsibilities
+
+Not applicable.
+
+### Shared UI components
+
+Not applicable.
+
+## Data / infrastructure
+
+### Repositories
+
+Filesystem-backed repositories load Markdown/YAML content and template files, then map DTOs to domain entities.
+
+Template rendering also loads a global navigation menu from a dedicated YAML input and injects it into template context for all rendered pages.
+
+### Network / backend
+
+Local HTTP serving is used in dev mode. `quick-add-link` performs remote title extraction over HTTP(S).
+
+### Persistence
+
+Persistence is filesystem-based:
+
+- Input from `content/`
+- Navigation from `content/nav-menu.yml` (or `SITE_NAV_MENU_PATH` override)
+- Template sources from `src/Templates/`
+- Output to timestamped `releases/` with publication through `current`
+
+Navigation loading is strict by design: missing file, invalid YAML, or invalid menu item structure fails generation explicitly.
+
+## Backend / API
+
+Not applicable: no server-side API module in this repository.
+
+## Platform notes
+
+### Supported platforms
+
+| Platform | Minimum version |
+|---|---|
+| macOS | 15 |
+
+### Platform-specific behavior
+
+- CLI command set is the primary interface.
+- Dev server and watcher are optimized for local iterative development.
+
+## Dependency rules
+
+- App may depend on Application and Domain.
+- Application depends on Domain contracts.
+- Domain remains independent of App and Infrastructure.
+- Infrastructure depends on Domain contracts/entities, not the opposite.
+- Shared utilities stay generic and non-domain-specific.
+
+## Architecture decisions
+
+- Layered CLI architecture with explicit boundary separation.
+- Release publication model uses timestamped outputs and a stable current pointer.
+- Migration policy is incremental to avoid output regressions.
+
+See ADR entries in `docs/ADR/` for decision history.
+
+## Constraints
+
+- Deterministic and scriptable behavior is required.
+- Output compatibility must be preserved during refactors.
+- Repository is optimized for static generation, not dynamic rendering.
+
+## Open questions
+
+- Add explicit `Domain/Errors` and `Shared/Errors` packages as first-class boundaries.
+- Finalize structured logging implementation details and Sentry integration points.

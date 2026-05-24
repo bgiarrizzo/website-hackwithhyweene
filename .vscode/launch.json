@@ -4,41 +4,21 @@
             "type": "swift",
             "request": "launch",
             "args": [],
-            "cwd": "${workspaceFolder:website-hyweene}/generator",
-            "name": "Debug hyweene (generator)",
+            "cwd": "${workspaceFolder:website-hyweene}",
+            "name": "Debug hyweene",
             "target": "hyweene",
             "configuration": "debug",
-            "preLaunchTask": "swift: Build Debug hyweene (generator)"
+            "preLaunchTask": "swift: Build Debug hyweene"
         },
         {
             "type": "swift",
             "request": "launch",
             "args": [],
-            "cwd": "${workspaceFolder:website-hyweene}/generator",
-            "name": "Release hyweene (generator)",
+            "cwd": "${workspaceFolder:website-hyweene}",
+            "name": "Release hyweene",
             "target": "hyweene",
             "configuration": "release",
-            "preLaunchTask": "swift: Build Release hyweene (generator)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:website-hyweene}/generator",
-            "name": "Debug hyweene (generator)",
-            "target": "hyweene",
-            "configuration": "debug",
-            "preLaunchTask": "swift: Build Debug hyweene (generator)"
-        },
-        {
-            "type": "swift",
-            "request": "launch",
-            "args": [],
-            "cwd": "${workspaceFolder:website-hyweene}/generator",
-            "name": "Release hyweene (generator)",
-            "target": "hyweene",
-            "configuration": "release",
-            "preLaunchTask": "swift: Build Release hyweene (generator)"
+            "preLaunchTask": "swift: Build Release hyweene"
         }
     ]
 }

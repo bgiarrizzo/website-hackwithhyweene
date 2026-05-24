@@ -24,7 +24,7 @@ Separating Swift code and HTML markup is a key maintainability goal for the proj
 ## Decision
 
 We decided to use **Stencil** (`stencilproject/Stencil`) as the template engine.
-HTML templates are `.stencil` files in `generator/Templates/`, organized by section
+HTML templates are `.stencil` files in `src/Templates/`, organized by section
 (blog, links, pages...). Rendering is done through `TemplateEngine`, a wrapper over
 `Stencil.Environment`.
 

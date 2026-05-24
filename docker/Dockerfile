@@ -1,17 +1,21 @@
 # -----------------------------------------------------------------------------
 # Build Image
 
-FROM swift:6.3 AS builder
+ARG SWIFT_VERSION=6.3
+ARG DEBIAN_VERSION=bookworm
+ARG IMAGE_SIZE=slim
+
+FROM swift:${SWIFT_VERSION}-${DEBIAN_VERSION}-${IMAGE_SIZE} AS builder
 
 WORKDIR /app
 
 COPY . /app/
 
-RUN cd generator && \
+RUN cd src && \
     swift package resolve && \
     swift build -c release && \
     cd .. && \
-    ./generator/.build/release/hyweene build --docker
+    ./src/.build/release/hyweene build --docker
 
 # -----------------------------------------------------------------------------
 # Final image

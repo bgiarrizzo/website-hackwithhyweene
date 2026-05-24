@@ -25,7 +25,7 @@ We decided to use **`swift-argument-parser`** (`apple/swift-argument-parser`) to
 subcommands via `AsyncParsableCommand` structs. Each subcommand declares options with
 `@Option` and `@Argument`, and implements `run() async throws`.
 
-The root command `HyweeneCLIApp` is defined in `HyweeneSiteGenerator/Runtime/CLIApp.swift`
+The root command `HyweeneCLIApp` is defined in `src/Application/App/CLIApp.swift`
 (testable library). The `hyweene` executable only calls `HyweeneCLIApp.main()`.
 
 ## Consequences
