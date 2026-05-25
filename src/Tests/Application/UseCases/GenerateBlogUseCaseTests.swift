@@ -18,23 +18,29 @@ final class MockContentRepository: ContentRepository, @unchecked Sendable {
 
 /// Controllable `FileRepository` that records all writes.
 final class MockFileRepository: FileRepository, @unchecked Sendable {
+    private let lock = NSLock()
     var written: [String: String] = [:]  // relativePath → content
     var errorToThrow: Error?
 
     func writeFile(content: String, to relativePath: String) throws {
         if let error = errorToThrow { throw error }
+        lock.lock()
+        defer { lock.unlock() }
         written[relativePath] = content
     }
 }
 
 /// Controllable `TemplateRepository` that returns stub HTML.
 final class MockTemplateRepository: TemplateRepository, @unchecked Sendable {
+    private let lock = NSLock()
     var stub: String = "<html/>"
     var errorToThrow: Error?
     var rendered: [(template: String, context: [String: Any])] = []
 
     func render(template: String, context: [String: Any]) throws -> String {
         if let error = errorToThrow { throw error }
+        lock.lock()
+        defer { lock.unlock() }
         rendered.append((template: template, context: context))
         return stub
     }

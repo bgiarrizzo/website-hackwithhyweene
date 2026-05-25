@@ -4,6 +4,31 @@ import Testing
 @testable import HyweeneSiteGenerator
 
 struct LinkItemDTOTests {
+    // MARK: - Helpers
+
+    private func rawData(
+        title: String = "A link",
+        url: String = "https://example.com",
+        description: String = "desc",
+        body: String = "<p>Body</p>",
+        publishDate: String = "2026-05-01",
+        updateDate: String = "2026-05-02",
+        slug: String = "a-link"
+    ) -> [String: Any] {
+        let dict: [String: Any] = [
+            "title": title,
+            "url": url,
+            "description": description,
+            "body": body,
+            "publish_date": publishDate,
+            "update_date": updateDate,
+            "slug": slug,
+        ]
+        return dict
+    }
+
+    // MARK: - Tests
+
     @Test("DTO initialises all fields from raw dict")
     func initialisesAllFields() {
         let raw: [String: Any] = [
@@ -26,6 +51,20 @@ struct LinkItemDTOTests {
         #expect(dto.publishDate != nil)
         #expect(dto.updateDate != nil)
         #expect(dto.slug == "a-link")
+    }
+
+    @Test("DTO sets publishDate and updateDate from Date objects")
+    func setsPublishDateAndUpdateDateFromDateObjects() {
+        let dto = LinkItemDTO(
+            from: [
+                "publish_date": Date(timeIntervalSince1970: 0),
+                "update_date": Date(timeIntervalSince1970: 86400),
+            ],
+            filePath: "/tmp/01-intro.md"
+        )
+
+        #expect(dto.publishDate != nil)
+        #expect(dto.updateDate != nil)
     }
 
     @Test("DTO keeps optional fields nil when absent")

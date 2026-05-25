@@ -3,7 +3,7 @@ title: "Hyweene Static Site Generator — Architecture"
 filename: "ARCHITECTURE.md"
 description: "Architecture overview, layer model, folder layout, and dependency rules."
 creation_date: 2026-04-27
-update_date: 2026-05-24
+update_date: 2026-05-25
 category: architecture
 author: Bruno Giarrizzo
 status: active
@@ -105,6 +105,7 @@ Dependencies are primarily injected by initializer wiring at runtime boundary.
 // Production: CLI runtime creates concrete adapters and passes them to services/use cases.
 
 // Testing: tests provide in-memory or fake implementations of repository protocols.
+// For concurrent use cases, mutable test doubles must protect shared state (for example with NSLock).
 ```
 
 Repository protocols live in `Domain/Repositories`; concrete implementations live in `Infrastructure/Repositories`.

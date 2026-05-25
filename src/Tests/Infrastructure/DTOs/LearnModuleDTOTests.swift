@@ -3,6 +3,27 @@ import Testing
 @testable import HyweeneSiteGenerator
 
 struct LearnModuleDTOTests {
+    // MARK: - Helpers
+
+    private func rawData(
+        id: Int = 1,
+        name: String = "Git",
+        logo: String = "logo.png",
+        description: String = "desc",
+        disabled: Bool = false
+    ) -> [String: Any] {
+        let dict: [String: Any] = [
+            "id": id,
+            "name": name,
+            "logo": logo,
+            "description": description,
+            "disabled": disabled,
+        ]
+        return dict
+    }
+
+    // MARK: - Tests
+
     @Test("DTO initialises module fields from YAML data")
     func initialisesModuleFields() {
         let dto = LearnModuleDTO(

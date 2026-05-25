@@ -3,6 +3,27 @@ import Testing
 @testable import HyweeneSiteGenerator
 
 struct PageDTOTests {
+    // MARK: - Helpers
+
+    private func rawData(
+        title: String = "About",
+        body: String = "<p>Body</p>",
+        permalink: String = "about",
+        summary: String = "summary",
+        cover: String = "cover.jpg"
+    ) -> [String: Any] {
+        let dict: [String: Any] = [
+            "title": title,
+            "body": body,
+            "permalink": permalink,
+            "summary": summary,
+            "cover": cover,
+        ]
+        return dict
+    }
+
+    // MARK: - Tests
+
     @Test("DTO initialises all fields from raw dict")
     func initialisesAllFields() {
         let raw: [String: Any] = [
