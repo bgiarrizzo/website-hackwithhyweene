@@ -13,3 +13,7 @@ menu:
     url: /apprendre/
   - name: /cv
     url: /cv/
+  - name: /blogroll
+    url: /blogroll/
+  - name: /subway
+    url: /subway/
