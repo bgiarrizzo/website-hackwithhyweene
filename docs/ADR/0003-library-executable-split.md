@@ -3,7 +3,7 @@ title: "Library / executable split"
 filename: "0003-library-executable-split.md"
 description: "Organization of the Swift package into a testable library and a minimal executable."
 creation_date: 2026-05-06
-update_date: 2026-05-06
+update_date: 2026-05-26
 category: adr
 status: Accepted
 ---
@@ -30,7 +30,7 @@ We decided to split the Swift package into two distinct targets:
   `HyweeneCLIApp`. It contains no standalone logic.
 
 CLI subcommands (`build`, `dev`, `quick-add-link`, `check-dead-links`) are defined in
-`src/Application/App/CLIApp.swift` so they remain testable.
+`src/Code/Application/App/CLIApp.swift` so they remain testable.
 
 ## Consequences
 

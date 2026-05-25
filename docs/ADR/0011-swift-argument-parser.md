@@ -3,7 +3,7 @@ title: "swift-argument-parser for CLI"
 filename: "0011-swift-argument-parser.md"
 description: "Use of swift-argument-parser to define CLI subcommands and options."
 creation_date: 2026-05-06
-update_date: 2026-05-06
+update_date: 2026-05-26
 category: adr
 status: Accepted
 ---
@@ -25,7 +25,7 @@ We decided to use **`swift-argument-parser`** (`apple/swift-argument-parser`) to
 subcommands via `AsyncParsableCommand` structs. Each subcommand declares options with
 `@Option` and `@Argument`, and implements `run() async throws`.
 
-The root command `HyweeneCLIApp` is defined in `src/Application/App/CLIApp.swift`
+The root command `HyweeneCLIApp` is defined in `src/Code/Application/App/CLIApp.swift`
 (testable library). The `hyweene` executable only calls `HyweeneCLIApp.main()`.
 
 ## Consequences

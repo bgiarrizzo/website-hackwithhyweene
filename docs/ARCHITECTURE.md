@@ -3,7 +3,7 @@ title: "Hyweene Static Site Generator — Architecture"
 filename: "ARCHITECTURE.md"
 description: "Architecture overview, layer model, folder layout, and dependency rules."
 creation_date: 2026-04-27
-update_date: 2026-05-25
+update_date: 2026-05-26
 category: architecture
 author: Bruno Giarrizzo
 status: active
@@ -13,13 +13,13 @@ status: active
 
 ## Overview
 
-The project is a Swift package under `src/` with a library target for generator logic and an executable target for CLI entry.
+The project is a Swift package rooted at `Package.swift`, with library sources under `src/Code/`, templates under `src/Templates/`, and tests under `src/Tests/`.
 
 The architecture follows a CLI-oriented layered model aligned with AGENTS guidance.
 
 ```text
-App -> Application -> Domain
-Infrastructure -> Domain
+App -> Application -> Core
+Adapters -> Core
 Shared is cross-cutting and reused by all layers when appropriate.
 ```
 
@@ -27,40 +27,48 @@ All layers are present and actively used.
 
 CLI command organization:
 
-- Root command is defined in `src/Application/App/CLIApp.swift`.
-- Each subcommand is defined in its own file under `src/Application/App/Commands/`.
+- Root command is defined in `src/Code/Application/App/CLIApp.swift`.
+- Each subcommand is defined in its own file under `src/Code/Application/App/Commands/`.
 
 ## Canonical folder layout
 
 ```text
 src/
-├── Sources/
-│   ├── hyweene/
-│   │   └── command.swift
-│   └── HyweeneSiteGenerator/
-│       ├── App/
-│       ├── Application/
-│       │   ├── UseCases/
-│       │   └── Services/
-│       ├── Domain/
-│       │   ├── Models/
-│       │   └── Repositories/
-│       ├── Infrastructure/
-│       │   ├── DTOs/
-│       │   ├── Mappers/
-│       │   ├── Repositories/
-│       │   ├── FileSystem/
-│       │   ├── Network/
-│       │   ├── Parsers/
-│       │   └── Templates/
-│       └── Shared/
+├── Code/
+│   ├── Application/
+│   │   ├── App/
+│   │   │   ├── CLIApp.swift
+│   │   │   ├── command.swift          ← executable entry point
+│   │   │   └── Commands/
+│   │   ├── Services/
+│   │   └── UseCases/
+│   ├── Core/
+│   │   ├── Models/
+│   │   ├── Protocols/
+│   │   └── Errors/
+│   ├── Adapters/
+│   │   ├── FileSystem/
+│   │   ├── Network/
+│   │   ├── Parsers/
+│   │   │   ├── DTOs/
+│   │   │   └── Mappers/
+│   │   └── Templates/
+│   └── Shared/
+├── Templates/
 └── Tests/
-    └── HyweeneSiteGeneratorTests/
-        ├── App/
-        ├── Application/
-        ├── Domain/
-        ├── Infrastructure/
-        └── Shared/
+    ├── App/
+    ├── Application/
+    │   ├── Services/
+    │   └── UseCases/
+    ├── Core/
+    │   └── Models/
+    ├── Adapters/
+    │   ├── FileSystem/
+    │   ├── Parsers/
+    │   │   ├── DTOs/
+    │   │   └── Mappers/
+    │   └── Templates/
+    └── Shared/
 ```
 
 ## Layer rules
@@ -68,9 +76,9 @@ src/
 | Layer | Responsibility | Must not |
 |---|---|---|
 | **App** | CLI parsing, command wiring, boundary error mapping | Embed business rules or persistence details |
-| **Application** | Orchestration, workflows, service coordination | Depend directly on infrastructure concrete types when protocol abstraction exists |
-| **Domain** | Core entities/results and repository contracts | Depend on Application or Infrastructure |
-| **Infrastructure** | Filesystem/network/parsing/template concrete adapters | Contain command parsing or presentation logic |
+| **Application** | Orchestration, workflows, service coordination | Depend directly on adapter concrete types when protocol abstraction exists |
+| **Core** | Domain entities/results and repository protocol contracts | Depend on Application or Adapters |
+| **Adapters** | Filesystem/network/parsing/template concrete implementations | Contain command parsing or presentation logic |
 | **Shared** | Reusable configuration and utilities | Become a hidden business-logic layer |
 
 ## Layer diagram
@@ -83,18 +91,20 @@ src/
                    │
 ┌──────────────────▼──────────────────────────┐
 │                Application                  │
-│         Use cases and orchestration         │
+│         Services / Use cases / Orchestration│
 └──────────────────┬──────────────────────────┘
                    │
 ┌──────────────────▼──────────────────────────┐
-│                  Domain                     │
-│      Models/entities and repository APIs    │
+│                   Core                      │
+│      Models, Protocols, Errors              │
 └──────────────────┬──────────────────────────┘
                    │
 ┌──────────────────▼──────────────────────────┐
-│              Infrastructure                 │
-│   Repositories, parsers, templates, IO      │
+│                 Adapters                    │
+│   FileSystem, Network, Parsers, Templates   │
 └─────────────────────────────────────────────┘
+
+Shared: cross-cutting utilities (all layers may use)
 ```
 
 ## Dependency injection
@@ -108,42 +118,54 @@ Dependencies are primarily injected by initializer wiring at runtime boundary.
 // For concurrent use cases, mutable test doubles must protect shared state (for example with NSLock).
 ```
 
-Repository protocols live in `Domain/Repositories`; concrete implementations live in `Infrastructure/Repositories`.
+Repository protocols live in `src/Code/Core/Protocols`; concrete implementations live in `src/Code/Adapters/FileSystem` and `src/Code/Adapters/Templates`.
 
 ## Testing strategy
 
 | Type | Strategy |
 |---|---|
-| **Domain** | Unit test entities/results and business invariants |
+| **Core** | Unit test entities/results and business invariants |
 | **Use Case / Service** | Unit test execution paths with deterministic fixtures |
 | **App** | Command parsing and boundary behavior tests |
-| **Infrastructure** | Focused integration/contract tests for adapters |
+| **Adapters** | Focused integration/contract tests for concrete implementations |
 | **End-to-end build flow** | Build runtime tests for release behavior where relevant |
 
 ```text
-src/Tests/HyweeneSiteGeneratorTests/
+src/Tests/
 ├── App/
 ├── Application/
-├── Domain/
-├── Infrastructure/
+│   ├── Services/
+│   └── UseCases/
+├── Core/
+│   └── Models/
+├── Adapters/
+│   ├── FileSystem/
+│   ├── Parsers/
+│   │   ├── DTOs/
+│   │   └── Mappers/
+│   └── Templates/
 └── Shared/
 ```
 
-## Domain
+## Core
 
-### Entities
+### Models
 
-Domain models represent blog, links, pages, learn modules/pages, and resume aggregates with typed result objects for generation outcomes.
+Core models represent blog posts, links, static pages, learn modules/pages, and resume aggregates with typed result objects for generation outcomes.
+
+### Protocols
+
+Repository protocols define the contracts for content loading (`ContentRepository`, `LearnContentRepository`, `LinkContentRepository`, `PageContentRepository`, `ResumeContentRepository`), file writing (`FileRepository`), and template rendering (`TemplateRepository`).
 
 ### Use cases
 
-Use cases expose focused generation operations (`GenerateBlogUseCase`, `GenerateLinksUseCase`, `GeneratePagesUseCase`, `GenerateLearnUseCase`, `GenerateHomepageUseCase`, `GenerateResumeUseCase`) plus `BuildSiteUseCase` orchestration.
+Use cases expose focused generation operations (`GenerateBlogUseCase`, `GenerateLinksUseCase`, `GeneratePagesUseCase`, `GenerateLearnUseCase`, `GenerateHomepageUseCase`, `GenerateResumeUseCase`) plus `BuildSiteUseCase` orchestration. They live in `Application/UseCases/`.
 
 ### Rules
 
 - Build outputs must remain deterministic for identical inputs.
-- Domain layer owns business shape and validation boundaries.
-- Repository contracts in Domain shield use cases from concrete IO details.
+- Core owns business shape and validation boundaries.
+- Repository contracts in Core/Protocols shield use cases from concrete IO details.
 
 ## Presentation
 
@@ -163,7 +185,7 @@ Not applicable.
 
 ### Repositories
 
-Filesystem-backed repositories load Markdown/YAML content and template files, then map DTOs to domain entities.
+Filesystem-backed repositories (`Adapters/FileSystem/`) load Markdown/YAML content, then parse via DTOs and Mappers (`Adapters/Parsers/`) to produce Core entities. The template adapter (`Adapters/Templates/`) renders Stencil templates.
 
 Template rendering also loads a global navigation menu from a dedicated YAML input and injects it into template context for all rendered pages.
 
@@ -201,10 +223,10 @@ Not applicable: no server-side API module in this repository.
 
 ## Dependency rules
 
-- App may depend on Application and Domain.
-- Application depends on Domain contracts.
-- Domain remains independent of App and Infrastructure.
-- Infrastructure depends on Domain contracts/entities, not the opposite.
+- App may depend on Application and Core.
+- Application depends on Core contracts.
+- Core remains independent of App and Adapters.
+- Adapters depend on Core contracts/entities, not the opposite.
 - Shared utilities stay generic and non-domain-specific.
 
 ## Architecture decisions
@@ -223,5 +245,5 @@ See ADR entries in `docs/ADR/` for decision history.
 
 ## Open questions
 
-- Add explicit `Domain/Errors` and `Shared/Errors` packages as first-class boundaries.
+- Add explicit error-type organization under `src/Code/Core/Errors` and shared cross-cutting error helpers where needed.
 - Finalize structured logging implementation details and Sentry integration points.

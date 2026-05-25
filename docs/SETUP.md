@@ -3,7 +3,7 @@ title: "Hyweene Static Site Generator — Setup guide"
 filename: "SETUP.md"
 description: "Installation, configuration, and run guide from a fresh clone."
 creation_date: 2026-04-27
-update_date: 2026-05-24
+update_date: 2026-05-26
 category: engineering
 author: Bruno Giarrizzo
 status: active
@@ -35,7 +35,7 @@ status: active
 | Tool | Minimum version | Notes |
 |---|---|---|
 | macOS | 15 | Primary development platform configured in SwiftPM |
-| Swift | 6.0 | Required by `src/Package.swift` |
+| Swift | 6.0 | Required by `Package.swift` |
 | mise | latest stable | Optional but recommended for repeatable tasks |
 
 If `mise` is not installed, project commands can still be run directly with `swift`.
@@ -53,7 +53,6 @@ cd website-hyweene
 mise run install
 
 # 3. Build
-cd src
 swift build
 ```
 
@@ -71,7 +70,7 @@ mise run dev
 | Setting | Value |
 |---|---|
 | Project root | `website-hyweene/` |
-| Swift package file | `src/Package.swift` |
+| Swift package file | `Package.swift` |
 | Main executable target | `hyweene` |
 | Main library target | `HyweeneSiteGenerator` |
 | Test target | `HyweeneSiteGeneratorTests` |
@@ -93,21 +92,18 @@ mise run dev
 ### Build only
 
 ```bash
-cd src
 swift build
 ```
 
 ### Build for release
 
 ```bash
-cd src
 swift build -c release
 ```
 
 ### Run CLI locally
 
 ```bash
-cd src
 ./.build/debug/hyweene build
 ./.build/debug/hyweene dev --host 0.0.0.0 --port 1234
 ./.build/debug/hyweene quick-add-link https://example.com --comment "Great read"
@@ -117,7 +113,6 @@ cd src
 ### Run with SwiftPM
 
 ```bash
-cd src
 swift run hyweene build
 swift run hyweene dev
 ```
@@ -129,7 +124,6 @@ swift run hyweene dev
 ### From the command line
 
 ```bash
-cd src
 swift test
 ```
 
@@ -161,6 +155,7 @@ Configuration is environment-variable driven with defaults defined in code.
 ## 7. CI parity tips
 
 - Run commands from repository root via `mise` or from `src/` via `swift` consistently.
+- Run commands from repository root consistently (where `Package.swift` is located).
 - Use `swift build -c release` in CI for production-like compilation.
 - Keep `swift test` mandatory on pull requests.
 
@@ -168,7 +163,7 @@ Configuration is environment-variable driven with defaults defined in code.
 
 ## 8. Troubleshooting
 
-- If build fails after dependency updates, run `cd src && swift package resolve`.
+- If build fails after dependency updates, run `swift package resolve`.
 - If generated output looks stale, run a fresh `hyweene build` and verify `current/` target content.
 - If dev mode does not reload, confirm changes happen under `content/` or `src/Templates/`.
 - If you see `Template named ... does not exist` with `generator/Templates`, update `SITE_TEMPLATE_PATH` or unset it to use `src/Templates`.

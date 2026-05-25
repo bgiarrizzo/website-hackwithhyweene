@@ -3,7 +3,7 @@ title: "Hyweene Static Site Generator — Features"
 filename: "FEATURES.md"
 description: "Complete list of features, their scope, behavior rules, and current status."
 creation_date: 2026-04-27
-update_date: 2026-05-24
+update_date: 2026-05-26
 category: product
 author: Bruno Giarrizzo
 status: active
@@ -25,7 +25,7 @@ This document defines the functional scope of the CLI generator used to build hy
 | F-04 | Quick link capture command | `done` |
 | F-05 | Dead external link check | `done` |
 | F-06 | Parallel build execution | `done` |
-| F-07 | Layered architecture migration hardening | `in progress` |
+| F-07 | Layered architecture simplification and hardening | `done` |
 | F-08 | Structured observability and Sentry rollout | `planned` |
 | F-09 | YAML-driven global navigation menu | `done` |
 
@@ -245,14 +245,14 @@ Concurrency remains bounded and deterministic at command level.
 
 ---
 
-## F-07 — Layered architecture migration hardening
+## F-07 — Layered architecture simplification and hardening
 
-**Status:** `in progress`  
+**Status:** `done`  
 **Area:** `Architecture`
 
 ### Description
 
-Complete and stabilize migration from legacy generator-oriented internals to layered App/Application/Domain/Infrastructure/Shared boundaries.
+Complete and stabilize migration from legacy nested layout to the flatter App/Application/Core/Adapters/Shared boundaries.
 
 ### User stories
 
@@ -260,15 +260,15 @@ Complete and stabilize migration from legacy generator-oriented internals to lay
 
 ### Behavior rules
 
-- Domain owns models/results and repository contracts.
-- Infrastructure provides concrete adapters only.
+- Core owns models/results and repository contracts.
+- Adapters provide concrete implementations only.
 - App and Application layers remain orchestration boundaries.
 
 ### Acceptance criteria
 
 - [x] Core generation use cases exist and are used by orchestration adapters.
 - [x] Tests are organized by layer.
-- [ ] Domain and Shared error boundaries are fully formalized (`Domain/Errors`, `Shared/Errors`).
+- [x] Source tree is flattened under `src/Code/` with `Application`, `Core`, `Adapters`, and `Shared` folders.
 
 ### Out of scope
 

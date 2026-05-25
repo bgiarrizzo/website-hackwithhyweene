@@ -3,7 +3,7 @@ title: "Hyweene Static Site Generator — Tech stack"
 filename: "STACK.md"
 description: "Languages, frameworks, testing strategy, and deployment configuration."
 creation_date: 2026-04-27
-update_date: 2026-05-24
+update_date: 2026-05-26
 category: engineering
 author: Bruno Giarrizzo
 status: active
@@ -46,8 +46,8 @@ Third-party dependencies are managed via Swift Package Manager.
 hyweene command entry point
 	-> App command wiring
 		-> Application services/use cases
-			-> Domain models/contracts
-				-> Infrastructure adapters (filesystem, parser, templates, network)
+			-> Core models/protocol contracts
+				-> Adapters (filesystem, parser, templates, network)
 ```
 
 State is short-lived and command-scoped; generated artifacts are persisted as release folders.
@@ -56,15 +56,15 @@ State is short-lived and command-scoped; generated artifacts are persisted as re
 
 | Framework | Usage |
 |---|---|
-| **Swift Testing / XCTest compatibility** | Domain, use cases, infrastructure adapters, runtime command boundaries |
+| **Swift Testing / XCTest compatibility** | Core, use cases, adapters, runtime command boundaries |
 
 Tests are split by layer under the package test tree:
 
-- `src/Tests/HyweeneSiteGeneratorTests/Domain/` — domain models and rules.
-- `src/Tests/HyweeneSiteGeneratorTests/Application/` — use-case and service orchestration.
-- `src/Tests/HyweeneSiteGeneratorTests/Infrastructure/` — repositories, parsers, template engine, IO adapters.
-- `src/Tests/HyweeneSiteGeneratorTests/App/` — CLI command-facing behavior.
-- `src/Tests/HyweeneSiteGeneratorTests/Shared/` — shared utilities and configuration helpers.
+- `src/Tests/Core/` — core models and rules.
+- `src/Tests/Application/` — use-case and service orchestration.
+- `src/Tests/Adapters/` — repositories, parsers, template engine, IO adapters.
+- `src/Tests/App/` — CLI command-facing behavior.
+- `src/Tests/Shared/` — shared utilities and configuration helpers.
 
 ## Target & deployment
 
@@ -81,9 +81,9 @@ Tests are split by layer under the package test tree:
 
 ## Architecture notes
 
-- Layered CLI architecture: App, Application, Domain, Infrastructure, Shared.
+- Layered CLI architecture: App, Application, Core, Adapters, Shared.
 - Executable/library split in SwiftPM: lightweight CLI entry + testable core library.
-- Incremental migration strategy keeps generated output stable while refactoring internals.
+- Current SwiftPM source layout uses `src/Code` for the library target and `src/Tests` for tests.
 
 ## Dependencies and services
 

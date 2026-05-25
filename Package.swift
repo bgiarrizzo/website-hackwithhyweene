@@ -24,8 +24,6 @@ let package = Package(
         .package(url: "https://github.com/jpsim/Yams.git", from: "6.2.1"),
         // CLI Arguments parsing (if needed, otherwise we can implement a simple parser)
         .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.7.1"),
-        // Testing framework fallback for environments lacking toolchain-integrated Testing internals
-        //.package(url: "https://github.com/swiftlang/swift-testing.git", from: "0.8.0"),
     ],
     targets: [
         // Library containing all the logic (testable)
@@ -37,10 +35,11 @@ let package = Package(
                 .product(name: "Yams", package: "Yams"),
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ],
-            path: "src/Application",
+            path: "src/Code",
             exclude: [
-                "App/command.swift"
+                "Application/App/command.swift"
             ],
+            sources: ["Application", "Core", "Adapters", "Shared"],
         ),
         // Executable target for the command-line tool
         .executableTarget(
@@ -49,7 +48,7 @@ let package = Package(
                 .target(name: "HyweeneSiteGenerator"),
                 .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ],
-            path: "src/Application/App",
+            path: "src/Code/Application/App",
             exclude: [
                 "CLIApp.swift",
                 "Commands",

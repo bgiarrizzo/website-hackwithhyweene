@@ -3,7 +3,7 @@ title: "ADR Index — Hyweene Static Site Generator"
 filename: "0000-adr-index.md"
 description: "Index of all Architecture Decision Records (ADRs) for the project."
 creation_date: 2026-04-27
-update_date: 2026-05-06
+update_date: 2026-05-26
 category: adr
 ---
 
@@ -49,3 +49,4 @@ Each ADR MUST include:
 | 0019 | [0019-resume-pipeline-migration-to-aggregate-use-case.md](0019-resume-pipeline-migration-to-aggregate-use-case.md) | Resume pipeline migration to aggregate Domain use case | Accepted |
 | 0020 | [0020-learn-pipeline-migration-to-domain-use-case.md](0020-learn-pipeline-migration-to-domain-use-case.md) | Learn pipeline migration to Domain use case and Data adapters | Accepted |
 | 0021 | [0021-remove-legacy-mutable-models.md](0021-remove-legacy-mutable-models.md) | Remove legacy mutable Models layer after generator migrations | Accepted |
+| 0022 | [0022-flatten-to-application-core-adapters-shared.md](0022-flatten-to-application-core-adapters-shared.md) | Flatten to Application / Core / Adapters / Shared | Accepted |

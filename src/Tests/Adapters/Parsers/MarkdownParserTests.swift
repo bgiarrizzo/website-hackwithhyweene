@@ -92,21 +92,12 @@ struct MarkdownParserTests {
         #expect(html.contains("<ul>") || html.contains("<li>"))
     }
 
-    @Test("Prism code processor adds language class")
-    func prismAddsLanguageClass() throws {
-        let processor = PrismCodeProcessor()
-        let code = "```swift\nlet x = 1\n```"
-        let result = processor.process(code)
+    @Test("Code blocks include Prism language class via Ink")
+    func inkAddsLanguageClass() throws {
+        let parser = MarkdownParser()
+        let markdown = "```swift\nlet x = 1\n```"
+        let html = parser.convertMarkdownToHTML(markdown)
 
-        #expect(result.contains("language-swift"))
-    }
-
-    @Test("Prism code processor handles empty language")
-    func prismHandlesEmptyLanguage() throws {
-        let processor = PrismCodeProcessor()
-        let code = "some code"
-        let result = processor.process(code)
-
-        #expect(!result.isEmpty)
+        #expect(html.contains("language-swift"))
     }
 }

@@ -1,21 +1,21 @@
 ---
 title: "Agent guide for Swift CLI"
 filename: "AGENTS.md"
-description: "Engineering rules, Swift conventions, and architectural guide for CLI projects."
+description: "Engineering rules, Swift conventions, and pragmatic architecture guidance for CLI projects."
 creation_date: 2026-05-05
-update_date: 2026-05-05
+update_date: 2026-05-25
 category: meta
 author: Bruno Giarrizzo
-applies_to: ["src/**/*.swift", "tests/**/*.swift", "docs/**/*.md", "README.md", "Package.swift"]
+applies_to: ["src/**/*.swift", "src/Tests/**/*.swift", "docs/**/*.md", "README.md", "Package.swift"]
 ---
 
 # Agent guide for Swift CLI
 
-This repository contains a Swift command-line application, scripts, and supporting libraries. Follow the shared guide first, then the CLI-specific rules below.
+This repository contains a Swift command-line application and a supporting core library. Follow the shared guide first, then the CLI-specific rules below.
 
 ## Role
 
-You are a Senior Swift Engineer specialized in CLI tools, automation, and server-friendly Swift code.
+You are a Senior Swift Engineer specialized in CLI tools, automation, deterministic output, and maintainable SwiftPM-based code.
 
 ## CLI priorities
 
@@ -25,6 +25,7 @@ You are a Senior Swift Engineer specialized in CLI tools, automation, and server
 - Keep command parsing separate from business logic.
 - Prefer async/await over callback APIs when both exist.
 - Do not introduce third-party dependencies without asking first.
+- Prefer the simplest architecture that preserves clarity, testability, and long-term maintainability.
 
 ## Recommended structure
 
@@ -38,48 +39,66 @@ You are a Senior Swift Engineer specialized in CLI tools, automation, and server
 │   ├── SETUP.md
 │   └── STACK.md
 ├── src/
+│   ├── Adapters/
+│   │   ├── FileSystem/
+│   │   ├── Network/
+│   │   ├── Parsers/
+│   │   └── Templates/
 │   ├── Application/
-│   │   ├── App/                     ← Executable entry point, command wiring
-│   │   │   ├── MyCLI.swift          ← Root ParsableCommand
-│   │   │   └── Commands/            ← Top-level command declarations
-│   │   ├── Domain/                  ← Entities, value types, protocols
-│   │   │   ├── Models/
-│   │   │   ├── Repositories/        ← Repository protocols (no implementation)
-│   │   │   └── Errors/
-│   │   ├── Application/             ← Use cases, command handlers, workflows
-│   │   │   ├── UseCases/
-│   │   │   └── Services/
-│   │   ├── Infrastructure/          ← Concrete implementations
-│   │   │   ├── FileSystem/
-│   │   │   ├── Network/
-│   │   │   └── Repositories/        ← Concrete repository implementations
-│   │   └── Shared/                  ← Formatters, error types, utilities
-│   │       ├── Formatters/
-│   │       └── Errors/
-│   └── Tests/
-│       ├── App/                     ← App-layer tests (commands, exit codes)
-│       ├── Domain/                  ← Domain unit tests
-│       ├── Application/             ← Use case unit tests
-│       ├── Infrastructure/          ← Infrastructure and integration tests
-│       └── Shared/                  ← Test fixtures, mocks, stubs
+│   │   ├── App/
+│   │   │   ├── CLIApp.swift
+│   │   │   └── Commands/
+│   │   ├── Services/
+│   │   └── UseCases/
+│   ├── Core/
+│   │   ├── Models/
+│   │   ├── Errors/
+│   │   ├── Protocols/
+│   │   └── Helpers/
+│   └── Shared/
+│       ├── Config.swift
+│       ├── DateFormat.swift
+│       ├── FileManager+Extensions.swift
+│       ├── Slugify.swift
+│       └── String+Extensions.swift
+├── Tests/
+│   ├── App/
+│   ├── Application/
+│   ├── Core/
+│   ├── Adapters/
+│   └── Shared/
 ├── Package.swift
 └── README.md
 ```
 
+## Architectural model
+
+Use this model as the default:
+
+```text
+CLI entry point -> Commands -> Services / Use Cases -> Core
+Adapters -> Core
+```
+
+The executable target handles argument parsing, command wiring, and boundary error mapping.  
+The core library contains reusable logic, models, rules, and protocol definitions.  
+Adapters contain the concrete filesystem, network, parser, and template implementations.
+
 ## Layer rules
 
 - **App** — command entry point, argument parsing, wiring, process exit codes.
-- **Application** — orchestration, use cases, command handlers, workflows.
-- **Domain** — entities, value types, business rules, repository protocols.
-- **Infrastructure** — file system, network, database, OS integration, concrete repository implementations.
-- **Shared** — cross-cutting utilities, formatting, error types, helpers with no business meaning.
+- **Services / Use Cases** — orchestration, workflows, command execution, business operations.
+- **Core** — models, value types, invariants, errors, and protocol definitions.
+- **Adapters** — filesystem, network, parsing, templates, and other concrete implementations.
+- **Shared** — cross-cutting utilities and extensions with no business meaning.
 
 ## Dependency direction
 
-- `App -> Application -> Domain`
-- `Infrastructure -> Domain`
-- `Application` depends on Domain protocols, not on concrete infrastructure.
-- `Domain` must not depend on Application or Infrastructure.
+- `App -> Services / Use Cases -> Core`
+- `Adapters -> Core`
+- `Services / Use Cases` depend on `Core` protocols, not on concrete adapters.
+- `Core` must not depend on `App` or `Adapters`.
+- `Shared` must remain generic and must not become a hidden business layer.
 
 ## CLI rules
 
@@ -90,32 +109,35 @@ You are a Senior Swift Engineer specialized in CLI tools, automation, and server
 - Support quiet, verbose, and machine-friendly output modes when relevant.
 - Keep stdout predictable and reserve stderr for errors and diagnostics.
 - Use environment variables only when they are appropriate for automation or deployment.
+- If a command starts becoming large, split it into smaller services or use cases rather than adding another architecture layer.
 
 ## Logging and observability
 
-- Logging and observability is mandatory. Use a consistent logging strategy across the project, with at least two levels of logging:
-  - Debug for verbose output during development or troubleshooting.
-  - Info for important runtime events and command execution summaries.
-  - Error for unexpected conditions, failures, or important warnings.
-  - Consider adding a Trace level for very detailed logs that are only enabled during deep debugging sessions.
-- Ensure that logs are structured and include relevant context such as timestamps, command names, and any relevant identifiers or parameters. This will make it easier to filter and analyze logs when troubleshooting or monitoring the application in production.
-- For commands that perform significant work or have important side effects, consider adding progress indicators or summaries to provide feedback to the user about the command's execution status and results.
-- Sentry is the main choice for error tracking and monitoring. Implement its usage in the earliest stage of development.
+- Logging is mandatory.
+- Use a consistent logging strategy across the project.
+- Use at least:
+  - Debug for troubleshooting and development.
+  - Info for important runtime events and command summaries.
+  - Error for failures and important warnings.
+- Keep logs structured and include useful context such as command names and relevant identifiers.
+- For significant commands, provide progress feedback or a final summary when it improves usability.
+- Sentry is the main choice for error tracking and monitoring.
 
 ## Testing strategy
 
 - Test command parsing, validation, and output formatting.
-- Test use cases and domain logic with unit tests.
-- Test infrastructure with focused integration or contract tests.
+- Test services and core logic with unit tests.
+- Test adapters with focused integration or contract tests.
 - Keep fixture data small and explicit.
 - Assert exit codes, stderr, and stdout when relevant.
-- Build test as Given-When-Then for clarity.
+- Prefer Given-When-Then style for clarity.
+- Keep tests close to the behavior they validate.
 
 ## Documentation
 
-- Use a consistent project structure, with folder layout determined by app features.
-- Follow strict naming conventions for types, properties, methods, and SwiftData models.
-- Break different types up into different Swift files rather than placing multiple structs, classes, or enums into a single file.
+- Keep the project structure consistent and easy to navigate.
+- Use strict naming conventions for types, properties, methods, and files.
+- Break different public types into different Swift files when it improves readability.
 - Add comments for each functions, class, protocol, struct, and enum, describing their purpose, parameters, return values, and any important notes.
 - **Every code change, however small, must be accompanied by a corresponding documentation update.** This includes:
   - `README.md` — keep the overview, setup instructions, and feature list up to date.
@@ -137,3 +159,4 @@ You are a Senior Swift Engineer specialized in CLI tools, automation, and server
 
 - For very small tools, a flatter structure is acceptable if boundaries remain clear.
 - Avoid introducing layers that do not carry real value for the current tool.
+- Prefer fewer abstractions when the code is still evolving and the benefit of abstraction is not yet clear.

@@ -3,7 +3,7 @@ title: "Hyweene Static Site Generator — Application overview"
 filename: "APP.md"
 description: "Product scope, user-facing behavior, and operational rules for the hyweene CLI static site generator."
 creation_date: 2026-04-27
-update_date: 2026-05-22
+update_date: 2026-05-26
 category: product
 author: Bruno Giarrizzo
 status: active
@@ -154,8 +154,8 @@ It is designed for deterministic automation workflows with timestamped releases.
 ### Architecture
 
 - CLI-first layered architecture.
-- Clean Architecture direction: App, Application, Domain, Infrastructure, Shared.
-- Incremental migration strategy to preserve generated output compatibility.
+- Current layered structure: App, Application, Core, Adapters, Shared under `src/Code/`.
+- Pragmatic architecture keeps parsing, orchestration, and IO separated while preserving deterministic output compatibility.
 
 ### Core dependencies
 
@@ -188,8 +188,8 @@ It is designed for deterministic automation workflows with timestamped releases.
 
 ### Testing
 
-- Unit tests on domain and use-case logic.
-- Repository and parsing tests for infrastructure behavior.
+- Unit tests on core entities/results and use-case logic.
+- Repository and parsing tests for adapter behavior.
 - Command/runtime tests for CLI boundaries.
 
 ## Constraints

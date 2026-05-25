@@ -3,7 +3,7 @@ title: "Ink as the Markdown parser"
 filename: "0005-ink-markdown-parser.md"
 description: "Decision to use Ink for parsing the site's Markdown content."
 creation_date: 2026-05-06
-update_date: 2026-05-06
+update_date: 2026-05-26
 category: adr
 status: Accepted
 ---
@@ -24,8 +24,9 @@ and customizable handling of code blocks (Prism.js integration).
 ## Decision
 
 We decided to use **Ink** (`JohnSundell/Ink`) to convert Markdown to HTML.
-`MarkdownParser` (`Parsers/MarkdownParser.swift`) wraps Ink and applies post-processing via
-`PrismCodeProcessor` to enrich code blocks with the CSS classes expected by Prism.js.
+`MarkdownParser` (`src/Code/Adapters/Parsers/MarkdownParser.swift`) wraps Ink directly. Fenced code
+blocks are rendered with language classes (for example `language-swift`) by Ink, which keeps
+Prism.js integration without an extra post-processing layer.
 
 ## Consequences
 

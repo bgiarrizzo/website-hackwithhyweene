@@ -74,17 +74,17 @@ swift build
 ## Architecture Direction
 
 - Runtime entry points remain in CLI commands.
-- Business logic is being migrated toward Domain Use Cases and repository boundaries.
-- Data access and rendering adapters remain isolated from Domain rules.
-- Migration is incremental to keep generated output behavior stable.
+- Business logic lives in Application use cases/services over Core models and protocol contracts.
+- Data access and rendering implementations are isolated in Adapters.
+- Current source layout is `src/Code/{Application,Core,Adapters,Shared}` with tests in `src/Tests`.
 
-Current migration status:
-- `BlogGenerator` delegates to `GenerateBlogUseCase` (Domain + Data adapters).
-- `LinksGenerator` delegates to `GenerateLinksUseCase` (Domain + Data adapters).
-- `PagesGenerator` delegates to `GeneratePagesUseCase` (Domain + Data adapters).
-- `LearnGenerator` delegates to `GenerateLearnUseCase` (Domain + Data adapters).
-- `HomepageGenerator` delegates to `GenerateHomepageUseCase` and consumes Domain entities directly.
-- `ResumeGenerator` delegates to `GenerateResumeUseCase` (Domain aggregate + Data repository).
+Current status:
+- `BlogGenerator` delegates to `GenerateBlogUseCase`.
+- `LinksGenerator` delegates to `GenerateLinksUseCase`.
+- `PagesGenerator` delegates to `GeneratePagesUseCase`.
+- `LearnGenerator` delegates to `GenerateLearnUseCase`.
+- `HomepageGenerator` delegates to `GenerateHomepageUseCase`.
+- `ResumeGenerator` delegates to `GenerateResumeUseCase`.
 
 ## Tests
 

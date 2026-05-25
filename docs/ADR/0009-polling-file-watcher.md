@@ -3,7 +3,7 @@ title: "Snapshot polling file watcher (dev mode)"
 filename: "0009-polling-file-watcher.md"
 description: "File change detection in dev mode using timestamped snapshot polling."
 creation_date: 2026-05-06
-update_date: 2026-05-06
+update_date: 2026-05-26
 category: adr
 status: Accepted
 ---
@@ -24,7 +24,7 @@ The main constraint is **portability**: the project must work on both macOS and 
 ## Decision
 
 We decided to implement a **snapshot polling watcher** in
-`src/Application/Infrastructure/FileSystem/DirectoryWatcher.swift`:
+`src/Code/Adapters/FileSystem/DirectoryWatcher.swift`:
 
 - At each interval (500 ms by default), `DirectoryWatcher` recursively scans watched
   directories and builds a `[path: modificationDate]` dictionary snapshot.

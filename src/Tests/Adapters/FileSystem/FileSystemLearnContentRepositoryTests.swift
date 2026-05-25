@@ -16,7 +16,9 @@ struct FileSystemLearnContentRepositoryTests {
         id: 1
         name: Git
         description: desc
-        """.write(to: moduleDir.appendingPathComponent("00-module.yml"), atomically: true, encoding: .utf8)
+        """.write(
+            to: moduleDir.appendingPathComponent("00-module.yml"), atomically: true, encoding: .utf8
+        )
 
         try """
         ---
@@ -25,7 +27,8 @@ struct FileSystemLearnContentRepositoryTests {
         ---
 
         Body
-        """.write(to: moduleDir.appendingPathComponent("02-second.md"), atomically: true, encoding: .utf8)
+        """.write(
+            to: moduleDir.appendingPathComponent("02-second.md"), atomically: true, encoding: .utf8)
 
         try """
         ---
@@ -36,7 +39,8 @@ struct FileSystemLearnContentRepositoryTests {
         ---
 
         Body
-        """.write(to: moduleDir.appendingPathComponent("01-first.md"), atomically: true, encoding: .utf8)
+        """.write(
+            to: moduleDir.appendingPathComponent("01-first.md"), atomically: true, encoding: .utf8)
 
         try """
         ---
@@ -46,7 +50,9 @@ struct FileSystemLearnContentRepositoryTests {
         ---
 
         Body
-        """.write(to: moduleDir.appendingPathComponent("03-disabled.md"), atomically: true, encoding: .utf8)
+        """.write(
+            to: moduleDir.appendingPathComponent("03-disabled.md"), atomically: true,
+            encoding: .utf8)
 
         let repository = FileSystemLearnContentRepository(learnPath: tempDir.path)
         let modules = try repository.loadModules()
@@ -68,11 +74,43 @@ struct FileSystemLearnContentRepositoryTests {
         id: 1
         name: Git
         disabled: true
-        """.write(to: moduleDir.appendingPathComponent("00-module.yml"), atomically: true, encoding: .utf8)
+        """.write(
+            to: moduleDir.appendingPathComponent("00-module.yml"), atomically: true, encoding: .utf8
+        )
 
-        let repository = FileSystemLearnContentRepository(learnPath: tempDir.path)
+        let repository: FileSystemLearnContentRepository = FileSystemLearnContentRepository(
+            learnPath: tempDir.path)
         let modules = try repository.loadModules()
 
         #expect(modules.isEmpty)
+    }
+
+    @Test("parseModuleFile throws on invalid YAML")
+    func throwsOnInvalidYAML() throws {
+        // Given
+        let fm: FileManager = FileManager.default
+        let tempDir: URL = fm.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        let moduleDir: URL = tempDir.appendingPathComponent("1 - git")
+
+        /// Create a module directory
+        try fm.createDirectory(at: moduleDir, withIntermediateDirectories: true)
+        defer { try? fm.removeItem(at: tempDir) }
+
+        /// Write an invalid YAML module descriptor
+        try """
+        id: 1
+        name: Git
+        invalid_yaml: [unclosed
+        """.write(
+            to: moduleDir.appendingPathComponent("00-module.yml"), atomically: true, encoding: .utf8
+        )
+
+        /// When & Then
+        let repository: FileSystemLearnContentRepository = FileSystemLearnContentRepository(
+            learnPath: tempDir.path)
+
+        #expect(throws: Error.self) {
+            _ = try repository.loadModules()
+        }
     }
 }
