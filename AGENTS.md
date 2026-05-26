@@ -39,34 +39,36 @@ You are a Senior Swift Engineer specialized in CLI tools, automation, determinis
 │   ├── SETUP.md
 │   └── STACK.md
 ├── src/
-│   ├── Adapters/
-│   │   ├── FileSystem/
-│   │   ├── Network/
-│   │   ├── Parsers/
-│   │   └── Templates/
-│   ├── Application/
-│   │   ├── App/
-│   │   │   ├── CLIApp.swift
-│   │   │   └── Commands/
-│   │   ├── Services/
-│   │   └── UseCases/
-│   ├── Core/
-│   │   ├── Models/
-│   │   ├── Errors/
-│   │   ├── Protocols/
-│   │   └── Helpers/
-│   └── Shared/
-│       ├── Config.swift
-│       ├── DateFormat.swift
-│       ├── FileManager+Extensions.swift
-│       ├── Slugify.swift
-│       └── String+Extensions.swift
-├── Tests/
-│   ├── App/
-│   ├── Application/
-│   ├── Core/
-│   ├── Adapters/
-│   └── Shared/
+│   ├── Code/
+│   │   ├── Adapters/
+│   │   │   ├── FileSystem/
+│   │   │   ├── Network/
+│   │   │   ├── Parsers/
+│   │   │   └── Templates/
+│   │   ├── Application/
+│   │   │   ├── App/
+│   │   │   │   ├── CLIApp.swift
+│   │   │   │   └── Commands/
+│   │   │   ├── Services/
+│   │   │   └── UseCases/
+│   │   ├── Core/
+│   │   │   ├── Models/
+│   │   │   ├── Errors/
+│   │   │   ├── Protocols/
+│   │   │   └── Helpers/
+│   │   └── Shared/
+│   │        ├── Config.swift
+│   │        ├── DateFormat.swift
+│   │        ├── FileManager+Extensions.swift
+│   │        ├── Slugify.swift
+│   │        └── String+Extensions.swift
+│   ├── Templates/
+│   └── Tests/
+│       ├── App/
+│       ├── Application/
+│       ├── Core/
+│       ├── Adapters/
+│       └── Shared/
 ├── Package.swift
 └── README.md
 ```
